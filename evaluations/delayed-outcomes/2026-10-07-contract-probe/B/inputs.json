@@ -1,0 +1,18 @@
+{
+  "context": "Crédito ficticio. Target certificado tras cerrar horizonte; todos los snapshots son anteriores al cutoff. Extracción 2025-07-10. Negativos observados. Regla contractual label_available_at <= training_timestamp, sin embargo adicional autorizado.",
+  "cutoff": "2025-07-01T00:00:00Z",
+  "rows": [
+    {
+      "id": "B1",
+      "prediction_timestamp": "2025-01-01T00:00:00Z",
+      "label_available_at": "2025-07-01T00:00:00Z",
+      "target": 0
+    },
+    {
+      "id": "B2",
+      "prediction_timestamp": "2025-01-01T00:00:00Z",
+      "label_available_at": "2025-07-01T00:00:01Z",
+      "target": 0
+    }
+  ]
+}

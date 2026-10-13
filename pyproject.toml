@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentic-consulting-os"
+version = "0.1.0"
+description = "Compiler portable de workspaces de consultoría Data & AI"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["pydantic>=2,<3", "PyYAML>=6,<7", "platformdirs>=4,<5"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "build>=1"]
+
+[project.scripts]
+acos = "acos.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+acos = ["resources/**/*", "resources/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,138 @@
+{
+  "scope": "Preparación desde macOS; no ejecución Windows ni suite de pruebas ejecutada.",
+  "wheel": "artifacts/windows-readiness-2026-10-08/agentic_consulting_os-0.1.0-py3-none-any.whl",
+  "wheel_sha256": "79f8295548224025ce8fb0fc15046d7b7259b066c789e2780a6139b6687bd8ca",
+  "source_files_identical_to_wheel": [
+    {
+      "path": "acos/__init__.py",
+      "sha256": "f45e350fab645040f9595c8ad848b1732e577bef8b5802013b0001ab32be63b0"
+    },
+    {
+      "path": "acos/__main__.py",
+      "sha256": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4"
+    },
+    {
+      "path": "acos/catalog.py",
+      "sha256": "5b56390bd33e176d3993b6071f48004540616e117ddeea22a0c6041e4fe9e028"
+    },
+    {
+      "path": "acos/classifier.py",
+      "sha256": "ce02db0e07ebd65eedc3e6c1784d3bdb6c14147b391bab0d222ca5d86f8d410c"
+    },
+    {
+      "path": "acos/cli.py",
+      "sha256": "d6134f6eabd61ed467b6edba4f7085844e5350282878d910e60a1fbb970093b2"
+    },
+    {
+      "path": "acos/compiler.py",
+      "sha256": "1522ba8314bb4257b7af43626a15e68cf69702947f434e719c0cd665f0dc95f8"
+    },
+    {
+      "path": "acos/config.py",
+      "sha256": "56808b2322f8b426926127ca6a2966e3bd6763cc6c345e1aded6619f7f60676d"
+    },
+    {
+      "path": "acos/contracts.py",
+      "sha256": "bfe64d7abab9b2e427932b14cca28f38fb6d62820914eae9c8c35c10acb37f08"
+    },
+    {
+      "path": "acos/foundry.py",
+      "sha256": "ab9ccb41010f8f97580995da24946d1534ebbabb6e0631ecff3ed57c7beeeea6"
+    },
+    {
+      "path": "acos/gates.py",
+      "sha256": "98eacc519b4b9e5b83238907dada0a1c98b2633b1a5a6be448e806868e8a6249"
+    },
+    {
+      "path": "acos/intake.py",
+      "sha256": "46c72019e2c4866cc7c9d6c9d0ff572bbd3ec16063d10b1a49aee0c9b7e5d2c1"
+    },
+    {
+      "path": "acos/llm_adapter.py",
+      "sha256": "ca3b7973677dbd983a1741114e9f45ed8c2a6e57f23d37b1139a4948e8f8161d"
+    },
+    {
+      "path": "acos/project.py",
+      "sha256": "ebaad7d3d49a48e4c7f46bcb925a052d7cf1d32a72bf641a51be0b5cb7bbb025"
+    },
+    {
+      "path": "acos/render.py",
+      "sha256": "110e5995258d7fe6798599b220ea2e031c1be378e3411b989b3909fc3aeed7ae"
+    },
+    {
+      "path": "acos/resolver.py",
+      "sha256": "9a5c2cfb11189c64564185e516bcbd1660a1be63af6354d932af18378d79d897"
+    },
+    {
+      "path": "acos/resources/catalog.yaml",
+      "sha256": "5b8b45a62f29b1e11e25ad8aea547947e07c858657e0ee25e768ee3f0a274e1e"
+    },
+    {
+      "path": "acos/resources/os/playbooks/data-understanding-analysis.md",
+      "sha256": "e7939afc166ffa1f3e9cbc9ddda8b86a95e7a4d06f0e0fa4ada130900738746a"
+    },
+    {
+      "path": "acos/resources/os/playbooks/experiments-and-models.md",
+      "sha256": "c399fb03cc4820c1a05c60f516168d8ce23845df6f99f26db5e8793acff523fa"
+    },
+    {
+      "path": "acos/resources/os/playbooks/product-ui-and-prototyping.md",
+      "sha256": "299517beaa9b411a02f46e1bcf6d4b3727d7527cdf98729b96faac27e20dd34f"
+    },
+    {
+      "path": "acos/resources/os/playbooks/research-impact-delivery.md",
+      "sha256": "d1a5fc43d2956940e9b2695177c90e74be80b33135112094e05df161cf233de3"
+    },
+    {
+      "path": "acos/resources/os/templates/data-and-validation.md",
+      "sha256": "6aa8814c0938cd47823dd2c1df24ccef09fc0959299ed54e67e0c5d7b3befae3"
+    },
+    {
+      "path": "acos/resources/os/templates/delivery-and-handoff.md",
+      "sha256": "af474f15c2c866460dc53abdc711e041775b6c748deaba8250dc7c7bdb75fb5e"
+    },
+    {
+      "path": "acos/resources/os/templates/findings-and-qa.md",
+      "sha256": "1dfeda69fc8a34b7e3f6994b1acac482f20664c20d2e72eaa1c5d8b847aecfbc"
+    },
+    {
+      "path": "acos/resources/os/templates/project-and-task.md",
+      "sha256": "61b336b02ec86dba05e16eba5308dcb2716ce90b2b49ad17194ba589abf07a5a"
+    },
+    {
+      "path": "acos/resources/os/workflow/capability-lifecycle.md",
+      "sha256": "98c569bbf33ba7d95d1c8bc6cd3893ed1ccbc784a7850d5a3cf700097942bd23"
+    },
+    {
+      "path": "acos/resources/os/workflow/execution-and-qa.md",
+      "sha256": "9dd8095cd8fd8dfb351974d82d049cd3f1fd0b345a83d298c8c7b1c982bfa5d5"
+    },
+    {
+      "path": "acos/resources/os/workflow/isolation-and-context.md",
+      "sha256": "580a22286bc11b44aae574fd38b6690a95990f10b0ff5d76b4e4ad8bd14dd153"
+    },
+    {
+      "path": "acos/resources/os/workflow/project-lifecycle.md",
+      "sha256": "4752ff2a6d3ec4314051aa56277dddd94c742de11763e86bcf06f78835355131"
+    },
+    {
+      "path": "acos/resources/templates/contract.yaml",
+      "sha256": "b4b27d209d8eb04378d55d4c2cf17ecde3e8a68a6f4006e79b5147facdfe5a89"
+    },
+    {
+      "path": "acos/resources/templates/data.yaml",
+      "sha256": "d282935521ceca75a03e6dc3f0691f4df68db5f554821884a8c73c0538b9ad17"
+    },
+    {
+      "path": "acos/resources/templates/notes.md",
+      "sha256": "94477528e58af1a791f0bbf8e9aa82779054695ef384dd3bc24d5207442928f5"
+    },
+    {
+      "path": "acos/yaml_io.py",
+      "sha256": "8092ee18ad73759bbcda550c688c14015c87d1d40e660174df7c7b24bd3136a5"
+    }
+  ],
+  "test_collection_summary": "125 tests collected in 0.09s",
+  "historical_dist_wheel_preserved_sha256": "aaace2d8ae20b05e1c0aa923e4ade78ed4663fb64f15d1d20b76b1c45ef4e89c",
+  "windows_native_status": "PENDING"
+}

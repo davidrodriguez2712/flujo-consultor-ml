@@ -1,0 +1,65 @@
+{
+  "platform": "Windows-2022Server-10.0.20348-SP0",
+  "architecture": "x64",
+  "requested_runtimes": [
+    "claude"
+  ],
+  "scope": "Skill real + continuemos en sesión nueva; solo lectura; sin eficacia ni resume persistido",
+  "skill_sha256": "70883c3b75b07334fc95bad1b5c6749fd7b5e623b648f6b48fb6c14b2d32b8f9",
+  "skill_status": "experimental",
+  "runtime_budget_usd": 0.2,
+  "passed": false,
+  "runtimes": [
+    {
+      "runtime": "claude",
+      "model": "claude-haiku-4-5-20251001",
+      "passed": false,
+      "runs": [
+        {
+          "checks": {
+            "canonical_objective": false,
+            "blocked_state": true,
+            "label_availability": false,
+            "native_skill_trace": false,
+            "validation_advice": false
+          },
+          "passed": false,
+          "reply": "Failed to authenticate. API Error: 403 request bloqueado antes de enviarlo",
+          "tools": [],
+          "test": "guided",
+          "exit_code": 1,
+          "workspace_unchanged": true
+        }
+      ],
+      "requests": [
+        {
+          "reserved_usd": 0.08541125,
+          "committed_usd": 0.08541125,
+          "estimated_usd": null,
+          "usage": null,
+          "http_status": 400,
+          "provider_error": {
+            "type": "invalid_request_error",
+            "message": "`clear_thinking_20251015` strategy requires `thinking` to be enabled or adaptive"
+          }
+        }
+      ],
+      "committed_usd": 0.08541125,
+      "estimated_usd": 0,
+      "unmeasured_requests": 1,
+      "rejections": [
+        {
+          "reason": "límite de solicitudes",
+          "request_bytes": 47601,
+          "quote_usd": 0.08541125,
+          "tool_types": [
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    }
+  ]
+}

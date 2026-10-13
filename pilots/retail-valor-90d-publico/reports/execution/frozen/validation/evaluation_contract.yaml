@@ -1,0 +1,141 @@
+schema_version: 1
+version: 0.1.0
+status: PROPOSED
+framing_contract_sha256: 0e537ce003ac0c125d89f5a0aa301f3c29a09316f3e90d985a4b82cc642c6ab4
+cutoffs:
+- cutoff: '2010-09-01T00:00:00'
+  purpose: development
+  label_end: '2010-11-30T00:00:00'
+  eligible_customers: 2822
+  mature_training_cutoffs:
+  - '2010-06-01T00:00:00'
+  hypothetical_delay_7d_mature_cutoffs: []
+- cutoff: '2010-12-01T00:00:00'
+  purpose: development
+  label_end: '2011-03-01T00:00:00'
+  eligible_customers: 3465
+  mature_training_cutoffs:
+  - '2010-06-01T00:00:00'
+  - '2010-07-01T00:00:00'
+  - '2010-08-01T00:00:00'
+  - '2010-09-01T00:00:00'
+  hypothetical_delay_7d_mature_cutoffs:
+  - '2010-06-01T00:00:00'
+  - '2010-07-01T00:00:00'
+  - '2010-08-01T00:00:00'
+- cutoff: '2011-03-01T00:00:00'
+  purpose: development
+  label_end: '2011-05-30T00:00:00'
+  eligible_customers: 3338
+  mature_training_cutoffs:
+  - '2010-06-01T00:00:00'
+  - '2010-07-01T00:00:00'
+  - '2010-08-01T00:00:00'
+  - '2010-09-01T00:00:00'
+  - '2010-10-01T00:00:00'
+  - '2010-11-01T00:00:00'
+  - '2010-12-01T00:00:00'
+  hypothetical_delay_7d_mature_cutoffs:
+  - '2010-06-01T00:00:00'
+  - '2010-07-01T00:00:00'
+  - '2010-08-01T00:00:00'
+  - '2010-09-01T00:00:00'
+  - '2010-10-01T00:00:00'
+  - '2010-11-01T00:00:00'
+- cutoff: '2011-06-01T00:00:00'
+  purpose: development
+  label_end: '2011-08-30T00:00:00'
+  eligible_customers: 2658
+  mature_training_cutoffs:
+  - '2010-06-01T00:00:00'
+  - '2010-07-01T00:00:00'
+  - '2010-08-01T00:00:00'
+  - '2010-09-01T00:00:00'
+  - '2010-10-01T00:00:00'
+  - '2010-11-01T00:00:00'
+  - '2010-12-01T00:00:00'
+  - '2011-01-01T00:00:00'
+  - '2011-02-01T00:00:00'
+  - '2011-03-01T00:00:00'
+  hypothetical_delay_7d_mature_cutoffs:
+  - '2010-06-01T00:00:00'
+  - '2010-07-01T00:00:00'
+  - '2010-08-01T00:00:00'
+  - '2010-09-01T00:00:00'
+  - '2010-10-01T00:00:00'
+  - '2010-11-01T00:00:00'
+  - '2010-12-01T00:00:00'
+  - '2011-01-01T00:00:00'
+  - '2011-02-01T00:00:00'
+- cutoff: '2011-09-01T00:00:00'
+  purpose: holdout
+  label_end: '2011-11-30T00:00:00'
+  eligible_customers: 2768
+  mature_training_cutoffs:
+  - '2010-06-01T00:00:00'
+  - '2010-07-01T00:00:00'
+  - '2010-08-01T00:00:00'
+  - '2010-09-01T00:00:00'
+  - '2010-10-01T00:00:00'
+  - '2010-11-01T00:00:00'
+  - '2010-12-01T00:00:00'
+  - '2011-01-01T00:00:00'
+  - '2011-02-01T00:00:00'
+  - '2011-03-01T00:00:00'
+  - '2011-04-01T00:00:00'
+  - '2011-05-01T00:00:00'
+  - '2011-06-01T00:00:00'
+  hypothetical_delay_7d_mature_cutoffs:
+  - '2010-06-01T00:00:00'
+  - '2010-07-01T00:00:00'
+  - '2010-08-01T00:00:00'
+  - '2010-09-01T00:00:00'
+  - '2010-10-01T00:00:00'
+  - '2010-11-01T00:00:00'
+  - '2010-12-01T00:00:00'
+  - '2011-01-01T00:00:00'
+  - '2011-02-01T00:00:00'
+  - '2011-03-01T00:00:00'
+  - '2011-04-01T00:00:00'
+  - '2011-05-01T00:00:00'
+train_rule: Snapshots mensuales desde 2010-06-01 con label_end <= fit_at; expanding
+  window.
+availability_delay_days: 0
+availability_delay_status: Supuesto retrospectivo, latencia real no determinable.
+primary_metric: Suma de ventas futuras válidas en Top-K; K=min(100,elegibles).
+baseline: sales_90d; desempate customer_id lexicográfico.
+development_acceptance:
+  minimum_periods: 2
+  aggregate_gain: Suma métrica modelo > suma baseline en development.
+  maximum_losing_periods: floor(n_periods/2)
+  tie: Preferir baseline si no supera agregado; si ambos modelos elegibles preferir
+    simple salvo que complejo supere simple en todos los períodos.
+  no_eligible_model: Conservar baseline.
+holdout_acceptance: Evaluar una sola vez modelo elegido previamente contra baseline;
+  recomendarlo únicamente si mejora estrictamente. Empate/pérdida conserva baseline;
+  no cambiar a otro modelo por holdout.
+secondary_baseline: RFM solo informativo, sin seleccionar método por resultado final.
+models_fixed:
+- id: ridge_log
+  alpha: 1
+  preprocessing: StandardScaler ajustado solo en train
+  target: log1p
+  inverse: max(0,expm1(prediction))
+- id: hist_gradient_log
+  learning_rate: 0.1
+  max_iter: 100
+  max_leaf_nodes: 15
+  min_samples_leaf: 20
+  early_stopping: false
+  random_state: 20261009
+  target: log1p
+  inverse: max(0,expm1(prediction))
+repetitions_sensitivity: Descriptiva por patrón completo; no alterar fuente, población
+  ni selección primaria.
+limitations:
+- Cuatro períodos development; un holdout histórico; no estimación causal.
+- Snapshots train mensuales comparten clientes y horizontes; no observaciones independientes.
+- Primer fit tiene un solo snapshot maduro; retraso hipotético 7d lo deja sin entrenamiento.
+- 'Diagnóstico global usa toda la historia: holdout no totalmente ciego a distribución;
+  sus outcomes por horizonte y métricas siguen reservados.'
+- No representa nuevos clientes, beneficio, uplift ni efectividad de contacto.

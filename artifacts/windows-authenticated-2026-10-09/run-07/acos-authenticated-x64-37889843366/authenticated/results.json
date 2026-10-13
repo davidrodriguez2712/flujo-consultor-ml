@@ -1,0 +1,469 @@
+{
+  "platform": "Windows-2022Server-10.0.20348-SP0",
+  "architecture": "x64",
+  "scope": "Skill real + continuemos en sesión nueva; solo lectura; sin eficacia ni resume persistido",
+  "skill_sha256": "70883c3b75b07334fc95bad1b5c6749fd7b5e623b648f6b48fb6c14b2d32b8f9",
+  "skill_status": "experimental",
+  "runtime_budget_usd": 0.2,
+  "passed": false,
+  "runtimes": [
+    {
+      "runtime": "codex",
+      "model": "gpt-6-luna",
+      "passed": true,
+      "runs": [
+        {
+          "checks": {
+            "canonical_objective": true,
+            "blocked_state": true,
+            "label_availability": true,
+            "native_skill_trace": true,
+            "validation_advice": true
+          },
+          "passed": true,
+          "reply": "Voy a leer los archivos de estado en el orden indicado y comprobaré los requisitos de entrada de la skill; mantendré la revisión solo lectura y no ejecutaré código.\n**Estado canónico:** objetivo `CHURN-WIN-6591a23b50: auditar split temporal y leakage antes de recomendar retención`; etapa `validation`; status `BLOCKED`. Bloqueo: falta confirmar cuándo están disponibles las labels.\n\n**Skill:** leí `.agents/skills/design-validation/SKILL.md`. Está en estado experimental, versión 0.1.0. El perfil registra una decisión de priorizar retención mensual y datos temporales de panel, pero no describe la estructura concreta, el target ni el escenario operativo con suficiente detalle.\n\n**Checklist breve de validación temporal:**\n\n- Prediction timestamp, horizonte, ventana de observación y label delay: **No determinable**; confirmar antes de definir cortes.\n- Split temporal: **no se puede recomendar todavía** solo por la presencia de datos temporales. Depende de si se busca generalizar a períodos futuros y de cuándo se conocen las labels.\n- Solape entre períodos, viabilidad de folds y positivos por partición: **no comprobables**; no hay dataset ni conteos inspeccionados.\n- Leakage: separar test antes de seleccionar modelos; ajustar transformaciones dentro de cada fold. Un gap o embargo requiere justificar solape de ventanas o autocorrelación.\n- Evaluación operativa: considerar métricas de ranking alineadas con la priorización y el margen, pero la métrica de selección no es determinable sin precisar la decisión.\n\nNo apruebo gates ni invento un diseño de splits. No guardé reporte ni modifiqué archivos.",
+          "tools": [
+            {
+              "tool": "command_execution",
+              "input": "\"C:\\\\Program Files\\\\PowerShell\\\\7\\\\pwsh.exe\" -NoProfile -Command \"Get-Content -LiteralPath 'D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\.acos\\\\project-profile.yaml','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\.acos\\\\state.yaml','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\.acos\\\\modules.yaml','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\PROJECT.md','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\MANUAL.md','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\CAPABILITIES.md','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\.agents\\\\skills\\\\design-validation\\\\SKILL.md'\"",
+              "status": "in_progress",
+              "exit_code": null
+            },
+            {
+              "tool": "command_execution",
+              "input": "\"C:\\\\Program Files\\\\PowerShell\\\\7\\\\pwsh.exe\" -NoProfile -Command \"Get-Content -LiteralPath 'D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\.acos\\\\project-profile.yaml','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\.acos\\\\state.yaml','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\.acos\\\\modules.yaml','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\PROJECT.md','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\MANUAL.md','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\CAPABILITIES.md','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\.agents\\\\skills\\\\design-validation\\\\SKILL.md'\"",
+              "status": "completed",
+              "exit_code": 0
+            }
+          ],
+          "test": "guided",
+          "exit_code": 0,
+          "workspace_unchanged": true
+        },
+        {
+          "checks": {
+            "canonical_objective": true,
+            "blocked_state": true,
+            "label_availability": true,
+            "native_skill_trace": null,
+            "validation_advice": null
+          },
+          "passed": true,
+          "reply": "Voy a revisar el perfil y el estado canónico del proyecto en el orden indicado para retomar desde la etapa y el objetivo registrados.\nEl estado canónico marca `BLOCKED` por falta de confirmación sobre cuándo están disponibles las labels. El objetivo vigente es `CHURN-WIN-6591a23b50: auditar split temporal y leakage antes de recomendar retención`. Voy a localizar los artefactos de análisis, tareas y evidencia existentes; no daré por aprobado ningún gate por la mera presencia de archivos.\nContinuidad del objetivo canónico: `CHURN-WIN-6591a23b50: auditar split temporal y leakage antes de recomendar retención`.\n\nRevisé el plan, el contexto y los hallazgos existentes. Son plantillas sin evidencia de datos; además, el perfil no declara fuentes y el estado canónico mantiene el proyecto en `validation`, bloqueado porque falta confirmar la fecha de disponibilidad de las labels. Por eso todavía no se puede auditar un split concreto ni afirmar que el leakage esté controlado.\n\nComo criterio provisional para la auditoría: si la decisión usa datos para predecir períodos futuros, el split debería respetar el tiempo de predicción y reservar cohortes posteriores para evaluación out-of-time. Antes de fijarlo hay que conocer el horizonte de la label y su demora; si las ventanas de observación o predicción se solapan entre particiones, habrá que considerar un gap o embargo. También habría que comprobar que cada feature estaba disponible en el momento de predicción y que todo preprocesamiento se ajusta solo con el train de cada fold. Esto es una pauta metodológica, no un resultado verificado.\n\nPara continuar la auditoría, necesito la fecha o regla en que cada label queda disponible —por ejemplo, “90 días después del mes de predicción”— y, si existen, las definiciones de unidad, timestamp de predicción y horizonte de la label. ¿Cuál es esa regla de disponibilidad? Todavía no edité archivos: el workspace está en modo de solo lectura.",
+          "tools": [
+            {
+              "tool": "command_execution",
+              "input": "\"C:\\\\Program Files\\\\PowerShell\\\\7\\\\pwsh.exe\" -NoProfile -Command \"Get-Content -LiteralPath 'D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\.acos\\\\project-profile.yaml','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\.acos\\\\state.yaml','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\.acos\\\\modules.yaml','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\PROJECT.md','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\MANUAL.md','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\CAPABILITIES.md'\"",
+              "status": "in_progress",
+              "exit_code": null
+            },
+            {
+              "tool": "command_execution",
+              "input": "\"C:\\\\Program Files\\\\PowerShell\\\\7\\\\pwsh.exe\" -NoProfile -Command \"Get-Content -LiteralPath 'D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\.acos\\\\project-profile.yaml','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\.acos\\\\state.yaml','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\.acos\\\\modules.yaml','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\PROJECT.md','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\MANUAL.md','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\CAPABILITIES.md'\"",
+              "status": "completed",
+              "exit_code": 0
+            },
+            {
+              "tool": "command_execution",
+              "input": "\"C:\\\\Program Files\\\\PowerShell\\\\7\\\\pwsh.exe\" -NoProfile -Command \"Get-ChildItem -LiteralPath 'D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe' -Force | Select-Object Name,Mode\nGet-ChildItem -LiteralPath 'D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\analysis','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\data','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\workflow','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\playbooks' -ErrorAction SilentlyContinue | Select-Object FullName,Mode\nGet-Content -LiteralPath 'D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\TASKS.md','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\STATE.md','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\DECISIONS.md' -ErrorAction SilentlyContinue\"",
+              "status": "in_progress",
+              "exit_code": null
+            },
+            {
+              "tool": "command_execution",
+              "input": "\"C:\\\\Program Files\\\\PowerShell\\\\7\\\\pwsh.exe\" -NoProfile -Command \"Get-ChildItem -LiteralPath 'D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe' -Force | Select-Object Name,Mode\nGet-ChildItem -LiteralPath 'D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\analysis','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\data','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\workflow','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\playbooks' -ErrorAction SilentlyContinue | Select-Object FullName,Mode\nGet-Content -LiteralPath 'D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\TASKS.md','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\STATE.md','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\DECISIONS.md' -ErrorAction SilentlyContinue\"",
+              "status": "completed",
+              "exit_code": 0
+            },
+            {
+              "tool": "command_execution",
+              "input": "\"C:\\\\Program Files\\\\PowerShell\\\\7\\\\pwsh.exe\" -NoProfile -Command \"Get-ChildItem -LiteralPath 'D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\analysis','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\context','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\evidence','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\workflow','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\playbooks' -Recurse -File -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName\"",
+              "status": "in_progress",
+              "exit_code": null
+            },
+            {
+              "tool": "command_execution",
+              "input": "\"C:\\\\Program Files\\\\PowerShell\\\\7\\\\pwsh.exe\" -NoProfile -Command \"Get-ChildItem -LiteralPath 'D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\analysis','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\context','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\evidence','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\workflow','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\playbooks' -Recurse -File -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName\"",
+              "status": "completed",
+              "exit_code": 0
+            },
+            {
+              "tool": "command_execution",
+              "input": "\"C:\\\\Program Files\\\\PowerShell\\\\7\\\\pwsh.exe\" -NoProfile -Command \"Get-Content -LiteralPath 'D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\analysis\\\\selection_plan.md','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\context\\\\business_context.md','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\evidence\\\\findings.md','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\playbooks\\\\experiments-and-models.md','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\workflow\\\\project-lifecycle.md'\"",
+              "status": "in_progress",
+              "exit_code": null
+            },
+            {
+              "tool": "command_execution",
+              "input": "\"C:\\\\Program Files\\\\PowerShell\\\\7\\\\pwsh.exe\" -NoProfile -Command \"Get-Content -LiteralPath 'D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\analysis\\\\selection_plan.md','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\context\\\\business_context.md','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\evidence\\\\findings.md','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\playbooks\\\\experiments-and-models.md','D:\\\\a\\\\agentic-consulting-os\\\\agentic-consulting-os\\\\acos-probe-909d1140b38242289dd5feea8a04b1d8\\\\churn-probe\\\\workflow\\\\project-lifecycle.md'\"",
+              "status": "completed",
+              "exit_code": 0
+            }
+          ],
+          "test": "continuity",
+          "exit_code": 0,
+          "workspace_unchanged": true
+        }
+      ],
+      "requests": [
+        {
+          "reserved_usd": 0.012931875,
+          "committed_usd": 0.0023575500000000004,
+          "estimated_usd": 0.0023575500000000004,
+          "usage": {
+            "input_tokens": 16849,
+            "input_tokens_details": {
+              "cache_write_tokens": 16846,
+              "cached_tokens": 0
+            },
+            "output_tokens": 503,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 17352
+          },
+          "http_status": 200,
+          "output_types": [
+            {
+              "type": "message",
+              "name": null
+            },
+            {
+              "type": "custom_tool_call",
+              "name": "exec"
+            }
+          ]
+        },
+        {
+          "reserved_usd": 0.01692575,
+          "committed_usd": 0.001244635,
+          "estimated_usd": 0.001244635,
+          "usage": {
+            "input_tokens": 24180,
+            "input_tokens_details": {
+              "cache_write_tokens": 7331,
+              "cached_tokens": 16846
+            },
+            "output_tokens": 319,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 24499
+          },
+          "http_status": 200,
+          "output_types": [
+            {
+              "type": "message",
+              "name": null
+            }
+          ]
+        },
+        {
+          "reserved_usd": 0.00926875,
+          "committed_usd": 0.0015328,
+          "estimated_usd": 0.0015328,
+          "usage": {
+            "input_tokens": 10387,
+            "input_tokens_details": {
+              "cache_write_tokens": 10384,
+              "cached_tokens": 0
+            },
+            "output_tokens": 469,
+            "output_tokens_details": {
+              "reasoning_tokens": 25
+            },
+            "total_tokens": 10856
+          },
+          "http_status": 200,
+          "output_types": [
+            {
+              "type": "reasoning",
+              "name": null
+            },
+            {
+              "type": "message",
+              "name": null
+            },
+            {
+              "type": "custom_tool_call",
+              "name": "exec"
+            }
+          ]
+        },
+        {
+          "reserved_usd": 0.010632,
+          "committed_usd": 0.00076439,
+          "estimated_usd": 0.00076439,
+          "usage": {
+            "input_tokens": 12537,
+            "input_tokens_details": {
+              "cache_write_tokens": 2150,
+              "cached_tokens": 10384
+            },
+            "output_tokens": 783,
+            "output_tokens_details": {
+              "reasoning_tokens": 153
+            },
+            "total_tokens": 13320
+          },
+          "http_status": 200,
+          "output_types": [
+            {
+              "type": "reasoning",
+              "name": null
+            },
+            {
+              "type": "message",
+              "name": null
+            },
+            {
+              "type": "custom_tool_call",
+              "name": "exec"
+            }
+          ]
+        },
+        {
+          "reserved_usd": 0.01142575,
+          "committed_usd": 0.000479265,
+          "estimated_usd": 0.000479265,
+          "usage": {
+            "input_tokens": 13654,
+            "input_tokens_details": {
+              "cache_write_tokens": 1117,
+              "cached_tokens": 12534
+            },
+            "output_tokens": 428,
+            "output_tokens_details": {
+              "reasoning_tokens": 60
+            },
+            "total_tokens": 14082
+          },
+          "http_status": 200,
+          "output_types": [
+            {
+              "type": "reasoning",
+              "name": null
+            },
+            {
+              "type": "custom_tool_call",
+              "name": "exec"
+            }
+          ]
+        },
+        {
+          "reserved_usd": 0.01199525,
+          "committed_usd": 0.00044656,
+          "estimated_usd": 0.00044656,
+          "usage": {
+            "input_tokens": 14596,
+            "input_tokens_details": {
+              "cache_write_tokens": 942,
+              "cached_tokens": 13651
+            },
+            "output_tokens": 384,
+            "output_tokens_details": {
+              "reasoning_tokens": 13
+            },
+            "total_tokens": 14980
+          },
+          "http_status": 200,
+          "output_types": [
+            {
+              "type": "reasoning",
+              "name": null
+            },
+            {
+              "type": "custom_tool_call",
+              "name": "exec"
+            }
+          ]
+        },
+        {
+          "reserved_usd": 0.01427825,
+          "committed_usd": 0.00089923,
+          "estimated_usd": 0.00089923,
+          "usage": {
+            "input_tokens": 18504,
+            "input_tokens_details": {
+              "cache_write_tokens": 3908,
+              "cached_tokens": 14593
+            },
+            "output_tokens": 529,
+            "output_tokens_details": {
+              "reasoning_tokens": 214
+            },
+            "total_tokens": 19033
+          },
+          "http_status": 200,
+          "output_types": [
+            {
+              "type": "reasoning",
+              "name": null
+            },
+            {
+              "type": "message",
+              "name": null
+            }
+          ]
+        }
+      ],
+      "committed_usd": 0.00772443,
+      "estimated_usd": 0.00772443,
+      "unmeasured_requests": 0,
+      "sandbox_read_preflight": {
+        "exit_code": 0,
+        "stdout": "schema_version: 1\r\ncurrent_stage: validation\r\nstatus: BLOCKED\r\nobjective: 'CHURN-WIN-6591a23b50: auditar split temporal y leakage antes de recomendar\r\n  retenci�n'\r\ncompleted_stages: []\r\nblockers:\r\n- Falta confirmar la fecha de disponibilidad de las labels.\r\nopen_decisions: []\r\ngate_reviews: {}\r\n",
+        "stderr": "",
+        "passed": true
+      },
+      "rejections": []
+    },
+    {
+      "runtime": "claude",
+      "model": "claude-haiku-4-5-20251001",
+      "passed": false,
+      "runs": [
+        {
+          "checks": {
+            "canonical_objective": false,
+            "blocked_state": false,
+            "label_availability": false,
+            "native_skill_trace": false,
+            "validation_advice": false
+          },
+          "passed": false,
+          "reply": "",
+          "tools": [],
+          "test": "guided",
+          "exit_code": 1,
+          "workspace_unchanged": true
+        }
+      ],
+      "requests": [
+        {
+          "reserved_usd": 0.133524,
+          "committed_usd": 0.133524,
+          "estimated_usd": null,
+          "usage": null,
+          "http_status": 400
+        }
+      ],
+      "committed_usd": 0.133524,
+      "estimated_usd": 0,
+      "unmeasured_requests": 1,
+      "error": "timeout; no reintento",
+      "rejections": [
+        {
+          "reason": "límite de presupuesto",
+          "request_bytes": 47609,
+          "quote_usd": 0.133524,
+          "tool_types": [
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "reason": "límite de presupuesto",
+          "request_bytes": 47609,
+          "quote_usd": 0.133524,
+          "tool_types": [
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "reason": "límite de presupuesto",
+          "request_bytes": 47609,
+          "quote_usd": 0.133524,
+          "tool_types": [
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "reason": "límite de presupuesto",
+          "request_bytes": 47609,
+          "quote_usd": 0.133524,
+          "tool_types": [
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "reason": "límite de presupuesto",
+          "request_bytes": 47609,
+          "quote_usd": 0.133524,
+          "tool_types": [
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "reason": "límite de presupuesto",
+          "request_bytes": 47609,
+          "quote_usd": 0.133524,
+          "tool_types": [
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "reason": "límite de presupuesto",
+          "request_bytes": 47609,
+          "quote_usd": 0.133524,
+          "tool_types": [
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "reason": "límite de presupuesto",
+          "request_bytes": 47609,
+          "quote_usd": 0.133524,
+          "tool_types": [
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "reason": "límite de presupuesto",
+          "request_bytes": 47609,
+          "quote_usd": 0.133524,
+          "tool_types": [
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "reason": "límite de presupuesto",
+          "request_bytes": 47609,
+          "quote_usd": 0.133524,
+          "tool_types": [
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    }
+  ]
+}

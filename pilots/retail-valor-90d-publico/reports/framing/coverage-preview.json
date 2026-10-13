@@ -1,0 +1,279 @@
+{
+  "status": "PROPOSED_NOT_APPLIED",
+  "raw_rows": 1067371,
+  "cross_sheet_matching_rows": 22523,
+  "rows_after_proposed_reconciliation": 1044848,
+  "within_sheet_multiplicity_preserved": true,
+  "exclusion_buckets_in_order": [
+    {
+      "reason": "missing_or_nonfinite_required_fields",
+      "rows": 0
+    },
+    {
+      "reason": "cancellation_invoice",
+      "rows": 19165
+    },
+    {
+      "reason": "nonpositive_quantity_or_price",
+      "rows": 6029
+    },
+    {
+      "reason": "nonstandard_stock_code",
+      "rows": 4709
+    },
+    {
+      "reason": "missing_customer_id",
+      "rows": 226758
+    }
+  ],
+  "proposed_purchase_rows": 788187,
+  "proposed_distinct_customers": 5852,
+  "proposed_countries": 41,
+  "positive_screening_rows_after_reconciliation": 1019654,
+  "positive_screening_amount_gbp_after_reconciliation": 20533741.918,
+  "positive_nonstandard_rows": 4709,
+  "positive_nonstandard_amount_gbp": 833956.948,
+  "positive_rows_with_standard_code_missing_id": 226758,
+  "proposed_purchase_amount_gbp": 17124926.23,
+  "nonstandard_codes_with_positive_lines": [
+    {
+      "stock_code": "M",
+      "rows": 856,
+      "customers": 438,
+      "positive_amount_gbp": 339614.89
+    },
+    {
+      "stock_code": "DOT",
+      "rows": 1415,
+      "customers": 1,
+      "positive_amount_gbp": 309854.11
+    },
+    {
+      "stock_code": "POST",
+      "rows": 1851,
+      "customers": 405,
+      "positive_amount_gbp": 125682.42
+    },
+    {
+      "stock_code": "AMAZONFEE",
+      "rows": 3,
+      "customers": 0,
+      "positive_amount_gbp": 20467.8
+    },
+    {
+      "stock_code": "C2",
+      "rows": 267,
+      "customers": 45,
+      "positive_amount_gbp": 13426.0
+    },
+    {
+      "stock_code": "B",
+      "rows": 1,
+      "customers": 0,
+      "positive_amount_gbp": 11062.06
+    },
+    {
+      "stock_code": "ADJUST",
+      "rows": 36,
+      "customers": 25,
+      "positive_amount_gbp": 8897.929999999998
+    },
+    {
+      "stock_code": "ADJUST2",
+      "rows": 3,
+      "customers": 3,
+      "positive_amount_gbp": 731.0500000000001
+    },
+    {
+      "stock_code": "gift_0001_30",
+      "rows": 24,
+      "customers": 0,
+      "positive_amount_gbp": 610.09
+    },
+    {
+      "stock_code": "BANK CHARGES",
+      "rows": 34,
+      "customers": 19,
+      "positive_amount_gbp": 519.241
+    },
+    {
+      "stock_code": "gift_0001_20",
+      "rows": 26,
+      "customers": 0,
+      "positive_amount_gbp": 471.06
+    },
+    {
+      "stock_code": "D",
+      "rows": 5,
+      "customers": 5,
+      "positive_amount_gbp": 397.89
+    },
+    {
+      "stock_code": "DCGSSGIRL",
+      "rows": 23,
+      "customers": 0,
+      "positive_amount_gbp": 295.63
+    },
+    {
+      "stock_code": "DCGS0076",
+      "rows": 14,
+      "customers": 0,
+      "positive_amount_gbp": 275.96
+    },
+    {
+      "stock_code": "gift_0001_50",
+      "rows": 6,
+      "customers": 0,
+      "positive_amount_gbp": 253.59
+    },
+    {
+      "stock_code": "DCGSSBOY",
+      "rows": 21,
+      "customers": 0,
+      "positive_amount_gbp": 251.35
+    },
+    {
+      "stock_code": "TEST001",
+      "rows": 9,
+      "customers": 2,
+      "positive_amount_gbp": 225.0
+    },
+    {
+      "stock_code": "gift_0001_40",
+      "rows": 5,
+      "customers": 0,
+      "positive_amount_gbp": 166.09
+    },
+    {
+      "stock_code": "S",
+      "rows": 3,
+      "customers": 0,
+      "positive_amount_gbp": 136.85
+    },
+    {
+      "stock_code": "gift_0001_10",
+      "rows": 14,
+      "customers": 0,
+      "positive_amount_gbp": 126.21
+    },
+    {
+      "stock_code": "DCGS0069",
+      "rows": 5,
+      "customers": 0,
+      "positive_amount_gbp": 80.31
+    },
+    {
+      "stock_code": "gift_0001_80",
+      "rows": 1,
+      "customers": 0,
+      "positive_amount_gbp": 69.56
+    },
+    {
+      "stock_code": "DCGS0004",
+      "rows": 4,
+      "customers": 0,
+      "positive_amount_gbp": 67.94
+    },
+    {
+      "stock_code": "gift_0001_70",
+      "rows": 1,
+      "customers": 0,
+      "positive_amount_gbp": 59.57
+    },
+    {
+      "stock_code": "DCGS0058",
+      "rows": 30,
+      "customers": 0,
+      "positive_amount_gbp": 34.82
+    },
+    {
+      "stock_code": "DCGS0003",
+      "rows": 13,
+      "customers": 0,
+      "positive_amount_gbp": 32.589999999999996
+    },
+    {
+      "stock_code": "DCGS0070",
+      "rows": 2,
+      "customers": 0,
+      "positive_amount_gbp": 25.44
+    },
+    {
+      "stock_code": "DCGS0072",
+      "rows": 3,
+      "customers": 0,
+      "positive_amount_gbp": 20.68
+    },
+    {
+      "stock_code": "DCGS0066N",
+      "rows": 2,
+      "customers": 0,
+      "positive_amount_gbp": 17.3
+    },
+    {
+      "stock_code": "DCGS0068",
+      "rows": 2,
+      "customers": 0,
+      "positive_amount_gbp": 17.12
+    },
+    {
+      "stock_code": "m",
+      "rows": 5,
+      "customers": 0,
+      "positive_amount_gbp": 15.049999999999999
+    },
+    {
+      "stock_code": "SP1002",
+      "rows": 2,
+      "customers": 2,
+      "positive_amount_gbp": 14.75
+    },
+    {
+      "stock_code": "DCGS0037",
+      "rows": 1,
+      "customers": 0,
+      "positive_amount_gbp": 12.72
+    },
+    {
+      "stock_code": "DCGS0075",
+      "rows": 1,
+      "customers": 0,
+      "positive_amount_gbp": 12.72
+    },
+    {
+      "stock_code": "DCGS0041",
+      "rows": 1,
+      "customers": 0,
+      "positive_amount_gbp": 5.06
+    },
+    {
+      "stock_code": "DCGS0044",
+      "rows": 1,
+      "customers": 0,
+      "positive_amount_gbp": 2.57
+    },
+    {
+      "stock_code": "DCGS0062",
+      "rows": 1,
+      "customers": 0,
+      "positive_amount_gbp": 2.51
+    },
+    {
+      "stock_code": "TEST002",
+      "rows": 1,
+      "customers": 1,
+      "positive_amount_gbp": 1.0
+    },
+    {
+      "stock_code": "PADS",
+      "rows": 17,
+      "customers": 15,
+      "positive_amount_gbp": 0.017
+    }
+  ],
+  "notes": [
+    "Preview de contrato, no dataset limpio aprobado.",
+    "Importes positivos históricos no son margen, revenue neto ni efecto de campaña.",
+    "Patrón de código estándar delimita población operacional; no prueba semántica de mercancía."
+  ]
+}

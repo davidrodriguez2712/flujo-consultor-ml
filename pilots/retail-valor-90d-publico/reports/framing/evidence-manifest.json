@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "scope": "Paquete Framing propuesto y copias históricas de contratos/planes; excluye paths vivos y estado mutable.",
+  "files": {
+    "reports/discovery/evidence-manifest-02.json": {
+      "sha256": "e9a0cb4484cc7d4e6a8b087f75b3ce00371e736e456fb2ac4dd84876707e38bb",
+      "bytes": 7568
+    },
+    "reports/discovery/human-approval.json": {
+      "sha256": "247fc478ea03d74e9e2469d4663f47e9f6c579592b6cd544dafad2ab52435b69",
+      "bytes": 503
+    },
+    "reports/framing/acos-commands.json": {
+      "sha256": "44ce05c95d156a7cb7b63e9eb945414d3425684ada716ebeb1e06a3b269cb6a8",
+      "bytes": 246
+    },
+    "reports/framing/acos-next.json": {
+      "sha256": "5d9f9d318d78a01c3a0bc8305b14b01c6de1de2b2e02546d28da5d71482993e4",
+      "bytes": 11210
+    },
+    "reports/framing/acos-status.json": {
+      "sha256": "b848d1af659e40f60fa8c931b3d003cb7eecfeb574266821f3e3307249f894b8",
+      "bytes": 539
+    },
+    "reports/framing/acos-validate.json": {
+      "sha256": "b9afd5afce9b7af05ca91d57607b1b16ef9258aabbc9603ec0e056de3a09a2ac",
+      "bytes": 193
+    },
+    "reports/framing/coverage-preview.json": {
+      "sha256": "371a2af154b8ed68ee94f3e23a0bdd2dad0293d766bb4e1626fe9157e80e3647",
+      "bytes": 6077
+    },
+    "reports/framing/coverage-preview.log": {
+      "sha256": "7580b6f6bd7e004c38f5afb3595736373e5225756a2b714d249d5f151cbb0b55",
+      "bytes": 1309
+    },
+    "reports/framing/freeze-incident.json": {
+      "sha256": "1f46f119694d5ef1a3c2ecbdede4fcaa0bf533c731219cab5e97a0382d11d076",
+      "bytes": 1231
+    },
+    "reports/framing/frozen/analysis/analysis_plan.md": {
+      "sha256": "c1467b18e5870b4ae5b9926d5a1aa555d4839df91f092cdcd430244abb98d314",
+      "bytes": 697
+    },
+    "reports/framing/frozen/analysis/selection_plan.md": {
+      "sha256": "758119866555b1aea73aaf787215d3f56c53cab56ef50120e68a464535b31733",
+      "bytes": 751
+    },
+    "reports/framing/frozen/data/data_contract.yaml": {
+      "sha256": "89f10b639e39a72d73d411e345e3bfae9727d3ddf3b1883bca5e44ed057e4868",
+      "bytes": 1629
+    },
+    "reports/framing/frozen/framing/framing.yaml": {
+      "sha256": "c1055c4c560fa9184122978c91839a7705c8d6c397791e790678a6f811a21d04",
+      "bytes": 808
+    },
+    "reports/framing/frozen/framing/retail_contract.yaml": {
+      "sha256": "0e537ce003ac0c125d89f5a0aa301f3c29a09316f3e90d985a4b82cc642c6ab4",
+      "bytes": 4889
+    },
+    "reports/framing/review.md": {
+      "sha256": "fb414a01ac7fbd9aa2cec01527153bddb81829652308bfb7be8e65cc9866661d",
+      "bytes": 3944
+    },
+    "reports/framing/tests-source.log": {
+      "sha256": "9f97bb226299f07535cd455323489a2330604d563a8773b883eb9a0f9a8b1bbd",
+      "bytes": 98
+    },
+    "reports/framing/tests-source.xml": {
+      "sha256": "6b1d64bc17a2b1715ca07f63b1f0796b2ba562dc2163b2d6b31ac4f412be61e2",
+      "bytes": 1695
+    },
+    "reports/framing/verification.json": {
+      "sha256": "932250cb9afe62e9177c872f32a5a972fdf8676e451515e234bbcbce0a0c9ac6",
+      "bytes": 444
+    }
+  }
+}

@@ -1,0 +1,521 @@
+FFFFFFFFFFFFFFFFFFFFFFFF                                                 [100%]
+=================================== FAILURES ===================================
+______ test_fit_rejects_unavailable_or_invalid_training_inputs[changes0] _______
+
+changes = {'label_available_at': '2025-01-02'}
+
+    @pytest.mark.parametrize('changes',[
+        {'label_available_at':'2025-01-02'}, {'scoring_at':'2025-01-01'},
+        {'label_status':'pending','target':None},{'target':True},
+        {'history_available_at':'2024-06-02'}, {'debt_to_income':'nan'}])
+    def test_fit_rejects_unavailable_or_invalid_training_inputs(changes):
+>       with pytest.raises(ValueError):code().fit([row(**changes)],'2025-01-01')
+                                       ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+______ test_fit_rejects_unavailable_or_invalid_training_inputs[changes1] _______
+
+changes = {'scoring_at': '2025-01-01'}
+
+    @pytest.mark.parametrize('changes',[
+        {'label_available_at':'2025-01-02'}, {'scoring_at':'2025-01-01'},
+        {'label_status':'pending','target':None},{'target':True},
+        {'history_available_at':'2024-06-02'}, {'debt_to_income':'nan'}])
+    def test_fit_rejects_unavailable_or_invalid_training_inputs(changes):
+>       with pytest.raises(ValueError):code().fit([row(**changes)],'2025-01-01')
+                                       ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+______ test_fit_rejects_unavailable_or_invalid_training_inputs[changes2] _______
+
+changes = {'label_status': 'pending', 'target': None}
+
+    @pytest.mark.parametrize('changes',[
+        {'label_available_at':'2025-01-02'}, {'scoring_at':'2025-01-01'},
+        {'label_status':'pending','target':None},{'target':True},
+        {'history_available_at':'2024-06-02'}, {'debt_to_income':'nan'}])
+    def test_fit_rejects_unavailable_or_invalid_training_inputs(changes):
+>       with pytest.raises(ValueError):code().fit([row(**changes)],'2025-01-01')
+                                       ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+______ test_fit_rejects_unavailable_or_invalid_training_inputs[changes3] _______
+
+changes = {'target': True}
+
+    @pytest.mark.parametrize('changes',[
+        {'label_available_at':'2025-01-02'}, {'scoring_at':'2025-01-01'},
+        {'label_status':'pending','target':None},{'target':True},
+        {'history_available_at':'2024-06-02'}, {'debt_to_income':'nan'}])
+    def test_fit_rejects_unavailable_or_invalid_training_inputs(changes):
+>       with pytest.raises(ValueError):code().fit([row(**changes)],'2025-01-01')
+                                       ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+______ test_fit_rejects_unavailable_or_invalid_training_inputs[changes4] _______
+
+changes = {'history_available_at': '2024-06-02'}
+
+    @pytest.mark.parametrize('changes',[
+        {'label_available_at':'2025-01-02'}, {'scoring_at':'2025-01-01'},
+        {'label_status':'pending','target':None},{'target':True},
+        {'history_available_at':'2024-06-02'}, {'debt_to_income':'nan'}])
+    def test_fit_rejects_unavailable_or_invalid_training_inputs(changes):
+>       with pytest.raises(ValueError):code().fit([row(**changes)],'2025-01-01')
+                                       ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+______ test_fit_rejects_unavailable_or_invalid_training_inputs[changes5] _______
+
+changes = {'debt_to_income': 'nan'}
+
+    @pytest.mark.parametrize('changes',[
+        {'label_available_at':'2025-01-02'}, {'scoring_at':'2025-01-01'},
+        {'label_status':'pending','target':None},{'target':True},
+        {'history_available_at':'2024-06-02'}, {'debt_to_income':'nan'}])
+    def test_fit_rejects_unavailable_or_invalid_training_inputs(changes):
+>       with pytest.raises(ValueError):code().fit([row(**changes)],'2025-01-01')
+                                       ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+____ test_exact_cutoff_label_is_admissible_and_prediction_ignores_outcomes _____
+
+    def test_exact_cutoff_label_is_admissible_and_prediction_ignores_outcomes():
+>       c=code();model=c.fit([row(label_available_at='2025-01-01'),row('B',1,bureau_score='500')],'2025-01-01')
+          ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+__________ test_predict_does_not_fit_preprocessing_or_require_labels ___________
+
+    def test_predict_does_not_fit_preprocessing_or_require_labels():
+>       c=code();model=c.fit([row(monthly_income='1000'),row('B',1,monthly_income='3000')],'2025-01-01')
+          ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+___________ test_numeric_baseline_learns_without_identifier_features ___________
+
+    def test_numeric_baseline_learns_without_identifier_features():
+>       c=code();train=[row(str(i),int(i>=10),bureau_score=str(800 if i<10 else 400)) for i in range(20)]
+          ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+__________________ test_hand_checked_brier_and_auc_with_ties ___________________
+
+    def test_hand_checked_brier_and_auc_with_ties():
+>       c=code();rows=[row('A',0),row('B',1),row('C',1)]
+          ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+___ test_auc_requires_both_classes_and_empty_metrics_are_undefined[targets0] ___
+
+targets = []
+
+    @pytest.mark.parametrize('targets',[[],[0,0],[1,1]])
+    def test_auc_requires_both_classes_and_empty_metrics_are_undefined(targets):
+>       c=code();rows=[row(str(i),v) for i,v in enumerate(targets)]
+          ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+___ test_auc_requires_both_classes_and_empty_metrics_are_undefined[targets1] ___
+
+targets = [0, 0]
+
+    @pytest.mark.parametrize('targets',[[],[0,0],[1,1]])
+    def test_auc_requires_both_classes_and_empty_metrics_are_undefined(targets):
+>       c=code();rows=[row(str(i),v) for i,v in enumerate(targets)]
+          ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+___ test_auc_requires_both_classes_and_empty_metrics_are_undefined[targets2] ___
+
+targets = [1, 1]
+
+    @pytest.mark.parametrize('targets',[[],[0,0],[1,1]])
+    def test_auc_requires_both_classes_and_empty_metrics_are_undefined(targets):
+>       c=code();rows=[row(str(i),v) for i,v in enumerate(targets)]
+          ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+________________ test_tied_ranking_capacity_and_label_coverage _________________
+
+    def test_tied_ranking_capacity_and_label_coverage():
+>       c=code();rows=[row('B',0),row('A',1),row('C',1)]
+          ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+__________________ test_zero_capacity_and_no_positive_metrics __________________
+
+    def test_zero_capacity_and_no_positive_metrics():
+>       c=code();scores=[{'application_id':'A','score':.5}]
+          ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+___________ test_metrics_reject_invalid_scores_or_alignment[scores0] ___________
+
+scores = [{'application_id': 'A', 'score': nan}]
+
+    @pytest.mark.parametrize('scores',[
+        [{'application_id':'A','score':float('nan')}],
+        [{'application_id':'Z','score':.1}],
+        [{'application_id':'A','score':1.1}],
+        [{'application_id':'A','score':.1},{'application_id':'A','score':.2}],
+    ])
+    def test_metrics_reject_invalid_scores_or_alignment(scores):
+>       with pytest.raises(ValueError):code().metrics(scores,[row()])
+                                       ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+___________ test_metrics_reject_invalid_scores_or_alignment[scores1] ___________
+
+scores = [{'application_id': 'Z', 'score': 0.1}]
+
+    @pytest.mark.parametrize('scores',[
+        [{'application_id':'A','score':float('nan')}],
+        [{'application_id':'Z','score':.1}],
+        [{'application_id':'A','score':1.1}],
+        [{'application_id':'A','score':.1},{'application_id':'A','score':.2}],
+    ])
+    def test_metrics_reject_invalid_scores_or_alignment(scores):
+>       with pytest.raises(ValueError):code().metrics(scores,[row()])
+                                       ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+___________ test_metrics_reject_invalid_scores_or_alignment[scores2] ___________
+
+scores = [{'application_id': 'A', 'score': 1.1}]
+
+    @pytest.mark.parametrize('scores',[
+        [{'application_id':'A','score':float('nan')}],
+        [{'application_id':'Z','score':.1}],
+        [{'application_id':'A','score':1.1}],
+        [{'application_id':'A','score':.1},{'application_id':'A','score':.2}],
+    ])
+    def test_metrics_reject_invalid_scores_or_alignment(scores):
+>       with pytest.raises(ValueError):code().metrics(scores,[row()])
+                                       ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+___________ test_metrics_reject_invalid_scores_or_alignment[scores3] ___________
+
+scores = [{'application_id': 'A', 'score': 0.1}, {'application_id': 'A', 'score': 0.2}]
+
+    @pytest.mark.parametrize('scores',[
+        [{'application_id':'A','score':float('nan')}],
+        [{'application_id':'Z','score':.1}],
+        [{'application_id':'A','score':1.1}],
+        [{'application_id':'A','score':.1},{'application_id':'A','score':.2}],
+    ])
+    def test_metrics_reject_invalid_scores_or_alignment(scores):
+>       with pytest.raises(ValueError):code().metrics(scores,[row()])
+                                       ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+_____________________ test_metrics_refuse_missing_targets ______________________
+
+    def test_metrics_refuse_missing_targets():
+>       with pytest.raises(ValueError):code().metrics([{'application_id':'A','score':.1}],[row(target=None,label_status='pending')])
+                                       ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:89: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+________ test_development_loader_filters_future_targets_before_parsing _________
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1558/test_development_loader_filter0')
+
+    def test_development_loader_filters_future_targets_before_parsing(tmp_path):
+>       c=code();genpath=Path(__file__).with_name('generate_synthetic_data.py')
+          ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+_____________ test_loader_rejects_duplicate_application_join_keys ______________
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1558/test_loader_rejects_duplicate_0')
+
+    def test_loader_rejects_duplicate_application_join_keys(tmp_path):
+>       c=code();genpath=Path(__file__).with_name('generate_synthetic_data.py')
+          ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+_ test_development_run_matches_reference_population_and_does_not_evaluate_final _
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1558/test_development_run_matches_r0')
+
+    def test_development_run_matches_reference_population_and_does_not_evaluate_final(tmp_path):
+>       c=code();root=fixture_project(tmp_path);freeze=freeze_file(c,root)
+          ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+_____________ test_run_refuses_changed_input_before_writing_output _____________
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1558/test_run_refuses_changed_input0')
+
+    def test_run_refuses_changed_input_before_writing_output(tmp_path):
+>       c=code();root=fixture_project(tmp_path);freeze=freeze_file(c,root)
+          ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:139: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_baseline'
+E       AssertionError: Falta implementar credit_baseline
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_baseline.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:10: AssertionError
+=========================== short test summary info ============================
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_fit_rejects_unavailable_or_invalid_training_inputs[changes0]
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_fit_rejects_unavailable_or_invalid_training_inputs[changes1]
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_fit_rejects_unavailable_or_invalid_training_inputs[changes2]
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_fit_rejects_unavailable_or_invalid_training_inputs[changes3]
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_fit_rejects_unavailable_or_invalid_training_inputs[changes4]
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_fit_rejects_unavailable_or_invalid_training_inputs[changes5]
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_exact_cutoff_label_is_admissible_and_prediction_ignores_outcomes
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_predict_does_not_fit_preprocessing_or_require_labels
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_numeric_baseline_learns_without_identifier_features
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_hand_checked_brier_and_auc_with_ties
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_auc_requires_both_classes_and_empty_metrics_are_undefined[targets0]
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_auc_requires_both_classes_and_empty_metrics_are_undefined[targets1]
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_auc_requires_both_classes_and_empty_metrics_are_undefined[targets2]
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_tied_ranking_capacity_and_label_coverage
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_zero_capacity_and_no_positive_metrics
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_metrics_reject_invalid_scores_or_alignment[scores0]
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_metrics_reject_invalid_scores_or_alignment[scores1]
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_metrics_reject_invalid_scores_or_alignment[scores2]
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_metrics_reject_invalid_scores_or_alignment[scores3]
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_metrics_refuse_missing_targets
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_development_loader_filters_future_targets_before_parsing
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_loader_rejects_duplicate_application_join_keys
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_development_run_matches_reference_population_and_does_not_evaluate_final
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_run_refuses_changed_input_before_writing_output
+24 failed in 0.13s

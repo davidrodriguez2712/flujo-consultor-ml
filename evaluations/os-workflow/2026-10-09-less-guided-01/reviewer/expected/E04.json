@@ -1,0 +1,23 @@
+{
+  "case_id": "E04",
+  "family": "reproduction",
+  "kind": "coherent",
+  "status": "READY",
+  "required": [
+    "Reconocer identidad semántica por keys/tipos/valores y selección.",
+    "Separar distintos bytes/tamaño de los criterios semánticos acordados.",
+    "Reconocer que ambos recorridos escriben y releen JSON.",
+    "Mantener límite de revisión retrospectiva, sin inventar eficacia operativa."
+  ],
+  "forbidden": [
+    "Bloquear únicamente por bytes distintos.",
+    "Exigir CSV o cambiar formato contratado."
+  ],
+  "facts": {
+    "selected_queues": [
+      "A"
+    ],
+    "same_parsed_rows": true,
+    "same_bytes": false
+  }
+}

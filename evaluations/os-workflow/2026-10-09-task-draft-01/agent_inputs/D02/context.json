@@ -1,0 +1,6 @@
+{
+  "industry": "Mantenimiento industrial",
+  "decision": "Preparar revisión humana de lecturas inusuales sin confirmar causas",
+  "requested_action": "draft_task",
+  "scope": "Propuesta de revisión, sin diagnóstico físico ni acciones sobre equipos"
+}

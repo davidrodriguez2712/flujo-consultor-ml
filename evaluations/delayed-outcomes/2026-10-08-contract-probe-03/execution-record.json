@@ -1,0 +1,10 @@
+{
+  "started_at": "2026-10-08T10:19:24.195225+00:00",
+  "cli_version": "2.1.294 (Claude Code)",
+  "driver_sha256": "3d1d6144f1f15d717919c68b86f12a9cdce3f1572df4e666777f0a9f4caa7c18",
+  "argv": [
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python",
+    "/tmp/run_temporal03.py"
+  ],
+  "review": "Auto revisión del autor antes de freeze; sin reviewer externo."
+}

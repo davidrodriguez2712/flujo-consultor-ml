@@ -1,0 +1,8 @@
+{
+  "status": "APPROVED",
+  "by": "David",
+  "user_reply": "apruebo",
+  "scope": "Preparación de seis casos y doce payloads conforme al diseño presentado en conversación; verificación local sin llamadas API",
+  "execution_authorized": false,
+  "api_budget_authorized_usd": null
+}

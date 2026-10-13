@@ -1,0 +1,46 @@
+[
+  {
+    "path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-01/ledger.json",
+    "sha256": "6d9b1d2e96a3735c6d17e8ed45bd5ca4e42954d319fa069860e0a60130628228"
+  },
+  {
+    "path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-02/ledger.json",
+    "sha256": "d5949634c26aa9f1cfb6b076e70847ecffc2985cc50194113b89a73787bb5938"
+  },
+  {
+    "path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/ledger.json",
+    "sha256": "6fa9448a18a232fa9780ec77a08519c586e956468e292fe443bedd98fdcada3f"
+  },
+  {
+    "path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-04/ledger.json",
+    "sha256": "92d437db1e9f958fefc2de8e9cfe9bf7d925c3f1fe5ceeea2222bca540f778dc"
+  },
+  {
+    "path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/ledger.json",
+    "sha256": "722d4a937f97101aea3604aa265dea8d059705f962f349a38cdf4142e803b038"
+  },
+  {
+    "path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-11-detect-leakage-v02/wording-results-01/ledger.json",
+    "sha256": "28a394b66ea8e956d49565352bd99a4b77955d07b1fac74b3ffc57c44ae42323"
+  },
+  {
+    "path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-11-detect-leakage-v02/runs/native-01/ledger.json",
+    "sha256": "246a7abec6232d21fb5eba781ab175bf715072314216c15dc14ef26d2a3c3e42"
+  },
+  {
+    "path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/ledger.json",
+    "sha256": "3d613b79ede046356b0e7e1266381be996e0f6c5375f1f51cc4f76593200568b"
+  },
+  {
+    "path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-config03/runs/real-01/ledger.json",
+    "sha256": "71340764c8c7fcb48fb6090b4bade104be0f622b096672c079b5e87bfb307600"
+  },
+  {
+    "path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v021/micro-results-01/ledger.json",
+    "sha256": "9c4da981b68c732e338d52b633463c2e5c2279c797444130b17963f22583f9a3"
+  },
+  {
+    "path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/micro-results-01/ledger.json",
+    "sha256": "4a4bd27f3f2f3cf3d8113ea32a153c7f87914a608808194b056664767e2435f3"
+  }
+]

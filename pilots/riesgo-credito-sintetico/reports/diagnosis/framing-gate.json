@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "findings": [],
+  "evidence": [
+    "framing/review.md",
+    "framing/framing.yaml",
+    "framing/metrics.yaml",
+    "framing/scope.md",
+    "framing/acceptance.md"
+  ]
+}

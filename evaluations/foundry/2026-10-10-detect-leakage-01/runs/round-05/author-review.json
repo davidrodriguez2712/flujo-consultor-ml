@@ -1,0 +1,100 @@
+{
+  "reviewer": "Autor de la preparación; no independiente ni ciego",
+  "status": "NO_FAVORABLE_JOINT_SIGNAL",
+  "evaluated_cohort": "round05 solo; otros runs no agrupados",
+  "case_content": [
+    {
+      "case": "L01",
+      "baseline": "PASS",
+      "treatment": "PASS",
+      "basis": "Ambas detectan post-event recovered_kwh con evidencia, conservan historial válido y límites. Distinción feature/outcome implícita en baseline; explícita exclusión de target en treatment. No exigir frase idéntica."
+    },
+    {
+      "case": "L02",
+      "baseline": "FAIL",
+      "treatment": "PASS_WITH_NONCRITICAL_OBSERVATIONS",
+      "basis": "Baseline H5 afirma que ventana target train no se solapa con feature evaluation: falso, ambas cubren parte de comienzos de mayo. Treatment evita ese error y no condena el split; cautela sobre entidades demasiado genérica, sin falso positivo confirmado."
+    },
+    {
+      "case": "L03",
+      "baseline": "PASS",
+      "treatment": "PASS_WITH_NONCRITICAL_OBSERVATIONS",
+      "basis": "Ambas reconocen que export no determina disponibilidad y proponen evidencia/escenarios. Baseline exclusión provisional no permanente. Treatment debe añadir disponibilidad efectiva a su escenario positivo, ya solicitada en preguntas; no confirma seguridad actual."
+    }
+  ],
+  "core_format_and_traceability": {
+    "baseline_pass": 3,
+    "treatment_pass": 0,
+    "treatment_failure": "Las tres omiten condición baseline/treatment en frontmatter; skill/version no reemplazan el campo pedido. Version L03 anotada y namespaced aceptados semánticamente. Evidencia/Verificaciones son títulos equivalentes en baselineL02."
+  },
+  "brevity_separate": {
+    "measurement": "Palabras por separación whitespace del archivo completo; criterio operativo añadido en cohort03, no confundir con eficacia esencial",
+    "max_words": 700,
+    "baseline_pass": 1,
+    "treatment_pass": 0
+  },
+  "content_totals": {
+    "baseline_pass": 2,
+    "treatment_pass": 3,
+    "new_confirmed_false_positive_treatment": 0
+  },
+  "joint_core_totals": {
+    "baseline_pass": 2,
+    "treatment_pass": 0
+  },
+  "joint_with_brevity": {
+    "baseline_pass": 1,
+    "treatment_pass": 0
+  },
+  "decision": "Mantener experimental supervisada; proponer cambios y revisión independiente antes de nueva evaluación. No promoción automática ni eficacia generalizada.",
+  "cost_by_round": [
+    {
+      "round": "round-01",
+      "requests": 1,
+      "cost_usd": 0.000689075,
+      "all_usage_known": true
+    },
+    {
+      "round": "round-02",
+      "requests": 11,
+      "cost_usd": 0.017535290000000002,
+      "all_usage_known": true
+    },
+    {
+      "round": "round-03",
+      "requests": 12,
+      "cost_usd": 0.01059856,
+      "all_usage_known": true
+    },
+    {
+      "round": "round-04",
+      "requests": 10,
+      "cost_usd": 0.008666675,
+      "all_usage_known": true
+    },
+    {
+      "round": "round-05",
+      "requests": 27,
+      "cost_usd": 0.03307565,
+      "all_usage_known": true
+    }
+  ],
+  "total_paid_provider_requests": 61,
+  "estimated_total_usd": 0.07056525,
+  "budget_ceiling_usd": 0.1,
+  "benchmark_costs": {
+    "baseline": 0.01293594,
+    "treatment": 0.017738335,
+    "smoke": 0.0024013750000000003,
+    "treatment_vs_baseline_percent": 37.124437806607034
+  },
+  "benchmark_seconds": {
+    "baseline": 76.925087,
+    "treatment": 84.598916
+  },
+  "all_six_report_hashes_and_dates_verified": true,
+  "treatment_native_invocation": 3,
+  "baseline_native_invocation": 0,
+  "skill_and_expected_unchanged": true,
+  "foundry_modified": false
+}

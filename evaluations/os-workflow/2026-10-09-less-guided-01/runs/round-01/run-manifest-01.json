@@ -1,0 +1,81 @@
+{
+  "id": "less-guided-round-01-stopped",
+  "scope": "Smoke PASS y primer intento benchmark fallido; sin reintentos. Sin resultados comparables.",
+  "files": [
+    {
+      "path": "E01-baseline/metadata.json",
+      "sha256": "400762ab2d576b325ff48c51beaecbf14ae5ed1abde7cf02b6551398e1976e7c",
+      "bytes": 1381
+    },
+    {
+      "path": "E01-baseline/payload.txt",
+      "sha256": "a9cf93511443139ce2eb1319ca063260f7ab49c24f1dd18baf1f48b76d98c16e",
+      "bytes": 8927
+    },
+    {
+      "path": "E01-baseline/result.txt",
+      "sha256": "536077aa5c5ab80094b49b6014d34030c76c8a4e0ff97ae82983e10d650c7f1b",
+      "bytes": 74
+    },
+    {
+      "path": "E01-baseline/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E01-baseline/stdout.txt",
+      "sha256": "53b0926c9dfb0320e1c0e4962c4e510d4ed8557e97e7276cc32b1760fcbdd6b5",
+      "bytes": 1590
+    },
+    {
+      "path": "budget-ledger.json",
+      "sha256": "fe2758f2eb56ee24e75f9c70898f6813a0875d457ac7862958fc3b566f94d0f4",
+      "bytes": 1406
+    },
+    {
+      "path": "diagnostic-review.json",
+      "sha256": "4197efe38e4af68fc9b8c489230f7c14d98486b3ef6bd6a2e960ef0df08c693f",
+      "bytes": 1711
+    },
+    {
+      "path": "round-status.json",
+      "sha256": "23aa6512043f915ad56513320e3c973a0290763620513c3c9b4ad50bced2d63c",
+      "bytes": 618
+    },
+    {
+      "path": "runtime-amendment.json",
+      "sha256": "c364513327dcc8945bcd96f995a3feb9a5b9633412f456b458ce09dc44907765",
+      "bytes": 616
+    },
+    {
+      "path": "smoke/checks.json",
+      "sha256": "7ae513951241c25ef7f953b8d346208c37ac68f6e9b3340c6f7569f493ce6ea9",
+      "bytes": 256
+    },
+    {
+      "path": "smoke/metadata.json",
+      "sha256": "33c916a960a0b6b0e2bf208b628d17d20d11a906717b69db71e695e4927fea76",
+      "bytes": 1372
+    },
+    {
+      "path": "smoke/payload.txt",
+      "sha256": "d69dbafa988d9c4d8bdf3f2d91c57c84ad33f0fb9b242ccbeb665e6381d5aca6",
+      "bytes": 280
+    },
+    {
+      "path": "smoke/result.txt",
+      "sha256": "c07324d75418a64579772296daf89c40b648129951eb9ca4c028084fd85f9df4",
+      "bytes": 146
+    },
+    {
+      "path": "smoke/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "smoke/stdout.txt",
+      "sha256": "9814156c7a68d8f24a48c6799d7588f20b97b34ef5ca768f10fe3f21b31fd549",
+      "bytes": 1747
+    }
+  ]
+}

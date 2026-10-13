@@ -1,0 +1,1 @@
+Reporte simulado; no eficacia de skill.

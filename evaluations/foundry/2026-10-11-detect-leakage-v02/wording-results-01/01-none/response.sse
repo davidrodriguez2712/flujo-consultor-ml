@@ -1,0 +1,222 @@
+event: message_start
+data: {"type":"message_start","message":{"model":"claude-haiku-5-5","id":"msg_011Cfwj2qvajghY2CwRYKSaR","type":"message","role":"assistant","content":[],"container":null,"stop_reason":null,"stop_sequence":null,"stop_details":null,"usage":{"input_tokens":441,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"output_tokens":4,"service_tier":"standard","inference_geo":"global"},"diagnostics":null}           }
+
+event: content_block_start
+data: {"type":"content_block_start","index":0,"content_block":{"type":"thinking","thinking":"","signature":""}         }
+
+event: ping
+data: {"type": "ping"}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":0,"delta":{"type":"thinking_delta","thinking":""} }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":0,"delta":{"type":"signature_delta","signature":"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"}}
+
+event: content_block_stop
+data: {"type":"content_block_stop","index":0              }
+
+event: content_block_start
+data: {"type":"content_block_start","index":1,"content_block":{"type":"text","text":""}               }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"---"}            }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\nskill: none\nversion:"}      }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" null\nfecha: 2"}        }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"026-10-11\nestado"}       }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"_de_auditoria:"}  }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" no concluyente\ncondic"}     }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ion: rehearsal"}            }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\ndecision_id: RET-"}          }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"01\ninputs: expedi"}               }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ente incrustado\n---"}          }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\n\n# Auditoría RET"}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"-01\n\n## Resumen"}    }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\nNo proc"}      }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ede priorizar of"}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ertas para cancelación en"}             }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" 7 días: el expedi"}      }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ente no contiene datos ev"}  }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"aluables.\n\n## H"}               }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"allazgos\n- No h"}          }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ay val"}    }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ores de usage_previous_"}   }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"30d "}             }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ni registros de ofertas"}      }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":".\n- No hay split,"}         }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" fit ni código real."}          }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\n- Sc"}         }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"oring al"}              }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" 2025-11-01T"} }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"08:00Z y"}      }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" "}     }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ventana previa dis"}   }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ponible des"}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"de 2025-10-31"}   }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"T23:00Z const"}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"an solo como parámetros"}               }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":", sin datos as"}            }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ociados.\n\n## Evid"}          }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"encia\nÚnicamente"}      }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" los metadatos del encarg"}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"o."}           }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" No hay dat"}      }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"os incrustados verificables"}    }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":".\n\n## Preguntas"}           }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" abiertas\n¿"}               }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"Cuál es la distribución"}               }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" de usage_previous_30"}      }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"d por oferta, y exist"}    }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"e un split temporal valid"}           }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ado an"}   }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"terior al scoring?"} }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\n\n## Recomendaciones"}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\n- Suspender la pri"}      }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"orización hasta recibir"}     }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" el expediente completo."}              }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\n- No atribuir validez"}  }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" "}        }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ni seguridad universal al"}           }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" scoring.\n\n## Lím"}         }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ites\nAuditoría s"}       }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"in herramientas ni f"}   }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"uentes externas."} }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" No evalúa calidad"}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" predictiva ni ses"}    }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"gos."}   }
+
+event: content_block_stop
+data: {"type":"content_block_stop","index":1             }
+
+event: message_delta
+data: {"type":"message_delta","delta":{"stop_reason":"end_turn","stop_sequence":null,"stop_details":null,"container":null},"usage":{"input_tokens":441,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":1167,"output_tokens_details":{"thinking_tokens":738}}    }
+
+event: message_stop
+data: {"type":"message_stop"         }
+

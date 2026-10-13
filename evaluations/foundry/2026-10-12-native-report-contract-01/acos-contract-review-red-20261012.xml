@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="7" skipped="0" tests="7" time="0.060" timestamp="2026-10-12T18:14:21.556986-05:00" hostname="Joels-Mac-Studio.local"><testcase classname="tests.test_foundry_report_contract" name="test_sections_inside_code_or_comment_do_not_satisfy_contract[```markdown\n{}\n```]" time="0.009"><failure message="assert not True">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2267/test_sections_inside_code_or_c0')
+wrapper = '```markdown\n{}\n```'
+
+    @pytest.mark.parametrize('wrapper', ['```markdown\n{}\n```', '~~~markdown\n{}\n~~~', '&lt;!--\n{}\n--&gt;'])
+    def test_sections_inside_code_or_comment_do_not_satisfy_contract(tmp_path, wrapper):
+        root, report, text = fixture(tmp_path)
+        front, body = text.split('---', 2)[1:]
+        report.write_text('---'+front+'---\n'+wrapper.format(body))
+        result = module().check_report_contract(root, report, 'Informe.', report_word_limit=500)
+&gt;       assert not result['success']
+E       assert not True
+
+tests/test_foundry_report_contract.py:129: AssertionError</failure></testcase><testcase classname="tests.test_foundry_report_contract" name="test_sections_inside_code_or_comment_do_not_satisfy_contract[~~~markdown\n{}\n~~~]" time="0.002"><failure message="assert not True">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2267/test_sections_inside_code_or_c1')
+wrapper = '~~~markdown\n{}\n~~~'
+
+    @pytest.mark.parametrize('wrapper', ['```markdown\n{}\n```', '~~~markdown\n{}\n~~~', '&lt;!--\n{}\n--&gt;'])
+    def test_sections_inside_code_or_comment_do_not_satisfy_contract(tmp_path, wrapper):
+        root, report, text = fixture(tmp_path)
+        front, body = text.split('---', 2)[1:]
+        report.write_text('---'+front+'---\n'+wrapper.format(body))
+        result = module().check_report_contract(root, report, 'Informe.', report_word_limit=500)
+&gt;       assert not result['success']
+E       assert not True
+
+tests/test_foundry_report_contract.py:129: AssertionError</failure></testcase><testcase classname="tests.test_foundry_report_contract" name="test_sections_inside_code_or_comment_do_not_satisfy_contract[&lt;!--\n{}\n--&gt;]" time="0.002"><failure message="assert not True">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2267/test_sections_inside_code_or_c2')
+wrapper = '&lt;!--\n{}\n--&gt;'
+
+    @pytest.mark.parametrize('wrapper', ['```markdown\n{}\n```', '~~~markdown\n{}\n~~~', '&lt;!--\n{}\n--&gt;'])
+    def test_sections_inside_code_or_comment_do_not_satisfy_contract(tmp_path, wrapper):
+        root, report, text = fixture(tmp_path)
+        front, body = text.split('---', 2)[1:]
+        report.write_text('---'+front+'---\n'+wrapper.format(body))
+        result = module().check_report_contract(root, report, 'Informe.', report_word_limit=500)
+&gt;       assert not result['success']
+E       assert not True
+
+tests/test_foundry_report_contract.py:129: AssertionError</failure></testcase><testcase classname="tests.test_foundry_report_contract" name="test_valid_sections_with_a_code_example_remain_valid" time="0.001"><failure message="assert False">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2267/test_valid_sections_with_a_cod0')
+
+    def test_valid_sections_with_a_code_example_remain_valid(tmp_path):
+        root, report, text = fixture(tmp_path)
+        text = text.replace('## Evidencia\n', '## Evidencia\n```python\n## Resumen\n# &lt;!-- literal de código\n```\n')
+        report.write_text(text)
+&gt;       assert module().check_report_contract(root, report, 'Informe.', report_word_limit=500)['success']
+E       assert False
+
+tests/test_foundry_report_contract.py:138: AssertionError</failure></testcase><testcase classname="tests.test_foundry_report_contract" name="test_bad_yaml_date_is_not_misreported_as_duplicate_key" time="0.002"><failure message="AssertionError: assert (not False and 'frontmatter:invalid' in ['frontmatter:duplicate'])">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2267/test_bad_yaml_date_is_not_misr0')
+
+    def test_bad_yaml_date_is_not_misreported_as_duplicate_key(tmp_path):
+        root, report, text = fixture(tmp_path)
+        report.write_text(text.replace('fecha: 2026-10-12', 'fecha: 2026-99-99'))
+        result = module().check_report_contract(root, report, 'Informe.', report_word_limit=500)
+&gt;       assert not result['success'] and 'frontmatter:invalid' in result['errors']
+E       AssertionError: assert (not False and 'frontmatter:invalid' in ['frontmatter:duplicate'])
+
+tests/test_foundry_report_contract.py:145: AssertionError</failure></testcase><testcase classname="tests.test_foundry_report_contract" name="test_corrupt_runtime_context_is_a_preserved_contract_failure" time="0.001"><failure message="json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2267/test_corrupt_runtime_context_i0')
+
+    def test_corrupt_runtime_context_is_a_preserved_contract_failure(tmp_path):
+        root, report, text = fixture(tmp_path)
+        (root/'.runtime/report-context.json').write_text('invalid-json')
+&gt;       result = module().check_report_contract(root, report, 'Informe.', report_word_limit=500)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_foundry_report_contract.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/evaluations/foundry_native_transport.py:68: in check_report_contract
+    context = json.loads((root/'.runtime/report-context.json').read_text())
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/miniconda3/lib/python3.13/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/miniconda3/lib/python3.13/json/decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;json.decoder.JSONDecoder object at 0x103d3be00&gt;, s = 'invalid-json'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+&gt;           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+/opt/miniconda3/lib/python3.13/json/decoder.py:363: JSONDecodeError</failure></testcase><testcase classname="tests.test_foundry_report_contract" name="test_input_symlink_is_rejected_before_hashing_external_bytes" time="0.002"><failure message="AssertionError: assert (not False and 'inputs:unsafe' in ['inputs:hash'])">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2267/test_input_symlink_is_rejected0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x10463ed70&gt;
+
+    def test_input_symlink_is_rejected_before_hashing_external_bytes(tmp_path,monkeypatch):
+        root, report, _ = fixture(tmp_path)
+        external=tmp_path/'private.txt';external.write_text('No autorizado')
+        data=root/'inputs/data.csv';data.unlink();data.symlink_to(external)
+        m=module();original=m.digest;hashed=[]
+        def observed_digest(path):
+            hashed.append(Path(path).resolve())
+            return original(path)
+        monkeypatch.setattr(m,'digest',observed_digest)
+        result=m.check_report_contract(root,report,'Informe.',report_word_limit=500)
+&gt;       assert not result['success'] and 'inputs:unsafe' in result['errors']
+E       AssertionError: assert (not False and 'inputs:unsafe' in ['inputs:hash'])
+
+tests/test_foundry_report_contract.py:167: AssertionError</failure></testcase></testsuite></testsuites>

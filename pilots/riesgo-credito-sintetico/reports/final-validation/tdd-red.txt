@@ -1,0 +1,188 @@
+FFFFFFFFF                                                                [100%]
+=================================== FAILURES ===================================
+__________ test_train_filters_late_labels_before_interpreting_target ___________
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1573/test_train_filters_late_labels0')
+
+    def test_train_filters_late_labels_before_interpreting_target(tmp_path):
+>       c=code();fixture(tmp_path)
+          ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_final.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_final'
+E       AssertionError: Falta implementar credit_final
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_final.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_final.py:12: AssertionError
+_________ test_scoring_does_not_load_outcomes_or_postdecision_features _________
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1573/test_scoring_does_not_load_out0')
+
+    def test_scoring_does_not_load_outcomes_or_postdecision_features(tmp_path):
+>       c=code();fixture(tmp_path)
+          ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_final.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_final'
+E       AssertionError: Falta implementar credit_final
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_final.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_final.py:12: AssertionError
+____ test_labels_available_at_evaluation_timestamp_and_missing_are_not_zero ____
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1573/test_labels_available_at_evalu0')
+
+    def test_labels_available_at_evaluation_timestamp_and_missing_are_not_zero(tmp_path):
+>       c=code();fixture(tmp_path)
+          ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_final.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_final'
+E       AssertionError: Falta implementar credit_final
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_final.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_final.py:12: AssertionError
+___ test_full_runner_scores_all_requests_but_evaluates_only_complete_labels ____
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1573/test_full_runner_scores_all_re0')
+
+    def test_full_runner_scores_all_requests_but_evaluates_only_complete_labels(tmp_path):
+>       c=code();fixture(tmp_path);f=freeze(c,tmp_path)
+          ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_final.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_final'
+E       AssertionError: Falta implementar credit_final
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_final.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_final.py:12: AssertionError
+_____ test_run_refuses_changed_inputs_without_writing_results[history.csv] _____
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1573/test_run_refuses_changed_input0')
+filename = 'history.csv'
+
+    @pytest.mark.parametrize('filename',['history.csv','outcomes.csv'])
+    def test_run_refuses_changed_inputs_without_writing_results(tmp_path,filename):
+>       c=code();fixture(tmp_path);f=freeze(c,tmp_path)
+          ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_final.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_final'
+E       AssertionError: Falta implementar credit_final
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_final.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_final.py:12: AssertionError
+____ test_run_refuses_changed_inputs_without_writing_results[outcomes.csv] _____
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1573/test_run_refuses_changed_input1')
+filename = 'outcomes.csv'
+
+    @pytest.mark.parametrize('filename',['history.csv','outcomes.csv'])
+    def test_run_refuses_changed_inputs_without_writing_results(tmp_path,filename):
+>       c=code();fixture(tmp_path);f=freeze(c,tmp_path)
+          ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_final.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_final'
+E       AssertionError: Falta implementar credit_final
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_final.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_final.py:12: AssertionError
+_______________________ test_run_refuses_changed_policy ________________________
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1573/test_run_refuses_changed_polic0')
+
+    def test_run_refuses_changed_policy(tmp_path):
+>       c=code();fixture(tmp_path);f=freeze(c,tmp_path)
+          ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_final.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_final'
+E       AssertionError: Falta implementar credit_final
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_final.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_final.py:12: AssertionError
+_____________________ test_duplicate_join_key_is_rejected ______________________
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1573/test_duplicate_join_key_is_rej0')
+
+    def test_duplicate_join_key_is_rejected(tmp_path):
+>       c=code();fixture(tmp_path)
+          ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_final.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_final'
+E       AssertionError: Falta implementar credit_final
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_final.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_final.py:12: AssertionError
+_______________ test_labels_must_match_requested_application_ids _______________
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1573/test_labels_must_match_request0')
+
+    def test_labels_must_match_requested_application_ids(tmp_path):
+>       c=code();fixture(tmp_path)
+          ^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_final.py:104: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def code():
+>       assert MODULE.is_file(), 'Falta implementar credit_final'
+E       AssertionError: Falta implementar credit_final
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/credit_final.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_final.py:12: AssertionError
+=========================== short test summary info ============================
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_final.py::test_train_filters_late_labels_before_interpreting_target
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_final.py::test_scoring_does_not_load_outcomes_or_postdecision_features
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_final.py::test_labels_available_at_evaluation_timestamp_and_missing_are_not_zero
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_final.py::test_full_runner_scores_all_requests_but_evaluates_only_complete_labels
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_final.py::test_run_refuses_changed_inputs_without_writing_results[history.csv]
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_final.py::test_run_refuses_changed_inputs_without_writing_results[outcomes.csv]
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_final.py::test_run_refuses_changed_policy
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_final.py::test_duplicate_join_key_is_rejected
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_final.py::test_labels_must_match_requested_application_ids
+9 failed in 0.07s

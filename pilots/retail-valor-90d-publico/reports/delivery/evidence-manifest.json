@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "scope": "Delivery propuesto, claims y documentos hist\u00f3ricos; revisi\u00f3n humana pendiente. Vistas/estado mutable fuera de freeze.",
+  "files": {
+    "delivery/prioritization_retrospective.csv": {
+      "sha256": "cd10892dc2a618cfa0559fda454ed472aac349aee50da00c08652dbfbca14661",
+      "bytes": 4641
+    },
+    "reports/delivery/acos-commands.json": {
+      "sha256": "3a1be96391a569fbfd1e57edcd606b215c30521e03b07bd7de2db6868de57ea7",
+      "bytes": 465
+    },
+    "reports/delivery/acos-next.json": {
+      "sha256": "d5a7fd3f797ab6592965193163ae2906f1c5b8415414bc1140cec2469e2ad1b8",
+      "bytes": 11194
+    },
+    "reports/delivery/acos-status.json": {
+      "sha256": "778df87126a09be2791e07baf02e91dcdfaeac4b2c788b4e434c1cf029d63a60",
+      "bytes": 471
+    },
+    "reports/delivery/acos-validate-data_analysis-review.json": {
+      "sha256": "c57673e80eae1ee2a580383d26c41b705c5e9a468dadafb3b1660d37e2a83462",
+      "bytes": 192
+    },
+    "reports/delivery/acos-validate-delivery.json": {
+      "sha256": "33e375864aeecc62b11677ff5215156fa590d01393a9f11b529f9353e2a1af51",
+      "bytes": 194
+    },
+    "reports/delivery/acos-validate-executive_delivery-review.json": {
+      "sha256": "c57673e80eae1ee2a580383d26c41b705c5e9a468dadafb3b1660d37e2a83462",
+      "bytes": 192
+    },
+    "reports/delivery/acos-validate-selection-review.json": {
+      "sha256": "c57673e80eae1ee2a580383d26c41b705c5e9a468dadafb3b1660d37e2a83462",
+      "bytes": 192
+    },
+    "reports/delivery/acos-validate-supervised_model-review.json": {
+      "sha256": "c57673e80eae1ee2a580383d26c41b705c5e9a468dadafb3b1660d37e2a83462",
+      "bytes": 192
+    },
+    "reports/delivery/acos-validate-validation.json": {
+      "sha256": "c57673e80eae1ee2a580383d26c41b705c5e9a468dadafb3b1660d37e2a83462",
+      "bytes": 192
+    },
+    "reports/delivery/acos-validate.json": {
+      "sha256": "33e375864aeecc62b11677ff5215156fa590d01393a9f11b529f9353e2a1af51",
+      "bytes": 194
+    },
+    "reports/delivery/check-claims.py.txt": {
+      "sha256": "936ac955acee01a9be5385bf2be165e68fb45b47a0944fc8a7bd61b848dadcb7",
+      "bytes": 2752
+    },
+    "reports/delivery/claim-checks.json": {
+      "sha256": "e4930fd16f7df8a22c41edfbf0b7c0b10000e274c5d01ae5174762c0296a6def",
+      "bytes": 712
+    },
+    "reports/delivery/claim-checks.log": {
+      "sha256": "e4930fd16f7df8a22c41edfbf0b7c0b10000e274c5d01ae5174762c0296a6def",
+      "bytes": 712
+    },
+    "reports/delivery/facts.json": {
+      "sha256": "b284a409982361dc7d0898ff1a641b0b8deaa23ddc5513b7fa072b2ce2fb2ec2",
+      "bytes": 1382
+    },
+    "reports/delivery/frozen/analysis/analysis_plan.md": {
+      "sha256": "3cdfdf111e10047b2da31b71c05c2ae6fe9045d2654866ab81066cdab4d38dc5",
+      "bytes": 803
+    },
+    "reports/delivery/frozen/analysis/selection_plan.md": {
+      "sha256": "e2cda0a91d86e800cd3b2337a022c4a6f8d0cd86ce0e8f9a0d29ce174c9b20ea",
+      "bytes": 876
+    },
+    "reports/delivery/frozen/decision/recommendation.md": {
+      "sha256": "2969c7e18960b84fe4027985ea29c7a85deeeceac534391a7aa9761e6d08ef1f",
+      "bytes": 2155
+    },
+    "reports/delivery/frozen/delivery/analytical_report.md": {
+      "sha256": "eeb799e91b0595074385f48c254e0f7f856bd93871fb64c1a063dac653551ac4",
+      "bytes": 6438
+    },
+    "reports/delivery/frozen/delivery/decision_memo.md": {
+      "sha256": "a1ad51e25cf6dec6c0d42fd994d0679ef0cda19eeaad74ca1105cded25d2fe69",
+      "bytes": 2585
+    },
+    "reports/delivery/frozen/delivery/delivery_contract.md": {
+      "sha256": "111cadf2762cb22c11cce6fafff4e701d156b56ab1b3512b9b4fc5a83a1c8b7f",
+      "bytes": 1918
+    },
+    "reports/delivery/frozen/evidence/claims.yaml": {
+      "sha256": "cc326c817218d4784f7b692048e00fe1848a5dade6a033cde81a488a4e2f95d9",
+      "bytes": 14524
+    },
+    "reports/delivery/prepare-documents.py.txt": {
+      "sha256": "d78b98ed072e4aa2b2c84e2898384a1c093faa5c761e5f065f9902dd453aadf3",
+      "bytes": 21213
+    },
+    "reports/delivery/review.md": {
+      "sha256": "c4636ab4cce904e9b0af84daec7e5b0732357478a787dad990fc3af4283a23da",
+      "bytes": 1117
+    },
+    "reports/delivery/tests-final.log": {
+      "sha256": "fd9cc02c41a2f9229b7f637e1179b815db1d6fe359179db56f13dfce2e01ab72",
+      "bytes": 99
+    },
+    "reports/delivery/tests-final.xml": {
+      "sha256": "cf20fb364664da567653a8936c2d086d9388a1a7fb7ed8e785b1986d7f2dd47f",
+      "bytes": 8214
+    },
+    "reports/delivery/verification.json": {
+      "sha256": "c0f15b8f34155eff3ff8ee6742d9482306dfeed82774ea776ff7db7619713748",
+      "bytes": 831
+    },
+    "reports/validation/human-approval.json": {
+      "sha256": "d163144f6b531313313d932ee702930c26f17fe049790f7073d6d60b19e51d39",
+      "bytes": 621
+    }
+  }
+}

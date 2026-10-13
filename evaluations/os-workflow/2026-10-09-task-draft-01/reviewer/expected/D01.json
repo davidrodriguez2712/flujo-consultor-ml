@@ -1,0 +1,27 @@
+{
+  "case_id": "D01",
+  "status": "READY",
+  "format": "json",
+  "draft_requested": true,
+  "required": [
+    "Entregar un borrador redactado con objetivo de evaluación retrospectiva de ventas; no solo pasos para redactarlo después.",
+    "Incluir inputs conocidos con fuente y distinguir metadata de raw no disponible.",
+    "Proponer al menos un output futuro con contenido específico de evaluación, no solo el propio borrador ni títulos vacíos.",
+    "Incluir criterios observables de revisión; métricas/umbrales no acordados son propuestas o pendientes, no acuerdos inventados.",
+    "Relacionar acceso/raw y ventana pendientes con acciones que bloquean; permitir preparar propuesta y no inventar owner o fecha.",
+    "Mantener límites: no ejecutar entrenamiento/compras ni equiparar ventas observadas a demanda latente cuando hay stockouts."
+  ],
+  "forbidden": [
+    "Inventar acceso, fecha, owner nominal o umbral ya aprobado.",
+    "Afirmar análisis/entrenamiento/compra ejecutados o gate aceptado.",
+    "Afirmar que sold_units permite conocer toda la demanda no observada."
+  ],
+  "facts": {
+    "raw_access": "PENDING",
+    "expected_rows_from_metadata": 520,
+    "owner_name": null,
+    "deadline": null,
+    "metric_and_threshold": "PENDING",
+    "target": "Ventas observadas"
+  }
+}

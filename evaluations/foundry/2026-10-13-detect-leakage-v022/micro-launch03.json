@@ -1,0 +1,6 @@
+{
+  "returncode": 0,
+  "stdout": "{\"mode\": \"TEXT_ONLY_NOT_NATIVE\", \"runs\": [{\"rep\": 4, \"arm\": \"0.2.0\", \"transport_success\": true}, {\"rep\": 5, \"arm\": \"0.2.0\", \"transport_success\": true}, {\"rep\": 5, \"arm\": \"0.2.2\", \"transport_success\": true}], \"status\": \"COMPLETED_PENDING_CONTENT_REVIEW\"}\n",
+  "stderr": "",
+  "manifest": "1be3dd9ca3d0165010949060524fecda90d528e2e0400cc0108e2d9ae71da1a5"
+}

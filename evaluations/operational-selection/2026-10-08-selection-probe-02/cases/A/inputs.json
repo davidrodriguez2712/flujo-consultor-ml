@@ -1,0 +1,36 @@
+{
+  "name": "Capacidad mayor que población elegible",
+  "business": "Priorizar revisiones por riesgo, sin estimar efecto de intervenir. No hay presupuesto ni optimización monetaria solicitada. Capacidad máxima de 3 revisiones; cada revisión cuesta 2 unidades. Elegibilidad ya confirmada por cooldown. Scores fijados antes de labels. Desempate score por ID ascendente. Métricas sobre eligible-A (los elegibles del lote actual), labels completos.",
+  "capacity_k": 3,
+  "metric_population": "eligible-A",
+  "rows": [
+    {
+      "id": "X",
+      "eligible": false,
+      "risk_score": 0.99,
+      "label": 1,
+      "cost": 2
+    },
+    {
+      "id": "Z",
+      "eligible": true,
+      "risk_score": 0.8,
+      "label": 1,
+      "cost": 2
+    },
+    {
+      "id": "Y",
+      "eligible": true,
+      "risk_score": 0.8,
+      "label": 0,
+      "cost": 2
+    },
+    {
+      "id": "V",
+      "eligible": false,
+      "risk_score": 0.7,
+      "label": 1,
+      "cost": 2
+    }
+  ]
+}

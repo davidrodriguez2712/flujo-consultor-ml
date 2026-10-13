@@ -1,0 +1,73 @@
+{
+  "id": "os-workflow-transfer-execution-01",
+  "version": "01",
+  "scope": "Configuración propuesta, runbook, contratos/checks y snapshots. Aprobación de gasto fuera del freeze.",
+  "files": [
+    {
+      "path": "RUNBOOK.md",
+      "sha256": "e1afa453c81a79c20b290d7f39ccbc651c4adb0efbacc89d11e69e48d9d21912",
+      "bytes": 3122
+    },
+    {
+      "path": "checker-contract.md",
+      "sha256": "fa0a8eb2b2f481f75cecf4f706ff9f5eeb284533c628a82859ee2856a4111801",
+      "bytes": 1415
+    },
+    {
+      "path": "config.json",
+      "sha256": "c4c6752659936f304908b33b484b6fbe17a2649e28dba30ae85d1d41af712d54",
+      "bytes": 4731
+    },
+    {
+      "path": "local-verification.json",
+      "sha256": "8247c4e75a094a7b55e37f2d0b286b123d6af8508af7b6bf3a858d62e151e3d0",
+      "bytes": 2461
+    },
+    {
+      "path": "smoke-payload.txt",
+      "sha256": "612a22abbb9bef8638522f973f3d16c4a5621b6e2525658495969f10d9b4dcaf",
+      "bytes": 560
+    },
+    {
+      "path": "snapshots/scripts/ci/runtime_budget.py",
+      "sha256": "a9c7a4ab6187646c8c71a0f3b2f3978fd7e538d41114fcc1307640d29d61c557",
+      "bytes": 13993
+    },
+    {
+      "path": "snapshots/scripts/evaluations/workflow_native_transport.py",
+      "sha256": "86a08fc29309db11ecc54f4db0cfebe81c24796d209b1dcf928c99e6bc43c874",
+      "bytes": 4609
+    },
+    {
+      "path": "snapshots/scripts/evaluations/workflow_output_checker.py",
+      "sha256": "24f31e13f65ded5d4e393b0fddee80b71213a7ec69ae0966fc0367dbe11887a0",
+      "bytes": 2938
+    },
+    {
+      "path": "snapshots/scripts/evaluations/workflow_transfer_checker.py",
+      "sha256": "a47586b0ee265e5e17dc9dabff25942d6f8537906dfb0c1e5617414a966453d8",
+      "bytes": 4072
+    },
+    {
+      "path": "snapshots/tests/test_runtime_budget.py",
+      "sha256": "64ac972814594f31a0987b0f7828a7bb1221efb7547fc9dd284db5c6d8560fd6",
+      "bytes": 11341
+    },
+    {
+      "path": "snapshots/tests/test_workflow_native_transport.py",
+      "sha256": "be81a8605a7a9456de6fa2840a93d05e517e07f3e028914980b9b52cdc4da688",
+      "bytes": 4544
+    },
+    {
+      "path": "snapshots/tests/test_workflow_output_checker.py",
+      "sha256": "5cda07dfca53bb519583e143c728e19b2c80e6a1428fc941e1e1880deb3a7c69",
+      "bytes": 2241
+    },
+    {
+      "path": "snapshots/tests/test_workflow_transfer_checker.py",
+      "sha256": "b5c066665e4ffc719bca9e391afd8275be04116f49dc1e5d45a798aef47a8cf7",
+      "bytes": 4652
+    }
+  ],
+  "precedence_evidence": "local_only"
+}

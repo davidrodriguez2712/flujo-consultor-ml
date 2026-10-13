@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "files": {
+    "run-01/acos-native-windows-11-arm-37881558139/build.log": {
+      "sha256": "b4d3caf74336113f6db4a6d68f0937794a74f533971955110f740ab58d7a53d8",
+      "bytes": 7068
+    },
+    "run-01/acos-native-windows-11-arm-37881558139/dependencies.txt": {
+      "sha256": "a756468bc2d61a2a9706e9d248ee13a6ccf9314e685b65390522db43ac91b99f",
+      "bytes": 494
+    },
+    "run-01/acos-native-windows-11-arm-37881558139/node.json": {
+      "sha256": "dc3f5b84a7acb95a73258ca172b200c0382d01bbd4e3da27a907e11ec8eb6b81",
+      "bytes": 58
+    },
+    "run-01/acos-native-windows-11-arm-37881558139/npm-install.log": {
+      "sha256": "4807ccf2ac8899f0ab32aa90161bc5ca17fb2070bdbaa78aef2a1ebbd00238e1",
+      "bytes": 469
+    },
+    "run-01/acos-native-windows-11-arm-37881558139/pytest.log": {
+      "sha256": "23906f2655c315df7a2ee6a29b94627d1b4ceeee81fea897d5720d9a64526385",
+      "bytes": 184
+    },
+    "run-01/acos-native-windows-11-arm-37881558139/pytest.xml": {
+      "sha256": "b10b064d1f7f1af7199ecda0baf66bdec922f69cb238395f3050aa5062374e2b",
+      "bytes": 14126
+    },
+    "run-01/acos-native-windows-11-arm-37881558139/runtimes/results.json": {
+      "sha256": "4e76a75faf2fb1b6d1e4f15c023bb30254572c61feec65c7c74c3c4c84275861",
+      "bytes": 32001
+    },
+    "run-01/acos-native-windows-11-arm-37881558139/runtimes.log": {
+      "sha256": "2d08809ae02360c4ac110ca09a8fa1cd98ac8a8545af1705b74265ad11d685c1",
+      "bytes": 6564
+    },
+    "run-01/acos-native-windows-11-arm-37881558139/simulations.json": {
+      "sha256": "ffec5b811b630155c590156020e70e1ea759bcd962cc0cd3dc1906411f2c819a",
+      "bytes": 17765
+    },
+    "run-01/acos-native-windows-11-arm-37881558139/simulations.log": {
+      "sha256": "bad325e0885735ea27f72d6a8b602e4723186861ab6033ebe0d5cf34ff2d40a4",
+      "bytes": 282
+    },
+    "run-01/acos-native-windows-11-arm-37881558139/smoke/results.json": {
+      "sha256": "ab7f89f26136850a2b3fa9d8da267b8542ed54f8616b7c45323fa09788401814",
+      "bytes": 22926
+    },
+    "run-01/acos-native-windows-11-arm-37881558139/smoke.log": {
+      "sha256": "8a078d4ccc3078d5a0c50fa1e28693f3dada5a209ef1c6ab02e2e0f0c96731d1",
+      "bytes": 317
+    },
+    "run-01/acos-native-windows-11-arm-37881558139/wheel/agentic_consulting_os-0.1.0-py3-none-any.whl": {
+      "sha256": "da38fdbf117c51ab5a2e57f28d5fda411a26cdf82597b99be3c95f85367003ea",
+      "bytes": 63010
+    },
+    "run-01/acos-native-windows-2022-37881558139/build.log": {
+      "sha256": "4859b2ca16c0bc2ea7df093d74d0a587a1f8a38acdb3d8b4c3d7a1e9dd7eb507",
+      "bytes": 7068
+    },
+    "run-01/acos-native-windows-2022-37881558139/dependencies.txt": {
+      "sha256": "50d7e25cd405faf38ecdafeceae707ac4dfc0aadf980dd1147d453603a41b9db",
+      "bytes": 375
+    },
+    "run-01/acos-native-windows-2022-37881558139/node.json": {
+      "sha256": "7a7be30d404e807ca686eebcee10206b61d6b4578612297ccdfe4cb366681d01",
+      "bytes": 56
+    },
+    "run-01/acos-native-windows-2022-37881558139/npm-install.log": {
+      "sha256": "434c3d172326228fe2b5487ae4c3d217656d8e23b28d839bf91feb7acd8acee9",
+      "bytes": 469
+    },
+    "run-01/acos-native-windows-2022-37881558139/pytest.log": {
+      "sha256": "41bb31e88489a2c946ce73ee2d8b90d23ff16b142d8b21d24cade7304d1056ed",
+      "bytes": 184
+    },
+    "run-01/acos-native-windows-2022-37881558139/pytest.xml": {
+      "sha256": "056dd1bcc4b954cb414cbbf62c63e294efd1d745be168a29588df9d1029345ed",
+      "bytes": 14126
+    },
+    "run-01/acos-native-windows-2022-37881558139/runtimes/results.json": {
+      "sha256": "c58991bd0c1255604edbfa860f41979b7897dc59b8a1094863e3b43cd3a74778",
+      "bytes": 31987
+    },
+    "run-01/acos-native-windows-2022-37881558139/runtimes.log": {
+      "sha256": "73a689ea3e5172bf47b20dba3893a439d6995a39a5f6e975a9826ecb4b19d5ea",
+      "bytes": 6153
+    },
+    "run-01/acos-native-windows-2022-37881558139/simulations.json": {
+      "sha256": "ffec5b811b630155c590156020e70e1ea759bcd962cc0cd3dc1906411f2c819a",
+      "bytes": 17765
+    },
+    "run-01/acos-native-windows-2022-37881558139/simulations.log": {
+      "sha256": "bad325e0885735ea27f72d6a8b602e4723186861ab6033ebe0d5cf34ff2d40a4",
+      "bytes": 282
+    },
+    "run-01/acos-native-windows-2022-37881558139/smoke/results.json": {
+      "sha256": "8bea8f62490d192f20d7a18f31295a29e2b93ec8b798e498a0c275836b35bb96",
+      "bytes": 23141
+    },
+    "run-01/acos-native-windows-2022-37881558139/smoke.log": {
+      "sha256": "a9db9f6252dcbf77dc4c84703d05e553a012c80df6a52f339fffe48c2f3740db",
+      "bytes": 317
+    },
+    "run-01/acos-native-windows-2022-37881558139/wheel/agentic_consulting_os-0.1.0-py3-none-any.whl": {
+      "sha256": "1af9edd73e7b000ae4935f2be890a0f27f40f3a23fdf3d64ea7f73af3d2a35ad",
+      "bytes": 63010
+    },
+    "run-01-metadata.json": {
+      "sha256": "3bb50dc512ec17c05f5d6d0045cc0f66fce9b0cd6f6280c06a25cdc303e295c1",
+      "bytes": 5823
+    },
+    "run-02/acos-native-windows-11-arm-37882006292/build.log": {
+      "sha256": "ee913228f8a975871bd778b648a5b1842b9428fbafb868aaca1098b776f3e96b",
+      "bytes": 7068
+    },
+    "run-02/acos-native-windows-11-arm-37882006292/dependencies.txt": {
+      "sha256": "a756468bc2d61a2a9706e9d248ee13a6ccf9314e685b65390522db43ac91b99f",
+      "bytes": 494
+    },
+    "run-02/acos-native-windows-11-arm-37882006292/node.json": {
+      "sha256": "dc3f5b84a7acb95a73258ca172b200c0382d01bbd4e3da27a907e11ec8eb6b81",
+      "bytes": 58
+    },
+    "run-02/acos-native-windows-11-arm-37882006292/npm-install.log": {
+      "sha256": "b4e8d73b234f79bad72cb7b2f7facf2c913c25441ee3c307e6b338764525c481",
+      "bytes": 469
+    },
+    "run-02/acos-native-windows-11-arm-37882006292/pytest.log": {
+      "sha256": "745cb23d72e6551529ddbfb192b253c4f510fe975704253986225950606051e5",
+      "bytes": 184
+    },
+    "run-02/acos-native-windows-11-arm-37882006292/pytest.xml": {
+      "sha256": "cce7fa672eaee6db1c841763c198f3deb68c7a0048a4619db6744aee9f5263b9",
+      "bytes": 14126
+    },
+    "run-02/acos-native-windows-11-arm-37882006292/runtimes/results.json": {
+      "sha256": "8e75d780a723036369890a2ec17d61933c4c5279802e18f73b7d5be84f28cb73",
+      "bytes": 33536
+    },
+    "run-02/acos-native-windows-11-arm-37882006292/simulations.json": {
+      "sha256": "ffec5b811b630155c590156020e70e1ea759bcd962cc0cd3dc1906411f2c819a",
+      "bytes": 17765
+    },
+    "run-02/acos-native-windows-11-arm-37882006292/simulations.log": {
+      "sha256": "bad325e0885735ea27f72d6a8b602e4723186861ab6033ebe0d5cf34ff2d40a4",
+      "bytes": 282
+    },
+    "run-02/acos-native-windows-11-arm-37882006292/smoke/results.json": {
+      "sha256": "f5d430e1ed20016e71dc559867a56ef15359facb940c991fa10cdb70f245cd19",
+      "bytes": 22926
+    },
+    "run-02/acos-native-windows-11-arm-37882006292/smoke.log": {
+      "sha256": "c6bdf7d792c1b86c4f47f9d83952b37e716f3666176ec882d148717f36b88610",
+      "bytes": 317
+    },
+    "run-02/acos-native-windows-11-arm-37882006292/wheel/agentic_consulting_os-0.1.0-py3-none-any.whl": {
+      "sha256": "17d2e7f0a95ccd798e861206d4d4d3fa62f775455055b1f8475d35f5ffcf7653",
+      "bytes": 63010
+    },
+    "run-02/acos-native-windows-2022-37882006292/build.log": {
+      "sha256": "a1aca0ba2eb47e4d0125155ec22aba4a39b46570835a42ed8c394d1a180f2cc6",
+      "bytes": 7068
+    },
+    "run-02/acos-native-windows-2022-37882006292/dependencies.txt": {
+      "sha256": "50d7e25cd405faf38ecdafeceae707ac4dfc0aadf980dd1147d453603a41b9db",
+      "bytes": 375
+    },
+    "run-02/acos-native-windows-2022-37882006292/node.json": {
+      "sha256": "7a7be30d404e807ca686eebcee10206b61d6b4578612297ccdfe4cb366681d01",
+      "bytes": 56
+    },
+    "run-02/acos-native-windows-2022-37882006292/npm-install.log": {
+      "sha256": "0d7132ac66eff8ef4701e17443fce9536a67b76a0dc73129a28843964c810a89",
+      "bytes": 469
+    },
+    "run-02/acos-native-windows-2022-37882006292/pytest.log": {
+      "sha256": "5f10ca929dbdc4421f7416e6f9b029f8bf0516771ccc179fc3f95789dce6ea9c",
+      "bytes": 184
+    },
+    "run-02/acos-native-windows-2022-37882006292/pytest.xml": {
+      "sha256": "6ecff37c2e9f2c35b39e43536503fcebf76ebfb306d07b6c952860fd0f46b32f",
+      "bytes": 14126
+    },
+    "run-02/acos-native-windows-2022-37882006292/runtimes/results.json": {
+      "sha256": "bf0e49b6e89ef1a2668fe74a441f01f7864492f7f3c8ca6f95bb0feda9f8db65",
+      "bytes": 33512
+    },
+    "run-02/acos-native-windows-2022-37882006292/simulations.json": {
+      "sha256": "ffec5b811b630155c590156020e70e1ea759bcd962cc0cd3dc1906411f2c819a",
+      "bytes": 17765
+    },
+    "run-02/acos-native-windows-2022-37882006292/simulations.log": {
+      "sha256": "bad325e0885735ea27f72d6a8b602e4723186861ab6033ebe0d5cf34ff2d40a4",
+      "bytes": 282
+    },
+    "run-02/acos-native-windows-2022-37882006292/smoke/results.json": {
+      "sha256": "a2e822cfd01bcb5079db8ae47c6aaf0f52a430d4ef02fa09e4416133baf78412",
+      "bytes": 23141
+    },
+    "run-02/acos-native-windows-2022-37882006292/smoke.log": {
+      "sha256": "ec2abe4ba200494563c63529019a3e08a18d8cf8e0b95d9801a2f243d40eb3a5",
+      "bytes": 317
+    },
+    "run-02/acos-native-windows-2022-37882006292/wheel/agentic_consulting_os-0.1.0-py3-none-any.whl": {
+      "sha256": "ad8ba1df0e19c2381cf5674da86ff36a342594d6559af5f9a85253d1dc3afd83",
+      "bytes": 63010
+    },
+    "run-02-metadata.json": {
+      "sha256": "ec2b38b9655d808ed618c239493c1aa7d5a62ed917728fec8655a2569787c104",
+      "bytes": 5823
+    },
+    "verification.json": {
+      "sha256": "0e08a81bcae4e375f2bbf02a625f1f1a23f071876ff46747a1b6ac6c1c61f1f7",
+      "bytes": 2021
+    }
+  }
+}

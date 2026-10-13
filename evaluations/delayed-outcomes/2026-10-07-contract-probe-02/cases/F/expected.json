@@ -1,0 +1,16 @@
+{
+  "rows": {
+    "F1": {
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible"
+    },
+    "F2": {
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible"
+    }
+  },
+  "review_notes": "F1 tiene igualdad tras normalizar -05:00 a Z; F2 es válida. No excluir filas válidas.",
+  "gate_decision": "NEEDS_REVIEW"
+}

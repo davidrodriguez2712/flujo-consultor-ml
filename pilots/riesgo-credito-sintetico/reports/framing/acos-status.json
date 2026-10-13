@@ -1,0 +1,19 @@
+{
+  "project": "Piloto sintético de riesgo de crédito",
+  "stage": "framing",
+  "status": "IN_PROGRESS",
+  "completed": [
+    "discovery"
+  ],
+  "total_stages": 7,
+  "blockers": [],
+  "open_decisions": [
+    "Aprobar el contrato de Framing propuesto y su política de ranking por riesgo.",
+    "Acordar y congelar estrategia temporal en Diagnosis antes de entrenar o evaluar el holdout."
+  ],
+  "next_gates": [
+    "framing"
+  ],
+  "integrity": "OK",
+  "findings": []
+}

@@ -1,0 +1,19 @@
+{
+  "status": "PASS_INTEGRITY_AND_BUDGET_NOT_EFFECTIVENESS",
+  "previous_immutable_files_intact": 501,
+  "historical_files_intact": 421,
+  "preparation_files": 39,
+  "configuration01_files": 12,
+  "configuration02_files": 12,
+  "round01_files": 17,
+  "requests": 9,
+  "runtime_successes": 9,
+  "http200_end_turn_known_usage": 9,
+  "payloads_match_frozen_sources": true,
+  "raw_preserved": true,
+  "secret_absent_from_run_files": true,
+  "study_budget_under_ceiling": true,
+  "tests_run": false,
+  "semantic_review_completed": true,
+  "favorable_signal": false
+}

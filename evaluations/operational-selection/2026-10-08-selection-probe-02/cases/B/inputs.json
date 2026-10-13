@@ -1,0 +1,36 @@
+{
+  "name": "Métricas con observabilidad parcial",
+  "business": "Elegir Top-2 inspecciones por riesgo. Todos son elegibles, coste unitario 1, sin optimización económica ni pregunta causal. Labels del lote histórico provienen de inspecciones: selección histórica de mecanismo no documentado. Métricas pedidas sobre los cuatro elegibles eligible-B. No se proporciona otro dato de outcomes. Desempate por ID ascendente.",
+  "capacity_k": 2,
+  "metric_population": "eligible-B",
+  "rows": [
+    {
+      "id": "W",
+      "eligible": true,
+      "risk_score": 0.95,
+      "label": 1,
+      "cost": 1
+    },
+    {
+      "id": "Q",
+      "eligible": true,
+      "risk_score": 0.9,
+      "label": 0,
+      "cost": 1
+    },
+    {
+      "id": "R",
+      "eligible": true,
+      "risk_score": 0.6,
+      "label": null,
+      "cost": 1
+    },
+    {
+      "id": "T",
+      "eligible": true,
+      "risk_score": 0.2,
+      "label": 1,
+      "cost": 1
+    }
+  ]
+}

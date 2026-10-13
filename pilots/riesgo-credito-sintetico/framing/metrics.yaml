@@ -1,0 +1,31 @@
+status: PROPOSED_NEEDS_REVIEW
+primary:
+  name: brier_score
+  population: Créditos concedidos con label madura en el periodo de evaluación temporal
+  definition: Media de (probabilidad estimada - target binario)^2. Menor es mejor.
+  reference: Probabilidad constante estimada únicamente en train; comparar ambas predicciones
+    sobre las mismas filas.
+  guardrail: Declarar N, positivos, negativos, periodo y disponibilidad. Si no hay
+    filas, no determinable.
+secondary:
+- name: roc_auc
+  definition: Discriminación de targets observados; no determinable si falta una de
+    las dos clases.
+- name: calibration
+  definition: Media de predicción frente a tasa observada y bins de probabilidad con
+    reglas fijadas antes del holdout. Reportar tamaños y límites, sin declarar calibración
+    por un único promedio.
+- name: precision_at_k
+  definition: Positivos seleccionados / K efectivo, solo cuando todos los seleccionados
+    de la población declarada tienen labels observados. Si K=0, indefinida.
+- name: recall_at_k
+  definition: Positivos seleccionados / total de positivos en la población declarada
+    con labels completos. Sin positivos, indefinida.
+- name: lift_at_k
+  definition: 'Precision@K / tasa de positivos de esa misma población. Labels incompletos
+    o tasa base cero: no identificable o indefinida según corresponda.'
+- name: selection_label_coverage
+  definition: Seleccionados con label observado / seleccionados, para la propuesta
+    sobre todas las solicitudes. Es cobertura, no correctitud ni eficacia.
+business_impact: 'No identificado: sin efecto de revisión ni costos/beneficios aprobados.
+  No reportar ahorro como resultado de score predictivo.'

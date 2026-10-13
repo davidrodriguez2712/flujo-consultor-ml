@@ -1,0 +1,240 @@
+{
+  "scope": "macOS; proyecto churn sintético; sesiones nuevas; solo lectura",
+  "tests_passed": 4,
+  "results": [
+    {
+      "runtime": "codex",
+      "version": "0.160.0",
+      "test": "guided",
+      "result": "PASS",
+      "exit_code": 0,
+      "workspace_unchanged": true,
+      "native_skill": ".agents/skills/design-validation/SKILL.md",
+      "trace": [
+        "/bin/zsh -lc 'cat .acos/project-profile.yaml .acos/state.yaml .acos/modules.yaml PROJECT.md MANUAL.md CAPABILITIES.md'",
+        "/bin/zsh -lc 'cat .agents/skills/design-validation/SKILL.md'",
+        "/bin/zsh -lc 'rg --files workflow modeling data analysis evidence framing .acos .agents/skills/design-validation'",
+        "/bin/zsh -lc \"sed -n '1,125p' .agents/skills/design-validation/SKILL.md\""
+      ],
+      "response": "El objetivo vigente es **`RUNTIME-CHECK-CHURN: auditar split temporal y leakage antes de recomendar retención`**, según [.acos/state.yaml](<workspace>/.acos/state.yaml). La etapa es **`validation`**, con estado **`BLOCKED`**. La decisión sigue siendo priorizar retención mensual, con KPI **margen esperado** y owner **Revisor sintético**.\n\n- **Bloqueo canónico:** falta confirmar la fecha de disponibilidad de las labels.\n- **Información adicional pendiente:** unidad y horizonte están en `null` en `framing/framing.yaml`; el contrato de datos no define granularidad, claves, cobertura ni calidad. El prediction timestamp y las ventanas tampoco están establecidos en los documentos revisados.\n- **Vistas obsoletas:** `STATE.md` y la sección inicial de `MANUAL.md` conservan el objetivo genérico anterior y omiten el bloqueo vigente. Su etapa sí coincide. `TASKS.md` está vacío y no representa el trabajo pendiente.\n- **Gates:** `gate_reviews` está vacío; no hay aprobaciones registradas. Los documentos revisados contienen plantillas y pendientes, no evidencia de cumplimiento.\n\nLa skill nativa **`design-validation` sí está expuesta y fue cargada** desde [esta ruta concreta](<workspace>/.agents/skills/design-validation/SKILL.md): `<workspace>/.agents/skills/design-validation/SKILL.md`. Es versión **0.1.0, experimental**. La apliqué para proponer este checklist; el diseño definitivo es **no determinable** con la información disponible.\n\nChecklist pertinente al split temporal de churn:\n\n- [ ] Confirmar entidad, unidad de observación, definición de churn, prediction timestamp, ventana de observación, horizonte y disponibilidad efectiva de cada label.\n- [ ] Confirmar población, frecuencia de scoring y reentrenamiento, y si se vuelven a puntuar los mismos clientes.\n- [ ] Para simular meses futuros, definir entrenamiento histórico y evaluación posterior: toda label usada para entrenar debe estar disponible al corte de entrenamiento.\n- [ ] Separar desarrollo, evaluación final aislada y evaluación out-of-time; justificar si el test final también cumple el propósito out-of-time.\n- [ ] Permitir clientes compartidos entre períodos solo si reproduce el uso real; separar entidades si se quiere evaluar clientes nuevos.\n- [ ] Revisar solapes de ventanas, disponibilidad de features y joins temporales. Ajustar preprocessing, selección y tuning únicamente dentro del train de cada fold; justificar cualquier gap o embargo.\n- [ ] Comprobar períodos, volumen, positivos y prevalencia por partición antes de aceptar el diseño.\n- [ ] Evaluar margen esperado como KPI vigente y complementar con Precision@K/Lift@K por mes, definiendo K según capacidad operativa. El ranking de churn por sí solo no demuestra el efecto de retención.\n\n**Siguiente trabajo:** obtener evidencia de disponibilidad de labels y completar las definiciones temporales; después concretar cortes y salvaguardas para revisión humana. Un split aleatorio no representaría la evaluación de meses futuros si ese escenario se confirma.\n\nSolo realicé lecturas: no ejecuté scripts, splits ni entrenamiento; no modifiqué archivos, aprobé gates ni delegué. El checklist se entrega aquí sin persistir el reporte que normalmente solicita la skill, conforme a tu instrucción de solo lectura."
+    },
+    {
+      "runtime": "codex",
+      "version": "0.160.0",
+      "test": "plain",
+      "result": "PASS",
+      "exit_code": 0,
+      "workspace_unchanged": true,
+      "native_skill": null,
+      "trace": [
+        "/bin/zsh -lc 'cat .acos/project-profile.yaml .acos/state.yaml .acos/modules.yaml PROJECT.md MANUAL.md CAPABILITIES.md'",
+        "/bin/zsh -lc \"rg --files -g '\"'!snapshots/**'\"' -g '\"'!foundry/**'\"' -g '\"'!CAPABILITIES.md'\"' -g '\"'!MANUAL.md'\"' -g '\"'!PROJECT.md'\"' -g '\"'!.acos/modules.yaml'\"' -g '\"'!.acos/project-profile.yaml'\"'\""
+      ],
+      "response": "Retomamos la auditoría del split temporal y leakage. El estado canónico sigue en **validation / BLOCKED**: falta confirmar cuándo están disponibles las labels.\n\nEncontré además:\n\n- No hay dataset ni código del pipeline en el workspace; los informes son plantillas.\n- `STATE.md` y `MANUAL.md` están desactualizados respecto al objetivo y bloqueo canónicos.\n- El entorno permite solo lectura, por lo que no pude actualizar esas vistas ni `TASKS.md`.\n\nPara continuar, necesito la ubicación del dataset y del código de split/features, junto con la regla de disponibilidad de las labels: **¿cuándo se considera definitivo el churn de cada período y desde qué fecha puede usarse para entrenar?**"
+    },
+    {
+      "runtime": "claude",
+      "version": "2.1.290",
+      "test": "guided",
+      "result": "PASS",
+      "exit_code": 0,
+      "workspace_unchanged": true,
+      "native_skill": ".claude/skills/design-validation/SKILL.md",
+      "trace": [
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/AGENTS.md"
+          }
+        },
+        {
+          "tool": "Skill",
+          "input": {
+            "skill": "design-validation"
+          }
+        },
+        {
+          "tool": "Glob",
+          "input": {}
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/.acos/project-profile.yaml"
+          }
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/.acos/state.yaml"
+          }
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/.acos/modules.yaml"
+          }
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/PROJECT.md"
+          }
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/MANUAL.md"
+          }
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/CAPABILITIES.md"
+          }
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/STATE.md"
+          }
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/TASKS.md"
+          }
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/data/data_contract.yaml"
+          }
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/validation/model_validation.md"
+          }
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/framing/framing.yaml"
+          }
+        }
+      ],
+      "response": "## Estado ACOS (solo lectura)\n\n**Skill cargada:** `design-validation` v0.1.0 (experimental), desde `<workspace>/.claude/skills/design-validation/SKILL.md`. Existe una copia en `.agents/skills/design-validation/SKILL.md`, que no usé. El runtime la expuso y Skill la cargó sin errores.\n\n### Objetivo, etapa y bloqueos (según `.acos/state.yaml`, que es el canónico)\n- **Objetivo vigente:** «RUNTIME-CHECK-CHURN: auditar split temporal y leakage antes de recomendar retención».\n- **Decisión de negocio:** priorizar retención mensual. La métrica de éxito es margen esperado y el owner es «Revisor sintético».\n- **Etapa:** `validation`. **Status:** `BLOCKED`. `completed_stages` está vacío y `gate_reviews` está vacío, así que no hay ningún gate aprobado.\n- **Bloqueo único registrado:** falta confirmar la fecha de disponibilidad de las labels, es decir, el label delay.\n- **Bloqueos adicionales que veo en los archivos:**\n  - `framing/framing.yaml` tiene `unit: null` y `horizon: null`. El gate `framing` exige ambos campos.\n  - `data/data_contract.yaml` tiene `grain`, `keys`, `coverage` y `quality` en `null`.\n  - `PROJECT.md` dice «Problema: Pendiente», y `project-profile.yaml` tiene `problem: null` y `constraints: []`.\n\n### Vistas obsoletas\n- **`MANUAL.md`** es una vista inicial. Su sección «Situación al inicializar» no refleja el `BLOCKED`, el objetivo ni el bloqueo del state.\n- **`STATE.md`** es una vista inicial. Solo dice «Etapa: validation» y no incluye el status, el objetivo ni los bloqueos.\n- **`TASKS.md`** está vacío: NOW, NEXT, LATER y BLOCKED no tienen contenido. Debería listar el bloqueo de las labels.\n- Los artefactos de la etapa (`analysis_plan`, `model_brief`, `selection_plan`, `storyline`, `model_validation.md`) son plantillas sin evidencia. Su existencia no cuenta como gate aprobado.\n\n### Siguiente trabajo\n1. Confirmar con el owner la **fecha de disponibilidad de las labels** y el label delay. Este es el bloqueo canónico.\n2. Definir `unit` y `horizon` en `framing.yaml`, y la definición de churn. También el prediction timestamp, la frecuencia de scoring y el reentrenamiento.\n3. Completar `data_contract.yaml`: grain, claves, cobertura temporal y calidad.\n4. Con esos datos, producir el diseño de validación y después auditar con `detect-leakage`. La validación no está cerrada.\n5. Al cerrar una sesión autorizada, actualizar STATE, MANUAL y TASKS. Hay que registrar revisión y evidencia antes de tocar el state. No avancé ni aprobé nada.\n\n### Checklist de `design-validation` para el split temporal de churn\nNo asumo temporal split solo porque haya fechas. El perfil indica `temporal: true` y `panel: true`, y la decisión es mensual, así que es la hipótesis de trabajo. Está sin confirmar.\n\n- [ ] **Escenario de producción.** Confirmar si el modelo puntuará cada mes a la población activa, incluidos los mismos clientes. Si es así, compartir clientes entre particiones puede ser válido y no corresponde imponer `GroupKFold`.\n- [ ] **Prediction timestamp y label delay.** Ambos están **No determinables** hoy. El bloqueo actual es justamente el label delay.\n- [ ] **Horizonte e inicio de la ventana de churn.** `horizon` es `null`.\n- [ ] **Separación train→validation.** Debe cubrir el label delay. Si las ventanas de observación se solapan o hay autocorrelación, añadir un gap. Si no, no añadirlo.\n- [ ] **Solape temporal.** Comprobar que `train.fecha.max() < val.fecha.min()`.\n- [ ] **Períodos frente a folds.** Verificar que hay suficientes meses para un esquema expanding o walk-forward.\n- [ ] **Positivos por partición.** Contar filas y positivos por fold, y la prevalencia por período, para detectar drift.\n- [ ] **Propósitos separados.** Debe haber desarrollo, evaluación final aislada, out-of-time y evaluación operacional.\n- [ ] **Métricas.** Globales (ROC-AUC, PR-AUC) y de ranking (Precision@K, Lift@K). La métrica de negocio es el margen esperado, y K depende de la capacidad de retención, que hay que confirmar. Seleccionar el modelo con la métrica alineada con la decisión.\n- [ ] **Salvaguardas.** Preprocessing, feature engineering, target encoding, resampling y tuning se ajustan solo dentro del fold. El test final se separa primero.\n- [ ] **Complejidad.** No proponer nested CV, purging ni embargo sin una razón concreta.\n\n### Notas\n- El skill indica persistir el reporte en `reports/validation/validation-design-<fecha>.md`. **No lo escribí**, porque pediste no cambiar archivos. El checklist de arriba es la versión provisional del diseño.\n- No ejecuté checks deterministas, porque no hay dataset en el workspace y tampoco ejecuté scripts. Tampoco entrené, aprobé gates ni delegué."
+    },
+    {
+      "runtime": "claude",
+      "version": "2.1.290",
+      "test": "plain",
+      "result": "PASS",
+      "exit_code": 0,
+      "workspace_unchanged": true,
+      "native_skill": null,
+      "trace": [
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/AGENTS.md"
+          }
+        },
+        {
+          "tool": "Glob",
+          "input": {}
+        },
+        {
+          "tool": "Glob",
+          "input": {}
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/.acos/project-profile.yaml"
+          }
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/.acos/state.yaml"
+          }
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/.acos/modules.yaml"
+          }
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/PROJECT.md"
+          }
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/MANUAL.md"
+          }
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/CAPABILITIES.md"
+          }
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/TASKS.md"
+          }
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/STATE.md"
+          }
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/DECISIONS.md"
+          }
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/data/data_contract.yaml"
+          }
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/framing/framing.yaml"
+          }
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/validation/model_validation.md"
+          }
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/modeling/model_brief.md"
+          }
+        },
+        {
+          "tool": "Read",
+          "input": {
+            "file_path": "<workspace>/analysis/analysis_plan.md"
+          }
+        }
+      ],
+      "response": "Retomé el proyecto leyendo AGENTS.md, el perfil, el state y los artefactos. No hay trabajo sustantivo que continuar todavía: el proyecto sigue bloqueado.\n\n**Situación (según `.acos/state.yaml`, que es el canónico)**\n- Etapa: `validation`, estado `BLOCKED`, sin gates revisados.\n- Objetivo: auditar el split temporal y el leakage antes de recomendar retención.\n- Bloqueo registrado: falta confirmar la fecha de disponibilidad de las labels.\n\n**Qué hay en el workspace**\n- Todos los artefactos de la etapa son plantillas vacías: `analysis_plan.md`, `model_brief.md`, `selection_plan.md`, `storyline.md` y `model_validation.md`.\n- `data/data_contract.yaml` tiene `grain`, `keys`, `coverage` y `quality` en `null`.\n- `framing/framing.yaml` tiene `unit` y `horizon` en `null`.\n- No hay ningún CSV ni dato en el directorio, aunque el perfil declara `csv` como fuente.\n- STATE.md y MANUAL.md son vistas iniciales, así que las considero obsoletas frente al state.\n\n**Por qué no avanzo con las skills**\n- `detect-leakage` y `design-validation` necesitan saber cuándo se conoce el target, el prediction timestamp y el horizonte. Sin la fecha de disponibilidad de las labels, cualquier diseño de split o auditoría sería inventado.\n- `understand-dataset` necesita el dataset, que no está.\n- Tampoco cambio etapa ni gates sin aprobación y evidencia.\n\n**Qué necesito de ti para desbloquear**\n1. La ruta o el contenido del CSV, o al menos su esquema: columnas, tipos y una muestra.\n2. La fecha o el rezago de disponibilidad de las labels, es decir, cuánto tarda en conocerse si un cliente hizo churn.\n3. La unidad de observación (cliente-mes, por ejemplo) y el horizonte de predicción.\n4. Cuántos clientes se pueden contactar por mes (K), si existe esa restricción operativa. Esto define las métricas operativas.\n\nCon el CSV puedo empezar por `understand-dataset` y completar `data_contract.yaml`. Si prefieres, también puedo dejar anotadas las preguntas abiertas en `TASKS.md` bajo BLOCKED. ¿Cuál de las dos opciones quieres?"
+    }
+  ]
+}

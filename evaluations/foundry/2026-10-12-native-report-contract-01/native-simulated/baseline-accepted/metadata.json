@@ -1,0 +1,72 @@
+{
+  "started_at": "2026-10-12T23:16:48.405312+00:00",
+  "argv": [
+    "/Users/davidrodriguez/.local/bin/claude",
+    "-p",
+    "--restricted",
+    "--no-chrome",
+    "--no-session-persistence",
+    "--setting-sources",
+    "",
+    "--settings",
+    "{\"disableBundledSkills\": true, \"permissions\": {\"allow\": [\"Read(//private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_accepts_contract0/run/workspace/.runtime/check_inputs.py)\", \"Read(//private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_accepts_contract0/run/workspace/.runtime/report-context.json)\", \"Read(//private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_accepts_contract0/run/workspace/case.md)\", \"Read(//private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_accepts_contract0/run/workspace/inputs/data.csv)\", \"Edit(//private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_accepts_contract0/run/workspace/reports/leakage/audit.md)\", \"Bash(/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python /private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_accepts_contract0/run/workspace/.runtime/check_inputs.py)\", \"Skill(acos-eval:detect-leakage)\"], \"deny\": [\"Agent\", \"WebFetch\", \"WebSearch\", \"NotebookEdit\", \"Edit(//private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_accepts_contract0/run/workspace/inputs/**)\", \"Edit(//private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_accepts_contract0/run/workspace/case.md)\", \"Edit(//private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_accepts_contract0/run/workspace/.runtime/**)\"]}}",
+    "--strict-mcp-config",
+    "--mcp-config",
+    "{\"mcpServers\":{}}",
+    "--permission-mode",
+    "dontAsk",
+    "--permission-prompts",
+    "none",
+    "--tools",
+    "Read,Write,Bash,Skill",
+    "--max-turns",
+    "8",
+    "--effort",
+    "low",
+    "--model",
+    "claude-haiku-5-5",
+    "--system-prompt",
+    "Responde en español. Audita solo el expediente público, respeta sus límites y no aceptes gates. Usa únicamente herramientas y capacidades disponibles. Entrega el reporte y su ruta según case.md.",
+    "--output-format",
+    "stream-json",
+    "--verbose"
+  ],
+  "runtime_success": true,
+  "condition": "baseline",
+  "skill_invoked": false,
+  "request_count": 2,
+  "prompt_sha256": "0e69bb9c3d30d5ae2d3d74d7c94af1c0f4c062abbbb96dc1dacab0c029eebca0",
+  "returncode": 0,
+  "tool_calls": [
+    {
+      "name": "Write",
+      "input": {
+        "file_path": "/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_accepts_contract0/run/workspace/reports/leakage/audit.md",
+        "content": "---\nskill: none\nversion: null\nfecha: 2026-10-12\nestado: auditoria\ncondicion: baseline\ninputs:\n  - path: case.md\n    sha256: 4996a6318d929302b8e2db80dec136ae37affed90eb9f9eaa5729b0a640001fd\n  - path: inputs/data.csv\n    sha256: daff832f802000e645771a60983c76c963f6ee602a6230e45237bd360e91cc1a\n---\n## Resumen\nProveedor simulado; correctitud no evaluada.\n## Hallazgos\nProveedor simulado; correctitud no evaluada.\n## Evidencia\nProveedor simulado; correctitud no evaluada.\n## Preguntas abiertas\nProveedor simulado; correctitud no evaluada.\n## Recomendaciones\nProveedor simulado; correctitud no evaluada.\n"
+      }
+    }
+  ],
+  "skill_invocation_requested": false,
+  "usage_known": true,
+  "report_persisted": true,
+  "report_sha256": "852684d7bfd47897c71cd40337af6db37609fac061c51163e4a946d900d39747",
+  "model_usage": {
+    "claude-haiku-5-5": {
+      "inputTokens": 60,
+      "outputTokens": 60,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 3.6e-05,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "contract_success": true,
+  "execution_success": true,
+  "finished_at": "2026-10-12T23:16:48.660008+00:00"
+}

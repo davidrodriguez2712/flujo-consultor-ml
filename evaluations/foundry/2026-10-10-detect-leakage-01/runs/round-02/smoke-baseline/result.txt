@@ -1,0 +1,13 @@
+## Resumen
+
+Completé el smoke técnico. Leí `workflow.md`, `case.md`, `inputs/data.csv` y `.runtime/check_inputs.py`, ejecuté la utility fija una sola vez y escribí el reporte.
+
+- **`inputs/data.csv`**: SHA-256 `8028f83b…be883dbab`, 21 bytes, columnas `entity_id,value`, **1 fila** (`s1,1`).
+- **`case.md`**: SHA-256 `c55d6e54…51e232`, 290 bytes.
+
+**No evalué leakage**, no ejecuté `pipeline.py`, no entrené nada y no modifiqué inputs. Con una sola fila, cualquier conclusión sobre leakage sería infundada. Este smoke no cuenta como evidencia de eficacia.
+
+La skill `acos-eval:detect-leakage` no está instalada en este entorno (solo aparece `plugin-authoring`), así que no la invoqué.
+
+**Ruta del reporte:**
+`/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-02/smoke-baseline/workspace/reports/leakage/audit.md`

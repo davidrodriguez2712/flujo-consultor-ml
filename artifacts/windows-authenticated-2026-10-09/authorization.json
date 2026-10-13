@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-09",
+  "authorized_total_usd": 1.0,
+  "allocation_usd": {
+    "x64_codex": 0.25,
+    "x64_claude": 0.25,
+    "arm64_codex": 0.25,
+    "arm64_claude": 0.25
+  },
+  "automatic_workflow_retries": false,
+  "first_run_id": 37887984029,
+  "first_commit": "f8222c8ff299fd6fb7ff06f593cdbeae62edefe6",
+  "secrets_names_verified": [
+    "OPENAI_API_KEY",
+    "ANTHROPIC_API_KEY"
+  ],
+  "scope": "Skill y continuidad desde archivos en sesión nueva; solo lectura"
+}

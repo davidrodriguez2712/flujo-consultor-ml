@@ -1,0 +1,24 @@
+{
+  "integrity": [
+    {
+      "manifest": "evaluations/foundry/2026-10-12-native-regression-preparation-02/package/execution-manifest-01.json",
+      "files": 23,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/foundry/2026-10-11-detect-leakage-v02/closure-manifest-01.json",
+      "files": 222,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/foundry/2026-10-12-native-report-contract-01/manifest-01.json",
+      "files": 55,
+      "status": "PASS"
+    }
+  ],
+  "canonical_unchanged": true,
+  "paid_calls": 0,
+  "real_additional_spend_usd": 0,
+  "approval_status": "NOT_AUTHORIZED",
+  "private_expected_not_staged": true
+}

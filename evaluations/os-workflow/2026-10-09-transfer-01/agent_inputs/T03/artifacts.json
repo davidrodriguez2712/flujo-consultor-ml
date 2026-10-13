@@ -1,0 +1,49 @@
+{
+  "data/source.json": [
+    {
+      "product_id": "0012",
+      "stock": 2
+    },
+    {
+      "product_id": "0034",
+      "stock": 9
+    }
+  ],
+  "contracts/reproduction.json": {
+    "writer": "CSV conserva product_id del source como texto",
+    "reader": "convierte product_id con int antes del join",
+    "catalog_key": "entero",
+    "selection": "stock < reorder_point",
+    "required": "Igualdad exacta de IDs derivados y shortlist; conservar runs previos; nueva ejecución solo en destino nuevo autorizado"
+  },
+  "data/catalog.json": [
+    {
+      "product_id": 12,
+      "reorder_point": 5
+    },
+    {
+      "product_id": 34,
+      "reorder_point": 7
+    }
+  ],
+  "runs/original/result.json": {
+    "consumed_ids": [
+      12,
+      34
+    ],
+    "selected_ids": [
+      12
+    ],
+    "matched_rows": 2
+  },
+  "runs/reproduction/result.json": {
+    "consumed_ids": [
+      "0012",
+      "0034"
+    ],
+    "selected_ids": [],
+    "matched_rows": 0,
+    "route": "source en memoria -> join; no writer ni reader"
+  },
+  "notes/identifier-risk.md": "Los ceros iniciales podrían ser relevantes en otro sistema. No se ha autorizado modificar este contrato para ese otro sistema."
+}

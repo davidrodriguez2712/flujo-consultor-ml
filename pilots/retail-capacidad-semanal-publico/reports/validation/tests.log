@@ -1,0 +1,31 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.13.2, pytest-9.1.1, pluggy-1.6.0
+rootdir: /Users/davidrodriguez/Programming/ai-flujo-consultor-ml
+configfile: pyproject.toml
+plugins: platformdirs-4.12.3
+collected 153 items
+
+tests/test_catalog.py ...                                                [  1%]
+tests/test_classifier.py ....                                            [  4%]
+tests/test_cli.py ......                                                 [  8%]
+tests/test_compiler.py ...........                                       [ 15%]
+tests/test_config.py ..                                                  [ 16%]
+tests/test_contracts.py ...............                                  [ 26%]
+tests/test_distribution.py .                                             [ 27%]
+tests/test_e2e.py ...........                                            [ 34%]
+tests/test_foundry.py ............                                       [ 42%]
+tests/test_gates.py ........                                             [ 47%]
+tests/test_intake.py ...                                                 [ 49%]
+tests/test_llm_adapter.py ....                                           [ 52%]
+tests/test_project.py ........                                           [ 57%]
+tests/test_render.py ..                                                  [ 58%]
+tests/test_resolver.py .........                                         [ 64%]
+tests/test_runtime_budget.py .............                               [ 73%]
+tests/test_selection_evaluation.py .............                         [ 81%]
+tests/test_temporal_runner.py ...............                            [ 91%]
+tests/test_windows_authenticated_probe.py ......                         [ 95%]
+pilots/retail-capacidad-semanal-publico/analysis/tests/test_forecast.py . [ 96%]
+......                                                                   [100%]
+
+- generated xml file: /Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/retail-capacidad-semanal-publico/reports/validation/tests.xml -
+============================= 153 passed in 4.33s ==============================

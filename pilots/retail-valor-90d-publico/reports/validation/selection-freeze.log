@@ -1,0 +1,19 @@
+{
+  "selected_method": "historical_sales",
+  "period_count": 4,
+  "candidate_checks": {
+    "ridge_log": {
+      "aggregate_sales": 2217514.29,
+      "baseline_aggregate_sales": 2606803.55,
+      "losing_periods": 4,
+      "eligible": false
+    },
+    "hist_gradient_log": {
+      "aggregate_sales": 2487103.96,
+      "baseline_aggregate_sales": 2606803.55,
+      "losing_periods": 4,
+      "eligible": false
+    }
+  },
+  "reason": "Ningún modelo elegible; mantener baseline."
+}

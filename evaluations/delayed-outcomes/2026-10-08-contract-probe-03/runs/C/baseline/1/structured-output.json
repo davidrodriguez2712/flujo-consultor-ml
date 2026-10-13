@@ -1,0 +1,32 @@
+{
+  "rows": [
+    {
+      "id": "C1",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "La ventana [2025-06-01, 2025-07-01) estaba cerrada con seguimiento completo. El acta negativa se public\u00f3 el 2025-07-05T08:00Z, antes del entrenamiento (2025-07-15T00:00Z), as\u00ed que el negativo estaba certificado y disponible. Las features estaban disponibles el 2025-05-31T18:00Z, antes de la predicci\u00f3n del 2025-06-01T00:00Z. La poblaci\u00f3n es v\u00e1lida."
+    },
+    {
+      "id": "C2",
+      "outcome_state_at_extraction": "pending",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "La ventana llega hasta el 2025-09-01 y la extracci\u00f3n fue el 2025-08-15, por lo que el seguimiento segu\u00eda abierto. La regla conocida exige seguimiento completo y acta para certificar el negativo, y el acta est\u00e1 prevista no antes del cierre. El churn=0 del CSV es provisional, no un negativo certificado. Al entrenar (2025-07-15) tampoco hab\u00eda label certificado, as\u00ed que se excluye."
+    },
+    {
+      "id": "C3",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "El acta negativa se public\u00f3 el 2025-07-20T08:00Z. Eso es anterior a la extracci\u00f3n (2025-08-15), as\u00ed que el negativo estaba certificado al extraer. Es posterior al entrenamiento hist\u00f3rico (2025-07-15T00:00Z), y la disponibilidad exige el valor certificado en el sistema de entrenamiento. Para ese entrenamiento el label no estaba disponible, por lo que se excluye. Las features eran v\u00e1lidas, pero el label no."
+    }
+  ],
+  "open_questions": [
+    "\u00bfSe puede confirmar la fecha real de publicaci\u00f3n del acta de C2? Si se public\u00f3 antes del 2025-08-15, no habr\u00eda que clasificarlo como pending.",
+    "\u00bfSe pretende reconstruir el entrenamiento tal como fue el 2025-07-15, donde C3 se excluye, o un reentrenamiento posterior a la extracci\u00f3n, donde C3 ser\u00eda utilizable?",
+    "\u00bfLas actas se registran en el sistema de entrenamiento con un timestamp propio? Se asumi\u00f3 que la fecha de publicaci\u00f3n equivale a la disponibilidad en el sistema.",
+    "\u00bfExcluir C2 y C3 sesga la muestra hacia ventanas cortas? Conviene revisar el sesgo de selecci\u00f3n antes de entrenar. La muestra no tiene positivos, as\u00ed que adem\u00e1s no hay se\u00f1al de churn para aprender."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

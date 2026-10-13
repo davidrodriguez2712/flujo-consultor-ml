@@ -1,0 +1,13 @@
+{
+  "first_attempt": "FAILED: development scores fuera de tolerancia; normalization y snapshots within tolerance.",
+  "root_cause": "Harness omitía dos pasos de persistencia/lectura CSV usados por el pipeline original; pequeñas diferencias binaras pueden cambiar splits de árboles.",
+  "evidence": "La comparación de snapshots tras lectura CSV dio diferenciaexacta0 por todas las features/target; prueba de .30000000000000004→.3 reproduce cambio de representación.",
+  "correction": "Persistir/releer normalizado y snapshots antes de entrenar, replicando ejecución original.",
+  "regression_test": "test_reproduction_uses_persisted_snapshots_as_original_runner",
+  "second_attempt": "PASS en output nuevo reproduced-02; primera salida/log preservados.",
+  "rtol_unchanged": 1e-08,
+  "atol_unchanged": 1e-06,
+  "original_models_and_results_changed": false,
+  "original_holdout_marker_changed": false,
+  "new_strategies_or_tuning": false
+}

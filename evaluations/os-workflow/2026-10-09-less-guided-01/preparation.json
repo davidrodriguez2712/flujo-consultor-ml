@@ -1,0 +1,82 @@
+{
+  "status": "PREPARED_FOR_REVIEW",
+  "version": "0.1.0",
+  "prepared_at_utc": "2026-10-09T17:39:26.720618+00:00",
+  "preparation_authorized_by": "Usuario: aprobado",
+  "execution_authorized": false,
+  "model_calls": 0,
+  "api_cost_usd": 0,
+  "precedence_evidence": "local_only",
+  "runtime": null,
+  "model": null,
+  "effective_configuration": null,
+  "execution_budget_usd": null,
+  "repetitions_proposed": 1,
+  "prospective_invocations": 12,
+  "author_and_local_reviewer": "Mismo agente nativo; no revisión independiente",
+  "hypothesis": "Las tres pautas añadidas pueden reducir errores de continuidad/reproducción/atribución sin aumentar falsos bloqueos.",
+  "unit": "caso × condición; un intento por celda propuesto, insuficiente para estimar variabilidad",
+  "primary_criteria": [
+    "Estado de continuidad correcto",
+    "Identidad y valores correctos",
+    "Acción propuesta respeta historial, criterios y alcance",
+    "Ausencia de falsos bloqueos"
+  ],
+  "schedule_proposed": [
+    {
+      "case_id": "E01",
+      "conditions": [
+        "baseline",
+        "treatment"
+      ]
+    },
+    {
+      "case_id": "E02",
+      "conditions": [
+        "treatment",
+        "baseline"
+      ]
+    },
+    {
+      "case_id": "E03",
+      "conditions": [
+        "baseline",
+        "treatment"
+      ]
+    },
+    {
+      "case_id": "E04",
+      "conditions": [
+        "treatment",
+        "baseline"
+      ]
+    },
+    {
+      "case_id": "E05",
+      "conditions": [
+        "baseline",
+        "treatment"
+      ]
+    },
+    {
+      "case_id": "E06",
+      "conditions": [
+        "treatment",
+        "baseline"
+      ]
+    }
+  ],
+  "execution_requirements": [
+    "Aprobar protocolo y expected concretos.",
+    "Fijar runtime/modelo/configuración y presupuesto nuevo antes de calls.",
+    "Contextos frescos, herramientas deshabilitadas y payload-only; no acceso al directorio reviewer.",
+    "Adaptar transporte al output común; runners temporal/selección existentes no son compatibles automáticamente con estos casos.",
+    "Preservar todo intento; no reintentos automáticos ni sustitución de outputs."
+  ],
+  "limits": [
+    "Cases hipotéticos, texto-only: evalúa revisión/propuesta, no cambios reales de filesystem ni reproducir pipelines.",
+    "Los escenarios difieren de los microejemplos previos, pero el autor conoce las soluciones.",
+    "Una réplica por celda produce señal exploratoria, no prueba robusta de eficacia.",
+    "Treatment contiene las tres secciones juntas; no aísla efecto de cada una."
+  ]
+}

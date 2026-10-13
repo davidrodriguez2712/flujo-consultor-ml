@@ -1,0 +1,23 @@
+{
+  "status": "PARTIAL_STOPPED_MAX_TOKENS",
+  "smoke": "PASS",
+  "completed_cases": [
+    "L01-baseline"
+  ],
+  "incomplete_cases": [
+    "L01-treatment"
+  ],
+  "remaining_cases_not_executed": [
+    "L02-treatment",
+    "L02-baseline",
+    "L03-baseline",
+    "L03-treatment"
+  ],
+  "skill_loaded": true,
+  "paid_requests": 11,
+  "estimated_cost_usd": 0.017535290000000002,
+  "study_cumulative_usd": 0.018224365000000003,
+  "treatment_failure": "max_tokens8192 antes de persistir reporte; input/toolcontext extenso",
+  "efficacy": "NO_COMPLETE_PAIRS",
+  "cross_round_pooling": false
+}

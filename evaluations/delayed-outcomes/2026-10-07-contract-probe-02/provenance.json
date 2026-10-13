@@ -1,0 +1,19 @@
+{
+  "frozen_at": "2026-10-08T03:22:12.736989+00:00",
+  "precedence_evidence": "local_only",
+  "user_approved_design": true,
+  "claude_cli_version": "2.1.293 (Claude Code)",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "python_version": "3.13.2",
+  "system_prompt": "Responde en español. Sigue la tarea y devuelve exclusivamente el JSON pedido. No tienes autoridad para aprobar gates. No uses herramientas.",
+  "source": "Foundry canónico design-validation 0.1.0 snapshot; contrato local 0.1.0",
+  "requested_configuration": {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium",
+    "safe_mode": true,
+    "tools": [],
+    "mcp_servers": {},
+    "session_persistence": false
+  },
+  "note": "Flags registrados no acreditan por sí mismos la configuración efectiva del proveedor."
+}

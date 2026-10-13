@@ -1,0 +1,7 @@
+{
+  "returncode": 0,
+  "stdout": "{\"status\": \"STOPPED_CONTRACT_FAILURE\", \"runs\": [{\"case\": \"L03\", \"condition\": \"treatment\", \"runtime_success\": true, \"contract_success\": false}], \"effectiveness\": \"NOT_REVIEWED\"}\n",
+  "stderr": "",
+  "manifest": "37399f989a7b09b1ff46d56ec08266636b91a6ff141198e5e86cc5e2a09c60a0",
+  "budget_usd": 0.014369455
+}

@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-07",
+  "checks": {
+    "four_csv_reproduced_identically": true,
+    "five_development_json_identical": true,
+    "holdout_not_rerun": true
+  },
+  "destination": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-handoff-reproduction-xqcc2ufv",
+  "commands": [
+    {
+      "script": "generate_synthetic_data.py",
+      "exit_code": 0
+    },
+    {
+      "script": "baseline.py",
+      "exit_code": 0
+    }
+  ]
+}

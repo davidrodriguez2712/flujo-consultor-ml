@@ -1,0 +1,189 @@
+{
+  "results": [
+    {
+      "case": "A",
+      "branch": "baseline",
+      "numeric_checks": {
+        "precision": true,
+        "incremental_impact_usd": true,
+        "roi_pct": true
+      },
+      "draft_ids_complete": true,
+      "strict_status_mismatches": [
+        {
+          "id": "A1",
+          "expected": "unsupported",
+          "actual": "contradicted"
+        }
+      ],
+      "reference_ids_present_and_valid": true,
+      "owner_exact": false,
+      "owner_case_insensitive": true,
+      "gate_needs_review": true,
+      "json_fence_present": false
+    },
+    {
+      "case": "A",
+      "branch": "treatment",
+      "numeric_checks": {
+        "precision": true,
+        "incremental_impact_usd": true,
+        "roi_pct": true
+      },
+      "draft_ids_complete": true,
+      "strict_status_mismatches": [
+        {
+          "id": "A1",
+          "expected": "unsupported",
+          "actual": "contradicted"
+        }
+      ],
+      "reference_ids_present_and_valid": true,
+      "owner_exact": false,
+      "owner_case_insensitive": true,
+      "gate_needs_review": true,
+      "json_fence_present": true
+    },
+    {
+      "case": "B",
+      "branch": "baseline",
+      "numeric_checks": {
+        "global_conversion": true,
+        "north_conversion": true,
+        "south_conversion": true
+      },
+      "draft_ids_complete": true,
+      "strict_status_mismatches": [],
+      "reference_ids_present_and_valid": true,
+      "owner_exact": false,
+      "owner_case_insensitive": true,
+      "gate_needs_review": true,
+      "json_fence_present": true
+    },
+    {
+      "case": "B",
+      "branch": "treatment",
+      "numeric_checks": {
+        "global_conversion": true,
+        "north_conversion": true,
+        "south_conversion": true
+      },
+      "draft_ids_complete": true,
+      "strict_status_mismatches": [],
+      "reference_ids_present_and_valid": true,
+      "owner_exact": false,
+      "owner_case_insensitive": true,
+      "gate_needs_review": true,
+      "json_fence_present": true
+    },
+    {
+      "case": "C",
+      "branch": "baseline",
+      "numeric_checks": {
+        "estimated_conversion_delta_pp": true,
+        "complaint_delta_pp": true,
+        "roi_pct": true
+      },
+      "draft_ids_complete": true,
+      "strict_status_mismatches": [
+        {
+          "id": "C1",
+          "expected": "unsupported",
+          "actual": "contradicted"
+        }
+      ],
+      "reference_ids_present_and_valid": true,
+      "owner_exact": true,
+      "owner_case_insensitive": true,
+      "gate_needs_review": true,
+      "json_fence_present": true
+    },
+    {
+      "case": "C",
+      "branch": "treatment",
+      "numeric_checks": {
+        "estimated_conversion_delta_pp": true,
+        "complaint_delta_pp": true,
+        "roi_pct": true
+      },
+      "draft_ids_complete": true,
+      "strict_status_mismatches": [
+        {
+          "id": "C1",
+          "expected": "unsupported",
+          "actual": "contradicted"
+        }
+      ],
+      "reference_ids_present_and_valid": true,
+      "owner_exact": true,
+      "owner_case_insensitive": true,
+      "gate_needs_review": true,
+      "json_fence_present": true
+    },
+    {
+      "case": "D",
+      "branch": "baseline",
+      "numeric_checks": {
+        "audited_error_rate": true,
+        "population_error_rate": true,
+        "annual_savings_usd": true
+      },
+      "draft_ids_complete": true,
+      "strict_status_mismatches": [],
+      "reference_ids_present_and_valid": true,
+      "owner_exact": false,
+      "owner_case_insensitive": true,
+      "gate_needs_review": true,
+      "json_fence_present": true
+    },
+    {
+      "case": "D",
+      "branch": "treatment",
+      "numeric_checks": {
+        "audited_error_rate": true,
+        "population_error_rate": true,
+        "annual_savings_usd": true
+      },
+      "draft_ids_complete": true,
+      "strict_status_mismatches": [],
+      "reference_ids_present_and_valid": true,
+      "owner_exact": false,
+      "owner_case_insensitive": true,
+      "gate_needs_review": true,
+      "json_fence_present": true
+    }
+  ],
+  "summary": {
+    "baseline": {
+      "correct_numeric_fields": 12,
+      "total_numeric_fields": 12,
+      "strict_claim_status_matches": 10,
+      "claim_status_count": 12,
+      "valid_reference_cases": 4,
+      "owner_exact_cases": 1,
+      "owner_case_insensitive_cases": 4,
+      "fenced_responses": 3,
+      "elapsed_seconds": 51.13,
+      "cost_usd": 0.13901
+    },
+    "treatment": {
+      "correct_numeric_fields": 12,
+      "total_numeric_fields": 12,
+      "strict_claim_status_matches": 10,
+      "claim_status_count": 12,
+      "valid_reference_cases": 4,
+      "owner_exact_cases": 1,
+      "owner_case_insensitive_cases": 4,
+      "fenced_responses": 4,
+      "elapsed_seconds": 48.78,
+      "cost_usd": 0.14464
+    }
+  },
+  "frozen_inputs_unchanged": true,
+  "distinct_sessions": 8,
+  "models": [
+    "claude-sonnet-5-5"
+  ],
+  "review_independent": false,
+  "reference_existence_is_not_semantic_support": true
+}

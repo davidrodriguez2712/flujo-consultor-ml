@@ -1,0 +1,21 @@
+{
+  "suite_passed": 50,
+  "failed": 0,
+  "historical_hashes_verified": {
+    "reports/discovery/evidence-manifest-02.json": 44,
+    "reports/framing/evidence-manifest.json": 18,
+    "reports/diagnosis/evidence-manifest.json": 20,
+    "reports/execution/evidence-manifest.json": 43,
+    "reports/execution/dataset-manifest.json": 8
+  },
+  "execution": "PASS",
+  "validation": "NEEDS_REVIEW",
+  "pending_human_gates": 5,
+  "holdout_attempts": 1,
+  "holdout_status": "COMPLETED",
+  "selection_precedes_holdout": true,
+  "metrics_verified_from_same_saved_artifacts": true,
+  "ranking_verified": true,
+  "no_retraining_or_holdout_command_repeat": true,
+  "api_cost_usd": 0
+}

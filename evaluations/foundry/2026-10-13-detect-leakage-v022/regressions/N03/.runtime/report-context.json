@@ -1,0 +1,6 @@
+{
+  "condicion": "treatment",
+  "skill": "detect-leakage",
+  "version": "0.2.2",
+  "mode": "textual_guide_not_native"
+}

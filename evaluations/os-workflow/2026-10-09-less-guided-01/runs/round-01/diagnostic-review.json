@@ -1,0 +1,27 @@
+{
+  "status": "STOPPED_NO_RETRY",
+  "smoke": "PASS",
+  "benchmark_runtime_successes": 0,
+  "benchmark_attempts": 1,
+  "comparable_pairs": 0,
+  "provider_requests": 2,
+  "blocked_continuations": 1,
+  "estimated_api_cost_usd": 0.0015401750000000002,
+  "remaining_authorized_usd": 0.198459825,
+  "usage_complete": true,
+  "diagnosis": {
+    "observed": "Primer benchmark consumió exactamente cap2048: thinking590 y otros1458. CLI lanzó otro request, bloqueado localmente antes del proveedor. Ambas solicitudes enviadas recibieron HTTP200.",
+    "hypothesis": "Salida insuficiente y continuación por truncación. Stop reason upstream no se registró; el stop_reason del envelope final corresponde al fallo del CLI y no prueba por sí solo la causa upstream.",
+    "authentication": "Smoke y requests HTTP200 demuestran credencial aceptada; el 403 de continuación fue generado por el proxy, no por Anthropic.",
+    "security": "Key no incluida en argv ni evidencia; .env añadido a .gitignore."
+  },
+  "next_proposal": {
+    "max_output_tokens_including_thinking": 8192,
+    "automatic_retry": false,
+    "requires": "Preparar y revisar nuevo control/config versionados; autorización explícita para una nueva ronda manual, manteniendo total acumulado<=0.20. Conservar este fallo y contabilizar su coste. E01 ya expuesto, no llamarlo completamente inédito en una repetición."
+  },
+  "immutable_integrity": "PASS: 48 preparación,12 configuración,70 piloto",
+  "semantic_review": "NOT_RUN; no salida de benchmark válida",
+  "efficacy": "NOT_EVALUABLE",
+  "runtime_isolation_scope": "Smoke observó transporte textual sin tools/MCP y un request; no equivale a sandbox OS ni valida uso diario del proyecto."
+}

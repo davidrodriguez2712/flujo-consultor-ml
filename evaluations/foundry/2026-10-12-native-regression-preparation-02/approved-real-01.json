@@ -1,0 +1,11 @@
+{
+  "status": "APPROVED",
+  "execution_manifest_sha256": "b8ef2799245a463cc3e33be88c25e94b1b26af13072862d9f6c613ac2e0da044",
+  "total_budget_usd": 0.05887352,
+  "package_accepted": true,
+  "basis": "Usuario responde aprobado a hastaUS$0.05adicionales; techoacumuladoUS$0.15, paqueteL01-L03congelado",
+  "prior_total_usd": 0.09112648,
+  "cumulative_ceiling_usd": 0.15,
+  "additional_authorized_usd": 0.05,
+  "automatic_retries": 0
+}

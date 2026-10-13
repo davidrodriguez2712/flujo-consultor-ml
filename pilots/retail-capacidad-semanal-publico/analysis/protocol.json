@@ -1,0 +1,39 @@
+{
+  "version": "01",
+  "target": "distinct positive qualifying invoice IDs in UK per calendar week",
+  "week": "Monday inclusive to next Monday exclusive; naive source timestamps, no verified timezone",
+  "qualification": "country United Kingdom, quantity>0, unit_price>0, invoice_id nonblank and not cancellation C; customer ID not required",
+  "deduplication": "Invoice ID counted once per week; matching copies across sheets and repeated item lines cannot inflate distinct invoice counts. Invoice IDs observed on multiple dates are reported; grouping uses week and invoice ID.",
+  "partial_boundaries": "exclude first week starting 2009-11-30 and last week starting 2011-12-05; assume calendar coverage within source extrema, not verified warehouse completeness",
+  "source_expected_sha256": "4d3618376972b427716f80c4ff6730ef1078ee9eed6670ea31361016cc6799ff",
+  "forecast": "one week ahead at Monday; use only completed weeks strictly before cutoff",
+  "availability": "zero ingestion delay assumed retrospectively; not verified source fact",
+  "baseline": "previous_week",
+  "challenger": "mean_previous_4_weeks",
+  "development_start": "2011-01-03",
+  "development_end_exclusive": "2011-08-01",
+  "final_start": "2011-08-01",
+  "final_end_exclusive": "2011-12-05",
+  "selection": "lowest development WAPE; exact tie retains previous_week baseline",
+  "metrics": [
+    "WAPE=sum_abs_error/sum_actual",
+    "MAE",
+    "bias_mean_prediction_minus_actual"
+  ],
+  "final": "only selected method; no tuning or comparison of challengers on final",
+  "comparison": {
+    "keys_exact": [
+      "cutoff",
+      "method"
+    ],
+    "actual_exact": true,
+    "prediction_rtol": 0.0,
+    "prediction_atol": 1e-12,
+    "selection_exact": true
+  },
+  "stress_checks": [
+    "live plan update preserves frozen evidence",
+    "repeat persistence and reading in independent destination",
+    "deliberately wrong last-period label in QA copy is detected"
+  ]
+}

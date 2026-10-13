@@ -1,0 +1,53 @@
+{
+  "name": "Beneficio incremental estimado mediante experimento",
+  "business": "Contactar clientes para maximizar valor neto esperado incremental de retención a 90 días, capacidad máxima 2 y presupuesto 7. Experimento histórico preespecificado aleatorizó contacto frente a no contacto dentro de cada estrato, con 10000 clientes por brazo/estrato. Todos cumplen asignación, seguimiento completo, sin interferencia; outcomes definidos igual y actuales clientes son intercambiables dentro del estrato con la población del experimento según el supuesto explícito de transporte. CLV es valor monetario por una retención adicional, constante y conocido por estrato. Usar diferencia de proporciones como point estimate de efecto promedio, multiplicar por CLV y restar coste una sola vez. Objetivo aditivo sin interacciones. Evaluar identificación del efecto promedio del contacto por estrato, no efecto individual cierto. No se piden métricas predictivas. Empates conjuntos menor coste/IDs; miembros por valor neto descendente/ID. Optimizar esas estimaciones puntuales; reportar límites de incertidumbre.",
+  "capacity_k": 2,
+  "budget": 7,
+  "metric_population": "eligible-E",
+  "experiment": [
+    {
+      "stratum": "G1",
+      "control_retained": 6000,
+      "treatment_retained": 7000,
+      "n_each_arm": 10000,
+      "clv": 100
+    },
+    {
+      "stratum": "G2",
+      "control_retained": 7000,
+      "treatment_retained": 7400,
+      "n_each_arm": 10000,
+      "clv": 200
+    },
+    {
+      "stratum": "G3",
+      "control_retained": 8000,
+      "treatment_retained": 7900,
+      "n_each_arm": 10000,
+      "clv": 300
+    }
+  ],
+  "rows": [
+    {
+      "id": "M1",
+      "eligible": true,
+      "risk_score": 0.4,
+      "stratum": "G1",
+      "cost": 5
+    },
+    {
+      "id": "M2",
+      "eligible": true,
+      "risk_score": 0.3,
+      "stratum": "G2",
+      "cost": 2
+    },
+    {
+      "id": "M3",
+      "eligible": true,
+      "risk_score": 0.2,
+      "stratum": "G3",
+      "cost": 1
+    }
+  ]
+}

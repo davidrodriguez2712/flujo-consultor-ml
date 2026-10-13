@@ -1,0 +1,221 @@
+{
+  "date": "2026-10-12",
+  "scope": "Ronda real, reportes originales, revisión y coste; sin promoción",
+  "files": [
+    {
+      "path": "REVIEW-REAL-01.md",
+      "sha256": "0bc65aed6e56a711054ac0807b52ce0af308f7eaf38e754de2b0808140603836",
+      "bytes": 10672
+    },
+    {
+      "path": "approved-real-01.json",
+      "sha256": "c5d67202dce1fda5845ae0ee405ba5108bb3b959e04628917a060ffee06032e6",
+      "bytes": 432
+    },
+    {
+      "path": "real-01-launch.json",
+      "sha256": "cfb345f373e50e9de314372d9535d25dc3a7feccad32f87e85be6a96a325e3e1",
+      "bytes": 487
+    },
+    {
+      "path": "runs/real-01/L01-treatment/isolated-config/.claude.json",
+      "sha256": "dd7ac04b6673c37b1f5e7b514c2722e9868ae0a2e7234c466b02be8100d4a812",
+      "bytes": 961
+    },
+    {
+      "path": "runs/real-01/L01-treatment/isolated-config/.last-cleanup",
+      "sha256": "a69a0730eff86f07b647b74153c71573cd96582e8d05737732d32b9a7ca96010",
+      "bytes": 24
+    },
+    {
+      "path": "runs/real-01/L01-treatment/isolated-config/backups/.claude.json.backup.1791849267416",
+      "sha256": "6ebb786da883922d7df8e6b434fede2606bc940acc9eeb0132f4aea2d7034c17",
+      "bytes": 84
+    },
+    {
+      "path": "runs/real-01/L01-treatment/metadata.json",
+      "sha256": "8cc201d3d580fa67aa0721a61ddf7f795c54c7d4d0e8891e9c41b95e0fe1d26b",
+      "bytes": 11123
+    },
+    {
+      "path": "runs/real-01/L01-treatment/prompt.txt",
+      "sha256": "51347fc125118442efe052e4b5935ad3ba32747e34afca59febaf591d9854853",
+      "bytes": 4203
+    },
+    {
+      "path": "runs/real-01/L01-treatment/report-contract.json",
+      "sha256": "17a06c2fe2f09b172ad1dbf468b2a4b57887c1c34934b98641fb16a2fff6d64b",
+      "bytes": 169
+    },
+    {
+      "path": "runs/real-01/L01-treatment/result.txt",
+      "sha256": "e327f2fb0be7bae86dd72536960b60648cf752489371b24a0f068f39803e4741",
+      "bytes": 462
+    },
+    {
+      "path": "runs/real-01/L01-treatment/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/real-01/L01-treatment/stdout.jsonl",
+      "sha256": "cfe0025a2e55869d5dee2ae452e80cd714a49013eb2539b4b7a1a7b628fcd32c",
+      "bytes": 68551
+    },
+    {
+      "path": "runs/real-01/L01-treatment/workspace/.runtime/check_inputs.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "runs/real-01/L01-treatment/workspace/.runtime/plugin/.claude-plugin/plugin.json",
+      "sha256": "5972aa4f54c7e8c2710fffadfee255003714f33148d63c788d7d6cebe42fbb08",
+      "bytes": 41
+    },
+    {
+      "path": "runs/real-01/L01-treatment/workspace/.runtime/plugin/skills/detect-leakage/SKILL.md",
+      "sha256": "c2a2440477d9985489b71f4d8c50380ccd7985635d02eab330cfee0f7e5856c4",
+      "bytes": 5703
+    },
+    {
+      "path": "runs/real-01/L01-treatment/workspace/.runtime/report-context.json",
+      "sha256": "3e6760875e5763433490875735edaacbb63da2e970c62530ac78da2c68850f52",
+      "bytes": 168
+    },
+    {
+      "path": "runs/real-01/L01-treatment/workspace/case.md",
+      "sha256": "89f1c1a622a64a73dafb5b641d871d372e72a1076533a23378ec2446f11e1e14",
+      "bytes": 1728
+    },
+    {
+      "path": "runs/real-01/L01-treatment/workspace/inputs/context.md",
+      "sha256": "3e3db7db6249d33479a7e01fdcaee3f8f8fec3f898f7c863e2d252398e613552",
+      "bytes": 776
+    },
+    {
+      "path": "runs/real-01/L01-treatment/workspace/inputs/observations.csv",
+      "sha256": "29e4badcbbcbf9e242bde9f2d31b80d1f55091a52d094b658e6992a457ad0f19",
+      "bytes": 417
+    },
+    {
+      "path": "runs/real-01/L01-treatment/workspace/inputs/pipeline.py",
+      "sha256": "fb122bed11f58973887818405e1b992b1589a72f8faf0ea13daf98ddb2f3da63",
+      "bytes": 204
+    },
+    {
+      "path": "runs/real-01/L01-treatment/workspace/reports/leakage/audit.md",
+      "sha256": "2690cb9e9f94cb2c7ad51c9a4bf5a4a90642ab0b5644d1f8c5cf9afc96f5afa9",
+      "bytes": 3565
+    },
+    {
+      "path": "runs/real-01/L01-treatment/workspace/workflow.md",
+      "sha256": "0cc2f01287ed857dc98c005ec8f5143d3c155d671f4404c8d27f43dd0c60a35f",
+      "bytes": 2973
+    },
+    {
+      "path": "runs/real-01/L02-treatment/isolated-config/.claude.json",
+      "sha256": "fc9643a6f8d25621599070198a1c3da90ea7705648c03a3585be77a756cc41aa",
+      "bytes": 961
+    },
+    {
+      "path": "runs/real-01/L02-treatment/isolated-config/.last-cleanup",
+      "sha256": "a154ace4eaed5e44aa064acda21ce25ab47cdb780e1c783e6d68eafdbecce9b4",
+      "bytes": 24
+    },
+    {
+      "path": "runs/real-01/L02-treatment/isolated-config/backups/.claude.json.backup.1791849292718",
+      "sha256": "8b6f908d9001a9e932bc4d0791642eb727f2189b9aa08dd97f2a88200557abcc",
+      "bytes": 84
+    },
+    {
+      "path": "runs/real-01/L02-treatment/metadata.json",
+      "sha256": "1cc960ee13034f8ec1ddffacaa1d18669cec3643dd25524e2e7ea9173003affe",
+      "bytes": 10807
+    },
+    {
+      "path": "runs/real-01/L02-treatment/prompt.txt",
+      "sha256": "6d0cc4b40b2a47398d942a74371a9845d5805b2bd147475d241a345ce8cb6009",
+      "bytes": 4203
+    },
+    {
+      "path": "runs/real-01/L02-treatment/report-contract.json",
+      "sha256": "a435fa2563be5ee94a8b6b4a0e168df8c17c7fc4bf6191aa181f0800e7a53e42",
+      "bytes": 199
+    },
+    {
+      "path": "runs/real-01/L02-treatment/result.txt",
+      "sha256": "b8d930c14c05d0895af8ce29a00e98d052a6e455864e0aa8a3ff4bbd41b43816",
+      "bytes": 667
+    },
+    {
+      "path": "runs/real-01/L02-treatment/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/real-01/L02-treatment/stdout.jsonl",
+      "sha256": "c495c5624f89546cd5cb7ea0435ab6ba6c1c0d2f7098529358a138578804d058",
+      "bytes": 69845
+    },
+    {
+      "path": "runs/real-01/L02-treatment/workspace/.runtime/check_inputs.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "runs/real-01/L02-treatment/workspace/.runtime/plugin/.claude-plugin/plugin.json",
+      "sha256": "5972aa4f54c7e8c2710fffadfee255003714f33148d63c788d7d6cebe42fbb08",
+      "bytes": 41
+    },
+    {
+      "path": "runs/real-01/L02-treatment/workspace/.runtime/plugin/skills/detect-leakage/SKILL.md",
+      "sha256": "c2a2440477d9985489b71f4d8c50380ccd7985635d02eab330cfee0f7e5856c4",
+      "bytes": 5703
+    },
+    {
+      "path": "runs/real-01/L02-treatment/workspace/.runtime/report-context.json",
+      "sha256": "3e6760875e5763433490875735edaacbb63da2e970c62530ac78da2c68850f52",
+      "bytes": 168
+    },
+    {
+      "path": "runs/real-01/L02-treatment/workspace/case.md",
+      "sha256": "71613379fe4387f19de862020de6bcdedec00623aeb452bbdff9491690b61d39",
+      "bytes": 1725
+    },
+    {
+      "path": "runs/real-01/L02-treatment/workspace/inputs/context.md",
+      "sha256": "2d20272658305e9620515452c404e52d7b2015db0d0a30412287c4aa02a0c1b0",
+      "bytes": 1051
+    },
+    {
+      "path": "runs/real-01/L02-treatment/workspace/inputs/observations.csv",
+      "sha256": "cbcae4e4f891739ea487feda3f7e1eac58cf9fbe3303b774b5563770f7127462",
+      "bytes": 593
+    },
+    {
+      "path": "runs/real-01/L02-treatment/workspace/inputs/pipeline.py",
+      "sha256": "8fc757e4a3209efdedd3e1b8de6f0b77109557fb6335ac263cd3cea9b3788011",
+      "bytes": 391
+    },
+    {
+      "path": "runs/real-01/L02-treatment/workspace/reports/leakage/audit.md",
+      "sha256": "2778cf9df083e876436cc251328422eea5bc46b5da28e2591766e0194ba53639",
+      "bytes": 3501
+    },
+    {
+      "path": "runs/real-01/L02-treatment/workspace/workflow.md",
+      "sha256": "0cc2f01287ed857dc98c005ec8f5143d3c155d671f4404c8d27f43dd0c60a35f",
+      "bytes": 2973
+    },
+    {
+      "path": "runs/real-01/ledger.json",
+      "sha256": "3d613b79ede046356b0e7e1266381be996e0f6c5375f1f51cc4f76593200568b",
+      "bytes": 5960
+    },
+    {
+      "path": "runs/real-01/summary.json",
+      "sha256": "c196976da04a76e4f0a62e39750d39416918de77082ec2cb9996ecc84fc020e0",
+      "bytes": 351
+    }
+  ]
+}

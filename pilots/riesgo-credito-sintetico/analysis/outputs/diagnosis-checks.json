@@ -1,0 +1,342 @@
+{
+  "date": "2026-10-08",
+  "synthetic": true,
+  "scope": "Checks ad hoc de estructura/viabilidad; sin modelos, split ejecutado ni métricas de holdout.",
+  "inventory": {
+    "applications": {
+      "rows": 7200,
+      "columns": {
+        "application_id": {
+          "type_inferred": "string",
+          "missing": 0,
+          "unique_nonblank": 7200,
+          "constant_nonblank": false
+        },
+        "customer_id": {
+          "type_inferred": "string",
+          "missing": 0,
+          "unique_nonblank": 1766,
+          "constant_nonblank": false
+        },
+        "scoring_at": {
+          "type_inferred": "date",
+          "missing": 0,
+          "unique_nonblank": 672,
+          "constant_nonblank": false,
+          "min": "2024-01-01",
+          "max": "2025-12-28"
+        },
+        "monthly_income": {
+          "type_inferred": "integer",
+          "missing": 0,
+          "unique_nonblank": 3732,
+          "constant_nonblank": false
+        },
+        "debt_to_income": {
+          "type_inferred": "number",
+          "missing": 0,
+          "unique_nonblank": 4440,
+          "constant_nonblank": false
+        },
+        "requested_amount": {
+          "type_inferred": "integer",
+          "missing": 0,
+          "unique_nonblank": 191,
+          "constant_nonblank": false
+        },
+        "bureau_score": {
+          "type_inferred": "integer",
+          "missing": 0,
+          "unique_nonblank": 358,
+          "constant_nonblank": false
+        }
+      },
+      "duplicate_application_ids": 0,
+      "exact_duplicate_rows": 0,
+      "sample": {
+        "application_id": "A000001",
+        "customer_id": "C0161",
+        "scoring_at": "2024-01-07",
+        "monthly_income": "1322",
+        "debt_to_income": "0.4352",
+        "requested_amount": "19300",
+        "bureau_score": "558"
+      },
+      "sha256": "512ed2cc0797ffec199cfa9bd3aad48ea1a5954a1be81bad60ff645b28f052f6"
+    },
+    "decisions": {
+      "rows": 7200,
+      "columns": {
+        "application_id": {
+          "type_inferred": "string",
+          "missing": 0,
+          "unique_nonblank": 7200,
+          "constant_nonblank": false
+        },
+        "decision_at": {
+          "type_inferred": "date",
+          "missing": 0,
+          "unique_nonblank": 672,
+          "constant_nonblank": false,
+          "min": "2024-01-02",
+          "max": "2025-12-29"
+        },
+        "decision": {
+          "type_inferred": "string",
+          "missing": 0,
+          "unique_nonblank": 2,
+          "constant_nonblank": false
+        },
+        "funded_amount": {
+          "type_inferred": "integer",
+          "missing": 3726,
+          "unique_nonblank": 191,
+          "constant_nonblank": false
+        },
+        "disbursed_at": {
+          "type_inferred": "date",
+          "missing": 3726,
+          "unique_nonblank": 672,
+          "constant_nonblank": false,
+          "min": "2024-01-02",
+          "max": "2025-12-29"
+        }
+      },
+      "duplicate_application_ids": 0,
+      "exact_duplicate_rows": 0,
+      "sample": {
+        "application_id": "A000001",
+        "decision_at": "2024-01-08",
+        "decision": "rejected",
+        "funded_amount": "",
+        "disbursed_at": ""
+      },
+      "sha256": "1bac356ab25a8c3a6bcb9a76c8c6230ff9cf48e7085be0be2148d3ae0066ff29"
+    },
+    "history": {
+      "rows": 7200,
+      "columns": {
+        "application_id": {
+          "type_inferred": "string",
+          "missing": 0,
+          "unique_nonblank": 7200,
+          "constant_nonblank": false
+        },
+        "customer_id": {
+          "type_inferred": "string",
+          "missing": 0,
+          "unique_nonblank": 1766,
+          "constant_nonblank": false
+        },
+        "snapshot_at": {
+          "type_inferred": "date",
+          "missing": 0,
+          "unique_nonblank": 672,
+          "constant_nonblank": false,
+          "min": "2023-12-22",
+          "max": "2025-12-18"
+        },
+        "available_at": {
+          "type_inferred": "date",
+          "missing": 0,
+          "unique_nonblank": 672,
+          "constant_nonblank": false,
+          "min": "2023-12-30",
+          "max": "2025-12-26"
+        },
+        "prior_late_count": {
+          "type_inferred": "integer",
+          "missing": 0,
+          "unique_nonblank": 6,
+          "constant_nonblank": false
+        }
+      },
+      "duplicate_application_ids": 0,
+      "exact_duplicate_rows": 0,
+      "sample": {
+        "application_id": "A000001",
+        "customer_id": "C0161",
+        "snapshot_at": "2023-12-28",
+        "available_at": "2024-01-05",
+        "prior_late_count": "2"
+      },
+      "sha256": "2a2da6b8dea82df9a4f2b8e066a0439219935f337e2af45970529a6359970ca5"
+    },
+    "outcomes": {
+      "rows": 7200,
+      "columns": {
+        "application_id": {
+          "type_inferred": "string",
+          "missing": 0,
+          "unique_nonblank": 7200,
+          "constant_nonblank": false
+        },
+        "extract_at": {
+          "type_inferred": "date",
+          "missing": 0,
+          "unique_nonblank": 1,
+          "constant_nonblank": true,
+          "min": "2026-01-15",
+          "max": "2026-01-15"
+        },
+        "disbursed_at": {
+          "type_inferred": "date",
+          "missing": 3726,
+          "unique_nonblank": 672,
+          "constant_nonblank": false,
+          "min": "2024-01-02",
+          "max": "2025-12-29"
+        },
+        "window_end": {
+          "type_inferred": "date",
+          "missing": 3726,
+          "unique_nonblank": 672,
+          "constant_nonblank": false,
+          "min": "2024-04-01",
+          "max": "2026-03-29"
+        },
+        "label_available_at": {
+          "type_inferred": "date",
+          "missing": 3726,
+          "unique_nonblank": 672,
+          "constant_nonblank": false,
+          "min": "2024-04-08",
+          "max": "2026-04-05"
+        },
+        "label_status": {
+          "type_inferred": "string",
+          "missing": 0,
+          "unique_nonblank": 3,
+          "constant_nonblank": false
+        },
+        "target_30dpd_90d": {
+          "type_inferred": "integer",
+          "missing": 4116,
+          "unique_nonblank": 2,
+          "constant_nonblank": false
+        }
+      },
+      "duplicate_application_ids": 0,
+      "exact_duplicate_rows": 0,
+      "sample": {
+        "application_id": "A000001",
+        "extract_at": "2026-01-15",
+        "disbursed_at": "",
+        "window_end": "",
+        "label_available_at": "",
+        "label_status": "not_observed_rejected",
+        "target_30dpd_90d": ""
+      },
+      "sha256": "3cdfdd1ce17e854a40d83dced1f331eee56aca95e7750ec782d2edc747d586f7"
+    },
+    "post_decision": {
+      "rows": 7200,
+      "columns": {
+        "application_id": {
+          "type_inferred": "string",
+          "missing": 0,
+          "unique_nonblank": 7200,
+          "constant_nonblank": false
+        },
+        "available_at": {
+          "type_inferred": "date",
+          "missing": 4116,
+          "unique_nonblank": 597,
+          "constant_nonblank": false,
+          "min": "2024-04-08",
+          "max": "2026-01-15"
+        },
+        "max_dpd_90d": {
+          "type_inferred": "integer",
+          "missing": 4116,
+          "unique_nonblank": 91,
+          "constant_nonblank": false
+        }
+      },
+      "duplicate_application_ids": 0,
+      "exact_duplicate_rows": 0,
+      "sample": {
+        "application_id": "A000001",
+        "available_at": "",
+        "max_dpd_90d": ""
+      },
+      "sha256": "21662662dda0bdcf67f5a0c28060db8acb245d2070dce07913d929038e3812a5"
+    }
+  },
+  "joins": {
+    "applications": {
+      "same_application_ids": true,
+      "cardinality": "1:1"
+    },
+    "decisions": {
+      "same_application_ids": true,
+      "cardinality": "1:1"
+    },
+    "history": {
+      "same_application_ids": true,
+      "cardinality": "1:1"
+    },
+    "outcomes": {
+      "same_application_ids": true,
+      "cardinality": "1:1"
+    },
+    "post_decision": {
+      "same_application_ids": true,
+      "cardinality": "1:1"
+    }
+  },
+  "wrong_customer_join_rows": 35914,
+  "intended_application_join_rows": 7200,
+  "checks": {
+    "history_available_before_scoring": true,
+    "history_snapshot_before_available": true,
+    "decision_after_scoring": true,
+    "pending_target_blank": true,
+    "rejected_target_blank": true,
+    "observed_at_extract": true,
+    "delay_97_days": true,
+    "leakage_feature_available_late": true,
+    "leakage_feature_encodes_target": true,
+    "no_postdecision_values_for_pending_or_rejected": true
+  },
+  "proposed_validation_feasibility": {
+    "development_train": {
+      "rows": 1248,
+      "customers": 887,
+      "scoring_min": "2024-01-01",
+      "scoring_max": "2024-09-25",
+      "latest_label_available": "2025-01-01",
+      "positive_labels": 134,
+      "all_labels_available_at_cutoff": true
+    },
+    "development_validation": {
+      "rows": 298,
+      "positive_labels": 40,
+      "all_labels_available_at_selection_2025_06_15": true
+    },
+    "final_train": {
+      "rows": 2140,
+      "customers": 1220,
+      "scoring_min": "2024-01-01",
+      "scoring_max": "2025-03-25",
+      "latest_label_available": "2025-07-01",
+      "positive_labels": 249,
+      "all_labels_available_at_cutoff": true
+    },
+    "reserved_final_period": {
+      "applications": 900,
+      "evaluable_funded_mature": 447,
+      "rejected_unobserved": 453,
+      "all_funded_labels_available_at_extract": true,
+      "customers_overlapping_train_and_final": 289,
+      "positive_labels": "NOT_AGGREGATED_BY_HOLDOUT_IN_THIS_AUDIT",
+      "model_metrics": "NOT_COMPUTED"
+    },
+    "observed_at_extract_but_unavailable_at_final_training_cutoff": 455
+  },
+  "label_counts": {
+    "not_observed_rejected": 3726,
+    "observed": 3084,
+    "pending": 390
+  }
+}

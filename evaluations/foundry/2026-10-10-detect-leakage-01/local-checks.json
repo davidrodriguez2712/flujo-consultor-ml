@@ -1,0 +1,25 @@
+{
+  "status": "PASS_PREPARATION_ONLY",
+  "cases": 3,
+  "input_rows": {
+    "L01": 4,
+    "L02": 6,
+    "L03": 3
+  },
+  "L01_all_recovered_after_scoring": true,
+  "L01_all_history_before_scoring": true,
+  "L02_features_before_scoring": true,
+  "L02_train_labels_before_training": true,
+  "L02_evaluation_after_training": true,
+  "L02_same_entities_recur": true,
+  "L02_pipeline_order": "Revisión autor: particiones separadas antes de fit_transform(train), evaluación con transform; código no ejecutado.",
+  "L03_availability_absent": true,
+  "skill_snapshot_matches_canonical": true,
+  "public_private_separation": "Rutas separadas; aislamiento real del runtime pendiente.",
+  "review_independent": false,
+  "model_calls": 0,
+  "api_cost_usd": 0,
+  "canonical_foundry_modified": false,
+  "tests_run": false,
+  "effectiveness": "NOT_EVALUATED"
+}

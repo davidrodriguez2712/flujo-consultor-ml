@@ -1,0 +1,40 @@
+decision: Priorizar solicitudes para revisión manual con capacidad de 100 revisiones
+  al mes; la decisión de aprobar corresponde al reviewer humano.
+owner: David, reviewer del piloto sintético; sin autoridad sobre créditos reales
+metric: Brier score en créditos concedidos y maduros; ROC-AUC, calibración y Precision@K
+  como métricas secundarias con población explícita.
+unit: Una solicitud identificada por application_id; customer_id identifica recurrencia,
+  no es feature predictiva.
+horizon: Target de 30 días de mora en los primeros 90 días desde desembolso; label
+  completa disponible al día 97. Priorización por mes de solicitud.
+status: PROPOSED_NEEDS_REVIEW
+population:
+  operational: Todas las solicitudes del mes elegibles para revisión; hasta 100 propuestas,
+    sin aprobación o rechazo automático.
+  offline_evaluable: Créditos concedidos históricamente y con target disponible al
+    cutoff pertinente.
+  unobserved: Rechazadas sin outcome; pendientes no son negativos. No se evalúan resultados
+    de la política histórica sobre toda la población solicitante.
+ranking_policy:
+  objective: Orden descendente de score de riesgo; priorización para revisión, no
+    maximización de beneficio causal.
+  capacity_per_month: 100
+  effective_k: min(100, número de solicitudes elegibles de la población declarada)
+  tie_break: application_id ascendente
+  threshold: Ninguno en la propuesta; no equivale a que llenar capacidad sea económicamente
+    óptimo.
+  authority: Reviewer humano decide acciones; score no otorga o deniega crédito.
+constraints:
+- Datos 100% sintéticos, seed 20261008; no extrapolar resultados a solicitantes reales.
+- 'Capacidad del laboratorio: hasta 100 revisiones mensuales, sin aprobación o rechazo
+  automático.'
+- 'Target: 30 días de mora alcanzados dentro de 90 días desde desembolso; label completa
+  disponible al día 97.'
+- Rechazadas sin outcome observado; no asumir ausencia de mora ni generalización del
+  modelo a esa población.
+- Ranking por riesgo como propuesta; no identificar ahorro, impacto de revisión ni
+  valor causal.
+- Ejecución local; sin llamadas adicionales a APIs.
+acceptance_contract: framing/acceptance.md
+metrics_contract: framing/metrics.yaml
+scope_contract: framing/scope.md

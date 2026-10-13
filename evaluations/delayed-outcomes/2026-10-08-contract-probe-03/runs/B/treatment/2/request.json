@@ -1,0 +1,31 @@
+{
+  "argv": [
+    "/Users/davidrodriguez/.local/bin/claude",
+    "-p",
+    "--safe-mode",
+    "--no-chrome",
+    "--no-session-persistence",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--mcp-config",
+    "{\"mcpServers\":{}}",
+    "--output-format",
+    "json",
+    "--json-schema",
+    "{\n  \"additionalProperties\": false,\n  \"properties\": {\n    \"rows\": {\n      \"items\": {\n        \"$ref\": \"#/definitions/TemporalRow\"\n      },\n      \"minItems\": 1,\n      \"title\": \"Rows\",\n      \"type\": \"array\"\n    },\n    \"open_questions\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Open Questions\",\n      \"type\": \"array\"\n    },\n    \"gate_decision\": {\n      \"enum\": [\n        \"NEEDS_REVIEW\",\n        \"PASS\",\n        \"BLOCKED\"\n      ],\n      \"title\": \"Gate Decision\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"rows\",\n    \"open_questions\",\n    \"gate_decision\"\n  ],\n  \"title\": \"TemporalAudit\",\n  \"type\": \"object\",\n  \"definitions\": {\n    \"TemporalRow\": {\n      \"additionalProperties\": false,\n      \"properties\": {\n        \"id\": {\n          \"minLength\": 1,\n          \"title\": \"Id\",\n          \"type\": \"string\"\n        },\n        \"outcome_state_at_extraction\": {\n          \"enum\": [\n            \"observed_positive\",\n            \"observed_negative\",\n            \"pending\",\n            \"unknown\"\n          ],\n          \"title\": \"Outcome State At Extraction\",\n          \"type\": \"string\"\n        },\n        \"label_availability_at_training\": {\n          \"enum\": [\n            \"available\",\n            \"unavailable\",\n            \"indeterminate\"\n          ],\n          \"title\": \"Label Availability At Training\",\n          \"type\": \"string\"\n        },\n        \"train_eligibility\": {\n          \"enum\": [\n            \"eligible\",\n            \"exclude\",\n            \"indeterminate\"\n          ],\n          \"title\": \"Train Eligibility\",\n          \"type\": \"string\"\n        },\n        \"reason\": {\n          \"minLength\": 1,\n          \"title\": \"Reason\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"id\",\n        \"outcome_state_at_extraction\",\n        \"label_availability_at_training\",\n        \"train_eligibility\",\n        \"reason\"\n      ],\n      \"title\": \"TemporalRow\",\n      \"type\": \"object\"\n    }\n  },\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"$comment\": \"ACOS temporal-audit 0.1.0; estructura, no expected ni aprobaci\u00f3n humana.\"\n}\n",
+    "--model",
+    "claude-sonnet-5-5",
+    "--effort",
+    "medium",
+    "--system-prompt",
+    "Responde en espa\u00f1ol. Realiza la auditor\u00eda con los datos provistos y entrega el objeto mediante el mecanismo de salida estructurada. No entrenes, ejecutes comandos, accedas a archivos o act\u00faes externamente. No tienes autoridad para aprobar gates."
+  ],
+  "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-structured-call-jbc3kxvr",
+  "stdin_sha256": "eba6bb20a1999e539c5e93bbef9f6afaaad62044868f8021e421799691045241",
+  "schema_sha256": "62bf68c39f6359279edd89263fcf7381c6ef53c5e832234ae5b55e008503ac3d",
+  "system_prompt": "Responde en espa\u00f1ol. Realiza la auditor\u00eda con los datos provistos y entrega el objeto mediante el mecanismo de salida estructurada. No entrenes, ejecutes comandos, accedas a archivos o act\u00faes externamente. No tienes autoridad para aprobar gates.",
+  "cli_version": "2.1.294 (Claude Code)",
+  "runner_version": "0.2.0",
+  "schema_version": "0.1.0"
+}

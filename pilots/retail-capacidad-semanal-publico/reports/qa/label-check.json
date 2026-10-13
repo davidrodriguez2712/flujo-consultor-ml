@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "source": "reports/run-01/final_predictions.csv",
+  "identity": {
+    "metric": "predicted_positive_invoice_count",
+    "method": "mean_previous_4_weeks",
+    "population": "UK qualifying positive invoices",
+    "unit": "facturas",
+    "cutoff": "2011-11-28",
+    "week_end_exclusive": "2011-12-05"
+  },
+  "deliberate_error_detected": true,
+  "wrong_value": 317.5,
+  "wrong_cutoff": "2011-08-01",
+  "correct_prediction": 556.5,
+  "correct_actual": 608,
+  "orderings_checked": 3,
+  "partial_week_excluded": "2011-12-05",
+  "source_hash": "e1bf7bdf30940569c80c966c2a07e11035af201fbeb0c24d37be9aa0ca2d47cf",
+  "original_unchanged": true,
+  "correction": "Etiqueta con cutoff explícito 2011-11-28; forecast 556.5; observado 608."
+}

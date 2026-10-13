@@ -1,0 +1,89 @@
+{
+  "source_sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980",
+  "sheets": [
+    {
+      "name": "Year 2009-2010",
+      "rows": 525461,
+      "source_columns": [
+        "Invoice",
+        "StockCode",
+        "Description",
+        "Quantity",
+        "InvoiceDate",
+        "Price",
+        "Customer ID",
+        "Country"
+      ],
+      "extra_columns": [],
+      "mapping": {
+        "Invoice": "invoice_id",
+        "StockCode": "stock_code",
+        "Description": "description",
+        "Quantity": "quantity",
+        "InvoiceDate": "invoice_at",
+        "Price": "unit_price",
+        "Customer ID": "customer_id",
+        "Country": "country"
+      },
+      "parse_errors": {
+        "quantity": 0,
+        "unit_price": 0,
+        "invoice_at": 0
+      },
+      "normalized_dtypes": {
+        "invoice_id": "string",
+        "stock_code": "string",
+        "description": "string",
+        "quantity": "int64",
+        "invoice_at": "datetime64[us]",
+        "unit_price": "float64",
+        "customer_id": "string",
+        "country": "string",
+        "source_sheet": "str",
+        "source_row": "int64"
+      }
+    },
+    {
+      "name": "Year 2010-2011",
+      "rows": 541910,
+      "source_columns": [
+        "Invoice",
+        "StockCode",
+        "Description",
+        "Quantity",
+        "InvoiceDate",
+        "Price",
+        "Customer ID",
+        "Country"
+      ],
+      "extra_columns": [],
+      "mapping": {
+        "Invoice": "invoice_id",
+        "StockCode": "stock_code",
+        "Description": "description",
+        "Quantity": "quantity",
+        "InvoiceDate": "invoice_at",
+        "Price": "unit_price",
+        "Customer ID": "customer_id",
+        "Country": "country"
+      },
+      "parse_errors": {
+        "quantity": 0,
+        "unit_price": 0,
+        "invoice_at": 0
+      },
+      "normalized_dtypes": {
+        "invoice_id": "string",
+        "stock_code": "string",
+        "description": "string",
+        "quantity": "int64",
+        "invoice_at": "datetime64[us]",
+        "unit_price": "float64",
+        "customer_id": "string",
+        "country": "string",
+        "source_sheet": "str",
+        "source_row": "int64"
+      }
+    }
+  ]
+}

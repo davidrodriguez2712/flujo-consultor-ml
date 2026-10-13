@@ -1,0 +1,19 @@
+{
+  "version": "0.1.0",
+  "status": "delivery_prepared_human_review_pending",
+  "scope": "Paquete local de Delivery; no publicación, cierre o aceptación automática.",
+  "files": {
+    "decision/recommendation.md": "54b4b05405a5bec39c745c58bf3bae827d89b3dfa79cff4f5ee0e10e11521680",
+    "delivery/analytical_report.md": "5a4e0f8011bdef2d456f0c18fba6d3e03bece87fcf5dc2e067962b0015b1b89b",
+    "delivery/claims.yaml": "4686f3acdbd6022b2d3ea717ff5e08207f6251157b00e6a57bc7d751d64f5594",
+    "delivery/decision_memo.md": "b9ec564be26b5dec676d93155f73532380a7835b04af70ca415851bfce136705",
+    "delivery/delivery_contract.md": "e1da3573d49a962d680504df21224f02af6dd9d0d3b8a00a626c24fdd852b648",
+    "reports/delivery/acos-next.json": "a804304e40065f9bc7eb34eefa76b18e1dcd901f4b3bf73b3189e783a853c6a8",
+    "reports/delivery/acos-status.json": "38c446ebfdc8a298989daebf3b846899b7b561114e707c9b08efd560c3e7eaa5",
+    "reports/delivery/agent-review.md": "5472368f46c7b9511f257f6ae095e65c6efdcdaad616ce08573a7db10a605c98",
+    "reports/delivery/claim-checks.json": "f210ad13131df60af84304d6027de6dd0f5490dc0f453682af425a55e8bf6c72",
+    "reports/delivery/delivery-gate.json": "33e375864aeecc62b11677ff5215156fa590d01393a9f11b529f9353e2a1af51",
+    "reports/delivery/review.md": "a50da1a7b673b172b63bf58b0a838fac9b356d646cfbe29382c87ea277ae7879",
+    "reports/delivery/verification.json": "5111542a0f87169338729b136a5db5bfa29684276692027cdec30770054de083"
+  }
+}

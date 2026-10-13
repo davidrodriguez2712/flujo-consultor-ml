@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-12",
+  "paid_api_calls": 0,
+  "additional_api_cost_usd": 0,
+  "detect_leakage_study_cost_usd": 0.09112648,
+  "remaining_usd": 0.00887352,
+  "full_suite": {
+    "passed": 262,
+    "failed": 0,
+    "seconds": 17.43,
+    "xml": "acos-contract-full-closed-20261012.xml"
+  },
+  "historical_v02_files_unchanged": 222,
+  "canonical_skill_unchanged": true,
+  "native_simulated_examples": [
+    {
+      "case": "baseline-accepted",
+      "source_test_run": "/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_accepts_contract0/run"
+    },
+    {
+      "case": "treatment-accepted",
+      "source_test_run": "/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_accepts_contract1/run"
+    },
+    {
+      "case": "baseline-rejected",
+      "source_test_run": "/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_preserves_invali0/run"
+    }
+  ],
+  "semantics": "NOT_EVALUATED_BY_CHECKER",
+  "future_configs_require_new_frozen_transport": true
+}

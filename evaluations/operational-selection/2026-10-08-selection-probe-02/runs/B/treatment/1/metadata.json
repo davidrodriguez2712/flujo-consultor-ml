@@ -1,0 +1,77 @@
+{
+  "runner_version": "0.1.0",
+  "schema_version": "0.1.0",
+  "started_at": "2026-10-08T10:42:07.970318+00:00",
+  "finished_at": "2026-10-08T10:42:20.954273+00:00",
+  "wall_seconds": 12.984,
+  "provider_duration_ms": 11859,
+  "exit_code": 0,
+  "runtime_success": true,
+  "structured_present": true,
+  "schema_conformant": true,
+  "model_matches": true,
+  "content_validation": "NOT_RUN",
+  "findings": [],
+  "session_id": "4b4f096c-880e-482e-a36d-c8901b0420be",
+  "num_turns": 2,
+  "model_usage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1647,
+      "cacheReadInputTokens": 2051,
+      "cacheCreationInputTokens": 5271,
+      "webSearchRequests": 0,
+      "costUSD": 0.037968199999999994,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 313,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "model_usage_reported": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1647,
+      "cacheReadInputTokens": 2051,
+      "cacheCreationInputTokens": 5271,
+      "webSearchRequests": 0,
+      "costUSD": 0.037968199999999994,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 313,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "cost_usd_reported": 0.037968199999999994,
+  "cli_version": "2.1.294 (Claude Code)",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "python_version": "3.13.2",
+  "payload_sha256": "2560def46e15b1dcce7203b8d6ceb44f19f2a225cacd6bf84aa9f57d7b9fd9cd",
+  "schema_sha256": "2f65e387b04356d4efc7b0efd32ae3c69181d40a7b4221ea4664913e09e2ce74",
+  "request_sha256": "e75c97ae8fa2b4804b609f1130e09f65ce0d7153f39426c20f0b619bf8b731ca",
+  "runner_sha256": "7680658bd63999509ae11e7569a98ecb9c40e37870b1394f0cad750b6be278cc",
+  "effective_configuration": {
+    "resolved_models": [
+      "claude-sonnet-5-5"
+    ],
+    "effort": "unknown",
+    "tools": "unknown",
+    "safe_mode": "unknown",
+    "mcp": "unknown",
+    "session_persistence": "unknown"
+  },
+  "artifact_sha256": {
+    "payload.txt": "2560def46e15b1dcce7203b8d6ceb44f19f2a225cacd6bf84aa9f57d7b9fd9cd",
+    "raw.json": "7197aeb705193159b0fa80ec6e95256856f3c597ca1d8dd2c36cd09892b87d86",
+    "request.json": "e75c97ae8fa2b4804b609f1130e09f65ce0d7153f39426c20f0b619bf8b731ca",
+    "result.txt": "16e90395a55c9fdeb8c4bca83a59fbdccfbf9c5cc1322da008e5b66be585d2b9",
+    "schema.json": "2f65e387b04356d4efc7b0efd32ae3c69181d40a7b4221ea4664913e09e2ce74",
+    "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout.txt": "7197aeb705193159b0fa80ec6e95256856f3c597ca1d8dd2c36cd09892b87d86",
+    "structured-output.json": "0d8322a2644e4583d1def8f01371096107bebac571b2d958e608d63ad5fd4fd3"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "status": "AUTHOR_REVIEW_COMPLETED",
+  "independent": false,
+  "reviewed_manifest_sha256": "ee7a0d2a15b46a82cf6a986f694d9023e9f2c3fb48825ef1560365f7d6453650",
+  "user_instruction": "CONTINUA con los pendientes",
+  "authorization_scope": "Continuar revisión y diseño de controles. No autorización de llamadas pagadas.",
+  "checks": {
+    "frozen_package_integrity": "PASS",
+    "previous_evidence_integrity": "PASS",
+    "case_scope_and_expected_consistency": "PASS",
+    "public_private_payload_separation": "PASS"
+  },
+  "semantic_effectiveness": "NOT_EVALUATED",
+  "findings": [
+    {
+      "severity": "execution_blocker",
+      "path": "scripts/evaluations/workflow_native_transport.py",
+      "issue": "SYSTEM fuerza JSON; incompatible con contrato Markdown de T02.",
+      "proposed_resolution": "System prompt neutral explícito para transferencia, igual en todas las invocaciones; default histórico conservado."
+    },
+    {
+      "severity": "execution_blocker",
+      "path": "scripts/evaluations/workflow_output_checker.py",
+      "issue": "Solo comprueba JSON.",
+      "proposed_resolution": "Checker de transferencia que reutiliza JSON y añade validación estructural Markdown; contenido sigue revisión separada."
+    }
+  ],
+  "human_package_acceptance": "PENDING",
+  "paid_execution_authorized": false,
+  "model_calls": 0,
+  "api_cost_usd": 0
+}

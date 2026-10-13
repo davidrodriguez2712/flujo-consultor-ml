@@ -1,0 +1,2 @@
+Se entrena el1 de octubre para puntuar nuevas solicitudes de noviembre. Importe solicitado está disponible al momento de recibir cada solicitud. Se evalúa mora a30 días; labels de train maduraron antes del1oct. El código mostrado es el orden aplicado para preparar el backtest. No hay joins ni encoding; solo scaler sobre amount.
+El scaler aprende media y desviación de las filas recibidas por fit_transform y usa esos parámetros para normalizar.

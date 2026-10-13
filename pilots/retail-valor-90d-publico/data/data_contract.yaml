@@ -1,0 +1,56 @@
+status: PROPOSED_FOR_FRAMING
+grain: Una fila registrada de factura/producto; la business key de línea no está confirmada.
+keys:
+  technical:
+  - source_sheet
+  - source_row
+  business: invoice_id + stock_code no es único; no usar como clave de deduplicación
+    automática.
+coverage:
+  source_rows: 1067371
+  date_min: '2009-12-01T07:45:00'
+  date_max: '2011-12-09T12:50:00'
+  sheets:
+  - name: Year 2009-2010
+    rows: 525461
+    source_columns:
+    - Invoice
+    - StockCode
+    - Description
+    - Quantity
+    - InvoiceDate
+    - Price
+    - Customer ID
+    - Country
+  - name: Year 2010-2011
+    rows: 541910
+    source_columns:
+    - Invoice
+    - StockCode
+    - Description
+    - Quantity
+    - InvoiceDate
+    - Price
+    - Customer ID
+    - Country
+  distinct_customers: 5942
+  currency: GBP nominal histórico
+quality:
+  customer_id_missing_rows: 243007
+  customer_id_missing_fraction: 0.22766872999172733
+  exact_duplicate_extra_rows: 34335
+  cross_sheet_matching_rows: 22523
+  cancellation_rows: 19494
+  negative_price_rows: 5
+  zero_price_rows: 6202
+  parse_errors: 0
+  rules: Fuente y copia normalizada intactas. Reconciliación y exclusiones solo previsualizadas;
+    aprobación de Framing/Diagnosis pendiente.
+provenance:
+  original: data/raw/online_retail_II.xlsx
+  sha256: bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980
+  audit: reports/discovery/source_audit.json
+  overlap: reports/discovery/sheet_overlap.json
+availability: No documentada por UCI. Observación inmediata al timestamp sería supuesto
+  retrospectivo, no hecho verificado.
+proposed_rules: framing/retail_contract.yaml

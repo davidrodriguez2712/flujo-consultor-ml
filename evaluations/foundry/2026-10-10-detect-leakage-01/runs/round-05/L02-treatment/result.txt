@@ -1,0 +1,3 @@
+Auditoría escrita en `/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L02-treatment/workspace/reports/leakage/audit.md`.
+
+Resumen: no hay leakage confirmado en la muestra ni en el `pipeline.py` declarado. Las features tienen disponibilidad anterior a `prediction_at`, no hay solape temporal entre train y evaluación, y el scaler se ajusta solo con train. Los clientes C01–C03 aparecen en ambas particiones; lo marco como dependencia esperada por el escenario, con confianza no determinable sobre su efecto. La muestra tiene solo 6 filas y no acredita el código de producción.

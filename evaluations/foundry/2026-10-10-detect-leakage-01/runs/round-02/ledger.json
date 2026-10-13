@@ -1,0 +1,299 @@
+{
+  "entries": [
+    {
+      "reserved_usd": 0.03860875,
+      "committed_usd": 0.0009122000000000001,
+      "estimated_usd": 0.0009122000000000001,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4676,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 4676,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 655,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 151
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "tool_use",
+      "tool_names": [
+        "Read",
+        "Read",
+        "Read",
+        "Read"
+      ]
+    },
+    {
+      "reserved_usd": 0.05546125,
+      "committed_usd": 0.001436835,
+      "estimated_usd": 0.001436835,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 10071,
+        "cache_read_input_tokens": 4676,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 10071,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 262,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 59
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "tool_use",
+      "tool_names": [
+        "Bash"
+      ]
+    },
+    {
+      "reserved_usd": 0.056854375,
+      "committed_usd": 0.0008647950000000001,
+      "estimated_usd": 0.0008647950000000001,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 461,
+        "cache_read_input_tokens": 14747,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 461,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 1319,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 209
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "tool_use",
+      "tool_names": [
+        "Write"
+      ]
+    },
+    {
+      "reserved_usd": 0.05987625,
+      "committed_usd": 0.000551905,
+      "estimated_usd": 0.000551905,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 1457,
+        "cache_read_input_tokens": 15208,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 1457,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 435,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "end_turn",
+      "tool_names": []
+    },
+    {
+      "reserved_usd": 0.038806875,
+      "committed_usd": 0.0004967799999999999,
+      "estimated_usd": 0.0004967799999999999,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 1802,
+        "cache_read_input_tokens": 3033,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 1802,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 482,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 194
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "tool_use",
+      "tool_names": [
+        "Read",
+        "Read"
+      ]
+    },
+    {
+      "reserved_usd": 0.055700625,
+      "committed_usd": 0.001716925,
+      "estimated_usd": 0.001716925,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 9999,
+        "cache_read_input_tokens": 4835,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 9999,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 837,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 89
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "tool_use",
+      "tool_names": [
+        "Read",
+        "Read",
+        "Read",
+        "Read",
+        "Bash"
+      ]
+    },
+    {
+      "reserved_usd": 0.05996625,
+      "committed_usd": 0.002576415,
+      "estimated_usd": 0.002576415,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2499,
+        "cache_read_input_tokens": 14834,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 2499,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 4231,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 854
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "tool_use",
+      "tool_names": [
+        "Write"
+      ]
+    },
+    {
+      "reserved_usd": 0.0677925,
+      "committed_usd": 0.0009600300000000001,
+      "estimated_usd": 0.0009600300000000001,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4368,
+        "cache_read_input_tokens": 17333,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 4368,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 481,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "end_turn",
+      "tool_names": []
+    },
+    {
+      "reserved_usd": 0.040040625,
+      "committed_usd": 0.0007955300000000001,
+      "estimated_usd": 0.0007955300000000001,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2560,
+        "cache_read_input_tokens": 3033,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 2560,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 890,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 226
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "tool_use",
+      "tool_names": [
+        "Read",
+        "Read",
+        "Read",
+        "Read",
+        "Read"
+      ]
+    },
+    {
+      "reserved_usd": 0.05857125,
+      "committed_usd": 0.0016738800000000002,
+      "estimated_usd": 0.0016738800000000002,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 11174,
+        "cache_read_input_tokens": 5593,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 11174,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 442,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 133
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "tool_use",
+      "tool_names": [
+        "Bash",
+        "Skill"
+      ]
+    },
+    {
+      "reserved_usd": 0.07600375,
+      "committed_usd": 0.005549995,
+      "estimated_usd": 0.005549995,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 10289,
+        "cache_read_input_tokens": 16767,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 10289,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 8192,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 3845
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "max_tokens",
+      "tool_guard_error": "Respuesta sin usage/stop v\u00e1lido"
+    }
+  ],
+  "rejections": [
+    {
+      "reason": "Solicitud anterior fallida; sin retry",
+      "request_bytes": 72171,
+      "quote_usd": null,
+      "tool_types": [
+        null,
+        null,
+        null,
+        null
+      ]
+    }
+  ]
+}

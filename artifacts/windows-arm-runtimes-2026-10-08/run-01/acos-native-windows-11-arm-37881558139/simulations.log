@@ -1,0 +1,1 @@
+{"kind": "simulación sintética del compiler; no evaluación de skills", "cases_passed": 24, "stages_checked": 164, "foundry_skills_available": 0, "foundry_findings": [{"code": "foundry-missing", "message": "Foundry no disponible; continuar con pautas OS y gaps.", "paths": []}]}

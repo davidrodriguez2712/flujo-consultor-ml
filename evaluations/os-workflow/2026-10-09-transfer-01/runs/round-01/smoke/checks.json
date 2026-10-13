@@ -1,0 +1,15 @@
+{
+  "transfer_checker_version": "0.1.0",
+  "format": "markdown",
+  "format_pass": true,
+  "strict_json_pass": null,
+  "schema_pass": null,
+  "status_matches": true,
+  "references_exist": true,
+  "references_present": false,
+  "unknown_references": [],
+  "semantic_review": "NOT_RUN",
+  "overall_content_pass": null,
+  "observed_status": "READY",
+  "referenced_paths": []
+}

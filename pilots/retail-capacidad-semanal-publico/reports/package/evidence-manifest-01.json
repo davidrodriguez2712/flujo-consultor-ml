@@ -1,0 +1,358 @@
+{
+  "id": "weekly-forecast-integrated-pilot",
+  "version": "01",
+  "purpose": "Paquete técnico revisable; no aceptación humana implícita",
+  "excluded": "Estado, vistas vivas, originales vivos con copia histórica, aprobación y propio manifest",
+  "files": [
+    {
+      "path": ".acos/manifest.yaml",
+      "sha256": "fd5f1e411ffe734d940da384f7f883deb097ea3d32447f1812cf275e5691d78b",
+      "bytes": 4286
+    },
+    {
+      "path": ".acos/modules.yaml",
+      "sha256": "41e8d4e8ad703794f31010e3d4b4de922b5af882993095d2054ed08fdeb6f90a",
+      "bytes": 5064
+    },
+    {
+      "path": ".acos/project-profile.yaml",
+      "sha256": "bfbe9fe08af31a603a528e599af696ce486297ae195a79f552916463f8b7fb66",
+      "bytes": 1582
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "3b91d5a51afe8e1982b1df0528108256dc9f2daa256d220d89ccf65dcf9ba65b",
+      "bytes": 1256
+    },
+    {
+      "path": "CAPABILITIES.md",
+      "sha256": "35fddc4931f335be2bb969b4ee97fbad94c6da8c7adc651f2aa909284330aeea",
+      "bytes": 966
+    },
+    {
+      "path": "CLAUDE.md",
+      "sha256": "c7b68087d1a5c37d3481b6dc5d0729067df52cbd6816fbaa713df5eae1c39701",
+      "bytes": 32
+    },
+    {
+      "path": "PROJECT.md",
+      "sha256": "8cac368192b5c3b55acc28e9588769316dd408646b5dccca3e880a4cbcc6bc42",
+      "bytes": 525
+    },
+    {
+      "path": "analysis/forecast.py",
+      "sha256": "3829ce6ec9cfe87aecdcd5b339863fbfc856b989a9c04dfbcf4a4c4a617ea776",
+      "bytes": 3928
+    },
+    {
+      "path": "analysis/protocol.json",
+      "sha256": "27e7d813a4aa7346e71dca77770893866a2bddb353c3d30af14bace05371baf1",
+      "bytes": 1947
+    },
+    {
+      "path": "analysis/run_forecast.py",
+      "sha256": "720b2c4864513a853942391bb36d37378df7daf5a51b781dba8e2eaf37810cd8",
+      "bytes": 3735
+    },
+    {
+      "path": "analysis/tests/test_forecast.py",
+      "sha256": "d0ed411148ffb6cb9056bda8b9618f26b08ae93c0d3bfa6da67834219a29ecaf",
+      "bytes": 4075
+    },
+    {
+      "path": "data/raw/transactions_normalized.csv.gz",
+      "sha256": "4d3618376972b427716f80c4ff6730ef1078ee9eed6670ea31361016cc6799ff",
+      "bytes": 18402623
+    },
+    {
+      "path": "playbooks/data-understanding-analysis.md",
+      "sha256": "8bb117474b58aa4ae8e9283d3d2f2e4c2f8b0ee8d1e940e3abfc46473e523272",
+      "bytes": 6743
+    },
+    {
+      "path": "playbooks/experiments-and-models.md",
+      "sha256": "b9472d583ad6eb500e62a4862b221ac4e6021935c7304e8ae1424bc790565525",
+      "bytes": 6977
+    },
+    {
+      "path": "playbooks/research-impact-delivery.md",
+      "sha256": "ef1456fe97f27bdb5329bc747d367812d7f49db430c6185ebeb9794c737626ae",
+      "bytes": 3416
+    },
+    {
+      "path": "reports/package/frozen-01/PILOT_REPORT.md",
+      "sha256": "28336ba9cf88720bd21c22bd84573a6a1d5a4efd5cab2687754d285f6a036725",
+      "bytes": 3616
+    },
+    {
+      "path": "reports/package/frozen-01/README.md",
+      "sha256": "6400076ce49628233b19cd20c671fe84e9fda3ad3142783ba9df1ab621515efc",
+      "bytes": 440
+    },
+    {
+      "path": "reports/package/frozen-01/analysis/analysis_plan.md",
+      "sha256": "df2285060ade39f93143e49c4d888f7a0749c69b85ddff974fb9d3e720b84b36",
+      "bytes": 951
+    },
+    {
+      "path": "reports/package/frozen-01/analysis/forecast_plan.md",
+      "sha256": "5e10946b897f8cfd67be0d03816a0c80712590425e4a30c4fa3e077f3706f4b3",
+      "bytes": 504
+    },
+    {
+      "path": "reports/package/frozen-01/context/business_context.md",
+      "sha256": "c5bf09bc546505506e7a33c4f1934e458e133e11e8ee89dcfb4c6266ed885eba",
+      "bytes": 713
+    },
+    {
+      "path": "reports/package/frozen-01/data/data_contract.yaml",
+      "sha256": "44a16bca75a97447b47070678808d4ea926348b99d6761b53b0e94b55ad22416",
+      "bytes": 1394
+    },
+    {
+      "path": "reports/package/frozen-01/data/source_manifest.json",
+      "sha256": "4ce7d42ed15e80f5bf881d7c8a54c8bd537abcd3a5a5daf2b76792f9fd47a990",
+      "bytes": 1136
+    },
+    {
+      "path": "reports/package/frozen-01/decision/recommendation.md",
+      "sha256": "51805de7a69edd75c35ab305f1b7cf4e3b0bc733bc9ba80ec41eb129f5e94ae9",
+      "bytes": 1176
+    },
+    {
+      "path": "reports/package/frozen-01/delivery/delivery_contract.md",
+      "sha256": "97f220a56f6004fd84b6e8ca3d9a1be18ae4909f2b966b5108d4d68ad62f9910",
+      "bytes": 635
+    },
+    {
+      "path": "reports/package/frozen-01/delivery/storyline.md",
+      "sha256": "291a46a4cd23dca62bdad463f9836e33359c1e12af9579871fd0333cd789d68c",
+      "bytes": 636
+    },
+    {
+      "path": "reports/package/frozen-01/evidence/findings.md",
+      "sha256": "d0ac0285cbe39280f72bdb238f7cd2555544e1865042d7ae07192791f3655616",
+      "bytes": 1670
+    },
+    {
+      "path": "reports/package/frozen-01/framing/framing.yaml",
+      "sha256": "9d86b2285e6f3406dbacd934b55e4cea236647f826849a1d819445ca55113411",
+      "bytes": 449
+    },
+    {
+      "path": "reports/package/frozen-01/handoff/capability_feedback.md",
+      "sha256": "3cc0415e179ffbcee7d09a4803a114021b91c9f930648dd81d7a79a2d7459360",
+      "bytes": 812
+    },
+    {
+      "path": "reports/package/frozen-01/handoff/runbook.md",
+      "sha256": "786b34ecfadb0e8f662c89bcd07944f5969dac7c79ea5013e4c7d71036fa27ea",
+      "bytes": 1684
+    },
+    {
+      "path": "reports/package/frozen-01/reports/validation/integrated-review.md",
+      "sha256": "d00251956e84c70743e68bef55bc4a5869b6a38b377e1abc21cd77579a468e59",
+      "bytes": 2569
+    },
+    {
+      "path": "reports/protocol/evidence-manifest-01.json",
+      "sha256": "bcdb07a265f7f856fde44059d02693ae5c6108908bed522f03754065c883e138",
+      "bytes": 777
+    },
+    {
+      "path": "reports/protocol/frozen/analysis/forecast_plan.md",
+      "sha256": "cf61abb7be22eb88be8b0ea6c07bbb8a16b4a2c8f87d1bca5a1f1fa502bd06d3",
+      "bytes": 348
+    },
+    {
+      "path": "reports/protocol/frozen/analysis/protocol.json",
+      "sha256": "27e7d813a4aa7346e71dca77770893866a2bddb353c3d30af14bace05371baf1",
+      "bytes": 1947
+    },
+    {
+      "path": "reports/protocol/frozen/data/source_manifest.json",
+      "sha256": "4ce7d42ed15e80f5bf881d7c8a54c8bd537abcd3a5a5daf2b76792f9fd47a990",
+      "bytes": 1136
+    },
+    {
+      "path": "reports/qa/deliberate-error.json",
+      "sha256": "7cea3569390a81aaf091b458313cc4d6a9dc9e0acb7798c1779173d9d987dc59",
+      "bytes": 278
+    },
+    {
+      "path": "reports/qa/label-check.json",
+      "sha256": "78c5072b17b6dc013518dbbd4656ff14fe99509737fa9ef6d535ffea87317ff2",
+      "bytes": 753
+    },
+    {
+      "path": "reports/reproduction/reproduction-check.json",
+      "sha256": "e6f72b8a79a45d4538c2dbccc43bce9366cc64c1f3759e192f054591840085c5",
+      "bytes": 2496
+    },
+    {
+      "path": "reports/reproduction/run.log",
+      "sha256": "4468aa321f7958ee701dcb8ea35e58820cafd73875949d53b0ff2bdeb0807014",
+      "bytes": 1179
+    },
+    {
+      "path": "reports/run-01/development_predictions.csv",
+      "sha256": "9173a735410a4bf7c11894818e6559b7f9e05280390d54e4ca732ed58ee25f63",
+      "bytes": 3052
+    },
+    {
+      "path": "reports/run-01/environment.json",
+      "sha256": "a142af7d8a787d1c2e85ceabbb0029d9fe21b8052448f629b2949bc705d35b7a",
+      "bytes": 877
+    },
+    {
+      "path": "reports/run-01/final_predictions.csv",
+      "sha256": "e1bf7bdf30940569c80c966c2a07e11035af201fbeb0c24d37be9aa0ca2d47cf",
+      "bytes": 1046
+    },
+    {
+      "path": "reports/run-01/outputs-manifest.json",
+      "sha256": "7e04414b06496f2dc5db637a2187156775d198dda076fc5acb81471206811e80",
+      "bytes": 809
+    },
+    {
+      "path": "reports/run-01/result.json",
+      "sha256": "4468aa321f7958ee701dcb8ea35e58820cafd73875949d53b0ff2bdeb0807014",
+      "bytes": 1179
+    },
+    {
+      "path": "reports/run-01/strategy.json",
+      "sha256": "c2a1c491f7ae545098dfc5dd886094a82c77a41dce0db260d6a752a6b5e1e873",
+      "bytes": 537
+    },
+    {
+      "path": "reports/run-01/weekly_counts.csv",
+      "sha256": "73e9543140b95b87430385d79ae7220311a892d86b88f1c790294ed5990c2e6c",
+      "bytes": 2838
+    },
+    {
+      "path": "reports/validation/acos-next.json",
+      "sha256": "c46fd4238a723947c576bb7e9257bc3ef26787c2d2590d2ab392dff03784236b",
+      "bytes": 3158
+    },
+    {
+      "path": "reports/validation/acos-status.json",
+      "sha256": "8a4261e6abcb49432e99e93f0d70bd4f97f813eb2da55b9974a356d712585f47",
+      "bytes": 502
+    },
+    {
+      "path": "reports/validation/acos-validate-gate-data-quality.json",
+      "sha256": "7913e2426f5cccf63f4a60b5aba77b7c2df147449798507db07e113ce222ba07",
+      "bytes": 198
+    },
+    {
+      "path": "reports/validation/acos-validate-gate-data_analysis-review.json",
+      "sha256": "ca15527ae2d0d01dd31d3e3617845c36dc3f613ce6b8ae03fb4652f7c16e3490",
+      "bytes": 206
+    },
+    {
+      "path": "reports/validation/acos-validate-gate-delivery.json",
+      "sha256": "33e375864aeecc62b11677ff5215156fa590d01393a9f11b529f9353e2a1af51",
+      "bytes": 194
+    },
+    {
+      "path": "reports/validation/acos-validate-gate-diagnosis.json",
+      "sha256": "690ae7657fad3321853c4989065dd3cea1cdbbe8a0b49a08b64b637d58eed81b",
+      "bytes": 195
+    },
+    {
+      "path": "reports/validation/acos-validate-gate-discovery.json",
+      "sha256": "e2166b68d92232ed7e16c4f08d467725aa6b8e524fe18fd9e99c4b1b44a5beb4",
+      "bytes": 195
+    },
+    {
+      "path": "reports/validation/acos-validate-gate-execution.json",
+      "sha256": "4743017009470cc2b0296b10458236d8dc59289417b0e0c328261080dc9459c0",
+      "bytes": 195
+    },
+    {
+      "path": "reports/validation/acos-validate-gate-executive_delivery-review.json",
+      "sha256": "b5fdce18db1fa1079b3fe51cb9eecee96eb3b0404e1004a1d7b5fc85179be6f4",
+      "bytes": 211
+    },
+    {
+      "path": "reports/validation/acos-validate-gate-forecast-review.json",
+      "sha256": "8ba02a5bd2b5535fcca66eccb8338def907df8d766d514d6f1f4cef5505bbe6a",
+      "bytes": 201
+    },
+    {
+      "path": "reports/validation/acos-validate-gate-framing.json",
+      "sha256": "b9afd5afce9b7af05ca91d57607b1b16ef9258aabbc9603ec0e056de3a09a2ac",
+      "bytes": 193
+    },
+    {
+      "path": "reports/validation/acos-validate-gate-handoff.json",
+      "sha256": "302968b9e790486d17b05e0308f0c5188a6b58b33d61dbc851ebfec7de225525",
+      "bytes": 193
+    },
+    {
+      "path": "reports/validation/acos-validate-gate-validation.json",
+      "sha256": "9790da9932ac1b3b89c8ea4d3c143bb22eb0870029c06b1f42674b8dbb2e2729",
+      "bytes": 196
+    },
+    {
+      "path": "reports/validation/cli-checks.json",
+      "sha256": "0f330638c2cf889a062d13721899cb4612f8e0d3bd77c34bdb2942bbc7906300",
+      "bytes": 1833
+    },
+    {
+      "path": "reports/validation/freeze-check.json",
+      "sha256": "7bbce4035e38c0bafe767569d82a1e3f36ec2283b88f06ad4a54603ae0a5230c",
+      "bytes": 301
+    },
+    {
+      "path": "reports/validation/previous-pilot-integrity.json",
+      "sha256": "1144457c70fdc4cf69d61e12e47ae4bbb5ef21a8916697e7bb4ccf75bbfc0ccd",
+      "bytes": 176
+    },
+    {
+      "path": "reports/validation/run-01.log",
+      "sha256": "4468aa321f7958ee701dcb8ea35e58820cafd73875949d53b0ff2bdeb0807014",
+      "bytes": 1179
+    },
+    {
+      "path": "reports/validation/tests.log",
+      "sha256": "91bf263be3ed96116b738ae02261c79334a0ba8cc13e3004f22a0818875c0d55",
+      "bytes": 2196
+    },
+    {
+      "path": "reports/validation/tests.xml",
+      "sha256": "b8b84ccf2b4bc77e0082fed333eacbcae11ef6ec31646973da081dab7c637756",
+      "bytes": 17791
+    },
+    {
+      "path": "templates/delivery-and-handoff.md",
+      "sha256": "4ca99b71f1d8b9d77044e107f3b4d320d5e5fa6e96e350e3f439afea9aff82ad",
+      "bytes": 5353
+    },
+    {
+      "path": "templates/findings-and-qa.md",
+      "sha256": "aab93a08b85b6b8aced668b894f9b8de0ef536a5e38aeb1f39204eaa7a931346",
+      "bytes": 3807
+    },
+    {
+      "path": "workflow/capability-lifecycle.md",
+      "sha256": "98c569bbf33ba7d95d1c8bc6cd3893ed1ccbc784a7850d5a3cf700097942bd23",
+      "bytes": 7226
+    },
+    {
+      "path": "workflow/execution-and-qa.md",
+      "sha256": "b3377bac6e61470a136b7514dcf39747136d794f0d7ac32381355a6f891d2fd7",
+      "bytes": 14660
+    },
+    {
+      "path": "workflow/isolation-and-context.md",
+      "sha256": "580a22286bc11b44aae574fd38b6690a95990f10b0ff5d76b4e4ad8bd14dd153",
+      "bytes": 5612
+    },
+    {
+      "path": "workflow/project-lifecycle.md",
+      "sha256": "e0bfcf31b53bdb73f6cb8c84627aed3e82788f486f073729c64dae976d89e770",
+      "bytes": 7459
+    }
+  ]
+}

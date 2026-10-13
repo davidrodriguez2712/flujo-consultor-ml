@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="19" skipped="0" tests="19" time="0.099" timestamp="2026-10-12T18:11:07.967175-05:00" hostname="Joels-Mac-Studio.local"><testcase classname="tests.test_foundry_report_contract" name="test_valid_report_preserved_and_semantic_review_still_required[baseline]" time="0.014"><failure message="AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2261/test_valid_report_preserved_an0')
+condition = 'baseline'
+
+    @pytest.mark.parametrize('condition', ['baseline', 'treatment'])
+    def test_valid_report_preserved_and_semantic_review_still_required(tmp_path, condition):
+        root, report, text = fixture(tmp_path, condition)
+&gt;       result = module().check_report_contract(root, report, 'Informe y ruta.', report_word_limit=500)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'
+
+tests/test_foundry_report_contract.py:59: AttributeError</failure></testcase><testcase classname="tests.test_foundry_report_contract" name="test_valid_report_preserved_and_semantic_review_still_required[treatment]" time="0.001"><failure message="AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2261/test_valid_report_preserved_an1')
+condition = 'treatment'
+
+    @pytest.mark.parametrize('condition', ['baseline', 'treatment'])
+    def test_valid_report_preserved_and_semantic_review_still_required(tmp_path, condition):
+        root, report, text = fixture(tmp_path, condition)
+&gt;       result = module().check_report_contract(root, report, 'Informe y ruta.', report_word_limit=500)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'
+
+tests/test_foundry_report_contract.py:59: AttributeError</failure></testcase><testcase classname="tests.test_foundry_report_contract" name="test_rejects_contract_defect_without_repairing_output[&lt;lambda&gt;-missing:version]" time="0.001"><failure message="AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2261/test_rejects_contract_defect_w0')
+change = &lt;function &lt;lambda&gt; at 0x1073518a0&gt;, code = 'missing:version'
+
+    @pytest.mark.parametrize('change,code', [
+        (lambda s: s.replace('version:', 'skill_version:', 1), 'missing:version'),
+        (lambda s: s.replace('version: "0.2.0"', 'version: "0.1.0"'), 'context:version'),
+        (lambda s: s.replace('condicion: treatment', 'condicion: baseline'), 'context:condicion'),
+        (lambda s: s.replace('## Evidencia\n', '## Otra sección\n'), 'section:Evidencia'),
+        (lambda s: s.replace('sha256: ', 'sha256: f', 1), 'inputs:hash'),
+        (lambda s: s.replace('## Preguntas abiertas\n', '## Preguntas abiertas\n## Preguntas abiertas\n'), 'section:Preguntas abiertas'),
+        (lambda s: s.replace('estado: auditoria_completada', 'estado: null'), 'value:estado'),
+        (lambda s: s.replace('fecha: 2026-10-12', 'fecha: fecha-inventada'), 'value:fecha'),
+        (lambda s: s.replace('version: "0.2.0"', 'version: "0.2.0"\nversion: "0.1.0"'), 'frontmatter:duplicate'),
+        (lambda s: '```markdown\n' + s + '```\n', 'frontmatter:missing'),
+        (lambda s: s.replace('inputs:\n', 'inputs: []\nignored:\n'), 'inputs:coverage'),
+    ])
+    def test_rejects_contract_defect_without_repairing_output(tmp_path, change, code):
+        root, report, text = fixture(tmp_path)
+        changed = change(text)
+        report.write_text(changed)
+&gt;       result = module().check_report_contract(root, report, 'Informe.', report_word_limit=500)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'
+
+tests/test_foundry_report_contract.py:82: AttributeError</failure></testcase><testcase classname="tests.test_foundry_report_contract" name="test_rejects_contract_defect_without_repairing_output[&lt;lambda&gt;-context:version]" time="0.002"><failure message="AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2261/test_rejects_contract_defect_w1')
+change = &lt;function &lt;lambda&gt; at 0x107351bc0&gt;, code = 'context:version'
+
+    @pytest.mark.parametrize('change,code', [
+        (lambda s: s.replace('version:', 'skill_version:', 1), 'missing:version'),
+        (lambda s: s.replace('version: "0.2.0"', 'version: "0.1.0"'), 'context:version'),
+        (lambda s: s.replace('condicion: treatment', 'condicion: baseline'), 'context:condicion'),
+        (lambda s: s.replace('## Evidencia\n', '## Otra sección\n'), 'section:Evidencia'),
+        (lambda s: s.replace('sha256: ', 'sha256: f', 1), 'inputs:hash'),
+        (lambda s: s.replace('## Preguntas abiertas\n', '## Preguntas abiertas\n## Preguntas abiertas\n'), 'section:Preguntas abiertas'),
+        (lambda s: s.replace('estado: auditoria_completada', 'estado: null'), 'value:estado'),
+        (lambda s: s.replace('fecha: 2026-10-12', 'fecha: fecha-inventada'), 'value:fecha'),
+        (lambda s: s.replace('version: "0.2.0"', 'version: "0.2.0"\nversion: "0.1.0"'), 'frontmatter:duplicate'),
+        (lambda s: '```markdown\n' + s + '```\n', 'frontmatter:missing'),
+        (lambda s: s.replace('inputs:\n', 'inputs: []\nignored:\n'), 'inputs:coverage'),
+    ])
+    def test_rejects_contract_defect_without_repairing_output(tmp_path, change, code):
+        root, report, text = fixture(tmp_path)
+        changed = change(text)
+        report.write_text(changed)
+&gt;       result = module().check_report_contract(root, report, 'Informe.', report_word_limit=500)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'
+
+tests/test_foundry_report_contract.py:82: AttributeError</failure></testcase><testcase classname="tests.test_foundry_report_contract" name="test_rejects_contract_defect_without_repairing_output[&lt;lambda&gt;-context:condicion]" time="0.002"><failure message="AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2261/test_rejects_contract_defect_w2')
+change = &lt;function &lt;lambda&gt; at 0x107351d00&gt;, code = 'context:condicion'
+
+    @pytest.mark.parametrize('change,code', [
+        (lambda s: s.replace('version:', 'skill_version:', 1), 'missing:version'),
+        (lambda s: s.replace('version: "0.2.0"', 'version: "0.1.0"'), 'context:version'),
+        (lambda s: s.replace('condicion: treatment', 'condicion: baseline'), 'context:condicion'),
+        (lambda s: s.replace('## Evidencia\n', '## Otra sección\n'), 'section:Evidencia'),
+        (lambda s: s.replace('sha256: ', 'sha256: f', 1), 'inputs:hash'),
+        (lambda s: s.replace('## Preguntas abiertas\n', '## Preguntas abiertas\n## Preguntas abiertas\n'), 'section:Preguntas abiertas'),
+        (lambda s: s.replace('estado: auditoria_completada', 'estado: null'), 'value:estado'),
+        (lambda s: s.replace('fecha: 2026-10-12', 'fecha: fecha-inventada'), 'value:fecha'),
+        (lambda s: s.replace('version: "0.2.0"', 'version: "0.2.0"\nversion: "0.1.0"'), 'frontmatter:duplicate'),
+        (lambda s: '```markdown\n' + s + '```\n', 'frontmatter:missing'),
+        (lambda s: s.replace('inputs:\n', 'inputs: []\nignored:\n'), 'inputs:coverage'),
+    ])
+    def test_rejects_contract_defect_without_repairing_output(tmp_path, change, code):
+        root, report, text = fixture(tmp_path)
+        changed = change(text)
+        report.write_text(changed)
+&gt;       result = module().check_report_contract(root, report, 'Informe.', report_word_limit=500)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'
+
+tests/test_foundry_report_contract.py:82: AttributeError</failure></testcase><testcase classname="tests.test_foundry_report_contract" name="test_rejects_contract_defect_without_repairing_output[&lt;lambda&gt;-section:Evidencia]" time="0.001"><failure message="AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2261/test_rejects_contract_defect_w3')
+change = &lt;function &lt;lambda&gt; at 0x107351da0&gt;, code = 'section:Evidencia'
+
+    @pytest.mark.parametrize('change,code', [
+        (lambda s: s.replace('version:', 'skill_version:', 1), 'missing:version'),
+        (lambda s: s.replace('version: "0.2.0"', 'version: "0.1.0"'), 'context:version'),
+        (lambda s: s.replace('condicion: treatment', 'condicion: baseline'), 'context:condicion'),
+        (lambda s: s.replace('## Evidencia\n', '## Otra sección\n'), 'section:Evidencia'),
+        (lambda s: s.replace('sha256: ', 'sha256: f', 1), 'inputs:hash'),
+        (lambda s: s.replace('## Preguntas abiertas\n', '## Preguntas abiertas\n## Preguntas abiertas\n'), 'section:Preguntas abiertas'),
+        (lambda s: s.replace('estado: auditoria_completada', 'estado: null'), 'value:estado'),
+        (lambda s: s.replace('fecha: 2026-10-12', 'fecha: fecha-inventada'), 'value:fecha'),
+        (lambda s: s.replace('version: "0.2.0"', 'version: "0.2.0"\nversion: "0.1.0"'), 'frontmatter:duplicate'),
+        (lambda s: '```markdown\n' + s + '```\n', 'frontmatter:missing'),
+        (lambda s: s.replace('inputs:\n', 'inputs: []\nignored:\n'), 'inputs:coverage'),
+    ])
+    def test_rejects_contract_defect_without_repairing_output(tmp_path, change, code):
+        root, report, text = fixture(tmp_path)
+        changed = change(text)
+        report.write_text(changed)
+&gt;       result = module().check_report_contract(root, report, 'Informe.', report_word_limit=500)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'
+
+tests/test_foundry_report_contract.py:82: AttributeError</failure></testcase><testcase classname="tests.test_foundry_report_contract" name="test_rejects_contract_defect_without_repairing_output[&lt;lambda&gt;-inputs:hash]" time="0.001"><failure message="AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2261/test_rejects_contract_defect_w4')
+change = &lt;function &lt;lambda&gt; at 0x107351e40&gt;, code = 'inputs:hash'
+
+    @pytest.mark.parametrize('change,code', [
+        (lambda s: s.replace('version:', 'skill_version:', 1), 'missing:version'),
+        (lambda s: s.replace('version: "0.2.0"', 'version: "0.1.0"'), 'context:version'),
+        (lambda s: s.replace('condicion: treatment', 'condicion: baseline'), 'context:condicion'),
+        (lambda s: s.replace('## Evidencia\n', '## Otra sección\n'), 'section:Evidencia'),
+        (lambda s: s.replace('sha256: ', 'sha256: f', 1), 'inputs:hash'),
+        (lambda s: s.replace('## Preguntas abiertas\n', '## Preguntas abiertas\n## Preguntas abiertas\n'), 'section:Preguntas abiertas'),
+        (lambda s: s.replace('estado: auditoria_completada', 'estado: null'), 'value:estado'),
+        (lambda s: s.replace('fecha: 2026-10-12', 'fecha: fecha-inventada'), 'value:fecha'),
+        (lambda s: s.replace('version: "0.2.0"', 'version: "0.2.0"\nversion: "0.1.0"'), 'frontmatter:duplicate'),
+        (lambda s: '```markdown\n' + s + '```\n', 'frontmatter:missing'),
+        (lambda s: s.replace('inputs:\n', 'inputs: []\nignored:\n'), 'inputs:coverage'),
+    ])
+    def test_rejects_contract_defect_without_repairing_output(tmp_path, change, code):
+        root, report, text = fixture(tmp_path)
+        changed = change(text)
+        report.write_text(changed)
+&gt;       result = module().check_report_contract(root, report, 'Informe.', report_word_limit=500)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'
+
+tests/test_foundry_report_contract.py:82: AttributeError</failure></testcase><testcase classname="tests.test_foundry_report_contract" name="test_rejects_contract_defect_without_repairing_output[&lt;lambda&gt;-section:Preguntas abiertas]" time="0.001"><failure message="AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2261/test_rejects_contract_defect_w5')
+change = &lt;function &lt;lambda&gt; at 0x107351ee0&gt;, code = 'section:Preguntas abiertas'
+
+    @pytest.mark.parametrize('change,code', [
+        (lambda s: s.replace('version:', 'skill_version:', 1), 'missing:version'),
+        (lambda s: s.replace('version: "0.2.0"', 'version: "0.1.0"'), 'context:version'),
+        (lambda s: s.replace('condicion: treatment', 'condicion: baseline'), 'context:condicion'),
+        (lambda s: s.replace('## Evidencia\n', '## Otra sección\n'), 'section:Evidencia'),
+        (lambda s: s.replace('sha256: ', 'sha256: f', 1), 'inputs:hash'),
+        (lambda s: s.replace('## Preguntas abiertas\n', '## Preguntas abiertas\n## Preguntas abiertas\n'), 'section:Preguntas abiertas'),
+        (lambda s: s.replace('estado: auditoria_completada', 'estado: null'), 'value:estado'),
+        (lambda s: s.replace('fecha: 2026-10-12', 'fecha: fecha-inventada'), 'value:fecha'),
+        (lambda s: s.replace('version: "0.2.0"', 'version: "0.2.0"\nversion: "0.1.0"'), 'frontmatter:duplicate'),
+        (lambda s: '```markdown\n' + s + '```\n', 'frontmatter:missing'),
+        (lambda s: s.replace('inputs:\n', 'inputs: []\nignored:\n'), 'inputs:coverage'),
+    ])
+    def test_rejects_contract_defect_without_repairing_output(tmp_path, change, code):
+        root, report, text = fixture(tmp_path)
+        changed = change(text)
+        report.write_text(changed)
+&gt;       result = module().check_report_contract(root, report, 'Informe.', report_word_limit=500)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'
+
+tests/test_foundry_report_contract.py:82: AttributeError</failure></testcase><testcase classname="tests.test_foundry_report_contract" name="test_rejects_contract_defect_without_repairing_output[&lt;lambda&gt;-value:estado]" time="0.002"><failure message="AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2261/test_rejects_contract_defect_w6')
+change = &lt;function &lt;lambda&gt; at 0x107351f80&gt;, code = 'value:estado'
+
+    @pytest.mark.parametrize('change,code', [
+        (lambda s: s.replace('version:', 'skill_version:', 1), 'missing:version'),
+        (lambda s: s.replace('version: "0.2.0"', 'version: "0.1.0"'), 'context:version'),
+        (lambda s: s.replace('condicion: treatment', 'condicion: baseline'), 'context:condicion'),
+        (lambda s: s.replace('## Evidencia\n', '## Otra sección\n'), 'section:Evidencia'),
+        (lambda s: s.replace('sha256: ', 'sha256: f', 1), 'inputs:hash'),
+        (lambda s: s.replace('## Preguntas abiertas\n', '## Preguntas abiertas\n## Preguntas abiertas\n'), 'section:Preguntas abiertas'),
+        (lambda s: s.replace('estado: auditoria_completada', 'estado: null'), 'value:estado'),
+        (lambda s: s.replace('fecha: 2026-10-12', 'fecha: fecha-inventada'), 'value:fecha'),
+        (lambda s: s.replace('version: "0.2.0"', 'version: "0.2.0"\nversion: "0.1.0"'), 'frontmatter:duplicate'),
+        (lambda s: '```markdown\n' + s + '```\n', 'frontmatter:missing'),
+        (lambda s: s.replace('inputs:\n', 'inputs: []\nignored:\n'), 'inputs:coverage'),
+    ])
+    def test_rejects_contract_defect_without_repairing_output(tmp_path, change, code):
+        root, report, text = fixture(tmp_path)
+        changed = change(text)
+        report.write_text(changed)
+&gt;       result = module().check_report_contract(root, report, 'Informe.', report_word_limit=500)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'
+
+tests/test_foundry_report_contract.py:82: AttributeError</failure></testcase><testcase classname="tests.test_foundry_report_contract" name="test_rejects_contract_defect_without_repairing_output[&lt;lambda&gt;-value:fecha]" time="0.001"><failure message="AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2261/test_rejects_contract_defect_w7')
+change = &lt;function &lt;lambda&gt; at 0x107352020&gt;, code = 'value:fecha'
+
+    @pytest.mark.parametrize('change,code', [
+        (lambda s: s.replace('version:', 'skill_version:', 1), 'missing:version'),
+        (lambda s: s.replace('version: "0.2.0"', 'version: "0.1.0"'), 'context:version'),
+        (lambda s: s.replace('condicion: treatment', 'condicion: baseline'), 'context:condicion'),
+        (lambda s: s.replace('## Evidencia\n', '## Otra sección\n'), 'section:Evidencia'),
+        (lambda s: s.replace('sha256: ', 'sha256: f', 1), 'inputs:hash'),
+        (lambda s: s.replace('## Preguntas abiertas\n', '## Preguntas abiertas\n## Preguntas abiertas\n'), 'section:Preguntas abiertas'),
+        (lambda s: s.replace('estado: auditoria_completada', 'estado: null'), 'value:estado'),
+        (lambda s: s.replace('fecha: 2026-10-12', 'fecha: fecha-inventada'), 'value:fecha'),
+        (lambda s: s.replace('version: "0.2.0"', 'version: "0.2.0"\nversion: "0.1.0"'), 'frontmatter:duplicate'),
+        (lambda s: '```markdown\n' + s + '```\n', 'frontmatter:missing'),
+        (lambda s: s.replace('inputs:\n', 'inputs: []\nignored:\n'), 'inputs:coverage'),
+    ])
+    def test_rejects_contract_defect_without_repairing_output(tmp_path, change, code):
+        root, report, text = fixture(tmp_path)
+        changed = change(text)
+        report.write_text(changed)
+&gt;       result = module().check_report_contract(root, report, 'Informe.', report_word_limit=500)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'
+
+tests/test_foundry_report_contract.py:82: AttributeError</failure></testcase><testcase classname="tests.test_foundry_report_contract" name="test_rejects_contract_defect_without_repairing_output[&lt;lambda&gt;-frontmatter:duplicate]" time="0.001"><failure message="AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2261/test_rejects_contract_defect_w8')
+change = &lt;function &lt;lambda&gt; at 0x1073520c0&gt;, code = 'frontmatter:duplicate'
+
+    @pytest.mark.parametrize('change,code', [
+        (lambda s: s.replace('version:', 'skill_version:', 1), 'missing:version'),
+        (lambda s: s.replace('version: "0.2.0"', 'version: "0.1.0"'), 'context:version'),
+        (lambda s: s.replace('condicion: treatment', 'condicion: baseline'), 'context:condicion'),
+        (lambda s: s.replace('## Evidencia\n', '## Otra sección\n'), 'section:Evidencia'),
+        (lambda s: s.replace('sha256: ', 'sha256: f', 1), 'inputs:hash'),
+        (lambda s: s.replace('## Preguntas abiertas\n', '## Preguntas abiertas\n## Preguntas abiertas\n'), 'section:Preguntas abiertas'),
+        (lambda s: s.replace('estado: auditoria_completada', 'estado: null'), 'value:estado'),
+        (lambda s: s.replace('fecha: 2026-10-12', 'fecha: fecha-inventada'), 'value:fecha'),
+        (lambda s: s.replace('version: "0.2.0"', 'version: "0.2.0"\nversion: "0.1.0"'), 'frontmatter:duplicate'),
+        (lambda s: '```markdown\n' + s + '```\n', 'frontmatter:missing'),
+        (lambda s: s.replace('inputs:\n', 'inputs: []\nignored:\n'), 'inputs:coverage'),
+    ])
+    def test_rejects_contract_defect_without_repairing_output(tmp_path, change, code):
+        root, report, text = fixture(tmp_path)
+        changed = change(text)
+        report.write_text(changed)
+&gt;       result = module().check_report_contract(root, report, 'Informe.', report_word_limit=500)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'
+
+tests/test_foundry_report_contract.py:82: AttributeError</failure></testcase><testcase classname="tests.test_foundry_report_contract" name="test_rejects_contract_defect_without_repairing_output[&lt;lambda&gt;-frontmatter:missing]" time="0.001"><failure message="AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2261/test_rejects_contract_defect_w9')
+change = &lt;function &lt;lambda&gt; at 0x107352160&gt;, code = 'frontmatter:missing'
+
+    @pytest.mark.parametrize('change,code', [
+        (lambda s: s.replace('version:', 'skill_version:', 1), 'missing:version'),
+        (lambda s: s.replace('version: "0.2.0"', 'version: "0.1.0"'), 'context:version'),
+        (lambda s: s.replace('condicion: treatment', 'condicion: baseline'), 'context:condicion'),
+        (lambda s: s.replace('## Evidencia\n', '## Otra sección\n'), 'section:Evidencia'),
+        (lambda s: s.replace('sha256: ', 'sha256: f', 1), 'inputs:hash'),
+        (lambda s: s.replace('## Preguntas abiertas\n', '## Preguntas abiertas\n## Preguntas abiertas\n'), 'section:Preguntas abiertas'),
+        (lambda s: s.replace('estado: auditoria_completada', 'estado: null'), 'value:estado'),
+        (lambda s: s.replace('fecha: 2026-10-12', 'fecha: fecha-inventada'), 'value:fecha'),
+        (lambda s: s.replace('version: "0.2.0"', 'version: "0.2.0"\nversion: "0.1.0"'), 'frontmatter:duplicate'),
+        (lambda s: '```markdown\n' + s + '```\n', 'frontmatter:missing'),
+        (lambda s: s.replace('inputs:\n', 'inputs: []\nignored:\n'), 'inputs:coverage'),
+    ])
+    def test_rejects_contract_defect_without_repairing_output(tmp_path, change, code):
+        root, report, text = fixture(tmp_path)
+        changed = change(text)
+        report.write_text(changed)
+&gt;       result = module().check_report_contract(root, report, 'Informe.', report_word_limit=500)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'
+
+tests/test_foundry_report_contract.py:82: AttributeError</failure></testcase><testcase classname="tests.test_foundry_report_contract" name="test_rejects_contract_defect_without_repairing_output[&lt;lambda&gt;-inputs:coverage]" time="0.001"><failure message="AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2261/test_rejects_contract_defect_w10')
+change = &lt;function &lt;lambda&gt; at 0x107352200&gt;, code = 'inputs:coverage'
+
+    @pytest.mark.parametrize('change,code', [
+        (lambda s: s.replace('version:', 'skill_version:', 1), 'missing:version'),
+        (lambda s: s.replace('version: "0.2.0"', 'version: "0.1.0"'), 'context:version'),
+        (lambda s: s.replace('condicion: treatment', 'condicion: baseline'), 'context:condicion'),
+        (lambda s: s.replace('## Evidencia\n', '## Otra sección\n'), 'section:Evidencia'),
+        (lambda s: s.replace('sha256: ', 'sha256: f', 1), 'inputs:hash'),
+        (lambda s: s.replace('## Preguntas abiertas\n', '## Preguntas abiertas\n## Preguntas abiertas\n'), 'section:Preguntas abiertas'),
+        (lambda s: s.replace('estado: auditoria_completada', 'estado: null'), 'value:estado'),
+        (lambda s: s.replace('fecha: 2026-10-12', 'fecha: fecha-inventada'), 'value:fecha'),
+        (lambda s: s.replace('version: "0.2.0"', 'version: "0.2.0"\nversion: "0.1.0"'), 'frontmatter:duplicate'),
+        (lambda s: '```markdown\n' + s + '```\n', 'frontmatter:missing'),
+        (lambda s: s.replace('inputs:\n', 'inputs: []\nignored:\n'), 'inputs:coverage'),
+    ])
+    def test_rejects_contract_defect_without_repairing_output(tmp_path, change, code):
+        root, report, text = fixture(tmp_path)
+        changed = change(text)
+        report.write_text(changed)
+&gt;       result = module().check_report_contract(root, report, 'Informe.', report_word_limit=500)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'
+
+tests/test_foundry_report_contract.py:82: AttributeError</failure></testcase><testcase classname="tests.test_foundry_report_contract" name="test_counts_whole_file_and_final_response_independently" time="0.001"><failure message="AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2261/test_counts_whole_file_and_fin0')
+
+    def test_counts_whole_file_and_final_response_independently(tmp_path):
+        root, report, text = fixture(tmp_path)
+        total = len(text.split())
+        m = module()
+&gt;       assert m.check_report_contract(root, report, 'ok ' * 80, report_word_limit=total)['success']
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'
+
+tests/test_foundry_report_contract.py:91: AttributeError</failure></testcase><testcase classname="tests.test_foundry_report_contract" name="test_missing_report_and_final_fail_closed" time="0.001"><failure message="AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2261/test_missing_report_and_final_0')
+
+    def test_missing_report_and_final_fail_closed(tmp_path):
+        root, report, _ = fixture(tmp_path)
+        report.unlink()
+&gt;       result = module().check_report_contract(root, report, None, report_word_limit=500)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'
+
+tests/test_foundry_report_contract.py:100: AttributeError</failure></testcase><testcase classname="tests.test_foundry_report_contract" name="test_legacy_hash_strings_have_same_verification_without_rewriting" time="0.001"><failure message="AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2261/test_legacy_hash_strings_have_0')
+
+    def test_legacy_hash_strings_have_same_verification_without_rewriting(tmp_path):
+        root, report, text = fixture(tmp_path)
+        for path in ['case.md', 'inputs/data.csv']:
+            value = hashlib.sha256((root/path).read_bytes()).hexdigest()
+            text = text.replace(f'  - path: {path}\n    sha256: {value}', f'  - {path} sha256 {value}')
+        report.write_text(text)
+&gt;       result = module().check_report_contract(root, report, 'Informe.', report_word_limit=500)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'
+
+tests/test_foundry_report_contract.py:111: AttributeError</failure></testcase><testcase classname="tests.test_foundry_report_contract" name="test_untrusted_report_path_does_not_hash_external_file" time="0.001"><failure message="AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2261/test_untrusted_report_path_doe0')
+
+    def test_untrusted_report_path_does_not_hash_external_file(tmp_path):
+        root, report, text = fixture(tmp_path)
+        text = text.replace('path: inputs/data.csv', 'path: ../../private.txt')
+        report.write_text(text)
+&gt;       result = module().check_report_contract(root, report, 'Informe.', report_word_limit=500)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'report_contract_transport' has no attribute 'check_report_contract'
+
+tests/test_foundry_report_contract.py:119: AttributeError</failure></testcase><testcase classname="tests.test_foundry_study" name="test_contract_failure_stops_schedule_preserving_runtime_and_ledger[False]" time="0.002"><failure message="assert (7 == 1)&#10; +  where 7 = len([1, 1, 1, 1, 1, 1, ...])">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2261/test_contract_failure_stops_sc0')
+contract = False
+
+    @pytest.mark.parametrize('contract', [False, None])
+    def test_contract_failure_stops_schedule_preserving_runtime_and_ledger(tmp_path, contract):
+        m=module(); calls=[]
+        proxy=SimpleNamespace(budget=SimpleNamespace(entries=[],max_requests=56),rejections=[])
+        def invoke(*args, **kwargs):
+            calls.append(1); proxy.budget.entries.append({'estimated_usd':.001})
+            return {'runtime_success':True,'contract_success':contract}
+        result=m.execute(tmp_path/'package',tmp_path/'out',proxy,'fake',SimpleNamespace(invoke=invoke))
+&gt;       assert len(calls)==1 and result['status']=='STOPPED_CONTRACT_FAILURE'
+E       assert (7 == 1)
+E        +  where 7 = len([1, 1, 1, 1, 1, 1, ...])
+
+tests/test_foundry_study.py:54: AssertionError</failure></testcase><testcase classname="tests.test_foundry_study" name="test_contract_failure_stops_schedule_preserving_runtime_and_ledger[None]" time="0.001"><failure message="assert (7 == 1)&#10; +  where 7 = len([1, 1, 1, 1, 1, 1, ...])">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2261/test_contract_failure_stops_sc1')
+contract = None
+
+    @pytest.mark.parametrize('contract', [False, None])
+    def test_contract_failure_stops_schedule_preserving_runtime_and_ledger(tmp_path, contract):
+        m=module(); calls=[]
+        proxy=SimpleNamespace(budget=SimpleNamespace(entries=[],max_requests=56),rejections=[])
+        def invoke(*args, **kwargs):
+            calls.append(1); proxy.budget.entries.append({'estimated_usd':.001})
+            return {'runtime_success':True,'contract_success':contract}
+        result=m.execute(tmp_path/'package',tmp_path/'out',proxy,'fake',SimpleNamespace(invoke=invoke))
+&gt;       assert len(calls)==1 and result['status']=='STOPPED_CONTRACT_FAILURE'
+E       assert (7 == 1)
+E        +  where 7 = len([1, 1, 1, 1, 1, 1, ...])
+
+tests/test_foundry_study.py:54: AssertionError</failure></testcase></testsuite></testsuites>

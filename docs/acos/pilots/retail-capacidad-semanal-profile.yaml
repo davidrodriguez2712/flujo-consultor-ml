@@ -1,0 +1,45 @@
+schema_version: 1
+project:
+  slug: retail-capacidad-semanal-publico
+  name: Forecasting de volumen semanal para capacidad retail
+  client: Operación retail simulada
+  industry: Retail / e-commerce
+  market: Reino Unido histórico
+  role: Consultor Data & AI
+engagement:
+  decision: Proponer una previsión semanal de facturas positivas registradas como
+    proxy de carga para planificar preparación.
+  problem: 'Engagement nuevo simulado: anticipar volumen semanal; no existen registros
+    de horas, personal o capacidad de preparación.'
+  success_metric: WAPE y MAE del forecast de una semana; sesgo y error por período
+    como diagnósticos.
+  decision_owner: Owner operativo simulado; David revisa el piloto
+  users: Responsable de preparación simulado
+  archetypes:
+  - FORECAST
+  delivery_modes:
+  - analysis
+  current_stage: validation
+  open_questions:
+  - Revisar la evidencia y aceptar o corregir el paquete del piloto.
+  - Confirmar latencia y completitud reales antes de uso operativo.
+data:
+  sources:
+  - csv
+  characteristics:
+    temporal: true
+    tabular: true
+constraints:
+- Datos públicos reales; contexto y decisión de negocio simulados.
+- Caso inicia en validation para ensayar conjuntamente pautas ya definidas; ninguna
+  etapa anterior se declara aprobada.
+- Forecast de facturas positivas, no demanda latente, unidades físicas, horas, staffing
+  óptimo ni impacto causal.
+- Sin API de pago, servicios externos ni cambios al Foundry o pilotos anteriores.
+deliverables:
+- analytical_report
+- decision_memo
+- runbook
+runtimes:
+- codex
+- claude_code

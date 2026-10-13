@@ -1,0 +1,40 @@
+{
+  "id": "detect-leakage-wording01",
+  "files": [
+    {
+      "path": "SKILL-0.1.0.md",
+      "sha256": "2ea060606202840ee4ce49ff27c9beb6b29ffae27edebcf755683e9c9bc99fce",
+      "bytes": 25559
+    },
+    {
+      "path": "SKILL-0.2.0.md",
+      "sha256": "c2a2440477d9985489b71f4d8c50380ccd7985635d02eab330cfee0f7e5856c4",
+      "bytes": 5703
+    },
+    {
+      "path": "config.json",
+      "sha256": "85a282a36c69b0d9f6ecd47527c0f1ab9853bfdf9d4014df4bd2e859f6e4fa74",
+      "bytes": 486
+    },
+    {
+      "path": "run.py",
+      "sha256": "607be64d0a6fadaad4050eb30b90ce0e7edd6ff55d0811de220e5b0185f028c2",
+      "bytes": 4227
+    },
+    {
+      "path": "snapshots/scripts/ci/runtime_budget.py",
+      "sha256": "be80e0784f3751b5225b2aa51ee8c335c90c084d3e95061365f23cf714c2b0c7",
+      "bytes": 21090
+    },
+    {
+      "path": "snapshots/scripts/evaluations/foundry_native_transport.py",
+      "sha256": "8bae0ab2fef7403a08715a4eabfa412a4b9f2522ccbf39b0dfbcbda3de81cb58",
+      "bytes": 14411
+    },
+    {
+      "path": "task.md",
+      "sha256": "595167e8477b8e6e3a64d566a52345474aa5465bef20c830194200a3ec17206c",
+      "bytes": 955
+    }
+  ]
+}

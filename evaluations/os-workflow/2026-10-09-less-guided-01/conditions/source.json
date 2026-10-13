@@ -1,0 +1,8 @@
+{
+  "source": "workflow/execution-and-qa.md",
+  "source_sha256": "e0f11092e967d4008ddf42cf6e45b8568fbd4ec2299f27934749ec34868abafb",
+  "baseline": "Ablación del workflow actual: elimina exclusivamente los tres bloques añadidos entre Evidencia congelada y Definition of Done. No es una release histórica completa.",
+  "treatment": "Workflow actual íntegro; el resto es idéntico.",
+  "templates_and_manuals_exposed": false,
+  "purpose": "Medir el suplemento de pautas; no aislar efecto causal de cada sección o del OS completo."
+}

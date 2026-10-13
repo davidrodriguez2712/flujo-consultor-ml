@@ -1,0 +1,21 @@
+{
+  "project": "Piloto sintético de riesgo de crédito",
+  "stage": "execution",
+  "status": "IN_PROGRESS",
+  "completed": [
+    "discovery",
+    "framing",
+    "diagnosis"
+  ],
+  "total_stages": 7,
+  "blockers": [],
+  "open_decisions": [
+    "Revisar ejecución de development y aprobar gate Execution.",
+    "Autorizar evaluación final después de revisar desarrollo y auditoría del pipeline."
+  ],
+  "next_gates": [
+    "execution"
+  ],
+  "integrity": "OK",
+  "findings": []
+}

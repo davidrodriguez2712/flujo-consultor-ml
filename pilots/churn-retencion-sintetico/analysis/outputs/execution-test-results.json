@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-07",
+  "command": ".venv/bin/python -m pytest -q tests pilots/churn-retencion-sintetico/analysis/test_baseline.py",
+  "exit_code": 0,
+  "passed": 100,
+  "failed": 0,
+  "acos_tests": 92,
+  "pilot_baseline_tests": 8,
+  "elapsed_seconds": 2.69,
+  "platform": "macOS",
+  "scope": "suite local; no nueva ejecución Windows/Linux"
+}

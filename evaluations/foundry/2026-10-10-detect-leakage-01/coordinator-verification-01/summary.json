@@ -1,0 +1,16 @@
+{
+  "status": "PASS_LOCAL_COORDINATOR",
+  "tests_passed": 223,
+  "failures": 0,
+  "api_calls": 0,
+  "api_cost_usd": 0,
+  "configuration_files": 29,
+  "execution_manifest_sha256": "64a52f85b39eedcff77a7ca47f17c5b8664791db48aea0063971e3915480ede0",
+  "effectiveness": "NOT_EVALUATED",
+  "review": "author_not_independent",
+  "historical_foundry_manifests_verified": [
+    27,
+    12,
+    89
+  ]
+}

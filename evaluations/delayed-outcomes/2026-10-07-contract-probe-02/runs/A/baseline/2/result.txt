@@ -1,0 +1,24 @@
+```json
+{
+  "rows": [
+    {
+      "id": "A1",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "La ventana [2025-08-01, 2025-09-01) termina el 2025-09-01T00:00Z; más 4 días (96 h) da 2025-09-05T00:00Z, que coincide con label_available_at. En la extracción (2025-09-20) ya estaba disponible, así que target_reported=0 es observed_negative. En el entrenamiento (2025-09-01) no estaba disponible, porque 2025-09-05 <= 2025-09-01 es falso. La fila no se puede usar en ese entrenamiento. La feature está disponible (2025-07-31T23:00Z <= predicción 2025-08-01T00:00Z)."
+    },
+    {
+      "id": "A2",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "La ventana [2025-07-01, 2025-08-01) termina el 2025-08-01T00:00Z; más 96 h da 2025-08-05T00:00Z, que coincide con label_available_at. Como 2025-08-05 <= 2025-09-01 (entrenamiento) y <= 2025-09-20 (extracción), la etiqueta estaba disponible y target_reported=0 es observed_negative. La feature está disponible (2025-06-30T23:00Z <= predicción 2025-07-01T00:00Z). No hay otras exclusiones de población."
+    }
+  ],
+  "open_questions": [
+    "training_timestamp (2025-09-01) es anterior a extraction_timestamp (2025-09-20). Confirmar que el entrenamiento histórico debe evaluarse con la información disponible al 2025-09-01 y no a la fecha de extracción. Si se usara la fecha de extracción, A1 pasaría a available/eligible."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}
+```

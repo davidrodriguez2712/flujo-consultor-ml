@@ -1,0 +1,120 @@
+schema_version: 1
+current_stage: handoff
+status: COMPLETED
+objective: Laboratorio sintético cerrado con gates aprobados; consultar balance y
+  siguientes pasos separados.
+completed_stages:
+- discovery
+- framing
+- diagnosis
+- execution
+- validation
+- delivery
+- handoff
+blockers: []
+open_decisions: []
+gate_reviews:
+  discovery:
+    decision: PASS
+    reviewer: David Rodríguez
+    evidence:
+    - context/business_context.md
+    - PILOT_REPORT.md
+    - evidence/approvals/2026-10-07-discovery.md
+    profile_sha256: 8378a1642bebb9491c8804019427c9f1fe41c684b16f281388ea50fbc04173e8
+  framing:
+    decision: PASS
+    reviewer: David Rodríguez
+    evidence:
+    - framing/framing.yaml
+    - framing/metrics.md
+    - validation/validation_design.md
+    - evidence/approvals/2026-10-07-framing.md
+    profile_sha256: 8378a1642bebb9491c8804019427c9f1fe41c684b16f281388ea50fbc04173e8
+  diagnosis:
+    decision: PASS
+    reviewer: David Rodríguez
+    evidence:
+    - evidence/findings.md
+    - reports/dataset/dataset-understanding-2026-10-07.md
+    - reports/leakage/leakage-audit-2026-10-07.md
+    - evidence/approvals/2026-10-07-diagnosis.md
+    profile_sha256: 8378a1642bebb9491c8804019427c9f1fe41c684b16f281388ea50fbc04173e8
+  data-quality:
+    decision: PASS
+    reviewer: David Rodríguez
+    evidence:
+    - data/data_contract.yaml
+    - analysis/outputs/diagnosis-checks.json
+    - evidence/approvals/2026-10-07-diagnosis.md
+    profile_sha256: 8378a1642bebb9491c8804019427c9f1fe41c684b16f281388ea50fbc04173e8
+  execution:
+    decision: PASS
+    reviewer: David Rodríguez
+    evidence:
+    - reports/baseline/development-2026-10-07.md
+    - reports/leakage/leakage-audit-2026-10-07-02.md
+    - analysis/outputs/baseline-audit.json
+    - evidence/approvals/2026-10-07-execution.md
+    profile_sha256: 8378a1642bebb9491c8804019427c9f1fe41c684b16f281388ea50fbc04173e8
+  validation:
+    decision: PASS
+    reviewer: David Rodríguez
+    evidence:
+    - validation/model_validation.md
+    - analysis/outputs/holdout-audit.json
+    - evidence/approvals/2026-10-07-validation.md
+    profile_sha256: 8378a1642bebb9491c8804019427c9f1fe41c684b16f281388ea50fbc04173e8
+  data_analysis-review:
+    decision: PASS
+    reviewer: David Rodríguez
+    evidence:
+    - analysis/analysis_plan.md
+    - validation/model_validation.md
+    - evidence/approvals/2026-10-07-validation.md
+    profile_sha256: 8378a1642bebb9491c8804019427c9f1fe41c684b16f281388ea50fbc04173e8
+  supervised_model-review:
+    decision: PASS
+    reviewer: David Rodríguez
+    evidence:
+    - modeling/model_brief.md
+    - validation/model_validation.md
+    - analysis/outputs/holdout-final/metadata.json
+    - evidence/approvals/2026-10-07-validation.md
+    profile_sha256: 8378a1642bebb9491c8804019427c9f1fe41c684b16f281388ea50fbc04173e8
+  selection-review:
+    decision: PASS
+    reviewer: David Rodríguez
+    evidence:
+    - analysis/selection_plan.md
+    - analysis/outputs/holdout-final/results.json
+    - evidence/approvals/2026-10-07-validation.md
+    profile_sha256: 8378a1642bebb9491c8804019427c9f1fe41c684b16f281388ea50fbc04173e8
+  executive_delivery-review:
+    decision: PASS
+    reviewer: David Rodríguez
+    evidence:
+    - delivery/storyline.md
+    - validation/model_validation.md
+    - evidence/approvals/2026-10-07-validation.md
+    profile_sha256: 8378a1642bebb9491c8804019427c9f1fe41c684b16f281388ea50fbc04173e8
+  delivery:
+    decision: PASS
+    reviewer: David Rodríguez
+    evidence:
+    - decision/recommendation.md
+    - delivery/delivery_contract.md
+    - delivery/delivery-manifest.json
+    - analysis/outputs/delivery-checks.json
+    - evidence/approvals/2026-10-07-delivery.md
+    profile_sha256: 8378a1642bebb9491c8804019427c9f1fe41c684b16f281388ea50fbc04173e8
+  handoff:
+    decision: PASS
+    reviewer: David Rodríguez
+    evidence:
+    - handoff/runbook.md
+    - handoff/capability_feedback.md
+    - handoff/handoff-manifest.json
+    - analysis/outputs/handoff-checks.json
+    - evidence/approvals/2026-10-07-handoff.md
+    profile_sha256: 8378a1642bebb9491c8804019427c9f1fe41c684b16f281388ea50fbc04173e8

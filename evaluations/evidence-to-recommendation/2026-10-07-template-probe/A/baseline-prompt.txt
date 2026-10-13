@@ -1,0 +1,227 @@
+# Contexto
+
+Preparar decision memo ejecutivo de laboratorio con fuentes ficticias provistas, sin buscar afuera.
+
+# Objetivo
+
+Corregir borrador y proponer acción proporcionada a evidencia.
+
+# Tarea
+
+Entregar solo JSON: recommendation (texto), claims (lista de statement y evidence_ids válidos), draft_claim_review (una fila por draft id con status supported/unsupported/contradicted, reason y evidence_ids), numeric_findings (campos requeridos en inputs; números o null cuando no identificable), limitations (lista), next_action {owner,action}, gate_decision NEEDS_REVIEW. Supported: evidencia respalda claim. Contradicted: evidencia lo refuta aritmética o lógicamente. Unsupported: falta evidencia suficiente para afirmarlo, aunque no se pruebe falso. Ratios en fracción 0–1; campos _pp en puntos porcentuales; _pct en porcentaje.
+
+# Inputs
+
+Inputs provistos íntegros. Usar E1/E2/E3 como referencias de fuentes locales ficticias.
+
+# Restricciones
+
+No inventar fuentes, facts, plazos, presupuestos o permisos. No entrenar, escribir, publicar, actuar o aprobar gates. La acción es propuesta para review.
+
+# Criterio de finalización
+
+Memo condicionado, claims trazables y claims del borrador clasificados; cálculos y límites reconciliados, acción con owner provisto.
+
+INPUTS
+{
+  "context": "Retención ficticia, septiembre 2025. Decisión: autorizar despliegue de campaña basado en ranking predictivo; no hay contactos realizados ni tratamiento/control. Owner provisto: responsable de retención.",
+  "evidence": {
+    "E1": "Precision@50 descriptiva 20% (10 positivos/50 seleccionados), población evaluada observada; comparador aleatorio esperado 10%.",
+    "E2": "MRR expuesto de seleccionados USD 120000; no representa beneficio recuperado. No hay coste, margen, efecto incremental ni intervención observada."
+  },
+  "draft_claims": [
+    {
+      "id": "A1",
+      "text": "Recuperaremos USD 120000 gracias a la campaña."
+    },
+    {
+      "id": "A2",
+      "text": "ROI de la campaña será 300%."
+    },
+    {
+      "id": "A3",
+      "text": "Precision@50 descriptiva es 20%."
+    }
+  ],
+  "numeric_fields": [
+    "precision",
+    "incremental_impact_usd",
+    "roi_pct"
+  ]
+}
+PAUTAS Y TEMPLATES ACTUALES
+# Research, impacto y delivery
+
+Este playbook transforma preguntas, evidencia y findings revisados en alternativas de acción y una comunicación útil para su audiencia. No reemplaza la aprobación de negocio ni las políticas de fuentes/destinos del cliente.
+
+## Research
+
+Antes de buscar:
+
+- convertir la necesidad en una pregunta acotada y una decisión informada;
+- identificar período, geografía, población, términos y criterios de inclusión;
+- priorizar fuentes primarias y documentación oficial cuando estén disponibles;
+- distinguir evidencia directa de comentario, interpretación o inferencia;
+- verificar fecha, alcance, método y limitaciones de cada fuente.
+
+Comparar fuentes cuando sea posible. Registrar evidencia a favor y en contra, discrepancias y qué no se pudo confirmar. No ocultar contradicciones para hacer una recomendación más simple. Cumplir restricciones de licencia, acceso, retención y confidencialidad.
+
+## Business impact
+
+Vincular un resultado técnico con una acción que alguien puede ejecutar:
+
+1. quién puede actuar y sobre qué población;
+2. tamaño elegible y capacidad operativa;
+3. mecanismo plausible y outcome esperado;
+4. costos de contacto, implementación, oportunidad y riesgo;
+5. escenarios base/alto/bajo con supuestos visibles;
+6. fuente de cada input, owner y sensibilidad;
+7. plan para medir efecto real y criterio para continuar/cambiar.
+
+No convertir lift predictivo en retorno incremental. Separar forecast/model output, asociación observada y evidencia causal. Si no se identifica un outcome o no se puede actuar, reportar la limitación en lugar de inflar el caso de valor.
+
+## Síntesis de findings
+
+Priorizar findings por importancia para la decisión, evidencia, magnitud, alcance y acción disponible. Para cada uno presentar:
+
+- qué sabemos y a qué población/período aplica;
+- evidencia o referencia reproducible;
+- qué inferimos y con qué confianza;
+- qué información sigue faltando;
+- implicación y decisión posible;
+- siguiente validación si el riesgo no está resuelto.
+
+Una historia ejecutiva puede ser concisa y aun así incluir límites. Poner la decisión en primer plano, explicar por qué importa, qué la respalda y qué haría cambiar la recomendación. Charts deben preservar denominadores, unidades, períodos y fuentes.
+
+## Delivery
+
+Escoger memo, deck, dashboard, query o handoff según audiencia y uso. Antes de entregar, comprobar:
+
+- las afirmaciones y cifras coinciden con los findings y evidencia aceptados;
+- totals, períodos, filtros, denominadores y unidades se reconcilian;
+- la versión del artifact corresponde a la versión del análisis;
+- supuestos, incertidumbre, generalización y limitaciones son legibles;
+- la recomendación tiene owner/acción/siguiente paso;
+- la clasificación, audiencia, canal y destino están autorizados;
+- la revisión humana requerida está completa.
+
+No enviar/publicar por iniciativa propia. El consultor aprueba la versión final y utiliza el sistema autorizado. Registrar un delivery manifest cuando se necesite trazabilidad de proyecto, con referencias al artifact, fecha/versión, evidencias y aceptación.
+
+Si el deliverable introduce una tarea de interfaz para usuarios, decidir si se activa [`product-ui-and-prototyping.md`](product-ui-and-prototyping.md). Una presentación ejecutiva no activa por sí sola la ruta de frontend.
+
+
+# Plantillas de findings y QA
+
+Aplicar al nivel de riesgo y tipo de entrega. No llenar cada campo si no aplica; la ausencia de una comprobación debe quedar clara cuando importe.
+
+## Finding trazable
+
+Usar para hallazgos que sostienen recomendación, priorización o decisión.
+
+```markdown
+### [F-##] [afirmación concisa]
+
+- Tipo: [hecho descriptivo / diagnóstico / predicción / estimación causal / hipótesis]
+- Relevancia para la decisión:
+- Población, unidad y período:
+- Evidencia: [tabla/figura/query/fuente + versión/ruta]
+- Método/denominador/comparador:
+- Incertidumbre o limitación:
+- Alternativas/explicaciones pendientes:
+- Confianza: [nivel y razón, no solo etiqueta]
+- Próximo paso o decisión que informa:
+```
+
+## Checklist de revisión de entrega
+
+Usar antes de compartir una recomendación, análisis o artifact con el cliente. Ajustar el rigor al riesgo; un reporte ejecutivo y un modelo operativo requieren evidencias distintas.
+
+```markdown
+# QA — [entregable/version]
+
+- Reviewer / fecha:
+- Audiencia y decisión:
+- Nivel de riesgo:
+
+## Contenido y evidencia
+- [ ] Respuesta y recomendación coinciden con el encargo aprobado.
+- [ ] Las afirmaciones materiales apuntan a evidencia reproducible o fuente verificable.
+- [ ] Totales, denominadores, períodos, moneda/unidades y redondeos reconciliados.
+- [ ] Asociación, predicción y causalidad se nombran correctamente.
+- [ ] Limitaciones, supuestos y resultados negativos pertinentes están visibles.
+- [ ] No se extrapola a población o período sin sustento.
+
+## Uso y presentación
+- [ ] Próxima acción, responsable, costo/riesgo y dependencias son claros cuando aplican.
+- [ ] Lenguaje/gráficos adecuados a la audiencia; definiciones necesarias incluidas.
+- [ ] Privacidad, anonimización y permiso de distribución verificados.
+- [ ] Links/archivos abren desde el entorno esperado.
+
+## Resultado
+- Estado: [PASS / PASS con límites / REVISE / BLOCKED]
+- Hallazgos y severidad:
+- Correcciones/re-chequeos:
+- Pendientes y owner:
+- Aprobación humana requerida por:
+```
+
+
+# Plantillas de delivery y handoff
+
+Usar cuando hace falta identificar lo que se comparte, cómo se reproduce o quién lo opera después. Para una consulta puntual sin artifact persistente, basta el registro de decisión aplicable.
+
+## Manifest de delivery
+
+```markdown
+# Delivery manifest — [proyecto/paquete]
+
+- Versión / fecha / preparado por:
+- Destinatario y owner:
+- Decisión/acción habilitada:
+- Canal y permiso de distribución:
+
+## Contenido
+| Artifact | Ruta/link y versión | Propósito | Evidencia/fuente | Owner |
+|---|---|---|---|---|
+| | | | | |
+
+## Reproducción y límites
+- Cómo reproducir/actualizar:
+- Datos, período y definiciones:
+- Supuestos, exclusiones y limitaciones:
+- Qué no incluye este paquete:
+- Elementos no probados o pendientes:
+
+## Operación (si aplica)
+- Owner operativo:
+- Cadencia / monitoreo / threshold:
+- Acción ante error o drift:
+- Revisión/override humano:
+- Dependencias y costo recurrente:
+
+## Cierre
+- Aceptación por / fecha o estado pendiente:
+- Decisiones registradas en:
+- Accesos retirados/transferidos si aplica:
+- Retención/eliminación acordada:
+- Próxima acción, responsable y fecha:
+```
+
+## Nota de handoff de sesión
+
+```markdown
+# Handoff — [proyecto / fecha]
+
+- Objetivo y etapa actual:
+- Decisión pendiente:
+- Estado y último gate alcanzado:
+- Qué se completó (con links/versiones):
+- Evidencia revisada:
+- Supuestos, límites y dudas:
+- Cambios realizados y archivos afectados:
+- No hacer / restricciones:
+- Próxima acción concreta:
+- Owner entrante:
+```
+
+No incluir secretos ni trasladar información a otro proyecto. Ubicar este handoff en el espacio autorizado del proyecto.

@@ -1,0 +1,31 @@
+from pathlib import Path
+from datetime import datetime,timezone
+import json,sys,hashlib
+import pandas as pd
+import numpy as np
+p=Path(sys.argv[1]).resolve();sys.path.insert(0,str(p/'analysis'))
+from run_retail import checked_contracts,read_snapshots,sha256
+from retail_evaluation import ranking_metrics,select_development
+b=checked_contracts(p)
+m=json.loads((p/'reports/execution/evidence-manifest.json').read_text());assert all(sha256(p/k)==v['sha256'] for k,v in m['files'].items())
+rows=read_snapshots(p/'data/processed/customer_snapshots.csv')
+pred=pd.read_csv(p/'data/processed/development_predictions.csv',dtype={'customer_id':'string'},parse_dates=['cutoff'])
+old=json.loads((p/'reports/execution/model_runs.json').read_text());oldm={(x['cutoff'],x['model_id']):x for x in old['metrics']}
+periods=[]
+for item in b['evaluation']['cutoffs']:
+ if item['purpose']!='development':continue
+ t=pd.Timestamp(item['cutoff']);outcomes=rows.loc[rows.cutoff==t,['customer_id','cutoff','target_sales_90d']].copy();outcomes['horizon_complete']=True;methods={}
+ for method,part in pred.loc[pred.cutoff==t].groupby('model_id'):
+  metrics=ranking_metrics(part,outcomes,b['retail']['capacity'])
+  assert np.isclose(metrics['top_k_sales'],oldm[(t.isoformat(),method)]['top_k_sales'],rtol=1e-12)
+  if method=='rfm':metrics['mae']=None;metrics['mae_note']='Score ordinal; no error monetario.'
+  methods[method]=metrics
+ periods.append({'cutoff':t.isoformat(),'metrics':methods})
+dev={'periods':periods};selection=select_development(dev,b['evaluation'])
+files=['reports/execution/model_runs.json','data/processed/development_predictions.csv','validation/evaluation_contract.yaml','reports/execution/approved-contracts.json','analysis/retail_evaluation.py','analysis/retail_models.py','analysis/run_retail.py']
+frozen={'frozen_at_utc':datetime.now(timezone.utc).isoformat(),'selected_method':selection['selected_method'],'selection':selection,'development':dev,'input_sha256':{r:sha256(p/r) for r in files},'holdout_evaluated_at_freeze':False,'rule':'Método elegido exclusivamente con development; no cambiarlo por holdout.'}
+path=p/'reports/validation/development-selection.json'
+with path.open('x') as f:json.dump(frozen,f,indent=2,ensure_ascii=False)
+(p/'reports/validation/selection-manifest.json').write_text(json.dumps({'sha256':sha256(path)},indent=2)+'\n')
+(p/'reports/validation/development-metrics.json').write_text(json.dumps(dev,indent=2)+'\n')
+print(json.dumps(selection,indent=2,ensure_ascii=False))

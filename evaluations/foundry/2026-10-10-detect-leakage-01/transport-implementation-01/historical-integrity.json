@@ -1,0 +1,101 @@
+{
+  "status": "PASS",
+  "files_intact": 620,
+  "manifests": [
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/evidence-manifest-01.json",
+      "files": 48,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/execution-config-01/execution-manifest-01.json",
+      "files": 12,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/execution-config-02/execution-manifest-02.json",
+      "files": 10,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/runs/round-01/run-manifest-01.json",
+      "files": 15,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/runs/round-02/run-manifest-02.json",
+      "files": 86,
+      "status": "PASS"
+    },
+    {
+      "manifest": "pilots/retail-capacidad-semanal-publico/reports/package/evidence-manifest-01.json",
+      "files": 70,
+      "status": "PASS"
+    },
+    {
+      "manifest": "artifacts/os-workflow-refinement-2026-10-09/change-manifest-01.json",
+      "files": 12,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-transfer-01/evidence-manifest-01.json",
+      "files": 50,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-transfer-01/execution-config-01/execution-manifest-01.json",
+      "files": 13,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-transfer-01/runs/round-01/run-manifest-01.json",
+      "files": 86,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-local-refinement-02/change-manifest-02.json",
+      "files": 19,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-task-draft-01/evidence-manifest-01.json",
+      "files": 39,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-task-draft-01/execution-config-01/execution-manifest-01.json",
+      "files": 12,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-task-draft-01/execution-config-02/execution-manifest-02.json",
+      "files": 12,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-task-draft-01/runs/round-01/run-manifest-01.json",
+      "files": 17,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-task-draft-01/runs/round-02/run-manifest-02.json",
+      "files": 63,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-10-local-refinement-03/change-manifest-03.json",
+      "files": 17,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/foundry/2026-10-10-detect-leakage-01/evidence-manifest-01.json",
+      "files": 27,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/foundry/2026-10-10-detect-leakage-01/configuration-review-manifest-01.json",
+      "files": 12,
+      "status": "PASS"
+    }
+  ]
+}

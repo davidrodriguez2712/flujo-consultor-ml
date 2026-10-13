@@ -1,0 +1,9 @@
+{
+  "stage": "handoff",
+  "decision": "PASS",
+  "reviewer": "David",
+  "authorization": "Respuesta explícita «si» a aprobar Handoff para cerrar este piloto.",
+  "recorded_at_utc": "2026-10-09T16:38:03.535539+00:00",
+  "handoff_manifest_sha256": "2d3669a93b6f5cc90a15b83021cdfc1685de3cfd063670feabbdf407b7e48724",
+  "scope": "Aprobar Handoff y cerrar piloto retail; no publicación, campaña ni promoción Foundry."
+}

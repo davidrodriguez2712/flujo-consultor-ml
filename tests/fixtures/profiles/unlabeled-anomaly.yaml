@@ -1,0 +1,19 @@
+engagement:
+  archetypes:
+  - DIAGNOSE
+  - PRIORITIZE_SELECT
+  decision: Revisar anomalías sin labels
+data:
+  sources:
+  - csv
+  characteristics:
+    labeled: 'no'
+deliverables:
+- report
+schema_version: 1
+project:
+  slug: unlabeled-anomaly
+  name: unlabeled-anomaly
+runtimes:
+- codex
+- claude_code

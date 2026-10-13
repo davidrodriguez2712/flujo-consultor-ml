@@ -1,0 +1,22 @@
+{
+  "schedule": [
+    [
+      4,
+      "0.2.0"
+    ],
+    [
+      5,
+      "0.2.0"
+    ],
+    [
+      5,
+      "0.2.2"
+    ]
+  ],
+  "previous_provider_requests": 7,
+  "previous_local_rejections": 1,
+  "task_guides_model_cap_unchanged": true,
+  "gate_unchanged": true,
+  "source_partial_review": "PARTIAL_REVIEW.md",
+  "native_not_authorized_by_quality_yet": true
+}

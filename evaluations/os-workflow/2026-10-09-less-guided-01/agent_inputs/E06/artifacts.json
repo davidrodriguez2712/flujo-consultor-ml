@@ -1,0 +1,41 @@
+{
+  "analysis/weekly.json": [
+    {
+      "population": "Norte",
+      "metric": "on_time_share",
+      "week_start": "2025-10-20",
+      "week_end_exclusive": "2025-10-27",
+      "complete": true,
+      "on_time": 92,
+      "deliveries": 100
+    },
+    {
+      "population": "Sur",
+      "metric": "on_time_share",
+      "week_start": "2025-11-03",
+      "week_end_exclusive": "2025-11-10",
+      "complete": true,
+      "on_time": 97,
+      "deliveries": 100
+    },
+    {
+      "population": "Norte",
+      "metric": "on_time_share",
+      "week_start": "2025-11-03",
+      "week_end_exclusive": "2025-11-10",
+      "complete": false,
+      "on_time": 49,
+      "deliveries": 50
+    },
+    {
+      "population": "Norte",
+      "metric": "on_time_share",
+      "week_start": "2025-10-06",
+      "week_end_exclusive": "2025-10-13",
+      "complete": true,
+      "on_time": 90,
+      "deliveries": 100
+    }
+  ],
+  "delivery/draft.md": "En Norte, la última semana completa [2025-10-20,2025-10-27) registró 92% de entregas puntuales (92 de 100).\n"
+}

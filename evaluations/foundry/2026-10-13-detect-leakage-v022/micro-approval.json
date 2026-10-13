@@ -1,0 +1,9 @@
+{
+  "status": "APPROVED",
+  "manifest_sha256": "1be3dd9ca3d0165010949060524fecda90d528e2e0400cc0108e2d9ae71da1a5",
+  "budget_usd": 0.009,
+  "prior_usd": 0.131886045,
+  "cumulative_ceiling_usd": 0.15,
+  "basis": "Rondas autorizadas, continuar solo muestras preplanificadas B4/B5/T5 sin repetir éxitos ni relajar gate; saldo global.018113955",
+  "automatic_retries": 0
+}

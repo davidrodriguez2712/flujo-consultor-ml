@@ -1,0 +1,108 @@
+{
+  "started_at": "2026-10-11T13:45:43.421841+00:00",
+  "argv": [
+    "claude",
+    "-p",
+    "--restricted",
+    "--no-chrome",
+    "--no-session-persistence",
+    "--setting-sources",
+    "",
+    "--settings",
+    "{\"disableBundledSkills\": true, \"permissions\": {\"allow\": [\"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/L01-treatment/workspace/.runtime/check_inputs.py)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/L01-treatment/workspace/.runtime/plugin/.claude-plugin/plugin.json)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/L01-treatment/workspace/.runtime/plugin/skills/detect-leakage/SKILL.md)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/L01-treatment/workspace/case.md)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/L01-treatment/workspace/inputs/context.md)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/L01-treatment/workspace/inputs/observations.csv)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/L01-treatment/workspace/inputs/pipeline.py)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/L01-treatment/workspace/workflow.md)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/L01-treatment/workspace/reports/leakage/audit.md)\", \"Bash(/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python /Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/L01-treatment/workspace/.runtime/check_inputs.py)\", \"Skill(acos-eval:detect-leakage)\"], \"deny\": [\"Agent\", \"WebFetch\", \"WebSearch\", \"NotebookEdit\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/L01-treatment/workspace/inputs/**)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/L01-treatment/workspace/case.md)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/L01-treatment/workspace/.runtime/**)\"]}}",
+    "--strict-mcp-config",
+    "--mcp-config",
+    "{\"mcpServers\":{}}",
+    "--permission-mode",
+    "dontAsk",
+    "--permission-prompts",
+    "none",
+    "--tools",
+    "Read,Write,Bash,Skill",
+    "--max-turns",
+    "8",
+    "--effort",
+    "low",
+    "--model",
+    "claude-haiku-5-5",
+    "--system-prompt",
+    "Responde en español. Audita solo el expediente público, respeta sus límites y no aceptes gates. Usa únicamente herramientas y capacidades disponibles. Entrega el reporte y su ruta según case.md.",
+    "--output-format",
+    "stream-json",
+    "--verbose",
+    "--plugin-dir",
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/L01-treatment/workspace/.runtime/plugin"
+  ],
+  "runtime_success": false,
+  "condition": "treatment",
+  "skill_invoked": false,
+  "request_count": 3,
+  "returncode": 0,
+  "tool_calls": [
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/L01-treatment/workspace/case.md"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/L01-treatment/workspace/workflow.md"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/L01-treatment/workspace/inputs/context.md"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/L01-treatment/workspace/inputs/pipeline.py"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/L01-treatment/workspace/inputs/observations.csv"
+      }
+    },
+    {
+      "name": "Bash",
+      "input": {
+        "command": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python /Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/L01-treatment/workspace/.runtime/check_inputs.py",
+        "description": "Run authorized input check utility"
+      }
+    },
+    {
+      "name": "Write",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/L01-treatment/workspace/reports/leakage/audit.md",
+        "content": "---\nfecha: 2026-10-11\ncaso: L01\nskill: none\nskill_version: null\ninputs:\n  - path: case.md\n    sha256: 89f1c1a622a64a73dafb5b641d871d372e72a1076533a23378ec2446f11e1e14\n    bytes: 1728\n  - path: inputs/context.md\n    sha256: 3e3db7db6249d33479a7e01fdcaee3f8f8fec3f898f7c863e2d252398e613552\n    bytes: 776\n  - path: inputs/observations.csv\n    sha256: 29e4badcbbcbf9e242bde9f2d31b80d1f55091a52d094b658e6992a457ad0f19\n    bytes: 417\n    filas: 4\n  - path: inputs/pipeline.py\n    sha256: fb122bed11f58973887818405e1b992b1589a72f8faf0ea13daf98ddb2f3da63\n    bytes: 204\nestado: completado (auditoría de expediente; sin validación de dominio)\ncondicion: hallazgos críticos de leakage en el conjunto de features declarado; no se aprueba ningún gate\n---\n\n# Reporte de auditoría de leakage — L01\n\n## Resumen\n\nEl conjunto de features declarado (`history_kwh_90d`, `recovered_kwh`) contiene una feature con leakage post-evento confirmado por timestamps: `recovered_kwh` no estaba disponible en el momento de scoring (2025-06-01T00:00:00Z). Su disponibilidad en el expediente es entre 2025-06-09 y 2025-06-12, es decir, posterior al scoring y a la inspección. `history_kwh_90d` cumple el criterio temporal declarado. No se evaluó performance, split ni fit de transformaciones, porque no están en el expediente.\n\n## Hallazgos\n\n**H1 — Post-event leakage por `recovered_kwh` (crítico, confianza: Confirmado)**\n- Componente: `inputs/pipeline.py` (línea 2, `FEATURE_COLUMNS`) y columna `recovered_kwh` de `inputs/observations.csv`.\n- Mecanismo: el valor se determina al procesar la inspección; el contexto indica que no existe para el sistema hasta `recovered_available_at`, y que un cero posterior tampoco era dato conocido al scoring.\n- Evidencia: en las 4 filas, `recovered_available_at` (2025-06-09T12:00Z, 06-10, 06-11, 06-12) es posterior a `prediction_at` (2025-06-01T00:00Z). La columna está incluida en `build_features` (pipeline.py líneas 3-4), sin filtro temporal.\n- Acción propuesta: excluir `recovered_kwh` del conjunto de features de scoring. Si se necesita como auxiliar de evaluación, documentarlo como outcome, no como feature. No eliminar automáticamente; decisión del equipo.\n\n**H2 — Riesgo de proxy del target en `recovered_kwh` (alto, confianza: Probable)**\n- Mecanismo: `recovered_kwh` se mide en la inspección que define `fraud_confirmed`, por lo que puede codificar directamente el outcome.\n- Evidencia descriptiva (4 filas, no es una métrica): `recovered_kwh > 0` coincide con `fraud_confirmed = 1` en S01 y S03; `recovered_kwh = 0` coincide con `fraud_confirmed = 0` en S02 y S04. Con 4 filas no se puede concluir sobre la fuerza de la relación.\n- Acción propuesta: mantener H1 como bloqueante; no usar esta coincidencia para estimar performance.\n\n**H3 — Temporalidad de `history_kwh_90d` (informativo, confianza: Confirmado en el expediente)**\n- Evidencia: `history_available_at` = 2025-05-31T23:00:00Z en las 4 filas, anterior a `prediction_at` (2025-06-01T00:00:00Z). Coincide con la descripción de `inputs/context.md`.\n- Límite: esto verifica solo los timestamps declarados; no verifica cómo se calculó la ventana de 90 días ni su origen, porque el expediente no incluye esa lógica.\n- Acción propuesta: ninguna por ahora; confirmar la lógica de construcción fuera de este expediente.\n\n## Evidencia\n\n- `case.md`: contrato de la tarea; auditar features sin calcular performance ni entrenar.\n- `inputs/context.md`: unidad de scoring, ventana del target (14 días), disponibilidad de `history_kwh_90d` y `recovered_kwh`.\n- `inputs/observations.csv`: 4 filas sintéticas, columnas y timestamps citados arriba.\n- `inputs/pipeline.py`: fragmento con selección de columnas; no contiene split, fit ni cálculo de métricas.\n- Verificación determinista: la utilidad `check_inputs.py` devolvió hashes, bytes y conteo de 4 filas coincidentes con la tabla del frontmatter. Los conteos y hashes son los de esa salida; no se recalcularon manualmente.\n\n## Preguntas abiertas\n\n1. ¿Cómo se construye `history_kwh_90d` (fuente, ventana y corte exacto)? No está en el expediente.\n2. ¿El sistema productivo realmente usará `recovered_kwh` en scoring o solo está en este fragmento?\n3. ¿Hay split, fit de imputadores/escaladores o target encoding fuera de `pipeline.py` que pudieran añadir otro leakage? No determinable con este expediente.\n4. ¿Un experto del dominio confirma que `recovered_kwh` no tiene una versión disponible antes de la inspección?\n\n## Recomendaciones\n\n1. Retirar `recovered_kwh` de `FEATURE_COLUMNS` antes de cualquier entrenamiento o evaluación de scoring.\n2. Añadir un filtro temporal explícito (`recovered_available_at <= prediction_at`) en la construcción de features, y un test que falle si se incumple.\n3. Revisar el pipeline completo (split, fit, joins) con los artefactos reales; esta auditoría no los cubre.\n4. Pedir validación de un experto del dominio sobre la semántica de las columnas.\n\n## Límites de la inspección\n\n- Datos sintéticos de 4 filas; no son representativos y no permiten conclusiones estadísticas.\n- Se leyó el código del fragmento; no se ejecutó `pipeline.py`, no se entrenó ningún modelo y no se calcularon métricas.\n- No se invocó la skill `acos-eval:detect-leakage`; por eso el frontmatter declara `skill: none`. La auditoría se hizo a partir de los inputs autorizados.\n- No hay fuente de referencia del reviewer en el expediente; no se usó.\n- Esta auditoría no aprueba gates ni decisiones de negocio.\n"
+      }
+    }
+  ],
+  "skill_invocation_requested": false,
+  "usage_known": true,
+  "report_persisted": true,
+  "report_sha256": "86d0a1f0453012db643450a7606fd6913ceb9a1629c26fbf1116514c2289edf5",
+  "model_usage": {
+    "claude-haiku-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 5170,
+      "cacheReadInputTokens": 18795,
+      "cacheCreationInputTokens": 10972,
+      "webSearchRequests": 0,
+      "costUSD": 0.00414505,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1500,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "finished_at": "2026-10-11T13:46:07.764974+00:00"
+}

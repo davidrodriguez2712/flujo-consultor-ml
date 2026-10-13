@@ -1,0 +1,10 @@
+{
+  "status": "APPROVED",
+  "execution_manifest_sha256": "6ea839f67965ae100c51daedabb66376b4dfd7e082789ba72d2160bc4e0bedae",
+  "total_budget_usd": 0.04864678,
+  "prior_total_usd": 0.10135322,
+  "cumulative_ceiling_usd": 0.15,
+  "package_accepted": true,
+  "basis": "Usuario autoriza rondas/correcciones autónomas y techoUS$0.15; corrección de formato común sin cambiar criterios ni guards",
+  "automatic_retries": 0
+}

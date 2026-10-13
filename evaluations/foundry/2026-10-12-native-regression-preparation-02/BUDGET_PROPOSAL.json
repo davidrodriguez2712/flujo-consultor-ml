@@ -1,0 +1,19 @@
+{
+  "status": "PROPOSED_NOT_AUTHORIZED",
+  "execution_manifest_sha256": "b8ef2799245a463cc3e33be88c25e94b1b26af13072862d9f6c613ac2e0da044",
+  "scope": "L01-L03 native treatment regression; skill0.2 experimental and corrected mechanical contract",
+  "original_study_ceiling_usd": 0.1,
+  "prior_real_estimated_spend_usd": 0.09112648,
+  "real_remaining_usd": 0.00887352,
+  "requested_additional_usd": 0.05,
+  "proposed_total_study_ceiling_usd": 0.15,
+  "maximum_new_run_budget_usd": 0.05887352,
+  "basis": "Margen para completar tres invocaciones nativas con cap8192 sin reducir reservas ni reintentar automáticamente; no es estimación de gasto esperado ni garantía de completar",
+  "synthetic_budget_probe": {
+    "committed_usd": 3.6e-05,
+    "remaining_before_rejection_usd": 0.00883752,
+    "rejected_quote_usd": 0.008994625,
+    "not_actual_spend": true
+  },
+  "paid_calls_made": 0
+}

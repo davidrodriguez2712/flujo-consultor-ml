@@ -1,0 +1,23 @@
+{
+  "project": "Priorización comercial retail con datos públicos",
+  "stage": "handoff",
+  "status": "IN_PROGRESS",
+  "completed": [
+    "discovery",
+    "framing",
+    "diagnosis",
+    "execution",
+    "validation",
+    "delivery"
+  ],
+  "total_stages": 7,
+  "blockers": [],
+  "open_decisions": [
+    "Aprobación humana Handoff pendiente; no declarar COMPLETED antes."
+  ],
+  "next_gates": [
+    "handoff"
+  ],
+  "integrity": "OK",
+  "findings": []
+}

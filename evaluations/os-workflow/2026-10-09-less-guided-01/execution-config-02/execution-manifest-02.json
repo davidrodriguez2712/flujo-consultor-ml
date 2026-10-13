@@ -1,0 +1,56 @@
+{
+  "id": "os-workflow-less-guided-execution-02",
+  "files": [
+    {
+      "path": "CHANGE.md",
+      "sha256": "96e6057442214c70acd43ce31d7dc9e614a76b3026883ddb3451c1e76fe2f214",
+      "bytes": 478
+    },
+    {
+      "path": "config.json",
+      "sha256": "cbad7a8753b38b6896034592a1cec27b5b66fa1da46b36785873d6200cfd5f8c",
+      "bytes": 4678
+    },
+    {
+      "path": "local-verification.json",
+      "sha256": "e53cf8305caf00d4b3f2a7323ed9dc4845833a5c96aa4383a78f91ad2838d60b",
+      "bytes": 191
+    },
+    {
+      "path": "smoke-payload.txt",
+      "sha256": "d69dbafa988d9c4d8bdf3f2d91c57c84ad33f0fb9b242ccbeb665e6381d5aca6",
+      "bytes": 280
+    },
+    {
+      "path": "snapshots/scripts/ci/runtime_budget.py",
+      "sha256": "a9c7a4ab6187646c8c71a0f3b2f3978fd7e538d41114fcc1307640d29d61c557",
+      "bytes": 13993
+    },
+    {
+      "path": "snapshots/scripts/evaluations/workflow_native_transport.py",
+      "sha256": "2776cf2b1fef0634207be437163d7f7646a9f62d9e1d805936b218d6103b0fe4",
+      "bytes": 4381
+    },
+    {
+      "path": "snapshots/scripts/evaluations/workflow_output_checker.py",
+      "sha256": "24f31e13f65ded5d4e393b0fddee80b71213a7ec69ae0966fc0367dbe11887a0",
+      "bytes": 2938
+    },
+    {
+      "path": "snapshots/tests/test_runtime_budget.py",
+      "sha256": "64ac972814594f31a0987b0f7828a7bb1221efb7547fc9dd284db5c6d8560fd6",
+      "bytes": 11341
+    },
+    {
+      "path": "snapshots/tests/test_workflow_native_transport.py",
+      "sha256": "598c24cbfd288018d9897798a59336f8ff82339dc35656877d8540d45ae13db5",
+      "bytes": 3363
+    },
+    {
+      "path": "snapshots/tests/test_workflow_output_checker.py",
+      "sha256": "5cda07dfca53bb519583e143c728e19b2c80e6a1428fc941e1e1880deb3a7c69",
+      "bytes": 2241
+    }
+  ],
+  "scope": "Configuración ajustada autorizada con cap8192, descontando round01 del totalUS$0.20."
+}

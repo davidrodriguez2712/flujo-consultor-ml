@@ -1,0 +1,248 @@
+{
+  "id": "os-workflow-less-guided-01",
+  "version": "01",
+  "scope": "Preparación revisable: protocolo, inputs, expected privados, pautas, payloads y checks locales. Sin configuración aprobada ni ejecución de modelos.",
+  "precedence_evidence": "local_only",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "9011fc21ba322c843cb5906f724589e636d9956096901057e08547d15ddde5a0",
+      "bytes": 1874
+    },
+    {
+      "path": "agent_inputs/E01/artifacts.json",
+      "sha256": "8b79c92ee52591e9700530f7c8f8ba3e176ef1c7cced716360989c9ae8b05958",
+      "bytes": 1254
+    },
+    {
+      "path": "agent_inputs/E01/context.json",
+      "sha256": "2b409c54852704ccaa1d1c51c5added4179944055048dc270a1e460bccf793b4",
+      "bytes": 222
+    },
+    {
+      "path": "agent_inputs/E01/task.md",
+      "sha256": "b8c1d60a65671c49cb7ebdf820dc9e3df0823df94f6fd99edc3c54ebf75ccf15",
+      "bytes": 229
+    },
+    {
+      "path": "agent_inputs/E02/artifacts.json",
+      "sha256": "1ccd53bfd9091d87aaaf575c6de5fc0c26c3da9b95494714f0cab5add243abce",
+      "bytes": 1249
+    },
+    {
+      "path": "agent_inputs/E02/context.json",
+      "sha256": "18fd2d5e7ce796c41f0e6ee78052f5f94a2e51491f49ec197251b1dc8eea6a9b",
+      "bytes": 193
+    },
+    {
+      "path": "agent_inputs/E02/task.md",
+      "sha256": "c1951779bc17a42e7ca917773a02dd1d8763f911fd1ccb984ec14c3d9ed23e12",
+      "bytes": 237
+    },
+    {
+      "path": "agent_inputs/E03/artifacts.json",
+      "sha256": "626c9cba2bb93c4cbe91bdeeedff1ac289b95270800c4a5c48e5291acf311a2c",
+      "bytes": 1042
+    },
+    {
+      "path": "agent_inputs/E03/context.json",
+      "sha256": "8d180e8e167724b53deab60cc16a0b39fe3ed50fd617695023a3463d28afcded",
+      "bytes": 373
+    },
+    {
+      "path": "agent_inputs/E03/task.md",
+      "sha256": "247479ee44158ad4c96625fd394a0cadacf1659ef791029c7168bf7e6b65d9b2",
+      "bytes": 195
+    },
+    {
+      "path": "agent_inputs/E04/artifacts.json",
+      "sha256": "5f3a526a51defaa22c7bc57abd4c516051e3ff2d193b265175c41481d2b851fb",
+      "bytes": 924
+    },
+    {
+      "path": "agent_inputs/E04/context.json",
+      "sha256": "d8485f0203f5e04aa519832940580366c121c53a26956556dd01507d6cf8390a",
+      "bytes": 405
+    },
+    {
+      "path": "agent_inputs/E04/task.md",
+      "sha256": "5c46dbb00a5c0f3d06185fe84ab148c5dfa0e7b2e7fc4537ebca5cd9d53fd487",
+      "bytes": 159
+    },
+    {
+      "path": "agent_inputs/E05/artifacts.json",
+      "sha256": "67a1acb9b5f27a2c60558d77e02753aa078d8ab8ad62918c33dd495c915fd379",
+      "bytes": 1021
+    },
+    {
+      "path": "agent_inputs/E05/context.json",
+      "sha256": "20eae0b9b18ffb012571e03ea043333fc1e4592b952eb2b30135ba138d80a8be",
+      "bytes": 347
+    },
+    {
+      "path": "agent_inputs/E05/task.md",
+      "sha256": "828dbfa5966c6772178f361df61fb405cda0b20b2598c2e7a2030903484e9d1c",
+      "bytes": 147
+    },
+    {
+      "path": "agent_inputs/E06/artifacts.json",
+      "sha256": "01fe81eb893d3b1143c63291ac78d825d44034fb9f4016aff363053c3cc128bd",
+      "bytes": 1051
+    },
+    {
+      "path": "agent_inputs/E06/context.json",
+      "sha256": "20eae0b9b18ffb012571e03ea043333fc1e4592b952eb2b30135ba138d80a8be",
+      "bytes": 347
+    },
+    {
+      "path": "agent_inputs/E06/task.md",
+      "sha256": "828dbfa5966c6772178f361df61fb405cda0b20b2598c2e7a2030903484e9d1c",
+      "bytes": 147
+    },
+    {
+      "path": "common/task-contract.txt",
+      "sha256": "7bdccc6f5137a643ca87c6fe9fddca946fe2917285614fc3086ce71397ab08de",
+      "bytes": 805
+    },
+    {
+      "path": "conditions/baseline/workflow.md",
+      "sha256": "9dd8095cd8fd8dfb351974d82d049cd3f1fd0b345a83d298c8c7b1c982bfa5d5",
+      "bytes": 6339
+    },
+    {
+      "path": "conditions/source.json",
+      "sha256": "e5377b5f3f9aab9a985a95eb879c9c4558f6be30595dd019f7de329466e30221",
+      "bytes": 535
+    },
+    {
+      "path": "conditions/treatment/supplement.md",
+      "sha256": "a4360cd065bacb8c6954c5b60e2246b2878488909b15d94ded014d2dc485c8eb",
+      "bytes": 8263
+    },
+    {
+      "path": "conditions/treatment/workflow.md",
+      "sha256": "e0f11092e967d4008ddf42cf6e45b8568fbd4ec2299f27934749ec34868abafb",
+      "bytes": 14602
+    },
+    {
+      "path": "payloads/E01/baseline.txt",
+      "sha256": "a9cf93511443139ce2eb1319ca063260f7ab49c24f1dd18baf1f48b76d98c16e",
+      "bytes": 8927
+    },
+    {
+      "path": "payloads/E01/treatment.txt",
+      "sha256": "70c89b4ee7eeee08a8a9950927158afb8fd013c4ce2ee3329152e36d5a9048bb",
+      "bytes": 17190
+    },
+    {
+      "path": "payloads/E02/baseline.txt",
+      "sha256": "c66f3bfb6a9bcf27aead8e3a10cf575cd49736fd2acad720c89fd32da5a9e859",
+      "bytes": 8901
+    },
+    {
+      "path": "payloads/E02/treatment.txt",
+      "sha256": "4ed808803e039989b09cda4b36ac4e77a95b48715d2393597b5f399ec87f7dfa",
+      "bytes": 17164
+    },
+    {
+      "path": "payloads/E03/baseline.txt",
+      "sha256": "72f05fda82533bc72659d136a1b00f4b6ae436183ae7640efa91940d538ff3a8",
+      "bytes": 8832
+    },
+    {
+      "path": "payloads/E03/treatment.txt",
+      "sha256": "8bddcb361991dbc565a560dc411e7c461738d24914c72b3ac3c9b2db5eaa53a9",
+      "bytes": 17095
+    },
+    {
+      "path": "payloads/E04/baseline.txt",
+      "sha256": "78bcde4f01cd1a944aa7e25fc3cd479d93077c24222456df80f8e9283a9225b0",
+      "bytes": 8710
+    },
+    {
+      "path": "payloads/E04/treatment.txt",
+      "sha256": "a5c076a648c45a17e428254c2a9b3173d1699e052c0ad157556c044825a112e0",
+      "bytes": 16973
+    },
+    {
+      "path": "payloads/E05/baseline.txt",
+      "sha256": "1097a3ec2329b1682707c52184f4fbd971d32443aaf61104117651c4cf66ac93",
+      "bytes": 8737
+    },
+    {
+      "path": "payloads/E05/treatment.txt",
+      "sha256": "f559a9d0c8c0860fbc02e71d845c5cd091ceb6ec6f524bd71626dbfb1e150c46",
+      "bytes": 17000
+    },
+    {
+      "path": "payloads/E06/baseline.txt",
+      "sha256": "7df1f232337810d4109e41aa392392bc203e1fbd84f046f4b0fe67cb6ba3bcde",
+      "bytes": 8767
+    },
+    {
+      "path": "payloads/E06/treatment.txt",
+      "sha256": "4db2635af767a671adb01c7aad97d6589a369ca994a13c460a91f311639f7fa8",
+      "bytes": 17030
+    },
+    {
+      "path": "preparation-checks.json",
+      "sha256": "7fd71bdb1eac2a9363f17706443ba45f5854cd642cbdcc8ad6b97bab81166a04",
+      "bytes": 1022
+    },
+    {
+      "path": "preparation.json",
+      "sha256": "27de83f7d0e07706c61b026074b2741c34479c9847dfd8241516816b9d861962",
+      "bytes": 2545
+    },
+    {
+      "path": "protocol.md",
+      "sha256": "029429117ada57cfc298ef802d8aff423d29168583be265ee0278d400f1b17f9",
+      "bytes": 7801
+    },
+    {
+      "path": "reviewer/case-index.json",
+      "sha256": "149a47a6856263706146f60465510f6b0197a53dc7abf0bd5de85a6864bb014d",
+      "bytes": 1665
+    },
+    {
+      "path": "reviewer/expected/E01.json",
+      "sha256": "bc20093dfdbbbc1f9f748ad37a068afa97999228c23e624d7e6562836e7eb93f",
+      "bytes": 927
+    },
+    {
+      "path": "reviewer/expected/E02.json",
+      "sha256": "a32c0875f39771b5a32650e35da59fac31ae6780fba40c3e36191de08f425882",
+      "bytes": 854
+    },
+    {
+      "path": "reviewer/expected/E03.json",
+      "sha256": "3d61451d2454182113fcc2116a3803cacf7d220eb34ec3dc34d6d3f09ae5383d",
+      "bytes": 766
+    },
+    {
+      "path": "reviewer/expected/E04.json",
+      "sha256": "1e25d3522ea1912cf1eff8157a158b162a6cdc8c9c362ce7b4051f48f94daa33",
+      "bytes": 647
+    },
+    {
+      "path": "reviewer/expected/E05.json",
+      "sha256": "bd124ec91f536b1c8ff033cea8c181e0a4fc5a097838b2cd24b822e2b87b9f67",
+      "bytes": 709
+    },
+    {
+      "path": "reviewer/expected/E06.json",
+      "sha256": "3397562870fb099c42f085defc753b9cb94ea394cdab946edfc66b07e8af220f",
+      "bytes": 722
+    },
+    {
+      "path": "reviewer/preparation-review.md",
+      "sha256": "097648164e768f48a303aeaa6686fb85c1f1cec49b1c361608993e4ce9b0c156",
+      "bytes": 2666
+    },
+    {
+      "path": "verify_preparation.py",
+      "sha256": "f00b67384f50b01c37c6b6a21026e28d6cccc567733e2de3f6fbce9084ecf6b5",
+      "bytes": 6474
+    }
+  ]
+}

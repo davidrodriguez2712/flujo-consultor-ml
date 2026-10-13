@@ -1,0 +1,201 @@
+{
+  "periods": [
+    {
+      "period": "2024-02-01",
+      "rows": 1400,
+      "observed": 1400,
+      "pending": 0,
+      "positives": 70,
+      "label_available_at": "2024-03-08T00:00:00Z"
+    },
+    {
+      "period": "2024-03-01",
+      "rows": 1529,
+      "observed": 1529,
+      "pending": 0,
+      "positives": 59,
+      "label_available_at": "2024-04-08T00:00:00Z"
+    },
+    {
+      "period": "2024-04-01",
+      "rows": 1691,
+      "observed": 1691,
+      "pending": 0,
+      "positives": 74,
+      "label_available_at": "2024-05-08T00:00:00Z"
+    },
+    {
+      "period": "2024-05-01",
+      "rows": 1822,
+      "observed": 1822,
+      "pending": 0,
+      "positives": 83,
+      "label_available_at": "2024-06-08T00:00:00Z"
+    },
+    {
+      "period": "2024-06-01",
+      "rows": 1923,
+      "observed": 1923,
+      "pending": 0,
+      "positives": 85,
+      "label_available_at": "2024-07-08T00:00:00Z"
+    },
+    {
+      "period": "2024-07-01",
+      "rows": 2029,
+      "observed": 2029,
+      "pending": 0,
+      "positives": 94,
+      "label_available_at": "2024-08-08T00:00:00Z"
+    },
+    {
+      "period": "2024-08-01",
+      "rows": 1935,
+      "observed": 1935,
+      "pending": 0,
+      "positives": 57,
+      "label_available_at": "2024-09-08T00:00:00Z"
+    },
+    {
+      "period": "2024-09-01",
+      "rows": 1878,
+      "observed": 1878,
+      "pending": 0,
+      "positives": 75,
+      "label_available_at": "2024-10-08T00:00:00Z"
+    },
+    {
+      "period": "2024-10-01",
+      "rows": 1803,
+      "observed": 1803,
+      "pending": 0,
+      "positives": 68,
+      "label_available_at": "2024-11-08T00:00:00Z"
+    },
+    {
+      "period": "2024-11-01",
+      "rows": 1735,
+      "observed": 1735,
+      "pending": 0,
+      "positives": 73,
+      "label_available_at": "2024-12-08T00:00:00Z"
+    },
+    {
+      "period": "2024-12-01",
+      "rows": 1662,
+      "observed": 1662,
+      "pending": 0,
+      "positives": 70,
+      "label_available_at": "2025-01-08T00:00:00Z"
+    },
+    {
+      "period": "2025-01-01",
+      "rows": 1592,
+      "observed": 1592,
+      "pending": 0,
+      "positives": 50,
+      "label_available_at": "2025-02-08T00:00:00Z"
+    },
+    {
+      "period": "2025-02-01",
+      "rows": 1542,
+      "observed": 1542,
+      "pending": 0,
+      "positives": 54,
+      "label_available_at": "2025-03-08T00:00:00Z"
+    },
+    {
+      "period": "2025-03-01",
+      "rows": 1488,
+      "observed": 1488,
+      "pending": 0,
+      "positives": 54,
+      "label_available_at": "2025-04-08T00:00:00Z"
+    },
+    {
+      "period": "2025-04-01",
+      "rows": 1434,
+      "observed": 1434,
+      "pending": 0,
+      "positives": 58,
+      "label_available_at": "2025-05-08T00:00:00Z"
+    },
+    {
+      "period": "2025-05-01",
+      "rows": 1376,
+      "observed": 1376,
+      "pending": 0,
+      "positives": 57,
+      "label_available_at": "2025-06-08T00:00:00Z"
+    },
+    {
+      "period": "2025-06-01",
+      "rows": 1319,
+      "observed": 1319,
+      "pending": 0,
+      "positives": 55,
+      "label_available_at": "2025-07-08T00:00:00Z"
+    },
+    {
+      "period": "2025-07-01",
+      "rows": 1264,
+      "observed": 1264,
+      "pending": 0,
+      "positives": 48,
+      "label_available_at": "2025-08-08T00:00:00Z"
+    },
+    {
+      "period": "2025-08-01",
+      "rows": 1216,
+      "observed": 1216,
+      "pending": 0,
+      "positives": 36,
+      "label_available_at": "2025-09-08T00:00:00Z"
+    },
+    {
+      "period": "2025-09-01",
+      "rows": 1180,
+      "observed": 1180,
+      "pending": 0,
+      "positives": 60,
+      "label_available_at": "2025-10-08T00:00:00Z"
+    },
+    {
+      "period": "2025-10-01",
+      "rows": 1120,
+      "observed": 1120,
+      "pending": 0,
+      "positives": 55,
+      "label_available_at": "2025-11-08T00:00:00Z"
+    },
+    {
+      "period": "2025-11-01",
+      "rows": 1065,
+      "observed": 1065,
+      "pending": 0,
+      "positives": 50,
+      "label_available_at": "2025-12-08T00:00:00Z"
+    },
+    {
+      "period": "2025-12-01",
+      "rows": 1015,
+      "observed": 1015,
+      "pending": 0,
+      "positives": 43,
+      "label_available_at": "2026-01-08T00:00:00Z"
+    },
+    {
+      "period": "2026-01-01",
+      "rows": 972,
+      "observed": 0,
+      "pending": 972,
+      "positives": 0,
+      "label_available_at": "2026-02-08T00:00:00Z"
+    }
+  ],
+  "availability_rule_violations": 0,
+  "pending_cancellations": 28,
+  "october_2024_train_months": 7,
+  "september_2024_train_months": 6,
+  "labels_pending_only_jan2026": true
+}

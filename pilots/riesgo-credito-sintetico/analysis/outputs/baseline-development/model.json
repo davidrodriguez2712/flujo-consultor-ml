@@ -1,0 +1,35 @@
+{
+  "version": "0.1.0",
+  "training_cutoff": "2025-01-01",
+  "training_rows": 1248,
+  "reference_probability": 0.10737179487179487,
+  "medians": {
+    "monthly_income": 3152.0,
+    "debt_to_income": 0.31815,
+    "requested_amount": 10850.0,
+    "bureau_score": 651.5,
+    "prior_late_count": 0.0
+  },
+  "means": {
+    "monthly_income": 3165.6113782051284,
+    "debt_to_income": 0.3440221153846154,
+    "requested_amount": 10708.814102564103,
+    "bureau_score": 650.5024038461538,
+    "prior_late_count": 0.6626602564102564
+  },
+  "scales": {
+    "monthly_income": 1334.5497039355193,
+    "debt_to_income": 0.19476795901859406,
+    "requested_amount": 5538.809971585916,
+    "bureau_score": 55.12218357818068,
+    "prior_late_count": 0.8011309953770235
+  },
+  "weights": [
+    0.07732036693619503,
+    0.16428997935105646,
+    -0.1415532447465403,
+    -0.5817734665648996,
+    0.42768947821610764
+  ],
+  "intercept": -2.3667479453127185
+}

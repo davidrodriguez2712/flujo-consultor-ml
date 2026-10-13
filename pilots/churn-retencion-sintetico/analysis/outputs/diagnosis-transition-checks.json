@@ -1,0 +1,204 @@
+{
+  "reproduced_csv": 4,
+  "checks_without_violations": 26,
+  "source_hashes_verified": true,
+  "queries_read_only": true,
+  "commands": {
+    "status": {
+      "exit": 0,
+      "output": {
+        "project": "Piloto sintético de churn y retención",
+        "stage": "diagnosis",
+        "status": "IN_PROGRESS",
+        "completed": [
+          "discovery",
+          "framing"
+        ],
+        "total_stages": 7,
+        "blockers": [],
+        "open_decisions": [
+          "Revisar findings y contrato de datos para los gates diagnosis y data-quality."
+        ],
+        "next_gates": [
+          "diagnosis",
+          "data-quality"
+        ],
+        "integrity": "OK",
+        "findings": []
+      }
+    },
+    "next": {
+      "exit": 0,
+      "output": {
+        "stage": "diagnosis",
+        "objective": "Revisar diagnóstico de datos y auditoría de leakage antes de autorizar el baseline.",
+        "questions": [
+          "¿Qué hipótesis tienen evidencia?",
+          "¿Qué falta para decidir?"
+        ],
+        "outputs": [
+          "evidence/findings.md",
+          "data/data_contract.yaml"
+        ],
+        "capabilities": [
+          {
+            "id": "problem-framing",
+            "coverage": "partial",
+            "artifact": "playbook",
+            "reason": "Sin skill operativa compatible",
+            "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+          },
+          {
+            "id": "evidence-synthesis",
+            "coverage": "partial",
+            "artifact": "playbook",
+            "reason": "Sin skill operativa compatible",
+            "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+          },
+          {
+            "id": "dataset-understanding",
+            "coverage": "skill",
+            "skill": "understand-dataset",
+            "status": "experimental",
+            "version": "0.1.0",
+            "reason": "Propósito y condiciones compatibles con política del catálogo",
+            "limits": "\n# Propósito\n\nEsta skill proporciona una **comprensión estructural y metodológica de un dataset\nantes de comenzar el análisis o el modelado**.\n\nEl problema que resuelve: la comprensión inicial de los datos suele hacerse de forma\nimprovisada y se salta directamente a estadísticas descriptivas, gráficos,\ntratamiento de missing, feature engineering o entrenamiento. Antes de esas\nactividades quedan sin resolver preguntas fundamentales —qué representa una fila,\ncuál es la unidad de observación, cuál es el target y cuándo se conoce, qué\ninformación estaba disponible al momento de predecir, qué variables son posteriores\nal evento, qué joins duplican registros—.\n\nUna comprensión incorrecta en esta etapa produce errores (target leakage, temporal\nleakage, granularidad mal definida, duplicación por joins, train/test contamination,\nuso incorrecto de identificadores, mala interpretación del target) que **luego no son\nvisibles en las métricas del modelo**: el modelo puede tener métricas excelentes y\naun así ser inválido.\n\nLa skill establece primero una comprensión confiable de los datos y señala los\nprincipales riesgos y preguntas abiertas. No decide que el dataset esté listo para\nmodelar.\n\n# Cuándo usar\n\nUsar esta skill cuando:\n\n- se recibe un dataset desconocido o solo su estructura (columnas, tipos, muestra);\n- se inicia un nuevo proyecto de Data Science supervisado;\n- se recibe una tabla nueva o se incorpora una nueva fuente de información;\n- se recibe una nueva versión de un dataset ya conocido;\n- se hereda un proyecto creado por otra persona;\n- no está clara la unidad de observación o la granularidad;\n- no se conoce con certeza el target;\n- existe información temporal y hay riesgo de usar información futura;\n- existen múltiples tablas que podrían relacionarse entre sí;\n- existe"
+          },
+          {
+            "id": "supervised-validation",
+            "coverage": "skill",
+            "skill": "design-validation",
+            "status": "experimental",
+            "version": "0.1.0",
+            "reason": "Propósito y condiciones compatibles con política del catálogo",
+            "limits": "\n# Propósito\n\nEsta skill proporciona el **diseño explícito y justificado de la estrategia de\nvalidación** de un problema supervisado, antes del feature engineering dependiente\ndel tiempo y antes del entrenamiento.\n\nEl problema que resuelve: la estrategia de validación suele definirse demasiado\ntarde o elegirse por conveniencia (`train_test_split`, `StratifiedKFold`, `KFold`,\ncross-validation estándar) sin comprobar primero si representa cómo funcionará el\nmodelo en producción. Una estrategia incorrecta produce métricas optimistas aunque\nno exista ningún error visible en el entrenamiento. Ocurre sobre todo cuando hay\ndatos temporales, múltiples registros de una misma entidad, eventos repetidos,\ngrupos relacionados, panel data, ventanas de observación, prediction horizons,\ncambios de distribución, o cuando entrenamiento y scoring ocurren en momentos\ndistintos. También ocurre cuando la validación es técnicamente válida pero está\ndesconectada de la decisión real (evaluar globalmente cuando operacionalmente solo\nimporta el desempeño sobre los primeros K casos priorizados).\n\nEl problema no es únicamente elegir entre train/test o cross-validation. Es diseñar\nuna validación que represente correctamente cómo se genera la información, cuándo\nse realiza la predicción, sobre qué entidades, para qué horizonte, bajo qué\nrestricciones y cómo se usará realmente el modelo.\n\nPrincipio rector:\n\n> La validación debe reproducir lo más fielmente posible la situación real en la\n> que el modelo generará predicciones: qué información existe, en qué momento,\n> sobre qué entidades y para qué decisión.\n\nLa skill **no ejecuta el split ni entrena modelos**. Produce un diseño: qué\nestrategia se recomienda, por qué representa mejor el problema, qué alternativas se\ndescartan y con qué motivo, cómo cons"
+          },
+          {
+            "id": "leakage-audit",
+            "coverage": "skill",
+            "skill": "detect-leakage",
+            "status": "experimental",
+            "version": "0.1.0",
+            "reason": "Propósito y condiciones compatibles con política del catálogo",
+            "limits": "\n# Propósito\n\nEsta skill proporciona una **auditoría dedicada de data leakage** sobre el\nproceso completo de construcción de datos y validación de un problema\nsupervisado.\n\nEl problema que resuelve: es posible construir modelos con métricas aparentemente\nexcelentes utilizando información que, directa o indirectamente, no estaría\ndisponible en el momento real de realizar la predicción. Ese leakage hace que el\nmodelo obtenga métricas artificialmente altas, parezca generalizar durante\nvalidación, seleccione features aparentemente muy predictivas y luego falle en\nproducción o produzca conclusiones de negocio incorrectas.\n\nEl problema no se reduce a identificar columnas \"sospechosas\". Muchas formas de\nleakage dependen de comprender cuándo se genera una variable, cuándo ocurre el\nevento objetivo, cuándo se realiza la predicción, qué información conoce\nrealmente el sistema en ese momento, cómo se construyeron las features, cómo se\ndividieron train y test, y cómo se ejecutaron transformaciones, agregaciones y\njoins. La skill audita el pipeline y la estrategia de validación, no sólo la\nlista de features.\n\nPrincipio rector:\n\n> El modelo solamente debería utilizar información que habría estado\n> legítimamente disponible en el momento real de realizar la predicción.\n\nLa skill **no elimina variables** ni decide que un pipeline sea válido. Explica\ncuál es el posible problema, por qué podría constituir leakage, qué evidencia\nexiste, qué información falta, cómo podría comprobarse y qué acción sería\nrecomendable.\n\n# Cuándo usar\n\nUsar esta skill cuando:\n\n- se recibe un nuevo dataset y ya hay un target (o evento objetivo) definido;\n- existen timestamps y múltiples observaciones por entidad;\n- se construyen features temporales: lag features, rolling features,\n  tendencias, acumulados;\n- se"
+          },
+          {
+            "id": "feature-design",
+            "coverage": "partial",
+            "artifact": "playbook",
+            "reason": "Preconditions no confirmadas",
+            "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+          },
+          {
+            "id": "operational-selection",
+            "coverage": "partial",
+            "artifact": "playbook",
+            "reason": "Sin skill operativa compatible",
+            "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+          },
+          {
+            "id": "executive-synthesis",
+            "coverage": "partial",
+            "artifact": "playbook",
+            "reason": "Sin skill operativa compatible",
+            "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+          }
+        ],
+        "gaps": [
+          {
+            "capability": "problem-framing",
+            "reason": "Sin skill operativa compatible",
+            "fallback": "playbook",
+            "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+          },
+          {
+            "capability": "evidence-synthesis",
+            "reason": "Sin skill operativa compatible",
+            "fallback": "playbook",
+            "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+          },
+          {
+            "capability": "feature-design",
+            "reason": "Preconditions no confirmadas",
+            "fallback": "playbook",
+            "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+          },
+          {
+            "capability": "operational-selection",
+            "reason": "Sin skill operativa compatible",
+            "fallback": "playbook",
+            "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+          },
+          {
+            "capability": "executive-synthesis",
+            "reason": "Sin skill operativa compatible",
+            "fallback": "playbook",
+            "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+          }
+        ],
+        "gate": "Obtener evidencia y revisión humana antes de registrar un avance de etapa.",
+        "integrity": "OK"
+      }
+    },
+    "validate --gate framing": {
+      "exit": 0,
+      "output": {
+        "status": "PASS",
+        "findings": [],
+        "evidence": [
+          "framing/framing.yaml",
+          "framing/metrics.md",
+          "validation/validation_design.md",
+          "evidence/approvals/2026-10-07-framing.md"
+        ]
+      }
+    },
+    "validate --gate diagnosis": {
+      "exit": 3,
+      "output": {
+        "status": "NEEDS_REVIEW",
+        "findings": [
+          {
+            "code": "human-review",
+            "message": "Revisión/evidencia pendiente para diagnosis",
+            "paths": []
+          }
+        ],
+        "evidence": []
+      }
+    },
+    "validate --gate data-quality": {
+      "exit": 3,
+      "output": {
+        "status": "NEEDS_REVIEW",
+        "findings": [
+          {
+            "code": "human-review",
+            "message": "Revisión/evidencia pendiente para data-quality",
+            "paths": []
+          }
+        ],
+        "evidence": []
+      }
+    },
+    "validate": {
+      "exit": 3,
+      "output": {
+        "status": "NEEDS_REVIEW",
+        "findings": [
+          {
+            "code": "human-review",
+            "message": "Revisión/evidencia pendiente para diagnosis",
+            "paths": []
+          },
+          {
+            "code": "human-review",
+            "message": "Revisión/evidencia pendiente para data-quality",
+            "paths": []
+          }
+        ],
+        "evidence": []
+      }
+    }
+  }
+}

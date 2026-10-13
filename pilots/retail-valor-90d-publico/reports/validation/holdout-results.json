@@ -1,0 +1,50 @@
+{
+  "finished_at_utc": "2026-10-09T12:51:09.578372+00:00",
+  "elapsed_seconds": 0.0796137498691678,
+  "cutoff": "2011-09-01T00:00:00",
+  "label_end": "2011-11-30T00:00:00",
+  "train_rows": 39677,
+  "max_train_label_end": "2011-08-30T00:00:00",
+  "evaluated_methods": [
+    "historical_sales"
+  ],
+  "metrics": {
+    "historical_sales": {
+      "effective_k": 100,
+      "eligible_count": 2768,
+      "top_k_sales": 993347.93,
+      "eligible_sales": 2408052.35,
+      "sales_share": 0.412510936483586,
+      "mae": 633.4734934971099,
+      "top1_sales_share_within_top_k": 0.11842228331819245,
+      "top10_sales_share_within_top_k": 0.5457175312178886
+    }
+  },
+  "decision": {
+    "development_selection": {
+      "selected_method": "historical_sales",
+      "period_count": 4,
+      "candidate_checks": {
+        "ridge_log": {
+          "aggregate_sales": 2217514.29,
+          "baseline_aggregate_sales": 2606803.55,
+          "losing_periods": 4,
+          "eligible": false
+        },
+        "hist_gradient_log": {
+          "aggregate_sales": 2487103.96,
+          "baseline_aggregate_sales": 2606803.55,
+          "losing_periods": 4,
+          "eligible": false
+        }
+      },
+      "reason": "Ning\u00fan modelo elegible; mantener baseline."
+    },
+    "recommended_method": "historical_sales",
+    "holdout_rule": "Mejora estricta del seleccionado; empate/p\u00e9rdida mantiene baseline sin elegir otro modelo.",
+    "scope": "Ranking retrospectivo; no uplift ni pol\u00edtica causal de contacto."
+  },
+  "selection_sha256": "51962b0e32b98fd1dbd7d1f4f3398ca3602b5fb13931a824569ea052f08d3970",
+  "api_cost_usd": 0,
+  "interpretation": "Si seleccionado es baseline, final es descriptivo; no comparaci\u00f3n con modelos descartados ni afirmaci\u00f3n de mejora."
+}

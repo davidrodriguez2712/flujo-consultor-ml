@@ -1,0 +1,32 @@
+from pathlib import Path
+import json,yaml,re,hashlib,collections
+p=Path('pilots/retail-valor-90d-publico')
+def sha(q):return hashlib.sha256(q.read_bytes()).hexdigest()
+def resolve(source,field):
+ o=json.loads((p/source).read_text())
+ for part in field.split('.'):o=o[int(part)] if isinstance(o,list) else o[part]
+ return o
+claims=yaml.safe_load((p/'evidence/claims.yaml').read_text())['claims'];ids={c['id'] for c in claims};assert len(ids)==43
+for c in claims:
+ assert c['type'] in ['observed','assumption','proposal','limitation']
+ assert sha(p/c['source'])==c['source_sha256']
+ if 'field' in c:assert resolve(c['source'],c['field'])==c['value']
+ if 'evidence_excerpt' in c:assert c['evidence_excerpt'] in (p/c['source']).read_text()
+docs=['decision/recommendation.md','delivery/decision_memo.md','delivery/analytical_report.md','delivery/delivery_contract.md','reports/delivery/review.md'];texts={r:(p/r).read_text() for r in docs};used=set()
+for r,t in texts.items():
+ tags=set(re.findall(r'\[((?:OBS|ASM|LIM|PROP)\d{3})\]',t));assert tags<=ids;used|=tags
+ for bad in ['uplift observado','ROI positivo','campaña óptima','aumentó las ventas','CLV estimado','cliente contratante real','ventas incrementales obtenidas']:
+  assert bad not in t,r+': '+bad
+ assert any(word in t for word in ['simulado','simulados','simulada'])
+# Todas las cifras publicadas proceden de plantilla con displays extraídos y verificados.
+for c in claims:
+ if 'format' in c and c['format'] not in ['text']:
+  assert any(c['display'] in t and '['+c['id']+']' in t for t in texts.values()),c['id']
+assert used==ids,(ids-used)
+assert 'No se atribuye ese importe al efecto de contactar clientes.' in texts['decision/recommendation.md']
+assert 'No usar sus IDs como contactos comerciales.' in texts['decision/recommendation.md']
+assert 'no por ventas de todo el retailer ni todo el histórico' in texts['delivery/analytical_report.md']
+assert 'Reproducción aislada y runbook se preparan en Handoff, todavía pendiente' in texts['delivery/analytical_report.md']
+assert not any('COMPLETED' in t for t in [texts['reports/delivery/review.md']])
+report={'claims_count':len(claims),'claim_types':dict(collections.Counter(c['type'] for c in claims)),'source_hashes':'PASS','field_values':'PASS','typed_claim_references':'PASS','rendered_figures':'PASS','vocabulary_checks':'PASS','semantic_review':'PASS: baseline histórico, población/horizonte iguales, ventas observadas sin atribución causal, cliente/capacidad simulados y reproducción pendiente.','documents_checked':docs,'pending_gate':'delivery','api_cost_usd':0}
+(p/'reports/delivery/claim-checks.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n');print(json.dumps(report,indent=2,ensure_ascii=False))

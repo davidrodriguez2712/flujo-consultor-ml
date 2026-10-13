@@ -1,0 +1,188 @@
+{
+  "periods": [
+    {
+      "cutoff": "2010-09-01T00:00:00",
+      "metrics": {
+        "hist_gradient_log": {
+          "effective_k": 100,
+          "eligible_count": 2822,
+          "top_k_sales": 772491.1099999999,
+          "eligible_sales": 2255804.12,
+          "sales_share": 0.3424460054625664,
+          "mae": 657.749036179894,
+          "top1_sales_share_within_top_k": 0.11224266386703144,
+          "top10_sales_share_within_top_k": 0.510762654601941
+        },
+        "historical_sales": {
+          "effective_k": 100,
+          "eligible_count": 2822,
+          "top_k_sales": 823041.6099999999,
+          "eligible_sales": 2255804.12,
+          "sales_share": 0.3648550876837657,
+          "mae": 592.154610205528,
+          "top1_sales_share_within_top_k": 0.10534881705434067,
+          "top10_sales_share_within_top_k": 0.47939205649639033
+        },
+        "rfm": {
+          "effective_k": 100,
+          "eligible_count": 2822,
+          "top_k_sales": 711945.8500000001,
+          "eligible_sales": 2255804.12,
+          "sales_share": 0.31560623712310626,
+          "mae": null,
+          "top1_sales_share_within_top_k": 0.12178799834285146,
+          "top10_sales_share_within_top_k": 0.552810315559814,
+          "mae_note": "Score ordinal; no error monetario."
+        },
+        "ridge_log": {
+          "effective_k": 100,
+          "eligible_count": 2822,
+          "top_k_sales": 710108.14,
+          "eligible_sales": 2255804.12,
+          "sales_share": 0.31479157862341345,
+          "mae": 1500282600.084519,
+          "top1_sales_share_within_top_k": 0.12210317713017624,
+          "top10_sales_share_within_top_k": 0.5474840353189022
+        }
+      }
+    },
+    {
+      "cutoff": "2010-12-01T00:00:00",
+      "metrics": {
+        "hist_gradient_log": {
+          "effective_k": 100,
+          "eligible_count": 3465,
+          "top_k_sales": 515001.30999999994,
+          "eligible_sales": 1398598.5100000002,
+          "sales_share": 0.3682266971670089,
+          "mae": 427.7594982865562,
+          "top1_sales_share_within_top_k": 0.11204053053767961,
+          "top10_sales_share_within_top_k": 0.4588372600450279
+        },
+        "historical_sales": {
+          "effective_k": 100,
+          "eligible_count": 3465,
+          "top_k_sales": 541630.9600000001,
+          "eligible_sales": 1398598.5100000002,
+          "sales_share": 0.3872669362417668,
+          "mae": 619.049746031746,
+          "top1_sales_share_within_top_k": 0.1065319825882922,
+          "top10_sales_share_within_top_k": 0.46778156846868574
+        },
+        "rfm": {
+          "effective_k": 100,
+          "eligible_count": 3465,
+          "top_k_sales": 408810.17,
+          "eligible_sales": 1398598.5100000002,
+          "sales_share": 0.29229987525154727,
+          "mae": null,
+          "top1_sales_share_within_top_k": 0.14114379786588968,
+          "top10_sales_share_within_top_k": 0.4898385722644816,
+          "mae_note": "Score ordinal; no error monetario."
+        },
+        "ridge_log": {
+          "effective_k": 100,
+          "eligible_count": 3465,
+          "top_k_sales": 451904.61,
+          "eligible_sales": 1398598.5100000002,
+          "sales_share": 0.3231124634903264,
+          "mae": 851037859.6481532,
+          "top1_sales_share_within_top_k": 0.12768407031740614,
+          "top10_sales_share_within_top_k": 0.5042013623184769
+        }
+      }
+    },
+    {
+      "cutoff": "2011-03-01T00:00:00",
+      "metrics": {
+        "hist_gradient_log": {
+          "effective_k": 100,
+          "eligible_count": 3338,
+          "top_k_sales": 530462.6200000001,
+          "eligible_sales": 1393138.1099999999,
+          "sales_share": 0.3807681493976216,
+          "mae": 332.2983853431163,
+          "top1_sales_share_within_top_k": 0.09888368760083413,
+          "top10_sales_share_within_top_k": 0.47201714232003744
+        },
+        "historical_sales": {
+          "effective_k": 100,
+          "eligible_count": 3338,
+          "top_k_sales": 547015.89,
+          "eligible_sales": 1393138.1099999999,
+          "sales_share": 0.39265015153450944,
+          "mae": 363.3311533852606,
+          "top1_sales_share_within_top_k": 0.0958913643258151,
+          "top10_sales_share_within_top_k": 0.46641151502929834
+        },
+        "rfm": {
+          "effective_k": 100,
+          "eligible_count": 3338,
+          "top_k_sales": 458997.44000000006,
+          "eligible_sales": 1393138.1099999999,
+          "sales_share": 0.32947016286848985,
+          "mae": null,
+          "top1_sales_share_within_top_k": 0.1142797223444209,
+          "top10_sales_share_within_top_k": 0.4712881187311197,
+          "mae_note": "Score ordinal; no error monetario."
+        },
+        "ridge_log": {
+          "effective_k": 100,
+          "eligible_count": 3338,
+          "top_k_sales": 426086.82,
+          "eligible_sales": 1393138.1099999999,
+          "sales_share": 0.3058467907392183,
+          "mae": 24387999.056713656,
+          "top1_sales_share_within_top_k": 0.1231066006688496,
+          "top10_sales_share_within_top_k": 0.5076900524639556
+        }
+      }
+    },
+    {
+      "cutoff": "2011-06-01T00:00:00",
+      "metrics": {
+        "hist_gradient_log": {
+          "effective_k": 100,
+          "eligible_count": 2658,
+          "top_k_sales": 669148.9199999999,
+          "eligible_sales": 1531307.7999999998,
+          "sales_share": 0.43697871845229286,
+          "mae": 446.5676292127072,
+          "top1_sales_share_within_top_k": 0.09847601637016765,
+          "top10_sales_share_within_top_k": 0.5620234132635228
+        },
+        "historical_sales": {
+          "effective_k": 100,
+          "eligible_count": 2658,
+          "top_k_sales": 695115.0900000001,
+          "eligible_sales": 1531307.7999999998,
+          "sales_share": 0.4539355771582958,
+          "mae": 458.39155003762227,
+          "top1_sales_share_within_top_k": 0.09479742412152208,
+          "top10_sales_share_within_top_k": 0.5410289107664169
+        },
+        "rfm": {
+          "effective_k": 100,
+          "eligible_count": 2658,
+          "top_k_sales": 581023.2500000001,
+          "eligible_sales": 1531307.7999999998,
+          "sales_share": 0.3794294328024713,
+          "mae": null,
+          "top1_sales_share_within_top_k": 0.11341219133657729,
+          "top10_sales_share_within_top_k": 0.6034995501470894,
+          "mae_note": "Score ordinal; no error monetario."
+        },
+        "ridge_log": {
+          "effective_k": 100,
+          "eligible_count": 2658,
+          "top_k_sales": 629414.72,
+          "eligible_sales": 1531307.7999999998,
+          "sales_share": 0.4110308325994291,
+          "mae": 105818.64265978686,
+          "top1_sales_share_within_top_k": 0.1046926897419876,
+          "top10_sales_share_within_top_k": 0.5975032805079613
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "status": "COMPLETED_PENDING_CONTENT_REVIEW",
+  "runs": [
+    {
+      "case": "L01",
+      "condition": "treatment",
+      "runtime_success": true,
+      "contract_success": true
+    },
+    {
+      "case": "L02",
+      "condition": "treatment",
+      "runtime_success": true,
+      "contract_success": true
+    },
+    {
+      "case": "L03",
+      "condition": "treatment",
+      "runtime_success": true,
+      "contract_success": true
+    }
+  ],
+  "effectiveness": "NOT_REVIEWED"
+}

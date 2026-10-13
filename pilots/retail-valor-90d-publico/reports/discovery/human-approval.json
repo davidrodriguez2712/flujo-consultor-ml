@@ -1,0 +1,13 @@
+{
+  "stage": "discovery",
+  "decision": "PASS",
+  "reviewer": "David",
+  "authorization": "Mensaje explícito «aprobado» tras presentar Discovery y solicitar avance a Framing.",
+  "recorded_at_utc": "2026-10-09T12:12:46.988224+00:00",
+  "evidence": [
+    "reports/discovery/review.md",
+    "reports/dataset/dataset-understanding-2026-10-09.md",
+    "reports/discovery/verification.json"
+  ],
+  "scope": "Aprobar Discovery y avanzar a Framing; no aprobar reglas de tratamiento ni gates posteriores."
+}

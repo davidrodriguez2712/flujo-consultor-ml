@@ -1,0 +1,222 @@
+{
+  "entries": [
+    {
+      "reserved_usd": 0.008064125,
+      "committed_usd": 0.0010205750000000001,
+      "estimated_usd": 0.0010205750000000001,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 5787,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 5787,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 594,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 113
+        }
+      },
+      "input_token_bound": 31745,
+      "http_status": 200,
+      "provider_stop_reason": "tool_use",
+      "tool_names": [
+        "Skill",
+        "Read",
+        "Read",
+        "Read"
+      ]
+    },
+    {
+      "reserved_usd": 0.0097995,
+      "committed_usd": 0.001130445,
+      "estimated_usd": 0.001130445,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 5011,
+        "cache_read_input_tokens": 5787,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 5011,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 892,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 131
+        }
+      },
+      "input_token_bound": 45628,
+      "http_status": 200,
+      "provider_stop_reason": "tool_use",
+      "tool_names": [
+        "Read",
+        "Read",
+        "Read",
+        "Read",
+        "Bash"
+      ]
+    },
+    {
+      "reserved_usd": 0.0106865,
+      "committed_usd": 0.00222093,
+      "estimated_usd": 0.00222093,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2554,
+        "cache_read_input_tokens": 10798,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 2554,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 3587,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 1764
+        }
+      },
+      "input_token_bound": 52724,
+      "http_status": 200,
+      "provider_stop_reason": "tool_use",
+      "tool_names": [
+        "Write"
+      ]
+    },
+    {
+      "reserved_usd": 0.012130625,
+      "committed_usd": 0.00070097,
+      "estimated_usd": 0.00070097,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3726,
+        "cache_read_input_tokens": 13352,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 3726,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 203,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        }
+      },
+      "input_token_bound": 64277,
+      "http_status": 200,
+      "provider_stop_reason": "end_turn",
+      "tool_names": []
+    },
+    {
+      "reserved_usd": 0.008064125,
+      "committed_usd": 0.0006937800000000001,
+      "estimated_usd": 0.0006937800000000001,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2754,
+        "cache_read_input_tokens": 3033,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 2754,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 638,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 165
+        }
+      },
+      "input_token_bound": 31745,
+      "http_status": 200,
+      "provider_stop_reason": "tool_use",
+      "tool_names": [
+        "Skill",
+        "Read",
+        "Read",
+        "Read"
+      ]
+    },
+    {
+      "reserved_usd": 0.00982125,
+      "committed_usd": 0.0010624450000000002,
+      "estimated_usd": 0.0010624450000000002,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 5047,
+        "cache_read_input_tokens": 5787,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 5047,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 747,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 113
+        }
+      },
+      "input_token_bound": 45802,
+      "http_status": 200,
+      "provider_stop_reason": "tool_use",
+      "tool_names": [
+        "Read",
+        "Read",
+        "Read",
+        "Bash"
+      ]
+    },
+    {
+      "reserved_usd": 0.010602125,
+      "committed_usd": 0.00256429,
+      "estimated_usd": 0.00256429,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2214,
+        "cache_read_input_tokens": 10834,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 2214,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 4358,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 2667
+        }
+      },
+      "input_token_bound": 52049,
+      "http_status": 200,
+      "provider_stop_reason": "tool_use",
+      "tool_names": [
+        "Write"
+      ]
+    },
+    {
+      "reserved_usd": 0.012442625,
+      "committed_usd": 0.0008333050000000001,
+      "estimated_usd": 0.0008333050000000001,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4497,
+        "cache_read_input_tokens": 13048,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 4497,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 281,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        }
+      },
+      "input_token_bound": 66773,
+      "http_status": 200,
+      "provider_stop_reason": "end_turn",
+      "tool_names": []
+    }
+  ],
+  "rejections": []
+}

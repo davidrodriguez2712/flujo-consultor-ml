@@ -1,0 +1,3 @@
+Reporte escrito en `workspace/reports/leakage/audit.md`.
+
+Hallazgo principal: `recovered_kwh` presenta post-event leakage confirmado. Se determina en la inspección y está disponible entre el 9 y el 12 de junio, después del scoring (1 de junio). Se recomienda excluirla del scoring. `history_kwh_90d` no muestra leakage. Split, fit, CV y joins no son auditables con el expediente. Solo se leyeron inputs autorizados; no se ejecutó `pipeline.py` ni se entrenó.

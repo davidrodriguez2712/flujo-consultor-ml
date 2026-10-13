@@ -1,0 +1,101 @@
+{
+  "scope": "Checks estructurales del diseño propuesto, sin modelo entrenado ni evaluación predictiva",
+  "development_folds": [
+    {
+      "validation_month": "2024-09",
+      "training_months": 6,
+      "train_rows": 10394,
+      "train_positives": 465,
+      "validation_rows": 1878,
+      "validation_positives": 75,
+      "last_training_prediction": "2024-07-01T00:00:00Z"
+    },
+    {
+      "validation_month": "2024-10",
+      "training_months": 7,
+      "train_rows": 12329,
+      "train_positives": 522,
+      "validation_rows": 1803,
+      "validation_positives": 68,
+      "last_training_prediction": "2024-08-01T00:00:00Z"
+    },
+    {
+      "validation_month": "2024-11",
+      "training_months": 8,
+      "train_rows": 14207,
+      "train_positives": 597,
+      "validation_rows": 1735,
+      "validation_positives": 73,
+      "last_training_prediction": "2024-09-01T00:00:00Z"
+    },
+    {
+      "validation_month": "2024-12",
+      "training_months": 9,
+      "train_rows": 16010,
+      "train_positives": 665,
+      "validation_rows": 1662,
+      "validation_positives": 70,
+      "last_training_prediction": "2024-10-01T00:00:00Z"
+    },
+    {
+      "validation_month": "2025-01",
+      "training_months": 10,
+      "train_rows": 17745,
+      "train_positives": 738,
+      "validation_rows": 1592,
+      "validation_positives": 50,
+      "last_training_prediction": "2024-11-01T00:00:00Z"
+    },
+    {
+      "validation_month": "2025-02",
+      "training_months": 11,
+      "train_rows": 19407,
+      "train_positives": 808,
+      "validation_rows": 1542,
+      "validation_positives": 54,
+      "last_training_prediction": "2024-12-01T00:00:00Z"
+    },
+    {
+      "validation_month": "2025-03",
+      "training_months": 12,
+      "train_rows": 20999,
+      "train_positives": 858,
+      "validation_rows": 1488,
+      "validation_positives": 54,
+      "last_training_prediction": "2025-01-01T00:00:00Z"
+    },
+    {
+      "validation_month": "2025-04",
+      "training_months": 13,
+      "train_rows": 22541,
+      "train_positives": 912,
+      "validation_rows": 1434,
+      "validation_positives": 58,
+      "last_training_prediction": "2025-02-01T00:00:00Z"
+    },
+    {
+      "validation_month": "2025-05",
+      "training_months": 14,
+      "train_rows": 24029,
+      "train_positives": 966,
+      "validation_rows": 1376,
+      "validation_positives": 57,
+      "last_training_prediction": "2025-03-01T00:00:00Z"
+    }
+  ],
+  "final_model_training_date": "2025-07-01T00:00:00Z",
+  "final_train_rows": 26839,
+  "final_train_last_prediction": "2025-05-01T00:00:00Z",
+  "final_test_prediction_months": [
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12"
+  ],
+  "final_model_policy": "Modelo fijo, entrenado una vez antes de julio; sin reentrenar con labels del test",
+  "final_metrics_computed": false,
+  "pending_month": "2026-01",
+  "availability_violations": 0
+}

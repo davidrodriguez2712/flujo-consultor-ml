@@ -1,0 +1,42 @@
+[
+  {
+    "sample": "01-0.2.0",
+    "words": 247,
+    "empty": false
+  },
+  {
+    "sample": "01-0.2.2",
+    "words": 227,
+    "empty": false
+  },
+  {
+    "sample": "02-0.2.0",
+    "words": 194,
+    "empty": false
+  },
+  {
+    "sample": "02-0.2.2",
+    "words": 248,
+    "empty": false
+  },
+  {
+    "sample": "03-0.2.0",
+    "words": 227,
+    "empty": false
+  },
+  {
+    "sample": "03-0.2.2",
+    "words": 240,
+    "empty": false
+  },
+  {
+    "sample": "04-0.2.0",
+    "words": 0,
+    "empty": true
+  },
+  {
+    "sample": "04-0.2.2",
+    "words": 201,
+    "empty": false
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "name": "Presupuesto indivisible y greedy insuficiente",
+  "business": "Seleccionar intervenciones indivisibles para maximizar suma de net_value, con capacidad máxima 2 y presupuesto 10. net_value ya descuenta coste operativo, está expresado en unidades monetarias y representa el valor esperado que negocio suministra para esta acción. No restar cost de nuevo. Valores aditivos, sin interacciones ni rutas. No se solicita estimación causal ni métricas de labels. Empates entre conjuntos: menor coste y luego lista de IDs ascendente; orden de miembros: net_value descendente/ID ascendente.",
+  "capacity_k": 2,
+  "budget": 10,
+  "metric_population": "eligible-C",
+  "rows": [
+    {
+      "id": "A",
+      "eligible": true,
+      "risk_score": 0.99,
+      "cost": 6,
+      "net_value": 13
+    },
+    {
+      "id": "B",
+      "eligible": true,
+      "risk_score": 0.8,
+      "cost": 5,
+      "net_value": 10
+    },
+    {
+      "id": "C",
+      "eligible": true,
+      "risk_score": 0.7,
+      "cost": 5,
+      "net_value": 10
+    }
+  ]
+}

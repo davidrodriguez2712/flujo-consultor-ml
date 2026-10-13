@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-13",
+  "source": "../2026-10-12-native-regression-config03/REVIEW-REAL-01.md",
+  "observed_failure": "L03 mezcla incertidumbre con invalidez; exportación como criterio suficiente; falta condición conjunta ventana/disponibilidad; señal observable confundida con performance; campos por hallazgo incompletos",
+  "patch_scope": "Aclaración de workflow/output existente, sin nuevos artefactos ni madurez",
+  "canonical_modified": false,
+  "draft_sha256": "7fefd032af2cba529983a32c525c1f77df9103d09034d90d90b1b789d307ba83",
+  "budget_remaining_usd": 0.034896955
+}

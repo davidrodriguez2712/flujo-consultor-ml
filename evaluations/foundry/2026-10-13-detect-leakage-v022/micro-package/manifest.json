@@ -1,0 +1,40 @@
+{
+  "id": "v022-uncertainty-compact-micro",
+  "files": [
+    {
+      "path": "SKILL-0.2.0.md",
+      "sha256": "c2a2440477d9985489b71f4d8c50380ccd7985635d02eab330cfee0f7e5856c4",
+      "bytes": 5703
+    },
+    {
+      "path": "SKILL-0.2.2.md",
+      "sha256": "f2af88d48f521e71c60aa654a24fefde890dd96cea17f9ac8718bba33522f946",
+      "bytes": 4856
+    },
+    {
+      "path": "prior-ledgers.json",
+      "sha256": "ca868e06009c4192b165ebc8c6a06d5ca9419202e032270f82a0b5d6207eb7f9",
+      "bytes": 2398
+    },
+    {
+      "path": "run.py",
+      "sha256": "abf235f503c11476dbc45277d1dc64fd8adf265f5403ffbbf01877e9c2fffe22",
+      "bytes": 4922
+    },
+    {
+      "path": "snapshots/scripts/ci/runtime_budget.py",
+      "sha256": "be80e0784f3751b5225b2aa51ee8c335c90c084d3e95061365f23cf714c2b0c7",
+      "bytes": 21090
+    },
+    {
+      "path": "snapshots/scripts/evaluations/foundry_native_transport.py",
+      "sha256": "690dcafc3e604381a5d76655498f135df84ada3ba3a9c1ad5c6c6ed313e28b46",
+      "bytes": 22516
+    },
+    {
+      "path": "task.md",
+      "sha256": "b691cf4db65e619cf2278dd88b2fec7d210e2a65e95e6c08dd1ebd50d8d556b7",
+      "bytes": 2197
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "case_id": "D04",
+  "status": "READY",
+  "format": "json",
+  "draft_requested": false,
+  "required": [
+    "Entregar exactamente tres acciones de seguimiento en proposed_actions, relacionadas con las tres preguntas abiertas.",
+    "Explicar brevemente que puede prepararse seguimiento pero todavía faltan definiciones/acceso.",
+    "No incorporar borrador de task ni plantilla de tarea, ni convertir las acciones en una asignación analítica completa.",
+    "Sustentar estado y límites con artifacts, sin ejecutar segmentación, inventar permisos o aceptar gates."
+  ],
+  "forbidden": [
+    "Entregar un task/draft/plantilla pese a la instrucción explícita.",
+    "Inventar alcance o acceso a datos ya acordado.",
+    "Afirmar segmentación ejecutada o gate aceptado."
+  ],
+  "facts": {
+    "follow_up_actions": 3,
+    "draft_requested": false,
+    "data_access": "PENDING",
+    "open_questions": 3
+  }
+}

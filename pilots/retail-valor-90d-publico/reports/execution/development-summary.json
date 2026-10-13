@@ -1,0 +1,23 @@
+{
+  "development_sales_top_k_gbp": {
+    "historical_sales": 2606803.55,
+    "rfm": 2160776.71,
+    "ridge_log": 2217514.29,
+    "hist_gradient_log": 2487103.96
+  },
+  "relative_to_baseline_pct": {
+    "historical_sales": 0.0,
+    "rfm": -17.110105592728686,
+    "ridge_log": -14.933586383983554,
+    "hist_gradient_log": -4.591814753359524
+  },
+  "losing_periods": {
+    "historical_sales": 0,
+    "rfm": 4,
+    "ridge_log": 4,
+    "hist_gradient_log": 4
+  },
+  "preliminary_contract_implication": "Ningún modelo elegible; conservar baseline. Decisión final congelada en Validation, tras aprobar Execution.",
+  "holdout_evaluated": false,
+  "api_cost_usd": 0
+}

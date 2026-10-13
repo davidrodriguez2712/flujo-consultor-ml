@@ -1,0 +1,16 @@
+{
+  "status": "NEEDS_REVIEW",
+  "findings": [
+    {
+      "code": "human-review",
+      "message": "Revisión/evidencia pendiente para diagnosis",
+      "paths": []
+    },
+    {
+      "code": "human-review",
+      "message": "Revisión/evidencia pendiente para data-quality",
+      "paths": []
+    }
+  ],
+  "evidence": []
+}

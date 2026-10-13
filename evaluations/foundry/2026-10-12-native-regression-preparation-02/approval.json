@@ -1,0 +1,9 @@
+{
+  "status": "NOT_AUTHORIZED",
+  "package_accepted": false,
+  "execution_manifest_sha256": "b8ef2799245a463cc3e33be88c25e94b1b26af13072862d9f6c613ac2e0da044",
+  "total_budget_usd": null,
+  "prior_total_usd": 0.09112648,
+  "available_budget_usd": 0.00887352,
+  "reason": "Preparación local sin autorización de ampliar presupuesto; comprobar viabilidad antes de calls."
+}

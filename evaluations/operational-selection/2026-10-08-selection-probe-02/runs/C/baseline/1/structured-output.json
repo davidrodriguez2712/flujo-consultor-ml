@@ -1,0 +1,42 @@
+{
+  "output_type": "value_selection",
+  "selection_status": "determined",
+  "eligible_count": 3,
+  "capacity_k": 2,
+  "effective_k": 2,
+  "selected_ids": [
+    "B",
+    "C"
+  ],
+  "risk_ranking_ids": [
+    "A",
+    "B",
+    "C"
+  ],
+  "total_cost": 10,
+  "expected_net_value": 20,
+  "feasibility": "feasible",
+  "optimality": "optimal",
+  "causal_identification": {
+    "status": "not_requested",
+    "estimand": null,
+    "reason": "El encargo no solicita estimaci\u00f3n causal; el net_value es un valor esperado suministrado por negocio, no evidencia de incrementalidad."
+  },
+  "metrics": {
+    "population_id": "eligible-C",
+    "precision": null,
+    "recall": null,
+    "lift": null,
+    "precision_status": "not_requested",
+    "recall_status": "not_requested",
+    "lift_status": "not_requested",
+    "reason": "No se solicitan m\u00e9tricas de labels (precision/recall/lift); no hay labels en el expediente."
+  },
+  "reason": "Se enumeraron todos los subconjuntos con \u22642 elementos y coste \u226410. Factibles: {A} coste 6, valor 13; {B} coste 5, valor 10; {C} coste 5, valor 10; {B,C} coste 10, valor 20. {A,B} y {A,C} cuestan 11 y violan el presupuesto. El \u00f3ptimo es {B,C} con valor 20 > 13. Un greedy por net_value o risk_score elegir\u00eda A primero, y entonces no cabr\u00eda ning\u00fan otro elemento, con valor 13: es sub\u00f3ptimo. No se resta cost de nuevo, porque net_value ya lo descuenta. Orden de miembros: net_value descendente y ID ascendente, es decir B y luego C. El ranking de riesgo A, B, C es descriptivo y no determina la selecci\u00f3n. El resultado es \u00f3ptimo solo respecto de los coeficientes y reglas provistos. gate_decision=NEEDS_REVIEW; esta auditor\u00eda no aprueba gates.",
+  "open_questions": [
+    "\u00bfConfirma negocio que net_value es aditivo y ya neto de coste, y que el presupuesto 10 es un l\u00edmite estricto (\u226410)?",
+    "metric_population figura como 'eligible-C' aunque no se piden m\u00e9tricas: \u00bfes intencional o se refiere a toda la poblaci\u00f3n elegible?",
+    "\u00bfCu\u00e1l es el respaldo de los net_value (esperados, no causales) y su incertidumbre? Una peque\u00f1a variaci\u00f3n de A (\u226520) cambiar\u00eda el \u00f3ptimo solo si fuera factible con otro elemento, lo cual el presupuesto impide."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

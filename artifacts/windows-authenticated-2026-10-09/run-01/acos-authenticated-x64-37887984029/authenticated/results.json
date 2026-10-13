@@ -1,0 +1,37 @@
+{
+  "platform": "Windows-2022Server-10.0.20348-SP0",
+  "architecture": "x64",
+  "scope": "Skill real + continuemos en sesión nueva; solo lectura; sin eficacia ni resume persistido",
+  "skill_sha256": "dcca58860a959e606b7c4a5a7b8d4ea5a4aa17947d2a194a7b372faaa77b5249",
+  "skill_status": "experimental",
+  "runtime_budget_usd": 0.25,
+  "passed": false,
+  "runtimes": [
+    {
+      "runtime": "codex",
+      "model": "gpt-5.3-codex",
+      "passed": false,
+      "runs": [
+        {
+          "checks": {
+            "canonical_objective": false,
+            "blocked_state": false,
+            "label_availability": false,
+            "native_skill_trace": false,
+            "validation_advice": false
+          },
+          "passed": false,
+          "reply": "",
+          "tools": [],
+          "test": "guided",
+          "exit_code": 1,
+          "workspace_unchanged": true
+        }
+      ],
+      "requests": [],
+      "committed_usd": 0,
+      "estimated_usd": 0,
+      "unmeasured_requests": 0
+    }
+  ]
+}

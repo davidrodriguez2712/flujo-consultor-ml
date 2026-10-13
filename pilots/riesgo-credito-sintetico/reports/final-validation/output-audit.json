@@ -1,0 +1,21 @@
+{
+  "scope": "Recálculo independiente aritmético/por pares, sin refit ni tuning",
+  "train_rows": 2140,
+  "train_positives": 249,
+  "scored_rows": 900,
+  "evaluable_rows": 447,
+  "positives": 60,
+  "brier_model": 0.1024874316263826,
+  "brier_reference": 0.11653042732257031,
+  "auc_by_pairs": 0.7522825150732128,
+  "all_match": true,
+  "train_scoring_ids_disjoint": true,
+  "reference_probability": 0.11635514018691588,
+  "all_applications_top100_label_coverage": {
+    "2025-07": 0.26,
+    "2025-08": 0.22,
+    "2025-09": 0.26
+  },
+  "predictions_persisted_before_evaluation_labels": true,
+  "freeze_hashes_match": true
+}

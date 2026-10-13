@@ -1,0 +1,17 @@
+{
+  "checker_version": "0.1.0",
+  "strict_json_pass": true,
+  "schema_pass": true,
+  "status_matches": true,
+  "references_exist": true,
+  "unknown_references": [],
+  "semantic_review": "NOT_RUN",
+  "overall_content_pass": null,
+  "referenced_paths": [
+    "environment.json",
+    "runs/original/data.json",
+    "runs/original/execution.json",
+    "runs/reproduction/data.json",
+    "runs/reproduction/execution.json"
+  ]
+}

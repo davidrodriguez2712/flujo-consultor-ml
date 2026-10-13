@@ -1,0 +1,32 @@
+{
+  "rows": [
+    {
+      "id": "C1",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "Ventana [2025-06-01, 2025-07-01) con seguimiento completo. El acta negativa se public\u00f3 el 2025-07-05T08:00Z, as\u00ed que el negativo estaba certificado en la extracci\u00f3n (2025-08-15). Esa fecha es <= el entrenamiento (2025-07-15T00:00Z), por lo que el label estaba disponible. Las features estaban disponibles el 2025-05-31T18:00Z, <= la predicci\u00f3n (2025-06-01T00:00Z). La poblaci\u00f3n es v\u00e1lida. Se cumplen todas las condiciones."
+    },
+    {
+      "id": "C2",
+      "outcome_state_at_extraction": "pending",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "La ventana [2025-06-01, 2025-09-01) segu\u00eda abierta en la extracci\u00f3n (2025-08-15), con seguimiento en curso y acta prevista no antes del cierre. El churn=0 del CSV es un valor provisional, no un negativo certificado, as\u00ed que el estado es pending. La regla conocida sit\u00faa la certificaci\u00f3n no antes del 2025-09-01, posterior al entrenamiento (2025-07-15), por lo que el label no estaba disponible. Se excluye por label no disponible al entrenar. No se infiere fecha exacta del acta."
+    },
+    {
+      "id": "C3",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "Ventana [2025-06-01, 2025-07-01) con seguimiento completo. El acta negativa se public\u00f3 el 2025-07-20T08:00Z, anterior a la extracci\u00f3n (2025-08-15), as\u00ed que el negativo est\u00e1 certificado en la extracci\u00f3n. La publicaci\u00f3n es posterior al entrenamiento (2025-07-15T00:00Z), por lo que el label no estaba disponible entonces. Que se observe despu\u00e9s no prueba disponibilidad previa. Se excluye aunque las features y la poblaci\u00f3n sean v\u00e1lidas."
+    }
+  ],
+  "open_questions": [
+    "C2: \u00bfcu\u00e1l es la fecha prevista o real de publicaci\u00f3n del acta? Solo se sabe que no es anterior al cierre de la ventana (2025-09-01). No cambia la decisi\u00f3n, que es unavailable/exclude, pero sirve para documentar el caso.",
+    "\u00bfSe confirma que el sistema de entrenamiento registra el valor certificado solo desde la publicaci\u00f3n del acta? Se asumi\u00f3 que s\u00ed, seg\u00fan el documento: la publicaci\u00f3n certifica el negativo y lo hace disponible.",
+    "Las diferencias expl\u00edcitas en las features por expediente no constan, as\u00ed que se aplic\u00f3 la regla general (disponibles el 2025-05-31T18:00Z). \u00bfHay excepciones no documentadas?",
+    "La muestra no tiene positivos ni p\u00e9rdida de seguimiento distinta de la ventana abierta. \u00bfHay que reconstruir el entrenamiento con solo 1 fila elegible? Es un volumen insuficiente para validar."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

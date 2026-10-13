@@ -1,0 +1,33 @@
+.......................................F................................ [ 57%]
+.....................................................                    [100%]
+================================== FAILURES ===================================
+_____________ test_installed_wheel_contains_catalog_and_templates _____________
+
+tmp_path = WindowsPath('C:/Users/runneradmin/AppData/Local/Temp/pytest-of-runneradmin/pytest-0/test_installed_wheel_contains_0')
+
+    def test_installed_wheel_contains_catalog_and_templates(tmp_path):
+        root=Path(__file__).parents[1]
+        proc=subprocess.run([sys.executable,'-m','build','--no-isolation','--wheel','--outdir',str(tmp_path)],cwd=root,capture_output=True,text=True)
+>       assert proc.returncode==0,proc.stderr
+E       AssertionError: * Getting build dependencies for wheel...
+E         WARNING Support for `[tool.setuptools]` in `pyproject.toml` is still *beta*.
+E         ERROR Unmet dependencies (checked against C:\hostedtoolcache\windows\Python\3.11.9\x64\python.exe):
+E         	setuptools>=68
+E         		wanted: >=68
+E         		found: 65.5.0
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe', '-m', 'build', '--no-isolation...\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe):\n\tsetuptools>=68\n\t\twanted: >=68\n\t\tfound: 65.5.0\n').returncode
+
+tests\test_distribution.py:10: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_distribution.py::test_installed_wheel_contains_catalog_and_templates - AssertionError: * Getting build dependencies for wheel...
+  WARNING Support for `[tool.setuptools]` in `pyproject.toml` is still *beta*.
+  ERROR Unmet dependencies (checked against C:\hostedtoolcache\windows\Python\3.11.9\x64\python.exe):
+  	setuptools>=68
+  		wanted: >=68
+  		found: 65.5.0
+  
+assert 1 == 0
+ +  where 1 = CompletedProcess(args=['C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe', '-m', 'build', '--no-isolation...\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe):\n\tsetuptools>=68\n\t\twanted: >=68\n\t\tfound: 65.5.0\n').returncode
+1 failed, 124 passed in 12.71s

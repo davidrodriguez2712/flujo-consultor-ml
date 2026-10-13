@@ -1,0 +1,10 @@
+{
+  "status": "APPROVED",
+  "execution_manifest_sha256": "37399f989a7b09b1ff46d56ec08266636b91a6ff141198e5e86cc5e2a09c60a0",
+  "total_budget_usd": 0.014369455,
+  "prior_total_usd": 0.135630545,
+  "cumulative_ceiling_usd": 0.15,
+  "package_accepted": true,
+  "basis": "Usuario autoriza mejoras/evaluación y rondas dentro.15; gate micro0225/5revisado, diagnósticoL03condicional dentro saldo",
+  "automatic_retries": 0
+}

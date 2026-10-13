@@ -1,0 +1,3 @@
+Auditoría completada. Reporte: `/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/L01-treatment/workspace/reports/leakage/audit.md`
+
+Hallazgo principal: `recovered_kwh` es post-evento confirmado por timestamps (disponible 2025-06-09 a 06-12, después del scoring del 2025-06-01) y está incluido en `pipeline.py`. Se recomienda retirarlo. `history_kwh_90d` cumple el criterio temporal declarado. No hubo ejecución de pipeline ni métricas, y no invoqué la skill `detect-leakage`, así que el frontmatter declara `skill: none`.

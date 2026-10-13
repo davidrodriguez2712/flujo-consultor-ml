@@ -1,0 +1,91 @@
+{
+  "id": "os-workflow-task-draft-round-01-stopped",
+  "scope": "Intento local sin API, aprobaciones, smoke raw, transporte, costes y diagnóstico; ningún caso benchmark enviado. Sin anclaje externo.",
+  "files": [
+    {
+      "path": "budget-approval.json",
+      "sha256": "91191ac0270901b1ded6c5432fecd931c9ceb701b830055819a801e0393a2385",
+      "bytes": 390
+    },
+    {
+      "path": "budget-ledger.json",
+      "sha256": "35b98f77ac85666f3667ddfc3c34ecdc5018546952a66da84e6cf1af37d97bfe",
+      "bytes": 823
+    },
+    {
+      "path": "coordinator.py",
+      "sha256": "a624118599022eda872e00c5155017b6d50b96500dd3b38aa9f38ff13acc1b56",
+      "bytes": 7139
+    },
+    {
+      "path": "evaluation-summary.json",
+      "sha256": "0afc575b759f4f76b5d0205eaded929af9ae76839eab70880f8329a47980b6b3",
+      "bytes": 640
+    },
+    {
+      "path": "execution-preflight-01.json",
+      "sha256": "09e0fa9a147a3f6846e2043d89cf26f87caf6479507e9e931fca19a51af255e4",
+      "bytes": 346
+    },
+    {
+      "path": "final-checks.json",
+      "sha256": "ffff131240321bb93a90fb19c3c62e21b52e140a9ec125a968c336e285592698",
+      "bytes": 371
+    },
+    {
+      "path": "preflight-local-01/coordinator.py",
+      "sha256": "a624118599022eda872e00c5155017b6d50b96500dd3b38aa9f38ff13acc1b56",
+      "bytes": 7139
+    },
+    {
+      "path": "preflight-local-01/local-stop.json",
+      "sha256": "965ae325b40cabc8eb9431a6ed66afcb5f700123200b8e4eb0668381e617fbc9",
+      "bytes": 250
+    },
+    {
+      "path": "review-approval.json",
+      "sha256": "f80ad18ecffec6637c54ea679897cfa177326f8b06dbce5eda23c78645e77866",
+      "bytes": 320
+    },
+    {
+      "path": "round-status.json",
+      "sha256": "ec0bcce56cce19d0c612d00edbfd0437afef856a7f17797375d6de391d682370",
+      "bytes": 663
+    },
+    {
+      "path": "smoke/checks.json",
+      "sha256": "24fe8b7d097186b0438bc5e685c17f8157a6c2e70ed6b741bc44fd0494abdbc4",
+      "bytes": 318
+    },
+    {
+      "path": "smoke/metadata.json",
+      "sha256": "d67e976e807ba49d2aef558a3c81848b6e041640b2f7e87aebb6ea79fe18a169",
+      "bytes": 1390
+    },
+    {
+      "path": "smoke/payload.txt",
+      "sha256": "a44ce876558799ebe9ee1f53e6a5e07ba4138352371a7c3c6de96e010614b2e7",
+      "bytes": 506
+    },
+    {
+      "path": "smoke/result.txt",
+      "sha256": "5726731b777b7c0c74ca27a0b3fcc78d91b92cbd692e5084331d96b87559c2db",
+      "bytes": 1023
+    },
+    {
+      "path": "smoke/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "smoke/stdout.txt",
+      "sha256": "8208230fbed18ee1d8b32eb79dfd2bdeb5c9d39162aa2017d074c4684ef7a09b",
+      "bytes": 2624
+    },
+    {
+      "path": "smoke-diagnostic.json",
+      "sha256": "8d2779375ff2773e40531d8489e1c584a43d3a341928474d036921bf0422ebbe",
+      "bytes": 782
+    }
+  ]
+}

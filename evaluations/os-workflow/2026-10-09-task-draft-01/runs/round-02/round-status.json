@@ -1,0 +1,29 @@
+{
+  "status": "RESPONSES_COLLECTED_PENDING_SEMANTIC_REVIEW",
+  "started_at_utc": "2026-10-10T10:37:38.652423+00:00",
+  "runtime_version": "2.1.296 (Claude Code)",
+  "model": "claude-haiku-5-5",
+  "approved_new_budget_usd": 0.099759,
+  "prior_study_estimated_usd": 0.04153488,
+  "completed_invocations": [
+    "smoke",
+    "D01-baseline",
+    "D01-treatment",
+    "D02-treatment",
+    "D02-baseline",
+    "D03-baseline",
+    "D03-treatment",
+    "D04-treatment",
+    "D04-baseline"
+  ],
+  "benchmark_completed": 8,
+  "semantic_review": "NOT_RUN",
+  "provider_requests": 9,
+  "usage_complete": true,
+  "known_cost_subtotal_usd": 0.01455995,
+  "estimated_new_api_cost_usd": 0.01455995,
+  "estimated_task_draft_study_usd": 0.01480095,
+  "estimated_cumulative_studies_usd": 0.05633583,
+  "committed_budget_usd": 0.01455995,
+  "finished_at_utc": "2026-10-10T10:38:37.505027+00:00"
+}

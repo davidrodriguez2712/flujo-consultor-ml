@@ -1,0 +1,10 @@
+schema_version: 1
+current_stage: validation
+status: BLOCKED
+objective: 'CHURN-WIN-a568d5f249: auditar split temporal y leakage antes de recomendar
+  retenci¢n'
+completed_stages: []
+blockers:
+- Falta confirmar la fecha de disponibilidad de las labels.
+open_decisions: []
+gate_reviews: {}

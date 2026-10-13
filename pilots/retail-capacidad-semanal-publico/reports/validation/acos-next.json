@@ -1,0 +1,86 @@
+{
+  "stage": "validation",
+  "status": "IN_PROGRESS",
+  "objective": "Revisar y aceptar o corregir el ensayo conjunto y su paquete de evidencia.",
+  "questions": [
+    "¿Se evita leakage o inferencia causal no identificada?",
+    "¿Qué límites cambian la decisión?"
+  ],
+  "outputs": [
+    "analysis/analysis_plan.md",
+    "analysis/forecast_plan.md",
+    "delivery/storyline.md"
+  ],
+  "capabilities": [
+    {
+      "id": "problem-framing",
+      "coverage": "partial",
+      "artifact": "playbook",
+      "reason": "Sin skill operativa compatible",
+      "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+    },
+    {
+      "id": "evidence-synthesis",
+      "coverage": "partial",
+      "artifact": "playbook",
+      "reason": "Sin skill operativa compatible",
+      "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+    },
+    {
+      "id": "dataset-understanding",
+      "coverage": "partial",
+      "artifact": "playbook",
+      "reason": "Sin skill operativa compatible",
+      "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+    },
+    {
+      "id": "forecast-evaluation",
+      "coverage": "partial",
+      "artifact": "playbook",
+      "reason": "Sin skill operativa compatible",
+      "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+    },
+    {
+      "id": "executive-synthesis",
+      "coverage": "partial",
+      "artifact": "playbook",
+      "reason": "Sin skill operativa compatible",
+      "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+    }
+  ],
+  "gaps": [
+    {
+      "capability": "problem-framing",
+      "reason": "Sin skill operativa compatible",
+      "fallback": "playbook",
+      "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+    },
+    {
+      "capability": "evidence-synthesis",
+      "reason": "Sin skill operativa compatible",
+      "fallback": "playbook",
+      "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+    },
+    {
+      "capability": "dataset-understanding",
+      "reason": "Sin skill operativa compatible",
+      "fallback": "playbook",
+      "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+    },
+    {
+      "capability": "forecast-evaluation",
+      "reason": "Sin skill operativa compatible",
+      "fallback": "playbook",
+      "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+    },
+    {
+      "capability": "executive-synthesis",
+      "reason": "Sin skill operativa compatible",
+      "fallback": "playbook",
+      "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+    }
+  ],
+  "gate": "Obtener evidencia y revisión humana antes de registrar un avance de etapa.",
+  "integrity": "OK",
+  "findings": []
+}

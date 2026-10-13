@@ -1,0 +1,100 @@
+{
+  "started_at": "2026-10-11T13:40:42.250364+00:00",
+  "argv": [
+    "claude",
+    "-p",
+    "--restricted",
+    "--no-chrome",
+    "--no-session-persistence",
+    "--setting-sources",
+    "",
+    "--settings",
+    "{\"disableBundledSkills\": true, \"permissions\": {\"allow\": [\"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-02/smoke-baseline/workspace/.runtime/check_inputs.py)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-02/smoke-baseline/workspace/case.md)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-02/smoke-baseline/workspace/inputs/data.csv)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-02/smoke-baseline/workspace/workflow.md)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-02/smoke-baseline/workspace/reports/leakage/audit.md)\", \"Bash(/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python /Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-02/smoke-baseline/workspace/.runtime/check_inputs.py)\", \"Skill(acos-eval:detect-leakage)\"], \"deny\": [\"Agent\", \"WebFetch\", \"WebSearch\", \"NotebookEdit\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-02/smoke-baseline/workspace/inputs/**)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-02/smoke-baseline/workspace/case.md)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-02/smoke-baseline/workspace/.runtime/**)\"]}}",
+    "--strict-mcp-config",
+    "--mcp-config",
+    "{\"mcpServers\":{}}",
+    "--permission-mode",
+    "dontAsk",
+    "--permission-prompts",
+    "none",
+    "--tools",
+    "Read,Write,Bash,Skill",
+    "--max-turns",
+    "8",
+    "--effort",
+    "low",
+    "--model",
+    "claude-haiku-5-5",
+    "--system-prompt",
+    "Responde en español. Audita solo el expediente público, respeta sus límites y no aceptes gates. Usa únicamente herramientas y capacidades disponibles. Entrega el reporte y su ruta según case.md.",
+    "--output-format",
+    "stream-json",
+    "--verbose"
+  ],
+  "runtime_success": true,
+  "condition": "baseline",
+  "skill_invoked": false,
+  "request_count": 4,
+  "returncode": 0,
+  "tool_calls": [
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-02/smoke-baseline/workspace/workflow.md"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-02/smoke-baseline/workspace/case.md"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-02/smoke-baseline/workspace/.runtime/check_inputs.py"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-02/smoke-baseline/workspace/inputs/data.csv"
+      }
+    },
+    {
+      "name": "Bash",
+      "input": {
+        "command": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python /Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-02/smoke-baseline/workspace/.runtime/check_inputs.py",
+        "description": "Run fixed readonly input check utility"
+      }
+    },
+    {
+      "name": "Write",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-02/smoke-baseline/workspace/reports/leakage/audit.md",
+        "content": "# Auditoría de smoke técnico: detect-leakage\n\n## Alcance\n\n- Fuentes leídas: `workflow.md`, `case.md`, `inputs/data.csv` y `.runtime/check_inputs.py` (solo lectura).\n- Utility ejecutada una vez, sin argumentos: `.runtime/check_inputs.py` (salida JSON con hashes, tamaños y conteos).\n- No se ejecutó `pipeline.py`, no se evaluó leakage, no se entrenó ningún modelo y no se modificó ningún input.\n- La skill `acos-eval:detect-leakage` no está disponible en el entorno (solo consta `plugin-authoring`), por lo que no fue invocada.\n\n## Hechos observados\n\n| Archivo | SHA-256 | Bytes | Columnas | Filas |\n|---|---|---|---|---|\n| `case.md` | `c55d6e5472cc2697b8c2c491ec1786ee9acd2e0cae2d311c691fea646a51e232` | 290 | — | — |\n| `inputs/data.csv` | `8028f83b208c1c7608522c1680cb03dfeaf3a79fa2224fd257d7e31be883dbab` | 21 | `entity_id`, `value` | 1 |\n\nContenido de `inputs/data.csv` (leído directamente): encabezado `entity_id,value` y una única fila `s1,1`.\n\n## Verificaciones deterministas\n\n- Conteo de filas CSV: 1 (confirmado por la utility y por lectura directa).\n- Columnas: `entity_id`, `value` (confirmado por ambas fuentes).\n- Hashes y tamaños reportados por la utility para los dos archivos incluidos.\n\n## Límites\n\n- Este es un smoke técnico de inputs. **No cuenta como evidencia de eficacia** ni como evaluación de leakage.\n- Con una sola fila no es posible evaluar leakage, distribución, cortes temporales, duplicados ni relación target–features.\n- No hay columna target identificada ni artefacto de pipeline auditado; cualquier conclusión sobre leakage queda pendiente.\n- Los hashes identifican bytes en el momento de la lectura; no validan semántica ni representatividad de los datos.\n\n## Pendientes\n\n- Dato pendiente → evaluación de leakage: se requiere un dataset con volumen suficiente, definición de target y fechas de corte, y la ejecución del procedimiento de leakage autorizado.\n- Dato pendiente → reproducibilidad: no hay recorrido de pipeline ejecutado en este smoke.\n\n## Conclusión\n\nSe verificaron conteo (1 fila), columnas y hashes de `inputs/data.csv` y `case.md` mediante la utility fija. No se formula ningún juicio sobre leakage.\n"
+      }
+    }
+  ],
+  "skill_invocation_requested": false,
+  "usage_known": true,
+  "report_persisted": true,
+  "report_sha256": "7158520335ab0d400943aab033edbcf347925c74a584fdd09f40135099acb5d3",
+  "model_usage": {
+    "claude-haiku-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 2671,
+      "cacheReadInputTokens": 34631,
+      "cacheCreationInputTokens": 16665,
+      "webSearchRequests": 0,
+      "costUSD": 0.003765735,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 419,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "finished_at": "2026-10-11T13:40:56.450279+00:00"
+}

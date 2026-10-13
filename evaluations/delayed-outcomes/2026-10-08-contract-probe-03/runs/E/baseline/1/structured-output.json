@@ -1,0 +1,32 @@
+{
+  "rows": [
+    {
+      "id": "E1",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "exclude",
+      "reason": "El label negativo para [1 jun, 1 jul) se certific\u00f3 el 5 jul 08:00, antes del entrenamiento (15 jul) y de la extracci\u00f3n (15 ago), as\u00ed que el label est\u00e1 disponible. Pero la feature saldo_historico usada es una versi\u00f3n reconstruida que estuvo disponible por primera vez el 2 jun 08:00. Eso es posterior a la predicci\u00f3n (1 jun 00:00) e incorpora una correcci\u00f3n recibida el 2 jun. Es informaci\u00f3n posterior a la predicci\u00f3n, es decir, leakage temporal. El expediente aclara que no se usa una versi\u00f3n anterior, por lo que no hay sustituto. Se excluye este registro con esa feature."
+    },
+    {
+      "id": "E2",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "El label negativo definitivo se certific\u00f3 el 5 jul 08:00, antes del entrenamiento del 15 jul, y consta como negativo en la extracci\u00f3n. Una captura archivada prueba que el mismo valor exportado de saldo_historico ya estaba disponible el 31 mayo 18:00, antes de la predicci\u00f3n del 1 jun 00:00. La poblaci\u00f3n es v\u00e1lida. No hay evidencia de incumplimiento temporal."
+    },
+    {
+      "id": "E3",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "indeterminate",
+      "reason": "El label negativo definitivo se certific\u00f3 el 5 jul 08:00, antes del entrenamiento del 15 jul, as\u00ed que el label est\u00e1 disponible. Sin embargo, no hay historial ni captura de saldo_historico, y el equipo desconoce cu\u00e1ndo estuvo disponible el valor exportado. El acta com\u00fan reemplaza el supuesto general de disponibilidad de las features del contexto (31 may 18:00), por lo que no puede asumirse que el valor estuviera disponible antes de la predicci\u00f3n (1 jun 00:00). No se puede determinar si hay leakage, y no se completa el dato ausente."
+    }
+  ],
+  "open_questions": [
+    "E3: \u00bfExiste alguna fuente (logs de ETL, auditor\u00eda del sistema, fecha de carga, backups) que permita determinar cu\u00e1ndo estuvo disponible por primera vez el valor exportado de saldo_historico? Debe ser anterior o igual al 1 jun 2025 00:00Z.",
+    "E3: \u00bfSe recibi\u00f3 alguna correcci\u00f3n o reconstrucci\u00f3n de saldo_historico tras el 31 de mayo, como en E1? \u00bfEl valor exportado es el original o uno reconstruido?",
+    "E1: \u00bfExiste una versi\u00f3n de saldo_historico anterior a la correcci\u00f3n del 2 jun que se pueda usar leg\u00edtimamente? El expediente indica que la feature usada es la reconstruida, por lo que habr\u00eda que recalcular el registro con la versi\u00f3n previa para reincorporarlo.",
+    "\u00bfLa certificaci\u00f3n del 5 jul 08:00 corresponde al valor en el sistema de entrenamiento? Se asume que s\u00ed por el acta com\u00fan, y habr\u00eda que confirmarlo antes de aprobar el gate."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

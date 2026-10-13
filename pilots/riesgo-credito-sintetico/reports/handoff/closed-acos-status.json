@@ -1,0 +1,20 @@
+{
+  "project": "Piloto sintético de riesgo de crédito",
+  "stage": "handoff",
+  "status": "COMPLETED",
+  "completed": [
+    "discovery",
+    "framing",
+    "diagnosis",
+    "execution",
+    "validation",
+    "delivery",
+    "handoff"
+  ],
+  "total_stages": 7,
+  "blockers": [],
+  "open_decisions": [],
+  "next_gates": [],
+  "integrity": "OK",
+  "findings": []
+}

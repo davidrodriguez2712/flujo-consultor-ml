@@ -1,0 +1,73 @@
+{
+  "platform": "Windows-2022Server-10.0.20348-SP0",
+  "architecture": "x64",
+  "scope": "Skill real + continuemos en sesión nueva; solo lectura; sin eficacia ni resume persistido",
+  "skill_sha256": "70883c3b75b07334fc95bad1b5c6749fd7b5e623b648f6b48fb6c14b2d32b8f9",
+  "skill_status": "experimental",
+  "runtime_budget_usd": 0.25,
+  "passed": false,
+  "runtimes": [
+    {
+      "runtime": "codex",
+      "model": "gpt-5.3-codex",
+      "passed": false,
+      "runs": [
+        {
+          "checks": {
+            "canonical_objective": false,
+            "blocked_state": false,
+            "label_availability": false,
+            "native_skill_trace": false,
+            "validation_advice": false
+          },
+          "passed": false,
+          "reply": "Entendido. Voy a leer los archivos canónicos en el orden indicado y luego te devuelvo un resumen breve aplicando `design-validation` solo en modo lectura.",
+          "tools": [],
+          "test": "guided",
+          "exit_code": 1,
+          "workspace_unchanged": true
+        }
+      ],
+      "requests": [
+        {
+          "reserved_usd": 0.185633,
+          "committed_usd": 0.029015,
+          "estimated_usd": 0.029015,
+          "usage": {
+            "input_tokens": 14380,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 275,
+            "output_tokens_details": {
+              "reasoning_tokens": 109
+            },
+            "total_tokens": 14655
+          },
+          "http_status": 200
+        }
+      ],
+      "rejections": [
+        {
+          "reason": "límite de presupuesto",
+          "request_bytes": 76306,
+          "quote_usd": 0.192066,
+          "tool_types": [
+            "function",
+            "function",
+            "function",
+            "function",
+            "namespace",
+            "function",
+            "function",
+            "function"
+          ]
+        }
+      ],
+      "committed_usd": 0.029015,
+      "estimated_usd": 0.029015,
+      "unmeasured_requests": 0
+    }
+  ]
+}

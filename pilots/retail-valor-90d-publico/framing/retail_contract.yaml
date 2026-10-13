@@ -1,0 +1,116 @@
+schema_version: 1
+version: 0.1.0
+status: PROPOSED
+capacity: 100
+history_days: 180
+baseline_days: 90
+horizon_days: 90
+unit: customer_id × cutoff mensual
+currency: GBP nominal histórico
+timestamp_policy:
+  representation: Timestamps naive originales de UCI; cutoff al inicio del mes 00:00
+    en la misma escala.
+  timezone: No documentada; no convertir a zona local del ejecutor.
+  availability_assumption: Transacciones observables en su invoice_at para simulación
+    retrospectiva; no se acredita latencia operacional ni historial de revisiones.
+source:
+  original: data/raw/online_retail_II.xlsx
+  manifest: data/source_manifest.json
+  normalized_copy: data/interim/transactions_normalized.csv.gz
+reconciliation:
+  scope: Copias entre hojas, no deduplicación general de líneas de factura.
+  fields:
+  - invoice_id
+  - stock_code
+  - description
+  - quantity
+  - invoice_at
+  - unit_price
+  - customer_id
+  - country
+  method: Por cada patrón completo, conservar max(multiplicidad por hoja). Numerar
+    ocurrencias por patrón dentro de cada hoja y conservar una fila por patrón/índice
+    de ocurrencia entre hojas.
+  provenance: 'Mantener source_sheet/source_row de la representación conservada y
+    un mapa hacia las copias descartadas. Prioridad de fuente: orden original del
+    Excel, luego source_row.'
+  within_sheet_repetitions: No eliminar por igualdad; son transacciones potencialmente
+    legítimas sin clave de línea fiable.
+  uncertainty: No prueba qué línea fue transacción independiente o corrección. Sensibilidad
+    a repeticiones se definirá en Diagnosis antes de holdout.
+purchase_validity:
+  required_fields:
+  - invoice_id
+  - stock_code
+  - invoice_at
+  - quantity
+  - unit_price
+  - customer_id
+  positive_quantity: true
+  positive_unit_price: true
+  finite_numeric: true
+  exclude_cancellation: invoice_id inicia con c/C, aunque quantity sea positiva.
+  stock_code_regex: ^\d{5}[A-Za-z]*$
+  stock_code_case: Preservar forma original; no normalizar códigos distintos silenciosamente.
+  stock_code_scope: 'Convención operacional: líneas con código estándar, no certificación
+    de que cada línea sea mercancía.'
+  nonstandard_codes: Excluir del target y de features de compras, registrar importe/cobertura
+    por código. Incluye servicios identificables y códigos ambiguos; no decir que
+    todo lo excluido es inválido.
+  missing_description: No excluir por sí sola si los demás campos cumplen; conservar
+    flag de calidad.
+  missing_customer_id: No imputar ni convertir a un cliente artificial. Excluir de
+    población individual y reportar cobertura.
+customer_id:
+  representation: Texto estable; valores numéricos enteros sin sufijo .0; ausente
+    permanece NA.
+  business_identity: No inferir persona física, hogar o empresa; UCI declara número
+    de cliente.
+  tie_break: Score descendente, luego customer_id lexicográfico ascendente.
+eligibility:
+  rule: Al menos una compra válida en [cutoff-180 días, cutoff).
+  population: Todos los países presentes; no restringir a Reino Unido ni asumir B2C.
+  new_or_anonymous_customers: Fuera del ranking, con cobertura reportada.
+  future_information: No usar compras posteriores al cutoff para definir elegibilidad.
+target:
+  name: target_sales_90d
+  definition: Suma quantity × unit_price de compras válidas del cliente en [cutoff,
+    cutoff+90 días).
+  full_horizon_required: true
+  zero_semantics: Cero ventas válidas observadas durante horizonte completo; no churn
+    definitivo.
+  cancellations: Excluir del target positivo y auditar aparte; no descontarlas retroactivamente
+    en features/target.
+  not_identified:
+  - Ventas netas
+  - Margen o beneficio
+  - CLV completo
+  - Efecto de contacto o uplift
+  - ROI de campaña
+baseline:
+  primary: sales_90d de compras válidas en [cutoff-90 días, cutoff).
+  no_purchases_in_90d: Score cero si cliente elegible por historia180.
+  secondary: RFM según fórmula del plan; congelar antes de holdout.
+metrics:
+  primary: Suma de target_sales_90d en Top-K, K=min(100,elegibles), misma población/cutoff
+    entre métodos.
+  secondary:
+  - MAE
+  - Fracción de ventas elegibles capturada cuando denominador positivo
+  - Cobertura de clientes
+  - Estabilidad del ranking
+  guardrails:
+  - Sin futuro en features/eligibilidad
+  - Horizonte de outcome completo
+  - Labels train maduras al fit
+  - Comparación temporal por período
+  - Concentración Top-1/Top-10
+  - Cancelaciones y cobertura excluida visibles
+  operational_meaning: Ranking retrospectivo para revisión, no obligación de contactar
+    ni identificación del mejor efecto de campaña.
+pending_for_diagnosis:
+- Cutoffs finales y sufiencia temporal
+- Regla de aceptación congelada
+- Sensibilidad a repeticiones dentro de hojas
+- Comprobaciones deterministas de temporalidad y disponibilidad
+preview_evidence: reports/framing/coverage-preview.json

@@ -1,0 +1,45 @@
+{
+  "output_type": "risk_ranking",
+  "selection_status": "determined",
+  "eligible_count": 4,
+  "capacity_k": 2,
+  "effective_k": 2,
+  "selected_ids": [
+    "W",
+    "Q"
+  ],
+  "risk_ranking_ids": [
+    "W",
+    "Q",
+    "R",
+    "T"
+  ],
+  "total_cost": 2,
+  "expected_net_value": null,
+  "feasibility": "feasible",
+  "optimality": "not_assessed",
+  "causal_identification": {
+    "status": "not_requested",
+    "estimand": null,
+    "reason": "No se pidi\u00f3 efecto causal de la inspecci\u00f3n; solo un Top-K descriptivo por riesgo y m\u00e9tricas sobre labels observados."
+  },
+  "metrics": {
+    "population_id": "eligible-B",
+    "precision": 0.5,
+    "recall": null,
+    "lift": null,
+    "precision_status": "identified",
+    "recall_status": "not_identifiable",
+    "lift_status": "not_identifiable",
+    "reason": "Poblaci\u00f3n eligible-B = {W,Q,R,T}. Precision@2 sobre W y Q, ambos con label observado (W=1, Q=0): 1/2 = 0.5. Recall@2 = 1/P, con P = positivos totales; R no tiene label (no inspeccionado, selecci\u00f3n hist\u00f3rica con mecanismo no documentado), as\u00ed que P es 2 o 3 y recall ser\u00eda 0.5 o 0.333; no es identificable sin supuestos sobre R ni sobre el mecanismo de selecci\u00f3n. Lift = precision / tasa base; la tasa base ser\u00eda 0.5 o 0.75 (lift 1.0 o 0.667), tampoco identificable. No se imput\u00f3 R ni se asumi\u00f3 MAR."
+  },
+  "reason": "Los cuatro son elegibles. Se ordenan por risk_score descendente (W 0.95, Q 0.90, R 0.60, T 0.20; sin empates) y se toman los 2 primeros, W y Q, con coste total 2 = capacidad. Es un ranking descriptivo: no hay objetivo econ\u00f3mico ni valor neto, y la optimalidad no se eval\u00faa. Las m\u00e9tricas son parciales por observabilidad: los labels solo existen donde hubo inspecci\u00f3n y el mecanismo de selecci\u00f3n hist\u00f3rico no est\u00e1 documentado. Solo precision@2 es identificable (0.5). Recall y lift quedan como no identificables, con null y no con un valor imputado. La decisi\u00f3n queda para revisi\u00f3n humana; este audit no aprueba el gate.",
+  "open_questions": [
+    "\u00bfC\u00f3mo se seleccion\u00f3 hist\u00f3ricamente qu\u00e9 casos se inspeccionaron (mecanismo de selecci\u00f3n)?",
+    "\u00bfR tiene un outcome verdadero disponible o puede obtenerse, por ejemplo con una inspecci\u00f3n de verificaci\u00f3n?",
+    "\u00bfSe aceptan supuestos expl\u00edcitos, como un an\u00e1lisis de sensibilidad de l\u00edmites para R, para reportar un rango de recall y lift?",
+    "\u00bfLos labels de T (0.2) y de otros casos no seleccionados provienen del mismo proceso de inspecci\u00f3n que los de W y Q?",
+    "\u00bfSe desea un Top-K puramente descriptivo, o m\u00e1s adelante un dise\u00f1o con muestreo aleatorio de inspecciones para medir recall sin sesgo?"
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

@@ -1,0 +1,116 @@
+{
+  "ranking_stability": [
+    {
+      "method": "hist_gradient_log",
+      "from_cutoff": "2010-09-01T00:00:00",
+      "to_cutoff": "2010-12-01T00:00:00",
+      "shared_selected_customers": 59,
+      "retention_share_previous": 0.59,
+      "jaccard": 0.41843971631205673
+    },
+    {
+      "method": "hist_gradient_log",
+      "from_cutoff": "2010-12-01T00:00:00",
+      "to_cutoff": "2011-03-01T00:00:00",
+      "shared_selected_customers": 62,
+      "retention_share_previous": 0.62,
+      "jaccard": 0.4492753623188406
+    },
+    {
+      "method": "hist_gradient_log",
+      "from_cutoff": "2011-03-01T00:00:00",
+      "to_cutoff": "2011-06-01T00:00:00",
+      "shared_selected_customers": 69,
+      "retention_share_previous": 0.69,
+      "jaccard": 0.5267175572519084
+    },
+    {
+      "method": "historical_sales",
+      "from_cutoff": "2010-09-01T00:00:00",
+      "to_cutoff": "2010-12-01T00:00:00",
+      "shared_selected_customers": 53,
+      "retention_share_previous": 0.53,
+      "jaccard": 0.36054421768707484
+    },
+    {
+      "method": "historical_sales",
+      "from_cutoff": "2010-12-01T00:00:00",
+      "to_cutoff": "2011-03-01T00:00:00",
+      "shared_selected_customers": 52,
+      "retention_share_previous": 0.52,
+      "jaccard": 0.35135135135135137
+    },
+    {
+      "method": "historical_sales",
+      "from_cutoff": "2011-03-01T00:00:00",
+      "to_cutoff": "2011-06-01T00:00:00",
+      "shared_selected_customers": 53,
+      "retention_share_previous": 0.53,
+      "jaccard": 0.36054421768707484
+    },
+    {
+      "method": "historical_sales",
+      "from_cutoff": "2011-06-01T00:00:00",
+      "to_cutoff": "2011-09-01T00:00:00",
+      "shared_selected_customers": 60,
+      "retention_share_previous": 0.6,
+      "jaccard": 0.42857142857142855
+    },
+    {
+      "method": "rfm",
+      "from_cutoff": "2010-09-01T00:00:00",
+      "to_cutoff": "2010-12-01T00:00:00",
+      "shared_selected_customers": 53,
+      "retention_share_previous": 0.53,
+      "jaccard": 0.36054421768707484
+    },
+    {
+      "method": "rfm",
+      "from_cutoff": "2010-12-01T00:00:00",
+      "to_cutoff": "2011-03-01T00:00:00",
+      "shared_selected_customers": 56,
+      "retention_share_previous": 0.56,
+      "jaccard": 0.3888888888888889
+    },
+    {
+      "method": "rfm",
+      "from_cutoff": "2011-03-01T00:00:00",
+      "to_cutoff": "2011-06-01T00:00:00",
+      "shared_selected_customers": 45,
+      "retention_share_previous": 0.45,
+      "jaccard": 0.2903225806451613
+    },
+    {
+      "method": "ridge_log",
+      "from_cutoff": "2010-09-01T00:00:00",
+      "to_cutoff": "2010-12-01T00:00:00",
+      "shared_selected_customers": 62,
+      "retention_share_previous": 0.62,
+      "jaccard": 0.4492753623188406
+    },
+    {
+      "method": "ridge_log",
+      "from_cutoff": "2010-12-01T00:00:00",
+      "to_cutoff": "2011-03-01T00:00:00",
+      "shared_selected_customers": 75,
+      "retention_share_previous": 0.75,
+      "jaccard": 0.6
+    },
+    {
+      "method": "ridge_log",
+      "from_cutoff": "2011-03-01T00:00:00",
+      "to_cutoff": "2011-06-01T00:00:00",
+      "shared_selected_customers": 66,
+      "retention_share_previous": 0.66,
+      "jaccard": 0.4925373134328358
+    }
+  ],
+  "selected_final_cancellations": {
+    "lines": 522,
+    "customers": 51,
+    "signed_amount_gbp": -47363.08,
+    "interpretation": "L\u00edneas de cancelaci\u00f3n del cliente en horizonte; sin enlace a compra original ni descuento retroactivo del target."
+  },
+  "concentration_interpretation": "Top1/Top10 de ventas futuras dentro del conjunto seleccionado, ordenados por outcome solo para diagn\u00f3stico; no redefinen ranking.",
+  "api_cost_usd": 0
+}

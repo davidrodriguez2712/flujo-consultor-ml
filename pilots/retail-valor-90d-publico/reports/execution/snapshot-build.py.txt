@@ -1,0 +1,41 @@
+from pathlib import Path
+import json,sys,hashlib,time
+import pandas as pd
+import numpy as np
+p=Path(sys.argv[1]).resolve();sys.path.insert(0,str(p/'analysis'))
+from retail_temporal import reconcile_transactions,valid_purchases,build_snapshot,training_rows,FEATURES
+b=json.loads((p/'reports/execution/approved-contracts.json').read_text());c=b['retail'];e=b['evaluation']
+def sha(q):return hashlib.sha256(q.read_bytes()).hexdigest()
+for rel,h in b['approved_sha256'].items():assert sha(p/rel)==h
+f=pd.read_csv(p/'data/interim/transactions_normalized.csv.gz',dtype={k:'string' for k in ['invoice_id','stock_code','description','customer_id','country','source_sheet']},parse_dates=['invoice_at'])
+r=reconcile_transactions(f,c);copies=r.attrs['copy_map'];r.attrs={}
+v=valid_purchases(r,c);excluded=v.attrs['excluded'];v.attrs={}
+out=p/'data/processed';out.mkdir(parents=True,exist_ok=True);(out/'reserved').mkdir(exist_ok=True)
+copies.to_csv(out/'cross_sheet_copy_map.csv.gz',index=False);excluded.to_csv(out/'excluded_transactions.csv.gz',index=False)
+allcut=sorted(set(x['cutoff'] for x in e['cutoffs'])|{t for x in e['cutoffs'] for t in x['mature_training_cutoffs']})
+snapshots=[];checks=[];holdout=next(pd.Timestamp(x['cutoff']) for x in e['cutoffs'] if x['purpose']=='holdout')
+for t in allcut:
+ t=pd.Timestamp(t);s=build_snapshot(v,t,c,f.invoice_at.max(),observed_from=f.invoice_at.min())
+ assert not s.duplicated(['customer_id','cutoff']).any()
+ assert np.isfinite(s[FEATURES+['target_sales_90d']].to_numpy(dtype=float)).all()
+ assert (s.history_max_at<t).all() and (s.history_min_at>=t-pd.Timedelta(days=180)).all()
+ assert (s.target_min_at.dropna()>=t).all() and (s.target_max_at.dropna()<t+pd.Timedelta(days=90)).all()
+ assert (s.label_end<=f.invoice_at.max()).all()
+ item={'cutoff':t.isoformat(),'rows':len(s),'feature_time_checks':'PASS','target_time_checks':'PASS'}
+ if t==holdout:
+  s.to_csv(out/'reserved/holdout_snapshot.csv',index=False);item['outcomes']='Reservados; no resumen de ceros/importe.'
+ else:
+  snapshots.append(s);item.update(zero_targets=int((s.target_sales_90d==0).sum()),target_sales_sum=float(s.target_sales_90d.sum()))
+ checks.append(item)
+combined=pd.concat(snapshots,ignore_index=True);combined.to_csv(out/'customer_snapshots.csv',index=False)
+fits=[]
+for x in e['cutoffs']:
+ t=pd.Timestamp(x['cutoff']);tr=training_rows(combined,t)
+ assert sorted(z.isoformat() for z in tr.cutoff.unique())==x['mature_training_cutoffs']
+ score_ids=set(v.loc[(v.invoice_at>=t-pd.Timedelta(days=180))&(v.invoice_at<t)].customer_id)
+ fits.append({'fit_at':t.isoformat(),'train_rows':len(tr),'train_snapshots':int(tr.cutoff.nunique()),'shared_customer_ids':len(set(tr.customer_id)&score_ids),'max_train_label_end':tr.label_end.max().isoformat()})
+report={'source_rows':len(f),'reconciled_rows':len(r),'valid_rows':len(v),'cross_sheet_copies':len(copies),'excluded_rows':len(excluded),'exclusion_counts':{str(k):int(z) for k,z in excluded.exclusion_reason.value_counts().items()},'snapshots':checks,'fit_checks':fits,'holdout_outcomes_inspected':False,'api_cost_usd':0}
+(p/'reports/execution/snapshot_checks.json').write_text(json.dumps(report,indent=2)+'\n')
+files=['data/processed/customer_snapshots.csv','data/processed/reserved/holdout_snapshot.csv','data/processed/cross_sheet_copy_map.csv.gz','data/processed/excluded_transactions.csv.gz','framing/retail_contract.yaml','validation/evaluation_contract.yaml','data/raw/online_retail_II.xlsx','analysis/retail_temporal.py']
+(p/'reports/execution/dataset-manifest.json').write_text(json.dumps({'files':{rel:{'sha256':sha(p/rel),'bytes':(p/rel).stat().st_size} for rel in files}},indent=2)+'\n')
+print(json.dumps({k:report[k] for k in ['source_rows','reconciled_rows','valid_rows','cross_sheet_copies','excluded_rows','fit_checks']},indent=2));print('snapshots:',len(checks),'train/development rows:',len(combined),'holdout reservado')

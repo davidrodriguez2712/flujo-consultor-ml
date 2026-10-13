@@ -1,0 +1,18 @@
+decision: Proponer hasta 100 clientes por cutoff mensual para revisión comercial según
+  ventas positivas esperadas a 90 días.
+owner: Responsable comercial simulado; David revisa los gates del laboratorio.
+metric: Suma de target_sales_90d en Top-K, K=min(100,elegibles), misma población/cutoff
+  entre métodos.
+unit: Cliente identificado × cutoff mensual
+horizon: 90 días desde cutoff, con historia180; todos los horizontes evaluables completos.
+status: PROPOSED
+contract: framing/retail_contract.yaml
+population: Al menos una compra válida en [cutoff-180 días, cutoff).
+scope: Ventas positivas registradas en líneas con código estándar y cliente identificable;
+  todos los países.
+out_of_scope:
+- Ventas netas
+- Margen o beneficio
+- CLV completo
+- Efecto de contacto o uplift
+- ROI de campaña

@@ -1,0 +1,16 @@
+{
+  "status": "STOPPED_RUNTIME_FAILURE",
+  "runs": [
+    {
+      "case": "L01",
+      "condition": "treatment",
+      "runtime_success": true
+    },
+    {
+      "case": "L02",
+      "condition": "treatment",
+      "runtime_success": false
+    }
+  ],
+  "effectiveness": "NOT_REVIEWED"
+}

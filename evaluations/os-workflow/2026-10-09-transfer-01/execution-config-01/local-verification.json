@@ -1,0 +1,86 @@
+{
+  "status": "PASS_LOCAL",
+  "suite": {
+    "command": ".venv/bin/python -m pytest -q",
+    "passed": 182,
+    "failed": 0,
+    "duration_seconds": 5.79,
+    "providers": "Simulados; no llamadas API"
+  },
+  "tdd": {
+    "red": "17 nuevos fallos por checker/neutral prompt ausentes; tres tests existentes PASS.",
+    "green": "28 tests de checker JSON/transferencia/transporte PASS."
+  },
+  "required_flags_present": true,
+  "runtime_version": "2.1.296 (Claude Code)",
+  "system_prompt_scope": "Neutral explícito; default antiguo conservado. Mismo prompt para doce payloads.",
+  "raw_preservation": "Tests de Markdown/JSON y CLI checker sin reescritura PASS.",
+  "reservation_probe": [
+    {
+      "case": "T01",
+      "condition": "baseline",
+      "public_payload_quote_usd": 0.0415875
+    },
+    {
+      "case": "T01",
+      "condition": "treatment",
+      "public_payload_quote_usd": 0.044305
+    },
+    {
+      "case": "T02",
+      "condition": "treatment",
+      "public_payload_quote_usd": 0.04432
+    },
+    {
+      "case": "T02",
+      "condition": "baseline",
+      "public_payload_quote_usd": 0.0416025
+    },
+    {
+      "case": "T03",
+      "condition": "baseline",
+      "public_payload_quote_usd": 0.041998125
+    },
+    {
+      "case": "T03",
+      "condition": "treatment",
+      "public_payload_quote_usd": 0.044715625
+    },
+    {
+      "case": "T04",
+      "condition": "treatment",
+      "public_payload_quote_usd": 0.04470125
+    },
+    {
+      "case": "T04",
+      "condition": "baseline",
+      "public_payload_quote_usd": 0.04198375
+    },
+    {
+      "case": "T05",
+      "condition": "baseline",
+      "public_payload_quote_usd": 0.0419575
+    },
+    {
+      "case": "T05",
+      "condition": "treatment",
+      "public_payload_quote_usd": 0.044675
+    },
+    {
+      "case": "T06",
+      "condition": "treatment",
+      "public_payload_quote_usd": 0.04449125
+    },
+    {
+      "case": "T06",
+      "condition": "baseline",
+      "public_payload_quote_usd": 0.04177375
+    }
+  ],
+  "reservation_probe_limit": "Quote para body público simulado; request real añade wrappers del CLI, proxy recalcula antes de enviar. No cota del coste de todo el estudio ni garantía de completarlo.",
+  "prior_preparation_manifest_sha256": "ee7a0d2a15b46a82cf6a986f694d9023e9f2c3fb48825ef1560365f7d6453650",
+  "paid_calls": 0,
+  "api_cost_usd": 0,
+  "effective_provider_compatibility": "PENDING_SMOKE",
+  "semantic_effectiveness": "NOT_EVALUATED"
+}

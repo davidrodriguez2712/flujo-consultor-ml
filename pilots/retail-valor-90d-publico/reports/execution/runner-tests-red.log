@@ -1,0 +1,16 @@
+
+==================================== ERRORS ====================================
+_ ERROR collecting pilots/retail-valor-90d-publico/analysis/test_retail_runner.py _
+ImportError while importing test module '/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/retail-valor-90d-publico/analysis/test_retail_runner.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/miniconda3/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pilots/retail-valor-90d-publico/analysis/test_retail_runner.py:4: in <module>
+    from run_retail import checked_contracts,main
+E   ModuleNotFoundError: No module named 'run_retail'
+=========================== short test summary info ============================
+ERROR pilots/retail-valor-90d-publico/analysis/test_retail_runner.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.04s

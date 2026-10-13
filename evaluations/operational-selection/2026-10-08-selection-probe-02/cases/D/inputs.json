@@ -1,0 +1,30 @@
+{
+  "name": "Capacidad máxima sin obligación de gastar",
+  "business": "Maximizar valor neto aditivo de acciones indivisibles. Capacidad máxima 5, presupuesto 10. net_value ya es neto (no restar coste otra vez), sin interacciones. No se solicita causalidad. Métricas descriptivas sobre los dos elegibles eligible-D, labels completos: precision/recall/lift para la selección final. Se permite seleccionar cero. Desempates de conjuntos: menor coste, luego IDs; orden miembros: net_value descendente/ID.",
+  "capacity_k": 5,
+  "budget": 10,
+  "metric_population": "eligible-D",
+  "rows": [
+    {
+      "id": "P",
+      "eligible": true,
+      "cost": 2,
+      "net_value": -1,
+      "label": 1
+    },
+    {
+      "id": "Q",
+      "eligible": true,
+      "cost": 1,
+      "net_value": -3,
+      "label": 0
+    },
+    {
+      "id": "R",
+      "eligible": false,
+      "cost": 1,
+      "net_value": 100,
+      "label": 1
+    }
+  ]
+}

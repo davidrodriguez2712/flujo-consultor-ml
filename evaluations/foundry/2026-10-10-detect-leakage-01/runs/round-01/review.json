@@ -1,0 +1,23 @@
+{
+  "status": "STOPPED_AT_SMOKE",
+  "paid_provider_requests": 1,
+  "second_provider_request": false,
+  "http_status": 200,
+  "usage_known": true,
+  "estimated_api_cost_usd": 0.000689075,
+  "approved_ceiling_usd": 0.1,
+  "unused_authorization_usd": 0.09931092500000001,
+  "automatic_paid_retries": 0,
+  "cases_executed": 0,
+  "pairs_evaluated": 0,
+  "report_persisted": false,
+  "skill_effectiveness": "NOT_EVALUATED",
+  "configuration_integrity": "PASS",
+  "foundry_modified": false,
+  "root_cause_confirmed": "Respuesta solicitó Bash con comando fuera de la whitelist exacta",
+  "specific_rejected_command": "NOT_RETAINED_BY_FROZEN_PROXY",
+  "authentication_message": "CLI etiqueta 403 local como authentication_failed; proveedor respondió HTTP200",
+  "hypothesis": "El prompt no comunica el comando exacto de la utility. Las pruebas mock proveían ese comando; no demostraban su selección por el modelo. Causa de la elección concreta aún no confirmada.",
+  "next_paid_run_authorized": false,
+  "recorded_at": "2026-10-11T13:24:21.702465+00:00"
+}

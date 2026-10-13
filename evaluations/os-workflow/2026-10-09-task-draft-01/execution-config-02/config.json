@@ -1,0 +1,129 @@
+{
+  "id": "os-workflow-task-draft-execution-02",
+  "status": "PREPARED_PENDING_EXECUTION_APPROVAL",
+  "preparation_manifest_sha256": "cb7f2ae23e03418af3081005c17586719b2152bb604274d9235b314a504f5aba",
+  "human_package_acceptance": "APPROVED_UNCHANGED_PACKAGE",
+  "runtime": {
+    "name": "Claude Code",
+    "version": "2.1.296 (Claude Code)",
+    "executable": "/Users/davidrodriguez/.local/bin/claude",
+    "model": "claude-haiku-5-5",
+    "effort": "low"
+  },
+  "budget": {
+    "proposed_total_usd": 0.099759,
+    "authorized": false,
+    "scope": "Nueva ronda manual: smoke explícito + ocho respuestas, sin retries. Límite acumulado US$0.10 en task-draft-01; resta US$0.000241 ya consumido.",
+    "planned_provider_requests": 9,
+    "max_requests_per_invocation": 1,
+    "max_output_tokens_including_thinking": 8192,
+    "retries": 0,
+    "prior_studies_estimated_usd": 0.04153488,
+    "request_limit_enforcement": "Coordinador debe validar ocho celdas únicas y prohibir invocaciones fuera de un smoke+order. Antes de cada invoke exigir len(ledger.entries)<9. Helper genérico tiene ceiling13, no representa autorización de13calls; proxy limita un request por invoke.",
+    "reservation": "Antes de proveedor, bytes request+16384 con tarifas conservadoras del tier largo/cap; liquidar usage, detener si siguiente reserva no cabe.",
+    "study_cumulative_ceiling_usd": 0.1,
+    "study_prior_round_cost_usd": 0.000241,
+    "prior_round_run_manifest_sha256": "bb39f208bc6287a153e4202c8b102687a63c0e2a33f9306e500e6ce1f08183fc"
+  },
+  "isolation": {
+    "fresh_process": true,
+    "fresh_empty_temporary_cwd": true,
+    "bare": true,
+    "safe_mode": true,
+    "tools": [],
+    "mcp_servers": {},
+    "skills": false,
+    "chrome": false,
+    "session_persistence": false,
+    "settings_sources": [],
+    "payload_only": true,
+    "expected_exposed": false,
+    "system_prompt": "Responde en español y cumple el contrato de salida específico incluido en el expediente. Revisa únicamente el contenido proporcionado. No uses herramientas ni apruebes gates.",
+    "limits": "Sin sandbox OS nuevo; políticas administradas pueden aplicar. Compatibilidad real en este estudio pendiente de smoke."
+  },
+  "output": {
+    "cli_envelope": "json",
+    "model_result": "JSON enD01/D03/D04, Markdown enD02",
+    "checker_version": "0.2.0",
+    "repair": false,
+    "semantic_review": "Manual del autor con criterios/citas congelados; no independiente ni ciega."
+  },
+  "order": [
+    {
+      "case": "D01",
+      "condition": "baseline",
+      "payload": "payloads/D01/baseline.txt"
+    },
+    {
+      "case": "D01",
+      "condition": "treatment",
+      "payload": "payloads/D01/treatment.txt"
+    },
+    {
+      "case": "D02",
+      "condition": "treatment",
+      "payload": "payloads/D02/treatment.txt"
+    },
+    {
+      "case": "D02",
+      "condition": "baseline",
+      "payload": "payloads/D02/baseline.txt"
+    },
+    {
+      "case": "D03",
+      "condition": "baseline",
+      "payload": "payloads/D03/baseline.txt"
+    },
+    {
+      "case": "D03",
+      "condition": "treatment",
+      "payload": "payloads/D03/treatment.txt"
+    },
+    {
+      "case": "D04",
+      "condition": "treatment",
+      "payload": "payloads/D04/treatment.txt"
+    },
+    {
+      "case": "D04",
+      "condition": "baseline",
+      "payload": "payloads/D04/baseline.txt"
+    }
+  ],
+  "stop_conditions": [
+    "Fallo smoke/runtime/timeout/rechazo/truncación",
+    "Stopreason distinto de end_turn",
+    "Usage desconocido/modelo distinto",
+    "Más de un request por invoke o intento fuera de nueve invocaciones planificadas",
+    "Reserva no cabe/usage supera reserva",
+    "Manifest/snapshot/CLI/version/flags distintos"
+  ],
+  "benchmark_format_failure": "Conservar y puntuar, sin repetir. No confundir con infraestructura.",
+  "model_calls": 0,
+  "api_cost_usd": 0,
+  "pricing_verified_on": "2026-10-09 (fecha local del estudio)",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "rates_usd_per_million": {
+    "up_to_100000_input": {
+      "input": 0.1,
+      "output": 0.5,
+      "cache_write_5m": 0.125,
+      "cache_write_1h": 0.2,
+      "cache_read": 0.01
+    },
+    "over_100000_input": {
+      "input": 0.5,
+      "output": 2.5,
+      "cache_write_5m": 0.625,
+      "cache_write_1h": 1.0,
+      "cache_read": 0.05
+    }
+  },
+  "cost_limits": "Estimaciones usage, no factura/impuestos ni garantía de completar todos los pares a consumo máximo.",
+  "previous_round": {
+    "status": "STOPPED_SMOKE_FORMAT_FAILURE",
+    "benchmark_invocations": 0,
+    "raw_preserved": true
+  },
+  "change": "Único cambio de input: smoke-payload explícito. Benchmark, runtime, checker, system prompt y criterios idénticos."
+}

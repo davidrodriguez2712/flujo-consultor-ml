@@ -1,0 +1,3 @@
+Auditoría completada. Hallazgo crítico: `recovered_kwh` es feature en `pipeline.py`, pero solo está disponible desde 2025-06-09 (scoring 2025-06-01), así que es información futura. `history_kwh_90d` no presenta fuga por timestamp, aunque la ventana no se pudo verificar. Skill `acos-eval:detect-leakage` no estaba instalada: baseline sin skill (none/null). No se ejecutó el pipeline ni se calcularon métricas.
+
+Reporte: `/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-04/L01-baseline/workspace/reports/leakage/audit.md`

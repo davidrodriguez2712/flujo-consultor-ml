@@ -1,0 +1,158 @@
+{
+  "results": [
+    {
+      "case": "A",
+      "branch": "baseline",
+      "ids_exact": true,
+      "eligibility_matches": 3,
+      "total_rows": 3,
+      "label_state_matches": 2,
+      "gate_matches": true,
+      "missing_information_question_present": null,
+      "strict_mismatches": [
+        {
+          "id": "A2",
+          "field": "label_state",
+          "expected": "observed_negative",
+          "actual": "pending"
+        }
+      ],
+      "json_fence_present": true
+    },
+    {
+      "case": "A",
+      "branch": "treatment",
+      "ids_exact": true,
+      "eligibility_matches": 3,
+      "total_rows": 3,
+      "label_state_matches": 2,
+      "gate_matches": true,
+      "missing_information_question_present": null,
+      "strict_mismatches": [
+        {
+          "id": "A2",
+          "field": "label_state",
+          "expected": "observed_negative",
+          "actual": "pending"
+        }
+      ],
+      "json_fence_present": true
+    },
+    {
+      "case": "B",
+      "branch": "baseline",
+      "ids_exact": true,
+      "eligibility_matches": 2,
+      "total_rows": 2,
+      "label_state_matches": 1,
+      "gate_matches": true,
+      "missing_information_question_present": null,
+      "strict_mismatches": [
+        {
+          "id": "B2",
+          "field": "label_state",
+          "expected": "observed_negative",
+          "actual": "pending"
+        }
+      ],
+      "json_fence_present": true
+    },
+    {
+      "case": "B",
+      "branch": "treatment",
+      "ids_exact": true,
+      "eligibility_matches": 2,
+      "total_rows": 2,
+      "label_state_matches": 1,
+      "gate_matches": true,
+      "missing_information_question_present": null,
+      "strict_mismatches": [
+        {
+          "id": "B2",
+          "field": "label_state",
+          "expected": "observed_negative",
+          "actual": "pending"
+        }
+      ],
+      "json_fence_present": true
+    },
+    {
+      "case": "C",
+      "branch": "baseline",
+      "ids_exact": true,
+      "eligibility_matches": 3,
+      "total_rows": 3,
+      "label_state_matches": 3,
+      "gate_matches": true,
+      "missing_information_question_present": null,
+      "strict_mismatches": [],
+      "json_fence_present": true
+    },
+    {
+      "case": "C",
+      "branch": "treatment",
+      "ids_exact": true,
+      "eligibility_matches": 3,
+      "total_rows": 3,
+      "label_state_matches": 3,
+      "gate_matches": true,
+      "missing_information_question_present": null,
+      "strict_mismatches": [],
+      "json_fence_present": true
+    },
+    {
+      "case": "D",
+      "branch": "baseline",
+      "ids_exact": true,
+      "eligibility_matches": 1,
+      "total_rows": 1,
+      "label_state_matches": 0,
+      "gate_matches": true,
+      "missing_information_question_present": true,
+      "strict_mismatches": [
+        {
+          "id": "D1",
+          "field": "label_state",
+          "expected": "observed_negative",
+          "actual": "unknown"
+        }
+      ],
+      "json_fence_present": true
+    },
+    {
+      "case": "D",
+      "branch": "treatment",
+      "ids_exact": true,
+      "eligibility_matches": 1,
+      "total_rows": 1,
+      "label_state_matches": 1,
+      "gate_matches": true,
+      "missing_information_question_present": true,
+      "strict_mismatches": [],
+      "json_fence_present": true
+    }
+  ],
+  "frozen_inputs_unchanged": true,
+  "eight_valid_runtime_results": true,
+  "single_model_in_usage": [
+    "claude-sonnet-5-5"
+  ],
+  "totals": {
+    "baseline": {
+      "eligible_row_decisions_correct": 9,
+      "row_decisions": 9,
+      "label_state_strict_mismatches": 3,
+      "elapsed_seconds": 47.55,
+      "cost_usd": 0.249146
+    },
+    "treatment": {
+      "eligible_row_decisions_correct": 9,
+      "row_decisions": 9,
+      "label_state_strict_mismatches": 2,
+      "elapsed_seconds": 34.8,
+      "cost_usd": 0.239488
+    }
+  },
+  "review_independent": false,
+  "note": "label_state no fijó punto temporal inequívoco; conservar checks literales, no equiparar sus diferencias con error crítico de elegibilidad"
+}

@@ -1,0 +1,10 @@
+{
+  "status": "EXPLORATORY_INCONCLUSIVE_PREPARATION_DEFECT",
+  "authoritative_summary": "runs/round-01/evaluation-summary.json",
+  "run_manifest_sha256": "0cef7918311a6902d3709bd607d7bdb045b9b94dd9ff73393a5ab4c2fffdbfd5",
+  "new_estimated_cost_usd": 0.02088035,
+  "cumulative_estimated_cost_usd": 0.04153488,
+  "authorized_calls_completed": true,
+  "new_calls_authorized": false,
+  "next": "Diseño de corrección local de fixture/checker y entrega de task, antes de nueva evaluación."
+}

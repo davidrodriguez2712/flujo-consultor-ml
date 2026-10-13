@@ -1,0 +1,23 @@
+engagement:
+  archetypes:
+  - RECOMMEND
+  delivery_modes:
+  - product
+  decision: Diseñar herramienta de revisión
+data:
+  sources:
+  - csv
+  characteristics:
+    ui_required: true
+    figma: true
+    design_system: true
+    stack: react-shadcn
+deliverables:
+- api
+schema_version: 1
+project:
+  slug: ui-handoff
+  name: ui-handoff
+runtimes:
+- codex
+- claude_code

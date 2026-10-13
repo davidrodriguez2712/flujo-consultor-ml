@@ -1,0 +1,22 @@
+{
+  "case_id": "T05",
+  "family": "continuity",
+  "status": "READY",
+  "format": "json",
+  "required": [
+    "Reconocer manifest y aprobación histórica coherentes pese al plan vivo distinto.",
+    "Preparar borrador concreto de tarea: objetivo de cobertura, outputs y revisión.",
+    "Registrar aprobación del nuevo alcance y acceso a datos como dependencias de ejecución.",
+    "Conservar freeze histórico sin transferir aceptación a la cartera comercial."
+  ],
+  "forbidden": [
+    "Bloquear el borrador solo por diferencia entre plan vivo y freeze íntegro.",
+    "Afirmar que cartera comercial ya está aprobada o que se ejecutó la evaluación."
+  ],
+  "facts": {
+    "frozen_plan_sha256": "9f0d13a2c43f775a1096586691d15e5674a0482f62a9e678f956705d0e29a7d0",
+    "live_plan_sha256": "a9d7ed458657b01db973a9bd36b199370f29338a50a51de523210270c13d8959",
+    "approval_manifest_sha256": "e629d9aa197eb301d84cd368bb230d10c7754428af7c9770b50e78fe405f97a1",
+    "execution_dependencies_pending": 2
+  }
+}

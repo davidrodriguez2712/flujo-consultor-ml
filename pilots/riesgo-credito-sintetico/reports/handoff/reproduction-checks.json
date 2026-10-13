@@ -1,0 +1,165 @@
+{
+  "python": "3.13.2 | packaged by Anaconda, Inc. | (main, Feb  6 2025, 12:55:35) [Clang 14.0.6 ]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "scope": "Copia fuera del checkout, mismo macOS/Python; replay de evidencia observada, sin APIs ni nueva evaluación independiente.",
+  "commands": [
+    {
+      "argv": [
+        "/Users/davidrodriguez/.local/bin/acos",
+        "status"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\n  \"project\": \"Piloto sintético de riesgo de crédito\",\n  \"stage\": \"handoff\",\n  \"status\": \"IN_PROGRESS\",\n  \"completed\": [\n    \"discovery\",\n    \"framing\",\n    \"diagnosis\",\n    \"execution\",\n    \"validation\",\n    \"delivery\"\n  ],\n  \"total_stages\": 7,\n  \"blockers\": [],\n  \"open_decisions\": [\n    \"Aprobar Handoff y el cierre del piloto sintético con sus límites.\"\n  ],\n  \"next_gates\": [\n    \"handoff\"\n  ],\n  \"integrity\": \"OK\",\n  \"findings\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Users/davidrodriguez/.local/bin/acos",
+        "next"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\n  \"stage\": \"handoff\",\n  \"status\": \"IN_PROGRESS\",\n  \"objective\": \"Revisar runbook, reproducibilidad, inventario, feedback y pendientes antes del cierre.\",\n  \"questions\": [\n    \"¿Quién mantiene y usa cada entregable?\",\n    \"¿Qué señales requieren revisión?\"\n  ],\n  \"outputs\": [\n    \"handoff/runbook.md\"\n  ],\n  \"capabilities\": [\n    {\n      \"id\": \"problem-framing\",\n      \"coverage\": \"partial\",\n      \"artifact\": \"playbook\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"id\": \"evidence-synthesis\",\n      \"coverage\": \"partial\",\n      \"artifact\": \"playbook\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"id\": \"dataset-understanding\",\n      \"coverage\": \"skill\",\n      \"skill\": \"understand-dataset\",\n      \"status\": \"experimental\",\n      \"version\": \"0.1.0\",\n      \"reason\": \"Propósito y condiciones compatibles con política del catálogo\",\n      \"limits\": \"\\n# Propósito\\n\\nEsta skill proporciona una **comprensión estructural y metodológica de un dataset\\nantes de comenzar el análisis o el modelado**.\\n\\nEl problema que resuelve: la comprensión inicial de los datos suele hacerse de forma\\nimprovisada y se salta directamente a estadísticas descriptivas, gráficos,\\ntratamiento de missing, feature engineering o entrenamiento. Antes de esas\\nactividades quedan sin resolver preguntas fundamentales —qué representa una fila,\\ncuál es la unidad de observación, cuál es el target y cuándo se conoce, qué\\ninformación estaba disponible al momento de predecir, qué variables son posteriores\\nal evento, qué joins duplican registros—.\\n\\nUna comprensión incorrecta en esta etapa produce errores (target leakage, temporal\\nleakage, granularidad mal definida, duplicación por joins, train/test contamination,\\nuso incorrecto de identificadores, mala interpretación del target) que **luego no son\\nvisibles en las métricas del modelo**: el modelo puede tener métricas excelentes y\\naun así ser inválido.\\n\\nLa skill establece primero una comprensión confiable de los datos y señala los\\nprincipales riesgos y preguntas abiertas. No decide que el dataset esté listo para\\nmodelar.\\n\\n# Cuándo usar\\n\\nUsar esta skill cuando:\\n\\n- se recibe un dataset desconocido o solo su estructura (columnas, tipos, muestra);\\n- se inicia un nuevo proyecto de Data Science supervisado;\\n- se recibe una tabla nueva o se incorpora una nueva fuente de información;\\n- se recibe una nueva versión de un dataset ya conocido;\\n- se hereda un proyecto creado por otra persona;\\n- no está clara la unidad de observación o la granularidad;\\n- no se conoce con certeza el target;\\n- existe información temporal y hay riesgo de usar información futura;\\n- existen múltiples tablas que podrían relacionarse entre sí;\\n- existe\"\n    },\n    {\n      \"id\": \"supervised-validation\",\n      \"coverage\": \"skill\",\n      \"skill\": \"design-validation\",\n      \"status\": \"experimental\",\n      \"version\": \"0.1.0\",\n      \"reason\": \"Propósito y condiciones compatibles con política del catálogo\",\n      \"limits\": \"\\n# Propósito\\n\\nEsta skill proporciona el **diseño explícito y justificado de la estrategia de\\nvalidación** de un problema supervisado, antes del feature engineering dependiente\\ndel tiempo y antes del entrenamiento.\\n\\nEl problema que resuelve: la estrategia de validación suele definirse demasiado\\ntarde o elegirse por conveniencia (`train_test_split`, `StratifiedKFold`, `KFold`,\\ncross-validation estándar) sin comprobar primero si representa cómo funcionará el\\nmodelo en producción. Una estrategia incorrecta produce métricas optimistas aunque\\nno exista ningún error visible en el entrenamiento. Ocurre sobre todo cuando hay\\ndatos temporales, múltiples registros de una misma entidad, eventos repetidos,\\ngrupos relacionados, panel data, ventanas de observación, prediction horizons,\\ncambios de distribución, o cuando entrenamiento y scoring ocurren en momentos\\ndistintos. También ocurre cuando la validación es técnicamente válida pero está\\ndesconectada de la decisión real (evaluar globalmente cuando operacionalmente solo\\nimporta el desempeño sobre los primeros K casos priorizados).\\n\\nEl problema no es únicamente elegir entre train/test o cross-validation. Es diseñar\\nuna validación que represente correctamente cómo se genera la información, cuándo\\nse realiza la predicción, sobre qué entidades, para qué horizonte, bajo qué\\nrestricciones y cómo se usará realmente el modelo.\\n\\nPrincipio rector:\\n\\n> La validación debe reproducir lo más fielmente posible la situación real en la\\n> que el modelo generará predicciones: qué información existe, en qué momento,\\n> sobre qué entidades y para qué decisión.\\n\\nLa skill **no ejecuta el split ni entrena modelos**. Produce un diseño: qué\\nestrategia se recomienda, por qué representa mejor el problema, qué alternativas se\\ndescartan y con qué motivo, cómo cons\"\n    },\n    {\n      \"id\": \"leakage-audit\",\n      \"coverage\": \"skill\",\n      \"skill\": \"detect-leakage\",\n      \"status\": \"experimental\",\n      \"version\": \"0.1.0\",\n      \"reason\": \"Propósito y condiciones compatibles con política del catálogo\",\n      \"limits\": \"\\n# Propósito\\n\\nEsta skill proporciona una **auditoría dedicada de data leakage** sobre el\\nproceso completo de construcción de datos y validación de un problema\\nsupervisado.\\n\\nEl problema que resuelve: es posible construir modelos con métricas aparentemente\\nexcelentes utilizando información que, directa o indirectamente, no estaría\\ndisponible en el momento real de realizar la predicción. Ese leakage hace que el\\nmodelo obtenga métricas artificialmente altas, parezca generalizar durante\\nvalidación, seleccione features aparentemente muy predictivas y luego falle en\\nproducción o produzca conclusiones de negocio incorrectas.\\n\\nEl problema no se reduce a identificar columnas \\\"sospechosas\\\". Muchas formas de\\nleakage dependen de comprender cuándo se genera una variable, cuándo ocurre el\\nevento objetivo, cuándo se realiza la predicción, qué información conoce\\nrealmente el sistema en ese momento, cómo se construyeron las features, cómo se\\ndividieron train y test, y cómo se ejecutaron transformaciones, agregaciones y\\njoins. La skill audita el pipeline y la estrategia de validación, no sólo la\\nlista de features.\\n\\nPrincipio rector:\\n\\n> El modelo solamente debería utilizar información que habría estado\\n> legítimamente disponible en el momento real de realizar la predicción.\\n\\nLa skill **no elimina variables** ni decide que un pipeline sea válido. Explica\\ncuál es el posible problema, por qué podría constituir leakage, qué evidencia\\nexiste, qué información falta, cómo podría comprobarse y qué acción sería\\nrecomendable.\\n\\n# Cuándo usar\\n\\nUsar esta skill cuando:\\n\\n- se recibe un nuevo dataset y ya hay un target (o evento objetivo) definido;\\n- existen timestamps y múltiples observaciones por entidad;\\n- se construyen features temporales: lag features, rolling features,\\n  tendencias, acumulados;\\n- se\"\n    },\n    {\n      \"id\": \"feature-design\",\n      \"coverage\": \"partial\",\n      \"artifact\": \"playbook\",\n      \"reason\": \"Preconditions no confirmadas\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"id\": \"operational-selection\",\n      \"coverage\": \"partial\",\n      \"artifact\": \"playbook\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"id\": \"executive-synthesis\",\n      \"coverage\": \"partial\",\n      \"artifact\": \"playbook\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    }\n  ],\n  \"gaps\": [\n    {\n      \"capability\": \"problem-framing\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"fallback\": \"playbook\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"capability\": \"evidence-synthesis\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"fallback\": \"playbook\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"capability\": \"feature-design\",\n      \"reason\": \"Preconditions no confirmadas\",\n      \"fallback\": \"playbook\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"capability\": \"operational-selection\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"fallback\": \"playbook\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"capability\": \"executive-synthesis\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"fallback\": \"playbook\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    }\n  ],\n  \"gate\": \"Obtener evidencia y revisión humana antes de registrar un avance de etapa.\",\n  \"integrity\": \"OK\",\n  \"findings\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Users/davidrodriguez/.local/bin/acos",
+        "validate"
+      ],
+      "returncode": 3,
+      "expected_returncode": 3,
+      "stdout": "{\n  \"status\": \"NEEDS_REVIEW\",\n  \"findings\": [\n    {\n      \"code\": \"human-review\",\n      \"message\": \"Revisión/evidencia pendiente para handoff\",\n      \"paths\": []\n    }\n  ],\n  \"evidence\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python",
+        "analysis/generate_synthetic_data.py",
+        "--output",
+        "replays/generated-data"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\n  \"generator_version\": \"0.1.0\",\n  \"seed\": 20261008,\n  \"synthetic\": true,\n  \"extract_at\": \"2026-01-15\",\n  \"files\": {\n    \"applications.csv\": {\n      \"rows\": 7200,\n      \"sha256\": \"512ed2cc0797ffec199cfa9bd3aad48ea1a5954a1be81bad60ff645b28f052f6\",\n      \"bytes\": 341328\n    },\n    \"history.csv\": {\n      \"rows\": 7200,\n      \"sha256\": \"2a2da6b8dea82df9a4f2b8e066a0439219935f337e2af45970529a6359970ca5\",\n      \"bytes\": 280870\n    },\n    \"decisions.csv\": {\n      \"rows\": 7200,\n      \"sha256\": \"1bac356ab25a8c3a6bcb9a76c8c6230ff9cf48e7085be0be2148d3ae0066ff29\",\n      \"bytes\": 273747\n    },\n    \"outcomes.csv\": {\n      \"rows\": 7200,\n      \"sha256\": \"3cdfdd1ce17e854a40d83dced1f331eee56aca95e7750ec782d2edc747d586f7\",\n      \"bytes\": 393052\n    },\n    \"post_decision.csv\": {\n      \"rows\": 7200,\n      \"sha256\": \"21662662dda0bdcf67f5a0c28060db8acb245d2070dce07913d929038e3812a5\",\n      \"bytes\": 115337\n    }\n  },\n  \"applications\": 7200,\n  \"unique_customers\": 1766,\n  \"label_counts\": {\n    \"not_observed_rejected\": 3726,\n    \"observed\": 3084,\n    \"pending\": 390\n  },\n  \"observed_positives\": 380,\n  \"generator_sha256\": \"63db985307b2c1a9e110599927154471a8a1ff1642438047134bd1a35695442c\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python",
+        "analysis/credit_baseline.py",
+        "--freeze-file",
+        "reports/execution/development-freeze.json",
+        "--output",
+        "replays/development"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\n  \"scope\": \"development; solo concedidas con labels disponibles\",\n  \"training_rows\": 1248,\n  \"validation_rows\": 298,\n  \"reference_probability\": 0.10737179487179487,\n  \"brier_model\": 0.10409171041242656,\n  \"brier_reference\": 0.11693224733485125,\n  \"brier_improvement\": 0.012840536922424692,\n  \"roc_auc_model\": 0.7084302325581395,\n  \"final_metrics_computed\": false,\n  \"last_train_scoring\": \"2024-09-25\",\n  \"latest_train_label_available\": \"2025-01-01\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python",
+        "analysis/credit_final.py",
+        "--freeze-file",
+        "reports/final-validation/final-freeze.json",
+        "--output",
+        "replays/final"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\n  \"scope\": \"Evaluación final sintética; calidad evaluable solo en concedidas maduras\",\n  \"training_rows\": 2140,\n  \"scored_rows\": 900,\n  \"evaluated_rows\": 447,\n  \"unobserved_rejected_rows\": 453,\n  \"pending_rows\": 0,\n  \"reference_probability\": 0.11635514018691588,\n  \"brier_model\": 0.10248743162638262,\n  \"brier_reference\": 0.11653042732257032,\n  \"brier_improvement\": 0.014042995696187707,\n  \"roc_auc_model\": 0.7522825150732128,\n  \"final_metrics_computed\": true,\n  \"last_train_scoring\": \"2025-03-25\",\n  \"latest_train_label_available\": \"2025-07-01\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "comparisons": {
+    "data": {
+      "applications.csv": {
+        "sha256": "512ed2cc0797ffec199cfa9bd3aad48ea1a5954a1be81bad60ff645b28f052f6",
+        "identical": true
+      },
+      "history.csv": {
+        "sha256": "2a2da6b8dea82df9a4f2b8e066a0439219935f337e2af45970529a6359970ca5",
+        "identical": true
+      },
+      "decisions.csv": {
+        "sha256": "1bac356ab25a8c3a6bcb9a76c8c6230ff9cf48e7085be0be2148d3ae0066ff29",
+        "identical": true
+      },
+      "post_decision.csv": {
+        "sha256": "21662662dda0bdcf67f5a0c28060db8acb245d2070dce07913d929038e3812a5",
+        "identical": true
+      },
+      "manifest.json": {
+        "sha256": "36093316ab7176fa0bd4f9315547ef7d5966cfd7f66de621a56be9d2a3aaaba6",
+        "identical": true
+      },
+      "outcomes.csv": {
+        "sha256": "3cdfdd1ce17e854a40d83dced1f331eee56aca95e7750ec782d2edc747d586f7",
+        "identical": true
+      }
+    },
+    "development": {
+      "model.json": {
+        "sha256": "5953b9733f711564b777d9dec6d4fd272b55f43ba945b0ebec247f83f942547f",
+        "identical": true
+      },
+      "results.json": {
+        "sha256": "1f8b85d82a0f0cbbc02e7714e481a3c76890a23ae2158af16a440d518fe537ea",
+        "identical": true
+      },
+      "summary.json": {
+        "sha256": "f072cb583e9f657a76f3c24dae9447f06ac2d6e1a68ccbb2ca2f8619f73c468a",
+        "identical": true
+      },
+      "predictions.json": {
+        "sha256": "b6d51007cf35fb236fae14a1e4302a21afce99701521e2173f183d62c6fbc52f",
+        "identical": true
+      },
+      "reference-predictions.json": {
+        "sha256": "44fd57eced4571440a6a46b9c00ecb97a04a166ee7f38ff792bef06e43460132",
+        "identical": true
+      },
+      "execution-policy.json": {
+        "sha256": "c6190716bc12b9fa2e2ad0ada1c006b649ff19b9158e8f184b5b7b853ac6a31c",
+        "identical": true
+      }
+    },
+    "final": {
+      "model.json": {
+        "sha256": "5e65969197ea144f806ad3bf0fff278b6f28363ffbaacbc8df985e90dfef2c87",
+        "identical": true
+      },
+      "predictions.json": {
+        "sha256": "afa2a5a036ec06f7dc78e3d31625cf3854257efd4427bc25715c5b550a68e10d",
+        "identical": true
+      },
+      "reference-predictions.json": {
+        "sha256": "09781ab4ff59ebaf2d8be96fe9388f7ea4b13b1632728fbf2c0c416ff2ff7b59",
+        "identical": true
+      },
+      "results.json": {
+        "sha256": "2fc52c9d3fbb0ca67769a2b02b7a3282212b6b41c1b01b925653db58c4746f14",
+        "identical": true
+      },
+      "summary.json": {
+        "sha256": "0fcc8f80e6a05eedf6f8b75d48ef7aa0fa072bb086babd0ee07eabcf0e764d08",
+        "identical": true
+      },
+      "evaluation-labels.json": {
+        "sha256": "b7e24517ca4b53aa2602c00d8d208de59247b212db5da1af38fdf35740dc3566",
+        "identical": true
+      },
+      "execution-policy.json": {
+        "sha256": "13d03d735e9eaa3a695a5109aef1777c7d68fffa279995231ad9ca4d693e1cad",
+        "identical": true
+      }
+    }
+  },
+  "metadata_timestamp_original": "2026-10-08T12:12:27.628451+00:00",
+  "metadata_timestamp_replay": "2026-10-08T19:17:08.954968+00:00",
+  "metadata_other_fields_identical": true,
+  "passed": true
+}

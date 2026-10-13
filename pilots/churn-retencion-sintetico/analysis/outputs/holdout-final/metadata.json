@@ -1,0 +1,9 @@
+{
+  "model_sha256": "8f257d69be172e08d76363580ef0296751051825515c7359ce6ce77ed1f0b581",
+  "pending_january_excluded": true,
+  "policy_sha256": "63d826c321117a8468c9bdd57e46f00750daadfa429086b253ac0b37edc507bb",
+  "protocol": "modelo fijo; evaluación final sin refit ni tuning",
+  "runner_sha256": "8d81d405dbd5a266d504728dc6c34c01adbf6fbc7e9734d00f02e64fb48ecc64",
+  "training_rows": 26839,
+  "training_timestamp": "2025-07-01T00:00:00Z"
+}

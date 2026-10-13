@@ -1,0 +1,1 @@
+{"status": "PASS", "selected_method": "historical_sales", "comparisons": ["normalization", "snapshots", "reserved_final_snapshot", "development_predictions", "holdout_predictions", "selected_ranking"], "api_cost_usd": 0}

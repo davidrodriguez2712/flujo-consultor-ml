@@ -1,0 +1,45 @@
+{
+  "selected_method": "mean_previous_4_weeks",
+  "development": {
+    "previous_week": {
+      "weeks": 30,
+      "actual_total": 8670,
+      "WAPE": 0.1839677047289504,
+      "MAE": 53.166666666666664,
+      "bias": -10.5
+    },
+    "mean_previous_4_weeks": {
+      "weeks": 30,
+      "actual_total": 8670,
+      "WAPE": 0.15207612456747405,
+      "MAE": 43.95,
+      "bias": -11.8
+    }
+  },
+  "final": {
+    "weeks": 18,
+    "actual_total": 7439,
+    "WAPE": 0.13146928350584755,
+    "MAE": 54.333333333333336,
+    "bias": -37.916666666666664
+  },
+  "last_complete_final": {
+    "cutoff": "2011-11-28",
+    "week_end_exclusive": "2011-12-05",
+    "method": "mean_previous_4_weeks",
+    "actual": 608,
+    "prediction": 556.5
+  },
+  "audit": {
+    "raw_rows": 1067371,
+    "qualifying_item_rows": 958501,
+    "min_date": "2009-12-01",
+    "max_date": "2011-12-09",
+    "first_partial_week": "2009-11-30",
+    "last_partial_week": "2011-12-05",
+    "complete_calendar_weeks": 104,
+    "qualifying_invoice_ids_multiple_weeks": 0,
+    "zero_order_weeks": 2,
+    "completeness_assumption": "Cobertura del calendario interior; no se verificó completitud operativa externa."
+  }
+}

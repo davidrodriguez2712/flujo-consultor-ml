@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "verified_at_utc": "2026-10-09T21:28:43.309148+00:00",
+  "immutable_packages": [
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/evidence-manifest-01.json",
+      "files_checked": 48,
+      "sha256": "90544d163b168930e86373699ede98b7f099b54d1b7d7d5ea9487d1c50362e19",
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/execution-config-01/execution-manifest-01.json",
+      "files_checked": 12,
+      "sha256": "2e8dc56a6c95c15e61189fd59a8b944316b3dc8d88d275ce531e28c8775a85d4",
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/execution-config-02/execution-manifest-02.json",
+      "files_checked": 10,
+      "sha256": "c844052205a518f94c5c4bbd02520749385f752be73abee59ef97a66791c2a41",
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/runs/round-01/run-manifest-01.json",
+      "files_checked": 15,
+      "sha256": "7cbc09d54baea334f4d712edbd1502089aebeaea1c33e72a85ca407d98ad10b4",
+      "status": "PASS"
+    },
+    {
+      "manifest": "pilots/retail-capacidad-semanal-publico/reports/package/evidence-manifest-01.json",
+      "files_checked": 70,
+      "sha256": "fdf2945c8935a3511a0766c3527fc9216609021ffa45eb5891f5c574c732e647",
+      "status": "PASS"
+    }
+  ],
+  "this_round_provider_requests": 13,
+  "this_round_end_turns": 13,
+  "this_round_rejections": 0,
+  "this_round_runtime_successes": 13,
+  "completed_benchmark_pairs": 6,
+  "cumulative_api_cost_usd": 0.02065453,
+  "budget_limit_usd": 0.2,
+  "cost_usage_complete": true,
+  "exact_secret_value_absent_from_evaluation_files": true,
+  "raw_outputs_preserved": true,
+  "semantic_review": "REVIEWED_LOCAL_NONINDEPENDENT",
+  "efficacy_general": "NOT_ESTABLISHED"
+}

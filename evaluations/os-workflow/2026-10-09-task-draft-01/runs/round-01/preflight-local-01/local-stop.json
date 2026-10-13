@@ -1,0 +1,7 @@
+{
+  "status": "STOPPED_BEFORE_PROVIDER",
+  "reason": "Sandbox impide bind del proxy HTTP en localhost; requiere ejecución escalada para proxy local y proveedor autorizado.",
+  "provider_requests": 0,
+  "api_cost_usd": 0,
+  "provider_retry": false
+}

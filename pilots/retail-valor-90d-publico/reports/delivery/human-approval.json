@@ -1,0 +1,9 @@
+{
+  "stage": "delivery",
+  "decision": "PASS",
+  "reviewer": "David",
+  "authorization": "Mensaje explícito «apruebo delivery».",
+  "recorded_at_utc": "2026-10-09T13:12:37.547664+00:00",
+  "delivery_manifest_sha256": "778daab8691368fa976b47536148626c172443c8c32847aafe851b2c8469aef9",
+  "scope": "Cerrar Delivery y ejecutar reproducción/Handoff; gate Handoff y cierre final pendientes."
+}

@@ -1,0 +1,31 @@
+{
+  "rows": [
+    {
+      "id": "D1",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "Mora de 30 d\u00edas el 25 de junio, dentro de la ventana [2025-06-01, 2025-07-01). Es irreversible y el supervisor la certific\u00f3 el 28 de junio. Se public\u00f3 en el almac\u00e9n el 2025-07-18T06:00Z, antes de la extracci\u00f3n del 2025-08-15, as\u00ed que en extracci\u00f3n es positivo certificado y target=1. El entrenamiento fue el 2025-07-15T00:00Z, y la regla exige el valor publicado en el almac\u00e9n. La firma del 28 de junio no basta. La publicaci\u00f3n es posterior al entrenamiento (18 de julio > 15 de julio), as\u00ed que el label no estaba disponible (unavailable). Se excluye aunque las features s\u00ed estaban disponibles (2025-05-31T18:00Z <= 2025-06-01T00:00Z) y la poblaci\u00f3n es v\u00e1lida."
+    },
+    {
+      "id": "D2",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "Mora de 30 d\u00edas el 22 de junio, dentro de la ventana. Es irreversible y se certific\u00f3 y public\u00f3 el 2025-06-24T06:00Z. En extracci\u00f3n es positivo certificado y target=1. La publicaci\u00f3n es anterior al entrenamiento del 2025-07-15T00:00Z, as\u00ed que el label estaba disponible. Las features estaban disponibles el 2025-05-31T18:00Z, antes de la predicci\u00f3n del 2025-06-01T00:00Z. La poblaci\u00f3n es v\u00e1lida. Se cumplen todas las condiciones, por lo que es elegible. El evento temprano es positivo definitivo porque el diccionario declara la mora irreversible aunque se pague despu\u00e9s."
+    },
+    {
+      "id": "D3",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "No hubo mora en toda la ventana. El acta final negativa se firm\u00f3 el 2 de julio y se public\u00f3 el 2025-07-09T06:00Z. En extracci\u00f3n (2025-08-15) el negativo est\u00e1 certificado y publicado, as\u00ed que es observed_negative con target=0. La publicaci\u00f3n es anterior al entrenamiento del 2025-07-15T00:00Z, as\u00ed que el label estaba disponible. Las features estaban disponibles el 2025-05-31T18:00Z, antes de la predicci\u00f3n del 2025-06-01T00:00Z. La poblaci\u00f3n es v\u00e1lida. Se cumplen todas las condiciones, por lo que es elegible."
+    }
+  ],
+  "open_questions": [
+    "Sin preguntas bloqueantes: los tres expedientes traen fechas de publicaci\u00f3n expl\u00edcitas y no hay diferencias en predicci\u00f3n ni en features. La decisi\u00f3n final del gate queda para revisi\u00f3n humana.",
+    "Para confirmar con el equipo: la hora de publicaci\u00f3n 06:00 est\u00e1 en UTC, como indica el encabezado del documento. Si no lo estuviera, el resultado de D1 no cambiar\u00eda (18 de julio sigue siendo posterior al 15 de julio).",
+    "Para confirmar con el equipo: excluir D1 deja el conjunto con un positivo y un negativo elegibles. El volumen y la prevalencia resultantes son peque\u00f1os y conviene revisarlos en el conjunto completo."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

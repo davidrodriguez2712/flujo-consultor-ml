@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "version": "0.2.0",
+  "scope": "Estado de cierre aprobado; conserva el manifest previo sin sobrescribirlo.",
+  "files": {
+    ".acos/state.yaml": {
+      "sha256": "1e17455b4091cc677457e7deb36d384141aa6fa8a90c5cdde80eb1c216317177",
+      "bytes": 5881
+    },
+    "STATE.md": {
+      "sha256": "358757db7360b85e09394a215cff296b3dd56f2a7e60284a3e41359a72133f2a",
+      "bytes": 559
+    },
+    "TASKS.md": {
+      "sha256": "359641bb6cc62d597acbc9dc25f8b47d962f9159a410dd2975e05b5a72cd1bcf",
+      "bytes": 614
+    },
+    "MANUAL.md": {
+      "sha256": "8457d26aa1fe6f0b016bee0abcc879b33477da7f0787a94193f8971e2954d316",
+      "bytes": 3868
+    },
+    "README.md": {
+      "sha256": "5bf3b98bb3872516ce644ae90665b9f939af8a0b27c37cc92f289f1ec5e07a2e",
+      "bytes": 1168
+    },
+    "DECISIONS.md": {
+      "sha256": "488db2474f11f3c85c6b5e0a30a54df133e19198c4ec2f4eb18462638f79d837",
+      "bytes": 7195
+    },
+    "evidence/approvals/2026-10-08-handoff.md": {
+      "sha256": "c3f9981a20b0cd39e4dca93c82f48295893e1b348c67804d881212ce1ddad824",
+      "bytes": 859
+    },
+    "handoff/closure.md": {
+      "sha256": "3cc37d37f2248cfd82c20a81e5d0e7e679c6f55e0ca9f03ce7946e663250f64a",
+      "bytes": 1377
+    },
+    "handoff/handoff-manifest.json": {
+      "sha256": "4856d6fb97130ec16c73558a819ab7a54c42c12538666f61aec449d12259242b",
+      "bytes": 2363
+    },
+    "reports/handoff/closure-verification.json": {
+      "sha256": "8d436e9991b535dd8ac8cd8dc2f2b8768e3ed77fe9d9c3518e3243795de571df",
+      "bytes": 10983
+    },
+    "reports/handoff/closed-acos-status.json": {
+      "sha256": "8f15ab591ce56298e3a75c41742b466149226bf90273ff45c689332119259075",
+      "bytes": 364
+    },
+    "reports/handoff/closed-acos-next.json": {
+      "sha256": "71d85c92d5e6879b28dfe51be39c7d25bc086b486c791453f442399acc56bbf2",
+      "bytes": 9286
+    },
+    "reports/handoff/closed-acos-validate.json": {
+      "sha256": "5ed99a9877054e131c69843dbeb663c026dd72b39ffb64d7a22bbd035a7ddbfb",
+      "bytes": 325
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "scope": "Evaluación final sintética; calidad evaluable solo en concedidas maduras",
+  "training_rows": 2140,
+  "scored_rows": 900,
+  "evaluated_rows": 447,
+  "unobserved_rejected_rows": 453,
+  "pending_rows": 0,
+  "reference_probability": 0.11635514018691588,
+  "brier_model": 0.10248743162638262,
+  "brier_reference": 0.11653042732257032,
+  "brier_improvement": 0.014042995696187707,
+  "roc_auc_model": 0.7522825150732128,
+  "final_metrics_computed": true,
+  "last_train_scoring": "2025-03-25",
+  "latest_train_label_available": "2025-07-01"
+}

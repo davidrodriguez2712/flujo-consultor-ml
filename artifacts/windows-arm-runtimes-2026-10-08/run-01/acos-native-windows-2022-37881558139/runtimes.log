@@ -1,0 +1,94 @@
+Traceback (most recent call last):
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\shutil.py", line 853, in move
+    os.rename(src, real_dst)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos runtime probe hh30vx0r\\project\\probe' -> 'C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos runtime probe hh30vx0r\\project\\moved project'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\a\agentic-consulting-os\agentic-consulting-os\scripts\ci\windows_runtime_probe.py", line 109, in main
+    moved = workspace / 'moved project';shutil.move(project, moved)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\shutil.py", line 871, in move
+    rmtree(src)
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\shutil.py", line 787, in rmtree
+    return _rmtree_unsafe(path, onerror)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\shutil.py", line 638, in _rmtree_unsafe
+    onerror(os.rmdir, path, sys.exc_info())
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\shutil.py", line 636, in _rmtree_unsafe
+    os.rmdir(path)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos runtime probe hh30vx0r\\project\\probe'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\shutil.py", line 636, in _rmtree_unsafe
+    os.rmdir(path)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos runtime probe hh30vx0r\\project\\probe'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\tempfile.py", line 893, in onerror
+    _os.unlink(path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos runtime probe hh30vx0r\\project\\probe'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\shutil.py", line 636, in _rmtree_unsafe
+    os.rmdir(path)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos runtime probe hh30vx0r\\project\\probe'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\tempfile.py", line 893, in onerror
+    _os.unlink(path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos runtime probe hh30vx0r\\project\\probe'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\a\agentic-consulting-os\agentic-consulting-os\scripts\ci\windows_runtime_probe.py", line 118, in <module>
+    if __name__ == '__main__': main()
+                               ^^^^^^
+  File "D:\a\agentic-consulting-os\agentic-consulting-os\scripts\ci\windows_runtime_probe.py", line 90, in main
+    with tempfile.TemporaryDirectory(prefix='acos runtime probe ') as temp:
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\tempfile.py", line 943, in __exit__
+    self.cleanup()
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\tempfile.py", line 947, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\shutil.py", line 787, in rmtree
+    return _rmtree_unsafe(path, onerror)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\shutil.py", line 629, in _rmtree_unsafe
+    _rmtree_unsafe(fullname, onerror)
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\shutil.py", line 629, in _rmtree_unsafe
+    _rmtree_unsafe(fullname, onerror)
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\shutil.py", line 638, in _rmtree_unsafe
+    onerror(os.rmdir, path, sys.exc_info())
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\tempfile.py", line 919, in onerror
+    cls._rmtree(path, ignore_errors=ignore_errors,
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\shutil.py", line 787, in rmtree
+    return _rmtree_unsafe(path, onerror)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\shutil.py", line 638, in _rmtree_unsafe
+    onerror(os.rmdir, path, sys.exc_info())
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\tempfile.py", line 919, in onerror
+    cls._rmtree(path, ignore_errors=ignore_errors,
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\shutil.py", line 787, in rmtree
+    return _rmtree_unsafe(path, onerror)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\shutil.py", line 638, in _rmtree_unsafe
+    onerror(os.rmdir, path, sys.exc_info())
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\shutil.py", line 636, in _rmtree_unsafe
+    os.rmdir(path)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos runtime probe hh30vx0r\\project\\probe'

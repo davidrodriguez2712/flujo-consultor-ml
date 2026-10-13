@@ -1,0 +1,37 @@
+{
+  "status": "READY",
+  "findings": [
+    {
+      "statement": "Entre las filas de Norte con metric on_time_share y complete=true, el máximo week_start es 2025-10-20, por lo que la última semana completa según la definición del contexto es [2025-10-20, 2025-10-27).",
+      "evidence_paths": ["analysis/weekly.json"]
+    },
+    {
+      "statement": "La fila de Norte con week_start 2025-11-03 tiene complete=false (49 de 50) y queda excluida por la definición; no altera la selección de la semana.",
+      "evidence_paths": ["analysis/weekly.json"]
+    },
+    {
+      "statement": "La fila seleccionada registra on_time=92 y deliveries=100, lo que da una fracción de 0.92, equivalente a 92% al presentarla como porcentaje según la unidad declarada.",
+      "evidence_paths": ["analysis/weekly.json"]
+    },
+    {
+      "statement": "El texto del borrador afirma que en Norte la última semana completa [2025-10-20,2025-10-27) registró 92% de entregas puntuales (92 de 100). Período, porcentaje, numerador y denominador coinciden con el artifact.",
+      "evidence_paths": ["delivery/draft.md", "analysis/weekly.json"]
+    },
+    {
+      "statement": "La fila de Norte de la semana 2025-10-06 (90 de 100, complete=true) es anterior y no debe usarse en la recomendación; el borrador no la menciona.",
+      "evidence_paths": ["analysis/weekly.json", "delivery/draft.md"]
+    }
+  ],
+  "proposed_actions": [
+    "Mantener el texto del borrador tal como está, porque es consistente con la tabla de soporte y con la definición del contexto.",
+    "Si se reutiliza el texto, conservar explícitos el intervalo semanal [2025-10-20, 2025-10-27), el numerador (92) y el denominador (100) para que la cifra sea trazable.",
+    "Antes de cualquier distribución, obtener la aceptación del owner de la métrica y del integrador del engagement, sin tratar esta revisión como aprobación."
+  ],
+  "next_step": "Presentar el borrador y la tabla de soporte al integrador del engagement para su revisión y aceptación humana antes de cualquier publicación o compartición.",
+  "limitations": [
+    "La revisión se limita al contenido del expediente proporcionado; no se verificó la fuente de datos original ni el cálculo que produjo analysis/weekly.json.",
+    "No se verificó que on_time y deliveries sean los conteos correctos según la definición operativa de entrega puntual, más allá de su consistencia interna.",
+    "Esta revisión no constituye aprobación de gate, aceptación del owner ni autorización de publicación o distribución.",
+    "Solo se evalúa la recomendación de Norte; no se revisan otras poblaciones ni causas de la puntualidad."
+  ]
+}

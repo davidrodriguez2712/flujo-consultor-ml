@@ -1,0 +1,15 @@
+{
+  "recorded_at": "2026-10-08T10:53:17.043995+00:00",
+  "selection_tests": 13,
+  "local_suite": 125,
+  "full_suite": 151,
+  "commands": [
+    ".venv/bin/pytest tests/test_selection_evaluation.py -q",
+    ".venv/bin/pytest -q",
+    ".venv/bin/pytest tests pilots/churn-retencion-sintetico/analysis/test_baseline.py pilots/churn-retencion-sintetico/analysis/test_holdout.py evaluations/delayed-outcomes/2026-10-07-contract-probe-02/checker/test_checker.py evaluations/delayed-outcomes/2026-10-07-contract-probe-02/runner/test_runner.py -q"
+  ],
+  "calls": 24,
+  "code_review": "separate_agent_complete",
+  "semantic_review": "author_and_separate_agent_complete_not_blind",
+  "human_review": "pending"
+}

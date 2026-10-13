@@ -1,0 +1,40 @@
+{
+  "output_type": "risk_ranking",
+  "selection_status": "determined",
+  "eligible_count": 2,
+  "capacity_k": 3,
+  "effective_k": 2,
+  "selected_ids": [
+    "Y",
+    "Z"
+  ],
+  "risk_ranking_ids": [
+    "Y",
+    "Z"
+  ],
+  "total_cost": 4,
+  "expected_net_value": null,
+  "feasibility": "feasible",
+  "optimality": "not_assessed",
+  "causal_identification": {
+    "status": "not_requested",
+    "estimand": null,
+    "reason": "Se pide solo priorizar revisiones por riesgo; no se solicita estimar el efecto de intervenir. El ranking es descriptivo y no implica efecto causal."
+  },
+  "metrics": {
+    "population_id": "eligible-A",
+    "precision": 0.5,
+    "recall": 1,
+    "lift": 1,
+    "precision_status": "identified",
+    "recall_status": "identified",
+    "lift_status": "identified",
+    "reason": "Poblaci\u00f3n eligible-A = {Y, Z} (X y V excluidos por no ser elegibles; sus labels no cuentan). Labels completos: Z=1, Y=0, por lo que hay 1 positivo y la prevalencia es 1/2 = 0,5. Seleccionados = {Y, Z}: precision = 1/2 = 0,5; recall = 1/1 = 1; lift = 0,5/0,5 = 1. Con todos los elegibles seleccionados, el lift es 1 por construcci\u00f3n: la selecci\u00f3n no enriquece frente a la poblaci\u00f3n."
+  },
+  "reason": "Primero se filtr\u00f3 la elegibilidad: solo Z e Y son elegibles (eligible_count=2). X (0,99) y V (0,7) quedan fuera aunque tengan scores altos. La capacidad K=3 es un m\u00e1ximo, no una obligaci\u00f3n de llenado, as\u00ed que effective_k = min(3,2) = 2. Z e Y empatan con score 0,8; por la regla preespecificada de ID ascendente el orden es Y, Z, y se conserva as\u00ed sin reordenar despu\u00e9s. Coste total = 2 revisiones \u00d7 2 = 4. No hay presupuesto ni objetivo monetario, por lo que no hay expected_net_value ni optimalidad que evaluar (output_type=risk_ranking, optimality=not_assessed). La factibilidad es v\u00e1lida porque 2 <= 3 y no hay otra restricci\u00f3n. Este resultado no autoriza ejecutar revisiones; gate_decision=NEEDS_REVIEW queda sujeto a aprobaci\u00f3n humana.",
+  "open_questions": [
+    "\u00bfSe confirma que 2 revisiones, con capacidad 3 sin llenar, es aceptable, o se quiere reponer cupo con casos no elegibles? Esto no se asume porque la elegibilidad por cooldown ya est\u00e1 confirmada.",
+    "Las m\u00e9tricas se calculan con solo 2 elegibles y 1 positivo, as\u00ed que son muy poco informativas y no tienen incertidumbre estimable. \u00bfSe necesita una evaluaci\u00f3n con m\u00e1s lotes?"
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

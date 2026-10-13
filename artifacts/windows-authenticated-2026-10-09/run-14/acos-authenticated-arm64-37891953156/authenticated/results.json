@@ -1,0 +1,394 @@
+{
+  "platform": "Windows-11-10.0.26200-SP0",
+  "architecture": "arm64",
+  "requested_runtimes": [
+    "claude"
+  ],
+  "scope": "Skill real + continuemos en sesión nueva; solo lectura; sin eficacia ni resume persistido",
+  "skill_sha256": "70883c3b75b07334fc95bad1b5c6749fd7b5e623b648f6b48fb6c14b2d32b8f9",
+  "skill_status": "experimental",
+  "runtime_budget_usd": 0.2,
+  "passed": true,
+  "runtimes": [
+    {
+      "runtime": "claude",
+      "model": "claude-haiku-4-5-20251001",
+      "passed": true,
+      "runs": [
+        {
+          "checks": {
+            "canonical_objective": true,
+            "blocked_state": true,
+            "label_availability": true,
+            "native_skill_trace": true,
+            "validation_advice": true
+          },
+          "passed": true,
+          "reply": "Leo primero las instrucciones del proyecto.\nCargando skill de validación de estrategia.\n## Estado Canónico Leído\n\n**Objetivo:** `CHURN-WIN-0265ac3e33: auditar split temporal y leakage antes de recomendar retención`\n\n**Etapa:** `validation`  \n**Status:** `BLOCKED`  \n**Bloqueador:** Falta confirmar la fecha de disponibilidad de las labels.\n\n---\n\n## Aplicación de Precondiciones\n\n✗ **Precondition 1** (Target): No hay target ni evento objetivo explícito en metadata.  \n✗ **Precondition 2** (Artefactos): El fixture contiene solo templates y state YAML; no hay dataset, código de validación ni descripción estructural del problema.  \n✗ **Precondition 3** (Políticas): No se especifican restricciones de procesamiento.\n\n---\n\n## Checklist Breve de Validación Temporal\n\n| Aspecto | Estado |\n|---------|--------|\n| Prediction timestamp | **No determinable** — falta especificación de cuándo decide el modelo |\n| Label delay | **No determinable** — bloqueador declarado |\n| Estructura (entity, fecha, target) | No presente en metadata |\n| Escenario de producción | No descrito |\n| Viabilidad del split temporal | Pendiente de resolver bloqueador |\n\n---\n\n## Conclusión\n\n**No es posible diseñar la estrategia.** El fixture carece de los inputs obligatorios (estructura del problema, descripción operacional o código a auditar). El bloqueador existente —fecha de disponibilidad de labels— es crítico y debe resolverse antes. \n\nEsta prueba **verifica que la skill rechaza inputs insuficientes sin inventar semántica de negocio**, cumpliendo las reglas: \"No determinable\" en puntos faltantes, sin ejecución ni persistencia, respuesta solo-lectura.",
+          "tools": [
+            {
+              "tool": "Read",
+              "input": {
+                "file_path": "C:\\a\\agentic-consulting-os\\agentic-consulting-os\\acos-probe-4fd9e8647efd48f88fd968da4d3a195e\\churn-probe\\AGENTS.md"
+              },
+              "id": "toolu_01MDPpZuhFNJZbNBAaUm83eu"
+            },
+            {
+              "tool": "Read",
+              "input": {
+                "file_path": "C:\\a\\agentic-consulting-os\\agentic-consulting-os\\acos-probe-4fd9e8647efd48f88fd968da4d3a195e\\churn-probe\\.acos\\state.yaml"
+              },
+              "id": "toolu_0121BQdw7XUhRJg9aRDRFwS1"
+            },
+            {
+              "tool": "Skill",
+              "input": {
+                "skill": "design-validation"
+              },
+              "id": "toolu_01BBPFza4hXcebcXMEj28VPY"
+            }
+          ],
+          "test": "guided",
+          "exit_code": 0,
+          "workspace_unchanged": true
+        },
+        {
+          "checks": {
+            "canonical_objective": true,
+            "blocked_state": true,
+            "label_availability": true,
+            "native_skill_trace": null,
+            "validation_advice": null
+          },
+          "passed": true,
+          "reply": "Leí la instrucción en CLAUDE.md. Necesito revisar @AGENTS.md para entender cómo continuar. Déjame leer ese archivo.\nEntendido. Seguiré el orden especificado. Voy a leer los archivos en la secuencia indicada: project-profile.yaml, state.yaml, modules.yaml, PROJECT.md, MANUAL.md y CAPABILITIES.md.\nAhora leo PROJECT.md, MANUAL.md y CAPABILITIES.md:\nTengo claridad sobre la situación. El proyecto está **BLOQUEADO** en etapa validation. El objetivo actual es auditar split temporal y leakage, pero falta confirmar la fecha de disponibilidad de las labels.\n\nVoy a revisar los archivos de evidencia y análisis existentes para entender qué se ha hecho y qué falta:\nExcelente. Leo el estado actual y lo que se necesita:\nVeo que el work está en una etapa inicial. Revisaré la información de contexto de negocio y las decisiones registradas:\nAhora revisolos datos disponibles y la estructura del proyecto. Busco si hay datos cargados o scripts de análisis:\n## Resumen de la situación\n\n**Estado actual:**\n- **Etapa**: validation\n- **Objetivo**: CHURN-WIN-0265ac3e33 — auditar split temporal y leakage antes de recomendar retención\n- **Status**: BLOCKED — Falta confirmar la fecha de disponibilidad de las labels\n- **Problema clave**: Sin evidencia explícita sobre cuándo están disponibles los labels para entrenar y validar\n\n**Lo que está definido:**\n- Decisión: Priorizar retención mensual\n- Métrica de éxito: Margen esperado\n- Archetipo: PREDICT + PRIORITIZE_SELECT\n- Datos: panel temporal (no hay archivos cargados aún)\n\n**Lo que falta antes de proceder:**\n1. **Confirmar la fecha de disponibilidad de labels** — esto determina si podemos usar temporal split, walk-forward, etc.\n2. Documentar supuestos sobre observation window, prediction horizon y label delay\n3. Auditar leakage potencial en el split elegido\n4. Producir `analysis/selection_plan.md` con la estrategia de validación\n\n**Mi recomendación:**\n\nPara desbloquear la etapa de validation, necesito:\n1. **Datos de ejemplo o especificación** del dataset (¿cuántas observaciones, qué features, rango de fechas?)\n2. **Confirmación explícita**: ¿Cuándo están disponibles los labels en el escenario real? (mismo día, fin de mes, N días después?)\n3. **Contexto de scoring**: ¿Con qué frecuencia se ejecuta el modelo en producción? (diario, mensual, etc.)\n\n¿Tienes estos detalles disponibles o acceso a la fuente de datos para determinar la fecha de etiquetado?",
+          "tools": [
+            {
+              "tool": "Read",
+              "input": {
+                "file_path": "C:\\a\\agentic-consulting-os\\agentic-consulting-os\\acos-probe-4fd9e8647efd48f88fd968da4d3a195e\\churn-probe\\AGENTS.md"
+              },
+              "id": "toolu_01GAk46fc5NrjotKG6CszCpX"
+            },
+            {
+              "tool": "Read",
+              "input": {
+                "file_path": "C:\\a\\agentic-consulting-os\\agentic-consulting-os\\acos-probe-4fd9e8647efd48f88fd968da4d3a195e\\churn-probe\\.acos\\project-profile.yaml"
+              },
+              "id": "toolu_01JcrUGXqNoQNLjtcPv86nJJ"
+            },
+            {
+              "tool": "Read",
+              "input": {
+                "file_path": "C:\\a\\agentic-consulting-os\\agentic-consulting-os\\acos-probe-4fd9e8647efd48f88fd968da4d3a195e\\churn-probe\\.acos\\state.yaml"
+              },
+              "id": "toolu_013a61DszAb967rHtAKpMCvr"
+            },
+            {
+              "tool": "Read",
+              "input": {
+                "file_path": "C:\\a\\agentic-consulting-os\\agentic-consulting-os\\acos-probe-4fd9e8647efd48f88fd968da4d3a195e\\churn-probe\\.acos\\modules.yaml"
+              },
+              "id": "toolu_012sw32TAaCEWNUKEWGydk6M"
+            },
+            {
+              "tool": "Read",
+              "input": {
+                "file_path": "C:\\a\\agentic-consulting-os\\agentic-consulting-os\\acos-probe-4fd9e8647efd48f88fd968da4d3a195e\\churn-probe\\PROJECT.md"
+              },
+              "id": "toolu_01QnSefRWRWgU1KjZhPquLZY"
+            },
+            {
+              "tool": "Read",
+              "input": {
+                "file_path": "C:\\a\\agentic-consulting-os\\agentic-consulting-os\\acos-probe-4fd9e8647efd48f88fd968da4d3a195e\\churn-probe\\MANUAL.md"
+              },
+              "id": "toolu_01LeKRu1pm2iDMd3t37rhgzG"
+            },
+            {
+              "tool": "Read",
+              "input": {
+                "file_path": "C:\\a\\agentic-consulting-os\\agentic-consulting-os\\acos-probe-4fd9e8647efd48f88fd968da4d3a195e\\churn-probe\\CAPABILITIES.md"
+              },
+              "id": "toolu_01XccyyfYuoHbhZynYot2X58"
+            },
+            {
+              "tool": "Glob",
+              "input": {
+                "pattern": "**/*.md",
+                "path": "C:\\a\\agentic-consulting-os\\agentic-consulting-os\\acos-probe-4fd9e8647efd48f88fd968da4d3a195e\\churn-probe"
+              },
+              "id": "toolu_01NS81xq5ji2Zdb46jbgQ3DS"
+            },
+            {
+              "tool": "Read",
+              "input": {
+                "file_path": "C:\\a\\agentic-consulting-os\\agentic-consulting-os\\acos-probe-4fd9e8647efd48f88fd968da4d3a195e\\churn-probe\\TASKS.md"
+              },
+              "id": "toolu_01GDEgkrHmNJsiw1WaRjQqcA"
+            },
+            {
+              "tool": "Read",
+              "input": {
+                "file_path": "C:\\a\\agentic-consulting-os\\agentic-consulting-os\\acos-probe-4fd9e8647efd48f88fd968da4d3a195e\\churn-probe\\analysis\\selection_plan.md"
+              },
+              "id": "toolu_01MEu3FLWnjyWAX7WxYUPdz2"
+            },
+            {
+              "tool": "Read",
+              "input": {
+                "file_path": "C:\\a\\agentic-consulting-os\\agentic-consulting-os\\acos-probe-4fd9e8647efd48f88fd968da4d3a195e\\churn-probe\\evidence\\findings.md"
+              },
+              "id": "toolu_01NvhaRfZgq5pvdn89dFTovN"
+            },
+            {
+              "tool": "Read",
+              "input": {
+                "file_path": "C:\\a\\agentic-consulting-os\\agentic-consulting-os\\acos-probe-4fd9e8647efd48f88fd968da4d3a195e\\churn-probe\\context\\business_context.md"
+              },
+              "id": "toolu_01GBfw2HyWzpUxYYk6hpyyqS"
+            },
+            {
+              "tool": "Read",
+              "input": {
+                "file_path": "C:\\a\\agentic-consulting-os\\agentic-consulting-os\\acos-probe-4fd9e8647efd48f88fd968da4d3a195e\\churn-probe\\DECISIONS.md"
+              },
+              "id": "toolu_01VVDSkDn8F3EPz7G92QKmf1"
+            },
+            {
+              "tool": "Glob",
+              "input": {
+                "pattern": "**/*.py",
+                "path": "C:\\a\\agentic-consulting-os\\agentic-consulting-os\\acos-probe-4fd9e8647efd48f88fd968da4d3a195e\\churn-probe"
+              },
+              "id": "toolu_0175mQh2pfqCeiSkWiwuCRWb"
+            },
+            {
+              "tool": "Glob",
+              "input": {
+                "pattern": "**/*.csv",
+                "path": "C:\\a\\agentic-consulting-os\\agentic-consulting-os\\acos-probe-4fd9e8647efd48f88fd968da4d3a195e\\churn-probe"
+              },
+              "id": "toolu_01CHLxGZcok1s2b5JfVRgWdC"
+            },
+            {
+              "tool": "Glob",
+              "input": {
+                "pattern": "**/data/*",
+                "path": "C:\\a\\agentic-consulting-os\\agentic-consulting-os\\acos-probe-4fd9e8647efd48f88fd968da4d3a195e\\churn-probe"
+              },
+              "id": "toolu_014kojow6hNRaP2NsBYgt1m4"
+            }
+          ],
+          "test": "continuity",
+          "exit_code": 0,
+          "workspace_unchanged": true
+        }
+      ],
+      "requests": [
+        {
+          "reserved_usd": 0.085465,
+          "committed_usd": 0.01578425,
+          "estimated_usd": 0.01578425,
+          "usage": {
+            "input_tokens": 3,
+            "cache_creation_input_tokens": 11785,
+            "cache_read_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 11785,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 210,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "http_status": 200
+        },
+        {
+          "reserved_usd": 0.0896425,
+          "committed_usd": 0.00286175,
+          "estimated_usd": 0.00286175,
+          "usage": {
+            "input_tokens": 7,
+            "cache_creation_input_tokens": 1069,
+            "cache_read_input_tokens": 11785,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 1069,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 68,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "http_status": 200
+        },
+        {
+          "reserved_usd": 0.12351875,
+          "committed_usd": 0.01315615,
+          "estimated_usd": 0.01315615,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 7655,
+            "cache_read_input_tokens": 12854,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 7655,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 460,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "http_status": 200
+        },
+        {
+          "reserved_usd": 0.08459625,
+          "committed_usd": 0.00524625,
+          "estimated_usd": 0.00524625,
+          "usage": {
+            "input_tokens": 3,
+            "cache_creation_input_tokens": 2903,
+            "cache_read_input_tokens": 8695,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 2903,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 149,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "http_status": 200
+        },
+        {
+          "reserved_usd": 0.08804875,
+          "committed_usd": 0.0040048,
+          "estimated_usd": 0.0040048,
+          "usage": {
+            "input_tokens": 5,
+            "cache_creation_input_tokens": 848,
+            "cache_read_input_tokens": 11598,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 848,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 356,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "http_status": 200
+        },
+        {
+          "reserved_usd": 0.09527875,
+          "committed_usd": 0.0051616000000000006,
+          "estimated_usd": 0.0051616000000000006,
+          "usage": {
+            "input_tokens": 7,
+            "cache_creation_input_tokens": 1908,
+            "cache_read_input_tokens": 12446,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 1908,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 305,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "http_status": 200
+        },
+        {
+          "reserved_usd": 0.100975,
+          "committed_usd": 0.004349899999999999,
+          "estimated_usd": 0.004349899999999999,
+          "usage": {
+            "input_tokens": 7,
+            "cache_creation_input_tokens": 1502,
+            "cache_read_input_tokens": 14354,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 1502,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 206,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "http_status": 200
+        },
+        {
+          "reserved_usd": 0.10285375,
+          "committed_usd": 0.0037006000000000005,
+          "estimated_usd": 0.0037006000000000005,
+          "usage": {
+            "input_tokens": 5,
+            "cache_creation_input_tokens": 456,
+            "cache_read_input_tokens": 15856,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 456,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 308,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "http_status": 200
+        },
+        {
+          "reserved_usd": 0.10525,
+          "committed_usd": 0.0036557,
+          "estimated_usd": 0.0036557,
+          "usage": {
+            "input_tokens": 7,
+            "cache_creation_input_tokens": 678,
+            "cache_read_input_tokens": 16312,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 678,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 234,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "http_status": 200
+        },
+        {
+          "reserved_usd": 0.10726625,
+          "committed_usd": 0.00417225,
+          "estimated_usd": 0.00417225,
+          "usage": {
+            "input_tokens": 7,
+            "cache_creation_input_tokens": 541,
+            "cache_read_input_tokens": 16990,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 541,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 358,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "http_status": 200
+        },
+        {
+          "reserved_usd": 0.10902125,
+          "committed_usd": 0.00464885,
+          "estimated_usd": 0.00464885,
+          "usage": {
+            "input_tokens": 7,
+            "cache_creation_input_tokens": 515,
+            "cache_read_input_tokens": 17531,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 515,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 449,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "http_status": 200
+        }
+      ],
+      "committed_usd": 0.0667421,
+      "estimated_usd": 0.0667421,
+      "unmeasured_requests": 0,
+      "rejections": []
+    }
+  ]
+}

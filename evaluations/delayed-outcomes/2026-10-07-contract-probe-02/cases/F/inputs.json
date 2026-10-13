@@ -1,0 +1,29 @@
+{
+  "industry": "Crédito sintético",
+  "extraction_timestamp": "2025-10-02T12:00:00Z",
+  "training_timestamp": "2025-10-01T05:00:00Z",
+  "availability_comparator": "<=",
+  "window_bounds": "[start,end)",
+  "feature_rule": "Todas las features requeridas deben estar disponibles al instante de predicción; feature_available_at es su máximo comprobado, o null si no está verificado. No hay otras exclusiones de población.",
+  "certification_rule": "Target=evento binario durante la ventana. label_available_at certifica valor definitivo y disponibilidad. Las features y labels permiten igualdad con sus respectivos instantes. Todas las zonas horarias suministradas son offsets explícitos.",
+  "rows": [
+    {
+      "id": "F1",
+      "prediction_timestamp": "2025-08-01T00:00:00-05:00",
+      "feature_available_at": "2025-08-01T05:00:00Z",
+      "outcome_window_start": "2025-08-01T00:00:00-05:00",
+      "outcome_window_end": "2025-09-01T00:00:00-05:00",
+      "target_reported": 0,
+      "label_available_at": "2025-10-01T00:00:00-05:00"
+    },
+    {
+      "id": "F2",
+      "prediction_timestamp": "2025-08-01T05:00:00Z",
+      "feature_available_at": "2025-08-01T04:59:59Z",
+      "outcome_window_start": "2025-08-01T05:00:00Z",
+      "outcome_window_end": "2025-09-01T05:00:00Z",
+      "target_reported": 1,
+      "label_available_at": "2025-09-15T10:00:00Z"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+```json
+{
+  "status": "READY",
+  "findings": [
+    {
+      "statement": "El borrador identifica correctamente la última semana completa de Norte para on_time_share. Entre las filas de Norte con complete=true, el máximo week_start es 2025-10-20 (semana [2025-10-20, 2025-10-27)), frente a 2025-10-06 también completa.",
+      "evidence_paths": ["analysis/weekly.json", "delivery/draft.md"]
+    },
+    {
+      "statement": "La cifra citada es consistente con la fila fuente: on_time=92 y deliveries=100 dan una fracción de 0.92, que el borrador presenta como 92%, con el conteo 92 de 100. La unidad es coherente con la definición del contexto (fracción 0–1 presentada como porcentaje).",
+      "evidence_paths": ["analysis/weekly.json", "delivery/draft.md"]
+    },
+    {
+      "statement": "La fila de Norte para la semana 2025-11-03 tiene complete=false (49 de 50, equivalente a 98%) y no debe usarse como 'última semana completa'. El borrador no la cita, por lo que no altera la afirmación.",
+      "evidence_paths": ["analysis/weekly.json", "delivery/draft.md"]
+    },
+    {
+      "statement": "Las filas de Sur no entran en la población Norte y no afectan la afirmación sobre Norte.",
+      "evidence_paths": ["analysis/weekly.json", "delivery/draft.md"]
+    }
+  ],
+  "proposed_actions": [
+    "Mantener el texto del borrador tal como está: 'En Norte, la última semana completa [2025-10-20,2025-10-27) registró 92% de entregas puntuales (92 de 100).'",
+    "Si el texto se reutiliza, conservar la ventana con inicio incluido y fin excluido, tal como aparece en week_end_exclusive, para evitar ambigüedad de fechas.",
+    "Presentar la cifra como resultado de una semana concreta y no como tendencia, dado que el expediente solo contiene dos semanas completas de Norte en el artifact revisado."
+  ],
+  "next_step": "Someter el texto revisado a revisión humana del owner de la recomendación antes de cualquier uso o publicación. Esta revisión no aprueba ningún gate.",
+  "limitations": [
+    "La revisión se limita al contenido del expediente proporcionado (analysis/weekly.json y delivery/draft.md); no se verificó la fuente original de los datos ni el proceso que generó weekly.json.",
+    "No se evaluó si on_time_share, la regla de 'puntual' o el denominador son la definición correcta para la decisión de negocio; solo se verificó la coherencia con la definición declarada en el contexto.",
+    "Se revisó la cifra y su identidad (población, métrica, período y unidad), no la recomendación de negocio que se deriva de ella.",
+    "No se publicó, compartió ni aceptó ningún gate; la aprobación del texto queda pendiente de decisión humana.",
+    "Los registros de owner y aprobación pertenecen al fixture y no se han validado fuera del expediente."
+  ]
+}
+```

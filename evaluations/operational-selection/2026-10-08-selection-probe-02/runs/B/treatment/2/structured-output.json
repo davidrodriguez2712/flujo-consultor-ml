@@ -1,0 +1,43 @@
+{
+  "output_type": "risk_ranking",
+  "selection_status": "determined",
+  "eligible_count": 4,
+  "capacity_k": 2,
+  "effective_k": 2,
+  "selected_ids": [
+    "W",
+    "Q"
+  ],
+  "risk_ranking_ids": [
+    "W",
+    "Q",
+    "R",
+    "T"
+  ],
+  "total_cost": 2,
+  "expected_net_value": null,
+  "feasibility": "feasible",
+  "optimality": "not_assessed",
+  "causal_identification": {
+    "status": "not_requested",
+    "estimand": null,
+    "reason": "No se pide ning\u00fan efecto causal; es un Top-K descriptivo por riesgo. El ranking no estima el efecto de inspeccionar."
+  },
+  "metrics": {
+    "population_id": "eligible-B",
+    "precision": 0.5,
+    "recall": null,
+    "lift": null,
+    "precision_status": "identified",
+    "recall_status": "not_identifiable",
+    "lift_status": "not_identifiable",
+    "reason": "Precision = positivos/seleccionados = 1/2 = 0.5 (W=1, Q=0), identificada porque ambos seleccionados tienen label. Recall y lift requieren el total de positivos de eligible-B (y su prevalencia). R no tiene label (ausente no es cero) y los labels provienen de inspecciones con mecanismo de selecci\u00f3n no documentado. Por eso los positivos son al menos 2 (W, T) y como m\u00e1ximo 3 (si R fuera positivo), con 4 unidades. Recall estar\u00eda entre 1/3 y 1/2 y la prevalencia entre 0.5 y 0.75. Esos rangos son solo cotas aritm\u00e9ticas, no estimaciones. No se supone sesgo ni representatividad, porque el mecanismo es desconocido."
+  },
+  "reason": "Los 4 registros son elegibles. Se ordenan por risk_score descendente: W 0.95, Q 0.90, R 0.60, T 0.20. No hay empates. Con K=2 y 4 elegibles, la selecci\u00f3n es min(2,4)=2: W y Q, en orden de ranking. El coste total es 2\u00d71=2. Cumple la capacidad (2\u22642); no se declara presupuesto. No hay objetivo econ\u00f3mico, as\u00ed que no se eval\u00faa optimalidad ni valor neto. El gate queda en NEEDS_REVIEW y requiere aprobaci\u00f3n humana; este output no autoriza inspecciones.",
+  "open_questions": [
+    "\u00bfC\u00f3mo se seleccionaron para inspecci\u00f3n las unidades del lote hist\u00f3rico (mecanismo de observaci\u00f3n)? Determina si recall y lift pueden estimarse con labels parciales.",
+    "\u00bfSe puede obtener el label de R, o el total de positivos de eligible-B por otra v\u00eda, para calcular recall y lift?",
+    "\u00bfSe debe tratar el label ausente de R como desconocido, como se hizo aqu\u00ed, o existe una regla de negocio que lo defina?"
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

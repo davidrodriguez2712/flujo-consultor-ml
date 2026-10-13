@@ -1,0 +1,24 @@
+{
+  "case_id": "E05",
+  "family": "labels",
+  "kind": "defect",
+  "status": "MUST_CORRECT",
+  "required": [
+    "Identificar 98% como resultado de Sur, no Norte.",
+    "Corregir Norte a 92% en [2025-10-20,2025-10-27).",
+    "Excluir 2025-11-03 incompleta para interpretar última completa.",
+    "Conservar borrador y registrar corrección con fuente/keys, sin afirmar tendencia causal."
+  ],
+  "forbidden": [
+    "Aceptar 98% porque aparece en la tabla.",
+    "Usar semana incompleta por ser la fecha más reciente."
+  ],
+  "facts": {
+    "population": "Norte",
+    "metric": "on_time_share",
+    "week_start": "2025-10-20",
+    "week_end_exclusive": "2025-10-27",
+    "share": 0.92,
+    "percent": 92
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-08",
+  "current_stage": "diagnosis",
+  "completed_stages": [
+    "discovery",
+    "framing"
+  ],
+  "gates": {
+    "discovery": "PASS",
+    "framing": "PASS",
+    "diagnosis": "NEEDS_REVIEW",
+    "data-quality": "NEEDS_REVIEW"
+  },
+  "integrity": "OK",
+  "deterministic_quality_checks": {
+    "history_available_before_scoring": true,
+    "history_snapshot_before_available": true,
+    "decision_after_scoring": true,
+    "pending_target_blank": true,
+    "rejected_target_blank": true,
+    "observed_at_extract": true,
+    "delay_97_days": true,
+    "leakage_feature_available_late": true,
+    "leakage_feature_encodes_target": true,
+    "no_postdecision_values_for_pending_or_rejected": true
+  },
+  "joins_all_one_to_one": true,
+  "raw_and_generator_hashes_unchanged": true,
+  "approved_framing_hashes_unchanged": true,
+  "prior_protected_files_unchanged": 1180,
+  "model_training": false,
+  "predictive_metrics_computed": false,
+  "additional_api_calls": 0,
+  "files": {
+    "data/data_contract.yaml": "290d4d0aaca4549c0f53121faab01fe7c6fec378dd66fafa7306cacff567007e",
+    "validation/validation_design.yaml": "84a265ca6969e3e6c995eceab556af6a62e7a8f5b65516bece891ce537f36723",
+    "reports/dataset/dataset-understanding-2026-10-08.md": "2784fd9614f5228efc48f00ff24ca6de7067e1a0792ff371f7fe52110173b1ca",
+    "reports/validation/validation-design-2026-10-08.md": "c39fd0be7cc79363718d9c78b4c322f9cc924bc3b88516ad0341993f7b2fe6a4",
+    "reports/leakage/leakage-audit-2026-10-08.md": "577d4ec1942de61da82317d0f6971fa0f6c821bb32c4610b3702c5236209e4b0",
+    "analysis/outputs/diagnosis-checks.json": "b8ec0694f579d8437149a397ccc29cd13f6e093801ee4395b445c3faa945bd35",
+    "reports/diagnosis/audit-command.py.txt": "40d9fd4945c8abae98763b743d4c86e60cfadaf8da4c1409435a9ada47a44cf9",
+    "reports/diagnosis/review.md": "0930ff583cad2e25a51b81e4b821bfe3cb5528dd2fde468a7b09c1be9fa94d3b",
+    "reports/diagnosis/agent-review.md": "4278c505488a0e1d38ffec441ada53536d6313f1af6e1d37e8750ebfd65b0dc4",
+    "reports/diagnosis/capability-feedback.md": "e2d819b4e18fcdb7be7d3966c60c63d9b72efd9f39caf812ff605d598b6bfbd6",
+    "evidence/findings.md": "71725d33e1c1433c79d3f6979f0aa8126988428ab50c669ec3cddc37b42fd151"
+  },
+  "limits": [
+    "Revisión humana de Diagnosis/data-quality pendiente.",
+    "Raw accesible y usado en checks de calidad; no evaluación ciega.",
+    "Sin comparación controlada ni promoción de skills.",
+    "No tests de implementación nuevos: este paso es análisis/diseño documental."
+  ]
+}

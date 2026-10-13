@@ -1,0 +1,22 @@
+{
+  "checker_version": "0.1.0",
+  "strict_json_pass": true,
+  "schema_pass": true,
+  "status_matches": true,
+  "references_exist": true,
+  "unknown_references": [],
+  "semantic_review": "NOT_RUN",
+  "overall_content_pass": null,
+  "referenced_paths": [
+    "contracts/reproduction.json",
+    "data/catalog.json",
+    "data/source.json",
+    "notes/identifier-risk.md",
+    "runs/original/result.json",
+    "runs/reproduction/result.json"
+  ],
+  "transfer_checker_version": "0.1.0",
+  "format": "json",
+  "format_pass": true,
+  "references_present": true
+}

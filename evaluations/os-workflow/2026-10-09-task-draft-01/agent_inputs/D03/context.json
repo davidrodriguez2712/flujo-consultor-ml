@@ -1,0 +1,6 @@
+{
+  "industry": "Soporte de software B2B",
+  "decision": "Definir qué evidencia hará falta antes de considerar un piloto de RAG",
+  "requested_action": "draft_task",
+  "scope": "Propuesta de evaluación; ninguna consulta a modelos o datos privados"
+}

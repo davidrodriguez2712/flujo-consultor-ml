@@ -1,0 +1,75 @@
+{
+  "started_at": "2026-10-11T13:35:05.570701+00:00",
+  "argv": [
+    "/Users/davidrodriguez/.local/bin/claude",
+    "-p",
+    "--restricted",
+    "--no-chrome",
+    "--no-session-persistence",
+    "--setting-sources",
+    "",
+    "--settings",
+    "{\"disableBundledSkills\": true, \"permissions\": {\"allow\": [\"Read(//private/tmp/acos-foundry-correction-20261011/test_real_cli_receives_explici0/run/workspace/.runtime/check_inputs.py)\", \"Read(//private/tmp/acos-foundry-correction-20261011/test_real_cli_receives_explici0/run/workspace/case.md)\", \"Read(//private/tmp/acos-foundry-correction-20261011/test_real_cli_receives_explici0/run/workspace/inputs/data.csv)\", \"Edit(//private/tmp/acos-foundry-correction-20261011/test_real_cli_receives_explici0/run/workspace/reports/leakage/audit.md)\", \"Bash(/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python /private/tmp/acos-foundry-correction-20261011/test_real_cli_receives_explici0/run/workspace/.runtime/check_inputs.py)\", \"Skill(acos-eval:detect-leakage)\"], \"deny\": [\"Agent\", \"WebFetch\", \"WebSearch\", \"NotebookEdit\", \"Edit(//private/tmp/acos-foundry-correction-20261011/test_real_cli_receives_explici0/run/workspace/inputs/**)\", \"Edit(//private/tmp/acos-foundry-correction-20261011/test_real_cli_receives_explici0/run/workspace/case.md)\", \"Edit(//private/tmp/acos-foundry-correction-20261011/test_real_cli_receives_explici0/run/workspace/.runtime/**)\"]}}",
+    "--strict-mcp-config",
+    "--mcp-config",
+    "{\"mcpServers\":{}}",
+    "--permission-mode",
+    "dontAsk",
+    "--permission-prompts",
+    "none",
+    "--tools",
+    "Read,Write,Bash,Skill",
+    "--max-turns",
+    "8",
+    "--effort",
+    "low",
+    "--model",
+    "claude-haiku-5-5",
+    "--system-prompt",
+    "Responde en español. Audita solo el expediente público, respeta sus límites y no aceptes gates. Usa únicamente herramientas y capacidades disponibles. Entrega el reporte y su ruta según case.md.",
+    "--output-format",
+    "stream-json",
+    "--verbose"
+  ],
+  "runtime_success": true,
+  "condition": "baseline",
+  "skill_invoked": false,
+  "request_count": 3,
+  "returncode": 0,
+  "tool_calls": [
+    {
+      "name": "Bash",
+      "input": {
+        "command": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python /private/tmp/acos-foundry-correction-20261011/test_real_cli_receives_explici0/run/workspace/.runtime/check_inputs.py"
+      }
+    },
+    {
+      "name": "Write",
+      "input": {
+        "file_path": "/private/tmp/acos-foundry-correction-20261011/test_real_cli_receives_explici0/run/workspace/reports/leakage/audit.md",
+        "content": "Mock infrastructure report"
+      }
+    }
+  ],
+  "skill_invocation_requested": false,
+  "usage_known": true,
+  "report_persisted": true,
+  "report_sha256": "c66f6a0a4dc1e7b82c5a2c18800dc33a99faee474ca8937349c07fc258e68e89",
+  "model_usage": {
+    "claude-haiku-5-5": {
+      "inputTokens": 90,
+      "outputTokens": 90,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 5.4e-05,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "finished_at": "2026-10-11T13:35:06.841629+00:00"
+}

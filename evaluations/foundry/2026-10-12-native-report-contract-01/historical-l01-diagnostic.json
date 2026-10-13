@@ -1,0 +1,18 @@
+{
+  "purpose": "Readonly diagnóstico; no reemplaza la adjudicación histórica ni su contrato congelado",
+  "source_report": "evaluations/foundry/2026-10-11-detect-leakage-v02/runs/native-01/L01-treatment/workspace/reports/leakage/audit.md",
+  "source_sha256": "57dae4536c1274f6913233aadcb957f6783eaaf8c4035200c9b8ffbad7b7b954",
+  "original_preserved": true,
+  "current_checker_result": {
+    "success": false,
+    "errors": [
+      "report:word_limit",
+      "missing:version"
+    ],
+    "report_words": 528,
+    "final_words": 62,
+    "report_word_limit": 500,
+    "final_word_limit": 80,
+    "semantic_review": "REQUIRED"
+  }
+}

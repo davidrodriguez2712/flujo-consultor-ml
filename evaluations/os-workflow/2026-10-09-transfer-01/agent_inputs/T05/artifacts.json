@@ -1,0 +1,19 @@
+{
+  "reports/frozen-01/plan.md": "Plan aprobado: validar score de riesgo para originación digital, sin expansión a cartera comercial.\n",
+  "reports/manifest-01.json": "{\n  \"id\": \"credit-01\",\n  \"files\": [\n    {\n      \"path\": \"reports/frozen-01/plan.md\",\n      \"sha256\": \"9f0d13a2c43f775a1096586691d15e5674a0482f62a9e678f956705d0e29a7d0\"\n    }\n  ],\n  \"scope\": \"Originación digital\"\n}\n",
+  "reports/approval-01.json": {
+    "status": "APPROVED",
+    "manifest_sha256": "e629d9aa197eb301d84cd368bb230d10c7754428af7c9770b50e78fe405f97a1",
+    "scope": "Originación digital"
+  },
+  "analysis/plan.md": "Plan aprobado: validar score de riesgo para originación digital, sin expansión a cartera comercial.\nPropuesta pendiente: evaluar cartera comercial.\n",
+  "requests/task-draft.json": {
+    "owner_request": "Redactar borrador de evaluación de cobertura comercial",
+    "authorized": "Preparación de propuesta",
+    "dependencies": [
+      "Aprobación del nuevo alcance",
+      "Acceso autorizado a datos comerciales"
+    ],
+    "pending": "Ambas dependencias siguen abiertas"
+  }
+}

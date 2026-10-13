@@ -1,0 +1,5 @@
+# Operación y backtest
+
+Cada scoring predice cancelación en los7 días siguientes. Producción vuelve a puntuar clientes conocidos, por lo que un mismo customer_id puede aparecer en historia de entrenamiento y en scoring posterior. El target queda certificado y disponible8 días después de prediction_at. Modelo entrenado 2025-06-01T00:00:00Z: filas train de mayo tienen target disponible antes de ese instante. Evaluación puntúa 2025-06-02T00:00:00Z; outcomes posteriores solo se usan en evaluación retrospectiva, no en entrenamiento de ese modelo.
+
+usage_previous_30d contiene consumo de los30 días previos, termina antes de prediction_at y está disponible según feature_available_at. No resume períodos futuros ni usa target. Su señal predictiva puede ser alta; no hay AUC aportado ni resultado de entrenamiento. customer_id y todas las fechas son metadata, no features. pipeline.py es el orden de operaciones declarado; se inspecciona, no se ejecuta. La muestra permite auditar lo mostrado; no acredita el código real de producción.

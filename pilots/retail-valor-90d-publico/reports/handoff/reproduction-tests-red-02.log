@@ -1,0 +1,12 @@
+....F                                                                    [100%]
+=================================== FAILURES ===================================
+__________ test_selection_identity_exact_but_metrics_follow_tolerance __________
+
+    def test_selection_identity_exact_but_metrics_follow_tolerance():
+>    from reproduce_retail import compare_selections
+E    ImportError: cannot import name 'compare_selections' from 'reproduce_retail' (/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/retail-valor-90d-publico/analysis/reproduce_retail.py)
+
+pilots/retail-valor-90d-publico/analysis/test_retail_reproduction.py:27: ImportError
+=========================== short test summary info ============================
+FAILED pilots/retail-valor-90d-publico/analysis/test_retail_reproduction.py::test_selection_identity_exact_but_metrics_follow_tolerance
+1 failed, 4 passed in 0.87s

@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-07",
+  "status": "COMPLETED",
+  "previous_inventory": "handoff/handoff-manifest.json",
+  "scope": "Cierre autorizado; conserva inventario anterior como evidencia histórica, no exige que sus hashes de state/vistas previos coincidan con versiones cerradas",
+  "files": [
+    {
+      "path": "handoff/runbook.md",
+      "sha256": "84690dd9e55b43e98a2aeda8aa67dbf748d5728f578d8778ace1354b16ce5149",
+      "bytes": 8625
+    },
+    {
+      "path": "handoff/capability_feedback.md",
+      "sha256": "22eba04d4d3e31d95a5df20388e80cd2f1de4af537d48021ec7bb127ca418ce0",
+      "bytes": 2925
+    },
+    {
+      "path": "handoff/closure.md",
+      "sha256": "ff6ccdd1fd0ea30c1df4c8db44df5ba7f3cda39903da6b642f80e7806780dc4d",
+      "bytes": 3072
+    },
+    {
+      "path": "handoff/handoff-manifest.json",
+      "sha256": "8ceada14c178b87ad5dd5cc7628963ce708e956529263cd17b0741b9e1697846",
+      "bytes": 2129
+    },
+    {
+      "path": "delivery/delivery-manifest.json",
+      "sha256": "591d401b86859167ddfa159f49355a15c0e041b6e9edc78553ea90bb9ee4dcf7",
+      "bytes": 6170
+    },
+    {
+      "path": "evidence/approvals/2026-10-07-handoff.md",
+      "sha256": "b280072198df19495251629395774dbece31155fc0e493c33603e4543e78d6a0",
+      "bytes": 723
+    },
+    {
+      "path": ".acos/state.yaml",
+      "sha256": "a6ac2cb4d96ee0fc7dee5f08f5cf7f156ef2d65285b9706f29552def9c4f484b",
+      "bytes": 4102
+    },
+    {
+      "path": "STATE.md",
+      "sha256": "8697d3a87900302af125f9b0198b8f78e33bd47efebe1800c445939da2bc431a",
+      "bytes": 468
+    },
+    {
+      "path": "MANUAL.md",
+      "sha256": "a81caf1b5b3865aba392181b6af4c91b95b7255044a74861b9166302d3af60e7",
+      "bytes": 3409
+    },
+    {
+      "path": "TASKS.md",
+      "sha256": "1269da2f0c14d5acd4033792ed472f757578415e54acc02c5a3c778386bfc6f8",
+      "bytes": 716
+    },
+    {
+      "path": "README.md",
+      "sha256": "9e2209da2d4c4ad5c1b47f7e9716d6a56ffde449955e54521adeb1af0d451758",
+      "bytes": 2660
+    },
+    {
+      "path": "PILOT_REPORT.md",
+      "sha256": "05ec00b95440519ece6c21ba279587cf5d7d7d3907a7c528e52ad01629356d7d",
+      "bytes": 7004
+    },
+    {
+      "path": "DECISIONS.md",
+      "sha256": "2473c9983607ed393675ff0b4a1022ef30d5c6cbf4d6056369553b9a71d3bda3",
+      "bytes": 6818
+    }
+  ]
+}

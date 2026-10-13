@@ -1,0 +1,68 @@
+[
+  {
+    "case_id": "E01",
+    "family": "freeze",
+    "kind": "defect",
+    "agent_input_paths": [
+      "agent_inputs/E01/task.md",
+      "agent_inputs/E01/context.json",
+      "agent_inputs/E01/artifacts.json"
+    ],
+    "expected_path": "reviewer/expected/E01.json"
+  },
+  {
+    "case_id": "E02",
+    "family": "freeze",
+    "kind": "coherent",
+    "agent_input_paths": [
+      "agent_inputs/E02/task.md",
+      "agent_inputs/E02/context.json",
+      "agent_inputs/E02/artifacts.json"
+    ],
+    "expected_path": "reviewer/expected/E02.json"
+  },
+  {
+    "case_id": "E03",
+    "family": "reproduction",
+    "kind": "defect",
+    "agent_input_paths": [
+      "agent_inputs/E03/task.md",
+      "agent_inputs/E03/context.json",
+      "agent_inputs/E03/artifacts.json"
+    ],
+    "expected_path": "reviewer/expected/E03.json"
+  },
+  {
+    "case_id": "E04",
+    "family": "reproduction",
+    "kind": "coherent",
+    "agent_input_paths": [
+      "agent_inputs/E04/task.md",
+      "agent_inputs/E04/context.json",
+      "agent_inputs/E04/artifacts.json"
+    ],
+    "expected_path": "reviewer/expected/E04.json"
+  },
+  {
+    "case_id": "E05",
+    "family": "labels",
+    "kind": "defect",
+    "agent_input_paths": [
+      "agent_inputs/E05/task.md",
+      "agent_inputs/E05/context.json",
+      "agent_inputs/E05/artifacts.json"
+    ],
+    "expected_path": "reviewer/expected/E05.json"
+  },
+  {
+    "case_id": "E06",
+    "family": "labels",
+    "kind": "coherent",
+    "agent_input_paths": [
+      "agent_inputs/E06/task.md",
+      "agent_inputs/E06/context.json",
+      "agent_inputs/E06/artifacts.json"
+    ],
+    "expected_path": "reviewer/expected/E06.json"
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "scope": "Descriptivo de toda la historia; sin outcomes por horizonte de holdout ni modelos.",
+  "valid_lines": 788187,
+  "customers": 5852,
+  "countries": 41,
+  "sales_gbp": 17124926.229999997,
+  "top1_share": 0.03392639665695074,
+  "top10_share": 0.16092066225502216,
+  "top100_share": 0.37555955941773417,
+  "customers_multiple_invoices": 4234,
+  "observed_cohorts_caution": "Primera compra observada, no adquisición real; primeras cohortes censuradas a izquierda. Último mes incompleto.",
+  "cancellation_lines": 19165,
+  "cancellation_signed_amount_gbp": -1465303.66,
+  "cancellation_interpretation": "Importe firmado separado; no vinculación causal a compra original ni ventas netas.",
+  "within_sheet_repetition_sensitivity": {
+    "alternative": "Una representación por patrón completo; escenario descriptivo, no regla autorizada.",
+    "removed_valid_lines": 11610,
+    "sales_gbp": 17068567.970000003,
+    "sales_change_pct": -0.32910074614665996,
+    "customers": 5852,
+    "top100_share": 0.3764224626982576
+  },
+  "api_cost_usd": 0
+}

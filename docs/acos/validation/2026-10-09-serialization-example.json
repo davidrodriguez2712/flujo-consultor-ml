@@ -1,0 +1,39 @@
+{
+  "scenario": "explicit-serialization-boundary",
+  "result": "PASS",
+  "writer": {
+    "format": "csv",
+    "encoding": "utf-8",
+    "numeric_format": ".16g"
+  },
+  "reader": {
+    "id": "str",
+    "value": "float"
+  },
+  "criteria": {
+    "rtol": 1e-08,
+    "atol": 1e-06,
+    "selection": "exact",
+    "threshold": 0.3,
+    "rule": "value > threshold"
+  },
+  "original": {
+    "value": 0.3,
+    "selection": []
+  },
+  "omitted_boundary": {
+    "value": 0.30000000000000004,
+    "numeric_within_tolerance": true,
+    "selection": [
+      "001"
+    ],
+    "comparison": "DISCREPANCY"
+  },
+  "faithful_reproduction": {
+    "selection": [],
+    "comparison": "PASS"
+  },
+  "original_csv_unchanged": true,
+  "api_cost_usd": 0,
+  "limits": "Ejemplo de threshold con writer explícito; no demuestra eficacia de skills ni reproduce el entrenamiento del piloto."
+}

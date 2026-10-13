@@ -1,0 +1,18 @@
+{
+  "id": "os-workflow-transfer-01",
+  "status": "PREPARED_PENDING_PACKAGE_REVIEW",
+  "cases": 6,
+  "payloads": 12,
+  "replications_proposed": 1,
+  "model_calls": 0,
+  "api_cost_usd": 0,
+  "execution_authorized": false,
+  "runtime": null,
+  "model": null,
+  "budget_usd": null,
+  "review_independence": "Autor de fixtures y criterios; no independiente ni ciego",
+  "data": "Fixtures sintéticos, sin clientes reales",
+  "runtime_isolation_verified": false,
+  "output_checker_status": "Checker JSON existente reutilizable para cinco casos; validación Markdown todavía pendiente antes de ejecución",
+  "transport_status": "Pendiente: SYSTEM del transporte previo exige JSON; debe ser neutral respecto al formato antes de T02. CLI envelope JSON y texto Markdown del modelo son capas distintas."
+}

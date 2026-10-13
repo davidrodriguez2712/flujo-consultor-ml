@@ -1,0 +1,156 @@
+{
+  "status": "COMPLETED",
+  "completed_stages": [
+    "validation",
+    "delivery",
+    "handoff"
+  ],
+  "gate_pass_count": 11,
+  "commands": [
+    {
+      "command": [
+        "acos",
+        "status"
+      ],
+      "exit_code": 0,
+      "status": "COMPLETED",
+      "integrity": "OK"
+    },
+    {
+      "command": [
+        "acos",
+        "next"
+      ],
+      "exit_code": 0,
+      "status": "COMPLETED",
+      "integrity": "OK"
+    },
+    {
+      "command": [
+        "acos",
+        "validate",
+        "--gate",
+        "discovery"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "integrity": null
+    },
+    {
+      "command": [
+        "acos",
+        "validate",
+        "--gate",
+        "framing"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "integrity": null
+    },
+    {
+      "command": [
+        "acos",
+        "validate",
+        "--gate",
+        "diagnosis"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "integrity": null
+    },
+    {
+      "command": [
+        "acos",
+        "validate",
+        "--gate",
+        "execution"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "integrity": null
+    },
+    {
+      "command": [
+        "acos",
+        "validate",
+        "--gate",
+        "validation"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "integrity": null
+    },
+    {
+      "command": [
+        "acos",
+        "validate",
+        "--gate",
+        "delivery"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "integrity": null
+    },
+    {
+      "command": [
+        "acos",
+        "validate",
+        "--gate",
+        "handoff"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "integrity": null
+    },
+    {
+      "command": [
+        "acos",
+        "validate",
+        "--gate",
+        "data-quality"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "integrity": null
+    },
+    {
+      "command": [
+        "acos",
+        "validate",
+        "--gate",
+        "data_analysis-review"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "integrity": null
+    },
+    {
+      "command": [
+        "acos",
+        "validate",
+        "--gate",
+        "forecast-review"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "integrity": null
+    },
+    {
+      "command": [
+        "acos",
+        "validate",
+        "--gate",
+        "executive_delivery-review"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "integrity": null
+    }
+  ],
+  "accepted_package_sha256": "fdf2945c8935a3511a0766c3527fc9216609021ffa45eb5891f5c574c732e647",
+  "accepted_files_verified": 70,
+  "approval_sha256": "6cabff75df4966d3cb9429724f0079f4cd70c662b40232c93977c65e3a2391fd",
+  "state_sha256": "23ddeceacb91618efdd5afc46b6e580b640fd3ed60edeeaa240cd249ab63a445",
+  "api_cost_usd": 0,
+  "limits": "Aceptación técnica del ensayo; no uso operativo, eficacia comparativa o validación independiente."
+}

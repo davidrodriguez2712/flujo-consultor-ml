@@ -1,0 +1,8 @@
+{
+  "foundry_template_used": true,
+  "skill_draft_version": "0.2.0",
+  "red_evidence": "Errores de v0.1.0 en estudio previo y review distinto del autor; no replicar expected tras resultados",
+  "strict_skill_creator_validator": "FAIL por status/version/domain root de templateFoundry; se preserva formato canónico requerido. No declarar compatibilidad formal del estándar por ignorar este fallo.",
+  "api_budget_remaining_usd": 0.02943475,
+  "canonical_foundry_modified": false
+}

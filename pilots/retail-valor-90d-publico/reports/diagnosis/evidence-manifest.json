@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "scope": "Diagnosis propuesta y copias de contratos; gates humanos pendientes; sin paths mutables.",
+  "files": {
+    "reports/diagnosis/acos-next.json": {
+      "sha256": "b4d93352256dbd2798b73aec88cec8e0b74942fbe69ea834585a971693e0a0e9",
+      "bytes": 11187
+    },
+    "reports/diagnosis/acos-status.json": {
+      "sha256": "3abb6f598a87ff96f9cee678e64b6f496ee3aa25ccb60d3b28ba5e0ac5c6de14",
+      "bytes": 400
+    },
+    "reports/diagnosis/acos-validate-data-quality.json": {
+      "sha256": "7913e2426f5cccf63f4a60b5aba77b7c2df147449798507db07e113ce222ba07",
+      "bytes": 198
+    },
+    "reports/diagnosis/acos-validate-diagnosis.json": {
+      "sha256": "690ae7657fad3321853c4989065dd3cea1cdbbe8a0b49a08b64b637d58eed81b",
+      "bytes": 195
+    },
+    "reports/diagnosis/acos-validate-framing.json": {
+      "sha256": "7c63b8db15849cb42e080a1e8d8df2649a11701a8d4aee199a7bb10cdf79ebf8",
+      "bytes": 183
+    },
+    "reports/diagnosis/calculation.log": {
+      "sha256": "eee9afa60a13abee42b3298f3e41a0376cf3491589d79e8ffc597db4771ef423",
+      "bytes": 4126
+    },
+    "reports/diagnosis/calculation.py.txt": {
+      "sha256": "89c45d0dff06657875d426107db72e5ba602d5ec56febd5051cd7d0973dd6a31",
+      "bytes": 4638
+    },
+    "reports/diagnosis/cutoff-proposal.json": {
+      "sha256": "edcc0052974dd23a464bb0a9a828679732b36a8d483d9318f9352a0d0895e0bb",
+      "bytes": 3610
+    },
+    "reports/diagnosis/diagnostic-summary.json": {
+      "sha256": "609673207620b1a65f233fd27993dcfe2fb028456b0096743976a3e6da773829",
+      "bytes": 1056
+    },
+    "reports/diagnosis/frozen/data/data_contract.yaml": {
+      "sha256": "89f10b639e39a72d73d411e345e3bfae9727d3ddf3b1883bca5e44ed057e4868",
+      "bytes": 1629
+    },
+    "reports/diagnosis/frozen/evidence/findings.md": {
+      "sha256": "a8ed4fea50585fd01014f99dab704ffb8477027a24d2b328ed39421dc9d5537a",
+      "bytes": 2303
+    },
+    "reports/diagnosis/frozen/validation/evaluation_contract.yaml": {
+      "sha256": "7c006d5440b88e07e3b04cad040d57775714510695c51ae6a30874c52ab8f83b",
+      "bytes": 4731
+    },
+    "reports/diagnosis/monthly-summary.csv": {
+      "sha256": "4c17636e17fdc38c5aad08423ffbd6323f02398c6030d95924897053583f74dd",
+      "bytes": 881
+    },
+    "reports/diagnosis/observed-cohorts.csv": {
+      "sha256": "c4ea0cf6dcd02f3fd57759f46c9d2c0a5c2c5097da27200177e49409f2266c4d",
+      "bytes": 577
+    },
+    "reports/diagnosis/review.md": {
+      "sha256": "32706997855d4e22fb457f4b2e65d9ecbaead36cd026ba17814038d4f944d24c",
+      "bytes": 2144
+    },
+    "reports/diagnosis/tests-source.log": {
+      "sha256": "fd2e2043c6a07a60ee8300927e2cbcdb6cc31aeab89b93213a6ebd666e9141fd",
+      "bytes": 98
+    },
+    "reports/diagnosis/tests-source.xml": {
+      "sha256": "9c8aae81fa4edb14d75b382245c35881777173b6630270c27e2ca61b6e2bcdb7",
+      "bytes": 1695
+    },
+    "reports/diagnosis/verification.json": {
+      "sha256": "6049ada9f3e759e4e35c3bd2fd96b7280c629232e33b6f9db9431d9340bc5834",
+      "bytes": 469
+    },
+    "reports/framing/human-approval.json": {
+      "sha256": "a423bb56ffd9755724f6cf4f192ac99652cd74aa7124676150d63521f66adc0c",
+      "bytes": 493
+    },
+    "reports/validation/validation-design-2026-10-09.md": {
+      "sha256": "9a6ec669610b7425057288e9a36a6faa23103728d027b5c9fb94acf68ba9e6e9",
+      "bytes": 5109
+    }
+  }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "manifest": "artifacts/github-actions-windows-2026-10-08/evidence-manifest.json",
+    "entries": 24,
+    "passed": true,
+    "mismatches": []
+  },
+  {
+    "manifest": "artifacts/windows-arm-runtimes-2026-10-08/evidence-manifest.json",
+    "entries": 53,
+    "passed": true,
+    "mismatches": []
+  },
+  {
+    "manifest": "pilots/riesgo-credito-sintetico/handoff/handoff-manifest.json",
+    "entries": 13,
+    "passed": true,
+    "mismatches": []
+  },
+  {
+    "manifest": "pilots/riesgo-credito-sintetico/handoff/handoff-manifest-02-closed.json",
+    "entries": 13,
+    "passed": true,
+    "mismatches": []
+  }
+]

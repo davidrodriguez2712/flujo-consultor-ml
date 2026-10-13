@@ -1,0 +1,21 @@
+grain: cliente activo × comienzo de mes calendario
+keys:
+- customer_id
+- prediction_timestamp
+coverage:
+  first_prediction: '2024-02-01T00:00:00Z'
+  last_prediction: '2026-01-01T00:00:00Z'
+  periods: 24
+  customers: 2400
+  snapshot_rows: 35990
+  extracted_at: '2026-01-15T00:00:00Z'
+  synthetic: true
+  generator_version: '2'
+quality:
+  checks: analysis/outputs/data-checks.json
+  duplicate_keys: 0
+  missing_activity: 730
+  pending_labels: 972
+  ticket_join: agregar por cliente/scoring antes de unir; 1:N
+  review: 'NEEDS_REVIEW: diagnóstico y contrato v2 listos para revisión humana'
+  diagnosis_checks: analysis/outputs/diagnosis-checks.json

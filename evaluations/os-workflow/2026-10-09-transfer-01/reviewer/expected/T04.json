@@ -1,0 +1,25 @@
+{
+  "case_id": "T04",
+  "family": "reproduction",
+  "status": "READY",
+  "format": "json",
+  "required": [
+    "Reproducción v1 conserva writer/reader, target bruto y forecast 120.",
+    "Variante v2 usa la autorización explícita, target neto y forecast 100.",
+    "Separar ambos destinos/versiones, preservar v1 y registrar cambio de target.",
+    "Declarar que diferencia de target no prueba superioridad del modelo ni autoriza operación."
+  ],
+  "forbidden": [
+    "Bloquear la preparación de v2 alegando que todo cambio metodológico está prohibido.",
+    "Presentar 100 como corrección retroactiva de un resultado v1 incorrecto."
+  ],
+  "facts": {
+    "v1_forecast": 120.0,
+    "v2_forecast": 100.0,
+    "net_series": [
+      90,
+      100,
+      110
+    ]
+  }
+}

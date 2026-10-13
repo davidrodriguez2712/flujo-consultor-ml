@@ -1,0 +1,21 @@
+{
+  "context": "Churn ficticio. K=2 clientes elegibles, score de probabilidad de churn bajo política actual. No es score de uplift. Score descendente e id ascendente para ranking de riesgo; labels completas de churn. Negocio consulta si ese ranking maximiza clientes salvados o ROI de contactos. No hay tratamiento/control, costes, margen o efecto incremental. Dar ranking de riesgo y métricas descriptivas; decisión causal no identificable, no campaña óptima demostrada.",
+  "k": 2,
+  "rows": [
+    {
+      "id": "A",
+      "score": 0.9,
+      "target": 1
+    },
+    {
+      "id": "B",
+      "score": 0.8,
+      "target": 0
+    },
+    {
+      "id": "C",
+      "score": 0.2,
+      "target": 1
+    }
+  ]
+}

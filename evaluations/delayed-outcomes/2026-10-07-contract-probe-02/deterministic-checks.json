@@ -1,0 +1,2392 @@
+{
+  "date_local": "2026-10-07",
+  "timezone": "America/Lima",
+  "status": "EXPLORATORY_COMPLETE",
+  "total_distinct_sessions": 24,
+  "frozen_files_verified": 41,
+  "precedence_evidence": "local_only",
+  "all_recorded_starts_after_local_freeze": true,
+  "totals": {
+    "baseline": {
+      "calls": 12,
+      "runtime_ok": 12,
+      "strict_format_pass": 8,
+      "content_evaluable": 11,
+      "gate_matches": 11,
+      "field_matches": 66,
+      "field_total": 72,
+      "row_decisions_correct": 22,
+      "row_total": 24,
+      "eligible_false_positives": 0,
+      "valid_rows_excluded": 0,
+      "valid_rows_indeterminate": 0,
+      "outcome_matches": 22,
+      "availability_matches": 22,
+      "wall_seconds": 109.811,
+      "cost_usd": 0.737532,
+      "cost_available_calls": 12,
+      "provider_duration_ms": 97342
+    },
+    "treatment": {
+      "calls": 12,
+      "runtime_ok": 12,
+      "strict_format_pass": 9,
+      "content_evaluable": 12,
+      "gate_matches": 12,
+      "field_matches": 72,
+      "field_total": 72,
+      "row_decisions_correct": 24,
+      "row_total": 24,
+      "eligible_false_positives": 0,
+      "valid_rows_excluded": 0,
+      "valid_rows_indeterminate": 0,
+      "outcome_matches": 24,
+      "availability_matches": 24,
+      "wall_seconds": 113.289,
+      "cost_usd": 0.825128,
+      "cost_available_calls": 12,
+      "provider_duration_ms": 100798
+    }
+  },
+  "repeatability": [
+    {
+      "case": "A",
+      "branch": "baseline",
+      "both_repetitions_match_expected": true
+    },
+    {
+      "case": "A",
+      "branch": "treatment",
+      "both_repetitions_match_expected": true
+    },
+    {
+      "case": "B",
+      "branch": "baseline",
+      "both_repetitions_match_expected": true
+    },
+    {
+      "case": "B",
+      "branch": "treatment",
+      "both_repetitions_match_expected": true
+    },
+    {
+      "case": "C",
+      "branch": "baseline",
+      "both_repetitions_match_expected": true
+    },
+    {
+      "case": "C",
+      "branch": "treatment",
+      "both_repetitions_match_expected": true
+    },
+    {
+      "case": "D",
+      "branch": "baseline",
+      "both_repetitions_match_expected": true
+    },
+    {
+      "case": "D",
+      "branch": "treatment",
+      "both_repetitions_match_expected": true
+    },
+    {
+      "case": "E",
+      "branch": "baseline",
+      "both_repetitions_match_expected": false
+    },
+    {
+      "case": "E",
+      "branch": "treatment",
+      "both_repetitions_match_expected": true
+    },
+    {
+      "case": "F",
+      "branch": "baseline",
+      "both_repetitions_match_expected": true
+    },
+    {
+      "case": "F",
+      "branch": "treatment",
+      "both_repetitions_match_expected": true
+    }
+  ],
+  "results": [
+    {
+      "case": "A",
+      "branch": "baseline",
+      "repetition": 1,
+      "checks": {
+        "strict_format_pass": true,
+        "diagnostic_parse_used": false,
+        "payload_schema_pass": true,
+        "content_evaluable": true,
+        "ids_exact": true,
+        "gate_matches": true,
+        "field_matches": 6,
+        "field_total": 6,
+        "row_decisions_correct": 2,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": [
+          {
+            "id": "A1",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          },
+          {
+            "id": "A2",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          }
+        ]
+      },
+      "metadata": {
+        "case": "A",
+        "branch": "baseline",
+        "repetition": 1,
+        "started_at": "2026-10-08T03:22:23.098341+00:00",
+        "finished_at": "2026-10-08T03:22:31.375751+00:00",
+        "wall_seconds": 8.277,
+        "provider_duration_ms": 7296,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "5806ae69-aa57-49e0-9c6c-0bb4b61158c6",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 963,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12616,
+            "webSearchRequests": 0,
+            "costUSD": 0.060098,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 341,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 963,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12616,
+            "webSearchRequests": 0,
+            "costUSD": 0.060098,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 341,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.060098,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-o1j0id1k",
+        "payload_sha256": "e6b71cbd034400c8eadbee795a7a39853fb43b6ad415559d6fc0e86b3c07e2f4",
+        "request_sha256": "193b49d9d305911093a617a1e69b68ece372a0c03bad3434b509e56f85405623",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    },
+    {
+      "case": "A",
+      "branch": "treatment",
+      "repetition": 1,
+      "checks": {
+        "strict_format_pass": true,
+        "diagnostic_parse_used": false,
+        "payload_schema_pass": true,
+        "content_evaluable": true,
+        "ids_exact": true,
+        "gate_matches": true,
+        "field_matches": 6,
+        "field_total": 6,
+        "row_decisions_correct": 2,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": [
+          {
+            "id": "A1",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          },
+          {
+            "id": "A2",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          }
+        ]
+      },
+      "metadata": {
+        "case": "A",
+        "branch": "treatment",
+        "repetition": 1,
+        "started_at": "2026-10-08T03:22:31.377365+00:00",
+        "finished_at": "2026-10-08T03:22:39.568730+00:00",
+        "wall_seconds": 8.191,
+        "provider_duration_ms": 6806,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "30843587-0470-45cc-909e-09bde8b9dee7",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1081,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14367,
+            "webSearchRequests": 0,
+            "costUSD": 0.068282,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 352,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1081,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14367,
+            "webSearchRequests": 0,
+            "costUSD": 0.068282,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 352,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.068282,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-xs_xmj0w",
+        "payload_sha256": "b0d462d7675261dc879c37e3e01253042ce09bcca4d1b86adb19c52f7117c286",
+        "request_sha256": "0588990d73a0a078ff36d7a574c81d4c88a6b4cb4e11a7ee5cbc897c4b0c396f",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    },
+    {
+      "case": "B",
+      "branch": "treatment",
+      "repetition": 1,
+      "checks": {
+        "strict_format_pass": false,
+        "diagnostic_parse_used": true,
+        "payload_schema_pass": true,
+        "content_evaluable": true,
+        "ids_exact": true,
+        "gate_matches": true,
+        "field_matches": 6,
+        "field_total": 6,
+        "row_decisions_correct": 2,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": [
+          {
+            "id": "B1",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          },
+          {
+            "id": "B2",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          }
+        ]
+      },
+      "metadata": {
+        "case": "B",
+        "branch": "treatment",
+        "repetition": 1,
+        "started_at": "2026-10-08T03:22:39.570674+00:00",
+        "finished_at": "2026-10-08T03:22:47.582117+00:00",
+        "wall_seconds": 8.011,
+        "provider_duration_ms": 7017,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "0bb9f1c7-7e4e-4e0e-9261-e5fc6b94abd2",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1013,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14361,
+            "webSearchRequests": 0,
+            "costUSD": 0.067578,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 347,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1013,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14361,
+            "webSearchRequests": 0,
+            "costUSD": 0.067578,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 347,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.067578,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-igwe90ja",
+        "payload_sha256": "91253df683ceb95015eaa1b8cba67107a2b26cde5272cd8642e5ca0819611812",
+        "request_sha256": "a85957150301c052392132b65622affad21567dd0cffacc665d955741f9e69a2",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    },
+    {
+      "case": "B",
+      "branch": "baseline",
+      "repetition": 1,
+      "checks": {
+        "strict_format_pass": true,
+        "diagnostic_parse_used": false,
+        "payload_schema_pass": true,
+        "content_evaluable": true,
+        "ids_exact": true,
+        "gate_matches": true,
+        "field_matches": 6,
+        "field_total": 6,
+        "row_decisions_correct": 2,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": [
+          {
+            "id": "B1",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          },
+          {
+            "id": "B2",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          }
+        ]
+      },
+      "metadata": {
+        "case": "B",
+        "branch": "baseline",
+        "repetition": 1,
+        "started_at": "2026-10-08T03:22:47.583799+00:00",
+        "finished_at": "2026-10-08T03:22:54.484235+00:00",
+        "wall_seconds": 6.9,
+        "provider_duration_ms": 5847,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "d021918b-21b8-466f-ab1a-8be2d2c2139b",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 821,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12612,
+            "webSearchRequests": 0,
+            "costUSD": 0.058662,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 297,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 821,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12612,
+            "webSearchRequests": 0,
+            "costUSD": 0.058662,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 297,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.058662,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-6m3urfh8",
+        "payload_sha256": "d6e076f8319aafd83a31b53b038ae1019b6491e594444fcb847fd07ea52f8742",
+        "request_sha256": "b192353eda352321d45bdc613c11a56e9ad0f3bce8fd46b5fa31701c7f077548",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    },
+    {
+      "case": "C",
+      "branch": "baseline",
+      "repetition": 1,
+      "checks": {
+        "strict_format_pass": true,
+        "diagnostic_parse_used": false,
+        "payload_schema_pass": true,
+        "content_evaluable": true,
+        "ids_exact": true,
+        "gate_matches": true,
+        "field_matches": 6,
+        "field_total": 6,
+        "row_decisions_correct": 2,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": [
+          {
+            "id": "C1",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          },
+          {
+            "id": "C2",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          }
+        ]
+      },
+      "metadata": {
+        "case": "C",
+        "branch": "baseline",
+        "repetition": 1,
+        "started_at": "2026-10-08T03:22:54.487346+00:00",
+        "finished_at": "2026-10-08T03:23:03.195461+00:00",
+        "wall_seconds": 8.708,
+        "provider_duration_ms": 7689,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "9911b920-adb8-43fd-be76-fa508482d808",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1147,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12572,
+            "webSearchRequests": 0,
+            "costUSD": 0.061762,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 370,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1147,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12572,
+            "webSearchRequests": 0,
+            "costUSD": 0.061762,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 370,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.061762,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-uof1aveq",
+        "payload_sha256": "b108866d4de9da5424908032fd9f5031f223de382cc63e7b1a3517c586dd0ec2",
+        "request_sha256": "f7d65725494f05a7fe7d4c758b2677e1fba0c1fc74d7b91b40df885d6944782e",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    },
+    {
+      "case": "C",
+      "branch": "treatment",
+      "repetition": 1,
+      "checks": {
+        "strict_format_pass": false,
+        "diagnostic_parse_used": true,
+        "payload_schema_pass": true,
+        "content_evaluable": true,
+        "ids_exact": true,
+        "gate_matches": true,
+        "field_matches": 6,
+        "field_total": 6,
+        "row_decisions_correct": 2,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": [
+          {
+            "id": "C1",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          },
+          {
+            "id": "C2",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          }
+        ]
+      },
+      "metadata": {
+        "case": "C",
+        "branch": "treatment",
+        "repetition": 1,
+        "started_at": "2026-10-08T03:23:03.199778+00:00",
+        "finished_at": "2026-10-08T03:23:20.817502+00:00",
+        "wall_seconds": 17.618,
+        "provider_duration_ms": 16779,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "081a9b67-465c-481f-932a-d677c50d8730",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1191,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14322,
+            "webSearchRequests": 0,
+            "costUSD": 0.069202,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 338,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1191,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14322,
+            "webSearchRequests": 0,
+            "costUSD": 0.069202,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 338,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.069202,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-4g5n_387",
+        "payload_sha256": "29bfe02712e1d5b5f2ba8dccc550262a26ec04179088f046d3737304b1a3f9ae",
+        "request_sha256": "9e30d4a91c6d67c9f889525d84a4a52cc4a4e70b0ed9da08a577528cbab7c713",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    },
+    {
+      "case": "D",
+      "branch": "treatment",
+      "repetition": 1,
+      "checks": {
+        "strict_format_pass": true,
+        "diagnostic_parse_used": false,
+        "payload_schema_pass": true,
+        "content_evaluable": true,
+        "ids_exact": true,
+        "gate_matches": true,
+        "field_matches": 6,
+        "field_total": 6,
+        "row_decisions_correct": 2,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": [
+          {
+            "id": "D1",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          },
+          {
+            "id": "D2",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          }
+        ]
+      },
+      "metadata": {
+        "case": "D",
+        "branch": "treatment",
+        "repetition": 1,
+        "started_at": "2026-10-08T03:23:20.819214+00:00",
+        "finished_at": "2026-10-08T03:23:28.429572+00:00",
+        "wall_seconds": 7.61,
+        "provider_duration_ms": 6618,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "3759be59-04c4-4ba6-86bc-8b499b350f30",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 971,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14481,
+            "webSearchRequests": 0,
+            "costUSD": 0.067638,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 337,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 971,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14481,
+            "webSearchRequests": 0,
+            "costUSD": 0.067638,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 337,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.067638,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-saml1px5",
+        "payload_sha256": "2fe254524647a17cc6d9e4617c64611e1ec13efc0a18f005fb1c173f24cfd9bf",
+        "request_sha256": "ef616c2100f71207eff4e070eb83cd51d54f2f735ab10f16267665f5e4c9472e",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    },
+    {
+      "case": "D",
+      "branch": "baseline",
+      "repetition": 1,
+      "checks": {
+        "strict_format_pass": false,
+        "diagnostic_parse_used": true,
+        "payload_schema_pass": true,
+        "content_evaluable": true,
+        "ids_exact": true,
+        "gate_matches": true,
+        "field_matches": 6,
+        "field_total": 6,
+        "row_decisions_correct": 2,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": [
+          {
+            "id": "D1",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          },
+          {
+            "id": "D2",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          }
+        ]
+      },
+      "metadata": {
+        "case": "D",
+        "branch": "baseline",
+        "repetition": 1,
+        "started_at": "2026-10-08T03:23:28.433253+00:00",
+        "finished_at": "2026-10-08T03:23:41.920688+00:00",
+        "wall_seconds": 13.487,
+        "provider_duration_ms": 12439,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "68bfe1e5-f018-4a1a-adc7-bf7f906205df",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 889,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12732,
+            "webSearchRequests": 0,
+            "costUSD": 0.059822,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 297,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 889,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12732,
+            "webSearchRequests": 0,
+            "costUSD": 0.059822,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 297,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.059822,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-pymiia4v",
+        "payload_sha256": "0d3b6965df46668fa3fb6cd98623c884b80206473668324297d5902609ed8037",
+        "request_sha256": "b17ed3d9f30232779b9608c7a56250a5be4d6facc300b3ad1ad7e07452988197",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    },
+    {
+      "case": "E",
+      "branch": "baseline",
+      "repetition": 1,
+      "checks": {
+        "strict_format_pass": false,
+        "diagnostic_parse_used": false,
+        "payload_schema_pass": false,
+        "content_evaluable": false,
+        "ids_exact": false,
+        "gate_matches": false,
+        "field_matches": 0,
+        "field_total": 6,
+        "row_decisions_correct": 0,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": []
+      },
+      "metadata": {
+        "case": "E",
+        "branch": "baseline",
+        "repetition": 1,
+        "started_at": "2026-10-08T03:23:41.926922+00:00",
+        "finished_at": "2026-10-08T03:23:52.159391+00:00",
+        "wall_seconds": 10.232,
+        "provider_duration_ms": 9123,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "e30e8beb-f95d-48c3-aad3-1c14416e4d3a",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1293,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12657,
+            "webSearchRequests": 0,
+            "costUSD": 0.06356200000000001,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 371,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1293,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12657,
+            "webSearchRequests": 0,
+            "costUSD": 0.06356200000000001,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 371,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.06356200000000001,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-kk974nte",
+        "payload_sha256": "5dd4dc1593e7132e0760503a08b9f273d7fb0fa897e7247db488ef04ab91cb1c",
+        "request_sha256": "a62a857f961068ddb848915fd048f8466252c694a3ac45d6684fa451ff7f8da2",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    },
+    {
+      "case": "E",
+      "branch": "treatment",
+      "repetition": 1,
+      "checks": {
+        "strict_format_pass": true,
+        "diagnostic_parse_used": false,
+        "payload_schema_pass": true,
+        "content_evaluable": true,
+        "ids_exact": true,
+        "gate_matches": true,
+        "field_matches": 6,
+        "field_total": 6,
+        "row_decisions_correct": 2,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": [
+          {
+            "id": "E1",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          },
+          {
+            "id": "E2",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          }
+        ]
+      },
+      "metadata": {
+        "case": "E",
+        "branch": "treatment",
+        "repetition": 1,
+        "started_at": "2026-10-08T03:23:52.163638+00:00",
+        "finished_at": "2026-10-08T03:24:02.224682+00:00",
+        "wall_seconds": 10.061,
+        "provider_duration_ms": 8981,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "c6b9c9b3-fd41-4bee-a80b-ca05fa7fb1b4",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1282,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14410,
+            "webSearchRequests": 0,
+            "costUSD": 0.070464,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 375,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1282,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14410,
+            "webSearchRequests": 0,
+            "costUSD": 0.070464,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 375,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.070464,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-q1bnhbsa",
+        "payload_sha256": "d341fcb50c45e8b1a94ada09c64611ef4c15cff8439cb6ac37a1cdfe6fd64b0a",
+        "request_sha256": "e173a33d6706e5da60decd26a722fa6888deb3512ed58ef612ed4f7c24948ed6",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    },
+    {
+      "case": "F",
+      "branch": "treatment",
+      "repetition": 1,
+      "checks": {
+        "strict_format_pass": true,
+        "diagnostic_parse_used": false,
+        "payload_schema_pass": true,
+        "content_evaluable": true,
+        "ids_exact": true,
+        "gate_matches": true,
+        "field_matches": 6,
+        "field_total": 6,
+        "row_decisions_correct": 2,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": [
+          {
+            "id": "F1",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          },
+          {
+            "id": "F2",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          }
+        ]
+      },
+      "metadata": {
+        "case": "F",
+        "branch": "treatment",
+        "repetition": 1,
+        "started_at": "2026-10-08T03:24:02.228240+00:00",
+        "finished_at": "2026-10-08T03:24:11.105297+00:00",
+        "wall_seconds": 8.877,
+        "provider_duration_ms": 7871,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "f6a17ecb-b87d-4ec2-acba-3c4bd73a709d",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1160,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14388,
+            "webSearchRequests": 0,
+            "costUSD": 0.069156,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 487,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1160,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14388,
+            "webSearchRequests": 0,
+            "costUSD": 0.069156,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 487,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.069156,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-33achnb4",
+        "payload_sha256": "9c83483861617c8627dd8165b1115c2373053f9304488ce0cd9a60c2302f1a5c",
+        "request_sha256": "ff1e5dd0074ddbe2d848dc989cf27dbd863926e1d6da95c3e975217df1b070d0",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    },
+    {
+      "case": "F",
+      "branch": "baseline",
+      "repetition": 1,
+      "checks": {
+        "strict_format_pass": true,
+        "diagnostic_parse_used": false,
+        "payload_schema_pass": true,
+        "content_evaluable": true,
+        "ids_exact": true,
+        "gate_matches": true,
+        "field_matches": 6,
+        "field_total": 6,
+        "row_decisions_correct": 2,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": [
+          {
+            "id": "F1",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          },
+          {
+            "id": "F2",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          }
+        ]
+      },
+      "metadata": {
+        "case": "F",
+        "branch": "baseline",
+        "repetition": 1,
+        "started_at": "2026-10-08T03:24:11.110509+00:00",
+        "finished_at": "2026-10-08T03:24:20.423995+00:00",
+        "wall_seconds": 9.314,
+        "provider_duration_ms": 8300,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "a9f227e0-b76c-4c62-a2c1-6dd9272ceb3b",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1194,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12640,
+            "webSearchRequests": 0,
+            "costUSD": 0.062504,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 662,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1194,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12640,
+            "webSearchRequests": 0,
+            "costUSD": 0.062504,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 662,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.062504,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-xa6wdjal",
+        "payload_sha256": "b91373859938eb556c41da2283b7e3b3f7014761a8d407adb04c0bcee8c83bfc",
+        "request_sha256": "24381e00cc384e031e2c0e4f297c91b5ef101801e036e211807f2d30666b1a3b",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    },
+    {
+      "case": "A",
+      "branch": "treatment",
+      "repetition": 2,
+      "checks": {
+        "strict_format_pass": true,
+        "diagnostic_parse_used": false,
+        "payload_schema_pass": true,
+        "content_evaluable": true,
+        "ids_exact": true,
+        "gate_matches": true,
+        "field_matches": 6,
+        "field_total": 6,
+        "row_decisions_correct": 2,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": [
+          {
+            "id": "A1",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          },
+          {
+            "id": "A2",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          }
+        ]
+      },
+      "metadata": {
+        "case": "A",
+        "branch": "treatment",
+        "repetition": 2,
+        "started_at": "2026-10-08T03:24:20.428478+00:00",
+        "finished_at": "2026-10-08T03:24:28.620422+00:00",
+        "wall_seconds": 8.192,
+        "provider_duration_ms": 7118,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "19a119b6-2b4d-4cf2-86f9-c958e63ee759",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1030,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14366,
+            "webSearchRequests": 0,
+            "costUSD": 0.067768,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 389,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1030,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14366,
+            "webSearchRequests": 0,
+            "costUSD": 0.067768,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 389,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.067768,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-x8o5ujms",
+        "payload_sha256": "b0d462d7675261dc879c37e3e01253042ce09bcca4d1b86adb19c52f7117c286",
+        "request_sha256": "06c4aee21eb66e9a3d2bc7f1cc6116d21fc3a43a8da98c2325ae1014654dd73a",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    },
+    {
+      "case": "A",
+      "branch": "baseline",
+      "repetition": 2,
+      "checks": {
+        "strict_format_pass": false,
+        "diagnostic_parse_used": true,
+        "payload_schema_pass": true,
+        "content_evaluable": true,
+        "ids_exact": true,
+        "gate_matches": true,
+        "field_matches": 6,
+        "field_total": 6,
+        "row_decisions_correct": 2,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": [
+          {
+            "id": "A1",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          },
+          {
+            "id": "A2",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          }
+        ]
+      },
+      "metadata": {
+        "case": "A",
+        "branch": "baseline",
+        "repetition": 2,
+        "started_at": "2026-10-08T03:24:28.622206+00:00",
+        "finished_at": "2026-10-08T03:24:37.202902+00:00",
+        "wall_seconds": 8.581,
+        "provider_duration_ms": 7586,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "82648853-1e45-43e1-933d-04d68078ea76",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1084,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12616,
+            "webSearchRequests": 0,
+            "costUSD": 0.061308,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 352,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1084,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12616,
+            "webSearchRequests": 0,
+            "costUSD": 0.061308,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 352,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.061308,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-3mm77k6b",
+        "payload_sha256": "e6b71cbd034400c8eadbee795a7a39853fb43b6ad415559d6fc0e86b3c07e2f4",
+        "request_sha256": "b72a6018dca73b65e5bf2ea0479e29144f03495a5656caea0710a5211d895277",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    },
+    {
+      "case": "B",
+      "branch": "baseline",
+      "repetition": 2,
+      "checks": {
+        "strict_format_pass": true,
+        "diagnostic_parse_used": false,
+        "payload_schema_pass": true,
+        "content_evaluable": true,
+        "ids_exact": true,
+        "gate_matches": true,
+        "field_matches": 6,
+        "field_total": 6,
+        "row_decisions_correct": 2,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": [
+          {
+            "id": "B1",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          },
+          {
+            "id": "B2",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          }
+        ]
+      },
+      "metadata": {
+        "case": "B",
+        "branch": "baseline",
+        "repetition": 2,
+        "started_at": "2026-10-08T03:24:37.204608+00:00",
+        "finished_at": "2026-10-08T03:24:45.764335+00:00",
+        "wall_seconds": 8.56,
+        "provider_duration_ms": 7472,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "6a408c30-81f4-4c15-9506-1a111185bdc5",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1103,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12612,
+            "webSearchRequests": 0,
+            "costUSD": 0.061482,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 385,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1103,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12612,
+            "webSearchRequests": 0,
+            "costUSD": 0.061482,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 385,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.061482,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-67rl1mtu",
+        "payload_sha256": "d6e076f8319aafd83a31b53b038ae1019b6491e594444fcb847fd07ea52f8742",
+        "request_sha256": "4e98a7c3df2dbb9930bedc75dd905dc8696c4b7397602b0a6a6bcad59c9cc87d",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    },
+    {
+      "case": "B",
+      "branch": "treatment",
+      "repetition": 2,
+      "checks": {
+        "strict_format_pass": true,
+        "diagnostic_parse_used": false,
+        "payload_schema_pass": true,
+        "content_evaluable": true,
+        "ids_exact": true,
+        "gate_matches": true,
+        "field_matches": 6,
+        "field_total": 6,
+        "row_decisions_correct": 2,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": [
+          {
+            "id": "B1",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          },
+          {
+            "id": "B2",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          }
+        ]
+      },
+      "metadata": {
+        "case": "B",
+        "branch": "treatment",
+        "repetition": 2,
+        "started_at": "2026-10-08T03:24:45.772415+00:00",
+        "finished_at": "2026-10-08T03:24:52.725063+00:00",
+        "wall_seconds": 6.953,
+        "provider_duration_ms": 5942,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "f5fe06d0-8085-4670-a5a9-28f82342031e",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 924,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14362,
+            "webSearchRequests": 0,
+            "costUSD": 0.066692,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 315,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 924,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14362,
+            "webSearchRequests": 0,
+            "costUSD": 0.066692,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 315,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.066692,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-cbzzag2t",
+        "payload_sha256": "91253df683ceb95015eaa1b8cba67107a2b26cde5272cd8642e5ca0819611812",
+        "request_sha256": "4cd7d43914a712d86b87402ea78d76e95399439298864da30d2b6c9a03cbf006",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    },
+    {
+      "case": "C",
+      "branch": "treatment",
+      "repetition": 2,
+      "checks": {
+        "strict_format_pass": true,
+        "diagnostic_parse_used": false,
+        "payload_schema_pass": true,
+        "content_evaluable": true,
+        "ids_exact": true,
+        "gate_matches": true,
+        "field_matches": 6,
+        "field_total": 6,
+        "row_decisions_correct": 2,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": [
+          {
+            "id": "C1",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          },
+          {
+            "id": "C2",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          }
+        ]
+      },
+      "metadata": {
+        "case": "C",
+        "branch": "treatment",
+        "repetition": 2,
+        "started_at": "2026-10-08T03:24:52.726972+00:00",
+        "finished_at": "2026-10-08T03:25:01.166581+00:00",
+        "wall_seconds": 8.44,
+        "provider_duration_ms": 7409,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "cdca290a-35f3-4579-946d-a3b95d8a9296",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1202,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14323,
+            "webSearchRequests": 0,
+            "costUSD": 0.069316,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 311,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1202,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14323,
+            "webSearchRequests": 0,
+            "costUSD": 0.069316,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 311,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.069316,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-_w1nbhao",
+        "payload_sha256": "29bfe02712e1d5b5f2ba8dccc550262a26ec04179088f046d3737304b1a3f9ae",
+        "request_sha256": "0eb36e68006efaedf9ef9b7ce044faaa43dd0e3ddeda2abc5f5a901388635748",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    },
+    {
+      "case": "C",
+      "branch": "baseline",
+      "repetition": 2,
+      "checks": {
+        "strict_format_pass": true,
+        "diagnostic_parse_used": false,
+        "payload_schema_pass": true,
+        "content_evaluable": true,
+        "ids_exact": true,
+        "gate_matches": true,
+        "field_matches": 6,
+        "field_total": 6,
+        "row_decisions_correct": 2,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": [
+          {
+            "id": "C1",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          },
+          {
+            "id": "C2",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          }
+        ]
+      },
+      "metadata": {
+        "case": "C",
+        "branch": "baseline",
+        "repetition": 2,
+        "started_at": "2026-10-08T03:25:01.177213+00:00",
+        "finished_at": "2026-10-08T03:25:09.062588+00:00",
+        "wall_seconds": 7.885,
+        "provider_duration_ms": 6864,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "b48644ce-b631-4514-a22e-afdff4bbdceb",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 971,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12571,
+            "webSearchRequests": 0,
+            "costUSD": 0.059998,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 319,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 971,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12571,
+            "webSearchRequests": 0,
+            "costUSD": 0.059998,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 319,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.059998,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-92ja809n",
+        "payload_sha256": "b108866d4de9da5424908032fd9f5031f223de382cc63e7b1a3517c586dd0ec2",
+        "request_sha256": "9e6eb5f76153455d2ea484f17641a8147a4a803b3464f59823bca88a1b411673",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    },
+    {
+      "case": "D",
+      "branch": "baseline",
+      "repetition": 2,
+      "checks": {
+        "strict_format_pass": true,
+        "diagnostic_parse_used": false,
+        "payload_schema_pass": true,
+        "content_evaluable": true,
+        "ids_exact": true,
+        "gate_matches": true,
+        "field_matches": 6,
+        "field_total": 6,
+        "row_decisions_correct": 2,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": [
+          {
+            "id": "D1",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          },
+          {
+            "id": "D2",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          }
+        ]
+      },
+      "metadata": {
+        "case": "D",
+        "branch": "baseline",
+        "repetition": 2,
+        "started_at": "2026-10-08T03:25:09.065019+00:00",
+        "finished_at": "2026-10-08T03:25:15.997178+00:00",
+        "wall_seconds": 6.932,
+        "provider_duration_ms": 5940,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "9dfd16b4-27e5-473b-b216-824b82a8d7df",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 851,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12732,
+            "webSearchRequests": 0,
+            "costUSD": 0.059442,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 284,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 851,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12732,
+            "webSearchRequests": 0,
+            "costUSD": 0.059442,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 284,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.059442,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-yjb68m19",
+        "payload_sha256": "0d3b6965df46668fa3fb6cd98623c884b80206473668324297d5902609ed8037",
+        "request_sha256": "18a5182d7d5681c79e07613dd037a9a8d74c4050f32f5e868c51e2a8b14dfb71",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    },
+    {
+      "case": "D",
+      "branch": "treatment",
+      "repetition": 2,
+      "checks": {
+        "strict_format_pass": false,
+        "diagnostic_parse_used": true,
+        "payload_schema_pass": true,
+        "content_evaluable": true,
+        "ids_exact": true,
+        "gate_matches": true,
+        "field_matches": 6,
+        "field_total": 6,
+        "row_decisions_correct": 2,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": [
+          {
+            "id": "D1",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          },
+          {
+            "id": "D2",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          }
+        ]
+      },
+      "metadata": {
+        "case": "D",
+        "branch": "treatment",
+        "repetition": 2,
+        "started_at": "2026-10-08T03:25:15.998909+00:00",
+        "finished_at": "2026-10-08T03:25:24.997325+00:00",
+        "wall_seconds": 8.998,
+        "provider_duration_ms": 8012,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "b4db9589-ea19-4968-b106-3a0075d6a4d5",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1141,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14482,
+            "webSearchRequests": 0,
+            "costUSD": 0.069342,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 362,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1141,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14482,
+            "webSearchRequests": 0,
+            "costUSD": 0.069342,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 362,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.069342,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-wdf09a65",
+        "payload_sha256": "2fe254524647a17cc6d9e4617c64611e1ec13efc0a18f005fb1c173f24cfd9bf",
+        "request_sha256": "8a1e780483b94d6819c4d28320439ea33100d0be1b40d7ba85094818bca3de7f",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    },
+    {
+      "case": "E",
+      "branch": "treatment",
+      "repetition": 2,
+      "checks": {
+        "strict_format_pass": true,
+        "diagnostic_parse_used": false,
+        "payload_schema_pass": true,
+        "content_evaluable": true,
+        "ids_exact": true,
+        "gate_matches": true,
+        "field_matches": 6,
+        "field_total": 6,
+        "row_decisions_correct": 2,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": [
+          {
+            "id": "E1",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          },
+          {
+            "id": "E2",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          }
+        ]
+      },
+      "metadata": {
+        "case": "E",
+        "branch": "treatment",
+        "repetition": 2,
+        "started_at": "2026-10-08T03:25:24.999104+00:00",
+        "finished_at": "2026-10-08T03:25:35.899815+00:00",
+        "wall_seconds": 10.901,
+        "provider_duration_ms": 9846,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "7fd64c97-1101-4c8c-a499-bb8ff421a47e",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1394,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14409,
+            "webSearchRequests": 0,
+            "costUSD": 0.07158,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 299,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1394,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14409,
+            "webSearchRequests": 0,
+            "costUSD": 0.07158,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 299,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.07158,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-sm9iuv92",
+        "payload_sha256": "d341fcb50c45e8b1a94ada09c64611ef4c15cff8439cb6ac37a1cdfe6fd64b0a",
+        "request_sha256": "00139a164c2a3622fafc0be3b51f219c37de4fc7a859ad3bd5b639b60c925b75",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    },
+    {
+      "case": "E",
+      "branch": "baseline",
+      "repetition": 2,
+      "checks": {
+        "strict_format_pass": true,
+        "diagnostic_parse_used": false,
+        "payload_schema_pass": true,
+        "content_evaluable": true,
+        "ids_exact": true,
+        "gate_matches": true,
+        "field_matches": 6,
+        "field_total": 6,
+        "row_decisions_correct": 2,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": [
+          {
+            "id": "E1",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          },
+          {
+            "id": "E2",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          }
+        ]
+      },
+      "metadata": {
+        "case": "E",
+        "branch": "baseline",
+        "repetition": 2,
+        "started_at": "2026-10-08T03:25:35.901568+00:00",
+        "finished_at": "2026-10-08T03:25:46.558979+00:00",
+        "wall_seconds": 10.657,
+        "provider_duration_ms": 9643,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "edea81da-e6ca-40f8-b643-550fcccd658e",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1370,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12660,
+            "webSearchRequests": 0,
+            "costUSD": 0.064344,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 438,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1370,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12660,
+            "webSearchRequests": 0,
+            "costUSD": 0.064344,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 438,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.064344,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-mk0b8t_m",
+        "payload_sha256": "5dd4dc1593e7132e0760503a08b9f273d7fb0fa897e7247db488ef04ab91cb1c",
+        "request_sha256": "0b7287291eba89fee8615967b6a50c91d7f51dc12e830bc78a6e4fbe246d6748",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    },
+    {
+      "case": "F",
+      "branch": "baseline",
+      "repetition": 2,
+      "checks": {
+        "strict_format_pass": false,
+        "diagnostic_parse_used": true,
+        "payload_schema_pass": true,
+        "content_evaluable": true,
+        "ids_exact": true,
+        "gate_matches": true,
+        "field_matches": 6,
+        "field_total": 6,
+        "row_decisions_correct": 2,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": [
+          {
+            "id": "F1",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          },
+          {
+            "id": "F2",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          }
+        ]
+      },
+      "metadata": {
+        "case": "F",
+        "branch": "baseline",
+        "repetition": 2,
+        "started_at": "2026-10-08T03:25:46.560668+00:00",
+        "finished_at": "2026-10-08T03:25:56.838840+00:00",
+        "wall_seconds": 10.278,
+        "provider_duration_ms": 9143,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "9578ee75-4ee3-46de-9c45-bde9b04f3f8f",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1398,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12641,
+            "webSearchRequests": 0,
+            "costUSD": 0.064548,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 592,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1398,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 12641,
+            "webSearchRequests": 0,
+            "costUSD": 0.064548,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 592,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.064548,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-fyrtc0rn",
+        "payload_sha256": "b91373859938eb556c41da2283b7e3b3f7014761a8d407adb04c0bcee8c83bfc",
+        "request_sha256": "a6e93a17642f641690568a24f0d1ecb4b0eff7e7db8cad42750705008a1650ee",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    },
+    {
+      "case": "F",
+      "branch": "treatment",
+      "repetition": 2,
+      "checks": {
+        "strict_format_pass": true,
+        "diagnostic_parse_used": false,
+        "payload_schema_pass": true,
+        "content_evaluable": true,
+        "ids_exact": true,
+        "gate_matches": true,
+        "field_matches": 6,
+        "field_total": 6,
+        "row_decisions_correct": 2,
+        "row_total": 2,
+        "eligible_false_positives": 0,
+        "valid_rows_excluded": 0,
+        "valid_rows_indeterminate": 0,
+        "mismatches": [],
+        "row_checks": [
+          {
+            "id": "F1",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          },
+          {
+            "id": "F2",
+            "outcome_state_at_extraction": true,
+            "label_availability_at_training": true,
+            "train_eligibility": true
+          }
+        ]
+      },
+      "metadata": {
+        "case": "F",
+        "branch": "treatment",
+        "repetition": 2,
+        "started_at": "2026-10-08T03:25:56.840531+00:00",
+        "finished_at": "2026-10-08T03:26:06.277506+00:00",
+        "wall_seconds": 9.437,
+        "provider_duration_ms": 8399,
+        "exit_code": 0,
+        "runtime_ok": true,
+        "session_id": "0deb2797-17ec-43db-be45-46e9b4ed3c29",
+        "is_error": false,
+        "model_usage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1055,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14389,
+            "webSearchRequests": 0,
+            "costUSD": 0.06811,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 463,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "model_usage_reported": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1055,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 14389,
+            "webSearchRequests": 0,
+            "costUSD": 0.06811,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 463,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "cost_usd": 0.06811,
+        "cli_version": "2.1.293 (Claude Code)",
+        "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-7chxztl3",
+        "payload_sha256": "9c83483861617c8627dd8165b1115c2373053f9304488ce0cd9a60c2302f1a5c",
+        "request_sha256": "b86f2750650efb0acbf7b23203fd866459d6c406645790da512e11ab3a5ed98d",
+        "effective_configuration": {
+          "resolved_models": [
+            "claude-sonnet-5-5"
+          ],
+          "effort": "unknown",
+          "tools": "not independently exposed",
+          "safe_mode": "not independently exposed",
+          "mcp": "not independently exposed",
+          "session_persistence": "not independently exposed"
+        }
+      }
+    }
+  ],
+  "semantic_review": "Independent agent contexts completed; external human review pending",
+  "tests_before_freeze": {
+    "product_and_pilot": 110,
+    "checker_and_runner": 13,
+    "total": 123
+  },
+  "semantic_reviewers": [
+    "/root/temporal02_outputs_abc",
+    "/root/temporal02_outputs_def"
+  ]
+}

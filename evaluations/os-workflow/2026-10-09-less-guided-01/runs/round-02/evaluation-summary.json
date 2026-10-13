@@ -1,0 +1,46 @@
+{
+  "status": "EVALUATED_EXPLORATORY_MIXED",
+  "review_independence": false,
+  "completed_pairs": 6,
+  "benchmark_runtime_pass": 12,
+  "benchmark_model": "claude-haiku-5-5",
+  "smoke_count_this_round": 1,
+  "counts": {
+    "baseline": {
+      "raw_format_pass": 2,
+      "diagnostic_status_matches": 5,
+      "rubric_content_pass": 2,
+      "false_blocks_on_coherent": 1,
+      "reference_paths_exist_diagnostic": 5,
+      "scope_contract_deviations": 0
+    },
+    "treatment": {
+      "raw_format_pass": 0,
+      "diagnostic_status_matches": 5,
+      "rubric_content_pass": 4,
+      "false_blocks_on_coherent": 1,
+      "reference_paths_exist_diagnostic": 5,
+      "scope_contract_deviations": 1
+    }
+  },
+  "new_treatment_false_blocks": [],
+  "new_treatment_scope_contract_deviations": [
+    "E03"
+  ],
+  "content_gain_families": [
+    "freeze",
+    "labels"
+  ],
+  "predefined_favorable_signal": false,
+  "reason": "Más cases cumplen cuatro obligaciones en treatment, pero aparece desviación de contrato en E03; formato treatment0/6. Resultado mixto, sin mejora fiable/general acreditada.",
+  "model_calls_cumulative": 15,
+  "estimated_api_cost_usd_cumulative": 0.02065453,
+  "budget_limit_usd_cumulative": 0.2,
+  "foundry_promotions": 0,
+  "notes": [
+    "Formato y contenido no son una métrica compuesta; content pass es juicio local no independiente.",
+    "E01baseline ya visto en intento fallido; no completamente inédito.",
+    "Una repetición/seis cases; no variabilidad estadística.",
+    "Reference path checks diagnósticos se separan de soporte semántico y JSON raw inválido."
+  ]
+}

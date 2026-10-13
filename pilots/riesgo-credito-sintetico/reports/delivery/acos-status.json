@@ -1,0 +1,23 @@
+{
+  "project": "Piloto sintético de riesgo de crédito",
+  "stage": "delivery",
+  "status": "IN_PROGRESS",
+  "completed": [
+    "discovery",
+    "framing",
+    "diagnosis",
+    "execution",
+    "validation"
+  ],
+  "total_stages": 7,
+  "blockers": [],
+  "open_decisions": [
+    "Aprobar el paquete local de Delivery y su recomendación limitada al laboratorio.",
+    "Tras Delivery, revisar handoff y cierre del piloto."
+  ],
+  "next_gates": [
+    "delivery"
+  ],
+  "integrity": "OK",
+  "findings": []
+}

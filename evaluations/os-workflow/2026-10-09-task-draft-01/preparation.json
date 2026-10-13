@@ -1,0 +1,16 @@
+{
+  "id": "os-workflow-task-draft-01",
+  "status": "PREPARED_PENDING_PACKAGE_REVIEW",
+  "cases": 4,
+  "payloads": 8,
+  "draft_requested_cases": 3,
+  "control_cases": 1,
+  "runtime": null,
+  "model": null,
+  "budget_usd": null,
+  "model_calls": 0,
+  "api_cost_usd": 0,
+  "paid_execution_authorized": false,
+  "review_independent": false,
+  "runtime_isolation_verified": false
+}

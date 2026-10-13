@@ -1,0 +1,23 @@
+{
+  "project": "Piloto sintético de riesgo de crédito",
+  "stage": "handoff",
+  "status": "IN_PROGRESS",
+  "completed": [
+    "discovery",
+    "framing",
+    "diagnosis",
+    "execution",
+    "validation",
+    "delivery"
+  ],
+  "total_stages": 7,
+  "blockers": [],
+  "open_decisions": [
+    "Aprobar Handoff y el cierre del piloto sintético con sus límites."
+  ],
+  "next_gates": [
+    "handoff"
+  ],
+  "integrity": "OK",
+  "findings": []
+}

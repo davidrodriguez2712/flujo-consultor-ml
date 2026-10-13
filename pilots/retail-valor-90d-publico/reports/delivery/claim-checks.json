@@ -1,0 +1,24 @@
+{
+  "claims_count": 43,
+  "claim_types": {
+    "observed": 34,
+    "assumption": 5,
+    "limitation": 3,
+    "proposal": 1
+  },
+  "source_hashes": "PASS",
+  "field_values": "PASS",
+  "typed_claim_references": "PASS",
+  "rendered_figures": "PASS",
+  "vocabulary_checks": "PASS",
+  "semantic_review": "PASS: baseline histórico, población/horizonte iguales, ventas observadas sin atribución causal, cliente/capacidad simulados y reproducción pendiente.",
+  "documents_checked": [
+    "decision/recommendation.md",
+    "delivery/decision_memo.md",
+    "delivery/analytical_report.md",
+    "delivery/delivery_contract.md",
+    "reports/delivery/review.md"
+  ],
+  "pending_gate": "delivery",
+  "api_cost_usd": 0
+}

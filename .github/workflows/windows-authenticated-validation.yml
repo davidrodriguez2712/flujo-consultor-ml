@@ -1,0 +1,69 @@
+name: ACOS Windows authenticated minimal probe
+on:
+  workflow_dispatch:
+    inputs:
+      architecture:
+        description: Arquitectura (ejecutar x64 primero, ARM64 solo tras revisar coste)
+        type: choice
+        options: [x64, arm64]
+        default: x64
+      runtime_budget:
+        description: Partida restante por runtime; máximo 0.25 USD
+        type: string
+        default: '0.25'
+      runtime:
+        description: Runtime (no repetir capacidades ya comprobadas)
+        type: choice
+        options: [both, codex, claude]
+        default: both
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ${{ inputs.architecture == 'arm64' && 'windows-11-arm' || 'windows-2022' }}
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+          architecture: ${{ inputs.architecture }}
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          architecture: ${{ inputs.architecture }}
+      - name: Preparar sin modelos
+        run: |
+          New-Item -ItemType Directory -Force evidence | Out-Null
+          python -m pip install ".[dev]"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m pytest -q tests/test_runtime_budget.py tests/test_windows_authenticated_probe.py --junitxml=evidence/checks.xml
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $acosPrefix = Join-Path $env:RUNNER_TEMP 'acos-authenticated-runtimes'
+          npm install --global --prefix $acosPrefix @openai/codex@0.160.0 @anthropic-ai/claude-code@2.1.294
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          "ACOS_RUNTIME_PREFIX=$acosPrefix" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+      - name: Skill y continuidad con consumo limitado
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ACOS_RUNTIME_BUDGET: ${{ inputs.runtime_budget }}
+          ACOS_RUNTIME_TARGET: ${{ inputs.runtime }}
+        run: |
+          python scripts/ci/windows_authenticated_probe.py --npm-prefix $env:ACOS_RUNTIME_PREFIX --architecture '${{ inputs.architecture }}' --skill tests/fixtures/windows-runtime/design-validation/SKILL.md --runtime-budget $env:ACOS_RUNTIME_BUDGET --runtime $env:ACOS_RUNTIME_TARGET --output evidence/authenticated
+          exit $LASTEXITCODE
+      - name: Conservar evidencia
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: acos-authenticated-${{ inputs.architecture }}-${{ github.run_id }}
+          path: evidence/
+          retention-days: 14
+          if-no-files-found: error

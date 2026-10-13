@@ -1,0 +1,51 @@
+{
+  "data/source.json": [
+    {
+      "case_id": "Q-17",
+      "duration_minutes": 14.96
+    },
+    {
+      "case_id": "Q-28",
+      "duration_minutes": 8.02
+    }
+  ],
+  "runs/original/execution.json": {
+    "steps": [
+      "source -> CSV writer numeric .1f -> CSV reader float -> rule >= 15.0"
+    ],
+    "consumed_values": [
+      {
+        "case_id": "Q-17",
+        "duration_minutes": 15.0
+      },
+      {
+        "case_id": "Q-28",
+        "duration_minutes": 8.0
+      }
+    ],
+    "selected_ids": [
+      "Q-17"
+    ]
+  },
+  "runs/reproduction/execution.json": {
+    "steps": [
+      "source object in memory -> rule >= 15.0"
+    ],
+    "consumed_values": [
+      {
+        "case_id": "Q-17",
+        "duration_minutes": 14.96
+      },
+      {
+        "case_id": "Q-28",
+        "duration_minutes": 8.02
+      }
+    ],
+    "selected_ids": []
+  },
+  "environment.json": {
+    "both_runs": "Same Python/runtime/platform; no randomness",
+    "writer": "CSV, format(float(value), .1f)",
+    "reader": "duration float, ID string"
+  }
+}

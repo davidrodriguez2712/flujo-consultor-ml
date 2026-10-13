@@ -1,0 +1,24 @@
+```json
+{
+  "rows": [
+    {
+      "id": "F1",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "Normalizado a UTC: prediction_timestamp = 2025-08-01T05:00:00Z y feature_available_at = 2025-08-01T05:00:00Z, así que las features están disponibles (igualdad permitida). La ventana [2025-08-01T05:00Z, 2025-09-01T05:00Z) ya terminó. label_available_at = 2025-10-01T00:00-05:00 = 2025-10-01T05:00:00Z, que es <= training_timestamp 2025-10-01T05:00:00Z (igualdad permitida con '<='), y también es anterior a la extracción (2025-10-02T12:00Z). target_reported = 0, por lo que el outcome es observed_negative. No hay otras exclusiones de población."
+    },
+    {
+      "id": "F2",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "feature_available_at = 2025-08-01T04:59:59Z es <= prediction_timestamp 2025-08-01T05:00:00Z, por lo que las features están disponibles. La ventana [2025-08-01T05:00Z, 2025-09-01T05:00Z) terminó. label_available_at = 2025-09-15T10:00:00Z es <= training_timestamp 2025-10-01T05:00:00Z y anterior a la extracción (2025-10-02T12:00Z). target_reported = 1, por lo que el outcome es observed_positive. No hay otras exclusiones de población."
+    }
+  ],
+  "open_questions": [
+    "training_timestamp (2025-10-01T05:00:00Z) es anterior a extraction_timestamp (2025-10-02T12:00:00Z). Confirmar si el entrenamiento usa un snapshot previo a la extracción o si hay un error de fechas. La clasificación de ambas filas no cambia porque sus labels estaban disponibles antes de ambos instantes, pero F1 queda justo en el límite de igualdad."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}
+```

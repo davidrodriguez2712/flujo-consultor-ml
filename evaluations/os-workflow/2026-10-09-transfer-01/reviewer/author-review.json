@@ -1,0 +1,27 @@
+{
+  "status": "PREPARATION_REVIEWED_LOCALLY",
+  "independent": false,
+  "model_effectiveness": "NOT_EVALUATED",
+  "checks": {
+    "six_approved_business_scenarios": true,
+    "contrasting_permissions_and_formats": true,
+    "same_public_task_per_pair": true,
+    "four_obligations_two_prohibitions_per_case": true,
+    "material_false_claim_rule_predeclared": true,
+    "specific_format_overrides_OS_examples": true,
+    "fictional_permissions_not_real_authority": true
+  },
+  "limitations": [
+    "Expected creados por el mismo autor; revisión no independiente ni ciega.",
+    "Una repetición propuesta, seis casos: no mide variabilidad.",
+    "Ejemplos y datos sintéticos no prueban eficacia en proyectos reales.",
+    "Conocimiento del autor sobre fallos anteriores; casos inéditos no equivale a diseño sin ese conocimiento."
+  ],
+  "execution_blockers": [
+    "Aceptación concreta del paquete y expected pendiente.",
+    "Transporte anterior SYSTEM JSON incompatible con T02; ajustar y verificar antes de ejecución.",
+    "Checker Markdown pendiente; no sustituirlo por checker JSON.",
+    "Fijar modelo, versión, aislamiento y configuración efectiva.",
+    "Autorización nueva de gasto ligada a configuración; saldo previo no transferible."
+  ]
+}

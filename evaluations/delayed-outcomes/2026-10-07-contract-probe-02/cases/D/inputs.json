@@ -1,0 +1,33 @@
+{
+  "industry": "Crédito sintético",
+  "extraction_timestamp": "2025-06-20T00:00:00Z",
+  "training_timestamp": "2025-06-15T00:00:00Z",
+  "availability_comparator": "<=",
+  "window_bounds": "[start,end)",
+  "feature_rule": "Todas las features requeridas deben estar disponibles al instante de predicción; feature_available_at es su máximo comprobado, o null si no está verificado. No hay otras exclusiones de población.",
+  "certification_rule": "Target=evento administrativo ficticio en la ventana. Para evento irreversible, positive_certified_at certifica el positivo y lo vuelve disponible aunque la ventana siga abierta. Para evento reversible, el flag provisional no certifica el target: solo se cierra tres días después del fin de ventana y no hay disponibilidad antes. Los valores no certificados pueden cambiar.",
+  "rows": [
+    {
+      "id": "D1",
+      "prediction_timestamp": "2025-06-01T00:00:00Z",
+      "feature_available_at": "2025-05-31T23:00:00Z",
+      "outcome_window_start": "2025-06-01T00:00:00Z",
+      "outcome_window_end": "2025-07-01T00:00:00Z",
+      "target_reported": 1,
+      "label_available_at": "2025-06-10T00:00:00Z",
+      "event_kind": "irreversible",
+      "positive_certified_at": "2025-06-10T00:00:00Z"
+    },
+    {
+      "id": "D2",
+      "prediction_timestamp": "2025-06-01T00:00:00Z",
+      "feature_available_at": "2025-05-31T23:00:00Z",
+      "outcome_window_start": "2025-06-01T00:00:00Z",
+      "outcome_window_end": "2025-07-01T00:00:00Z",
+      "target_reported": 1,
+      "label_available_at": null,
+      "event_kind": "reversible",
+      "positive_certified_at": null
+    }
+  ]
+}

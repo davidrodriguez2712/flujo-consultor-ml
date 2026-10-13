@@ -1,0 +1,11 @@
+{
+  "status": "APPROVED",
+  "manifest": "evidence-manifest-01.json",
+  "manifest_sha256": "90544d163b168930e86373699ede98b7f099b54d1b7d7d5ea9487d1c50362e19",
+  "reviewer": "David",
+  "decision": "Acepta protocolo y expected concretos; autoriza preparar configuración y checks, sin gasto aprobado.",
+  "scope": "Revisar protocolo/cases/expected concretos; ejecución y presupuesto no autorizados por aceptación de preparación.",
+  "preparation_authorization": "Usuario: aprobado",
+  "recorded_at_utc": "2026-10-09T17:53:06.776337+00:00",
+  "user_message": "apruebo"
+}

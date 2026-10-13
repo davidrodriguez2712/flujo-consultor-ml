@@ -1,0 +1,72 @@
+{
+  "status": "COMPLETED_MIXED_NO_FAVORABLE_SIGNAL",
+  "benchmark_pairs_completed": 4,
+  "benchmark_invocations": 8,
+  "smoke_pass": true,
+  "provider_requests": 9,
+  "paid_retries": 0,
+  "metrics_by_condition": {
+    "baseline": {
+      "cases": 4,
+      "format_pass": 4,
+      "content_pass": 1,
+      "joint_format_and_content_pass": 1,
+      "status_matches": 3
+    },
+    "treatment": {
+      "cases": 4,
+      "format_pass": 3,
+      "content_pass": 2,
+      "joint_format_and_content_pass": 1,
+      "status_matches": 3
+    }
+  },
+  "pairs": [
+    {
+      "case": "D01",
+      "baseline_joint_pass": false,
+      "treatment_joint_pass": false,
+      "comparison": "TIE"
+    },
+    {
+      "case": "D02",
+      "baseline_joint_pass": true,
+      "treatment_joint_pass": false,
+      "comparison": "REGRESSION"
+    },
+    {
+      "case": "D03",
+      "baseline_joint_pass": false,
+      "treatment_joint_pass": true,
+      "comparison": "IMPROVEMENT"
+    },
+    {
+      "case": "D04",
+      "baseline_joint_pass": false,
+      "treatment_joint_pass": false,
+      "comparison": "TIE"
+    }
+  ],
+  "predefined_favorable_rule_satisfied": false,
+  "reasons": [
+    "Solo mejora conjunta D03; se requieren al menos dos de D01–D03.",
+    "D02 pierde formato en treatment y cumplimiento conjunto.",
+    "D04 no cumple contenido en ninguna rama por status inadecuado para seguimiento autorizado."
+  ],
+  "estimated_round02_api_cost_usd": 0.01455995,
+  "ledger_decimal_sum_before_display_rounding": "0.0145599500000000007",
+  "display_rounding_usd": "0.000000000001; ledger intacto",
+  "estimated_round01_api_cost_usd": 0.000241,
+  "estimated_task_draft_study_api_cost_usd": 0.01480095,
+  "estimated_all_workflow_studies_api_cost_usd": 0.05633583,
+  "approved_task_draft_cumulative_ceiling_usd": 0.1,
+  "usage_known": true,
+  "invoice_verified": false,
+  "review_independent": false,
+  "review_blind": false,
+  "general_effectiveness": "NOT_ESTABLISHED",
+  "foundry_promotions": 0,
+  "further_paid_execution_authorized": false,
+  "authority_note": "round-status.json conserva fase de colección; summary y semantic-review contienen revisión posterior.",
+  "next_recommendation": "Revisar localmente outputs futuros/criterios, formato Markdown y estado referido a acción solicitada; diseño acotado antes de código o nueva evaluación pagada."
+}

@@ -1,0 +1,16 @@
+{
+  "status": "STOPPED_SMOKE_FORMAT_FAILURE",
+  "benchmark_pairs_completed": 0,
+  "benchmark_invocations": 0,
+  "provider_requests": 1,
+  "paid_retries": 0,
+  "estimated_new_api_cost_usd": 0.000241,
+  "approved_round_ceiling_usd": 0.1,
+  "prior_studies_estimated_usd": 0.04153488,
+  "estimated_cumulative_studies_usd": 0.04177588,
+  "usage_known": true,
+  "effectiveness": "NOT_EVALUATED",
+  "review": "Diagnóstico local del autor; no independiente ni ciego.",
+  "next_paid_execution_authorized": false,
+  "reason": "Condición congelada exige detener ante fallo del contrato del smoke. Saldo no implica aprobación de una ronda nueva."
+}

@@ -1,0 +1,11 @@
+{
+  "status": "STOPPED_RUNTIME_FAILURE",
+  "runs": [
+    {
+      "case": "smoke",
+      "condition": "baseline",
+      "runtime_success": false
+    }
+  ],
+  "effectiveness": "NOT_REVIEWED"
+}

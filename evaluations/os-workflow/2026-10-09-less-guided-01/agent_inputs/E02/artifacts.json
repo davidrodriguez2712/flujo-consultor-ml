@@ -1,0 +1,25 @@
+{
+  "analysis/plan.md": "# Plan de análisis\n\nComparar consumo por ruta semanal y añadir sensibilidad por tipo de vehículo.\n",
+  "reports/frozen-01/plan.md": "# Plan de análisis\n\nComparar consumo por ruta semanal.\n",
+  "reports/manifest-01.json": "{\"files\":[{\"path\":\"reports/frozen-01/plan.md\",\"sha256\":\"66decbbb6b757b0019a84b1ffdfa8af6e3232666845c6403224fbe2729fc93ff\"}],\"package_id\":\"fleet-diagnosis\",\"version\":\"01\"}",
+  "reports/approval-01.json": {
+    "fixture": true,
+    "status": "APPROVED",
+    "owner": "Owner hipotético",
+    "manifest": "reports/manifest-01.json",
+    "manifest_sha256": "41299ac9d8ca2acb202596a51ec49c465f6b412a86a632b8e846cfe4aab62d74"
+  },
+  "reports/integrity-scan.json": {
+    "rows": [
+      {
+        "path": "analysis/plan.md",
+        "observed_sha256": "0a24a35830fddf2985c689ef7b9661e30458c5f6743778a82ea29316b8f861d2"
+      },
+      {
+        "path": "reports/frozen-01/plan.md",
+        "observed_sha256": "66decbbb6b757b0019a84b1ffdfa8af6e3232666845c6403224fbe2729fc93ff"
+      }
+    ],
+    "sha_convention": "SHA-256 de bytes UTF-8 del contenido literal del archivo. Los planes incluyen newline final; el manifest es el string JSON compacto incluido, sin newline final."
+  }
+}

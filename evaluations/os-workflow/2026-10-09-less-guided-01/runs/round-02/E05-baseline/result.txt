@@ -1,0 +1,36 @@
+```json
+{
+  "status": "MUST_CORRECT",
+  "findings": [
+    {
+      "statement": "El borrador afirma que Norte alcanzó 98% de entregas puntuales en su última semana completa, pero ese valor no aparece en las filas de Norte. El 98% corresponde a la fila de Sur (2025-10-20 a 2025-10-27, 98/100).",
+      "evidence_paths": ["delivery/draft.md", "analysis/weekly.json"]
+    },
+    {
+      "statement": "Según la definición del contexto, las filas de Norte con complete=true son la semana 2025-10-06 (on_time 90 / deliveries 100 = 0.90) y la semana 2025-10-20 (on_time 92 / deliveries 100 = 0.92). El máximo week_start es 2025-10-20, por lo que la última semana completa de Norte es esa, con on_time_share = 0.92 (92%).",
+      "evidence_paths": ["analysis/weekly.json"]
+    },
+    {
+      "statement": "La fila de Norte de la semana 2025-11-03 tiene complete=false (49/50) y debe excluirse; si se incluyera, produciría un máximo week_start distinto y un resultado no válido según la definición.",
+      "evidence_paths": ["analysis/weekly.json"]
+    },
+    {
+      "statement": "El texto que puede sostenerse con la tabla de soporte es: 'La zona Norte alcanzó 92% de entregas puntuales en su última semana completa (semana del 20 de octubre al 27 de octubre de 2025, excl.).'",
+      "evidence_paths": ["analysis/weekly.json", "delivery/draft.md"]
+    }
+  ],
+  "proposed_actions": [
+    "Corregir en delivery/draft.md la cifra de 98% por 92% para Norte, y citar la semana 2025-10-20 a 2025-10-27 (fin exclusivo) como periodo de referencia.",
+    "Revisar que la redacción distinga la unidad (fracción 0–1 presentada como porcentaje) y no mencione Sur ni la semana incompleta de 2025-11-03.",
+    "Antes de cualquier difusión, obtener la aceptación del owner del engagement sobre la definición y el resultado corregido; esta revisión no la otorga.",
+    "Verificar el resultado contra la fuente de entregas original (fuera de este expediente) si el owner lo requiere para el cierre."
+  ],
+  "next_step": "El owner del borrador corrige la cifra a 92% y ajusta la referencia temporal; después se repite la revisión del texto contra analysis/weekly.json antes de cualquier uso. No publicar ni aceptar gates en este paso.",
+  "limitations": [
+    "La revisión se limita al contenido del expediente proporcionado; no se consultaron fuentes de entregas originales ni sistemas externos.",
+    "No se verificó la integridad de los conteos on_time y deliveries en la fuente; se asume la tabla de soporte tal como está.",
+    "La aceptación de la definición, el owner y la decisión de difusión no forman parte de este análisis y siguen pendientes de autorización humana.",
+    "Esta calificación READY/MUST_CORRECT aplica al alcance revisado y no constituye aprobación de gate."
+  ]
+}
+```

@@ -1,0 +1,65 @@
+{
+  "POST": {
+    "rows": 2122,
+    "descriptions": [
+      "POSTAGE"
+    ]
+  },
+  "DOT": {
+    "rows": 1446,
+    "descriptions": [
+      "DOTCOM POSTAGE"
+    ]
+  },
+  "M": {
+    "rows": 1421,
+    "descriptions": [
+      "Manual"
+    ]
+  },
+  "C2": {
+    "rows": 282,
+    "descriptions": [
+      "CARRIAGE"
+    ]
+  },
+  "D": {
+    "rows": 177,
+    "descriptions": [
+      "Discount"
+    ]
+  },
+  "S": {
+    "rows": 104,
+    "descriptions": [
+      "SAMPLES"
+    ]
+  },
+  "BANK CHARGES": {
+    "rows": 102,
+    "descriptions": [
+      " Bank Charges",
+      "Bank Charges"
+    ]
+  },
+  "ADJUST": {
+    "rows": 67,
+    "descriptions": [
+      "Adjustment by john on 26/01/2010 16",
+      "Adjustment by john on 26/01/2010 17",
+      "Adjustment by Peter on 24/05/2010 1"
+    ]
+  },
+  "AMAZONFEE": {
+    "rows": 43,
+    "descriptions": [
+      "AMAZON FEE"
+    ]
+  },
+  "B": {
+    "rows": 6,
+    "descriptions": [
+      "Adjust bad debt"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "canonical_foundry_skill": "experiments/skills/detect-leakage/SKILL.md",
+  "version": "0.1.0",
+  "status": "experimental",
+  "skill_sha256": "2ea060606202840ee4ce49ff27c9beb6b29ffae27edebcf755683e9c9bc99fce",
+  "common_workflow_snapshot": "snapshots/os/workflow/execution-and-qa.md",
+  "common_workflow_sha256": "af47b5625869819d53446a6b4b2f541d1c054a70d2767e2be3817d4efd27f422",
+  "workflow_same_in_both_conditions": true,
+  "snapshot_is_not_native_installation": true,
+  "templates_canonical": true
+}

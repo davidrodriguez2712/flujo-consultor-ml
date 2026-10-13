@@ -1,0 +1,15 @@
+{
+  "status": "AUTHOR_REVIEW_COMPLETED_PENDING_HUMAN_ACCEPTANCE",
+  "by": "Autor del paquete",
+  "at_utc": "2026-10-10T11:07:02.179044+00:00",
+  "manifest_sha256": "54f53b2be59f6485f6f7736e57fd291ac78c4c730f5e578b89129b7cfe4fded5",
+  "cases": 3,
+  "all_expected_reviewed": true,
+  "fixture_defects_identified": [],
+  "native_discovery": "PASS_PLUGIN_LOCAL_EXPLICIT",
+  "canonical_skill_bytes_unchanged": true,
+  "independent": false,
+  "blind": false,
+  "coverage_limit": "Tres casos iniciales explícitos; no cubren todas familias de leakage.",
+  "paid_execution_authorized": false
+}

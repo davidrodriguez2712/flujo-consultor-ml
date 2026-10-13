@@ -1,0 +1,30 @@
+## Estado
+
+MUST_CORRECT
+
+## Hallazgos
+
+- `analysis/scenario.json` y `drafts/pricing.md` son coherentes en sus cifras. Base: ingresos 200.000 y margen bruto 50.000, que equivale al 25 %. Escenario: ingresos 200.000 y margen bruto 55.000, que equivale al 27,5 %. La diferencia es de +2,5 puntos porcentuales.
+- El escenario no es coherente con un cambio de precios. Según `analysis/scenario.json`, el volumen y los ingresos están fijos "por construcción". Con volumen fijo, un cambio de precio modifica los ingresos. Aquí los ingresos no cambian, pero el margen bruto sube 5.000. Ese aumento solo puede venir de una reducción de costes o de otro supuesto que el expediente no documenta.
+- `drafts/pricing.md` atribuye la mejora a un escenario de precios. El artifact fuente no respalda esa atribución, por lo que la etiqueta del escenario no coincide con su mecánica.
+- `contracts/audience.json` indica que la audiencia es Dirección comercial, que el entregable es un memo Markdown legible y que la aprobación es de propuesta, no de cambio de precios. Este memo cumple ese marco.
+- No hay en el expediente una fuente de costes, un precio propuesto ni una variación de volumen que explique los 5.000 adicionales.
+
+## Acciones propuestas
+
+- No presentar a dirección la diferencia de +2,5 pp como efecto de precios. Presentarla solo como resultado de una simulación con supuestos no validados.
+- Corregir o documentar el modelo de escenario en `analysis/scenario.json`. Debe declarar: precio propuesto y variación respecto a la base; cómo se mantiene el volumen fijo si el precio cambia; y de dónde sale la reducción de 5.000 en coste o margen, con su fuente.
+- Si el escenario sigue siendo de precio con volumen fijo, recalcular ingresos y margen bruto con el nuevo precio. No reutilizar el ingreso de 200.000.
+- Revisar `drafts/pricing.md` después de la corrección para que la etiqueta, la cifra y el supuesto coincidan.
+- No tomar decisiones de piloto ni de precios con esta comparación.
+
+## Siguiente paso
+
+Solicitar al owner de datos o finanzas la fuente de costes y la definición del precio simulado. Con esos datos, corregir `analysis/scenario.json` y volver a revisar `drafts/pricing.md`. Después, preparar el análisis de sensibilidad sobre el precio, manteniendo el volumen fijo y sin estimar elasticidad.
+
+## Límites
+
+- Revisión limitada a los tres artifacts del expediente. No se consultaron fuentes externas ni datos transaccionales.
+- Los datos son sintéticos y la revisión no autoriza ningún cambio de precios, piloto ni experimento.
+- No se ha estimado elasticidad ni se ha validado el supuesto de volumen fijo.
+- La causa de la mejora de 5.000 en margen bruto no puede determinarse con el expediente disponible.

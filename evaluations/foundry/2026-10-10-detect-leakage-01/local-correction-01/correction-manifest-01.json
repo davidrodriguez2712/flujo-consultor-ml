@@ -1,0 +1,70 @@
+{
+  "id": "foundry-local-correction-01",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "6b12933d001531470f3f1be017213a517af4eac0c009eb5988bec4271b807281",
+      "bytes": 447
+    },
+    {
+      "path": "native-mock-explicit-instructions/isolated-config/.claude.json",
+      "sha256": "3f5435998412bea9a2c9c4e266948e9495e68a76a93607fef38ebed131303e53",
+      "bytes": 719
+    },
+    {
+      "path": "native-mock-explicit-instructions/isolated-config/backups/.claude.json.backup.1791725705666",
+      "sha256": "30b7f9aa0be229f263b5be69d488940176ce1f998c8769ad41bb8a0b3df3665e",
+      "bytes": 84
+    },
+    {
+      "path": "native-mock-explicit-instructions/metadata.json",
+      "sha256": "32dc6b888b40dc990efb71de076447a3f7a01530e56f89304b98af9b4aa87e23",
+      "bytes": 3364
+    },
+    {
+      "path": "native-mock-explicit-instructions/result.txt",
+      "sha256": "53da567089bec8daf13992736c1e11db085942fe5a8aca328e3e58fc5edec841",
+      "bytes": 6
+    },
+    {
+      "path": "native-mock-explicit-instructions/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "native-mock-explicit-instructions/stdout.jsonl",
+      "sha256": "457a7e03d07e4ca150e19c3ff55d9386f2bf6282927f53bfc4c7243436de54b1",
+      "bytes": 6911
+    },
+    {
+      "path": "native-mock-explicit-instructions/workspace/.runtime/check_inputs.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "native-mock-explicit-instructions/workspace/case.md",
+      "sha256": "efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7",
+      "bytes": 6
+    },
+    {
+      "path": "native-mock-explicit-instructions/workspace/inputs/data.csv",
+      "sha256": "daff832f802000e645771a60983c76c963f6ee602a6230e45237bd360e91cc1a",
+      "bytes": 4
+    },
+    {
+      "path": "native-mock-explicit-instructions/workspace/reports/leakage/audit.md",
+      "sha256": "c66f6a0a4dc1e7b82c5a2c18800dc33a99faee474ca8937349c07fc258e68e89",
+      "bytes": 26
+    },
+    {
+      "path": "pytest-results.xml",
+      "sha256": "6e11fad0e2f67f8fa0a579d12b25db8c8dbb94f58ca3ffd05f6280afb6029816",
+      "bytes": 29659
+    },
+    {
+      "path": "summary.json",
+      "sha256": "f1143594a38f100c396810c9b7c729d0bd8eb31d4d677337759eef259e56f4bd",
+      "bytes": 1284
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "status": "DRAFT_NOT_EXECUTABLE_PENDING_TRANSPORT_DESIGN_APPROVAL",
+  "preparation_manifest_sha256": "54f53b2be59f6485f6f7736e57fd291ac78c4c730f5e578b89129b7cfe4fded5",
+  "runtime": {
+    "name": "Claude Code",
+    "version": "2.1.296 (Claude Code)",
+    "model_proposed": "claude-haiku-5-5",
+    "model_not_invoked": true
+  },
+  "native_skill": {
+    "distribution": "Plugin local explícito, contenido SKILL.md sin cambios",
+    "name": "acos-eval:detect-leakage",
+    "baseline": "Sin skill/plugin",
+    "treatment": "Solo pluginacos-eval",
+    "discovery_verified": true,
+    "body_invocation_verified": false,
+    "required_evidence": "Evento Skill con nombre exacto y trazabilidad del snapshot; si no ocurre, no atribuir eficacia a invocación nativa."
+  },
+  "conditions": {
+    "same_workflow_snapshot": true,
+    "same_task_inputs_tools_permissions": true,
+    "shared_prompt": "Lee case.md y audita únicamente sus inputs autorizados. Cumple el contrato común; utiliza solo capacidades disponibles y pertinentes. Entrega resumen y ruta de reporte.",
+    "expected_in_agent_cwd": false,
+    "reviewer_outside_workspace": true
+  },
+  "tools_proposed": [
+    "Read",
+    "Write",
+    "Bash",
+    "Skill"
+  ],
+  "bash_proposed": "Únicamente comando exacto de utility local readonly que verifica conteos/timestamps/hashes de inputs. No Python/Bash arbitrario, no ejecutar pipeline.py. Utility pendiente de implementación/revisión.",
+  "restrictions": {
+    "permission_mode": "dontAsk",
+    "restricted": true,
+    "safe_mode": false,
+    "bare": false,
+    "setting_sources": "",
+    "explicit_settings_only": true,
+    "isolated_config_dir": true,
+    "disable_bundled_skills": true,
+    "mcp_servers": {},
+    "read_write_scope": "case.md, inputs y skill para lectura; reports/leakage/audit.md para escritura; denegar acceso exterior/expected y modificación de inputs. Efectividad real pendiente de probe negativo, no sandboxOS acreditado.",
+    "subagents": false,
+    "network_tools": false,
+    "model_api_network": "Solo proxy del proveedor autorizado desde proceso CLI, no herramientas de red.",
+    "configuration_sources_isolation_verified": false
+  },
+  "transport_required_changes": [
+    "Opt-in localtools para Haiku5.5, whitelist nombres/tipos/esquemas; defaults anteriores conservados",
+    "Soportar tool_use intermedio y múltiples solicitudes reservadas; exigir end_turn final",
+    "Límites de requests global y por invocación, timeout, ledger incremental y controles antes de cada proveedor",
+    "Conservar stream/tool events y reportes sin reparación, validar persistencia y hashes/no sobrescritura",
+    "Preflight con proveedor simulado antes de invocar APIreal; no simular eficacia semántica con respuestas mock"
+  ],
+  "budget": {
+    "proposed_new_total_usd": 0.1,
+    "authorized": false,
+    "max_invocations": 7,
+    "schedule": "Un smoke nativo común de lectura/escritura seguido de seis ejecuciones L01B/T,L02T/B,L03B/T; verificación de descubrimiento cero generaciones separada.",
+    "max_provider_requests_per_invocation_proposed": 8,
+    "max_provider_requests_total_proposed": 56,
+    "output_cap_proposed": 8192,
+    "automatic_retries": 0,
+    "scope": "Nuevo presupuesto no ligado al saldo de workflow; congelar controles antes de autorizar.",
+    "completion_not_guaranteed": true
+  },
+  "api_calls": 0,
+  "api_cost_usd": 0,
+  "effectiveness": "NOT_EVALUATED"
+}

@@ -1,0 +1,282 @@
+{
+  "id": "foundry-native-report-contract-01",
+  "date": "2026-10-12",
+  "scope": "Código, tests RED/GREEN, revisión y trazas de CLI con proveedor simulado; no evidencia de eficacia LLM",
+  "files": [
+    {
+      "path": "CURRENT_STATUS.md",
+      "sha256": "9c3841d7b6b75cbceca26e85956d775c813e4dda2218bd3467d3f132b1f7ba54",
+      "bytes": 1156
+    },
+    {
+      "path": "FOLLOWUP.md",
+      "sha256": "a4e4e506a7e2d4504dca42dcf2c13b7b001d5e24e30e09b4fb4e6e70e845a52c",
+      "bytes": 4139
+    },
+    {
+      "path": "REVIEW.md",
+      "sha256": "5a165b1af74b708b2c884523a7a21cbd3922ec0a437eb57c70e3c328d1bb276b",
+      "bytes": 5541
+    },
+    {
+      "path": "acos-contract-full-20261012.xml",
+      "sha256": "62aaeeb8c7853de421f3736cfe585b8686d1b0c514d7bb9ea743101fc918acd1",
+      "bytes": 33739
+    },
+    {
+      "path": "acos-contract-full-closed-20261012.xml",
+      "sha256": "3c7305c1829c640f584089bf29c6f1b3fea46547f0892b4e8b12844d247c064d",
+      "bytes": 35073
+    },
+    {
+      "path": "acos-contract-full-final-20261012.xml",
+      "sha256": "9f546985532a6c362ce3dfd8dd4def0aaf38be7949941c5fe333079db11274c7",
+      "bytes": 34915
+    },
+    {
+      "path": "acos-contract-green-20261012.xml",
+      "sha256": "c35468e119dda1b98ee929e32511b4d5c54e595bce66496d11c78a478a76034b",
+      "bytes": 4753
+    },
+    {
+      "path": "acos-contract-native-red-20261012.xml",
+      "sha256": "7a07ca72fd7fa96dd522b2516fa137592b26585aef03d6fd96d6e207a209f24c",
+      "bytes": 2000
+    },
+    {
+      "path": "acos-contract-native-valid-20261012.xml",
+      "sha256": "317b11bc1fb820a888811ee0c77c2754734da6581ff76c9e0303214edc835061",
+      "bytes": 403
+    },
+    {
+      "path": "acos-contract-red-20261012.xml",
+      "sha256": "30b9cbe528126ff6ad812e0905e8002991e7f32ff6e092c0ebb54075197b4406",
+      "bytes": 31837
+    },
+    {
+      "path": "acos-contract-review-green-20261012.xml",
+      "sha256": "0e17c00f398c0d65928c65012c914e2d7d7955145e320d2fec589c75bec4fea2",
+      "bytes": 5784
+    },
+    {
+      "path": "acos-contract-review-red-20261012.xml",
+      "sha256": "cae35362ef1af0407769b8f6bbcc33708c766e2aa8dfe2c660bb69d37eb46c41",
+      "bytes": 8586
+    },
+    {
+      "path": "historical-l01-diagnostic.json",
+      "sha256": "8b208bf6e92912ac26c95af381e3c077fd11491d30484f355752a8aed54c6b61",
+      "bytes": 632
+    },
+    {
+      "path": "native-simulated/baseline-accepted/metadata.json",
+      "sha256": "a72222513847738b79a40f2c32edda1567204259056a9f312cca4d8b0d6b6716",
+      "bytes": 4445
+    },
+    {
+      "path": "native-simulated/baseline-accepted/prompt.txt",
+      "sha256": "0e69bb9c3d30d5ae2d3d74d7c94af1c0f4c062abbbb96dc1dacab0c029eebca0",
+      "bytes": 3133
+    },
+    {
+      "path": "native-simulated/baseline-accepted/report-contract.json",
+      "sha256": "5d7a6e7b1376fa493b5104a2d963aa8c1d75d0f443d4fa4e46aa81f0e7ba8680",
+      "bytes": 167
+    },
+    {
+      "path": "native-simulated/baseline-accepted/result.txt",
+      "sha256": "7f86dfc66d732ea76580328689e40f1dbd7be798b362d50be5795b46be547874",
+      "bytes": 36
+    },
+    {
+      "path": "native-simulated/baseline-accepted/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "native-simulated/baseline-accepted/stdout.jsonl",
+      "sha256": "4cbc3212a6782385268016601ce2c2bf7c29e0ce40472c778accd2ed9c1d0614",
+      "bytes": 6578
+    },
+    {
+      "path": "native-simulated/baseline-accepted/workspace/.runtime/check_inputs.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "native-simulated/baseline-accepted/workspace/.runtime/report-context.json",
+      "sha256": "d5c57aeb0c3687cdd03628284e6244dd76e306f8774db7ef473eabc234f0f84f",
+      "bytes": 92
+    },
+    {
+      "path": "native-simulated/baseline-accepted/workspace/case.md",
+      "sha256": "4996a6318d929302b8e2db80dec136ae37affed90eb9f9eaa5729b0a640001fd",
+      "bytes": 18
+    },
+    {
+      "path": "native-simulated/baseline-accepted/workspace/inputs/data.csv",
+      "sha256": "daff832f802000e645771a60983c76c963f6ee602a6230e45237bd360e91cc1a",
+      "bytes": 4
+    },
+    {
+      "path": "native-simulated/baseline-accepted/workspace/reports/leakage/audit.md",
+      "sha256": "852684d7bfd47897c71cd40337af6db37609fac061c51163e4a946d900d39747",
+      "bytes": 599
+    },
+    {
+      "path": "native-simulated/baseline-rejected/metadata.json",
+      "sha256": "2bdf5392380491a726898f22809edc77a833d6be3ab1f98b53cb8d097c87009c",
+      "bytes": 3871
+    },
+    {
+      "path": "native-simulated/baseline-rejected/prompt.txt",
+      "sha256": "d339b2af67016f6876d87fa9cd09a58076aab4ff6279c35e0ba1241cc260457a",
+      "bytes": 3133
+    },
+    {
+      "path": "native-simulated/baseline-rejected/report-contract.json",
+      "sha256": "65f6e5b6534e9852a7519a5696d1b29da6eeec19274275290718162723ae5c55",
+      "bytes": 196
+    },
+    {
+      "path": "native-simulated/baseline-rejected/result.txt",
+      "sha256": "86f3b56b711391ea726362c2423e57b122cff41086f4060ce063ea3482276dc5",
+      "bytes": 17
+    },
+    {
+      "path": "native-simulated/baseline-rejected/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "native-simulated/baseline-rejected/stdout.jsonl",
+      "sha256": "ea4ad2ccf3279717ba1b8dfb50e61af5a1f1f1ce51b9300b7e9aaf08014ed255",
+      "bytes": 5388
+    },
+    {
+      "path": "native-simulated/baseline-rejected/workspace/.runtime/check_inputs.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "native-simulated/baseline-rejected/workspace/.runtime/report-context.json",
+      "sha256": "d5c57aeb0c3687cdd03628284e6244dd76e306f8774db7ef473eabc234f0f84f",
+      "bytes": 92
+    },
+    {
+      "path": "native-simulated/baseline-rejected/workspace/case.md",
+      "sha256": "4996a6318d929302b8e2db80dec136ae37affed90eb9f9eaa5729b0a640001fd",
+      "bytes": 18
+    },
+    {
+      "path": "native-simulated/baseline-rejected/workspace/inputs/data.csv",
+      "sha256": "daff832f802000e645771a60983c76c963f6ee602a6230e45237bd360e91cc1a",
+      "bytes": 4
+    },
+    {
+      "path": "native-simulated/baseline-rejected/workspace/reports/leakage/audit.md",
+      "sha256": "04c8919d35135b30dab54cfca9834b9f672c5d55fe35d0e9e725744a0cd275a2",
+      "bytes": 43
+    },
+    {
+      "path": "native-simulated/treatment-accepted/metadata.json",
+      "sha256": "5f1db0609a7be8d2b6d9eb4b95f55fe0fb75d03501f791ad314c83ddc02b7085",
+      "bytes": 5142
+    },
+    {
+      "path": "native-simulated/treatment-accepted/prompt.txt",
+      "sha256": "e246b0dfa65ad348d83364c93128b8128fe75c942956371eb8a466dad521b3af",
+      "bytes": 3503
+    },
+    {
+      "path": "native-simulated/treatment-accepted/report-contract.json",
+      "sha256": "5d7a6e7b1376fa493b5104a2d963aa8c1d75d0f443d4fa4e46aa81f0e7ba8680",
+      "bytes": 167
+    },
+    {
+      "path": "native-simulated/treatment-accepted/result.txt",
+      "sha256": "7f86dfc66d732ea76580328689e40f1dbd7be798b362d50be5795b46be547874",
+      "bytes": 36
+    },
+    {
+      "path": "native-simulated/treatment-accepted/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "native-simulated/treatment-accepted/stdout.jsonl",
+      "sha256": "0f25a056304ca42bdd0aed8b430ef4f3a951132e888f7cbb92b89c0a811f3e9d",
+      "bytes": 13752
+    },
+    {
+      "path": "native-simulated/treatment-accepted/workspace/.runtime/check_inputs.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "native-simulated/treatment-accepted/workspace/.runtime/plugin/.claude-plugin/plugin.json",
+      "sha256": "5972aa4f54c7e8c2710fffadfee255003714f33148d63c788d7d6cebe42fbb08",
+      "bytes": 41
+    },
+    {
+      "path": "native-simulated/treatment-accepted/workspace/.runtime/plugin/skills/detect-leakage/SKILL.md",
+      "sha256": "c2a2440477d9985489b71f4d8c50380ccd7985635d02eab330cfee0f7e5856c4",
+      "bytes": 5703
+    },
+    {
+      "path": "native-simulated/treatment-accepted/workspace/.runtime/report-context.json",
+      "sha256": "3e6760875e5763433490875735edaacbb63da2e970c62530ac78da2c68850f52",
+      "bytes": 168
+    },
+    {
+      "path": "native-simulated/treatment-accepted/workspace/case.md",
+      "sha256": "4996a6318d929302b8e2db80dec136ae37affed90eb9f9eaa5729b0a640001fd",
+      "bytes": 18
+    },
+    {
+      "path": "native-simulated/treatment-accepted/workspace/inputs/data.csv",
+      "sha256": "daff832f802000e645771a60983c76c963f6ee602a6230e45237bd360e91cc1a",
+      "bytes": 4
+    },
+    {
+      "path": "native-simulated/treatment-accepted/workspace/reports/leakage/audit.md",
+      "sha256": "35a99b0d1b267c6d4104bfca0bfb5814bfa6d951080ed8dab5523e9167412f6c",
+      "bytes": 613
+    },
+    {
+      "path": "snapshot/docs/acos/validation/2026-10-12-native-report-contract-report.md",
+      "sha256": "d382f9d9993243e04e4ea6dd0a43d39715deea390a689d865342c0ba8f36cb79",
+      "bytes": 6000
+    },
+    {
+      "path": "snapshot/scripts/evaluations/foundry_native_transport.py",
+      "sha256": "0708fed167ade740ac2d208e16a77f821e866476455678b44e4c6eca9631d0de",
+      "bytes": 21777
+    },
+    {
+      "path": "snapshot/scripts/evaluations/foundry_study.py",
+      "sha256": "a8b049b0d8f501dd27c60a6b5a25bf0cc3faf472decd2973eb6cdc9fa4c5dd66",
+      "bytes": 5863
+    },
+    {
+      "path": "snapshot/tests/test_foundry_native_transport.py",
+      "sha256": "1c1c16e149e429913297e5a62b4f966711ac83e940d725e82652cbd725c11456",
+      "bytes": 23693
+    },
+    {
+      "path": "snapshot/tests/test_foundry_report_contract.py",
+      "sha256": "c3b7207ec2a33555c92200d7189d67712abf445ce4bc6cc9cb147812c2a0c665",
+      "bytes": 7936
+    },
+    {
+      "path": "snapshot/tests/test_foundry_study.py",
+      "sha256": "dc7f9acf48df163a99b885076d06f7212976f53ff416a7ab47f0016a05795528",
+      "bytes": 4548
+    },
+    {
+      "path": "verification.json",
+      "sha256": "2e5e99f71200cca72b19c688d4968f6e5580d4a0fa8ddcf709da7e700144c55d",
+      "bytes": 1122
+    }
+  ]
+}

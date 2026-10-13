@@ -1,0 +1,41 @@
+{
+  "activity_drop_fraction": 0.5,
+  "code_sha256": "8c41489662880ce04a5b3b860f261987abfd860d1672f07459444503db352c2f",
+  "dataset_sha256": {
+    "churn_labels.csv": "ed1898cfdabddee88711ff50efff0c99129b0fda253ab62b69f596c3a356820a",
+    "customers.csv": "53fbf9495621829ddb1accb36cd6335d8a35f0a28f869f0ad5e373ed8d53afc3",
+    "monthly_snapshots.csv": "64cf0c93c4c02fdc5a42d4ed578c32135fa22efef2349cc6d362da7c46f0a8e9",
+    "support_tickets.csv": "c425d1997f9a5b0a72e122da4fb84c879afcf4472c27ff25f3d6eda5e6eaee50"
+  },
+  "development_months": [
+    "2024-09",
+    "2024-10",
+    "2024-11",
+    "2024-12",
+    "2025-01",
+    "2025-02",
+    "2025-03",
+    "2025-04",
+    "2025-05"
+  ],
+  "features": [
+    "active_days_prev_month",
+    "active_days_prev2_month",
+    "failed_payments_prev_month",
+    "support_tickets_prev_month"
+  ],
+  "final_model": "fixed; no refit on test",
+  "final_training_timestamp": "2025-07-01T00:00:00Z",
+  "holdout_months": [
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12"
+  ],
+  "hyperparameter_search": false,
+  "k": 50,
+  "prior_strength": 20,
+  "version": "1"
+}

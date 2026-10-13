@@ -1,0 +1,33 @@
+{
+  "rows": [
+    {
+      "id": "D1",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "La mora de 30 d\u00edas ocurri\u00f3 el 25/06 y se firm\u00f3 el 28/06, pero el label solo existe en el almac\u00e9n de entrenamiento al publicarse: 2025-07-18T06:00Z. Eso es posterior al entrenamiento (2025-07-15T00:00Z) y anterior a la extracci\u00f3n (2025-08-15). Por eso el outcome en la extracci\u00f3n es observed_positive, pero el label no estaba disponible al entrenar. Incluir el registro con target=1 usar\u00eda informaci\u00f3n posterior al corte. Las features (2025-05-31T18:00Z) son anteriores a la predicci\u00f3n y no cambian esta conclusi\u00f3n."
+    },
+    {
+      "id": "D2",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "La entrada en mora fue el 22/06 y la certificaci\u00f3n se public\u00f3 el 24/06 a las 06:00Z, antes del entrenamiento del 2025-07-15. El label positivo certificado estaba disponible. La predicci\u00f3n fue el 2025-06-01T00:00Z con features disponibles desde 2025-05-31T18:00Z, y no hay diferencias expl\u00edcitas que cambien eso. La poblaci\u00f3n es v\u00e1lida."
+    },
+    {
+      "id": "D3",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "El acta final negativa se firm\u00f3 el 02/07 y se public\u00f3 el 09/07 a las 06:00Z. Esa fecha es anterior al entrenamiento del 2025-07-15, as\u00ed que el negativo certificado estaba disponible. La ventana [1 jun, 1 jul) ya hab\u00eda terminado y no hay mora en toda la ventana. Las features eran anteriores a la predicci\u00f3n. El registro es elegible con target=0."
+    }
+  ],
+  "open_questions": [
+    "\u00bfSe reconstruye el entrenamiento tal como se hizo el 2025-07-15, que excluye D1, o un entrenamiento con conocimiento de la extracci\u00f3n del 2025-08-15, que incluir\u00eda D1? Esta auditor\u00eda aplica la primera opci\u00f3n.",
+    "Excluir D1 elimina un positivo cuya certificaci\u00f3n se public\u00f3 tarde. \u00bfCu\u00e1ntos positivos se pierden de esta forma en el conjunto completo, y sesga eso la prevalencia o la selecci\u00f3n de la muestra?",
+    "\u00bfHay marcas de tiempo de publicaci\u00f3n en el almac\u00e9n para todos los registros? Aqu\u00ed solo se verificaron tres expedientes.",
+    "\u00bfEl extracto muestra el estado a la extracci\u00f3n (2025-08-15) y no el estado al entrenamiento? D1 aparece con target=1 aunque no estaba publicado el 15/07; hay que confirmar que ese valor no se us\u00f3 en el entrenamiento original.",
+    "\u00bfSe verific\u00f3 la disponibilidad real de las features m\u00e1s all\u00e1 de la regla general (2025-05-31T18:00Z)? Los expedientes no declaran excepciones."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

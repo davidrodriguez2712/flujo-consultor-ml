@@ -1,0 +1,21 @@
+{
+  "scenario": "labels-and-complete-periods",
+  "result": "PASS",
+  "valid_number_wrong_period": {
+    "value": 0.25,
+    "cutoff": "2026-06-01",
+    "comparison": "DISCREPANCY"
+  },
+  "latest_observed_incomplete": "2026-12-01",
+  "latest_complete_baseline": {
+    "label": "Último período completo del baseline: 2026-09-01",
+    "cutoff": "2026-09-01",
+    "value": 0.6
+  },
+  "row_order_permutations_checked": 24,
+  "ambiguous_keys_rejected": true,
+  "no_complete_period_rejected": true,
+  "original_preserved": true,
+  "api_cost_usd": 0,
+  "limits": "Ejemplo con regla explícita de elegibilidad; no interpreta texto libre ni prueba eficacia de skills."
+}

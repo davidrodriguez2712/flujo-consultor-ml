@@ -1,0 +1,62 @@
+[
+  {
+    "sample": "01-0.2.0",
+    "words": 262,
+    "physical_frontmatter": true,
+    "within250": false
+  },
+  {
+    "sample": "01-0.2.1",
+    "words": 313,
+    "physical_frontmatter": true,
+    "within250": false
+  },
+  {
+    "sample": "02-0.2.0",
+    "words": 250,
+    "physical_frontmatter": true,
+    "within250": true
+  },
+  {
+    "sample": "02-0.2.1",
+    "words": 292,
+    "physical_frontmatter": true,
+    "within250": false
+  },
+  {
+    "sample": "03-0.2.0",
+    "words": 260,
+    "physical_frontmatter": true,
+    "within250": false
+  },
+  {
+    "sample": "03-0.2.1",
+    "words": 293,
+    "physical_frontmatter": true,
+    "within250": false
+  },
+  {
+    "sample": "04-0.2.0",
+    "words": 239,
+    "physical_frontmatter": true,
+    "within250": true
+  },
+  {
+    "sample": "04-0.2.1",
+    "words": 204,
+    "physical_frontmatter": true,
+    "within250": true
+  },
+  {
+    "sample": "05-0.2.0",
+    "words": 296,
+    "physical_frontmatter": true,
+    "within250": false
+  },
+  {
+    "sample": "05-0.2.1",
+    "words": 285,
+    "physical_frontmatter": true,
+    "within250": false
+  }
+]

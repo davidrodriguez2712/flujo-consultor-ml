@@ -1,0 +1,57 @@
+```json
+{
+  "status": "MUST_CORRECT",
+  "findings": [
+    {
+      "statement": "La segmentación por vehículo aparece solo en el plan vivo (`analysis/plan.md`), que añade una «sensibilidad por tipo de vehículo». La versión congelada y aprobada (`reports/frozen-01/plan.md`) solo compara consumo por ruta semanal. La tarea solicitada no tiene base en el paquete aprobado.",
+      "evidence_paths": [
+        "analysis/plan.md",
+        "reports/frozen-01/plan.md",
+        "reports/manifest-01.json",
+        "reports/approval-01.json"
+      ]
+    },
+    {
+      "statement": "El hash observado del plan congelado coincide con la entrada de `manifest-01.json`, por lo que la copia histórica sigue íntegra. El plan vivo tiene otro hash (`0a24...`), lo cual es esperado para un documento vivo, pero no puede usarse como evidencia aprobada.",
+      "evidence_paths": [
+        "reports/integrity-scan.json",
+        "reports/manifest-01.json",
+        "analysis/plan.md"
+      ]
+    },
+    {
+      "statement": "`approval-01.json` declara `manifest_sha256` = `41299ac9...`. Con el contenido incluido no es posible confirmar que ese valor corresponda a los bytes exactos de `manifest-01.json` (string JSON compacto, sin newline final), porque el hash no se recalculó en esta revisión. Además, el registro de aprobación pertenece al fixture y no se trata como aceptación vigente.",
+      "evidence_paths": [
+        "reports/approval-01.json",
+        "reports/manifest-01.json",
+        "reports/integrity-scan.json"
+      ]
+    },
+    {
+      "statement": "El término del pedido («segmentación por vehículo») y el del plan («sensibilidad por tipo de vehículo») no son equivalentes. No están definidos la población, la unidad, el denominador ni el tratamiento de los vehículos, por lo que no se puede fijar el contrato de la tarea sin una decisión del owner.",
+      "evidence_paths": [
+        "analysis/plan.md",
+        "reports/frozen-01/plan.md",
+        "reports/analysis-request-context"
+      ]
+    }
+  ],
+  "proposed_actions": [
+    "No iniciar la segmentación por vehículo sobre la base de `analysis/plan.md` mientras no exista una versión congelada que la incluya.",
+    "Solicitar al owner la definición del alcance de la segmentación: unidad de análisis, población de vehículos, denominador de consumo, tratamiento de vehículos sin datos y si la segmentación sustituye o complementa la comparación semanal por ruta.",
+    "Crear una copia histórica del plan vivo actualizado (por ejemplo `reports/frozen-02/plan.md`) sin modificar `reports/frozen-01/plan.md`.",
+    "Generar `reports/manifest-02.json` con ruta relativa y SHA-256 de cada archivo congelado, calculados con la convención de bytes UTF-8 indicada. Calcular el hash del manifest después de cerrarlo.",
+    "Recalcular y verificar el hash de `reports/manifest-01.json` y el valor `manifest_sha256` de `approval-01.json` antes de cualquier referencia a la aprobación previa.",
+    "Redactar un contrato de tarea ANALYSIS-002 con write_scope limitado a rutas de salida acordadas, sin escritura sobre `reports/frozen-01/` ni sobre `approval-01.json`.",
+    "Registrar la aprobación de `manifest-02` fuera del paquete congelado, sin transferir automáticamente la aprobación de `manifest-01`.",
+    "Mantener la sensibilidad por tipo de vehículo como hipótesis hasta que el owner la acepte y quede congelada."
+  ],
+  "next_step": "Confirmar con el owner el alcance exacto de la segmentación por vehículo y autorizar la creación de `frozen-02` y `manifest-02` antes de redactar la tarea de análisis.",
+  "limitations": [
+    "No se recalcularon hashes ni se consultaron archivos fuera del contenido incluido; la validez de `manifest_sha256` queda sin verificar.",
+    "No se aprueba ningún gate ni se acepta la nueva segmentación; el registro de aprobación es del fixture.",
+    "No se conoce qué datos de vehículos existen ni si la segmentación es factible con las fuentes autorizadas.",
+    "La revisión se limita al expediente proporcionado; no se evaluaron resultados de consumo ni cifras."
+  ]
+}
+```

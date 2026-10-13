@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-07",
+  "installed_version": "0.1.0",
+  "executable": "/Users/davidrodriguez/.local/bin/acos",
+  "installation": "uv tool install .",
+  "project_copy": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-persistent-install-ankgl2fx/project",
+  "checks": [
+    {
+      "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-persistent-install-ankgl2fx",
+      "command": [
+        "acos",
+        "--version"
+      ],
+      "exit_code": 0,
+      "output": "0.1.0\n"
+    },
+    {
+      "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-persistent-install-ankgl2fx/project",
+      "command": [
+        "acos",
+        "status"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"project\": \"Piloto sintético de churn y retención\",\n  \"stage\": \"handoff\",\n  \"status\": \"COMPLETED\",\n  \"completed\": [\n    \"discovery\",\n    \"framing\",\n    \"diagnosis\",\n    \"execution\",\n    \"validation\",\n    \"delivery\",\n    \"handoff\"\n  ],\n  \"total_stages\": 7,\n  \"blockers\": [],\n  \"open_decisions\": [],\n  \"next_gates\": [\n    \"handoff\"\n  ],\n  \"integrity\": \"OK\",\n  \"findings\": []\n}\n"
+    },
+    {
+      "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-persistent-install-ankgl2fx/project",
+      "command": [
+        "acos",
+        "validate",
+        "--gate",
+        "handoff"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"status\": \"PASS\",\n  \"findings\": [],\n  \"evidence\": [\n    \"handoff/runbook.md\",\n    \"handoff/capability_feedback.md\",\n    \"handoff/handoff-manifest.json\",\n    \"analysis/outputs/handoff-checks.json\",\n    \"evidence/approvals/2026-10-07-handoff.md\"\n  ]\n}\n"
+    }
+  ],
+  "source_workspace_unchanged": true,
+  "scope": "macOS; instalación persistente y lectura de proyecto copiado fuera del checkout; no nueva prueba Windows"
+}

@@ -1,0 +1,44 @@
+{
+  "selected_ids": [
+    "B",
+    "C"
+  ],
+  "total_cost": 10,
+  "expected_net_value": 20,
+  "candidates": [
+    {
+      "selected_ids": [],
+      "total_cost": 0,
+      "expected_net_value": 0
+    },
+    {
+      "selected_ids": [
+        "A"
+      ],
+      "total_cost": 6,
+      "expected_net_value": 13
+    },
+    {
+      "selected_ids": [
+        "B"
+      ],
+      "total_cost": 5,
+      "expected_net_value": 10
+    },
+    {
+      "selected_ids": [
+        "C"
+      ],
+      "total_cost": 5,
+      "expected_net_value": 10
+    },
+    {
+      "selected_ids": [
+        "B",
+        "C"
+      ],
+      "total_cost": 10,
+      "expected_net_value": 20
+    }
+  ]
+}

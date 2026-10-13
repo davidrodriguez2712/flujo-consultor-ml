@@ -1,0 +1,55 @@
+schema_version: 1
+project:
+  slug: riesgo-credito-sintetico
+  name: Piloto sintético de riesgo de crédito
+  client: Entidad ficticia de crédito
+  industry: Crédito / servicios financieros
+  market: Mercado ficticio
+  role: Consultor Data & AI
+engagement:
+  decision: Priorizar solicitudes para revisión manual con capacidad de 100 revisiones
+    al mes; la decisión de aprobar corresponde al reviewer humano.
+  problem: 'Caso ficticio: capacidad limitada de revisión y resultados de pago observados
+    solamente para créditos concedidos.'
+  success_metric: Discriminación y calibración temporal en créditos concedidos con
+    label madura; ranking de solicitudes como propuesta pendiente de validación en
+    rechazadas.
+  decision_owner: David, reviewer del piloto sintético; sin autoridad sobre créditos
+    reales
+  users: Equipo ficticio de revisión de solicitudes
+  archetypes:
+  - DIAGNOSE
+  - PREDICT
+  - PRIORITIZE_SELECT
+  delivery_modes:
+  - analysis
+  current_stage: discovery
+  open_questions:
+  - Revisar Discovery con los datos generados antes de aprobar su gate.
+  - Confirmar política de ranking y criterio de aceptación antes de observar el holdout.
+data:
+  sources:
+  - csv
+  characteristics:
+    supervised: true
+    labeled: partial
+    temporal: true
+    panel: true
+    tabular: true
+constraints:
+- Datos 100% sintéticos, seed 20261008; no extrapolar resultados a solicitantes reales.
+- 'Capacidad del laboratorio: hasta 100 revisiones mensuales, sin aprobación o rechazo
+  automático.'
+- 'Target: 30 días de mora alcanzados dentro de 90 días desde desembolso; label completa
+  disponible al día 97.'
+- Rechazadas sin outcome observado; no asumir ausencia de mora ni generalización del
+  modelo a esa población.
+- Ranking por riesgo como propuesta; no identificar ahorro, impacto de revisión ni
+  valor causal.
+- Ejecución local; sin llamadas adicionales a APIs.
+deliverables:
+- analytical_report
+- decision_memo
+runtimes:
+- codex
+- claude_code

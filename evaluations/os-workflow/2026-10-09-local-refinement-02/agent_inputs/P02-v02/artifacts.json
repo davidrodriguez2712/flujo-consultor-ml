@@ -1,0 +1,39 @@
+{
+  "analysis/scenario-v02.json": {
+    "currency": "unidad monetaria hipotética",
+    "baseline": {
+      "quantity_units": 1000,
+      "unit_price": 100,
+      "unit_cost": 75,
+      "revenue": 100000,
+      "cost_of_goods": 75000,
+      "gross_profit": 25000,
+      "gross_margin": 0.25
+    },
+    "scenario": {
+      "quantity_units": 1000,
+      "unit_price": 120,
+      "unit_cost": 75,
+      "revenue": 120000,
+      "cost_of_goods": 75000,
+      "gross_profit": 45000,
+      "gross_margin": 0.375
+    },
+    "changed_variable": "unit_price",
+    "assumptions": [
+      "Volumen constante de 1000 unidades por construcción; no respuesta de demanda estimada.",
+      "Coste unitario constante75.",
+      "No impuestos/descuentos/costes adicionales en esta simulación.",
+      "Ingresos recalculados como cantidad * precio, no fijados al baseline."
+    ],
+    "mechanism": "Aumento del precio de100 a120 con volumen/coste fijo; recalcular ingresos y beneficio bruto.",
+    "observed_market_result": false,
+    "elasticity_estimated": false
+  },
+  "drafts/pricing-v02.md": "Simulación: margen base25%, escenario37,5%, diferencia+12,5puntos porcentuales. Precio100→120, volumen1000 y coste unitario75 constantes por hipótesis. No resultado observado, sin elasticidad estimada ni autorización de cambio de precios.",
+  "contracts/audience-v02.json": {
+    "audience": "Dirección comercial (fixture)",
+    "deliverable": "Memo Markdown",
+    "authorization": "Preparar y revisar propuesta; no cambiar precios ni aprobar un piloto."
+  }
+}

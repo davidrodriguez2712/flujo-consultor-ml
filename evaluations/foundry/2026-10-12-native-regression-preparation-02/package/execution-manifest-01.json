@@ -1,0 +1,120 @@
+{
+  "id": "native-regression-preparation-02",
+  "files": [
+    {
+      "path": "RUNBOOK.md",
+      "bytes": 1244,
+      "sha256": "243e0eb56434e011b3b31db3f709c97d7504155babc326bae634f106052a2fa6"
+    },
+    {
+      "path": "config.json",
+      "bytes": 707,
+      "sha256": "ee6ed38e8eb7597712931f53d98b4162a0cd25c878110e32182c95491db48f47"
+    },
+    {
+      "path": "public/L01/case.md",
+      "bytes": 1728,
+      "sha256": "89f1c1a622a64a73dafb5b641d871d372e72a1076533a23378ec2446f11e1e14"
+    },
+    {
+      "path": "public/L01/inputs/context.md",
+      "bytes": 776,
+      "sha256": "3e3db7db6249d33479a7e01fdcaee3f8f8fec3f898f7c863e2d252398e613552"
+    },
+    {
+      "path": "public/L01/inputs/observations.csv",
+      "bytes": 417,
+      "sha256": "29e4badcbbcbf9e242bde9f2d31b80d1f55091a52d094b658e6992a457ad0f19"
+    },
+    {
+      "path": "public/L01/inputs/pipeline.py",
+      "bytes": 204,
+      "sha256": "fb122bed11f58973887818405e1b992b1589a72f8faf0ea13daf98ddb2f3da63"
+    },
+    {
+      "path": "public/L02/case.md",
+      "bytes": 1725,
+      "sha256": "71613379fe4387f19de862020de6bcdedec00623aeb452bbdff9491690b61d39"
+    },
+    {
+      "path": "public/L02/inputs/context.md",
+      "bytes": 1051,
+      "sha256": "2d20272658305e9620515452c404e52d7b2015db0d0a30412287c4aa02a0c1b0"
+    },
+    {
+      "path": "public/L02/inputs/observations.csv",
+      "bytes": 593,
+      "sha256": "cbcae4e4f891739ea487feda3f7e1eac58cf9fbe3303b774b5563770f7127462"
+    },
+    {
+      "path": "public/L02/inputs/pipeline.py",
+      "bytes": 391,
+      "sha256": "8fc757e4a3209efdedd3e1b8de6f0b77109557fb6335ac263cd3cea9b3788011"
+    },
+    {
+      "path": "public/L03/case.md",
+      "bytes": 1711,
+      "sha256": "db7f2572bc7e591a8d537735dade9cdbcc1da74a100ecb2dd245673b3540e951"
+    },
+    {
+      "path": "public/L03/inputs/context.md",
+      "bytes": 644,
+      "sha256": "ae79d0d67bdd4f71349d51644732c99ae1ce547ad618a6d663a30195042b1c7e"
+    },
+    {
+      "path": "public/L03/inputs/dictionary.json",
+      "bytes": 150,
+      "sha256": "72636cf89cf406c70e90c0c1325ddcb7c89229a915199153c35c9f167c414fe3"
+    },
+    {
+      "path": "public/L03/inputs/observations.csv",
+      "bytes": 223,
+      "sha256": "32ae7c42472e440093583da2798aba677eb2ceae58289e5d5dc77f3e46354532"
+    },
+    {
+      "path": "reviewer/L01/expected.md",
+      "bytes": 2886,
+      "sha256": "cb0aed9a6188f5d5928d59543d0b559a29371c749c77217e3ba12bfefe150501"
+    },
+    {
+      "path": "reviewer/L02/expected.md",
+      "bytes": 2905,
+      "sha256": "5b058789afdeefccf34957f4a48d17a4b6db6ddbfef2ceb3bad5400ee27fcccf"
+    },
+    {
+      "path": "reviewer/L03/expected.md",
+      "bytes": 2738,
+      "sha256": "331122d7573ab6f6178bc9bcb256bae99a7dd62754ee01e10b6a2eb14b7cfa72"
+    },
+    {
+      "path": "skill/SKILL.md",
+      "bytes": 5703,
+      "sha256": "c2a2440477d9985489b71f4d8c50380ccd7985635d02eab330cfee0f7e5856c4"
+    },
+    {
+      "path": "snapshots/scripts/ci/runtime_budget.py",
+      "bytes": 21090,
+      "sha256": "be80e0784f3751b5225b2aa51ee8c335c90c084d3e95061365f23cf714c2b0c7"
+    },
+    {
+      "path": "snapshots/scripts/evaluations/foundry_input_facts.py",
+      "bytes": 971,
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4"
+    },
+    {
+      "path": "snapshots/scripts/evaluations/foundry_native_transport.py",
+      "bytes": 21777,
+      "sha256": "0708fed167ade740ac2d208e16a77f821e866476455678b44e4c6eca9631d0de"
+    },
+    {
+      "path": "snapshots/scripts/evaluations/foundry_study.py",
+      "bytes": 5765,
+      "sha256": "94786bee32645fb9642ee8656eec466e68212a014dfc33e90e278b8d71df3d18"
+    },
+    {
+      "path": "workflow.md",
+      "bytes": 2973,
+      "sha256": "0cc2f01287ed857dc98c005ec8f5143d3c155d671f4404c8d27f43dd0c60a35f"
+    }
+  ]
+}

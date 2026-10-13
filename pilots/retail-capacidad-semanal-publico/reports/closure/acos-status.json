@@ -1,0 +1,16 @@
+{
+  "project": "Forecasting de volumen semanal para capacidad retail",
+  "stage": "handoff",
+  "status": "COMPLETED",
+  "completed": [
+    "validation",
+    "delivery",
+    "handoff"
+  ],
+  "total_stages": 3,
+  "blockers": [],
+  "open_decisions": [],
+  "next_gates": [],
+  "integrity": "OK",
+  "findings": []
+}

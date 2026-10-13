@@ -1,0 +1,41 @@
+{
+  "output_type": "value_selection",
+  "selection_status": "determined",
+  "eligible_count": 3,
+  "capacity_k": 2,
+  "effective_k": 2,
+  "selected_ids": [
+    "B",
+    "C"
+  ],
+  "risk_ranking_ids": [
+    "A",
+    "B",
+    "C"
+  ],
+  "total_cost": 10,
+  "expected_net_value": 20,
+  "feasibility": "feasible",
+  "optimality": "optimal",
+  "causal_identification": {
+    "status": "not_requested",
+    "estimand": null,
+    "reason": "No se solicita estimaci\u00f3n de efecto causal; net_value es un valor esperado suministrado por negocio, no evidencia de incrementalidad."
+  },
+  "metrics": {
+    "population_id": "eligible-C",
+    "precision": null,
+    "recall": null,
+    "lift": null,
+    "precision_status": "not_requested",
+    "recall_status": "not_requested",
+    "lift_status": "not_requested",
+    "reason": "No se solicitaron m\u00e9tricas de labels y no se proveen labels de resultado."
+  },
+  "reason": "Los 3 registros son elegibles. Se enumeraron todos los conjuntos factibles (\u22642 elementos, coste \u226410), usando net_value tal cual (ya descontado el coste). Vac\u00edo: 0. {A}: coste 6, valor 13. {B}: 5, 10. {C}: 5, 10. {A,B}: coste 11 >10, infactible. {A,C}: coste 11 >10, infactible. {B,C}: coste 10, valor 20, factible. El \u00f3ptimo es {B,C} con valor 20, superior al mejor conjunto alternativo {A} con 13. Un greedy por risk_score o por valor tomar\u00eda A primero y quedar\u00eda en 13, o no podr\u00eda a\u00f1adir ning\u00fan otro por presupuesto; por eso es insuficiente. Orden de miembros: B y C empatan en net_value=10, as\u00ed que va por ID ascendente. risk_ranking_ids es el ranking descriptivo por risk_score (A 0.99, B 0.8, C 0.7), distinto de la selecci\u00f3n por valor. La optimalidad es respecto de los valores y costes declarados, tomados como puntos estimados sin incertidumbre. No es una pol\u00edtica real universal.",
+  "open_questions": [
+    "\u00bfLos net_value son estimaciones puntuales? Si tienen incertidumbre material, \u00bfse debe evaluar la robustez de la selecci\u00f3n?",
+    "\u00bfEl presupuesto de 10 es un m\u00e1ximo estricto y sin posibilidad de ajuste? Con 11, A+B o A+C dar\u00edan 23."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

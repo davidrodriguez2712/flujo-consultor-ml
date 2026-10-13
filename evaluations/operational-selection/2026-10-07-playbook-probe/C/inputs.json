@@ -1,0 +1,26 @@
+{
+  "context": "Fraude ficticio. Cuatro casos elegibles, K=2; score descendente, empate id ascendente. Targets históricos observados únicamente en casos inspeccionados H1 y H2. U1 y U2 no tienen label: null no significa negativo. Selección propuesta nueva, no inspecciones ejecutadas. Pedir métricas de toda la población y de la selección completa; si no identificables, devolver null y explicar sesgo/cobertura. No hay diseño de muestreo ni propensiones.",
+  "k": 2,
+  "rows": [
+    {
+      "id": "U1",
+      "score": 0.99,
+      "target": null
+    },
+    {
+      "id": "H1",
+      "score": 0.8,
+      "target": 1
+    },
+    {
+      "id": "U2",
+      "score": 0.7,
+      "target": null
+    },
+    {
+      "id": "H2",
+      "score": 0.1,
+      "target": 0
+    }
+  ]
+}

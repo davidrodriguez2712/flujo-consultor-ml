@@ -1,0 +1,31 @@
+{
+  "industry": "Suscripciones",
+  "extraction_timestamp": "2025-06-20T00:00:00Z",
+  "training_timestamp": "2025-06-15T00:00:00Z",
+  "availability_comparator": "<=",
+  "window_bounds": "[start,end)",
+  "feature_rule": "Todas las features requeridas deben estar disponibles al instante de predicción; feature_available_at es su máximo comprobado, o null si no está verificado. No hay otras exclusiones de población.",
+  "certification_rule": "Cada fila tiene la política documentada en source_rule. No asumir que comparten certificación o que un cero es definitivo.",
+  "rows": [
+    {
+      "id": "E1",
+      "prediction_timestamp": "2025-06-01T00:00:00Z",
+      "feature_available_at": "2025-05-31T23:00:00Z",
+      "outcome_window_start": "2025-06-01T00:00:00Z",
+      "outcome_window_end": "2025-07-01T00:00:00Z",
+      "target_reported": 0,
+      "label_available_at": null,
+      "source_rule": "Valor definitivo solo al cerrar ventana más tres días; el cero actual es provisional y no se certifica antes."
+    },
+    {
+      "id": "E2",
+      "prediction_timestamp": "2025-04-01T00:00:00Z",
+      "feature_available_at": "2025-03-31T23:00:00Z",
+      "outcome_window_start": "2025-04-01T00:00:00Z",
+      "outcome_window_end": "2025-05-01T00:00:00Z",
+      "target_reported": 0,
+      "label_available_at": null,
+      "source_rule": "El sistema registró cero. No se dispone de regla de cierre, historial de certificación, disponibilidad ni delay."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "platform": "Windows-2022Server-10.0.20348-SP0",
+  "architecture": "x64",
+  "scope": "Skill real + continuemos en sesión nueva; solo lectura; sin eficacia ni resume persistido",
+  "skill_sha256": "70883c3b75b07334fc95bad1b5c6749fd7b5e623b648f6b48fb6c14b2d32b8f9",
+  "skill_status": "experimental",
+  "runtime_budget_usd": 0.2,
+  "passed": false,
+  "runtimes": [
+    {
+      "runtime": "codex",
+      "model": "gpt-6-luna",
+      "passed": false,
+      "runs": [],
+      "requests": [],
+      "committed_usd": 0,
+      "estimated_usd": 0,
+      "unmeasured_requests": 0,
+      "sandbox_read_preflight": {
+        "exit_code": 2,
+        "stdout": "",
+        "stderr": "error: the following required arguments were not provided:\n  --permission-profile <NAME>\n\nUsage: codex sandbox --permission-profile <NAME> --config <key=value> --cd <DIR> <COMMAND>...\n\nFor more information, try '--help'.\n",
+        "passed": false
+      }
+    }
+  ],
+  "error": "Preflight de lectura falló; no iniciar modelo."
+}

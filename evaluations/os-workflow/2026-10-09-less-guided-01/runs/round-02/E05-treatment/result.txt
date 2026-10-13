@@ -1,0 +1,53 @@
+```json
+{
+  "status": "MUST_CORRECT",
+  "findings": [
+    {
+      "statement": "El borrador afirma que Norte alcanzó 98% de entregas puntuales en su última semana completa. Según la regla definida, la cifra correcta es 92%.",
+      "evidence_paths": [
+        "delivery/draft.md",
+        "analysis/weekly.json"
+      ]
+    },
+    {
+      "statement": "Las filas de Norte con complete=true son la semana 2025-10-06 (on_time 90 de 100, 0.90) y la semana 2025-10-20 (on_time 92 de 100, 0.92). El máximo week_start es 2025-10-20, por lo que el valor correcto es 0.92, es decir, 92%.",
+      "evidence_paths": [
+        "analysis/weekly.json"
+      ]
+    },
+    {
+      "statement": "El 98% del borrador coincide con la fila de Sur de la semana 2025-10-20 (98 de 100). Es una discrepancia de población: la cifra de Sur se atribuyó a Norte.",
+      "evidence_paths": [
+        "delivery/draft.md",
+        "analysis/weekly.json"
+      ]
+    },
+    {
+      "statement": "La fila de Norte de la semana 2025-11-03 tiene complete=false (49 de 50, 0.98) y queda excluida por la regla de semana completa. Si se usara, produciría un 98% también, pero sería incorrecto por no estar completa.",
+      "evidence_paths": [
+        "analysis/weekly.json"
+      ]
+    },
+    {
+      "statement": "El borrador no indica período, población ni método. Aunque la cifra se corrija, el texto debería citar la semana 2025-10-20 a 2025-10-27 (fin exclusivo) para que la afirmación sea verificable.",
+      "evidence_paths": [
+        "delivery/draft.md"
+      ]
+    }
+  ],
+  "proposed_actions": [
+    "Corregir el borrador para que diga que Norte alcanzó 92% de entregas puntuales en su última semana completa (semana 2025-10-20 a 2025-10-27, fin exclusivo).",
+    "Eliminar la cifra 98% del borrador, ya que proviene de la población Sur.",
+    "Conservar el texto original y registrar la corrección con su motivo antes de cualquier revisión posterior.",
+    "Antes de usar el texto, pedir revisión humana del borrador corregido. No tratar esta revisión como aceptación de gate ni como publicación.",
+    "Revisar si otras afirmaciones del entregable usan cifras de Sur o de semanas incompletas."
+  ],
+  "next_step": "Aplicar la corrección de 98% a 92% con la semana y la población citadas, y someter el borrador corregido a revisión humana antes de cualquier uso.",
+  "limitations": [
+    "La revisión se limita al contenido del expediente proporcionado; no se consultaron fuentes externas ni el pipeline original.",
+    "No se verificó el origen de analysis/weekly.json ni la reproducibilidad del cálculo.",
+    "La regla de 'última semana completa' se aplicó tal como está definida en el contexto; no se evaluó si es la regla adecuada para el negocio.",
+    "Esta revisión no aprueba gates, no publica el entregable y no sustituye la decisión del owner."
+  ]
+}
+```

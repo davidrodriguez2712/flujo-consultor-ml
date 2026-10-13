@@ -1,0 +1,22 @@
+{
+  "status": "PREPARED_PENDING_PACKAGE_REVIEW",
+  "created_at_utc": "2026-10-10T10:54:30.092140+00:00",
+  "skill": "detect-leakage",
+  "version": "0.1.0",
+  "maturity": "experimental",
+  "canonical_source": "experiments/skills/detect-leakage/SKILL.md",
+  "skill_sha256": "2ea060606202840ee4ce49ff27c9beb6b29ffae27edebcf755683e9c9bc99fce",
+  "cases": [
+    "L01",
+    "L02",
+    "L03"
+  ],
+  "author_review_independent": false,
+  "runtime": null,
+  "model": null,
+  "budget_authorized": false,
+  "native_installation_verified": false,
+  "agent_calls": 0,
+  "api_cost_usd": 0,
+  "canonical_foundry_modified": false
+}

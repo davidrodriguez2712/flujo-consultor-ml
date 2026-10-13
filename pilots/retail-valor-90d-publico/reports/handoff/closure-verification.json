@@ -1,0 +1,64 @@
+{
+  "status": "COMPLETED",
+  "completed_stages": 7,
+  "all_gates_passed": 12,
+  "commands": {
+    "status": {
+      "exit_code": 0,
+      "status": "COMPLETED"
+    },
+    "next": {
+      "exit_code": 0,
+      "status": "COMPLETED"
+    },
+    "validate-discovery": {
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "validate-framing": {
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "validate-diagnosis": {
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "validate-execution": {
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "validate-validation": {
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "validate-delivery": {
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "validate-handoff": {
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "validate-data-quality": {
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "validate-data_analysis-review": {
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "validate-supervised_model-review": {
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "validate-selection-review": {
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "validate-executive_delivery-review": {
+      "exit_code": 0,
+      "status": "PASS"
+    }
+  },
+  "api_cost_usd": 0
+}

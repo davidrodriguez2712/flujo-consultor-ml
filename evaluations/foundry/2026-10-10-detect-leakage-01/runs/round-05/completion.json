@@ -1,0 +1,13 @@
+{
+  "status": "EVALUATION_COMPLETED_AUTHOR_REVIEW",
+  "runtime": "7/7 complete, 3 native treatment invocations, 0 baseline",
+  "hypothesis": "NO_FAVORABLE_JOINT_SIGNAL",
+  "decision_recommended": "KEEP_EXPERIMENTAL_AND_MODIFY",
+  "foundry_canonical_modified": false,
+  "independent_review": "PENDING",
+  "all_rounds_paid_requests": 61,
+  "estimated_api_total_usd": 0.07056525,
+  "budget_ceiling_usd": 0.1,
+  "paid_calls_finished": true,
+  "report": "docs/acos/validation/2026-10-11-foundry-detect-leakage-evaluation-report.md"
+}

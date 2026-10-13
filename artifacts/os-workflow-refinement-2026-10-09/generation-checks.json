@@ -1,0 +1,126 @@
+{
+  "status": "PASS",
+  "scope": "Generación/transporte de instrucciones, wheel y checks del compiler; no eficacia de agentes.",
+  "temporary_project": "/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-refinement-project-futul7rs/revision-local",
+  "resources": [
+    {
+      "path": "workflow/execution-and-qa.md",
+      "canonical_bundle_match": true,
+      "generated_template_match": "Optional references rewritten by existing renderer; reviewed separately",
+      "sha256": "7a4ab8a88ec920b87ae9a784b17b58ef21ea12aca0b0a1ad68e3a0adfc93e1e4"
+    },
+    {
+      "path": "templates/project-and-task.md",
+      "canonical_bundle_match": true,
+      "generated_template_match": true,
+      "sha256": "956fc65b0c3543377c3427ee04b4763ae2d0caf7fa83a42a1f450ebe20a398be"
+    },
+    {
+      "path": "templates/delivery-and-handoff.md",
+      "canonical_bundle_match": true,
+      "generated_template_match": true,
+      "sha256": "a75dbf677d69ebf0db10d8c44e4e629f040066208cff8b9d3914f0deb1efdeba"
+    }
+  ],
+  "commands": [
+    {
+      "command": "status",
+      "exit_code": 0,
+      "output": {
+        "project": "Verificación local de pautas",
+        "stage": "discovery",
+        "status": "NOT_STARTED",
+        "completed": [],
+        "total_stages": 7,
+        "blockers": [],
+        "open_decisions": [],
+        "next_gates": [
+          "discovery"
+        ],
+        "integrity": "OK",
+        "findings": []
+      }
+    },
+    {
+      "command": "next",
+      "exit_code": 0,
+      "output": {
+        "stage": "discovery",
+        "status": "NOT_STARTED",
+        "objective": "Comprender contexto, stakeholders, fuentes y restricciones.",
+        "questions": [
+          "¿Quién decide y qué acción cambiará?",
+          "¿Qué fuentes y restricciones existen?"
+        ],
+        "outputs": [
+          "context/business_context.md"
+        ],
+        "capabilities": [
+          {
+            "id": "problem-framing",
+            "coverage": "partial",
+            "artifact": "playbook",
+            "reason": "Sin skill operativa compatible",
+            "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+          },
+          {
+            "id": "evidence-synthesis",
+            "coverage": "partial",
+            "artifact": "playbook",
+            "reason": "Sin skill operativa compatible",
+            "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+          },
+          {
+            "id": "dataset-understanding",
+            "coverage": "partial",
+            "artifact": "playbook",
+            "reason": "Sin skill operativa compatible",
+            "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+          }
+        ],
+        "gaps": [
+          {
+            "capability": "problem-framing",
+            "reason": "Sin skill operativa compatible",
+            "fallback": "playbook",
+            "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+          },
+          {
+            "capability": "evidence-synthesis",
+            "reason": "Sin skill operativa compatible",
+            "fallback": "playbook",
+            "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+          },
+          {
+            "capability": "dataset-understanding",
+            "reason": "Sin skill operativa compatible",
+            "fallback": "playbook",
+            "limits": "Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica."
+          }
+        ],
+        "gate": "Obtener evidencia y revisión humana antes de registrar un avance de etapa.",
+        "integrity": "OK",
+        "findings": []
+      }
+    },
+    {
+      "command": "validate",
+      "exit_code": 3,
+      "output": {
+        "status": "NEEDS_REVIEW",
+        "findings": [
+          {
+            "code": "human-review",
+            "message": "Revisión/evidencia pendiente para discovery",
+            "paths": []
+          }
+        ],
+        "evidence": []
+      }
+    }
+  ],
+  "wheel_resources_match": true,
+  "wheel_sha256": "1498476478d827d702e4b7380c10840957e62f184b53d66312fd60a009d9405d",
+  "model_calls": 0,
+  "api_cost_usd": 0
+}

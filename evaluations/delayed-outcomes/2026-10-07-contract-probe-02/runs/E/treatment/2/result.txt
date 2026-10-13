@@ -1,0 +1,25 @@
+{
+  "rows": [
+    {
+      "id": "E1",
+      "outcome_state_at_extraction": "pending",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "Regla de E1: el valor es definitivo solo al cerrar la ventana más 3 días, y el cero actual es provisional. Con ventana [2025-06-01T00:00:00Z, 2025-07-01T00:00:00Z), la certificación ocurre en 2025-07-04T00:00:00Z (fin + 3×24 h). La extracción (2025-06-20T00:00:00Z) es anterior, así que el cero no es observed_negative y el estado es pending. El entrenamiento (2025-06-15T00:00:00Z) también es anterior a 2025-07-04T00:00:00Z, por lo que la etiqueta no estaba disponible según la regla conocida (comparador <=); label_available_at es null y no se usa para inferir lo contrario. La feature sí estaba disponible (2025-05-31T23:00:00Z <= prediction_timestamp 2025-06-01T00:00:00Z). La exclusión se debe a que el label no estaba disponible al entrenar."
+    },
+    {
+      "id": "E2",
+      "outcome_state_at_extraction": "unknown",
+      "label_availability_at_training": "indeterminate",
+      "train_eligibility": "indeterminate",
+      "reason": "El sistema registró target_reported=0, pero source_rule no aporta regla de cierre, historial de certificación, disponibilidad ni delay, y label_available_at es null. Un cero registrado no es una certificación, así que no se puede afirmar observed_negative ni pending: el estado es unknown. Sin fecha de certificación no se puede comparar con training_timestamp (2025-06-15T00:00:00Z) con el comparador <=, por lo que la disponibilidad es indeterminate. Que la ventana [2025-04-01T00:00:00Z, 2025-05-01T00:00:00Z) termine antes del entrenamiento no prueba disponibilidad, porque no hay delay documentado y no se inventa uno. La feature está disponible (2025-03-31T23:00:00Z <= 2025-04-01T00:00:00Z) y no hay otras exclusiones de población ni exclusión comprobada. Falta la condición de label disponible, por lo que la elegibilidad queda indeterminate."
+    }
+  ],
+  "open_questions": [
+    "E2: ¿Cuál es la regla de cierre/certificación del target (por ejemplo, fin de ventana más N días) y el origen de ese delay?",
+    "E2: ¿Cuál es el historial de certificación o el label_available_at verificado, y se admite que un cero sea definitivo para esta fila?",
+    "E2: ¿Fue el cero registrado definitivo o provisional antes de 2025-06-15T00:00:00Z?",
+    "E1: ¿Existe un label_available_at certificado distinto de lo que implica la regla (2025-07-04T00:00:00Z)? Solo se usó la regla documentada."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

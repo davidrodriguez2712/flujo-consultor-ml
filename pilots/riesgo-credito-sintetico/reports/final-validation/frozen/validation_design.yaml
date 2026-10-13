@@ -1,0 +1,71 @@
+version: 0.1.0
+status: PROPOSED_NEEDS_REVIEW
+prediction_timestamp: applications.scoring_at
+grain: application_id
+entity: customer_id
+label_rule: target_30dpd_90d, desembolso+90 días, disponibilidad completa desembolso+97
+  días
+availability_comparison: <=, resolución diaria, sin hora
+development:
+  training_cutoff: '2025-01-01'
+  train_rule: scoring_at < training_cutoff; crédito concedido; label disponible <=
+    training_cutoff
+  validation_scoring_start: '2025-01-01'
+  validation_scoring_end_exclusive: '2025-03-01'
+  selection_timestamp: '2025-06-15'
+  validation_label_rule: Solo outcomes concedidos observados disponibles <= selection_timestamp
+final:
+  training_cutoff: '2025-07-01'
+  train_rule: scoring_at < training_cutoff; crédito concedido; label disponible <=
+    training_cutoff
+  scoring_start: '2025-07-01'
+  scoring_end_exclusive: '2025-10-01'
+  evaluation_timestamp: '2026-01-15'
+  model_update_rule: Modelo y transformaciones fijos durante julio–septiembre; no
+    reentrenar con labels del holdout
+permitted_predictors:
+- monthly_income
+- debt_to_income
+- requested_amount
+- bureau_score
+- prior_late_count
+metadata_only:
+- application_id
+- customer_id
+- scoring_at
+- history.snapshot_at
+- history.available_at
+- outcomes.label_available_at
+- outcomes.label_status
+forbidden_predictors:
+- decision
+- decision_at
+- funded_amount
+- disbursed_at
+- target_30dpd_90d
+- window_end
+- max_dpd_90d
+- extract_at
+join_key: application_id
+primary_metric: brier_score
+reference: Probabilidad constante estimada con labels de train; mismas filas en evaluación
+calibration_bins:
+- 0.0
+- 0.1
+- 0.2
+- 0.4
+- 0.6
+- 0.8
+- 1.0
+calibration_bin_rule: '[low, high), último bin incluye 1.0'
+operational_capacity: 100
+tie_break: application_id ascendente
+operational_label_rule: Población de todas las solicitudes y subconjunto concedido/maduro
+  se reportan por separado; no calcular métricas globales con labels incompletos
+limitations:
+- 'Top-K mensual se conoce al cerrar el mes: benchmark retrospectivo, no política
+  online antes de desembolso.'
+- Labels con dependencias por cliente; no asumir IID para incertidumbre.
+- 'Datos raw accesibles al autor: holdout sin métricas/tuning observado, no ciego
+  por control de acceso.'
+- Cadencia de refit y rangos son supuestos del laboratorio pendientes de este gate.

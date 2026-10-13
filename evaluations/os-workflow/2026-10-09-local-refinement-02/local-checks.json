@@ -1,0 +1,105 @@
+{
+  "status": "PASS_LOCAL",
+  "fixture_math": {
+    "baseline_revenue": 100000,
+    "scenario_revenue": 120000,
+    "baseline_profit": 25000,
+    "scenario_profit": 45000,
+    "baseline_margin": 0.25,
+    "scenario_margin": 0.375,
+    "difference_pp": 12.5
+  },
+  "canonical_bundle_identical": true,
+  "generated_task_template_identical": true,
+  "generated_project": "/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-task-draft-check-9jrimqkh/revision-local-task",
+  "compiler_commands": [
+    {
+      "command": "status",
+      "exit_code": 0,
+      "stdout": "{\n  \"project\": \"Revisión local de contrato de tarea\",\n  \"stage\": \"discovery\",\n  \"status\": \"NOT_STARTED\",\n  \"completed\": [],\n  \"total_stages\": 7,\n  \"blockers\": [],\n  \"open_decisions\": [],\n  \"next_gates\": [\n    \"discovery\"\n  ],\n  \"integrity\": \"OK\",\n  \"findings\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": "next",
+      "exit_code": 0,
+      "stdout": "{\n  \"stage\": \"discovery\",\n  \"status\": \"NOT_STARTED\",\n  \"objective\": \"Comprender contexto, stakeholders, fuentes y restricciones.\",\n  \"questions\": [\n    \"¿Quién decide y qué acción cambiará?\",\n    \"¿Qué fuentes y restricciones existen?\"\n  ],\n  \"outputs\": [\n    \"context/business_context.md\"\n  ],\n  \"capabilities\": [\n    {\n      \"id\": \"problem-framing\",\n      \"coverage\": \"partial\",\n      \"artifact\": \"playbook\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"id\": \"evidence-synthesis\",\n      \"coverage\": \"partial\",\n      \"artifact\": \"playbook\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"id\": \"dataset-understanding\",\n      \"coverage\": \"partial\",\n      \"artifact\": \"playbook\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    }\n  ],\n  \"gaps\": [\n    {\n      \"capability\": \"problem-framing\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"fallback\": \"playbook\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"capability\": \"evidence-synthesis\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"fallback\": \"playbook\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"capability\": \"dataset-understanding\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"fallback\": \"playbook\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    }\n  ],\n  \"gate\": \"Obtener evidencia y revisión humana antes de registrar un avance de etapa.\",\n  \"integrity\": \"OK\",\n  \"findings\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": "validate",
+      "exit_code": 3,
+      "stdout": "{\n  \"status\": \"NEEDS_REVIEW\",\n  \"findings\": [\n    {\n      \"code\": \"human-review\",\n      \"message\": \"Revisión/evidencia pendiente para discovery\",\n      \"paths\": []\n    }\n  ],\n  \"evidence\": []\n}\n",
+      "stderr": ""
+    }
+  ],
+  "artifact_example_review": "Autor, no agente evaluado; no eficacia acreditada.",
+  "model_calls": 0,
+  "api_cost_usd": 0,
+  "cumulative_previous_studies_estimated_usd": 0.04153488,
+  "new_execution_authorized": false,
+  "suite": {
+    "passed": 189,
+    "failed": 0,
+    "skipped": 0,
+    "duration_seconds": 5.49,
+    "providers": "Simulados; HTTP localhost, sin API"
+  },
+  "tdd": {
+    "red": "Tres tests de explicación tras estado fallan; veinte existentes/de rechazo pasan.",
+    "green": "35 tests focalizados PASS; siete casos nuevos en total.",
+    "scope": "Tests de checker y CLI, no assertions de frases del OS ni eficacia de agentes."
+  },
+  "historical_integrity": [
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/evidence-manifest-01.json",
+      "files": 48,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/execution-config-01/execution-manifest-01.json",
+      "files": 12,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/execution-config-02/execution-manifest-02.json",
+      "files": 10,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/runs/round-01/run-manifest-01.json",
+      "files": 15,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/runs/round-02/run-manifest-02.json",
+      "files": 86,
+      "status": "PASS"
+    },
+    {
+      "manifest": "pilots/retail-capacidad-semanal-publico/reports/package/evidence-manifest-01.json",
+      "files": 70,
+      "status": "PASS"
+    },
+    {
+      "manifest": "artifacts/os-workflow-refinement-2026-10-09/change-manifest-01.json",
+      "files": 12,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-transfer-01/evidence-manifest-01.json",
+      "files": 50,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-transfer-01/execution-config-01/execution-manifest-01.json",
+      "files": 13,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-transfer-01/runs/round-01/run-manifest-01.json",
+      "files": 86,
+      "status": "PASS"
+    }
+  ],
+  "historical_files_intact": 402
+}

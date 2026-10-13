@@ -1,0 +1,21 @@
+{
+  "rows": {
+    "D1": {
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude"
+    },
+    "D2": {
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible"
+    },
+    "D3": {
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible"
+    }
+  },
+  "review_notes": "D1 evento y firma no equivalen a publicación. D2 positivo temprano irreversible válido; D3 negativo válido.",
+  "gate_decision": "NEEDS_REVIEW"
+}

@@ -1,0 +1,54 @@
+{
+  "status": "EXPLORATORY_INCONCLUSIVE_PREPARATION_DEFECT",
+  "planned_pairs": 6,
+  "collected_pairs": 6,
+  "comparable_pairs": 5,
+  "excluded_pairs": [
+    "T02"
+  ],
+  "counts_comparable": {
+    "baseline": {
+      "cases": 5,
+      "format_pass": 4,
+      "status_matches_diagnostic": 5,
+      "content_pass": 4,
+      "joint_pass": 3,
+      "false_blocks": 0,
+      "scope_violations": 0
+    },
+    "treatment": {
+      "cases": 5,
+      "format_pass": 5,
+      "status_matches_diagnostic": 5,
+      "content_pass": 4,
+      "joint_pass": 4,
+      "false_blocks": 0,
+      "scope_violations": 0
+    }
+  },
+  "raw_format_counts_all_six": {
+    "baseline": 5,
+    "treatment": 5
+  },
+  "signal_rule_frozen": {
+    "gains_in_at_least_two_families": false,
+    "joint_improved_cases": [
+      "T06"
+    ],
+    "joint_worsened_cases": [],
+    "new_false_blocks": [],
+    "new_scope_violations": [],
+    "favorable_signal_met": false,
+    "planned_coverage_complete": false
+  },
+  "interpretation": "Contenido correcto 4/5 en ambas; mejora de schema en T06, sin mejora incremental de contenido en pares comparables. T05 incompleto en ambas. T02 no evaluable para la comparación prevista. No eficacia general ni promoción Foundry.",
+  "cost": {
+    "new_estimated_usd": 0.02088035,
+    "previous_estimated_usd": 0.02065453,
+    "cumulative_estimated_usd": 0.04153488,
+    "new_authorized_usd": 0.1,
+    "provider_requests": 13,
+    "retries": 0,
+    "unknown_usage_requests": 0
+  }
+}

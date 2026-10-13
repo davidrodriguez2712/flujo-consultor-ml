@@ -1,0 +1,43 @@
+{
+  "output_type": "not_determinable",
+  "selection_status": "indeterminate",
+  "eligible_count": 3,
+  "capacity_k": 2,
+  "effective_k": null,
+  "selected_ids": [],
+  "risk_ranking_ids": [
+    "P",
+    "Q",
+    "R"
+  ],
+  "total_cost": null,
+  "expected_net_value": null,
+  "feasibility": "indeterminate",
+  "optimality": "indeterminate",
+  "causal_identification": {
+    "status": "not_identifiable",
+    "estimand": "Efecto causal de la campa\u00f1a de retenci\u00f3n (contacto vs. no contacto) sobre la retenci\u00f3n/salvado de cada cliente elegible, es decir, el efecto incremental individual o promedio condicional en la poblaci\u00f3n eligible-F.",
+    "reason": "No hay experimento, estimaciones de efecto de contacto ni dise\u00f1o observacional que identifique el efecto. El risk_score de churn bajo la pol\u00edtica actual es una propensi\u00f3n descriptiva y no mide cu\u00e1ntos clientes se salvar\u00edan por la campa\u00f1a. El CLV tampoco es un efecto."
+  },
+  "metrics": {
+    "population_id": "eligible-F",
+    "precision": null,
+    "recall": null,
+    "lift": null,
+    "precision_status": "not_requested",
+    "recall_status": "not_requested",
+    "lift_status": "not_requested",
+    "reason": "No se solicitan m\u00e9tricas predictivas y no hay labels en el expediente, por lo que precision, recall y lift no se calculan."
+  },
+  "reason": "El objetivo es maximizar clientes salvados, que es un efecto causal. Ese efecto no est\u00e1 identificado: no hay experimento, ni efectos estimados, ni dise\u00f1o observacional. No se puede construir un valor esperado por cliente, as\u00ed que no se puede afirmar optimalidad. Adem\u00e1s, el coste de P es desconocido y no se puede imputar como cero. Solo se conoce el coste de Q (4) y R (4). Con presupuesto 8 y capacidad 2, {Q,R} costar\u00eda 8 y ser\u00eda factible en cuanto a coste y capacidad, pero no se puede mostrar que sea \u00f3ptimo ni que salve clientes. Cualquier par con P tiene un coste \u22654 + coste(P) que no se puede evaluar; P solo cabr\u00eda si su coste fuera \u22644, lo cual es desconocido. El ranking descriptivo por risk_score (P 0.9, Q 0.8, R 0.7) se informa solo como orden de riesgo, no como selecci\u00f3n. No se elige ning\u00fan conjunto. La decisi\u00f3n queda pendiente de revisi\u00f3n humana y no se aprueba ning\u00fan gate.",
+  "open_questions": [
+    "\u00bfCu\u00e1l es el coste de contactar a P? No debe asumirse cero.",
+    "\u00bfExiste o se puede hacer un experimento aleatorizado (contacto vs. control) para estimar el efecto incremental de la campa\u00f1a? \u00bfCon qu\u00e9 unidad, ventana y outcome?",
+    "Si no se puede aleatorizar, \u00bfqu\u00e9 dise\u00f1o observacional y qu\u00e9 supuestos de identificaci\u00f3n aceptar\u00eda el cliente?",
+    "\u00bfQu\u00e9 estimand se quiere optimizar: probabilidad de salvar, CLV salvado neto de coste u otro?",
+    "\u00bfEs el presupuesto 8 un l\u00edmite estricto y la capacidad 2 un m\u00e1ximo de clientes contactados?",
+    "\u00bfEl risk_score est\u00e1 calibrado como probabilidad de churn y qu\u00e9 horizonte tiene?",
+    "\u00bfSe acepta usar el ranking de riesgo como regla descriptiva sin afirmar incrementalidad mientras se obtiene la evidencia?"
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

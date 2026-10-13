@@ -1,0 +1,25 @@
+{
+  "rows": [
+    {
+      "id": "E1",
+      "outcome_state_at_extraction": "pending",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "Regla: valor definitivo al cerrar la ventana m\u00e1s 3 d\u00edas (3\u00d724 h). Ventana [2025-06-01, 2025-07-01) \u2192 certificaci\u00f3n m\u00e1s temprana 2025-07-04T00:00:00Z. Extracci\u00f3n (2025-06-20T00:00:00Z) y entrenamiento (2025-06-15T00:00:00Z) son anteriores, as\u00ed que el cero es provisional (no observed_negative) y la etiqueta no estaba disponible con '<='. Features: 2025-05-31T23:00Z <= predicci\u00f3n 2025-06-01T00:00Z, cumplen. Exclusi\u00f3n comprobada por label no disponible; label_available_at null."
+    },
+    {
+      "id": "E2",
+      "outcome_state_at_extraction": "unknown",
+      "label_availability_at_training": "indeterminate",
+      "train_eligibility": "indeterminate",
+      "reason": "El sistema registr\u00f3 target_reported=0, pero no hay regla de cierre, historial de certificaci\u00f3n, label_available_at ni delay; no se puede certificar el cero ni establecer el estado. Aunque la ventana termin\u00f3 el 2025-05-01, no se infiere certificaci\u00f3n. Features: 2025-03-31T23:00Z <= predicci\u00f3n 2025-04-01T00:00Z, cumplen. No hay exclusi\u00f3n comprobada, pero falta la condici\u00f3n de label disponible, por lo que la elegibilidad es indeterminada."
+    }
+  ],
+  "open_questions": [
+    "E2: \u00bfCu\u00e1l es la regla de cierre/certificaci\u00f3n del target (y si un cero es definitivo o provisional)?",
+    "E2: \u00bfCu\u00e1l es el label_available_at certificado o el delay con su origen, para compararlo con training_timestamp 2025-06-15T00:00:00Z?",
+    "E2: \u00bfExiste historial de certificaci\u00f3n del cero registrado antes de la extracci\u00f3n?",
+    "Contrato: \u00bftraining_timestamp (2025-06-15) anterior a extraction_timestamp (2025-06-20) es intencional para reconstruir el conjunto hist\u00f3rico?"
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

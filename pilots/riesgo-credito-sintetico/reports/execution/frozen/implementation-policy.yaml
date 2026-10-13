@@ -1,0 +1,26 @@
+version: 0.1.0
+algorithm: standardized_logistic_regression_l2
+features:
+- monthly_income
+- debt_to_income
+- requested_amount
+- bureau_score
+- prior_late_count
+iterations: 600
+learning_rate: 0.05
+l2: 0.01
+training_cutoff: '2025-01-01'
+validation_start: '2025-01-01'
+validation_end_exclusive: '2025-03-01'
+evaluation_timestamp: '2025-06-15'
+calibration_bins:
+- 0.0
+- 0.1
+- 0.2
+- 0.4
+- 0.6
+- 0.8
+- 1.0
+k: 100
+hyperparameter_search: false
+final_evaluation: false

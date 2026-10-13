@@ -1,0 +1,24 @@
+{
+  "runs/original/data.json": "[{\"date\":\"2025-07-03\",\"queue\":\"A\",\"tickets\":12},{\"date\":\"2025-07-03\",\"queue\":\"B\",\"tickets\":7}]\n",
+  "runs/reproduction/data.json": "[\n  {\"date\": \"2025-07-03\", \"queue\": \"A\", \"tickets\": 12},\n  {\"date\": \"2025-07-03\", \"queue\": \"B\", \"tickets\": 7}\n]\n",
+  "runs/original/execution.json": {
+    "steps": [
+      "source -> JSON UTF-8 writer -> JSON reader (tickets int, date/queue str) -> threshold"
+    ],
+    "selected_queues": [
+      "A"
+    ]
+  },
+  "runs/reproduction/execution.json": {
+    "steps": [
+      "source -> JSON UTF-8 writer -> JSON reader (tickets int, date/queue str) -> threshold"
+    ],
+    "selected_queues": [
+      "A"
+    ]
+  },
+  "environment.json": {
+    "both_runs": "Same Python/runtime/platform; no randomness",
+    "format_difference": "JSON whitespace only; representation changes permitted in comparison contract."
+  }
+}

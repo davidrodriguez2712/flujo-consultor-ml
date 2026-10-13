@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python",
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/delayed-outcomes/2026-10-08-contract-probe-03/checker/check.py",
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/delayed-outcomes/2026-10-08-contract-probe-03/runs/C/treatment/1/structured-output.json",
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/delayed-outcomes/2026-10-08-contract-probe-03/cases/C/expected.json"
+  ],
+  "exit_code": 0,
+  "stderr": ""
+}

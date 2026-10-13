@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-12",
+  "suite": {
+    "sandbox": {
+      "passed": 217,
+      "failed": 16,
+      "reason": "localhost socket.bind PermissionError"
+    },
+    "authorized_localhost": {
+      "passed": 233,
+      "failed": 0,
+      "seconds": 14.91,
+      "paid_requests": 0
+    }
+  },
+  "draft_sha256": "c2a2440477d9985489b71f4d8c50380ccd7985635d02eab330cfee0f7e5856c4",
+  "canonical_before_sha256": "2ea060606202840ee4ce49ff27c9beb6b29ffae27edebcf755683e9c9bc99fce",
+  "canonical_matches_v01_snapshot": true,
+  "cost_usd": {
+    "v01": 0.07056525,
+    "v02_text_micro": 0.0121265,
+    "v02_native_partial": 0.00843473,
+    "total": 0.09112648,
+    "remaining": 0.00887352
+  },
+  "paid_requests": {
+    "v01": 61,
+    "v02_micro": 15,
+    "v02_native": 7,
+    "total": 83
+  },
+  "canonical_modified": false
+}

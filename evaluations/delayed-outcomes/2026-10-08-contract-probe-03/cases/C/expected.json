@@ -1,0 +1,21 @@
+{
+  "rows": {
+    "C1": {
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible"
+    },
+    "C2": {
+      "outcome_state_at_extraction": "pending",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude"
+    },
+    "C3": {
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude"
+    }
+  },
+  "review_notes": "C1 válido; C2 censurado, no negativo; C3 certificado después de train.",
+  "gate_decision": "NEEDS_REVIEW"
+}

@@ -1,0 +1,762 @@
+{
+  "model": {
+    "rows": 298,
+    "positives": 40,
+    "brier_score": 0.10409171041242656,
+    "roc_auc": 0.7084302325581395,
+    "mean_score": 0.12170214097412538,
+    "positive_rate": 0.1342281879194631,
+    "calibration": [
+      {
+        "low": 0.0,
+        "high": 0.1,
+        "rows": 172,
+        "mean_score": 0.05562784245936598,
+        "positive_rate": 0.06395348837209303
+      },
+      {
+        "low": 0.1,
+        "high": 0.2,
+        "rows": 74,
+        "mean_score": 0.14223934730346444,
+        "positive_rate": 0.17567567567567569
+      },
+      {
+        "low": 0.2,
+        "high": 0.4,
+        "rows": 46,
+        "mean_score": 0.2809783356983979,
+        "positive_rate": 0.2608695652173913
+      },
+      {
+        "low": 0.4,
+        "high": 0.6,
+        "rows": 4,
+        "mean_score": 0.5081599636500993,
+        "positive_rate": 0.5
+      },
+      {
+        "low": 0.6,
+        "high": 0.8,
+        "rows": 2,
+        "mean_score": 0.6079470550476722,
+        "positive_rate": 1
+      },
+      {
+        "low": 0.8,
+        "high": 1.0,
+        "rows": 0,
+        "mean_score": null,
+        "positive_rate": null
+      }
+    ]
+  },
+  "reference": {
+    "rows": 298,
+    "positives": 40,
+    "brier_score": 0.11693224733485125,
+    "roc_auc": 0.5,
+    "mean_score": 0.10737179487179487,
+    "positive_rate": 0.1342281879194631,
+    "calibration": [
+      {
+        "low": 0.0,
+        "high": 0.1,
+        "rows": 0,
+        "mean_score": null,
+        "positive_rate": null
+      },
+      {
+        "low": 0.1,
+        "high": 0.2,
+        "rows": 298,
+        "mean_score": 0.10737179487179487,
+        "positive_rate": 0.1342281879194631
+      },
+      {
+        "low": 0.2,
+        "high": 0.4,
+        "rows": 0,
+        "mean_score": null,
+        "positive_rate": null
+      },
+      {
+        "low": 0.4,
+        "high": 0.6,
+        "rows": 0,
+        "mean_score": null,
+        "positive_rate": null
+      },
+      {
+        "low": 0.6,
+        "high": 0.8,
+        "rows": 0,
+        "mean_score": null,
+        "positive_rate": null
+      },
+      {
+        "low": 0.8,
+        "high": 1.0,
+        "rows": 0,
+        "mean_score": null,
+        "positive_rate": null
+      }
+    ]
+  },
+  "monthly": {
+    "2025-01": {
+      "model": {
+        "rows": 163,
+        "positives": 26,
+        "brier_score": 0.12807713075792482,
+        "roc_auc": 0.6566535654126895,
+        "mean_score": 0.12743188297488778,
+        "positive_rate": 0.15950920245398773,
+        "calibration": [
+          {
+            "low": 0.0,
+            "high": 0.1,
+            "rows": 87,
+            "mean_score": 0.05689207711117396,
+            "positive_rate": 0.08045977011494253
+          },
+          {
+            "low": 0.1,
+            "high": 0.2,
+            "rows": 44,
+            "mean_score": 0.14125407946205226,
+            "positive_rate": 0.2727272727272727
+          },
+          {
+            "low": 0.2,
+            "high": 0.4,
+            "rows": 29,
+            "mean_score": 0.2727102844437349,
+            "positive_rate": 0.1724137931034483
+          },
+          {
+            "low": 0.4,
+            "high": 0.6,
+            "rows": 2,
+            "mean_score": 0.5432428114254215,
+            "positive_rate": 0.5
+          },
+          {
+            "low": 0.6,
+            "high": 0.8,
+            "rows": 1,
+            "mean_score": 0.6115228481851176,
+            "positive_rate": 1
+          },
+          {
+            "low": 0.8,
+            "high": 1.0,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          }
+        ]
+      },
+      "reference": {
+        "rows": 163,
+        "positives": 26,
+        "brier_score": 0.1367843260558722,
+        "roc_auc": 0.5,
+        "mean_score": 0.10737179487179487,
+        "positive_rate": 0.15950920245398773,
+        "calibration": [
+          {
+            "low": 0.0,
+            "high": 0.1,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          },
+          {
+            "low": 0.1,
+            "high": 0.2,
+            "rows": 163,
+            "mean_score": 0.10737179487179487,
+            "positive_rate": 0.15950920245398773
+          },
+          {
+            "low": 0.2,
+            "high": 0.4,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          },
+          {
+            "low": 0.4,
+            "high": 0.6,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          },
+          {
+            "low": 0.6,
+            "high": 0.8,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          },
+          {
+            "low": 0.8,
+            "high": 1.0,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          }
+        ]
+      },
+      "unique_customers": 151,
+      "selection": {
+        "eligible_count": 163,
+        "capacity_k": 100,
+        "k_effective": 100,
+        "selected_ids": [
+          "A003734",
+          "A003823",
+          "A003616",
+          "A003613",
+          "A003746",
+          "A003703",
+          "A003863",
+          "A003661",
+          "A003741",
+          "A003688",
+          "A003769",
+          "A003628",
+          "A003696",
+          "A003614",
+          "A003679",
+          "A003738",
+          "A003606",
+          "A003701",
+          "A003892",
+          "A003879",
+          "A003883",
+          "A003858",
+          "A003839",
+          "A003829",
+          "A003880",
+          "A003787",
+          "A003838",
+          "A003663",
+          "A003711",
+          "A003654",
+          "A003608",
+          "A003735",
+          "A003669",
+          "A003708",
+          "A003846",
+          "A003876",
+          "A003747",
+          "A003762",
+          "A003808",
+          "A003812",
+          "A003601",
+          "A003893",
+          "A003756",
+          "A003722",
+          "A003611",
+          "A003624",
+          "A003667",
+          "A003671",
+          "A003736",
+          "A003759",
+          "A003760",
+          "A003886",
+          "A003744",
+          "A003768",
+          "A003855",
+          "A003845",
+          "A003792",
+          "A003830",
+          "A003683",
+          "A003799",
+          "A003712",
+          "A003785",
+          "A003635",
+          "A003673",
+          "A003781",
+          "A003649",
+          "A003700",
+          "A003709",
+          "A003691",
+          "A003797",
+          "A003706",
+          "A003822",
+          "A003749",
+          "A003859",
+          "A003887",
+          "A003670",
+          "A003637",
+          "A003790",
+          "A003865",
+          "A003699",
+          "A003704",
+          "A003796",
+          "A003835",
+          "A003874",
+          "A003868",
+          "A003718",
+          "A003639",
+          "A003726",
+          "A003609",
+          "A003881",
+          "A003834",
+          "A003728",
+          "A003607",
+          "A003695",
+          "A003729",
+          "A003752",
+          "A003842",
+          "A003811",
+          "A003852",
+          "A003772"
+        ],
+        "label_coverage_selected": 1.0,
+        "precision": 0.2,
+        "recall": 0.7692307692307693,
+        "lift": 1.253846153846154,
+        "population_labels_complete": true
+      }
+    },
+    "2025-02": {
+      "model": {
+        "rows": 135,
+        "positives": 14,
+        "brier_score": 0.07513153621749163,
+        "roc_auc": 0.7762691853600945,
+        "mean_score": 0.11478400803987152,
+        "positive_rate": 0.1037037037037037,
+        "calibration": [
+          {
+            "low": 0.0,
+            "high": 0.1,
+            "rows": 85,
+            "mean_score": 0.054333861109868396,
+            "positive_rate": 0.047058823529411764
+          },
+          {
+            "low": 0.1,
+            "high": 0.2,
+            "rows": 30,
+            "mean_score": 0.1436844068042023,
+            "positive_rate": 0.03333333333333333
+          },
+          {
+            "low": 0.2,
+            "high": 0.4,
+            "rows": 17,
+            "mean_score": 0.2950826584269407,
+            "positive_rate": 0.4117647058823529
+          },
+          {
+            "low": 0.4,
+            "high": 0.6,
+            "rows": 2,
+            "mean_score": 0.4730771158747772,
+            "positive_rate": 0.5
+          },
+          {
+            "low": 0.6,
+            "high": 0.8,
+            "rows": 1,
+            "mean_score": 0.6043712619102267,
+            "positive_rate": 1
+          },
+          {
+            "low": 0.8,
+            "high": 1.0,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          }
+        ]
+      },
+      "reference": {
+        "rows": 135,
+        "positives": 14,
+        "brier_score": 0.09296270043465557,
+        "roc_auc": 0.5,
+        "mean_score": 0.10737179487179487,
+        "positive_rate": 0.1037037037037037,
+        "calibration": [
+          {
+            "low": 0.0,
+            "high": 0.1,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          },
+          {
+            "low": 0.1,
+            "high": 0.2,
+            "rows": 135,
+            "mean_score": 0.10737179487179487,
+            "positive_rate": 0.1037037037037037
+          },
+          {
+            "low": 0.2,
+            "high": 0.4,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          },
+          {
+            "low": 0.4,
+            "high": 0.6,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          },
+          {
+            "low": 0.6,
+            "high": 0.8,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          },
+          {
+            "low": 0.8,
+            "high": 1.0,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          }
+        ]
+      },
+      "unique_customers": 132,
+      "selection": {
+        "eligible_count": 135,
+        "capacity_k": 100,
+        "k_effective": 100,
+        "selected_ids": [
+          "A003964",
+          "A003953",
+          "A003950",
+          "A004024",
+          "A004108",
+          "A004124",
+          "A004150",
+          "A003954",
+          "A003976",
+          "A004044",
+          "A004014",
+          "A004114",
+          "A004054",
+          "A003946",
+          "A003969",
+          "A004075",
+          "A004164",
+          "A004080",
+          "A004093",
+          "A004010",
+          "A004020",
+          "A003994",
+          "A004152",
+          "A004036",
+          "A004098",
+          "A004058",
+          "A004162",
+          "A004192",
+          "A004039",
+          "A003914",
+          "A004088",
+          "A003974",
+          "A004181",
+          "A004154",
+          "A004053",
+          "A003917",
+          "A004028",
+          "A004049",
+          "A004103",
+          "A004143",
+          "A004089",
+          "A003973",
+          "A003965",
+          "A003983",
+          "A004188",
+          "A004047",
+          "A004070",
+          "A003924",
+          "A004023",
+          "A004003",
+          "A004013",
+          "A004110",
+          "A003997",
+          "A004083",
+          "A004196",
+          "A004146",
+          "A004180",
+          "A003926",
+          "A003943",
+          "A004166",
+          "A004079",
+          "A003944",
+          "A004132",
+          "A004119",
+          "A004137",
+          "A003967",
+          "A004111",
+          "A004005",
+          "A003929",
+          "A004059",
+          "A004082",
+          "A004026",
+          "A004095",
+          "A004147",
+          "A004072",
+          "A004029",
+          "A004096",
+          "A004046",
+          "A004183",
+          "A003928",
+          "A003960",
+          "A004015",
+          "A004055",
+          "A004167",
+          "A004030",
+          "A004011",
+          "A004133",
+          "A004106",
+          "A003940",
+          "A003951",
+          "A004073",
+          "A004169",
+          "A003908",
+          "A004006",
+          "A004157",
+          "A003907",
+          "A003910",
+          "A003936",
+          "A004107",
+          "A003904"
+        ],
+        "label_coverage_selected": 1.0,
+        "precision": 0.12,
+        "recall": 0.8571428571428571,
+        "lift": 1.157142857142857,
+        "population_labels_complete": true
+      }
+    }
+  },
+  "customer_segments": {
+    "known": {
+      "model": {
+        "rows": 152,
+        "positives": 18,
+        "brier_score": 0.0967755967472629,
+        "roc_auc": 0.7305140961857379,
+        "mean_score": 0.11030200361016967,
+        "positive_rate": 0.11842105263157894,
+        "calibration": [
+          {
+            "low": 0.0,
+            "high": 0.1,
+            "rows": 94,
+            "mean_score": 0.0553477400676515,
+            "positive_rate": 0.0425531914893617
+          },
+          {
+            "low": 0.1,
+            "high": 0.2,
+            "rows": 35,
+            "mean_score": 0.1403538518339308,
+            "positive_rate": 0.22857142857142856
+          },
+          {
+            "low": 0.2,
+            "high": 0.4,
+            "rows": 22,
+            "mean_score": 0.2762908688147301,
+            "positive_rate": 0.2727272727272727
+          },
+          {
+            "low": 0.4,
+            "high": 0.6,
+            "rows": 1,
+            "mean_score": 0.5724330542749086,
+            "positive_rate": 0
+          },
+          {
+            "low": 0.6,
+            "high": 0.8,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          },
+          {
+            "low": 0.8,
+            "high": 1.0,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          }
+        ]
+      },
+      "reference": {
+        "rows": 152,
+        "positives": 18,
+        "brier_score": 0.10451959302224992,
+        "roc_auc": 0.5,
+        "mean_score": 0.10737179487179487,
+        "positive_rate": 0.11842105263157894,
+        "calibration": [
+          {
+            "low": 0.0,
+            "high": 0.1,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          },
+          {
+            "low": 0.1,
+            "high": 0.2,
+            "rows": 152,
+            "mean_score": 0.10737179487179487,
+            "positive_rate": 0.11842105263157894
+          },
+          {
+            "low": 0.2,
+            "high": 0.4,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          },
+          {
+            "low": 0.4,
+            "high": 0.6,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          },
+          {
+            "low": 0.6,
+            "high": 0.8,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          },
+          {
+            "low": 0.8,
+            "high": 1.0,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          }
+        ]
+      },
+      "unique_customers": 139
+    },
+    "new": {
+      "model": {
+        "rows": 146,
+        "positives": 22,
+        "brier_score": 0.1117084862830079,
+        "roc_auc": 0.6924486803519062,
+        "mean_score": 0.1335707771338601,
+        "positive_rate": 0.1506849315068493,
+        "calibration": [
+          {
+            "low": 0.0,
+            "high": 0.1,
+            "rows": 78,
+            "mean_score": 0.055965401751944956,
+            "positive_rate": 0.08974358974358974
+          },
+          {
+            "low": 0.1,
+            "high": 0.2,
+            "rows": 39,
+            "mean_score": 0.14393145862227671,
+            "positive_rate": 0.1282051282051282
+          },
+          {
+            "low": 0.2,
+            "high": 0.4,
+            "rows": 24,
+            "mean_score": 0.2852751803417601,
+            "positive_rate": 0.25
+          },
+          {
+            "low": 0.4,
+            "high": 0.6,
+            "rows": 3,
+            "mean_score": 0.48673560010849626,
+            "positive_rate": 0.6666666666666666
+          },
+          {
+            "low": 0.6,
+            "high": 0.8,
+            "rows": 2,
+            "mean_score": 0.6079470550476722,
+            "positive_rate": 1
+          },
+          {
+            "low": 0.8,
+            "high": 1.0,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          }
+        ]
+      },
+      "reference": {
+        "rows": 146,
+        "positives": 22,
+        "brier_score": 0.12985501072879235,
+        "roc_auc": 0.5,
+        "mean_score": 0.10737179487179487,
+        "positive_rate": 0.1506849315068493,
+        "calibration": [
+          {
+            "low": 0.0,
+            "high": 0.1,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          },
+          {
+            "low": 0.1,
+            "high": 0.2,
+            "rows": 146,
+            "mean_score": 0.10737179487179487,
+            "positive_rate": 0.1506849315068493
+          },
+          {
+            "low": 0.2,
+            "high": 0.4,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          },
+          {
+            "low": 0.4,
+            "high": 0.6,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          },
+          {
+            "low": 0.6,
+            "high": 0.8,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          },
+          {
+            "low": 0.8,
+            "high": 1.0,
+            "rows": 0,
+            "mean_score": null,
+            "positive_rate": null
+          }
+        ]
+      },
+      "unique_customers": 125
+    }
+  }
+}

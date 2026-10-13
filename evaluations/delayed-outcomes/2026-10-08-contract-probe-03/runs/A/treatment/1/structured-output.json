@@ -1,0 +1,31 @@
+{
+  "rows": [
+    {
+      "id": "A1",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "Petici\u00f3n recibida 2025-07-03T10:00Z; el plazo de 7\u00d724 h vence el 2025-07-10T10:00Z sin retirada, por lo que se certifica churn=1 y el label entra de inmediato al sistema de entrenamiento. Esa fecha es <= training_timestamp 2025-07-15T00:00Z, as\u00ed que el label estaba disponible. El evento cae en la ventana [2025-07-01, 2025-08-15). Las features (2025-06-30T18:00Z) son anteriores a la predicci\u00f3n (2025-07-01T00:00Z). La poblaci\u00f3n es v\u00e1lida y no hay otros retrasos. Se cumplen todas las condiciones."
+    },
+    {
+      "id": "A2",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "Petici\u00f3n recibida 2025-07-12T10:00Z; el plazo vence el 2025-07-19T10:00Z sin retirada, y el extracto del 2025-08-15 muestra churn=1 certificado. Por eso es positivo observado en la extracci\u00f3n. La certificaci\u00f3n y la entrada del label al sistema (2025-07-19T10:00Z) son posteriores a training_timestamp 2025-07-15T00:00Z. En esa fecha solo hab\u00eda una petici\u00f3n provisional, que no es churn definitivo. El label no estaba disponible y la fila se excluye, aunque las features sean v\u00e1lidas."
+    },
+    {
+      "id": "A3",
+      "outcome_state_at_extraction": "pending",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "Petici\u00f3n recibida 2025-08-12T10:00Z, a\u00fan no retirada; el plazo vence el 2025-08-19T10:00Z, posterior a la extracci\u00f3n (2025-08-15T00:00Z). La regla conocida todav\u00eda no permite certificar, as\u00ed que el estado es pending. flag_baja=1 con expediente abierto es solo una petici\u00f3n provisional y no se trata como churn=1 ni como negativo. Adem\u00e1s, la petici\u00f3n ocurri\u00f3 despu\u00e9s del entrenamiento (2025-07-15), por lo que no hab\u00eda label certificado en esa fecha y la fila se excluye."
+    }
+  ],
+  "open_questions": [
+    "\u00bfConfirma Operaciones que 'no se retir\u00f3' en A1 y A2 est\u00e1 certificado por el sistema de entrenamiento, y no es solo lo que muestra el extracto?",
+    "\u00bfHay un tama\u00f1o de ventana de reevaluaci\u00f3n para A3 (p. ej. reextraer despu\u00e9s del 2025-08-19T10:00Z) para fijar su estado definitivo?",
+    "\u00bfLos l\u00edmites de la ventana objetivo [1 de julio, 15 de agosto) y el plazo de 7\u00d724 h se cuentan exactamente desde la hora de recepci\u00f3n, sin redondeo a d\u00eda calendario?"
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

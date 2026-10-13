@@ -1,0 +1,21 @@
+{
+  "rows": {
+    "F1": {
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "indeterminate",
+      "train_eligibility": "indeterminate"
+    },
+    "F2": {
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible"
+    },
+    "F3": {
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude"
+    }
+  },
+  "review_notes": "F1 conflicto atraviesa train, pedir resolución; F2 precedencia explícita; F3 label posterior basta para excluir aun con conflicto de features.",
+  "gate_decision": "NEEDS_REVIEW"
+}

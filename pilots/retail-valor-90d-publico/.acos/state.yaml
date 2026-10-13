@@ -1,0 +1,112 @@
+schema_version: 1
+current_stage: handoff
+status: COMPLETED
+objective: 'Piloto retail cerrado: baseline recomendado y reproducción local verificada.'
+completed_stages:
+- discovery
+- framing
+- diagnosis
+- execution
+- validation
+- delivery
+- handoff
+blockers: []
+open_decisions: []
+gate_reviews:
+  discovery:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - reports/discovery/review.md
+    - reports/dataset/dataset-understanding-2026-10-09.md
+    - reports/discovery/verification.json
+    - reports/discovery/human-approval.json
+    profile_sha256: c38bc5e74a0c4c8a822c7bf3f264ba1ada06ead88f4226c64bca06479cdc989e
+  framing:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - reports/framing/review.md
+    - reports/framing/evidence-manifest.json
+    - reports/framing/human-approval.json
+    profile_sha256: c38bc5e74a0c4c8a822c7bf3f264ba1ada06ead88f4226c64bca06479cdc989e
+  diagnosis:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - reports/diagnosis/review.md
+    - reports/diagnosis/evidence-manifest.json
+    - reports/diagnosis/human-approval.json
+    profile_sha256: c38bc5e74a0c4c8a822c7bf3f264ba1ada06ead88f4226c64bca06479cdc989e
+  data-quality:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - reports/diagnosis/review.md
+    - reports/diagnosis/evidence-manifest.json
+    - reports/diagnosis/human-approval.json
+    profile_sha256: c38bc5e74a0c4c8a822c7bf3f264ba1ada06ead88f4226c64bca06479cdc989e
+  execution:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - reports/execution/review.md
+    - reports/execution/evidence-manifest.json
+    - reports/execution/human-approval.json
+    profile_sha256: c38bc5e74a0c4c8a822c7bf3f264ba1ada06ead88f4226c64bca06479cdc989e
+  validation:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - reports/validation/review.md
+    - reports/validation/evidence-manifest.json
+    - reports/validation/human-approval.json
+    profile_sha256: c38bc5e74a0c4c8a822c7bf3f264ba1ada06ead88f4226c64bca06479cdc989e
+  data_analysis-review:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - reports/validation/review.md
+    - reports/validation/evidence-manifest.json
+    - reports/validation/human-approval.json
+    profile_sha256: c38bc5e74a0c4c8a822c7bf3f264ba1ada06ead88f4226c64bca06479cdc989e
+  supervised_model-review:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - reports/validation/review.md
+    - reports/validation/evidence-manifest.json
+    - reports/validation/human-approval.json
+    profile_sha256: c38bc5e74a0c4c8a822c7bf3f264ba1ada06ead88f4226c64bca06479cdc989e
+  selection-review:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - reports/validation/review.md
+    - reports/validation/evidence-manifest.json
+    - reports/validation/human-approval.json
+    profile_sha256: c38bc5e74a0c4c8a822c7bf3f264ba1ada06ead88f4226c64bca06479cdc989e
+  executive_delivery-review:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - reports/validation/review.md
+    - reports/validation/evidence-manifest.json
+    - reports/validation/human-approval.json
+    profile_sha256: c38bc5e74a0c4c8a822c7bf3f264ba1ada06ead88f4226c64bca06479cdc989e
+  delivery:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - reports/delivery/review.md
+    - reports/delivery/evidence-manifest.json
+    - reports/delivery/human-approval.json
+    profile_sha256: c38bc5e74a0c4c8a822c7bf3f264ba1ada06ead88f4226c64bca06479cdc989e
+  handoff:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - reports/handoff/review.md
+    - handoff/handoff-manifest.json
+    - reports/handoff/human-approval.json
+    profile_sha256: c38bc5e74a0c4c8a822c7bf3f264ba1ada06ead88f4226c64bca06479cdc989e

@@ -1,0 +1,34 @@
+{
+  "rows": [
+    {
+      "id": "B1",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "Extracci\u00f3n 2025-08-15: el positivo (churn=1, evento 20-jun, dentro de [1-jun,1-jul)) fue certificado y publicado por primera vez el 2025-08-05T09:00Z, por lo que es observed_positive en extracci\u00f3n. El entrenamiento fue el 2025-07-15T00:00Z; 2025-08-05 > 2025-07-15 y no hay otros canales de publicaci\u00f3n, as\u00ed que con la regla '<=' el label no estaba disponible (antes solo hab\u00eda un flag sin resolver). Aunque las features estaban disponibles (2025-05-31T18:00Z <= 2025-06-01T00:00Z) y la poblaci\u00f3n es v\u00e1lida, la fila se excluye por el label no disponible. Que el valor se vea hoy no prueba disponibilidad previa."
+    },
+    {
+      "id": "B2",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "Auditor\u00eda certific\u00f3 la ausencia de churn para la ventana [1-jun,1-jul) y la public\u00f3 el 2025-07-10T09:00Z, sin revisiones posteriores; la versi\u00f3n actual churn=0 es esa misma publicada. Es observed_negative en extracci\u00f3n. 2025-07-10T09:00Z <= 2025-07-15T00:00Z (entrenamiento) y no hay otros canales, as\u00ed que el label estaba disponible. Las features estaban disponibles el 2025-05-31T18:00Z, antes de la predicci\u00f3n (2025-06-01T00:00Z), y la poblaci\u00f3n es v\u00e1lida. Se cumplen todas las condiciones, por lo que es elegible."
+    },
+    {
+      "id": "B3",
+      "outcome_state_at_extraction": "unknown",
+      "label_availability_at_training": "indeterminate",
+      "train_eligibility": "indeterminate",
+      "reason": "El CSV actual dice churn=0 con fecha_evento vac\u00eda, pero el export no incluye certificaci\u00f3n, ticket ni historial de publicaci\u00f3n, y no se document\u00f3 la regla que produce el cero. Un cero sin certificaci\u00f3n puede ser provisional y no equivale a observed_negative; tampoco hay base para decir pending, porque no se conoce una regla que explique la espera. El estado es unknown. Sin fecha de certificaci\u00f3n ni publicaci\u00f3n no se puede comparar con 2025-07-15T00:00Z, as\u00ed que la disponibilidad es indeterminate. No hay una exclusi\u00f3n comprobada y falta una condici\u00f3n (el label), por lo que la elegibilidad es indeterminate. Las features y la poblaci\u00f3n son v\u00e1lidas seg\u00fan el documento."
+    }
+  ],
+  "open_questions": [
+    "B3: \u00bfQu\u00e9 regla genera el churn=0 y existe certificaci\u00f3n definitiva para la ventana [2025-06-01, 2025-07-01)? \u00bfCu\u00e1ndo se certific\u00f3 y se public\u00f3 en el sistema de entrenamiento?",
+    "B3: \u00bfHay historial de versiones o auditor\u00eda del sistema de entrenamiento que muestre el valor y la fecha de publicaci\u00f3n antes de 2025-07-15T00:00Z?",
+    "B3: \u00bfLa fecha_evento vac\u00eda significa ausencia certificada de evento, o un dato faltante o a\u00fan no resuelto?",
+    "B1: \u00bfCu\u00e1l era el flag sin resolver antes del 2025-08-05 y se us\u00f3 como label en el entrenamiento? Si se us\u00f3, hay que revisar el pipeline porque el flag no era un label certificado.",
+    "\u00bfConviene guardar una tabla de versiones de labels (valor, certificado_en, publicado_en) para evitar que el CSV actual sobrescriba el historial en futuras reconstrucciones?",
+    "Decisi\u00f3n humana pendiente: confirmar el tratamiento de B3 (excluir o conservar hasta obtener evidencia) antes de reconstruir el entrenamiento."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

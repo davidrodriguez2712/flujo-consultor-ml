@@ -1,0 +1,11 @@
+{
+  "status": "APPROVED_WITH_LIMITS",
+  "manifest": "reports/package/evidence-manifest-01.json",
+  "manifest_version": "01",
+  "manifest_sha256": "fdf2945c8935a3511a0766c3527fc9216609021ffa45eb5891f5c574c732e647",
+  "reviewer": "David",
+  "decision": "Acepta el paquete técnico y sus límites; autoriza cierre del ensayo.",
+  "scope": "Aceptar o corregir evidencia técnica conjunta y límites; no autoriza uso operativo.",
+  "user_message": "Aprobado seguimos",
+  "recorded_at_utc": "2026-10-09T17:33:23.416643+00:00"
+}

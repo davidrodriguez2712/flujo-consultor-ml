@@ -1,0 +1,14 @@
+{
+  "checker_version": "0.1.0",
+  "strict_json_pass": true,
+  "schema_pass": true,
+  "status_matches": true,
+  "references_exist": true,
+  "unknown_references": [],
+  "semantic_review": "NOT_RUN",
+  "overall_content_pass": null,
+  "referenced_paths": [
+    "analysis/weekly.json",
+    "delivery/draft.md"
+  ]
+}

@@ -1,0 +1,3 @@
+Reporte escrito en `reports/leakage/audit.md` (ruta completa: `/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L02-treatment/workspace/reports/leakage/audit.md`).
+
+Resumen: no se confirma leakage en la muestra. Las features están disponibles antes de `prediction_at`, el target no entra en las features y el scaler solo ajusta con train. La recurrencia de C01–C03 es parte del escenario declarado. Quedan riesgos: falta el código de entrenamiento, la disponibilidad solo está declarada y la muestra tiene 6 filas sin métricas. No se ejecutó pipeline.py ni se entrenó modelo.

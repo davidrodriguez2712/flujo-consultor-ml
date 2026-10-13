@@ -1,0 +1,44 @@
+{
+  "output_type": "value_selection",
+  "selection_status": "determined",
+  "eligible_count": 3,
+  "capacity_k": 2,
+  "effective_k": 2,
+  "selected_ids": [
+    "M2",
+    "M1"
+  ],
+  "risk_ranking_ids": [
+    "M1",
+    "M2",
+    "M3"
+  ],
+  "total_cost": 7,
+  "expected_net_value": 11,
+  "feasibility": "feasible",
+  "optimality": "optimal",
+  "causal_identification": {
+    "status": "identifiable",
+    "estimand": "Efecto promedio del contacto (ATE) sobre retenci\u00f3n a 90 d\u00edas por estrato G1/G2/G3, estimado como diferencia de proporciones tratamiento-control y transportado a los clientes actuales intercambiables dentro del estrato. No es un efecto individual.",
+    "reason": "El experimento aleatoriz\u00f3 contacto vs. no contacto dentro de cada estrato (10000 por brazo), con cumplimiento total, seguimiento completo, sin interferencia y outcomes definidos igual. Con el supuesto expl\u00edcito de transporte, el ATE por estrato es identificable. Efectos puntuales: G1 +0.10, G2 +0.04, G3 -0.01. IC95% normal aprox.: G1 [0.087, 0.113]; G2 [0.028, 0.052]; G3 [-0.021, +0.001]."
+  },
+  "metrics": {
+    "population_id": "eligible-E",
+    "precision": null,
+    "recall": null,
+    "lift": null,
+    "precision_status": "not_requested",
+    "recall_status": "not_requested",
+    "lift_status": "not_requested",
+    "reason": "No se pidieron m\u00e9tricas predictivas; la tarea es selecci\u00f3n por valor neto incremental esperado."
+  },
+  "reason": "Valor neto por cliente = efecto \u00d7 CLV \u2212 coste (coste restado una vez). M1 (G1): 0.10\u00d7100\u22125 = 5. M2 (G2): 0.04\u00d7200\u22122 = 6. M3 (G3): \u22120.01\u00d7300\u22121 = \u22124. M3 tiene valor neto negativo, por lo que no se selecciona aunque haya capacidad. Entre las combinaciones factibles (K\u22642, coste\u22647): {M2,M1} coste 7, valor 11; {M2} 6; {M1} 5; {M2,M3} 2; {M1,M3} 1; vac\u00edo 0. Gana {M2,M1}, que usa exactamente el presupuesto. Orden de miembros por valor neto descendente: M2, M1. Incertidumbre (IC95% normal aprox. sobre el neto, sin incertidumbre en coste ni CLV): M1 [3.69, 6.31]; M2 [3.51, 8.49]; M3 [\u22127.36, \u22120.64]; total de la selecci\u00f3n \u2248 11 con IC95% \u2248 [8.2, 13.8]. La optimalidad es solo respecto a las estimaciones puntuales, como se pidi\u00f3. El valor es un escenario calculado bajo supuestos (transporte, CLV constante, aditividad), no evidencia nueva de incremento. Gate: NEEDS_REVIEW; no apruebo gates.",
+  "open_questions": [
+    "\u00bfSe sostiene el supuesto de transporte (intercambiabilidad de los clientes actuales con la poblaci\u00f3n experimental dentro de cada estrato) y el horizonte de 90 d\u00edas?",
+    "\u00bfEs aceptable decidir con estimaciones puntuales cuando el IC de M1 y M2 se solapa? El orden M2>M1 no es estad\u00edsticamente firme, aunque la selecci\u00f3n conjunta no cambia.",
+    "\u00bfSon CLV y costes realmente conocidos y constantes? No se propag\u00f3 incertidumbre de ellos.",
+    "\u00bfEl efecto negativo de G3 (IC95% hasta +0.001) debe tratarse como da\u00f1o real? Se excluye M3 por valor neto negativo bajo la regla pedida.",
+    "\u00bfQui\u00e9n es el owner que aprueba el gate y c\u00f3mo se medir\u00e1 el resultado tras la ejecuci\u00f3n, p. ej. con un holdout?"
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

@@ -1,0 +1,124 @@
+FFFFFF                                                                   [100%]
+=================================== FAILURES ===================================
+_____________________ test_same_seed_reproduces_csv_bytes ______________________
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1530/test_same_seed_reproduces_csv_0')
+
+    def test_same_seed_reproduces_csv_bytes(tmp_path):
+>       gen = generator()
+              ^^^^^^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_generator.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def generator():
+>       assert MODULE.is_file(), 'Falta implementar el generator'
+E       AssertionError: Falta implementar el generator
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/generate_synthetic_data.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_generator.py:11: AssertionError
+___________________ test_rejections_have_no_observed_outcome ___________________
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1530/test_rejections_have_no_observ0')
+
+    def test_rejections_have_no_observed_outcome(tmp_path):
+>       generator().generate(tmp_path)
+        ^^^^^^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_generator.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def generator():
+>       assert MODULE.is_file(), 'Falta implementar el generator'
+E       AssertionError: Falta implementar el generator
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/generate_synthetic_data.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_generator.py:11: AssertionError
+_________ test_pending_is_not_zero_and_full_labels_follow_97_day_rule __________
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1530/test_pending_is_not_zero_and_f0')
+
+    def test_pending_is_not_zero_and_full_labels_follow_97_day_rule(tmp_path):
+>       generator().generate(tmp_path)
+        ^^^^^^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_generator.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def generator():
+>       assert MODULE.is_file(), 'Falta implementar el generator'
+E       AssertionError: Falta implementar el generator
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/generate_synthetic_data.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_generator.py:11: AssertionError
+______________ test_keys_repeated_clients_and_predecision_history ______________
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1530/test_keys_repeated_clients_and0')
+
+    def test_keys_repeated_clients_and_predecision_history(tmp_path):
+>       generator().generate(tmp_path)
+        ^^^^^^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_generator.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def generator():
+>       assert MODULE.is_file(), 'Falta implementar el generator'
+E       AssertionError: Falta implementar el generator
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/generate_synthetic_data.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_generator.py:11: AssertionError
+______ test_postdecision_leakage_columns_are_late_and_absent_when_pending ______
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1530/test_postdecision_leakage_colu0')
+
+    def test_postdecision_leakage_columns_are_late_and_absent_when_pending(tmp_path):
+>       generator().generate(tmp_path)
+        ^^^^^^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_generator.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def generator():
+>       assert MODULE.is_file(), 'Falta implementar el generator'
+E       AssertionError: Falta implementar el generator
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/generate_synthetic_data.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_generator.py:11: AssertionError
+_________________ test_generator_refuses_to_overwrite_sources __________________
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1530/test_generator_refuses_to_over0')
+
+    def test_generator_refuses_to_overwrite_sources(tmp_path):
+>       gen = generator()
+              ^^^^^^^^^^^
+
+pilots/riesgo-credito-sintetico/analysis/test_generator.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def generator():
+>       assert MODULE.is_file(), 'Falta implementar el generator'
+E       AssertionError: Falta implementar el generator
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/riesgo-credito-sintetico/analysis/generate_synthetic_data.py').is_file
+
+pilots/riesgo-credito-sintetico/analysis/test_generator.py:11: AssertionError
+=========================== short test summary info ============================
+FAILED pilots/riesgo-credito-sintetico/analysis/test_generator.py::test_same_seed_reproduces_csv_bytes
+FAILED pilots/riesgo-credito-sintetico/analysis/test_generator.py::test_rejections_have_no_observed_outcome
+FAILED pilots/riesgo-credito-sintetico/analysis/test_generator.py::test_pending_is_not_zero_and_full_labels_follow_97_day_rule
+FAILED pilots/riesgo-credito-sintetico/analysis/test_generator.py::test_keys_repeated_clients_and_predecision_history
+FAILED pilots/riesgo-credito-sintetico/analysis/test_generator.py::test_postdecision_leakage_columns_are_late_and_absent_when_pending
+FAILED pilots/riesgo-credito-sintetico/analysis/test_generator.py::test_generator_refuses_to_overwrite_sources
+6 failed in 0.05s

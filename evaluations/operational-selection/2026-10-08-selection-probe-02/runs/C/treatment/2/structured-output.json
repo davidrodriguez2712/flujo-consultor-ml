@@ -1,0 +1,42 @@
+{
+  "output_type": "value_selection",
+  "selection_status": "determined",
+  "eligible_count": 3,
+  "capacity_k": 2,
+  "effective_k": 2,
+  "selected_ids": [
+    "B",
+    "C"
+  ],
+  "risk_ranking_ids": [
+    "A",
+    "B",
+    "C"
+  ],
+  "total_cost": 10,
+  "expected_net_value": 20,
+  "feasibility": "feasible",
+  "optimality": "optimal",
+  "causal_identification": {
+    "status": "not_requested",
+    "estimand": null,
+    "reason": "No se solicita estimaci\u00f3n de efecto causal. El net_value es un valor esperado suministrado por negocio, no evidencia de incrementalidad."
+  },
+  "metrics": {
+    "population_id": "eligible-C",
+    "precision": null,
+    "recall": null,
+    "lift": null,
+    "precision_status": "not_requested",
+    "recall_status": "not_requested",
+    "lift_status": "not_requested",
+    "reason": "No se solicitaron m\u00e9tricas de labels y el expediente no incluye labels."
+  },
+  "reason": "Los 3 registros son elegibles, as\u00ed que se evaluaron todos los conjuntos con tama\u00f1o <=2 y coste <=10. El net_value ya descuenta el coste operativo, por lo que no se rest\u00f3 de nuevo. Conjuntos posibles: {} da coste 0 y valor 0. {A} da coste 6 y valor 13. {B} da coste 5 y valor 10. {C} da coste 5 y valor 10. {A,B} da coste 11 y {A,C} da coste 11, ambos infactibles porque superan 10. {B,C} da coste 10 y valor 20, factible. El \u00f3ptimo es {B,C} con valor 20. Un greedy por risk_score o por mayor valor elegir\u00eda A primero (valor 13), y luego ni B ni C cabr\u00edan en el presupuesto restante de 4. Eso dar\u00eda 13 en vez de 20. No hubo empate entre conjuntos \u00f3ptimos. Los miembros se ordenan por net_value descendente y luego por ID ascendente: B, C. risk_ranking_ids es el ranking descriptivo por risk_score (A 0.99, B 0.8, C 0.7), distinto de la selecci\u00f3n por valor. La optimalidad vale solo para los valores y las reglas declaradas, tomados como estimaciones puntuales sin incertidumbre. Este resultado no autoriza ejecutar nada y el gate requiere revisi\u00f3n humana.",
+  "open_questions": [
+    "\u00bfCu\u00e1l es la incertidumbre de los net_value declarados? Con estimaciones puntuales, la optimalidad no est\u00e1 acreditada bajo incertidumbre.",
+    "\u00bfEs estricto el presupuesto de 10, con un uso exacto de 10 y sin holgura? Si hay holgura, el resultado podr\u00eda cambiar.",
+    "\u00bfHay una pol\u00edtica de negocio que obligue a priorizar A por su risk_score alto? De ser as\u00ed, la selecci\u00f3n por valor tendr\u00eda que revisarse."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

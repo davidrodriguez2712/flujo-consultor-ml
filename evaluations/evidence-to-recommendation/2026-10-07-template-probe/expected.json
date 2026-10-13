@@ -1,0 +1,54 @@
+{
+  "A": {
+    "claim_statuses": {
+      "A1": "unsupported",
+      "A2": "unsupported",
+      "A3": "supported"
+    },
+    "numeric_findings": {
+      "precision": 0.2,
+      "incremental_impact_usd": null,
+      "roi_pct": null
+    },
+    "owner": "responsable de retención"
+  },
+  "B": {
+    "claim_statuses": {
+      "B1": "contradicted",
+      "B2": "unsupported",
+      "B3": "supported"
+    },
+    "numeric_findings": {
+      "global_conversion": 0.13,
+      "north_conversion": 0.4,
+      "south_conversion": 0.1
+    },
+    "owner": "gerente comercial"
+  },
+  "C": {
+    "claim_statuses": {
+      "C1": "unsupported",
+      "C2": "contradicted",
+      "C3": "contradicted"
+    },
+    "numeric_findings": {
+      "estimated_conversion_delta_pp": 1,
+      "complaint_delta_pp": 6,
+      "roi_pct": null
+    },
+    "owner": "PM de crecimiento"
+  },
+  "D": {
+    "claim_statuses": {
+      "D1": "unsupported",
+      "D2": "supported",
+      "D3": "unsupported"
+    },
+    "numeric_findings": {
+      "audited_error_rate": 0.35,
+      "population_error_rate": null,
+      "annual_savings_usd": null
+    },
+    "owner": "responsable de operaciones"
+  }
+}

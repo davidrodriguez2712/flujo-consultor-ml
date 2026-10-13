@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-12",
+  "rounds": [
+    {
+      "configuration": "2026-10-12-native-regression-preparation-02",
+      "requests": 8,
+      "estimated_usd": 0.01022674,
+      "summary": {
+        "status": "STOPPED_CONTRACT_FAILURE",
+        "runs": [
+          {
+            "case": "L01",
+            "condition": "treatment",
+            "runtime_success": true,
+            "contract_success": true
+          },
+          {
+            "case": "L02",
+            "condition": "treatment",
+            "runtime_success": true,
+            "contract_success": false
+          }
+        ],
+        "effectiveness": "NOT_REVIEWED"
+      }
+    },
+    {
+      "configuration": "2026-10-12-native-regression-config03",
+      "requests": 12,
+      "estimated_usd": 0.013749825,
+      "summary": {
+        "status": "COMPLETED_PENDING_CONTENT_REVIEW",
+        "runs": [
+          {
+            "case": "L01",
+            "condition": "treatment",
+            "runtime_success": true,
+            "contract_success": true
+          },
+          {
+            "case": "L02",
+            "condition": "treatment",
+            "runtime_success": true,
+            "contract_success": true
+          },
+          {
+            "case": "L03",
+            "condition": "treatment",
+            "runtime_success": true,
+            "contract_success": true
+          }
+        ],
+        "effectiveness": "NOT_REVIEWED"
+      }
+    }
+  ],
+  "cumulative_estimated_usd": 0.115103045,
+  "cumulative_ceiling_usd": 0.15,
+  "remaining_usd": 0.034896955,
+  "real_requests_total": 103,
+  "all_usage_known": true,
+  "previous_evidence_unchanged": true,
+  "canonical_skill_unchanged": true,
+  "suite": {
+    "passed": 262,
+    "failed": 0,
+    "seconds": 18.0
+  },
+  "native_cases_completed_config03": 3,
+  "mechanical_contract_pass_config03": 3,
+  "independent_review": "REVIEW-REAL-01.md",
+  "semantics": "L01/L02 útiles con reservas; L03 no aceptado íntegramente",
+  "additional_paid_calls_after_config03": 0
+}

@@ -1,0 +1,45 @@
+{
+  "source_rows": 1067371,
+  "reconciled_rows": 1044848,
+  "valid_rows": 788187,
+  "cross_sheet_copies": 22523,
+  "excluded_rows": 256661,
+  "fit_checks": [
+    {
+      "fit_at": "2010-09-01T00:00:00",
+      "train_rows": 2652,
+      "train_snapshots": 1,
+      "shared_customer_ids": 2200,
+      "max_train_label_end": "2010-08-30T00:00:00"
+    },
+    {
+      "fit_at": "2010-12-01T00:00:00",
+      "train_rows": 11024,
+      "train_snapshots": 4,
+      "shared_customer_ids": 2514,
+      "max_train_label_end": "2010-11-30T00:00:00"
+    },
+    {
+      "fit_at": "2011-03-01T00:00:00",
+      "train_rows": 20584,
+      "train_snapshots": 7,
+      "shared_customer_ids": 3065,
+      "max_train_label_end": "2011-03-01T00:00:00"
+    },
+    {
+      "fit_at": "2011-06-01T00:00:00",
+      "train_rows": 30673,
+      "train_snapshots": 10,
+      "shared_customer_ids": 2261,
+      "max_train_label_end": "2011-05-30T00:00:00"
+    },
+    {
+      "fit_at": "2011-09-01T00:00:00",
+      "train_rows": 39677,
+      "train_snapshots": 13,
+      "shared_customer_ids": 2451,
+      "max_train_label_end": "2011-08-30T00:00:00"
+    }
+  ]
+}
+snapshots: 14 train/development rows: 39677 holdout reservado

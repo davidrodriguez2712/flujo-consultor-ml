@@ -1,0 +1,99 @@
+# Ejecución, autoridad y QA
+
+Este módulo define quién responde por el trabajo, qué puede hacer cada actor y qué revisión hace falta antes de aceptar una salida. Para las etapas del proyecto, consultar [`project-lifecycle.md`](project-lifecycle.md); para el contexto y acceso, [`isolation-and-context.md`](isolation-and-context.md).
+
+## Roles
+
+| Rol | Responsable de | No sustituye |
+|---|---|---|
+| Consultor | Problema y alcance, acuerdos con stakeholders, permisos, interpretación, recomendación y aprobación final. | Owner del negocio/datos en decisiones que les corresponden. |
+| Agente ejecutor | Completar una tarea delimitada con inputs, herramientas y escritura autorizados; dejar evidencia y declarar incertidumbre. | Criterio del consultor, permisos ni aceptación del stakeholder. |
+| Reviewer | Revisar evidencia y método de forma independiente cuando el riesgo lo justifique; señalar blockers, límites y correcciones. | Checks deterministas disponibles ni decisión humana final. |
+| Agente especialista | Ejecutar una unidad separable con interfaz, presupuesto y alcance de escritura definidos. | Integración, cambios de scope o ownership de los resultados. |
+
+El patrón inicial es **un ejecutor y el consultor como integrador**. Sumar agentes solo si el trabajo es separable, las entradas y salidas están definidas y el beneficio compensa coordinación/revisión. Mantener un único escritor por archivo compartido. Si las herramientas no soportan subagents, trabajar por handoffs escritos.
+
+## Capacidad y autoridad
+
+Que el harness pueda realizar una acción no autoriza a realizarla. La tarea declara alcance de lectura/escritura y herramientas. El agente puede inspeccionar fuentes autorizadas, producir borradores/artefactos en rutas acordadas y proponer decisiones. No debe:
+
+- ampliar acceso, cambiar de cliente o mezclar contextos;
+- cambiar unilateralmente alcance, KPI, población o contrato de datos;
+- enviar mensajes, compartir un deliverable, publicar o cambiar sistemas remotos/producción sin autorización explícita;
+- aprobar decisiones de negocio o promociones del Foundry por el consultor/usuario;
+- presentar una inferencia, un supuesto o un resultado experimental como un hecho validado.
+
+El reviewer puede revisar y recomendar; no edita el expected de un case durante una evaluación ni promueve una capacidad. Ver [`capability-lifecycle.md`](capability-lifecycle.md) para los límites del Foundry.
+
+## Contrato de tarea
+
+Toda delegación, incluso entre sesiones de un solo harness, define lo necesario para ejecutar y revisar:
+
+```yaml
+task_id: ANALYSIS-001
+project_id: project-slug
+type: ANALYSIS
+objective: "Qué decisión o pregunta debe responder"
+inputs:
+  - "rutas a artifacts y fuentes autorizadas"
+write_scope:
+  - "rutas de salida permitidas"
+tools: "herramientas y operaciones autorizadas"
+restrictions:
+  - "límites de datos, acceso, costo o alcance"
+acceptance:
+  - "evidencia observable que define una salida suficiente"
+output:
+  - "findings, consulta, artifact o handoff esperado"
+```
+
+Los campos se ajustan a la tarea; no se inventan IDs, permisos, presupuesto o aceptación. Si falta un dato crítico, convertirlo en pregunta/bloqueo y detener la acción dependiente. La plantilla copiable está en [`../templates/project-and-task.md`](../templates/project-and-task.md).
+
+### Criterios para delegar
+
+Antes de iniciar trabajo paralelo, confirmar:
+
+- unidad de trabajo independiente y objetivo observable;
+- inputs/evidencia de inicio disponibles;
+- alcance exacto de escritura y ausencia de colisión;
+- contrato de salida y aceptación;
+- un integrador responsable de reconciliar discrepancias.
+
+No paralelizar decisiones que comparten un contrato todavía no acordado, como target, population, fechas de corte o fuente canónica. No delegar “haz el análisis” sin definición de resultado.
+
+## Revisión y niveles de QA
+
+| Nivel | Cuándo | Revisión adecuada |
+|---|---|---|
+| Ligero | Trabajo acotado, reversible y de impacto bajo. | Autorrevisión y evidencia suficiente para comprobar la conclusión. |
+| Estándar | Varias fuentes, transformaciones mantenidas o varios artifacts. | Checks deterministas disponibles y revisión independiente de puntos críticos. |
+| Reforzado | Decisión sensible, producción, compromiso externo o impacto elevado. | Validación ampliada, reviewer independiente y aprobación humana antes de la acción. |
+
+El nivel puede elevarse durante el trabajo si aparecen riesgos. No implica automáticamente más agentes, un deck formal o nuevos archivos.
+
+## Definition of Done
+
+Una tarea está lista para cierre cuando:
+
+- entrega el resultado acordado o explica con evidencia por qué no pudo obtenerse;
+- las afirmaciones importantes apuntan a fuentes, cálculos, consultas, runs o criterios relevantes;
+- separa hechos observados, verificaciones deterministas, inferencias, supuestos y recomendaciones;
+- documenta limitaciones, supuestos materiales y verificaciones pendientes;
+- los checks definidos para la tarea se ejecutaron y sus resultados están representados con honestidad;
+- actualiza aceptación/owner/siguiente paso y el estado persistente cuando corresponde;
+- no se realizaron acciones externas o de producción fuera del alcance autorizado.
+
+Para una UI, tratar como áreas distintas la validación funcional, la evaluación de uso, accesibilidad, handoff Figma-code y visual QA. La disponibilidad y límites de `ui-planning`, `figma-handoff` y `visual-qa` están en [`../playbooks/product-ui-and-prototyping.md`](../playbooks/product-ui-and-prototyping.md). Un reporte visual no prueba usabilidad ni corrección de negocio.
+
+## Paradas y escalamiento
+
+Detener, reducir alcance o pedir una decisión humana ante:
+
+- fuente, cuenta, datos o acción sin autorización confirmada;
+- definiciones incompatibles de KPI, población, target o unidad;
+- datos insuficientes o discrepancia crítica que invalida el resultado;
+- ausencia de un owner necesario para aceptar definición o acción;
+- limitación de herramienta/runtime que impide hacer la verificación requerida;
+- acciones irreversibles, distribución externa o cambios de producción fuera del mandato.
+
+Comunicar qué se sabe, qué falta, el impacto de la brecha y opciones seguras para continuar. No rellenar silenciosamente la brecha con un supuesto.

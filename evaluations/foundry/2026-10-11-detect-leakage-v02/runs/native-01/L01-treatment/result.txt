@@ -1,0 +1,5 @@
+Auditoría completada con la skill `acos-eval:detect-leakage` (v0.2.0) cargada.
+
+**Hallazgo principal:** `recovered_kwh` se usa como feature, pero solo está disponible entre el 2025-06-09 y el 2025-06-12, después del scoring (2025-06-01). Es leakage confirmado por timestamps y código. `history_kwh_90d` es válida. Hay además un indicio, no concluyente, de señal perfecta con el target en 4 filas.
+
+**Reporte:** `reports/leakage/audit.md` (condición `treatment`, con hashes de inputs).

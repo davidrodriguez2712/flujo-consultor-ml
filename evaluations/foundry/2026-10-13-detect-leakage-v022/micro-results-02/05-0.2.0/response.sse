@@ -1,0 +1,336 @@
+event: message_start
+data: {"type":"message_start","message":{"model":"claude-haiku-5-5","id":"msg_011CfzeS3uE3dzfs9tg6VW8d","type":"message","role":"assistant","content":[],"container":null,"stop_reason":null,"stop_sequence":null,"stop_details":null,"usage":{"input_tokens":3186,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"output_tokens":5,"service_tier":"standard","inference_geo":"global"},"diagnostics":null}              }
+
+event: content_block_start
+data: {"type":"content_block_start","index":0,"content_block":{"type":"thinking","thinking":"","signature":""}           }
+
+event: ping
+data: {"type": "ping"}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":0,"delta":{"type":"thinking_delta","thinking":""}        }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":0,"delta":{"type":"signature_delta","signature":"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"}         }
+
+event: content_block_stop
+data: {"type":"content_block_stop","index":0              }
+
+event: content_block_start
+data: {"type":"content_block_start","index":1,"content_block":{"type":"text","text":""}            }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"---"}           }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\nskill: detect-le"}   }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"akage\nversion: 0."}  }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"2.0\nfecha:"} }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" 2026-10-13"}           }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\nmodo: guia_textual"}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\nestado: no_recom"}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"endado_hoy\nin"}     }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"puts:\n  - context."}      }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"md\n  - dictionary"}    }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":".json\n  - observations."}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"csv\n---\n\n## Res"} }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"umen\nNo recomendar"}       }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" usar complaint_count para"}              }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" scoring hoy. El"}   }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" expediente no dem"}       }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"uestra que el"}            }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" conteo estuviera dis"}     }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ponible al 2025-06"}            }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"-01T00:00:00"}            }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"Z. La exportación es"}               }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" posterior (2025-08"}    }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"-01) y no certifica"}            }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" el"}            }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" estado histórico. Ri"}              }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"esgo de leakage tem"}             }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"poral:"}             }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" no determinable."}       }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\n\n## Hallazgos"}     }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\n- **Riesgo"}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" (no determinable):** dis"}  }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ponibilidad temporal"}   }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" de complaint_count."}     }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" M"}               }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ecanismo pos"}               }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ible: el conteo ref"}     }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"leja el"}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" estado al exportar, no"}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" al scoring. Confian"}   }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"za: media. Severidad"}               }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":": alta. Acción:"}            }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" bloquear el"}   }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" uso hasta ver"}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ificar.\n- **Target"}  }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" leakage no"}               }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" confirmado:** en las"} }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" tres filas no"}               }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" se ident"}       }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ifica ig"}            }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ualdad "}          }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ni señ"}     }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"al perfecta."}     }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" Esto no desc"}          }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"arta le"}           }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"akage.\n\n## Evid"}      }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"encia\n- Lectura"}           }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" (no"}    }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" ejecutada): dict"}      }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ionary.json t"}        }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"iene feature_available_at"}     }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" y construction_code en null;"}              }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" la ventana no está"}      }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" documentada.\n- L"}     }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ectura: exported_at ("}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"2025-08-01) es"}    }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" posterior a prediction_"} }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"at (2025-06-01"} }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":").\n- Lectura:"}        }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" context.md ind"}             }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ica que la exportación no cert"}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ifica disponibilidad"}           }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" en producción.\n\n## Pre"}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"guntas abiertas"}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\n- ¿Cuánd"}              }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"o estaba disponible compl"}              }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"aint_count en producción?"}     }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\n- ¿Qué"}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" ventana cubre el con"}   }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"teo y termina antes del"}   }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" scoring?\n- "}             }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"¿El conteo se recon"}     }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"struyó con corte "}             }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"2025-06-01?"}         }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\n\n## Recomendaciones"}           }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\n- No usar complaint"}  }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"_count para scoring ho"}               }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"y.\n- Solicit"}      }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ar código de construcción, "}          }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ventana y timestamp de"}         }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" disponibilidad."}       }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\n- Reconstruir la"}              }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" feature con un"}     }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" snapshot verificable al"}       }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" 2025-06-01,"}       }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" si existe.\n- La"}    }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" conclusión cambia"}     }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ría con"}      }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" evidencia de disponib"}           }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ilidad ≤ pr"}    }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ediction_at y "}         }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ventana cerrada antes"}           }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" del corte."}           }
+
+event: content_block_stop
+data: {"type":"content_block_stop","index":1          }
+
+event: message_delta
+data: {"type":"message_delta","delta":{"stop_reason":"end_turn","stop_sequence":null,"stop_details":null,"container":null},"usage":{"input_tokens":3186,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":2017,"output_tokens_details":{"thinking_tokens":1318}}         }
+
+event: message_stop
+data: {"type":"message_stop"}
+

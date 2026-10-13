@@ -1,0 +1,64 @@
+```json
+{
+  "status": "MUST_CORRECT",
+  "findings": [
+    {
+      "statement": "La entrada del manifest-01 para analysis/plan.md registra el SHA-256 66decbbb…, que coincide con el hash observado de reports/archive/plan-original.md. Ese hash corresponde al contenido original (sin la sensibilidad por tipo de vehículo), no al plan vivo actual.",
+      "evidence_paths": [
+        "reports/manifest-01.json",
+        "reports/archive/plan-original.md",
+        "reports/integrity-scan.json"
+      ]
+    },
+    {
+      "statement": "El archivo vivo analysis/plan.md tiene SHA-256 observado 0a24a358…, distinto del hash registrado en el manifest-01. El contenido actual incluye 'añadir sensibilidad por tipo de vehículo', que no está en la versión congelada. La trazabilidad del paquete 01 no cubre la versión modificada.",
+      "evidence_paths": [
+        "analysis/plan.md",
+        "reports/manifest-01.json",
+        "reports/integrity-scan.json"
+      ]
+    },
+    {
+      "statement": "La aprobación approval-01 referencia el manifest-01 (manifest_sha256 63540a65…). Esa aprobación no puede transferirse al plan modificado. Además, el registro de owner/aprobación pertenece al fixture y no equivale a una aceptación real de gate en este contexto.",
+      "evidence_paths": [
+        "reports/approval-01.json",
+        "reports/manifest-01.json"
+      ]
+    },
+    {
+      "statement": "El cambio solicitado (análisis por tipo de vehículo) amplía el alcance del análisis. Según las pautas, ese cambio requiere una nueva versión de evidencia y revisión del alcance afectado, sin reemplazar el original.",
+      "evidence_paths": [
+        "analysis/plan.md",
+        "reports/archive/plan-original.md",
+        "reports/approval-01.json"
+      ]
+    },
+    {
+      "statement": "No fue posible verificar de forma independiente que el manifest-01 coincida con manifest_sha256 declarado en approval-01, porque no se dispone de cálculo de hash en este contexto y la verificación requiere calcular el SHA-256 de los bytes compactos exactos del manifest.",
+      "evidence_paths": [
+        "reports/approval-01.json",
+        "reports/manifest-01.json"
+      ]
+    }
+  ],
+  "proposed_actions": [
+    "No modificar reports/approval-01.json, reports/manifest-01.json ni reports/archive/plan-original.md.",
+    "Copiar el contenido actual de analysis/plan.md a una ruta histórica nueva (por ejemplo, reports/analysis/frozen-02/analysis_plan.md) y registrar su ruta de origen.",
+    "Crear un evidence-manifest-02 (o manifest-02 según la convención del paquete) con rutas relativas y SHA-256 de la copia histórica y de los demás archivos del paquete, sin incluirse a sí mismo; calcular su hash después de cerrarlo.",
+    "Verificar todos los hashes del manifest-02 y registrar cualquier discrepancia como bloqueo; no reemplazar hashes esperados.",
+    "Documentar la corrección: paquete anterior (01), archivos cambiados, motivo (ampliación a análisis por tipo de vehículo) e impacto sobre la aprobación previa, que no se transfiere.",
+    "Solicitar revisión y aceptación humana del manifest-02 exacto, guardando la aprobación fuera del paquete congelado.",
+    "Mientras tanto, tratar el análisis por tipo de vehículo como pendiente de alcance aprobado; no ejecutarlo como evidencia validada.",
+    "Preparar la tarea siguiente (ANALYSIS) con objetivo, inputs (plan vivo y copia histórica), write_scope, restricciones y criterios de aceptación, sin inventar owner, permisos ni aceptación."
+  ],
+  "next_step": "Congelar la versión actual de analysis/plan.md como nueva evidencia (manifest-02), verificar hashes y obtener aprobación humana del manifest exacto antes de iniciar el análisis por tipo de vehículo.",
+  "limitations": [
+    "Esta revisión no aprueba gates ni acepta el manifest; solo identifica la brecha de trazabilidad y propone pasos.",
+    "No se verificó el SHA-256 de manifest-01 ni la coincidencia con manifest_sha256 de approval-01; se requiere cálculo explícito de bytes.",
+    "Los hashes observados se toman tal como aparecen en integrity-scan.json y no fueron recalculados.",
+    "El registro de owner/aprobación pertenece al fixture y no se trata como aceptación real.",
+    "No se consultaron archivos externos ni se usaron herramientas; el análisis se limita al expediente incluido.",
+    "No se evaluó la validez técnica del análisis por tipo de vehículo ni la disponibilidad de datos para ejecutarlo."
+  ]
+}
+```

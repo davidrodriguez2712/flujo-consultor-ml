@@ -1,0 +1,22 @@
+[
+  {
+    "manifest": "artifacts/github-actions-windows-2026-10-08/evidence-manifest.json",
+    "files": 24,
+    "passed": true
+  },
+  {
+    "manifest": "artifacts/windows-arm-runtimes-2026-10-08/evidence-manifest.json",
+    "files": 53,
+    "passed": true
+  },
+  {
+    "manifest": "pilots/riesgo-credito-sintetico/handoff/handoff-manifest.json",
+    "files": 13,
+    "passed": true
+  },
+  {
+    "manifest": "pilots/riesgo-credito-sintetico/handoff/handoff-manifest-02-closed.json",
+    "files": 13,
+    "passed": true
+  }
+]

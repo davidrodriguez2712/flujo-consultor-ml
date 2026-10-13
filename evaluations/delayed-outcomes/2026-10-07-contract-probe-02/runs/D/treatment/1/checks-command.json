@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python",
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/delayed-outcomes/2026-10-07-contract-probe-02/checker/check.py",
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/delayed-outcomes/2026-10-07-contract-probe-02/runs/D/treatment/1/result.txt",
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/delayed-outcomes/2026-10-07-contract-probe-02/cases/D/expected.json"
+  ],
+  "exit_code": 0,
+  "checker_sha256": "3571ceac65c6e6b066009d9c55926479db4e7d86f2226b2b3439325a1faae870"
+}

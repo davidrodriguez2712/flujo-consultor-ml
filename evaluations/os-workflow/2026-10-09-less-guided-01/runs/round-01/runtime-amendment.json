@@ -1,0 +1,11 @@
+{
+  "original_execution_manifest_sha256": "2e8dc56a6c95c15e61189fd59a8b944316b3dc8d88d275ce531e28c8775a85d4",
+  "original_version": "2.1.295 (Claude Code)",
+  "reviewed_version": "2.1.296 (Claude Code)",
+  "required_flags_present": true,
+  "reviewer": "Agente autor, revisión local",
+  "ruling": "Aceptar actualización patch para smoke de compatibilidad; conserva modelo, payloads, controles y presupuesto autorizados. No altera freeze previo.",
+  "recorded_at_utc": "2026-10-09T21:19:00.364165+00:00",
+  "budget_authorization": "../../budget-approval.json",
+  "effective_runtime_compatibility": "PENDING_SMOKE"
+}

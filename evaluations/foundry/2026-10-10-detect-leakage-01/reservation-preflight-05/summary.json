@@ -1,0 +1,9 @@
+{
+  "tests_passed": 229,
+  "default_behavior_unchanged": true,
+  "local_opt_in_reservation": "UTF8bytes+16384; tier corto si cota≤100000, largo si mayor; costeuso/reservas/8kcap sin cambio",
+  "observed_input_bound_exceeded": "Hard stop antes de tools",
+  "api_calls_during_verification": 0,
+  "review": "Author not independent",
+  "study_budget_remaining": 0.0625104
+}

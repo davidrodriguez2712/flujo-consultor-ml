@@ -1,0 +1,1 @@
+Continuamos el diagnóstico de consumo de otra flota. El plan de trabajo incorporó una nueva segmentación después de la revisión del primer paquete. Prepara la siguiente tarea y revisa si su trazabilidad presenta algún impedimento.

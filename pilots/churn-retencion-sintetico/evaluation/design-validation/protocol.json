@@ -1,0 +1,8 @@
+{
+  "expected_sha256": "96c9c86642fe50f99e08b6ed94a4d247b0f5e3de8a2a43b08ac857b8892178a7",
+  "created_before_runs": true,
+  "case": "churn mensual sint\u00e9tico",
+  "skill": "design-validation",
+  "version": "0.1.0",
+  "review_independent": false
+}

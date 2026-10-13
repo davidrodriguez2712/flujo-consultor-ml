@@ -1,0 +1,122 @@
+[
+  {
+    "case": "A",
+    "branch": "baseline",
+    "repetition": 1
+  },
+  {
+    "case": "A",
+    "branch": "treatment",
+    "repetition": 1
+  },
+  {
+    "case": "B",
+    "branch": "treatment",
+    "repetition": 1
+  },
+  {
+    "case": "B",
+    "branch": "baseline",
+    "repetition": 1
+  },
+  {
+    "case": "C",
+    "branch": "baseline",
+    "repetition": 1
+  },
+  {
+    "case": "C",
+    "branch": "treatment",
+    "repetition": 1
+  },
+  {
+    "case": "D",
+    "branch": "treatment",
+    "repetition": 1
+  },
+  {
+    "case": "D",
+    "branch": "baseline",
+    "repetition": 1
+  },
+  {
+    "case": "E",
+    "branch": "baseline",
+    "repetition": 1
+  },
+  {
+    "case": "E",
+    "branch": "treatment",
+    "repetition": 1
+  },
+  {
+    "case": "F",
+    "branch": "treatment",
+    "repetition": 1
+  },
+  {
+    "case": "F",
+    "branch": "baseline",
+    "repetition": 1
+  },
+  {
+    "case": "A",
+    "branch": "treatment",
+    "repetition": 2
+  },
+  {
+    "case": "A",
+    "branch": "baseline",
+    "repetition": 2
+  },
+  {
+    "case": "B",
+    "branch": "baseline",
+    "repetition": 2
+  },
+  {
+    "case": "B",
+    "branch": "treatment",
+    "repetition": 2
+  },
+  {
+    "case": "C",
+    "branch": "treatment",
+    "repetition": 2
+  },
+  {
+    "case": "C",
+    "branch": "baseline",
+    "repetition": 2
+  },
+  {
+    "case": "D",
+    "branch": "baseline",
+    "repetition": 2
+  },
+  {
+    "case": "D",
+    "branch": "treatment",
+    "repetition": 2
+  },
+  {
+    "case": "E",
+    "branch": "treatment",
+    "repetition": 2
+  },
+  {
+    "case": "E",
+    "branch": "baseline",
+    "repetition": 2
+  },
+  {
+    "case": "F",
+    "branch": "baseline",
+    "repetition": 2
+  },
+  {
+    "case": "F",
+    "branch": "treatment",
+    "repetition": 2
+  }
+]

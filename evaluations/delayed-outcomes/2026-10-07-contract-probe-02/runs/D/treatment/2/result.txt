@@ -1,0 +1,22 @@
+```json
+{
+  "rows": [
+    {
+      "id": "D1",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "Evento irreversible: positive_certified_at=2025-06-10T00:00:00Z certifica el positivo y lo hace disponible aunque la ventana [2025-06-01, 2025-07-01) siga abierta. La certificación (06-10) es anterior a extraction_timestamp (2025-06-20), por lo que el estado es observed_positive. Disponibilidad: label_available_at 2025-06-10 <= training_timestamp 2025-06-15 con el comparador '<=', luego available. Features: feature_available_at 2025-05-31T23:00Z <= prediction_timestamp 2025-06-01T00:00Z, así que están disponibles al predecir. La ventana empieza en el instante de predicción y no hay otras exclusiones de población. Se cumplen todas las condiciones, por lo que es eligible."
+    },
+    {
+      "id": "D2",
+      "outcome_state_at_extraction": "pending",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "Evento reversible: target_reported=1 es un flag provisional y no certifica el target. Según la regla, el cierre ocurre 3 días (3×24 h) después del fin de ventana: 2025-07-01T00:00Z + 72 h = 2025-07-04T00:00Z. Ese instante es posterior a extraction_timestamp (2025-06-20), así que la regla aún no permite certificar y el estado es pending, no observed_positive. No hay disponibilidad antes del cierre, y 2025-07-04 > training_timestamp 2025-06-15, por lo que el label es unavailable (label_available_at=null es coherente con esto). Las features sí están disponibles (2025-05-31T23:00Z <= 2025-06-01T00:00Z), pero la fila se excluye porque el label no estaba disponible al entrenar. El estado pending se conserva pese a la exclusión."
+    }
+  ],
+  "open_questions": [],
+  "gate_decision": "NEEDS_REVIEW"
+}
+```

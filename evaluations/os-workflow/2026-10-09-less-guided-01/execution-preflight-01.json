@@ -1,0 +1,24 @@
+{
+  "status": "WAITING_FOR_LOCAL_CREDENTIAL",
+  "budget_authorization": "budget-approval.json",
+  "authorized_total_usd": 0.2,
+  "execution_manifest_sha256": "2e8dc56a6c95c15e61189fd59a8b944316b3dc8d88d275ce531e28c8775a85d4",
+  "preparation_and_execution_integrity": "PASS",
+  "code_snapshots_match": "PASS",
+  "planned_cli_version": "2.1.295 (Claude Code)",
+  "observed_cli_version": "2.1.296 (Claude Code)",
+  "version_stop_triggered": true,
+  "version_review": {
+    "required_flags_present": true,
+    "paid_compatibility_smoke": "NOT_RUN",
+    "decision": "La versión difiere del freeze; conservar original y registrar amendment antes de cualquier ejecución. El smoke debe confirmar compatibilidad real."
+  },
+  "credential_presence": {
+    "environment": false,
+    "project_env_file": false,
+    "github_secret_retrievable": false
+  },
+  "model_calls": 0,
+  "api_cost_usd": 0,
+  "recorded_at_utc": "2026-10-09T21:10:16.364312+00:00"
+}

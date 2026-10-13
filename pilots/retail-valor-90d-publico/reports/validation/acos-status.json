@@ -1,0 +1,25 @@
+{
+  "project": "Priorización comercial retail con datos públicos",
+  "stage": "validation",
+  "status": "IN_PROGRESS",
+  "completed": [
+    "discovery",
+    "framing",
+    "diagnosis",
+    "execution"
+  ],
+  "total_stages": 7,
+  "blockers": [],
+  "open_decisions": [
+    "Aprobación de Validation y cuatro reviews de módulos pendiente."
+  ],
+  "next_gates": [
+    "validation",
+    "data_analysis-review",
+    "supervised_model-review",
+    "selection-review",
+    "executive_delivery-review"
+  ],
+  "integrity": "OK",
+  "findings": []
+}

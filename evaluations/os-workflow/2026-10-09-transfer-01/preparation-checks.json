@@ -1,0 +1,121 @@
+{
+  "status": "PASS",
+  "scope": "Consistencia de preparación y fixtures, no evaluación de agentes",
+  "cases": 6,
+  "payloads": 12,
+  "json_contracts": 5,
+  "markdown_contracts": 1,
+  "public_only_payload_reconstruction": true,
+  "oracles_verified": [
+    "shortlist",
+    "margins",
+    "CSV-int-join",
+    "gross-net-forecast",
+    "historical-freeze",
+    "launch-dependencies"
+  ],
+  "historical_integrity": [
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/evidence-manifest-01.json",
+      "files": 48,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/execution-config-01/execution-manifest-01.json",
+      "files": 12,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/execution-config-02/execution-manifest-02.json",
+      "files": 10,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/runs/round-01/run-manifest-01.json",
+      "files": 15,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/runs/round-02/run-manifest-02.json",
+      "files": 86,
+      "status": "PASS"
+    },
+    {
+      "manifest": "pilots/retail-capacidad-semanal-publico/reports/package/evidence-manifest-01.json",
+      "files": 70,
+      "status": "PASS"
+    },
+    {
+      "manifest": "artifacts/os-workflow-refinement-2026-10-09/change-manifest-01.json",
+      "files": 12,
+      "status": "PASS"
+    }
+  ],
+  "historical_files_verified": 253,
+  "payload_sizes": [
+    {
+      "case_id": "T01",
+      "condition": "baseline",
+      "utf8_bytes": 16728
+    },
+    {
+      "case_id": "T01",
+      "condition": "treatment",
+      "utf8_bytes": 21043
+    },
+    {
+      "case_id": "T02",
+      "condition": "baseline",
+      "utf8_bytes": 16777
+    },
+    {
+      "case_id": "T02",
+      "condition": "treatment",
+      "utf8_bytes": 21092
+    },
+    {
+      "case_id": "T03",
+      "condition": "baseline",
+      "utf8_bytes": 17342
+    },
+    {
+      "case_id": "T03",
+      "condition": "treatment",
+      "utf8_bytes": 21657
+    },
+    {
+      "case_id": "T04",
+      "condition": "baseline",
+      "utf8_bytes": 17322
+    },
+    {
+      "case_id": "T04",
+      "condition": "treatment",
+      "utf8_bytes": 21637
+    },
+    {
+      "case_id": "T05",
+      "condition": "baseline",
+      "utf8_bytes": 17286
+    },
+    {
+      "case_id": "T05",
+      "condition": "treatment",
+      "utf8_bytes": 21601
+    },
+    {
+      "case_id": "T06",
+      "condition": "baseline",
+      "utf8_bytes": 17026
+    },
+    {
+      "case_id": "T06",
+      "condition": "treatment",
+      "utf8_bytes": 21341
+    }
+  ],
+  "model_calls": 0,
+  "api_cost_usd": 0,
+  "runtime_isolation_verified": false,
+  "semantic_effectiveness": "NOT_EVALUATED"
+}

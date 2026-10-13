@@ -1,0 +1,3 @@
+# Expediente disponible
+
+Cada fila representa cliente al scoring 2025-06-01T00:00:00Z; target es cancelación en los30 días siguientes. La exportación se realizó 2025-08-01T00:00:00Z y contiene outcomes conocidos después del scoring para evaluación retrospectiva. Solo complaint_count se propone como feature. No hay código de construcción, fecha de disponibilidad, ventana de conteo, versión histórica ni split/preprocessing en el expediente. No se conoce si el conteo refleja el estado al scoring o al exportar. IDs, target y fechas son metadata, no features. La exportación no certifica cuándo existía la feature en producción.

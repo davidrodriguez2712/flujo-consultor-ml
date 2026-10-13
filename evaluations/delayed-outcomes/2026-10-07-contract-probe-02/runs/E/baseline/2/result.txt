@@ -1,0 +1,24 @@
+{
+  "rows": [
+    {
+      "id": "E1",
+      "outcome_state_at_extraction": "pending",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "La feature es válida: feature_available_at 2025-05-31T23:00Z <= prediction_timestamp 2025-06-01T00:00Z. La ventana [2025-06-01, 2025-07-01) seguía abierta en la extracción (2025-06-20Z). Según source_rule, el valor definitivo se da al cierre más tres días: 2025-07-01T00:00Z + 72h = 2025-07-04T00:00Z. Esa fecha es posterior a la extracción y al entrenamiento (2025-06-15Z). El cero es provisional y no certificado, así que no hay etiqueta disponible y la fila queda fuera."
+    },
+    {
+      "id": "E2",
+      "outcome_state_at_extraction": "unknown",
+      "label_availability_at_training": "indeterminate",
+      "train_eligibility": "indeterminate",
+      "reason": "La feature es válida: feature_available_at 2025-03-31T23:00Z <= prediction_timestamp 2025-04-01T00:00Z. La ventana [2025-04-01, 2025-05-01) cerró antes del entrenamiento (2025-06-15Z) y de la extracción. Sin embargo, target_reported=0 es solo un valor registrado, y no hay regla de cierre, historial de certificación, label_available_at (null) ni delay. No se puede saber si el cero es definitivo, si está pendiente de certificación o si es un negativo observado. Por eso no se puede decidir la disponibilidad ni la elegibilidad."
+    }
+  ],
+  "open_questions": [
+    "E2: ¿Cuál es la regla de cierre y certificación del target (delay tras el fin de ventana) y cuándo se certificó o pudo certificarse el valor? Sin eso no se puede establecer label_available_at ni comparar con 2025-06-15T00:00:00Z.",
+    "E2: ¿El cero registrado es definitivo o provisional, como en E1? Falta el historial de certificación.",
+    "General: training_timestamp (2025-06-15T00:00:00Z) es anterior a extraction_timestamp (2025-06-20T00:00:00Z). ¿La disponibilidad de etiquetas debe evaluarse al instante de entrenamiento, como indica la tarea, o hay un error en las fechas? Con este orden, los datos extraídos el 06-20 no pueden haber alimentado un entrenamiento del 06-15."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

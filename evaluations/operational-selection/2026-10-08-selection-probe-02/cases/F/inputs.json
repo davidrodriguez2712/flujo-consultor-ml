@@ -1,0 +1,30 @@
+{
+  "name": "Coste ausente y efecto causal no identificado",
+  "business": "Negocio pide maximizar clientes salvados por una campaña de retención bajo presupuesto 8 y capacidad máxima 2. Solo existen risk_score de churn bajo la política actual, CLV asociado y costes parcialmente conocidos. No hay experimento, estimaciones de efectos de contacto ni diseño observacional que identifique esos efectos. Todos son elegibles. Desempate descriptivo de scores por ID ascendente. No se solicitan métricas predictivas porque no hay labels. No se pueden reemplazar datos faltantes con cero.",
+  "capacity_k": 2,
+  "budget": 8,
+  "metric_population": "eligible-F",
+  "rows": [
+    {
+      "id": "P",
+      "eligible": true,
+      "risk_score": 0.9,
+      "clv": 20,
+      "cost": null
+    },
+    {
+      "id": "Q",
+      "eligible": true,
+      "risk_score": 0.8,
+      "clv": 12,
+      "cost": 4
+    },
+    {
+      "id": "R",
+      "eligible": true,
+      "risk_score": 0.7,
+      "clv": 10,
+      "cost": 4
+    }
+  ]
+}

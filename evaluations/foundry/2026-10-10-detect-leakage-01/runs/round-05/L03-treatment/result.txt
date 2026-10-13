@@ -1,0 +1,3 @@
+**Resumen:** La skill `acos-eval:detect-leakage` estaba instalada y se invocó al inicio. Se auditó `complaint_count` con los inputs autorizados. No hay evidencia confirmada de leakage. El riesgo temporal y post-event es alto, pero queda como *No determinable*, porque no hay fecha de disponibilidad, ventana de conteo ni código. Con 3 filas, la relación feature-target no muestra igualdad ni mapeo, y el split y el pipeline no son evaluables. No se ejecutó pipeline ni se entrenó nada.
+
+**Ruta del reporte:** `/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L03-treatment/workspace/reports/leakage/audit.md`

@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-12",
+  "path": "/Users/davidrodriguez/david-skill-foundry/experiments/skills/detect-leakage/SKILL.md",
+  "from_version": "0.1.0",
+  "to_version": "0.2.0",
+  "status_before": "experimental",
+  "status_after": "experimental",
+  "before_sha256": "2ea060606202840ee4ce49ff27c9beb6b29ffae27edebcf755683e9c9bc99fce",
+  "after_sha256": "c2a2440477d9985489b71f4d8c50380ccd7985635d02eab330cfee0f7e5856c4",
+  "authority": "Usuario autoriza continuar correcciones y rondas; no promoción de madurez",
+  "old_snapshot": "snapshots/SKILL-0.1.0.md",
+  "review": "independent-review-02.md",
+  "known_limitations": [
+    "Contrato nativo L01 incompleto y extensión excedida",
+    "L02 nativo truncado; L03 no ejecutado",
+    "No mejora general demostrada",
+    "quick_validate Codex rechaza metadata root del template Foundry"
+  ],
+  "runtime_global_install": false,
+  "project_snapshots_updated": false
+}

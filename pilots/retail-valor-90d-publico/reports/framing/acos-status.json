@@ -1,0 +1,20 @@
+{
+  "project": "Priorización comercial retail con datos públicos",
+  "stage": "framing",
+  "status": "IN_PROGRESS",
+  "completed": [
+    "discovery"
+  ],
+  "total_stages": 7,
+  "blockers": [],
+  "open_decisions": [
+    "Revisión humana del contrato de Framing pendiente.",
+    "Definir exclusión trazable de códigos ambiguos y tratamiento de repeticiones.",
+    "Disponibilidad retrospectiva de transacciones será supuesto, no garantía operacional."
+  ],
+  "next_gates": [
+    "framing"
+  ],
+  "integrity": "OK",
+  "findings": []
+}

@@ -1,0 +1,6 @@
+{
+  "status": "PENDING_REVIEW",
+  "design_authorization": "Usuario: aprobado; autorizó el ensayo completo, no aceptación de resultados",
+  "manifest": "reports/protocol/evidence-manifest-01.json",
+  "manifest_sha256": "bcdb07a265f7f856fde44059d02693ae5c6108908bed522f03754065c883e138"
+}

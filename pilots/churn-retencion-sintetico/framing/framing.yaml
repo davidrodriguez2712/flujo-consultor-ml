@@ -1,0 +1,18 @@
+decision: Priorizar 50 clientes activos por mes para revisión de retención.
+owner: Responsable ficticio de retención (rol del laboratorio); David Rodríguez revisa
+  el piloto.
+metric:
+  primary: Precision@50 por mes
+  secondary:
+  - Recall@50 por mes
+  - Lift@50 por mes
+  business_context: MRR en riesgo; no es margen, recupero ni ROI incremental
+unit: cliente activo × comienzo de mes calendario
+horizon: Cancelación en [inicio del mes de scoring, inicio del mes siguiente); label
+  disponible al comenzar el mes siguiente + 7 días.
+reviewer: David Rodríguez
+capacity: 50
+tie_break: customer_id ascendente, sin usarlo como predictor
+scope: Datos sintéticos v1 de data/raw; informes de laboratorio, sin campañas.
+review_status: 'PASS: contrato y protocolo temporal aprobados por David Rodríguez
+  el 2026-10-07'

@@ -1,0 +1,25 @@
+{
+  "generator_version": "2",
+  "generator_sha256": "f195409ee5a05960e28466b71dcddc7405bc73860651fc8c5fab3b46de290dfc",
+  "seed": 20261007,
+  "is_synthetic": true,
+  "extracted_at": "2026-01-15",
+  "files": {
+    "churn_labels.csv": {
+      "sha256": "ed1898cfdabddee88711ff50efff0c99129b0fda253ab62b69f596c3a356820a",
+      "bytes": 3950212
+    },
+    "customers.csv": {
+      "sha256": "53fbf9495621829ddb1accb36cd6335d8a35f0a28f869f0ad5e373ed8d53afc3",
+      "bytes": 117043
+    },
+    "monthly_snapshots.csv": {
+      "sha256": "64cf0c93c4c02fdc5a42d4ed578c32135fa22efef2349cc6d362da7c46f0a8e9",
+      "bytes": 2588873
+    },
+    "support_tickets.csv": {
+      "sha256": "c425d1997f9a5b0a72e122da4fb84c879afcf4472c27ff25f3d6eda5e6eaee50",
+      "bytes": 869621
+    }
+  }
+}

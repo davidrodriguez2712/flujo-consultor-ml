@@ -1,0 +1,64 @@
+```json
+{
+  "status": "MUST_CORRECT",
+  "findings": [
+    {
+      "statement": "El manifest-01 registra analysis/plan.md con sha256 66decbbb…, pero ese hash coincide con el observado de reports/archive/plan-original.md. El contenido actual de analysis/plan.md tiene sha256 observado 0a24a358…, así que no coincide con el manifest.",
+      "evidence_paths": [
+        "reports/manifest-01.json",
+        "reports/integrity-scan.json",
+        "analysis/plan.md",
+        "reports/archive/plan-original.md"
+      ]
+    },
+    {
+      "statement": "El contenido actual de analysis/plan.md añade la sensibilidad por tipo de vehículo, y el plan original no la incluye. El cambio se introdujo después de generar el manifest-01 y no está cubierto por él.",
+      "evidence_paths": [
+        "analysis/plan.md",
+        "reports/archive/plan-original.md",
+        "reports/manifest-01.json"
+      ]
+    },
+    {
+      "statement": "La aprobación approval-01 (status APPROVED, owner hipotético) se refiere al manifest-01 mediante manifest_sha256 63540a65…. Esa aprobación no cubre el plan modificado. Como el manifest no coincide con el archivo actual, la trazabilidad vigente no sostiene el estado actual del plan.",
+      "evidence_paths": [
+        "reports/approval-01.json",
+        "reports/manifest-01.json",
+        "analysis/plan.md"
+      ]
+    },
+    {
+      "statement": "La convención de hash está documentada (bytes UTF-8 literales, con newline final en los planes y sin newline en el manifest). El plan original y el actual usan la misma convención, así que la divergencia no se explica por formato.",
+      "evidence_paths": [
+        "reports/integrity-scan.json",
+        "analysis/plan.md",
+        "reports/archive/plan-original.md"
+      ]
+    },
+    {
+      "statement": "El contexto pide añadir análisis por tipo de vehículo, lo que altera el alcance del plan aprobado. Continuar sobre la copia de trabajo sin nuevo manifest y nueva aprobación mezclaría un cambio no aprobado con un paquete ya aprobado.",
+      "evidence_paths": [
+        "reports/approval-01.json",
+        "analysis/plan.md"
+      ]
+    }
+  ],
+  "proposed_actions": [
+    "No continuar con la trazabilidad actual: el manifest-01 y la aprobación approval-01 no cubren el analysis/plan.md modificado.",
+    "No editar reports/manifest-01.json, reports/approval-01.json, reports/integrity-scan.json ni reports/archive/plan-original.md; son registros históricos.",
+    "Pedir al owner que confirme formalmente el alcance ampliado (análisis por tipo de vehículo) antes de cualquier nueva versión del plan.",
+    "Tras esa confirmación, generar una nueva versión de paquete (por ejemplo manifest-02) que incluya el plan actual con su sha256 recalculado, sin reemplazar el manifest-01.",
+    "Solicitar una nueva aprobación del owner ligada explícitamente a manifest-02 y a su sha256, sin reutilizar approval-01.",
+    "Mantener la sensibilidad por tipo de vehículo como alcance pendiente hasta que exista la aprobación nueva; no presentarla como validada.",
+    "Como siguiente tarea de ejecución, preparar un contrato ANALYSIS con write_scope limitado a una ruta nueva de salida y sin tocar los artifacts históricos."
+  ],
+  "next_step": "Solicitar al owner la confirmación del alcance ampliado y la decisión sobre el plan modificado; después emitir manifest-02 y una aprobación nueva. No avanzar con el análisis por tipo de vehículo antes de ese paso.",
+  "limitations": [
+    "No se pudieron recalcular los SHA-256 en esta revisión: solo se usan los valores registrados en los artifacts. La discrepancia se basa en la comparación de esos valores.",
+    "No se verificó el manifest_sha256 de approval-01 contra el archivo reports/manifest-01.json real; solo se contrasta con el contenido incluido en el expediente.",
+    "Esta revisión no acepta gates, no aprueba decisiones de negocio y no modifica archivos.",
+    "El expediente no incluye el registro de quién modificó analysis/plan.md ni cuándo; la causa del cambio queda sin determinar.",
+    "Los registros de owner y aprobación son del fixture y se tratan como tales."
+  ]
+}
+```

@@ -1,0 +1,142 @@
+{
+  "date": "2026-10-07",
+  "checks": {
+    "five_output_files_byte_identical": true,
+    "approved_data_and_protocol_unchanged": true,
+    "policy_matches_executed_code": true,
+    "no_holdout_rows_in_loaded_data": true,
+    "all_nine_fold_checks_pass": true,
+    "final_model_matches_available_train": true,
+    "holdout_metrics_absent": true
+  },
+  "all_pass": true,
+  "folds": [
+    {
+      "month": "2024-09",
+      "train_rows": 10394,
+      "validation_rows": 1878,
+      "labels_available": true,
+      "training_rows_strictly_prior": true,
+      "median_from_train": true,
+      "model_exactly_refits_train": true,
+      "logical_keys_disjoint": true,
+      "metrics_independently_recalculated": true,
+      "prediction_invariant_to_outcomes_and_mrr": true
+    },
+    {
+      "month": "2024-10",
+      "train_rows": 12329,
+      "validation_rows": 1803,
+      "labels_available": true,
+      "training_rows_strictly_prior": true,
+      "median_from_train": true,
+      "model_exactly_refits_train": true,
+      "logical_keys_disjoint": true,
+      "metrics_independently_recalculated": true,
+      "prediction_invariant_to_outcomes_and_mrr": true
+    },
+    {
+      "month": "2024-11",
+      "train_rows": 14207,
+      "validation_rows": 1735,
+      "labels_available": true,
+      "training_rows_strictly_prior": true,
+      "median_from_train": true,
+      "model_exactly_refits_train": true,
+      "logical_keys_disjoint": true,
+      "metrics_independently_recalculated": true,
+      "prediction_invariant_to_outcomes_and_mrr": true
+    },
+    {
+      "month": "2024-12",
+      "train_rows": 16010,
+      "validation_rows": 1662,
+      "labels_available": true,
+      "training_rows_strictly_prior": true,
+      "median_from_train": true,
+      "model_exactly_refits_train": true,
+      "logical_keys_disjoint": true,
+      "metrics_independently_recalculated": true,
+      "prediction_invariant_to_outcomes_and_mrr": true
+    },
+    {
+      "month": "2025-01",
+      "train_rows": 17745,
+      "validation_rows": 1592,
+      "labels_available": true,
+      "training_rows_strictly_prior": true,
+      "median_from_train": true,
+      "model_exactly_refits_train": true,
+      "logical_keys_disjoint": true,
+      "metrics_independently_recalculated": true,
+      "prediction_invariant_to_outcomes_and_mrr": true
+    },
+    {
+      "month": "2025-02",
+      "train_rows": 19407,
+      "validation_rows": 1542,
+      "labels_available": true,
+      "training_rows_strictly_prior": true,
+      "median_from_train": true,
+      "model_exactly_refits_train": true,
+      "logical_keys_disjoint": true,
+      "metrics_independently_recalculated": true,
+      "prediction_invariant_to_outcomes_and_mrr": true
+    },
+    {
+      "month": "2025-03",
+      "train_rows": 20999,
+      "validation_rows": 1488,
+      "labels_available": true,
+      "training_rows_strictly_prior": true,
+      "median_from_train": true,
+      "model_exactly_refits_train": true,
+      "logical_keys_disjoint": true,
+      "metrics_independently_recalculated": true,
+      "prediction_invariant_to_outcomes_and_mrr": true
+    },
+    {
+      "month": "2025-04",
+      "train_rows": 22541,
+      "validation_rows": 1434,
+      "labels_available": true,
+      "training_rows_strictly_prior": true,
+      "median_from_train": true,
+      "model_exactly_refits_train": true,
+      "logical_keys_disjoint": true,
+      "metrics_independently_recalculated": true,
+      "prediction_invariant_to_outcomes_and_mrr": true
+    },
+    {
+      "month": "2025-05",
+      "train_rows": 24029,
+      "validation_rows": 1376,
+      "labels_available": true,
+      "training_rows_strictly_prior": true,
+      "median_from_train": true,
+      "model_exactly_refits_train": true,
+      "logical_keys_disjoint": true,
+      "metrics_independently_recalculated": true,
+      "prediction_invariant_to_outcomes_and_mrr": true
+    }
+  ],
+  "unit_tests": {
+    "passed": 8,
+    "failed": 0
+  },
+  "output_sha256": {
+    "development-models.json": "e8721a7dd8a5b554301ea0434c77ff6f53d2508635d22d2027afb5df9b8231f0",
+    "final-model.json": "8f257d69be172e08d76363580ef0296751051825515c7359ce6ce77ed1f0b581",
+    "policy.json": "63d826c321117a8468c9bdd57e46f00750daadfa429086b253ac0b37edc507bb",
+    "results.json": "5af1bddc83c922eeee46a83562c1d2eb2e2e213ec3567f98f3b814f3717dc27c",
+    "summary.json": "9d604d57c8ad920b968b30e9986b9625ad68367896f265f7178839ac501f9a28"
+  },
+  "reproduction_path": "/private/tmp/acos-churn-baseline-reproduced-20261007",
+  "source_sha256": {
+    "analysis/baseline.py": "8c41489662880ce04a5b3b860f261987abfd860d1672f07459444503db352c2f",
+    "analysis/test_baseline.py": "92f02ac2ea00880e7120c4a11de6daf67b2d52b24acd515bb39765cb0a9e3746",
+    "modeling/model_brief.md": "920353ac24426a9e6fda1499252c79af67b01e104b237499bef5ecd75e98e03e",
+    "validation/validation_design.md": "5addda286a3a07f392a5fc54c0353194abb74b3d0546b83d494758feacf9f0b2"
+  },
+  "review_independent": false
+}

@@ -1,0 +1,8 @@
+{
+  "product_tests_passed": 164,
+  "failed": 0,
+  "providers": "simulados",
+  "api_calls_for_verification": 0,
+  "new_cap_test": "RED→GREEN",
+  "upstream_stop_reason_test": "RED→GREEN"
+}

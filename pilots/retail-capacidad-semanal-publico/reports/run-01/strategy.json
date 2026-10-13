@@ -1,0 +1,21 @@
+{
+  "selected_method": "mean_previous_4_weeks",
+  "rule": "Development WAPE; tie retains baseline",
+  "development": {
+    "previous_week": {
+      "weeks": 30,
+      "actual_total": 8670,
+      "WAPE": 0.1839677047289504,
+      "MAE": 53.166666666666664,
+      "bias": -10.5
+    },
+    "mean_previous_4_weeks": {
+      "weeks": 30,
+      "actual_total": 8670,
+      "WAPE": 0.15207612456747405,
+      "MAE": 43.95,
+      "bias": -11.8
+    }
+  },
+  "protocol_sha256": "27e7d813a4aa7346e71dca77770893866a2bddb353c3d30af14bace05371baf1"
+}

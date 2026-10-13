@@ -1,0 +1,3 @@
+**Resumen:** Audité el expediente L02 (baseline). No encontré contaminación de información futura en `usage_previous_30d`, en las particiones ni en el orden de preprocessing. El scaler se ajusta solo con train. La reutilización de `customer_id` entre train y evaluation es una dependencia esperada en producción. Riesgo de proceso: el pipeline confía en la columna `partition` sin aserciones temporales. Límites: muestra de 6 filas, sin métricas y sin ejecución de `pipeline.py`. La skill `detect-leakage` no estaba disponible, así que `skill: none`.
+
+**Reporte:** `/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L02-baseline/workspace/reports/leakage/audit.md`

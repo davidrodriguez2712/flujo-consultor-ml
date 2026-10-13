@@ -1,0 +1,3 @@
+Auditoría de complaint_count completada. No puedo confirmar leakage, pero la feature no es válida para scoring con la evidencia actual: su ventana, disponibilidad y código no están documentados, y la exportación (2025-08-01) es posterior al scoring (2025-06-01). Riesgo alto, confianza media. Se recomienda excluirla del scoring hasta tener esos datos. Ejecuté solo la utility de hashes y conteos; no hubo pipeline ni entrenamiento.
+
+Reporte: /Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-config03/runs/real-01/L03-treatment/workspace/reports/leakage/audit.md

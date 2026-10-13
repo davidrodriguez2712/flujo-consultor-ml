@@ -1,0 +1,220 @@
+{
+  "id": "foundry-round04",
+  "files": [
+    {
+      "path": "L01-baseline/isolated-config/.claude.json",
+      "sha256": "b55e19bead84dff9c8685c3cbdecfaa2f8738ebf8c1713ada544f80a1fadb813",
+      "bytes": 719
+    },
+    {
+      "path": "L01-baseline/isolated-config/.last-cleanup",
+      "sha256": "246ac32b506337204ffcfaa1f641feec51d9cdc28f21bb6c3a0af58fc3ecf082",
+      "bytes": 24
+    },
+    {
+      "path": "L01-baseline/isolated-config/backups/.claude.json.backup.1791726522056",
+      "sha256": "b23f32a21bdff7429a4a83490f5e92805ded3744288ca355f9f6d83aa12e3ffc",
+      "bytes": 84
+    },
+    {
+      "path": "L01-baseline/metadata.json",
+      "sha256": "1d448792429b43ed14e4c718414557607fcbb0111620984436216351c1517857",
+      "bytes": 10345
+    },
+    {
+      "path": "L01-baseline/result.txt",
+      "sha256": "9a1d6a866f1a98770a35b9eaa82fe88d8c4b6bb9950856f33f038d41cda1edd4",
+      "bytes": 595
+    },
+    {
+      "path": "L01-baseline/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "L01-baseline/stdout.jsonl",
+      "sha256": "16b4abd9335d091d52433ab5747993bfd8288710c5ede9c5f5ee11435e754a7d",
+      "bytes": 57406
+    },
+    {
+      "path": "L01-baseline/workspace/.runtime/check_inputs.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "L01-baseline/workspace/case.md",
+      "sha256": "89f1c1a622a64a73dafb5b641d871d372e72a1076533a23378ec2446f11e1e14",
+      "bytes": 1728
+    },
+    {
+      "path": "L01-baseline/workspace/inputs/context.md",
+      "sha256": "3e3db7db6249d33479a7e01fdcaee3f8f8fec3f898f7c863e2d252398e613552",
+      "bytes": 776
+    },
+    {
+      "path": "L01-baseline/workspace/inputs/observations.csv",
+      "sha256": "29e4badcbbcbf9e242bde9f2d31b80d1f55091a52d094b658e6992a457ad0f19",
+      "bytes": 417
+    },
+    {
+      "path": "L01-baseline/workspace/inputs/pipeline.py",
+      "sha256": "fb122bed11f58973887818405e1b992b1589a72f8faf0ea13daf98ddb2f3da63",
+      "bytes": 204
+    },
+    {
+      "path": "L01-baseline/workspace/reports/leakage/audit.md",
+      "sha256": "07d5b8077a2079a4603251a10ab9398ee6ed0a781a7b7fe80dfdd649b4e4788d",
+      "bytes": 4399
+    },
+    {
+      "path": "L01-baseline/workspace/workflow.md",
+      "sha256": "0cc2f01287ed857dc98c005ec8f5143d3c155d671f4404c8d27f43dd0c60a35f",
+      "bytes": 2973
+    },
+    {
+      "path": "L01-treatment/isolated-config/.claude.json",
+      "sha256": "36099743a9b95725dd0e63c44a906fd358ae97524d3db38e72624ddd9a573906",
+      "bytes": 961
+    },
+    {
+      "path": "L01-treatment/isolated-config/backups/.claude.json.backup.1791726544415",
+      "sha256": "eb9c2bd164867e8a480ff1f81260791613e645dc05d336f7f2d5fa50d00d78f9",
+      "bytes": 84
+    },
+    {
+      "path": "L01-treatment/metadata.json",
+      "sha256": "d771c7eff114e4064e5a12bf1ce4d5f79c87230601e6326984703e035183ecc0",
+      "bytes": 5845
+    },
+    {
+      "path": "L01-treatment/result.txt",
+      "sha256": "536077aa5c5ab80094b49b6014d34030c76c8a4e0ff97ae82983e10d650c7f1b",
+      "bytes": 74
+    },
+    {
+      "path": "L01-treatment/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "L01-treatment/stdout.jsonl",
+      "sha256": "d9d06f4e5837a1bf24fe4f2f145dc217b9aa957df32022d1ad43be7cf3c7b682",
+      "bytes": 59058
+    },
+    {
+      "path": "L01-treatment/workspace/.runtime/check_inputs.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "L01-treatment/workspace/.runtime/plugin/.claude-plugin/plugin.json",
+      "sha256": "6ae3e6d4507deea2a98ee78108d415ddb06881953ab31452fa003d6967dcbfef",
+      "bytes": 41
+    },
+    {
+      "path": "L01-treatment/workspace/.runtime/plugin/skills/detect-leakage/SKILL.md",
+      "sha256": "2ea060606202840ee4ce49ff27c9beb6b29ffae27edebcf755683e9c9bc99fce",
+      "bytes": 25559
+    },
+    {
+      "path": "L01-treatment/workspace/case.md",
+      "sha256": "89f1c1a622a64a73dafb5b641d871d372e72a1076533a23378ec2446f11e1e14",
+      "bytes": 1728
+    },
+    {
+      "path": "L01-treatment/workspace/inputs/context.md",
+      "sha256": "3e3db7db6249d33479a7e01fdcaee3f8f8fec3f898f7c863e2d252398e613552",
+      "bytes": 776
+    },
+    {
+      "path": "L01-treatment/workspace/inputs/observations.csv",
+      "sha256": "29e4badcbbcbf9e242bde9f2d31b80d1f55091a52d094b658e6992a457ad0f19",
+      "bytes": 417
+    },
+    {
+      "path": "L01-treatment/workspace/inputs/pipeline.py",
+      "sha256": "fb122bed11f58973887818405e1b992b1589a72f8faf0ea13daf98ddb2f3da63",
+      "bytes": 204
+    },
+    {
+      "path": "L01-treatment/workspace/workflow.md",
+      "sha256": "0cc2f01287ed857dc98c005ec8f5143d3c155d671f4404c8d27f43dd0c60a35f",
+      "bytes": 2973
+    },
+    {
+      "path": "ledger.json",
+      "sha256": "92d437db1e9f958fefc2de8e9cfe9bf7d925c3f1fe5ceeea2222bca540f778dc",
+      "bytes": 7219
+    },
+    {
+      "path": "review.json",
+      "sha256": "0ed1765659ca5556adf61cf7d7fe4818d72073ee37bc51b0dc14c9df7514a7be",
+      "bytes": 356
+    },
+    {
+      "path": "smoke-baseline/isolated-config/.claude.json",
+      "sha256": "55cb584aa6a604dc134ecaebca65072f32f35597482e5d71a4b3b227e0c9febe",
+      "bytes": 719
+    },
+    {
+      "path": "smoke-baseline/isolated-config/.last-cleanup",
+      "sha256": "fcf472690c560319f179b00f2c47bd06b6eb8ca2c9774ea99c0bda0d00ba6df7",
+      "bytes": 24
+    },
+    {
+      "path": "smoke-baseline/isolated-config/backups/.claude.json.backup.1791726504542",
+      "sha256": "c083ef08d9184bfefed954658b1ececdae3d878ee1e4271feca0031e4e24e21e",
+      "bytes": 84
+    },
+    {
+      "path": "smoke-baseline/metadata.json",
+      "sha256": "eda662ebe70428b1b796b92fdf33d994c995fbb1754490b556e2edc481bb1f2e",
+      "bytes": 8601
+    },
+    {
+      "path": "smoke-baseline/result.txt",
+      "sha256": "ca0e1a58695d642a89e3cbb8ad08d6daabfa6a8af81307580808a608d0b28aaa",
+      "bytes": 576
+    },
+    {
+      "path": "smoke-baseline/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "smoke-baseline/stdout.jsonl",
+      "sha256": "7316eac50023b931630746c02e44b2376b54caabd74456106f4d56b7f9645c85",
+      "bytes": 41885
+    },
+    {
+      "path": "smoke-baseline/workspace/.runtime/check_inputs.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "smoke-baseline/workspace/case.md",
+      "sha256": "c55d6e5472cc2697b8c2c491ec1786ee9acd2e0cae2d311c691fea646a51e232",
+      "bytes": 290
+    },
+    {
+      "path": "smoke-baseline/workspace/inputs/data.csv",
+      "sha256": "8028f83b208c1c7608522c1680cb03dfeaf3a79fa2224fd257d7e31be883dbab",
+      "bytes": 21
+    },
+    {
+      "path": "smoke-baseline/workspace/reports/leakage/audit.md",
+      "sha256": "9366ea80954f288155834c1d904c242c1ba47af2445e0dc0f7bdd4debcb7b9e8",
+      "bytes": 3511
+    },
+    {
+      "path": "smoke-baseline/workspace/workflow.md",
+      "sha256": "0cc2f01287ed857dc98c005ec8f5143d3c155d671f4404c8d27f43dd0c60a35f",
+      "bytes": 2973
+    },
+    {
+      "path": "summary.json",
+      "sha256": "6d70c85ed8bb631f66cff8842bbef579f9a908162a8fd70c0f429d3a11715950",
+      "bytes": 382
+    }
+  ]
+}

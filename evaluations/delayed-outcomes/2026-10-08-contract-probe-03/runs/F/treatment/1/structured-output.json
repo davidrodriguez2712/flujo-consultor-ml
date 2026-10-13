@@ -1,0 +1,32 @@
+{
+  "rows": [
+    {
+      "id": "F1",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "indeterminate",
+      "train_eligibility": "indeterminate",
+      "reason": "Positivo definitivo y certificado en la extracci\u00f3n (2025-08-15). Disponibilidad al entrenamiento (2025-07-15T00:00Z, comparador <=): el acta del almac\u00e9n indica 10 jul 08:00 (cumplir\u00eda) y el registro de publicaci\u00f3n indica 20 jul 08:00 (no cumplir\u00eda). Ambas fuentes tienen igual autoridad y no hay resoluci\u00f3n ni prioridad; no se elige una ni se presume la m\u00e1s reciente. Features disponibles el 2025-05-31T18:00Z y poblaci\u00f3n v\u00e1lida, as\u00ed que no hay exclusi\u00f3n comprobada; falta la condici\u00f3n del label, por lo que la elegibilidad es indeterminate."
+    },
+    {
+      "id": "F2",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "Positivo definitivo y certificado en la extracci\u00f3n. La resoluci\u00f3n firmada declara err\u00f3nea la hoja antigua (20 jul) y certifica primera disponibilidad el 10 jul 08:00, con prioridad expl\u00edcita. 2025-07-10T08:00Z <= 2025-07-15T00:00Z, as\u00ed que el label estaba disponible al entrenar. Las features (2025-05-31T18:00Z) son anteriores a la predicci\u00f3n (2025-06-01T00:00Z) y la poblaci\u00f3n es v\u00e1lida. Se cumplen todas las condiciones."
+    },
+    {
+      "id": "F3",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "Negativo definitivo y certificado en la extracci\u00f3n. Ambas fuentes concuerdan en primera disponibilidad el 20 jul 08:00, posterior al entrenamiento (2025-07-15T00:00Z), as\u00ed que el label no estaba disponible. Esto prueba la exclusi\u00f3n. Adem\u00e1s, las bit\u00e1coras de una feature discrepan (31 may 18:00 cumple; 2 jun 08:00 ser\u00eda posterior a la predicci\u00f3n del 1 jun) y ninguna tiene prioridad. Esa discrepancia no cambia la decisi\u00f3n, pero queda como hallazgo. El outcome en extracci\u00f3n se conserva como negativo observado."
+    }
+  ],
+  "open_questions": [
+    "F1: \u00bfQu\u00e9 fuente es la autoritativa para la disponibilidad del label en el sistema de entrenamiento: el acta del almac\u00e9n (10 jul 08:00) o el registro de publicaci\u00f3n (20 jul 08:00)? \u00bfExiste una regla de prioridad o una resoluci\u00f3n firmada? Si prevalece el acta, F1 ser\u00eda elegible. Si prevalece el registro de publicaci\u00f3n, F1 se excluir\u00eda.",
+    "F3: \u00bfCu\u00e1l bit\u00e1cora de la feature es la correcta (31 may 18:00 o 2 jun 08:00)? No cambia la exclusi\u00f3n de F3, que ya est\u00e1 probada por el label. S\u00ed importa si esa feature se usa en otros registros.",
+    "\u00bfHay una regla de certificaci\u00f3n del target (positivos tempranos, tratamiento de negativos) documentada? Se asumi\u00f3 solo lo que dicen los documentos: los tres outcomes son definitivos en la extracci\u00f3n.",
+    "El encargo no proporciona timestamps de ventana de outcome por registro m\u00e1s all\u00e1 de [1 jun, 1 jul). No se complet\u00f3 ninguno."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

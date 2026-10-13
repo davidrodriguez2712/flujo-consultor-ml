@@ -1,0 +1,19 @@
+Lee case.md y audita únicamente sus inputs autorizados. Cumple el contrato común; utiliza solo capacidades disponibles y pertinentes. Entrega resumen y ruta de reporte.
+Lee .runtime/report-context.json: suministra metadatos conocidos de condición y versión; no contiene conclusiones de auditoría. Úsalo para los campos que solicite el contrato.
+
+La auditoría se limita al expediente: escribe un reporte de máximo 500 palabras, sin omitir el contrato ni evidencia esencial. No reproduzcas las instrucciones ni el reporte completo en la respuesta final; entrega un resumen de máximo 80 palabras y la ruta. Revisa solo familias aplicables y declara límites, sin desarrollar análisis ajenos al encargo.
+
+Contrato mecánico del reporte: frontmatter YAML al inicio físico del archivo, sin fences exteriores, con claves exactas skill, version, fecha, inputs, estado, condicion; sin claves duplicadas. Copia skill/version/condicion de report-context. fecha en ISO corresponde a la ejecución real; estado describe la auditoría, no aprobación de gates. inputs enumera case.md y todos los archivos de inputs con path y sha256 de la utility. Después incluye una vez cada sección: Resumen, Hallazgos, Evidencia, Preguntas abiertas, Recomendaciones. El conteo usa whitespace en todo el archivo, incluido frontmatter; las 80 palabras finales incluyen la ruta. El cumplimiento mecánico se comprueba por separado y no sustituye revisión semántica.
+
+
+Contrato operativo de herramientas:
+Read: únicamente estos archivos:
+/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_preserves_invali0/run/workspace/.runtime/check_inputs.py
+/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_preserves_invali0/run/workspace/.runtime/report-context.json
+/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_preserves_invali0/run/workspace/case.md
+/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_preserves_invali0/run/workspace/inputs/data.csv
+Write: únicamente un reporte nuevo en /private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_preserves_invali0/run/workspace/reports/leakage/audit.md. No modificar inputs ni crear otros archivos.
+Bash: solo este comando exacto, sin prefijos, sufijos, argumentos adicionales ni comandos encadenados:
+/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python /private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_preserves_invali0/run/workspace/.runtime/check_inputs.py
+La utility produce hashes, tamaños y conteos de CSV; no ejecuta pipeline.py ni evalúa leakage. No usar ls, pwd, cat, shell arbitrario, red ni instalar paquetes.
+Skill: solo acos-eval:detect-leakage. Si está instalada, invócala al inicio mediante Skill antes de auditar. Si está ausente, realiza la tarea sin skill y declara none/null. No invocar skills ausentes ni subagents.

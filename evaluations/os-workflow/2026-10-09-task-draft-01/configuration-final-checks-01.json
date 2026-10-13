@@ -1,0 +1,13 @@
+{
+  "status": "PASS_LOCAL",
+  "preparation_files_intact": 39,
+  "previous_historical_files_intact": 421,
+  "configuration_files_intact": 12,
+  "active_code_matches_manifest_snapshots": true,
+  "single_paragraph_contrast": true,
+  "budget_authorized": false,
+  "model_calls": 0,
+  "api_cost_usd": 0,
+  "provider_compatibility_for_this_study": "PENDING_SMOKE",
+  "effectiveness": "NOT_EVALUATED"
+}

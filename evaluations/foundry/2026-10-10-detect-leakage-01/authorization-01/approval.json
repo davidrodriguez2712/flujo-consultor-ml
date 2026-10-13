@@ -1,0 +1,9 @@
+{
+  "status": "APPROVED",
+  "execution_manifest_sha256": "64a52f85b39eedcff77a7ca47f17c5b8664791db48aea0063971e3915480ede0",
+  "total_budget_usd": 0.1,
+  "package_accepted": true,
+  "user_reply": "aprobado",
+  "approved_scope": "Un smoke y seis ejecuciones, sin retries; no promoción Foundry automática",
+  "recorded_at": "2026-10-11T13:23:09.711611+00:00"
+}

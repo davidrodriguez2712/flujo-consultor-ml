@@ -1,0 +1,129 @@
+{
+  "started_at": "2026-10-12T23:54:27.334696+00:00",
+  "argv": [
+    "claude",
+    "-p",
+    "--restricted",
+    "--no-chrome",
+    "--no-session-persistence",
+    "--setting-sources",
+    "",
+    "--settings",
+    "{\"disableBundledSkills\": true, \"permissions\": {\"allow\": [\"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/.runtime/check_inputs.py)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/.runtime/plugin/.claude-plugin/plugin.json)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/.runtime/plugin/skills/detect-leakage/SKILL.md)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/.runtime/report-context.json)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/case.md)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/inputs/context.md)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/inputs/observations.csv)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/inputs/pipeline.py)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/workflow.md)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/reports/leakage/audit.md)\", \"Bash(/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python /Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/.runtime/check_inputs.py)\", \"Skill(acos-eval:detect-leakage)\"], \"deny\": [\"Agent\", \"WebFetch\", \"WebSearch\", \"NotebookEdit\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/inputs/**)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/case.md)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/.runtime/**)\"]}}",
+    "--strict-mcp-config",
+    "--mcp-config",
+    "{\"mcpServers\":{}}",
+    "--permission-mode",
+    "dontAsk",
+    "--permission-prompts",
+    "none",
+    "--tools",
+    "Read,Write,Bash,Skill",
+    "--max-turns",
+    "8",
+    "--effort",
+    "low",
+    "--model",
+    "claude-haiku-5-5",
+    "--system-prompt",
+    "Responde en español. Audita solo el expediente público, respeta sus límites y no aceptes gates. Usa únicamente herramientas y capacidades disponibles. Entrega el reporte y su ruta según case.md.",
+    "--output-format",
+    "stream-json",
+    "--verbose",
+    "--plugin-dir",
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/.runtime/plugin"
+  ],
+  "runtime_success": true,
+  "condition": "treatment",
+  "skill_invoked": true,
+  "request_count": 4,
+  "prompt_sha256": "51347fc125118442efe052e4b5935ad3ba32747e34afca59febaf591d9854853",
+  "returncode": 0,
+  "tool_calls": [
+    {
+      "name": "Skill",
+      "input": {
+        "skill": "acos-eval:detect-leakage"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/workflow.md"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/case.md"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/.runtime/report-context.json"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/inputs/context.md"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/inputs/pipeline.py"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/inputs/observations.csv"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/.runtime/check_inputs.py"
+      }
+    },
+    {
+      "name": "Bash",
+      "input": {
+        "command": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python /Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/.runtime/check_inputs.py",
+        "description": "Run authorized input hash and count utility"
+      }
+    },
+    {
+      "name": "Write",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/real-01/L01-treatment/workspace/reports/leakage/audit.md",
+        "content": "---\nskill: detect-leakage\nversion: 0.2.0\nfecha: 2026-10-12\ninputs:\n  - path: case.md\n    sha256: 89f1c1a622a64a73dafb5b641d871d372e72a1076533a23378ec2446f11e1e14\n  - path: inputs/context.md\n    sha256: 3e3db7db6249d33479a7e01fdcaee3f8f8fec3f898f7c863e2d252398e613552\n  - path: inputs/observations.csv\n    sha256: 29e4badcbbcbf9e242bde9f2d31b80d1f55091a52d094b658e6992a457ad0f19\n  - path: inputs/pipeline.py\n    sha256: fb122bed11f58973887818405e1b992b1589a72f8faf0ea13daf98ddb2f3da63\nestado: auditoría completada; hallazgos de leakage reportados; no es aprobación de gate\ncondicion: treatment\n---\n\n## Resumen\n\nLa feature `recovered_kwh` introduce información posterior al scoring: no existía para el sistema hasta `recovered_available_at` (2025-06-09 a 2025-06-12), mientras la predicción ocurre el 2025-06-01. Está declarada en `FEATURE_COLUMNS`. Se recomienda retirarla del scoring. `history_kwh_90d` no muestra mecanismo de leakage con el expediente disponible.\n\n## Hallazgos\n\n**H1. `recovered_kwh` como feature posterior al scoring**\n- Componente: `inputs/pipeline.py` (FEATURE_COLUMNS, build_features).\n- Mecanismo: valor determinado al procesar la inspección; disponible desde `recovered_available_at`, posterior a `prediction_at`.\n- Fuente: context.md; observations.csv (columnas `recovered_kwh`, `recovered_available_at`, `prediction_at`).\n- Confianza: alta.\n- Severidad: alta.\n- Acción: retirar `recovered_kwh` de las features de scoring; no usarlo como predictor.\n\n**H2. Indicio de señal perfecta en la muestra**\n- Componente: `recovered_kwh` frente a `fraud_confirmed`.\n- Mecanismo: en las 4 filas, `recovered_kwh > 0` coincide con `fraud_confirmed = 1`. Es un indicio con n=4, no una medición.\n- Fuente: observations.csv, filas S01–S04.\n- Confianza: baja; no confirma mecanismo por sí solo.\n- Severidad: media (refuerza H1).\n- Acción: no usar esta coincidencia como evidencia de desempeño; revisar con muestra real.\n\n**H3. `history_kwh_90d` sin mecanismo de leakage observado**\n- Componente: `history_kwh_90d`.\n- Evidencia: `history_available_at` = 2025-05-31T23:00:00Z, anterior a `prediction_at` = 2025-06-01T00:00:00Z; context.md indica uso de días anteriores al scoring.\n- Confianza: media. La ventana de cálculo no está en el expediente.\n- Severidad: no determinada como riesgo.\n- Acción: verificar en la fuente la ventana y el corte de la agregación.\n\n## Evidencia\n\n- Hashes, columnas y conteos: utility `check_inputs.py` ejecutada una vez (4 entradas; CSV con 4 filas y 7 columnas).\n- Timestamps comparados manualmente contra el cutoff de scoring (lectura de valores, no un check automatizado de pipeline).\n- Código leído: `pipeline.py` (fragmento de 4 líneas). No se ejecutó pipeline, no se entrenó, no se calcularon métricas.\n\n## Preguntas abiertas\n\n- ¿Cómo se calcula `history_kwh_90d` en la fuente, y cuál es su corte real en producción?\n- ¿Existe en producción un proceso que reconstruya `recovered_kwh` con disponibilidad histórica verificable?\n- No se especifica el momento de entrenamiento, split ni fit de transformaciones; no se concluye sobre esas partes.\n- Falta owner que acepte la definición de features para scoring.\n\n## Recomendaciones\n\n1. Retirar `recovered_kwh` de `FEATURE_COLUMNS` para scoring; conservarlo solo como outcome o dato de evaluación retrospectiva.\n2. Verificar en la fuente la ventana y disponibilidad de `history_kwh_90d`.\n3. Revisión humana del proceso de construcción antes de cualquier uso productivo.\n4. Esta auditoría no aprueba gates ni certifica ausencia de leakage.\n"
+      }
+    }
+  ],
+  "skill_invocation_requested": true,
+  "usage_known": true,
+  "report_persisted": true,
+  "report_sha256": "2690cb9e9f94cb2c7ad51c9a4bf5a4a90642ab0b5644d1f8c5cf9afc96f5afa9",
+  "model_usage": {
+    "claude-haiku-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 5276,
+      "cacheReadInputTokens": 29937,
+      "cacheCreationInputTokens": 17078,
+      "webSearchRequests": 0,
+      "costUSD": 0.00507292,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2008,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "contract_success": true,
+  "execution_success": true,
+  "finished_at": "2026-10-12T23:54:52.626141+00:00"
+}

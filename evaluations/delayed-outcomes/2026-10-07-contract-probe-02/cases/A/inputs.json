@@ -1,0 +1,29 @@
+{
+  "industry": "Suscripciones",
+  "extraction_timestamp": "2025-09-20T00:00:00Z",
+  "training_timestamp": "2025-09-01T00:00:00Z",
+  "availability_comparator": "<=",
+  "window_bounds": "[start,end)",
+  "feature_rule": "Todas las features requeridas deben estar disponibles al instante de predicción; feature_available_at es su máximo comprobado, o null si no está verificado. No hay otras exclusiones de población.",
+  "certification_rule": "Target=cancelación durante la ventana. El registro es definitivo y está disponible al terminar la ventana más cuatro días, incluidos ambos valores binarios. La fecha suministrada es certificada.",
+  "rows": [
+    {
+      "id": "A1",
+      "prediction_timestamp": "2025-08-01T00:00:00Z",
+      "feature_available_at": "2025-07-31T23:00:00Z",
+      "outcome_window_start": "2025-08-01T00:00:00Z",
+      "outcome_window_end": "2025-09-01T00:00:00Z",
+      "target_reported": 0,
+      "label_available_at": "2025-09-05T00:00:00Z"
+    },
+    {
+      "id": "A2",
+      "prediction_timestamp": "2025-07-01T00:00:00Z",
+      "feature_available_at": "2025-06-30T23:00:00Z",
+      "outcome_window_start": "2025-07-01T00:00:00Z",
+      "outcome_window_end": "2025-08-01T00:00:00Z",
+      "target_reported": 0,
+      "label_available_at": "2025-08-05T00:00:00Z"
+    }
+  ]
+}

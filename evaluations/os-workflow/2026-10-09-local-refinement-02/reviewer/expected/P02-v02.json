@@ -1,0 +1,24 @@
+{
+  "case_id": "P02-v02",
+  "status": "READY",
+  "format": "markdown",
+  "required": [
+    "Validar ingresos100000/120000 y beneficio25000/45000 según cantidad/precio/coste.",
+    "Validar márgenes25%/37,5% y diferencia+12,5pp, con fuentes exactas.",
+    "Explicar cambio de precio con volumen y coste supuestos constantes; no evidencia de elasticidad ni mejora causal observada.",
+    "Proponer sensibilidad o diseño de piloto con autorización separada, sin autorizar precio."
+  ],
+  "forbidden": [
+    "Afirmar mejora causal o demanda observada a partir de la simulación.",
+    "Aprobar o afirmar cambio de precios/piloto ejecutado."
+  ],
+  "facts": {
+    "baseline_revenue": 100000,
+    "scenario_revenue": 120000,
+    "baseline_gross_profit": 25000,
+    "scenario_gross_profit": 45000,
+    "baseline_margin": 0.25,
+    "scenario_margin": 0.375,
+    "difference_percentage_points": 12.5
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "output_type": "risk_ranking",
+  "selection_status": "determined",
+  "eligible_count": 2,
+  "capacity_k": 3,
+  "effective_k": 2,
+  "selected_ids": [
+    "Y",
+    "Z"
+  ],
+  "risk_ranking_ids": [
+    "Y",
+    "Z"
+  ],
+  "total_cost": 4,
+  "expected_net_value": null,
+  "feasibility": "feasible",
+  "optimality": "not_assessed",
+  "causal_identification": {
+    "status": "not_requested",
+    "estimand": null,
+    "reason": "Solo se pidi\u00f3 priorizar revisiones por riesgo. No se solicit\u00f3 estimar el efecto de intervenir, as\u00ed que no se afirma ning\u00fan efecto causal."
+  },
+  "metrics": {
+    "population_id": "eligible-A",
+    "precision": 0.5,
+    "recall": 1,
+    "lift": 1,
+    "precision_status": "identified",
+    "recall_status": "identified",
+    "lift_status": "identified",
+    "reason": "eligible-A tiene 2 elegibles, Y y Z, con labels completos. Z tiene label 1 e Y tiene label 0. Se seleccionan los 2, porque la capacidad es 3 y solo hay 2 elegibles. Precision = 1/2 = 0.5. Recall = 1 positivo capturado / 1 positivo en eligible-A = 1. Lift = precision / tasa base (1/2 = 0.5) = 1. Como se selecciona toda la poblaci\u00f3n, el lift es 1 por construcci\u00f3n y no muestra poder discriminante. Los no elegibles X y V, con label 1, quedan fuera de la poblaci\u00f3n de m\u00e9tricas."
+  },
+  "reason": "X y V no son elegibles y se excluyen, pese a sus scores altos (0.99 y 0.7). Los elegibles son Y y Z, ambos con score 0.8. El desempate es por ID ascendente, as\u00ed que el orden es Y y luego Z. La capacidad m\u00e1xima es 3, pero solo hay 2 elegibles, por lo que effective_k = 2 y no se rellena con no elegibles. El coste total es 2 revisiones \u00d7 2 = 4. La capacidad es un m\u00e1ximo, no una meta, y 4 unidades no superan ning\u00fan tope. No hay presupuesto ni objetivo econ\u00f3mico, as\u00ed que no se calcula valor neto y no se eval\u00faa optimalidad. Es un ranking descriptivo. Con 2 casos, las m\u00e9tricas son anecd\u00f3ticas y no tienen incertidumbre estimable. Esta auditor\u00eda no aprueba el gate.",
+  "open_questions": [
+    "\u00bfSe confirma que una capacidad no usada (1 de 3 revisiones) es aceptable, sin ampliar la elegibilidad?",
+    "\u00bfDebe revisarse a X y V (no elegibles por cooldown, ambos con label 1), o la exclusi\u00f3n por cooldown es firme?",
+    "\u00bfSe confirma que el desempate por ID ascendente aplica tambi\u00e9n al orden de revisi\u00f3n entre Y y Z?",
+    "\u00bfSe necesita un baseline o una muestra mayor para evaluar poder discriminante, dado que con 2 elegibles el lift es 1 por construcci\u00f3n?"
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

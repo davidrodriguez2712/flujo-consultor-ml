@@ -1,0 +1,30 @@
+{
+  "contracts/shortlist.json": {
+    "capacity": 2,
+    "minimum_score": 0.6,
+    "sort": "score descending; customer_id ascending for ties",
+    "meaning": "Probabilidad estimada de churn, no uplift",
+    "delivery_consumer": "API que parsea un objeto JSON"
+  },
+  "analysis/scores.json": [
+    {
+      "customer_id": "C-91",
+      "score": 0.81
+    },
+    {
+      "customer_id": "C-14",
+      "score": 0.65
+    },
+    {
+      "customer_id": "C-08",
+      "score": 0.42
+    }
+  ],
+  "plans/shortlist.json": {
+    "customer_ids": [
+      "C-91",
+      "C-14"
+    ],
+    "purpose": "Revisión humana"
+  }
+}

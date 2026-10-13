@@ -1,0 +1,6 @@
+{
+  "status": "PENDING",
+  "total_budget_usd": 0.2,
+  "execution_manifest_sha256": null,
+  "reason": "El presupuesto de Windows no autoriza esta evaluación. Se requiere respuesta explícita del usuario antes de usar credenciales o ejecutar modelos."
+}

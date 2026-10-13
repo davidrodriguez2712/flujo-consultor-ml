@@ -1,0 +1,67 @@
+{
+  "status": "PASS_LOCAL_STRUCTURE_AND_COMPILATION",
+  "author_example_format_checks": {
+    "forecast-task.json": {
+      "checker_version": "0.1.0",
+      "strict_json_pass": true,
+      "schema_pass": true,
+      "status_matches": true,
+      "references_exist": true,
+      "unknown_references": [],
+      "semantic_review": "NOT_RUN",
+      "overall_content_pass": null,
+      "referenced_paths": [
+        "data/inventory-metadata.json",
+        "decisions/open.json",
+        "intake/request.json"
+      ],
+      "transfer_checker_version": "0.2.0",
+      "format": "json",
+      "format_pass": true,
+      "references_present": true
+    },
+    "follow-up.json": {
+      "checker_version": "0.1.0",
+      "strict_json_pass": true,
+      "schema_pass": true,
+      "status_matches": true,
+      "references_exist": true,
+      "unknown_references": [],
+      "semantic_review": "NOT_RUN",
+      "overall_content_pass": null,
+      "referenced_paths": [
+        "intake/questions.json",
+        "project/state.json"
+      ],
+      "transfer_checker_version": "0.2.0",
+      "format": "json",
+      "format_pass": true,
+      "references_present": true
+    },
+    "markdown-state.md": {
+      "transfer_checker_version": "0.2.0",
+      "format": "markdown",
+      "format_pass": true,
+      "strict_json_pass": null,
+      "schema_pass": null,
+      "status_matches": true,
+      "references_exist": true,
+      "references_present": false,
+      "unknown_references": [],
+      "semantic_review": "NOT_RUN",
+      "overall_content_pass": null,
+      "observed_status": "READY",
+      "referenced_paths": []
+    }
+  },
+  "compiler_status_next": "PASS integrityOK",
+  "compiler_validate": "BLOCKED exit4 esperado por campos iniciales owner/metric/unit/horizon faltantes; no bug del ajuste",
+  "initial_check_expectation_correction": "Se esperaba exit3NEEDS_REVIEW, pero el perfil fraud vacío produce exit4BLOCKED. Verificados campos faltantes y resultado conservado; no producto modificado para hacerlo pasar.",
+  "template_matches_canonical": true,
+  "resources_match": true,
+  "tests_run": false,
+  "model_calls": 0,
+  "api_cost_usd": 0,
+  "effectiveness": "NOT_EVALUATED",
+  "native_skill_installation_tested": false
+}

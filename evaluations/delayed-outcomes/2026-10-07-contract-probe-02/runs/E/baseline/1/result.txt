@@ -1,0 +1,26 @@
+```json
+{
+  "rows": [
+    {
+      "id": "E1",
+      "outcome_state_at_extraction": "pending",
+      "label_availability_at_training",
+      "train_eligibility": "exclude",
+      "reason": "Ventana [2025-06-01, 2025-07-01) con fin posterior a la extracción (2025-06-20) y al entrenamiento (2025-06-15). La regla fuente dice que el valor definitivo solo existe al cerrar la ventana más 3 días (3 × 24 h): 2025-07-04T00:00:00Z. El cero reportado es provisional, por lo que el resultado está pendiente. Con comparador <=, 2025-07-04 <= 2025-06-15 es falso, así que el label no está disponible al entrenamiento. La feature (2025-05-31T23:00Z) cumple <= prediction_timestamp (2025-06-01T00:00Z), por lo que la exclusión se debe solo al label."
+    },
+    {
+      "id": "E2",
+      "outcome_state_at_extraction": "unknown",
+      "label_availability_at_training": "indeterminate",
+      "train_eligibility": "indeterminate",
+      "reason": "La ventana [2025-04-01, 2025-05-01) cerró antes de la extracción y del entrenamiento, y la feature (2025-03-31T23:00Z) cumple <= prediction_timestamp (2025-04-01T00:00Z). Sin embargo, el sistema solo registró cero: no hay regla de cierre, historial de certificación, label_available_at (null) ni delay. No se puede afirmar que el cero sea definitivo (observed_negative) ni que el label estuviera disponible al 2025-06-15. Falta la política de certificación y el instante en que el valor pasó a ser definitivo."
+    }
+  ],
+  "open_questions": [
+    "training_timestamp (2025-06-15T00:00:00Z) es anterior a extraction_timestamp (2025-06-20T00:00:00Z). ¿Es correcto, o el entrenamiento debería evaluarse con otro instante? Esto no cambia E1 (el label definitivo es 2025-07-04, posterior a ambas fechas), pero podría afectar a E2.",
+    "E2: ¿cuál es la regla de cierre/certificación del target y cuándo pasó el cero registrado a ser definitivo (label_available_at)? ¿Existe un delay de disponibilidad del label?",
+    "E2: ¿el cero reportado es definitivo o provisional, y existe historial de revisiones del valor antes de 2025-06-15T00:00:00Z?"
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}
+```

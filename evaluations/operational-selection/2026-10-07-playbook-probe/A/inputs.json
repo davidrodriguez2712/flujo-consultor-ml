@@ -1,0 +1,26 @@
+{
+  "context": "Inspecciones ficticias. Cuatro casos activos y elegibles. Capacidad K=2. Orden score descendente, empate id ascendente fijado antes de labels. Labels completas binarias en los cuatro. Comparador aleatorio bajo misma capacidad y población.",
+  "k": 2,
+  "rows": [
+    {
+      "id": "C",
+      "score": 0.9,
+      "target": 1
+    },
+    {
+      "id": "B",
+      "score": 0.9,
+      "target": 0
+    },
+    {
+      "id": "A",
+      "score": 0.9,
+      "target": 1
+    },
+    {
+      "id": "D",
+      "score": 0.1,
+      "target": 0
+    }
+  ]
+}

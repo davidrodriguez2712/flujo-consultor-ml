@@ -1,0 +1,99 @@
+schema_version: 1
+acos_version: 0.1.0
+catalog_version: 0.1.0
+profile_sha256: de55bdd2a1a02de2b50d601af3e881ef227c8464a49cddcd3d2be2de8329deb7
+modules_sha256: cc2fb6d1cd3c91a6ea4088ab9ca971cab4435958e00d2339a8622e8833d319a9
+source_os_version: '2.0'
+artifacts:
+- path: .acos/modules.yaml
+  ownership: human
+  initial_sha256: 41e8d4e8ad703794f31010e3d4b4de922b5af882993095d2054ed08fdeb6f90a
+- path: .acos/project-profile.yaml
+  ownership: human
+  initial_sha256: bfbe9fe08af31a603a528e599af696ce486297ae195a79f552916463f8b7fb66
+- path: .acos/state.yaml
+  ownership: human
+  initial_sha256: c05affd31267331e574fa49a1c89a062097b16c56bee03996364c311bb5b67a3
+- path: AGENTS.md
+  ownership: acos
+  initial_sha256: 3b91d5a51afe8e1982b1df0528108256dc9f2daa256d220d89ccf65dcf9ba65b
+- path: CAPABILITIES.md
+  ownership: human
+  initial_sha256: 35fddc4931f335be2bb969b4ee97fbad94c6da8c7adc651f2aa909284330aeea
+- path: CLAUDE.md
+  ownership: human
+  initial_sha256: c7b68087d1a5c37d3481b6dc5d0729067df52cbd6816fbaa713df5eae1c39701
+- path: DECISIONS.md
+  ownership: human
+  initial_sha256: 4dc4f395f8caa97d532c0c4dd693e861bb00b50c8b95dd4f3b0389190ab406f9
+- path: MANUAL.md
+  ownership: human
+  initial_sha256: 488956d2e584b745ffc5ff74290d8f8254d3c99d1ac8ca5ac5f130cfb1b696de
+- path: PROJECT.md
+  ownership: human
+  initial_sha256: 8cac368192b5c3b55acc28e9588769316dd408646b5dccca3e880a4cbcc6bc42
+- path: STATE.md
+  ownership: human
+  initial_sha256: 55b63983f6715a06730525fb0a3db52d9b86c5f4b18231a896c0545ad7a05c4f
+- path: TASKS.md
+  ownership: human
+  initial_sha256: 8d74b3fc21fa7d301ec103791977e4020e3a5b35af733dda10d16b0be57ed4c2
+- path: analysis/analysis_plan.md
+  ownership: human
+  initial_sha256: 204d59b094dd2c3ed715cea8a55aaa73673422738b6b00ef08c68fc940fb77e5
+- path: analysis/forecast_plan.md
+  ownership: human
+  initial_sha256: 938455f68e0fd15f1d44c8fa616a8dab73a4aa2dc012443d986a6b6204506375
+- path: context/business_context.md
+  ownership: human
+  initial_sha256: 3fa83f6b6d8ae0045281d23df7406c2fc7d32ba34ffd6a994498ce257af44e01
+- path: data/data_contract.yaml
+  ownership: human
+  initial_sha256: d282935521ceca75a03e6dc3f0691f4df68db5f554821884a8c73c0538b9ad17
+- path: decision/recommendation.md
+  ownership: human
+  initial_sha256: b219a9d0d5b531b4dfb1805f45b68f23d4ca6c8be6985df785178c324763caf4
+- path: delivery/delivery_contract.md
+  ownership: human
+  initial_sha256: 0a09a56db2dcf120965547c1e8dd5091a790ff0ff5fcaf52ec130b72047af19d
+- path: delivery/storyline.md
+  ownership: human
+  initial_sha256: 475076af78146fb9c61fb0ab582db6401af65550b6998fa2ff19ab8b7e0f6e6d
+- path: evidence/findings.md
+  ownership: human
+  initial_sha256: 1f17bcbeef4e39df2fe631275e91ac8d232125d1c259cafd465f9cdc968b5595
+- path: framing/framing.yaml
+  ownership: human
+  initial_sha256: 2fa05a9c5e908b201e7a36c5f78d59fc7e02cf840d59710d01c912c6859ed9d4
+- path: handoff/runbook.md
+  ownership: human
+  initial_sha256: 899737f998087d31d9889c7c0ebae2f49c6a7b1608645f50658ee63f018e7c4c
+- path: playbooks/data-understanding-analysis.md
+  ownership: acos
+  initial_sha256: 8bb117474b58aa4ae8e9283d3d2f2e4c2f8b0ee8d1e940e3abfc46473e523272
+- path: playbooks/experiments-and-models.md
+  ownership: acos
+  initial_sha256: b9472d583ad6eb500e62a4862b221ac4e6021935c7304e8ae1424bc790565525
+- path: playbooks/research-impact-delivery.md
+  ownership: acos
+  initial_sha256: ef1456fe97f27bdb5329bc747d367812d7f49db430c6185ebeb9794c737626ae
+- path: templates/delivery-and-handoff.md
+  ownership: human
+  initial_sha256: 4ca99b71f1d8b9d77044e107f3b4d320d5e5fa6e96e350e3f439afea9aff82ad
+- path: templates/findings-and-qa.md
+  ownership: human
+  initial_sha256: aab93a08b85b6b8aced668b894f9b8de0ef536a5e38aeb1f39204eaa7a931346
+- path: workflow/capability-lifecycle.md
+  ownership: acos
+  initial_sha256: 98c569bbf33ba7d95d1c8bc6cd3893ed1ccbc784a7850d5a3cf700097942bd23
+- path: workflow/execution-and-qa.md
+  ownership: acos
+  initial_sha256: b3377bac6e61470a136b7514dcf39747136d794f0d7ac32381355a6f891d2fd7
+- path: workflow/isolation-and-context.md
+  ownership: acos
+  initial_sha256: 580a22286bc11b44aae574fd38b6690a95990f10b0ff5d76b4e4ad8bd14dd153
+- path: workflow/project-lifecycle.md
+  ownership: acos
+  initial_sha256: e0bfcf31b53bdb73f6cb8c84627aed3e82788f486f073729c64dae976d89e770
+skills: []
+initialization: complete

@@ -1,0 +1,16 @@
+{
+  "stage": "validation",
+  "gates": [
+    "validation",
+    "data_analysis-review",
+    "supervised_model-review",
+    "selection-review",
+    "executive_delivery-review"
+  ],
+  "decision": "PASS",
+  "reviewer": "David",
+  "authorization": "Mensaje explícito «aprobado y continua» al paquete Validation y reviews asociados para preparar Delivery.",
+  "recorded_at_utc": "2026-10-09T13:01:44.150917+00:00",
+  "validation_manifest_sha256": "2a9fe0c3733edac0fa9b49f9d936d2aef639a9d73d968fd56c13323edafa2312",
+  "scope": "Cerrar Validation y sus cuatro reviews; avanzar a Delivery. Gates Delivery/Handoff pendientes."
+}

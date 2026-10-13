@@ -1,0 +1,11 @@
+{
+  "status": "APPROVED",
+  "by": "David",
+  "user_reply": "Si",
+  "recorded_at_utc": "2026-10-10T10:37:35.889608+00:00",
+  "execution_manifest_sha256": "76ce8d316d09bd679e4efeea012792092c71640a134e7de326f4cc1226fc5a7e",
+  "total_budget_usd": 0.099759,
+  "study_cumulative_ceiling_usd": 0.1,
+  "prior_round_cost_usd": 0.000241,
+  "scope": "Ronda02 manual: un smoke explícito y ocho respuestas, sin retries; total del estudio hasta US$0.10."
+}

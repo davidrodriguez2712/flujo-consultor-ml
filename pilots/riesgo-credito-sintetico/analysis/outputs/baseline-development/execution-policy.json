@@ -1,0 +1,61 @@
+{
+  "version": "0.1.0",
+  "frozen_at_utc": "2026-10-08T11:39:48.856105+00:00",
+  "scope": "Development; freeze anterior al run principal, posterior a QA temporal documentado",
+  "code_sha256": "b1ffc72b9b58a698bc020389ef8582ceb24e14856b529ed6ed2e2f6392d455b1",
+  "policy": {
+    "version": "0.1.0",
+    "algorithm": "standardized_logistic_regression_l2",
+    "features": [
+      "monthly_income",
+      "debt_to_income",
+      "requested_amount",
+      "bureau_score",
+      "prior_late_count"
+    ],
+    "iterations": 600,
+    "learning_rate": 0.05,
+    "l2": 0.01,
+    "training_cutoff": "2025-01-01",
+    "validation_start": "2025-01-01",
+    "validation_end_exclusive": "2025-03-01",
+    "evaluation_timestamp": "2025-06-15",
+    "calibration_bins": [
+      0.0,
+      0.1,
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      1.0
+    ],
+    "k": 100,
+    "hyperparameter_search": false,
+    "final_evaluation": false
+  },
+  "inputs": {
+    "data/raw/applications.csv": "512ed2cc0797ffec199cfa9bd3aad48ea1a5954a1be81bad60ff645b28f052f6",
+    "data/raw/decisions.csv": "1bac356ab25a8c3a6bcb9a76c8c6230ff9cf48e7085be0be2148d3ae0066ff29",
+    "data/raw/history.csv": "2a2da6b8dea82df9a4f2b8e066a0439219935f337e2af45970529a6359970ca5",
+    "data/raw/outcomes.csv": "3cdfdd1ce17e854a40d83dced1f331eee56aca95e7750ec782d2edc747d586f7",
+    "data/raw/post_decision.csv": "21662662dda0bdcf67f5a0c28060db8acb245d2070dce07913d929038e3812a5"
+  },
+  "artifacts": {
+    "analysis/credit_baseline.py": "b1ffc72b9b58a698bc020389ef8582ceb24e14856b529ed6ed2e2f6392d455b1",
+    "analysis/test_credit_baseline.py": "afb2a9f62a08d30602778c45298d46f4be1d54e1df2c588204c035b9b3ec2e1c",
+    "reports/execution/implementation-policy.yaml": "66c1776b7bd872d66904b59b29d4130e6356612830a5bec410c6a1d6e2af751d",
+    "modeling/model_brief.md": "13b65fbfc9c65ad75eedbcce7e0fd0a70e3f5808c11eb022e2314d1d593a1c12",
+    "analysis/analysis_plan.md": "8bcfa1a6ca6569b5f3e8d4aec0448662669b0e63c86ee663e74de13acb2c84a0",
+    "analysis/selection_plan.md": "67cab845ad8f339fabada6fc7d2d04e593465379b3039ec3e8073bb524a741ae",
+    "validation/validation_design.yaml": "84a265ca6969e3e6c995eceab556af6a62e7a8f5b65516bece891ce537f36723",
+    "data/data_contract.yaml": "290d4d0aaca4549c0f53121faab01fe7c6fec378dd66fafa7306cacff567007e",
+    "framing/framing.yaml": "b4c3ca36f64eb3d823dc62a69240680be677d4d6fefeb0075a469085270b2fe4",
+    "framing/metrics.yaml": "9cc6288130578b8282efc7d59381c8fc33b9004b84967401034ee4772d083d4f",
+    "framing/acceptance.md": "15d35e638f8f879639ce9f37a9ca872514dbd1369a992c3d01167935f740ba32",
+    "reports/execution/protocol.md": "ea6993fb73c6ff409a328878ad5a8c52afc15ac75cb8267d96fb67ad3dea2ca8",
+    "reports/execution/agent-pre-review.md": "fdf8d89bca3f89dc6fab94847a5ce49a31ac75620b3ab6d987c8a5ce189383e1"
+  },
+  "python_version": "3.13.2",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "additional_runtime_api_calls": 0
+}

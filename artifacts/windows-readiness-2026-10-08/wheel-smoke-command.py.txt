@@ -1,0 +1,27 @@
+from pathlib import Path
+import tempfile,zipfile,subprocess,json,os,sys,shutil,hashlib
+root=Path.cwd();out=root/'artifacts/windows-readiness-2026-10-08';wheel=out/'agentic_consulting_os-0.1.0-py3-none-any.whl'
+records=[]
+with tempfile.TemporaryDirectory(prefix='acos-wheel-smoke-') as temp:
+ t=Path(temp);bundle=t/'bundle';bundle.mkdir()
+ with zipfile.ZipFile(wheel) as z:z.extractall(bundle)
+ env=os.environ.copy();env['PYTHONPATH']=str(bundle)
+ boot='import acos.cli as cli; from acos.contracts import UserConfig; cli.load_config=lambda:UserConfig(); cli.discover_foundry=lambda *a:None; raise SystemExit(cli.main())'
+ def call(args,cwd,expected=0,stdin=None):
+  cmd=[sys.executable,'-c',boot,*args];r=subprocess.run(cmd,cwd=cwd,env=env,text=True,input=stdin,capture_output=True)
+  records.append({'args':args,'expected_exit_code':expected,'exit_code':r.returncode,'stdout':r.stdout,'stderr':r.stderr})
+  assert r.returncode==expected,(args,r.stdout,r.stderr)
+  return r
+ origin=t/'origin';origin.mkdir();profile=origin/'profile.yaml';shutil.copy2(root/'tests/fixtures/profiles/research.yaml',profile)
+ call(['init','--profile-file',str(profile)],origin,stdin='\ns\ns\n')
+ project=origin/'research';assert (project/'MANUAL.md').is_file()
+ for cmd in ['status','next','validate']:call([cmd],project,3 if cmd=='validate' else 0)
+ moved=t/'moved';shutil.move(project,moved)
+ for cmd in ['status','next','validate']:call([cmd],moved,3 if cmd=='validate' else 0)
+ here=t/'here';here.mkdir();(here/'unrelated.txt').write_text('conservar\n')
+ call(['init','--here','--profile-file',str(profile)],here,stdin='\ns\ns\n');assert (here/'unrelated.txt').read_text()=='conservar\n'
+ collision=t/'collision';collision.mkdir();(collision/'MANUAL.md').write_text('no sobrescribir\n')
+ call(['init','--here','--profile-file',str(profile)],collision,4,stdin='\ns\ns\n');assert (collision/'MANUAL.md').read_text()=='no sobrescribir\n';assert not (collision/'.acos').exists()
+ imported=subprocess.run([sys.executable,'-c','import acos; print(acos.__file__)'],cwd=t,env=env,text=True,capture_output=True);assert str(bundle) in imported.stdout
+report={'scope':'Smoke del contenido extraído del wheel desde otra carpeta en macOS; usa Python/dependencias .venv existentes. Configuración y descubrimiento Foundry desactivados en memoria; no prueba instalación Windows ni wizard completo.','wheel_sha256':hashlib.sha256(wheel.read_bytes()).hexdigest(),'commands':records,'module_origin':imported.stdout.strip(),'passed':True,'native_windows_status':'PENDING','api_calls':0}
+(out/'wheel-smoke-checks.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');(out/'wheel-smoke-command.py.txt').write_text(Path(__file__).read_text());print(json.dumps({'passed':True,'commands':len(records),'transfer':True,'here_preserves_unrelated':True,'collision_preserves_existing':True,'native_windows':'PENDING'}))

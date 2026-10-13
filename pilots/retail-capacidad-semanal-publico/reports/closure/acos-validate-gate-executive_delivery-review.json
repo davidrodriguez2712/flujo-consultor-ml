@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "findings": [],
+  "evidence": [
+    "handoff/human-approval.json",
+    "reports/package/evidence-manifest-01.json",
+    "reports/validation/integrated-review.md"
+  ]
+}

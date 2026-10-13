@@ -1,0 +1,23 @@
+{
+  "intake/questions.json": {
+    "open": [
+      "Qué decisión comercial informará la segmentación",
+      "Qué población y ventana se necesitan",
+      "Qué fuente podrá consultarse con acceso autorizado"
+    ],
+    "owner_request": "Recoger respuestas, todavía no diseñar una tarea analítica"
+  },
+  "constraints/scope.json": {
+    "allowed": "Tres acciones breves para resolver las preguntas",
+    "not_authorized": [
+      "Consultar datos de clientes",
+      "Ejecutar segmentación",
+      "Redactar task en esta respuesta"
+    ]
+  },
+  "project/state.json": {
+    "status": "Preguntas de alcance abiertas",
+    "data_access": "PENDING",
+    "assigned_reviewer": null
+  }
+}

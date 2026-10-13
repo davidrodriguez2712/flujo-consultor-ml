@@ -1,0 +1,31 @@
+{
+  "output_type": "value_selection",
+  "selection_status": "determined",
+  "eligible_count": 2,
+  "capacity_k": 5,
+  "effective_k": 0,
+  "selected_ids": [],
+  "risk_ranking_ids": [],
+  "total_cost": 0,
+  "expected_net_value": 0,
+  "feasibility": "feasible",
+  "optimality": "optimal",
+  "causal_identification": {
+    "status": "not_requested",
+    "estimand": null,
+    "reason": "Expected separado."
+  },
+  "metrics": {
+    "population_id": "eligible-D",
+    "precision": null,
+    "recall": 0,
+    "lift": null,
+    "precision_status": "undefined",
+    "recall_status": "identified",
+    "lift_status": "undefined",
+    "reason": "Referencia para revisión; no se envía al modelo."
+  },
+  "reason": "Expected separado.",
+  "open_questions": [],
+  "gate_decision": "NEEDS_REVIEW"
+}

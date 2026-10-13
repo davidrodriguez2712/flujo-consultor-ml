@@ -1,0 +1,19 @@
+{
+  "analysis/scenario.json": {
+    "baseline": {
+      "revenue": 200000,
+      "gross_profit": 50000
+    },
+    "scenario": {
+      "revenue": 200000,
+      "gross_profit": 55000
+    },
+    "assumption": "Volumen e ingresos fijos por construcción del escenario"
+  },
+  "drafts/pricing.md": "Margen bruto base: 25%; escenario: 27,5%. Diferencia: +2,5 puntos porcentuales. Simulación, no resultado observado.",
+  "contracts/audience.json": {
+    "audience": "Dirección comercial",
+    "deliverable": "Memo Markdown legible",
+    "approval": "Revisión de propuesta, no cambio de precios"
+  }
+}

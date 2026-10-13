@@ -1,0 +1,1151 @@
+[
+  {
+    "case": "A",
+    "condition": "baseline",
+    "repetition": 1,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "A1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "A2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "A3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "redundante",
+        "text": "¿Qué valor mostraba el sistema de entrenamiento para A2 el 2025-07-15 (nulo, ausente o 0 por defecto)? Hay que confirmar que no se rellenara como negativo, porque ese caso afectaría al entrenamiento reconstruido."
+      },
+      {
+        "index": 2,
+        "category": "opcional_contextual",
+        "text": "¿El extracto actual con churn=1 para A2 conserva la fecha de certificación (2025-07-19T10:00Z)? Esa fecha permitiría verificar la disponibilidad con evidencia y no solo por la regla de los siete periodos."
+      },
+      {
+        "index": 3,
+        "category": "opcional_contextual",
+        "text": "¿Un registro cuya petición cae en la ventana objetivo pero se certifica fuera de ella, como A3 en 2025-08-19, debe contarse como churn de la ventana cuando madure? Es un criterio de definición del target que tiene que fijar el negocio."
+      },
+      {
+        "index": 4,
+        "category": "redundante",
+        "text": "La nota de operaciones fija la predicción el 1 de julio y las features el 30 de junio a las 18:00, y eso difiere del valor general del documento (1 de junio y 31 de mayo). Se aplicó la nota por ser la diferencia explícita del servicio. Pide confirmación del negocio."
+      },
+      {
+        "index": 5,
+        "category": "opcional_contextual",
+        "text": "¿Se aplicó el mismo criterio de exclusión a todo el conjunto histórico? Si se descartan los pendientes y los certificados tras el entrenamiento, el entrenamiento sesga hacia peticiones antiguas."
+      }
+    ],
+    "findings": []
+  },
+  {
+    "case": "A",
+    "condition": "baseline",
+    "repetition": 2,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "A1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "A2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "A3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "redundante",
+        "text": "¿Se confirma que para estos expedientes rige la predicción del 2025-07-01T00:00Z y features del 2025-06-30T18:00Z de la Nota de Operaciones, y no las del encabezado (2025-06-01 y 2025-05-31T18:00Z)? Se aplicó la Nota por ser la diferencia explícita. En ambos casos las features son anteriores a la predicción y no cambia ninguna fila."
+      },
+      {
+        "index": 2,
+        "category": "redundante",
+        "text": "¿El plazo de siete periodos de 24 horas se cuenta exactamente desde la hora de recepción? Se asumió así, con vencimiento a las 10:00Z de 7 días después."
+      },
+      {
+        "index": 3,
+        "category": "redundante",
+        "text": "¿Cuál es el timestamp certificado en el sistema de entrenamiento para A1 y A2? Se infirió de la regla, no de un registro de certificación."
+      },
+      {
+        "index": 4,
+        "category": "problematica",
+        "text": "¿Debe reevaluarse A3 tras el 2025-08-19T10:00Z, con una extracción posterior, cuando pueda certificarse como churn=1 o como retirado (churn=0)?"
+      },
+      {
+        "index": 5,
+        "category": "opcional_contextual",
+        "text": "¿Se reentrenará con un corte posterior que permita incluir A2? Con un corte posterior al 2025-07-19T10:00Z, A2 sería elegible como positivo."
+      }
+    ],
+    "findings": [
+      {
+        "question_index": 4,
+        "issue": "La retirada se equipara a churn=0 sin una regla de certificación de negativos. El caso solo proporciona certificación positiva por vencimiento sin retirada; no autoriza inferir negativo definitivo al retirar."
+      }
+    ]
+  },
+  {
+    "case": "B",
+    "condition": "baseline",
+    "repetition": 1,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "B1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "B2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "B3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "necesaria",
+        "text": "B3: ¿Qué regla genera churn=0 con fecha_evento vacía (ausencia certificada, valor por defecto o no resuelto)?"
+      },
+      {
+        "index": 2,
+        "category": "necesaria",
+        "text": "B3: ¿Existe certificación de Auditoría, ticket o historial de publicación, y con qué fecha y hora UTC se publicó el valor en el sistema de entrenamiento?"
+      },
+      {
+        "index": 3,
+        "category": "necesaria",
+        "text": "B3: ¿El estado del label el 2025-07-15T00:00Z era 0 certificado, pendiente o inexistente?"
+      },
+      {
+        "index": 4,
+        "category": "opcional_contextual",
+        "text": "General: ¿Hay un historial o snapshot de labels al 2025-07-15T00:00Z para verificar B1 y B2 de forma independiente?"
+      },
+      {
+        "index": 5,
+        "category": "redundante",
+        "text": "General: ¿Se debe reconstruir el entrenamiento con el estado de labels del 2025-07-15 (as-of) o con el de la extracción? Esto define si B1 se excluye o se reetiqueta en un reentrenamiento posterior."
+      }
+    ],
+    "findings": []
+  },
+  {
+    "case": "B",
+    "condition": "baseline",
+    "repetition": 2,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "B1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "B2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "B3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "necesaria",
+        "text": "B3: ¿Qué regla o proceso produce churn=0 con fecha_evento vacía (ausencia certificada, valor por defecto o no resuelto)?"
+      },
+      {
+        "index": 2,
+        "category": "necesaria",
+        "text": "B3: ¿Existió certificación de Auditoría para la ventana [2025-06-01, 2025-07-01)? Si existió, ¿cuándo se publicó en el sistema de entrenamiento: antes, en o después de 2025-07-15T00:00Z?"
+      },
+      {
+        "index": 3,
+        "category": "necesaria",
+        "text": "B3: ¿Hay historial de versiones o logs de publicación del label que permitan reconstruir el valor vigente el 2025-07-15?"
+      },
+      {
+        "index": 4,
+        "category": "redundante",
+        "text": "B1: ¿Hay confirmación de que el flag sin resolver previo al 2025-08-05 no se publicó nunca como 0 ni como 1 certificado? Se asume que no, según el ticket."
+      },
+      {
+        "index": 5,
+        "category": "opcional_contextual",
+        "text": "General: ¿Se puede obtener un snapshot as-of 2025-07-15T00:00Z de los labels para reconstruir el entrenamiento sin depender del CSV, que reemplaza valores anteriores?"
+      }
+    ],
+    "findings": []
+  },
+  {
+    "case": "C",
+    "condition": "baseline",
+    "repetition": 1,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "C1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "C2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "C3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "problematica",
+        "text": "¿Se puede confirmar la fecha real de publicación del acta de C2? Si se publicó antes del 2025-08-15, no habría que clasificarlo como pending."
+      },
+      {
+        "index": 2,
+        "category": "redundante",
+        "text": "¿Se pretende reconstruir el entrenamiento tal como fue el 2025-07-15, donde C3 se excluye, o un reentrenamiento posterior a la extracción, donde C3 sería utilizable?"
+      },
+      {
+        "index": 3,
+        "category": "redundante",
+        "text": "¿Las actas se registran en el sistema de entrenamiento con un timestamp propio? Se asumió que la fecha de publicación equivale a la disponibilidad en el sistema."
+      },
+      {
+        "index": 4,
+        "category": "opcional_contextual",
+        "text": "¿Excluir C2 y C3 sesga la muestra hacia ventanas cortas? Conviene revisar el sesgo de selección antes de entrenar. La muestra no tiene positivos, así que además no hay señal de churn para aprender."
+      }
+    ],
+    "findings": [
+      {
+        "question_index": 1,
+        "issue": "Propone cambiar pending si el acta se publicó antes de extracción, aunque la regla exige cerrar la ventana el 1 de septiembre, posterior a extracción. La hipótesis contradice la regla de certificación conocida."
+      }
+    ]
+  },
+  {
+    "case": "C",
+    "condition": "baseline",
+    "repetition": 2,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "C1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "C2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "C3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "redundante",
+        "text": "¿El entrenamiento histórico debe reconstruirse con el conocimiento disponible al 2025-07-15T00:00Z (point-in-time)? Si es así, C3 queda excluido. Si se admite un reentrenamiento posterior al 2025-07-20, C3 pasaría a elegible."
+      },
+      {
+        "index": 2,
+        "category": "opcional_contextual",
+        "text": "¿Cuál es la fecha prevista exacta del acta de C2? Solo consta 'no antes del cierre' de la ventana (2025-09-01)."
+      },
+      {
+        "index": 3,
+        "category": "redundante",
+        "text": "¿Las features de C1, C2 y C3 se calcularon con corte al 2025-05-31T18:00Z, o alguna se recalculó después?"
+      },
+      {
+        "index": 4,
+        "category": "opcional_contextual",
+        "text": "¿El churn=0 del CSV de C2 tiene marca de provisionalidad, o puede confundirse con un negativo certificado en el pipeline?"
+      },
+      {
+        "index": 5,
+        "category": "redundante",
+        "text": "¿Los timestamps de publicación de las actas son los del sistema de entrenamiento o los de otro sistema? La disponibilidad requiere el valor certificado en el sistema de entrenamiento."
+      }
+    ],
+    "findings": []
+  },
+  {
+    "case": "D",
+    "condition": "baseline",
+    "repetition": 1,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "D1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "D2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "D3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "opcional_contextual",
+        "text": "¿El almacén de entrenamiento conserva la fecha de publicación (snapshot as-of) como fuente verificable? La publicación del 18 de julio de D1 es lo que decide su exclusión."
+      },
+      {
+        "index": 2,
+        "category": "opcional_contextual",
+        "text": "Excluir D1 y otros positivos de publicación tardía puede sesgar el entrenamiento: quedan menos positivos y los que se certifican rápido pesan más. ¿Se acepta, o se pospone el entrenamiento hasta que se publiquen los labels?"
+      },
+      {
+        "index": 3,
+        "category": "redundante",
+        "text": "¿Qué hora y zona usa el almacén para el corte de entrenamiento? Aquí se asume UTC, como indican los documentos."
+      },
+      {
+        "index": 4,
+        "category": "opcional_contextual",
+        "text": "¿Hay más registros con certificación pendiente o publicada tras el corte? Con solo tres expedientes no se puede medir el alcance."
+      }
+    ],
+    "findings": []
+  },
+  {
+    "case": "D",
+    "condition": "baseline",
+    "repetition": 2,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "D1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "D2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "D3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "redundante",
+        "text": "¿Se reconstruye el entrenamiento tal como se hizo el 2025-07-15, que excluye D1, o un entrenamiento con conocimiento de la extracción del 2025-08-15, que incluiría D1? Esta auditoría aplica la primera opción."
+      },
+      {
+        "index": 2,
+        "category": "opcional_contextual",
+        "text": "Excluir D1 elimina un positivo cuya certificación se publicó tarde. ¿Cuántos positivos se pierden de esta forma en el conjunto completo, y sesga eso la prevalencia o la selección de la muestra?"
+      },
+      {
+        "index": 3,
+        "category": "opcional_contextual",
+        "text": "¿Hay marcas de tiempo de publicación en el almacén para todos los registros? Aquí solo se verificaron tres expedientes."
+      },
+      {
+        "index": 4,
+        "category": "redundante",
+        "text": "¿El extracto muestra el estado a la extracción (2025-08-15) y no el estado al entrenamiento? D1 aparece con target=1 aunque no estaba publicado el 15/07; hay que confirmar que ese valor no se usó en el entrenamiento original."
+      },
+      {
+        "index": 5,
+        "category": "redundante",
+        "text": "¿Se verificó la disponibilidad real de las features más allá de la regla general (2025-05-31T18:00Z)? Los expedientes no declaran excepciones."
+      }
+    ],
+    "findings": []
+  },
+  {
+    "case": "E",
+    "condition": "baseline",
+    "repetition": 1,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "E1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "E2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "E3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "necesaria",
+        "text": "E3: ¿Existe alguna fuente (logs de ETL, auditoría del sistema, fecha de carga, backups) que permita determinar cuándo estuvo disponible por primera vez el valor exportado de saldo_historico? Debe ser anterior o igual al 1 jun 2025 00:00Z."
+      },
+      {
+        "index": 2,
+        "category": "necesaria",
+        "text": "E3: ¿Se recibió alguna corrección o reconstrucción de saldo_historico tras el 31 de mayo, como en E1? ¿El valor exportado es el original o uno reconstruido?"
+      },
+      {
+        "index": 3,
+        "category": "opcional_contextual",
+        "text": "E1: ¿Existe una versión de saldo_historico anterior a la corrección del 2 jun que se pueda usar legítimamente? El expediente indica que la feature usada es la reconstruida, por lo que habría que recalcular el registro con la versión previa para reincorporarlo."
+      },
+      {
+        "index": 4,
+        "category": "redundante",
+        "text": "¿La certificación del 5 jul 08:00 corresponde al valor en el sistema de entrenamiento? Se asume que sí por el acta común, y habría que confirmarlo antes de aprobar el gate."
+      }
+    ],
+    "findings": []
+  },
+  {
+    "case": "E",
+    "condition": "baseline",
+    "repetition": 2,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "E1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "E2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "E3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "necesaria",
+        "text": "E3: ¿existe alguna evidencia alternativa (logs de carga, versionado del origen, metadatos del pipeline, registros de auditoría) que determine cuándo estuvo disponible el valor exportado de saldo_historico? Debe ser anterior o igual al 2025-06-01T00:00:00Z."
+      },
+      {
+        "index": 2,
+        "category": "opcional_contextual",
+        "text": "E1: ¿se puede reconstruir saldo_historico con la versión disponible al 2025-06-01T00:00:00Z, previa a la corrección del 2 jun 08:00? Si no, el registro debe seguir excluido."
+      },
+      {
+        "index": 3,
+        "category": "opcional_contextual",
+        "text": "¿Cuál es la política para registros con disponibilidad de features indeterminada: excluirlos del entrenamiento hasta tener evidencia, o admitirlos con una sensibilidad documentada? Lo decide un responsable humano."
+      },
+      {
+        "index": 4,
+        "category": "redundante",
+        "text": "¿Se confirma que 'negativo definitivo' certificado el 5 jul cubre todo el evento objetivo de [1 jun, 1 jul) y que no hay correcciones posteriores al label?"
+      }
+    ],
+    "findings": []
+  },
+  {
+    "case": "F",
+    "condition": "baseline",
+    "repetition": 1,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "F1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "F2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "F3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "necesaria",
+        "text": "F1: ¿Qué fuente es la autoritativa sobre la primera disponibilidad del label en el sistema de entrenamiento: el acta del almacén (2025-07-10 08:00Z) o el registro de publicación (2025-07-20 08:00Z)? Hace falta una resolución o prioridad documentada. Si gana el acta, F1 sería elegible. Si gana el registro, se excluiría."
+      },
+      {
+        "index": 2,
+        "category": "necesaria",
+        "text": "F1: ¿Existe un log del propio sistema de entrenamiento que muestre cuándo se certificó el valor del label?"
+      },
+      {
+        "index": 3,
+        "category": "necesaria",
+        "text": "F3: ¿Cuál de las dos bitácoras de la feature es correcta (2025-05-31 18:00Z o 2025-06-02 08:00Z)? Esto no cambia la exclusión de F3 por label no disponible. Sí importa si F3 se reutiliza en un entrenamiento posterior, donde la feature tardía sería leakage."
+      },
+      {
+        "index": 4,
+        "category": "opcional_contextual",
+        "text": "¿Se puede reconstruir el entrenamiento con un corte de datos posterior al 2025-07-20, de modo que F1 y F3 tengan label disponible?"
+      }
+    ],
+    "findings": []
+  },
+  {
+    "case": "F",
+    "condition": "baseline",
+    "repetition": 2,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "F1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "F2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "F3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "necesaria",
+        "text": "F1: ¿Qué fuente es la autoritativa para la primera disponibilidad del label en el sistema de entrenamiento, el acta del almacén (2025-07-10 08:00) o el registro de publicación (2025-07-20 08:00)? ¿Existe una regla de prioridad o un log del sistema de entrenamiento que lo resuelva?"
+      },
+      {
+        "index": 2,
+        "category": "necesaria",
+        "text": "F3: ¿Cuál bitácora de la feature es correcta (2025-05-31 18:00 o 2025-06-02 08:00)? No cambia la exclusión por label, pero importa si el label llegara a considerarse disponible."
+      },
+      {
+        "index": 3,
+        "category": "opcional_contextual",
+        "text": "¿Se mantiene la exclusión de F3 si el equipo decide reentrenar con un corte posterior al 2025-07-20?"
+      }
+    ],
+    "findings": []
+  },
+  {
+    "case": "A",
+    "condition": "treatment",
+    "repetition": 1,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "A1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "A2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "A3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "redundante",
+        "text": "¿Confirma Operaciones que 'no se retiró' en A1 y A2 está certificado por el sistema de entrenamiento, y no es solo lo que muestra el extracto?"
+      },
+      {
+        "index": 2,
+        "category": "opcional_contextual",
+        "text": "¿Hay un tamaño de ventana de reevaluación para A3 (p. ej. reextraer después del 2025-08-19T10:00Z) para fijar su estado definitivo?"
+      },
+      {
+        "index": 3,
+        "category": "redundante",
+        "text": "¿Los límites de la ventana objetivo [1 de julio, 15 de agosto) y el plazo de 7×24 h se cuentan exactamente desde la hora de recepción, sin redondeo a día calendario?"
+      }
+    ],
+    "findings": []
+  },
+  {
+    "case": "A",
+    "condition": "treatment",
+    "repetition": 2,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "A1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "A2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "A3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "redundante",
+        "text": "La introducción general indica predicción el 2025-06-01T00:00Z y features del 2025-05-31T18:00Z. La Nota de Operaciones fija el 2025-07-01T00:00Z y el 2025-06-30T18:00Z. Se aplicó la nota por ser una diferencia explícita para estos expedientes. ¿Confirma Operaciones esas fechas? El resultado no cambia con ninguna de las dos, porque en ambas las features son anteriores a la predicción."
+      },
+      {
+        "index": 2,
+        "category": "redundante",
+        "text": "¿Los siete periodos de 24 h se cuentan exactamente desde la hora de recepción, como se asumió, o hay un redondeo por calendario o por lote? Con los datos dados, ningún resultado depende de ello."
+      },
+      {
+        "index": 3,
+        "category": "redundante",
+        "text": "¿Existen marcas de tiempo reales de certificación en el sistema de entrenamiento (label_available_at) para A1 y A2? Aquí se derivaron de la regla de la nota, no de un registro."
+      },
+      {
+        "index": 4,
+        "category": "opcional_contextual",
+        "text": "Para A3: ¿qué se hará con el label cuando se certifique (después de 2025-08-19T10:00Z) en una reconstrucción posterior? Si se retira la petición, no sería churn=1, pero no se puede asumir un negativo sin una regla de certificación para negativos."
+      }
+    ],
+    "findings": []
+  },
+  {
+    "case": "B",
+    "condition": "treatment",
+    "repetition": 1,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "B1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "B2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "B3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "necesaria",
+        "text": "B3: ¿Qué regla produce el churn=0 y ese valor está certificado? ¿Es un cero por defecto o provisional?"
+      },
+      {
+        "index": 2,
+        "category": "necesaria",
+        "text": "B3: ¿Cuándo se certificó y publicó el valor en el sistema de entrenamiento? ¿Fue en 2025-07-15T00:00Z o antes, y existe historial de versiones del label?"
+      },
+      {
+        "index": 3,
+        "category": "necesaria",
+        "text": "B3: ¿Por qué fecha_evento está vacía? ¿Significa ausencia de evento, dato faltante o fila sin resolver?"
+      },
+      {
+        "index": 4,
+        "category": "redundante",
+        "text": "B1: ¿Cuál era el flag sin resolver antes del 5 de agosto, y debe tratarse como no disponible en el entrenamiento? Esta auditoría lo trata así, y el ticket no lo contradice."
+      },
+      {
+        "index": 5,
+        "category": "opcional_contextual",
+        "text": "¿Se puede reconstruir un snapshot as-of 2025-07-15 de los labels, dado que el CSV actual reemplaza valores anteriores?"
+      },
+      {
+        "index": 6,
+        "category": "necesaria",
+        "text": "¿Hay documentada una regla de certificación que admita positivos tempranos o negativos al cierre de ventana? Los expedientes solo la describen para B1 y B2 mediante tickets."
+      }
+    ],
+    "findings": []
+  },
+  {
+    "case": "B",
+    "condition": "treatment",
+    "repetition": 2,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "B1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "B2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "B3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "necesaria",
+        "text": "B3: ¿Qué regla genera el churn=0 y existe certificación definitiva para la ventana [2025-06-01, 2025-07-01)? ¿Cuándo se certificó y se publicó en el sistema de entrenamiento?"
+      },
+      {
+        "index": 2,
+        "category": "necesaria",
+        "text": "B3: ¿Hay historial de versiones o auditoría del sistema de entrenamiento que muestre el valor y la fecha de publicación antes de 2025-07-15T00:00Z?"
+      },
+      {
+        "index": 3,
+        "category": "necesaria",
+        "text": "B3: ¿La fecha_evento vacía significa ausencia certificada de evento, o un dato faltante o aún no resuelto?"
+      },
+      {
+        "index": 4,
+        "category": "opcional_contextual",
+        "text": "B1: ¿Cuál era el flag sin resolver antes del 2025-08-05 y se usó como label en el entrenamiento? Si se usó, hay que revisar el pipeline porque el flag no era un label certificado."
+      },
+      {
+        "index": 5,
+        "category": "opcional_contextual",
+        "text": "¿Conviene guardar una tabla de versiones de labels (valor, certificado_en, publicado_en) para evitar que el CSV actual sobrescriba el historial en futuras reconstrucciones?"
+      },
+      {
+        "index": 6,
+        "category": "opcional_contextual",
+        "text": "Decisión humana pendiente: confirmar el tratamiento de B3 (excluir o conservar hasta obtener evidencia) antes de reconstruir el entrenamiento."
+      }
+    ],
+    "findings": []
+  },
+  {
+    "case": "C",
+    "condition": "treatment",
+    "repetition": 1,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "C1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "C2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "C3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "opcional_contextual",
+        "text": "No hay preguntas bloqueantes para clasificar los tres registros con las reglas dadas. Para C2, ¿cuál es la fecha real de publicación del acta? Solo se sabe que no es anterior al cierre de la ventana, y no cambia la exclusión."
+      },
+      {
+        "index": 2,
+        "category": "redundante",
+        "text": "¿Se confirma que 'no se registraron eventos positivos' vale para todo el seguimiento de la muestra? El enunciado lo afirma, pero con tan pocos registros no hay positivos con los que evaluar la validación."
+      },
+      {
+        "index": 3,
+        "category": "opcional_contextual",
+        "text": "La muestra tiene tres filas y ningún positivo, y solo C1 es elegible. ¿Es esta la población completa o un extracto? Si es completa, el entrenamiento no es viable con estos datos."
+      },
+      {
+        "index": 4,
+        "category": "opcional_contextual",
+        "text": "Decisión humana pendiente: ¿se acepta excluir C2 y C3 o se reconstruye el entrenamiento con otro training_timestamp? No se puede aprobar el gate."
+      }
+    ],
+    "findings": []
+  },
+  {
+    "case": "C",
+    "condition": "treatment",
+    "repetition": 2,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "C1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "C2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "C3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "opcional_contextual",
+        "text": "C2: ¿cuál es la fecha prevista o real de publicación del acta? Solo se sabe que no es anterior al cierre de la ventana (2025-09-01). No cambia la decisión, que es unavailable/exclude, pero sirve para documentar el caso."
+      },
+      {
+        "index": 2,
+        "category": "redundante",
+        "text": "¿Se confirma que el sistema de entrenamiento registra el valor certificado solo desde la publicación del acta? Se asumió que sí, según el documento: la publicación certifica el negativo y lo hace disponible."
+      },
+      {
+        "index": 3,
+        "category": "redundante",
+        "text": "Las diferencias explícitas en las features por expediente no constan, así que se aplicó la regla general (disponibles el 2025-05-31T18:00Z). ¿Hay excepciones no documentadas?"
+      },
+      {
+        "index": 4,
+        "category": "opcional_contextual",
+        "text": "La muestra no tiene positivos ni pérdida de seguimiento distinta de la ventana abierta. ¿Hay que reconstruir el entrenamiento con solo 1 fila elegible? Es un volumen insuficiente para validar."
+      }
+    ],
+    "findings": []
+  },
+  {
+    "case": "D",
+    "condition": "treatment",
+    "repetition": 1,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "D1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "D2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "D3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "opcional_contextual",
+        "text": "Sin preguntas bloqueantes: los tres expedientes traen fechas de publicación explícitas y no hay diferencias en predicción ni en features. La decisión final del gate queda para revisión humana."
+      },
+      {
+        "index": 2,
+        "category": "redundante",
+        "text": "Para confirmar con el equipo: la hora de publicación 06:00 está en UTC, como indica el encabezado del documento. Si no lo estuviera, el resultado de D1 no cambiaría (18 de julio sigue siendo posterior al 15 de julio)."
+      },
+      {
+        "index": 3,
+        "category": "opcional_contextual",
+        "text": "Para confirmar con el equipo: excluir D1 deja el conjunto con un positivo y un negativo elegibles. El volumen y la prevalencia resultantes son pequeños y conviene revisarlos en el conjunto completo."
+      }
+    ],
+    "findings": []
+  },
+  {
+    "case": "D",
+    "condition": "treatment",
+    "repetition": 2,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "D1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "D2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "D3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "redundante",
+        "text": "¿Se confirma que el 'almacén usado por entrenamiento' es el mismo sistema donde constan las fechas de publicación (D1: 2025-07-18T06:00Z)? Si el entrenamiento leyó otro almacén, la disponibilidad de D1 podría cambiar."
+      },
+      {
+        "index": 2,
+        "category": "opcional_contextual",
+        "text": "¿Hay registros de auditoría de la publicación de D1 que descarten una publicación previa o una versión anterior del label? Con los datos provistos, la publicación fue el 18 de julio."
+      },
+      {
+        "index": 3,
+        "category": "opcional_contextual",
+        "text": "Excluir D1 elimina un positivo de dos. ¿Qué efecto tiene sobre la prevalencia y el tamaño del entrenamiento? Conviene revisar la tasa de positivos con el conjunto completo."
+      },
+      {
+        "index": 4,
+        "category": "redundante",
+        "text": "¿Las features de los tres expedientes comparten realmente la disponibilidad 2025-05-31T18:00Z? Los documentos dicen 'salvo diferencias explícitas' y no declaran ninguna, así que se asumió la regla general."
+      }
+    ],
+    "findings": []
+  },
+  {
+    "case": "E",
+    "condition": "treatment",
+    "repetition": 1,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "E1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "E2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "E3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "necesaria",
+        "text": "E3: ¿Cuándo estuvo disponible por primera vez en el sistema el valor exportado de saldo_historico? Se necesita un log de versiones, una auditoría de la tabla o una captura. Si fue en 2025-06-01T00:00Z o antes, la fila sería elegible. Si fue después, se excluiría."
+      },
+      {
+        "index": 2,
+        "category": "opcional_contextual",
+        "text": "E1: ¿Se confirma que no hay una versión previa de saldo_historico utilizable? El expediente dice que la feature usada es la reconstruida, disponible desde 2025-06-02T08:00Z. Si el entrenamiento reconstruyera la feature con la versión previa, cambiaría la feature y habría que reauditar."
+      },
+      {
+        "index": 3,
+        "category": "redundante",
+        "text": "¿Se confirma que la hora de publicación y certificación (2025-07-05T08:00Z) corresponde al valor certificado en el sistema de entrenamiento? El acta lo afirma, pero no se aportó evidencia independiente del sistema."
+      },
+      {
+        "index": 4,
+        "category": "opcional_contextual",
+        "text": "Esta auditoría aplica solo a estos tres registros. No evalúa la estrategia de validación ni el pipeline completo. Ambos requieren revisión humana."
+      }
+    ],
+    "findings": []
+  },
+  {
+    "case": "E",
+    "condition": "treatment",
+    "repetition": 2,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "E1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "E2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "E3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "necesaria",
+        "text": "E3: ¿existe alguna fuente (logs del ETL, versionado del almacén, auditoría de la carga) que pruebe cuándo estuvo disponible el valor exportado de saldo_historico? Debe ser <= 2025-06-01T00:00:00Z para que la fila sea elegible."
+      },
+      {
+        "index": 2,
+        "category": "opcional_contextual",
+        "text": "E1: ¿hay una versión de saldo_historico disponible antes del 2025-06-01T00:00Z que pueda usarse como feature alternativa? El expediente indica que se usa la versión corregida, así que no se asume ninguna otra."
+      },
+      {
+        "index": 3,
+        "category": "redundante",
+        "text": "Confirmar que la certificación del 2025-07-05T08:00Z consta en el sistema de entrenamiento y no solo en la publicación, como exige la definición de disponibilidad de labels."
+      },
+      {
+        "index": 4,
+        "category": "opcional_contextual",
+        "text": "Decidir si E3 se excluye hasta tener evidencia o si se tolera como riesgo documentado. Esta decisión corresponde a una persona."
+      }
+    ],
+    "findings": []
+  },
+  {
+    "case": "F",
+    "condition": "treatment",
+    "repetition": 1,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "F1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "F2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "F3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "necesaria",
+        "text": "F1: ¿Qué fuente es la autoritativa para la disponibilidad del label en el sistema de entrenamiento: el acta del almacén (10 jul 08:00) o el registro de publicación (20 jul 08:00)? ¿Existe una regla de prioridad o una resolución firmada? Si prevalece el acta, F1 sería elegible. Si prevalece el registro de publicación, F1 se excluiría."
+      },
+      {
+        "index": 2,
+        "category": "necesaria",
+        "text": "F3: ¿Cuál bitácora de la feature es la correcta (31 may 18:00 o 2 jun 08:00)? No cambia la exclusión de F3, que ya está probada por el label. Sí importa si esa feature se usa en otros registros."
+      },
+      {
+        "index": 3,
+        "category": "opcional_contextual",
+        "text": "¿Hay una regla de certificación del target (positivos tempranos, tratamiento de negativos) documentada? Se asumió solo lo que dicen los documentos: los tres outcomes son definitivos en la extracción."
+      },
+      {
+        "index": 4,
+        "category": "redundante",
+        "text": "El encargo no proporciona timestamps de ventana de outcome por registro más allá de [1 jun, 1 jul). No se completó ninguno."
+      }
+    ],
+    "findings": []
+  },
+  {
+    "case": "F",
+    "condition": "treatment",
+    "repetition": 2,
+    "reviewer": "autor; no ciego ni independiente",
+    "rows": [
+      {
+        "id": "F1",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "F2",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      },
+      {
+        "id": "F3",
+        "reason_error": false,
+        "note": "Razón coherente con reglas, evidencia y clasificación; sin contradicción material observada."
+      }
+    ],
+    "question_entries": [
+      {
+        "index": 1,
+        "category": "necesaria",
+        "text": "F1: ¿Qué fuente prevalece sobre la primera disponibilidad del label en el sistema de entrenamiento, el acta del almacén (10 jul 08:00) o el registro de publicación (20 jul 08:00)? ¿Existe una resolución firmada o una regla de prioridad? Si prevalece el acta, F1 sería elegible. Si prevalece el registro de publicación, sería excluida."
+      },
+      {
+        "index": 2,
+        "category": "necesaria",
+        "text": "F1: ¿Cuál de las dos fuentes refleja la fecha en que el valor certificado estuvo en el sistema de entrenamiento, y no solo la ocurrencia del evento?"
+      },
+      {
+        "index": 3,
+        "category": "necesaria",
+        "text": "F3: Aunque ya está excluida por el label, ¿qué bitácora de la feature es correcta (31 may 18:00 o 2 jun 08:00)? Importa si se reevalúa F3 con otro training_timestamp, o si esa feature se usa en otros registros, porque la segunda fecha sería posterior a la predicción."
+      },
+      {
+        "index": 4,
+        "category": "redundante",
+        "text": "¿Se confirma que el training_timestamp 2025-07-15T00:00Z es el instante real de construcción del conjunto, y no un cutoff con otro significado?"
+      }
+    ],
+    "findings": []
+  }
+]

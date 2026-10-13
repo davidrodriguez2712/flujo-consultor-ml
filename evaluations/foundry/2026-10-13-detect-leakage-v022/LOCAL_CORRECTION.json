@@ -1,0 +1,9 @@
+{
+  "reason": "Whitelist apuntabaSKILL-0.2.1noexistente; fallo local previoProxy/API",
+  "paid_calls_failed_attempt": 0,
+  "old_package_preserved": true,
+  "new_manifest": "053d47f60cf2addecedd97ecd0500f0e7b87a0d35e0bfcd02bcde7e603f07e8e",
+  "only_change": "Nombre whitelist0.2.1→0.2.2",
+  "preflight_policy": "PASS",
+  "task_and_expected_unchanged": true
+}

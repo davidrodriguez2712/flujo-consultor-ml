@@ -1,0 +1,13 @@
+{
+  "issue": "La etiqueta last_baseline_stability del log ad hoc apunta a rows[3], que es primer intervalo del baseline; JSON diagnóstico completo tiene valores correctos.",
+  "correction": "Consultar última transición por método y to_cutoff; no usar índice posicional.",
+  "last_baseline_stability": {
+    "method": "historical_sales",
+    "from_cutoff": "2011-06-01T00:00:00",
+    "to_cutoff": "2011-09-01T00:00:00",
+    "shared_selected_customers": 60,
+    "retention_share_previous": 0.6,
+    "jaccard": 0.42857142857142855
+  },
+  "underlying_diagnostic_json_changed": false
+}

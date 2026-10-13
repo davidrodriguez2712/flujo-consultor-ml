@@ -1,0 +1,40 @@
+{
+  "synthetic": true,
+  "files": {
+    "applications.csv": {
+      "sha256_match": true,
+      "rows_match": true,
+      "unique_application_ids": true
+    },
+    "history.csv": {
+      "sha256_match": true,
+      "rows_match": true,
+      "unique_application_ids": true
+    },
+    "decisions.csv": {
+      "sha256_match": true,
+      "rows_match": true,
+      "unique_application_ids": true
+    },
+    "outcomes.csv": {
+      "sha256_match": true,
+      "rows_match": true,
+      "unique_application_ids": true
+    },
+    "post_decision.csv": {
+      "sha256_match": true,
+      "rows_match": true,
+      "unique_application_ids": true
+    }
+  },
+  "applications": 7200,
+  "unique_customers": 1766,
+  "label_counts": {
+    "not_observed_rejected": 3726,
+    "observed": 3084,
+    "pending": 390
+  },
+  "observed_positives": 380,
+  "api_calls": 0,
+  "scope": "Integridad de archivos y claves; no validación de eficacia de modelo o skills."
+}

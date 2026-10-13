@@ -1,0 +1,27 @@
+{
+  "context": "Auditoría ficticia de procesos; septiembre 2025. Decisión: afirmar tasa de error y ahorros de toda la organización. Owner: responsable de operaciones.",
+  "evidence": {
+    "E1": "35 errores confirmados en 100 expedientes auditados, seleccionados deliberadamente por mayor riesgo; no muestra probabilística.",
+    "E2": "Población total 10000 expedientes. No hay probabilidad de inclusión ni datos representativos para los restantes.",
+    "E3": "No hay costes, horas monetizadas ni efecto de corrección para estimar ahorro."
+  },
+  "draft_claims": [
+    {
+      "id": "D1",
+      "text": "Hay 3500 errores en toda la población."
+    },
+    {
+      "id": "D2",
+      "text": "35% de los expedientes auditados tienen error confirmado."
+    },
+    {
+      "id": "D3",
+      "text": "Corregirlos ahorrará USD 50000 anuales."
+    }
+  ],
+  "numeric_fields": [
+    "audited_error_rate",
+    "population_error_rate",
+    "annual_savings_usd"
+  ]
+}

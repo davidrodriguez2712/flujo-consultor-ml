@@ -1,0 +1,229 @@
+from pathlib import Path
+import json,hashlib,yaml
+p=Path('pilots/retail-valor-90d-publico')
+def write(rel,text):q=p/rel;q.parent.mkdir(parents=True,exist_ok=True);q.write_text(text)
+def sha(q):return hashlib.sha256(q.read_bytes()).hexdigest()
+def get(rel,field):
+ o=json.loads((p/rel).read_text())
+ for part in field.split('.'):o=o[int(part)] if isinstance(o,list) else o[part]
+ return o
+
+def fmt(x,style):
+ if style=='money':return 'GBP '+f'{x:,.2f}'.replace(',','@').replace('.',',').replace('@','.')
+ if style=='percent_fraction':return f'{100*x:.2f}'.replace('.',',')+'%'
+ if style=='percent':return f'{x:.2f}'.replace('.',',')+'%'
+ if style=='integer':return f'{x:,}'.replace(',','.')
+ if style=='date':return str(x)[:10]
+ if style=='decimal3':return f'{x:.3f}'.replace('.',',')
+ return str(x)
+claims=[];facts={}
+def add(id,label,source,field,style='text',kind='observed'):
+ value=get(source,field);display=fmt(value,style)
+ claims.append({'id':id,'type':kind,'text':label+': '+display+'.','source':source,'field':field,'source_sha256':sha(p/source),'value':value,'format':style,'display':display})
+ facts[id]=display
+h='reports/validation/holdout-results.json';dev='reports/execution/development-summary.json';snap='reports/execution/snapshot_checks.json';diag='reports/validation/selection-diagnostics.json';rule='reports/execution/approved-contracts.json'
+for id,label,field,style in [
+ ('OBS001','Método recomendado','decision.recommended_method','text'),('OBS002','Clientes elegibles finales','metrics.historical_sales.eligible_count','integer'),('OBS003','Top-K efectivo final','metrics.historical_sales.effective_k','integer'),('OBS004','Ventas válidas futuras observadas en seleccionados','metrics.historical_sales.top_k_sales','money'),('OBS005','Ventas válidas futuras de todos los elegibles','metrics.historical_sales.eligible_sales','money'),('OBS006','Fracción de ventas elegibles en seleccionados','metrics.historical_sales.sales_share','percent_fraction'),('OBS007','MAE monetario por cliente','metrics.historical_sales.mae','money'),('OBS008','Concentración Top-1 por outcome dentro de seleccionados','metrics.historical_sales.top1_sales_share_within_top_k','percent_fraction'),('OBS009','Concentración Top-10 por outcome dentro de seleccionados','metrics.historical_sales.top10_sales_share_within_top_k','percent_fraction'),('OBS010','Períodos development','decision.development_selection.period_count','integer'),('OBS011','Cutoff final','cutoff','date'),('OBS012','Fin exclusivo del horizonte final','label_end','date'),('OBS013','Gasto API del piloto','api_cost_usd','integer')]:add(id,label,h,field,style)
+for id,label,field,style in [('OBS014','Ventas Top-K agregadas baseline development','development_sales_top_k_gbp.historical_sales','money'),('OBS015','Ventas Top-K agregadas Ridge development','development_sales_top_k_gbp.ridge_log','money'),('OBS016','Ventas Top-K agregadas HistGradient development','development_sales_top_k_gbp.hist_gradient_log','money'),('OBS017','Variación Ridge frente a baseline development','relative_to_baseline_pct.ridge_log','percent'),('OBS018','Variación HistGradient frente a baseline development','relative_to_baseline_pct.hist_gradient_log','percent'),('OBS019','Períodos perdidos Ridge','losing_periods.ridge_log','integer'),('OBS020','Períodos perdidos HistGradient','losing_periods.hist_gradient_log','integer')]:add(id,label,dev,field,style)
+for id,label,field in [('OBS021','Líneas originales','source_rows'),('OBS022','Líneas de compras válidas','valid_rows'),('OBS023','Copias entre hojas reconciliadas','cross_sheet_copies'),('OBS024','Líneas excluidas','excluded_rows'),('OBS025','Líneas excluidas por ID ausente','exclusion_counts.missing_customer_id'),('OBS026','Líneas excluidas por códigos no estándar','exclusion_counts.nonstandard_code')]:add(id,label,snap,field,'integer')
+for id,label,field,style in [('OBS027','Cancelaciones de seleccionados en horizonte final','selected_final_cancellations.lines','integer'),('OBS028','Seleccionados con cancelaciones en horizonte','selected_final_cancellations.customers','integer'),('OBS029','Importe firmado de cancelaciones de seleccionados','selected_final_cancellations.signed_amount_gbp','money')]:add(id,label,diag,field,style)
+add('OBS030','Miembros que permanecen en ranking final respecto a previo','reports/validation/selection-diagnostics-correction.json','last_baseline_stability.shared_selected_customers','integer')
+add('OBS031','Jaccard entre últimos rankings baseline','reports/validation/selection-diagnostics-correction.json','last_baseline_stability.jaccard','decimal3')
+add('OBS032','Tests del piloto que pasan','reports/validation/verification.json','suite_passed','integer')
+add('OBS033','Métodos evaluados en holdout',h,'evaluated_methods','text')
+add('OBS034','Holdout ejecutado una vez','reports/validation/verification.json','holdout_attempts','integer')
+add('ASM001','Historia para elegibilidad',rule,'retail.history_days','integer','assumption');add('ASM002','Horizonte del outcome',rule,'retail.horizon_days','integer','assumption');add('ASM003','Ventana del baseline',rule,'retail.baseline_days','integer','assumption');add('ASM004','Capacidad simulada',rule,'retail.capacity','integer','assumption');add('ASM005','Observabilidad supuesta',rule,'retail.timestamp_policy.availability_assumption','text','assumption')
+add('LIM001','El target no identifica','framing/retail_contract.json' if False else rule,'retail.target.not_identified','text','limitation')
+claims.extend([
+ {'id':'LIM002','type':'limitation','text':'Encargo, cliente y capacidad simulados; no existe campaña observada.','source':'PROJECT.md','source_sha256':sha(p/'PROJECT.md'),'evidence_excerpt':'no existe un cliente contratante ni campaña observada'},
+ {'id':'LIM003','type':'limitation','text':'El holdout describe únicamente baseline, sin nueva comparación contra modelos descartados.','source':h,'field':'interpretation','source_sha256':sha(p/h),'value':get(h,'interpretation')},
+ {'id':'PROP001','type':'proposal','text':'Si se quiere decidir una campaña, validar datos actuales as-of y diseñar una prueba causal con grupos comparables, outcome y costes acordados.','source':'reports/validation/review.md','source_sha256':sha(p/'reports/validation/review.md'),'evidence_excerpt':'se requiere prueba causal distinta'},
+])
+write('evidence/claims.yaml',yaml.safe_dump({'schema_version':1,'scope':'Piloto retail histórico; observed, assumption, proposal y limitation separados.','claims':claims},allow_unicode=True,sort_keys=False))
+write('reports/delivery/facts.json',json.dumps({'schema_version':1,'facts':facts,'source_policy':'Valores leídos de archivos congelados; solo formateo, sin nuevo cálculo de métricas.'},indent=2,ensure_ascii=False)+'\n')
+def f(id):return facts[id]+' ['+id+']'
+recommendation=f'''# Recomendación
+
+## Decisión
+
+Conservar **{f('OBS001')}**, ordenando por ventas válidas del historial de {f('ASM003')} días. Elegibilidad: compra válida en los últimos {f('ASM001')} días; capacidad simulada {f('ASM004')} clientes. Son reglas del piloto, no restricciones acreditadas de una empresa real [LIM002].
+
+La recomendación se apoya en development de {f('OBS010')} períodos: Ridge queda {f('OBS017')} y HistGradient {f('OBS018')} frente al baseline; cada uno pierde todos los períodos, según checks de aceptación congelados [OBS019][OBS020]. Ningún modelo supera la regla; no buscar más variantes en este holdout.
+
+## Qué respalda el benchmark final
+
+Al cutoff {f('OBS011')}, se seleccionaron {f('OBS003')} de {f('OBS002')} elegibles. Sus ventas válidas futuras hasta {f('OBS012')} exclusivo fueron {f('OBS004')}, equivalentes al {f('OBS006')} de ventas elegibles. No se atribuye ese importe al efecto de contactar clientes. El resultado final describe baseline sin comparar nuevamente los modelos descartados [LIM003].
+
+## Qué hacer con la lista
+
+`delivery/prioritization_retrospective.csv` es una ilustración histórica, con rank, customer_id, cutoff, score y model_id. No es una campaña para ejecutar hoy ni demuestra una política óptima de contacto [LIM001][LIM002]. No usar sus IDs como contactos comerciales.
+
+Si se requiere campaña actual: confirmar decisión, clientes elegibles, latencia y costes con el owner comercial; construir datos as-of actuales y acordar una prueba causal para medir efecto de contacto [PROP001]. Esa prueba requiere diseño y aprobación propios; este piloto no define sus parámetros.
+
+## Condiciones
+
+Observabilidad inmediata solo supuesta [ASM005]. Cancelaciones separadas y target positivo; no se identifican ventas netas, margen, CLV completo, uplift o ROI [LIM001]. Proponer seguimiento de estabilidad, cobertura y concentración, sin tratar estos diagnósticos como estimadores causales.
+
+Fuente de decisión: `reports/validation/holdout-results.json`; matriz: `evidence/claims.yaml`. Revisión Delivery pendiente, sin publicación ni envío externo.
+'''
+write('decision/recommendation.md',recommendation)
+memo=f'''# Decision memo — priorización comercial retail
+
+## Decisión propuesta
+
+**Mantener el baseline {f('OBS001')}** para este benchmark. El encargo y cliente son simulados; las transacciones UCI son reales e históricas [LIM002]. El ranking sirve para ilustrar una revisión comercial, sin campaña observada.
+
+## Evidencia para decidir
+
+| Desarrollo | Ventas válidas Top-K agregadas | Frente al baseline |
+|---|---:|---:|
+| Ventas históricas | {f('OBS014')} | Referencia |
+| Ridge | {f('OBS015')} | {f('OBS017')} |
+| HistGradient | {f('OBS016')} | {f('OBS018')} |
+
+Comparación sobre {f('OBS010')} períodos y misma población por cutoff. Ambos modelos pierden en todos los períodos [OBS019][OBS020]; ninguno cumple la aceptación. Selección congelada antes del final, sin tuning posterior.
+
+En el final histórico ({f('OBS011')} → {f('OBS012')} exclusivo): {f('OBS003')} seleccionados de {f('OBS002')} elegibles concentran **{f('OBS004')}**, el **{f('OBS006')}** de ventas válidas elegibles. Este es desempeño descriptivo del baseline; no una mejora comparativa final ni ventas adicionales causadas por contactarlos [LIM003].
+
+## Precauciones que afectan la decisión
+
+- Concentración de outcome dentro del Top-K: Top-1 {f('OBS008')}; Top-10 {f('OBS009')}. El resultado depende de pocos clientes con compras grandes.
+- Cancelaciones se auditan aparte: {f('OBS027')} líneas de {f('OBS028')} seleccionados; importe firmado {f('OBS029')}. No restarlo para atribuir ventas netas sin vínculo con compras originales.
+- Capacidad {f('ASM004')} e historia/horizonte son supuestos del encargo; disponibilidad as-of no acreditada [ASM005][LIM002].
+- Cero ventas futuras no demuestra churn; clientes anónimos/nuevos sin historia quedan fuera del ranking. El target no identifica beneficio, CLV completo o efecto de contacto [LIM001].
+
+## Siguiente decisión
+
+Aprobar una futura validación con datos actuales as-of y, si interesa efecto comercial, una prueba causal con población y costes acordados [PROP001]. La lista histórica no debe activarse como campaña actual.
+
+## Calidad y coste
+
+{f('OBS032')} tests pasan; selección previa y apertura final única trazables [OBS034]. Gasto API **US${f('OBS013')}**. El coste reportado no incluye tiempo humano, infraestructura o herramientas.
+
+Fuente: Chen, D. (2012), [Online Retail II — UCI](https://archive.ics.uci.edu/dataset/502/online+retail+ii), licencia CC BY 4.0. Provenance: `data/source_manifest.json`. Estado: Delivery pendiente de revisión.
+'''
+write('delivery/decision_memo.md',memo)
+report=f'''# Analytical report — piloto retail con datos públicos
+
+## Contexto y fuente
+
+Encargo y cliente simulados: priorización comercial periódica, sin cliente contratante ni campaña real [LIM002]. Fuente: Chen, D. (2012), [Online Retail II](https://archive.ics.uci.edu/dataset/502/online+retail+ii), DOI 10.24432/C5CG6D, CC BY 4.0. Original preservado y provenance en `data/source_manifest.json`.
+
+## Alcance y calidad
+
+{f('OBS021')} líneas originales → reconciliación de {f('OBS023')} copias entre hojas → {f('OBS022')} compras válidas y {f('OBS024')} exclusiones. Se conservan razones y source_sheet/source_row; máxima multiplicidad por patrón entre hojas, sin deduplicar internamente por mera igualdad.
+
+Compras válidas: campos requeridos presentes, cantidad/precio finitos y positivos, factura sin prefijo c/C, ID identificable y código estándar conforme a regex del contrato. Código estándar es convención operacional, no certificación de mercancía. Descripción ausente no excluye por sí sola. Se excluyen {f('OBS025')} líneas por ID ausente y {f('OBS026')} por código no estándar; no imputar clientes artificiales ni declarar todos los códigos excluidos inválidos. Todas las geografías de la población aprobada, sin asumir B2C.
+
+## Unidad, temporalidad y features
+
+Cliente × cutoff mensual. Elegibilidad con historia {f('ASM001')} días; baseline ventas pasadas {f('ASM003')} días; target suma positiva válida durante {f('ASM002')} días siguientes. Ventanas semiabiertas; timestamps naive originales, zona no documentada. ID textual estable y desempate lexicográfico ascendente después de score descendente.
+
+Features: recency_days, orders_90d, orders_180d, sales_90d, sales_180d, units_180d, distinct_products_180d y tenure_observed_days. Solo historia pasada; frecuencia por factura, tenure observado anterior al cutoff. ID, target, fechas absolutas y label_end fuera del modelo. Metadata temporal separada para auditoría. Supuesto de disponibilidad: [ASM005].
+
+## Diseño y modelos
+
+Walk-forward con snapshots train maduros (label_end ≤ fit_at), expanding window; entidades compartidas corresponden a repriorizar clientes conocidos. {f('OBS010')} períodos development, calendarios congelados en `validation/evaluation_contract.yaml`. Snapshots mensuales train pueden compartir horizontes: no independencia IID.
+
+Dos modelos de configuración fija: Ridge sobre log1p(target), StandardScaler ajustado solo en train; HistGradient sobre log1p(target), sin early stopping ni búsqueda. Predicción expm1 con piso cero. Configuración exacta/seed en contrato y model_runs.json. Baseline principal ventas históricas; RFM comparador ordinal informativo, sin MAE monetario ni selección por final.
+
+Aceptación: superar ventas Top-K agregadas baseline y no perder en mayoría de períodos; si ambos elegibles preferir simple salvo complejo mejor en todos. En final solo elegido contra baseline, mejora estricta; empate/pérdida mantiene baseline, sin cambiar a otro candidato por su outcome. Tests cubren estas reglas.
+
+## Resultados
+
+| Método development | Top-K agregado | Diferencia relativa | Períodos perdidos |
+|---|---:|---:|---:|
+| Baseline | {f('OBS014')} | Referencia | Referencia |
+| Ridge | {f('OBS015')} | {f('OBS017')} | {f('OBS019')} |
+| HistGradient | {f('OBS016')} | {f('OBS018')} | {f('OBS020')} |
+
+Ningún modelo elegible. Selección: {f('OBS001')}, congelada antes de apertura final única [OBS034]. Final evalúa únicamente baseline [OBS033][LIM003].
+
+| Métrica final | Valor |
+|---|---:|
+| Cutoff | {f('OBS011')} |
+| Fin exclusivo horizonte | {f('OBS012')} |
+| Clientes elegibles | {f('OBS002')} |
+| Top-K efectivo | {f('OBS003')} |
+| Ventas válidas futuras seleccionados | {f('OBS004')} |
+| Ventas válidas futuras todos los elegibles | {f('OBS005')} |
+| Fracción capturada | {f('OBS006')} |
+| MAE por cliente | {f('OBS007')} |
+| Top-1 por outcome dentro seleccionados | {f('OBS008')} |
+| Top-10 por outcome dentro seleccionados | {f('OBS009')} |
+
+MAE mide error monetario del baseline, sin acreditar calibración prospectiva. La fracción capturada divide ventas seleccionadas por ventas de toda la población elegible del mismo horizonte; no por ventas de todo el retailer ni todo el histórico.
+
+## Diagnósticos separados
+
+Último ranking baseline frente al anterior: permanecen {f('OBS030')} miembros, Jaccard {f('OBS031')}. Es estabilidad de selección, no retención/churn del negocio. Conjunto final: {f('OBS027')} líneas de cancelación, {f('OBS028')} clientes e importe firmado {f('OBS029')}; vínculo con compra original no determinado. Concentración ordena outcomes para diagnóstico y no cambia ranking/aceptación.
+
+## Límites e interpretación
+
+Una sola fuente histórica y un solo final; distribución global vista en Diagnosis. No ceguera completa a distribución ni superioridad universal del baseline. Disponibilidad real, latencia y revisiones históricas no determinables [ASM005]. Clientes conocidos identificables con historia; generalización a nuevos clientes no evaluada. Primera compra observada no es adquisición, cero outcome no churn definitivo.
+
+El target no mide ventas netas, margen, CLV completo, uplift o ROI [LIM001]. Los importes seleccionados son ventas observadas, no incrementales causadas por una acción. Sin intervalos de confianza IID: pocos períodos y snapshots dependientes. Si se modifica estrategia tras ver final, se requiere nueva versión/evaluación, sin llamarlo holdout intacto.
+
+## Artefactos y reproducción
+
+Scores: `data/processed/development_predictions.csv`, `data/processed/holdout_predictions.csv`. Ranking: `delivery/prioritization_retrospective.csv`. Métricas/elección: `reports/validation/holdout-results.json`, `development-selection.json`. Checks/hash/timestamp: manifests y holdout-attempt.json. {f('OBS032')} tests pasan; no reentrenar ni repetir final para ajustar narrativa. Reproducción aislada y runbook se preparan en Handoff, todavía pendiente; no afirmar portabilidad analítica Windows por esta ejecución local.
+
+Gasto API US${f('OBS013')}; tiempo humano/infraestructura no cuantificados. Skills experimental usadas como apoyo metodológico, sin evidencia de eficacia general ni promoción Foundry. Próximo paso comercial distinto: datos as-of actuales y diseño causal [PROP001].
+'''
+write('delivery/analytical_report.md',report)
+contract=f'''# Delivery contract
+
+## Decisión y alcance
+
+Entregar benchmark histórico de priorización retail y recomendación {f('OBS001')}. Encargo/cliente/capacidad simulados [LIM002]. No publicar ni enviar a terceros; David revisa entrega local. Audiencias: owner comercial simulado y responsable técnico.
+
+## Inputs con autoridad
+
+- `reports/validation/holdout-results.json`: decisión/métricas finales.
+- `reports/validation/development-selection.json`: elección antes del final.
+- `reports/validation/evidence-manifest.json`: hashes de evaluación.
+- `reports/validation/human-approval.json`: aprobación Validation y reviews.
+- `data/source_manifest.json`: licencia/provenance.
+- `evidence/claims.yaml`: trazabilidad de cifras, supuestos, propuestas y límites.
+
+## Outputs
+
+- `decision/recommendation.md`: decisión y condiciones.
+- `delivery/decision_memo.md`: síntesis ejecutiva.
+- `delivery/analytical_report.md`: método, resultados y límites.
+- `delivery/prioritization_retrospective.csv`: lista ilustrativa histórica.
+- `reports/delivery/verification.json` y `evidence-manifest.json`: comprobaciones.
+
+## Criterios de aceptación
+
+Cifras coinciden con fuentes y misma población/horizonte; claims tipados y referenciados; ranking consistente con baseline congelado; español con terminología técnica preservada. Target positivo y exclusiones explícitos. No atribuir uplift, ventas netas, margen o ROI; no convertir lista histórica en campaña real [LIM001][LIM002]. Recomendación futura limitada a validar contexto actual y prueba causal [PROP001]. No deck/dashboard fuera de alcance.
+
+## Review y continuidad
+
+Gate Delivery NEEDS_REVIEW hasta aprobación explícita de David con evidencia. Luego Handoff: reconstrucción aislada desde lock, comparación de artefactos, runbook y feedback; no promocionar capacidades automáticamente. El pase de Delivery no declara COMPLETED el engagement.
+'''
+write('delivery/delivery_contract.md',contract)
+write('reports/delivery/review.md',f'''# Delivery — revisión humana pendiente
+
+Recomendación: **{f('OBS001')}**. Paquete local en español; sin publicación/envío externo. Encargo y cliente simulados [LIM002].
+
+## Documentos
+
+- decision/recommendation.md
+- delivery/decision_memo.md
+- delivery/analytical_report.md
+- delivery/delivery_contract.md
+- delivery/prioritization_retrospective.csv
+- evidence/claims.yaml
+
+## Resultado resumido
+
+Final: {f('OBS003')} de {f('OBS002')} clientes; {f('OBS004')}, {f('OBS006')} de ventas válidas elegibles. Modelo no elegible en development; final solo baseline [LIM003]. Sin atribución de ventas incrementales, margen o ROI [LIM001].
+
+Claims observados, supuestos, propuestas y límites separados; cifras leídas de artefactos congelados y solo formateadas. Gasto API US${f('OBS013')}. Prueba causal futura requiere contexto/diseño propio [PROP001].
+
+## Revisión solicitada
+
+Aprobar Delivery (consistencia de decisión, evidencia, alcance y límites). Después se prepara Handoff: reproducción local en copia aislada, manuales y feedback Foundry. Handoff y cierre no aprobados todavía.
+''')
+print('Delivery:',len(claims),'claims; recomendación, memo, reporte y contrato generados desde fuentes.')

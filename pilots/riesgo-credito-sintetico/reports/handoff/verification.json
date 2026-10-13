@@ -1,0 +1,17 @@
+{
+  "scope": "Integridad de evidencia cerrada y gates; no nueva suite de tests ni evaluación de eficacia.",
+  "checks": {
+    "reports/diagnosis/verification.json": 11,
+    "reports/execution/evidence-manifest.json": 29,
+    "reports/final-validation/evidence-manifest.json": 35,
+    "reports/delivery/delivery-manifest.json": 12,
+    "reports/execution/development-freeze.json": 13,
+    "reports/final-validation/final-freeze.json": 15,
+    "historical_protected": 1180,
+    "acos_status_returncode": 0,
+    "acos_next_returncode": 0,
+    "acos_validate_returncode": 3
+  },
+  "reproduction_passed": true,
+  "handoff_human_approval_pending": true
+}

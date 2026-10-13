@@ -1,0 +1,12 @@
+{
+  "scope": "Development; labels restringidos a IDs de predictions. No métricas finales.",
+  "rows": 298,
+  "positives": 40,
+  "brier_recomputed": 0.10409171041242656,
+  "reference_brier_recomputed": 0.11693224733485123,
+  "auc_by_pairs": 0.7084302325581395,
+  "all_match": true,
+  "freeze_hashes_match": true,
+  "reference_probability": 0.10737179487179487,
+  "final_metrics_computed": false
+}

@@ -1,0 +1,11 @@
+{
+  "status": "READY_FOR_PACKAGE_CONFIGURATION_BUDGET_REVIEW",
+  "execution_manifest_sha256": "b8c904441ae6c3e35c15d6a839a10892f8a7142e944d77267c95908382e608b8",
+  "pending": [
+    "Aceptación humana de paquete/criterios y configuración",
+    "Autorización hastaUS$0.10adicionales",
+    "Preflight final y smoke pagado; ochorespuestas y review"
+  ],
+  "model_calls": 0,
+  "api_cost_usd": 0
+}

@@ -1,0 +1,35 @@
+{
+  "output_type": "value_selection",
+  "selection_status": "determined",
+  "eligible_count": 2,
+  "capacity_k": 5,
+  "effective_k": 0,
+  "selected_ids": [],
+  "risk_ranking_ids": [],
+  "total_cost": 0,
+  "expected_net_value": 0,
+  "feasibility": "feasible",
+  "optimality": "optimal",
+  "causal_identification": {
+    "status": "not_requested",
+    "estimand": null,
+    "reason": "El encargo indica expresamente que no se solicita causalidad; las m\u00e9tricas son descriptivas."
+  },
+  "metrics": {
+    "population_id": "eligible-D",
+    "precision": null,
+    "recall": 0,
+    "lift": null,
+    "precision_status": "undefined",
+    "recall_status": "identified",
+    "lift_status": "undefined",
+    "reason": "Poblaci\u00f3n eligible-D = {P,Q}, con 1 positivo (P) y tasa base 0,5. La selecci\u00f3n final es vac\u00eda: TP=0, seleccionados=0. Precision = 0/0, indefinida. Recall = 0/1 = 0. Lift depende de la precision, por lo que es indefinido. R no es elegible y queda fuera de la poblaci\u00f3n."
+  },
+  "reason": "Solo P y Q son elegibles; R tiene net_value 100 pero no es elegible, as\u00ed que no puede seleccionarse. Ambos elegibles tienen net_value negativo (P=-1, Q=-3) y net_value ya es neto, sin interacciones. Cualquier subconjunto no vac\u00edo tiene valor menor que 0 (P=-1, Q=-3, P+Q=-4). Se permite seleccionar cero, as\u00ed que el \u00f3ptimo es el conjunto vac\u00edo con valor 0 y coste 0. Cumple capacidad (0\u22645) y presupuesto (0\u226410). No hay empate: el valor 0 es estrictamente mayor que cualquier alternativa. No se dieron risk_scores, por eso risk_ranking_ids=[]. Esta es una auditor\u00eda y no aprueba el gate.",
+  "open_questions": [
+    "\u00bfSe confirma que R queda excluido por no ser elegible, aunque su net_value (100) ser\u00eda el m\u00e1s alto?",
+    "\u00bfEs aceptable para el cliente que la pol\u00edtica \u00f3ptima sea no actuar, con recall 0 sobre el \u00fanico positivo elegible (P)?",
+    "\u00bfDebe revisarse la definici\u00f3n de net_value de P y Q, o la regla de elegibilidad de R, si se esperaba una selecci\u00f3n no vac\u00eda?"
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

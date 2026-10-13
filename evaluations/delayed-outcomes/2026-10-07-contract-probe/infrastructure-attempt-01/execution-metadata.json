@@ -1,0 +1,12 @@
+[
+  {
+    "case": "A",
+    "branch": "baseline",
+    "exit_code": 1,
+    "elapsed_seconds": 179.38,
+    "cost_usd": 0,
+    "model_usage": {},
+    "is_error": true,
+    "session_id": "0d4d8177-6d82-4eef-b83f-359d75ef0500"
+  }
+]

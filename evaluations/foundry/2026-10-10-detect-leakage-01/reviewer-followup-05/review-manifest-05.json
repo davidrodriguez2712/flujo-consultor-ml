@@ -1,0 +1,20 @@
+{
+  "id": "foundry-review-followup05",
+  "files": [
+    {
+      "path": "EVALUATION.md",
+      "sha256": "12fc7ee2511307200908b8e7c9f5431f3f8c35aa07dda069ecdd21b139fe7e70",
+      "bytes": 11778
+    },
+    {
+      "path": "RECOMMENDATIONS.md",
+      "sha256": "6369344c919f2a3169619e078290166d7f318fbfbea04346bf8633d7ca0d6b76",
+      "bytes": 3213
+    },
+    {
+      "path": "preservation-checks.json",
+      "sha256": "40580d0c1a960cf7e6bf0acfba8abb8b39a0ab51ee561f692c7e32af7e21e472",
+      "bytes": 5401
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "status": "PENDING_REVIEW",
+  "manifest": "reports/package/evidence-manifest-01.json",
+  "manifest_version": "01",
+  "manifest_sha256": "fdf2945c8935a3511a0766c3527fc9216609021ffa45eb5891f5c574c732e647",
+  "reviewer": null,
+  "decision": null,
+  "scope": "Aceptar o corregir evidencia técnica conjunta y límites; no autoriza uso operativo."
+}

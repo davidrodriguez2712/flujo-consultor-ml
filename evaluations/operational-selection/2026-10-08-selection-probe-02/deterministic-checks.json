@@ -1,0 +1,434 @@
+[
+  {
+    "case": "A",
+    "condition": "baseline",
+    "repetition": 1,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  },
+  {
+    "case": "A",
+    "condition": "baseline",
+    "repetition": 2,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  },
+  {
+    "case": "B",
+    "condition": "baseline",
+    "repetition": 1,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  },
+  {
+    "case": "B",
+    "condition": "baseline",
+    "repetition": 2,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  },
+  {
+    "case": "C",
+    "condition": "baseline",
+    "repetition": 1,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  },
+  {
+    "case": "C",
+    "condition": "baseline",
+    "repetition": 2,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  },
+  {
+    "case": "D",
+    "condition": "baseline",
+    "repetition": 1,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  },
+  {
+    "case": "D",
+    "condition": "baseline",
+    "repetition": 2,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  },
+  {
+    "case": "E",
+    "condition": "baseline",
+    "repetition": 1,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  },
+  {
+    "case": "E",
+    "condition": "baseline",
+    "repetition": 2,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  },
+  {
+    "case": "F",
+    "condition": "baseline",
+    "repetition": 1,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  },
+  {
+    "case": "F",
+    "condition": "baseline",
+    "repetition": 2,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  },
+  {
+    "case": "A",
+    "condition": "treatment",
+    "repetition": 1,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  },
+  {
+    "case": "A",
+    "condition": "treatment",
+    "repetition": 2,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  },
+  {
+    "case": "B",
+    "condition": "treatment",
+    "repetition": 1,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  },
+  {
+    "case": "B",
+    "condition": "treatment",
+    "repetition": 2,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  },
+  {
+    "case": "C",
+    "condition": "treatment",
+    "repetition": 1,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  },
+  {
+    "case": "C",
+    "condition": "treatment",
+    "repetition": 2,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  },
+  {
+    "case": "D",
+    "condition": "treatment",
+    "repetition": 1,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  },
+  {
+    "case": "D",
+    "condition": "treatment",
+    "repetition": 2,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  },
+  {
+    "case": "E",
+    "condition": "treatment",
+    "repetition": 1,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  },
+  {
+    "case": "E",
+    "condition": "treatment",
+    "repetition": 2,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  },
+  {
+    "case": "F",
+    "condition": "treatment",
+    "repetition": 1,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  },
+  {
+    "case": "F",
+    "condition": "treatment",
+    "repetition": 2,
+    "result": {
+      "members_match": true,
+      "order_match": true,
+      "ranking_match": true,
+      "capacity_match": true,
+      "value_match": true,
+      "feasibility_match": true,
+      "optimality_match": true,
+      "causal_status_match": true,
+      "metrics_match": true,
+      "gate_matches": true,
+      "mismatches": []
+    }
+  }
+]

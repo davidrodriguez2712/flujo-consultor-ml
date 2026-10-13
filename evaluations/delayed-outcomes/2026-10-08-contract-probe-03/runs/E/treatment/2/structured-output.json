@@ -1,0 +1,32 @@
+{
+  "rows": [
+    {
+      "id": "E1",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "exclude",
+      "reason": "Label: negativo definitivo para [2025-06-01, 2025-07-01), publicado y certificado el 2025-07-05T08:00Z, que es <= training_timestamp 2025-07-15T00:00Z, y antes de la extracci\u00f3n 2025-08-15, por lo que est\u00e1 certificado y disponible. Feature: saldo_historico (fecha_referencia 31-may) se reconstruy\u00f3 con una correcci\u00f3n y estuvo disponible por primera vez el 2025-06-02T08:00Z, posterior a la predicci\u00f3n (2025-06-01T00:00Z). Es una feature futura y la fila se excluye aunque el label est\u00e9 disponible."
+    },
+    {
+      "id": "E2",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "Label: negativo definitivo certificado el 2025-07-05T08:00Z, <= entrenamiento 2025-07-15T00:00Z, por lo que est\u00e1 disponible. Feature: una captura archivada prueba que el valor exportado de saldo_historico estaba disponible el 2025-05-31T18:00Z, antes de la predicci\u00f3n 2025-06-01T00:00Z. Las dem\u00e1s features estaban disponibles al predecir y la poblaci\u00f3n es v\u00e1lida. Se cumplen todas las condiciones."
+    },
+    {
+      "id": "E3",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "indeterminate",
+      "reason": "Label: negativo definitivo certificado el 2025-07-05T08:00Z, <= entrenamiento 2025-07-15T00:00Z, por lo que est\u00e1 disponible. Feature: no hay historial ni captura de saldo_historico y se desconoce cu\u00e1ndo estuvo disponible el valor exportado. No hay exclusi\u00f3n comprobada ni cumplimiento comprobado de disponibilidad <= 2025-06-01T00:00Z. No se asume la disponibilidad general de 2025-05-31T18:00Z, porque el expediente no la prueba para esta feature. Elegibilidad indeterminada."
+    }
+  ],
+  "open_questions": [
+    "E3: \u00bfexiste alguna fuente (logs del ETL, versionado del almac\u00e9n, auditor\u00eda de la carga) que pruebe cu\u00e1ndo estuvo disponible el valor exportado de saldo_historico? Debe ser <= 2025-06-01T00:00:00Z para que la fila sea elegible.",
+    "E1: \u00bfhay una versi\u00f3n de saldo_historico disponible antes del 2025-06-01T00:00Z que pueda usarse como feature alternativa? El expediente indica que se usa la versi\u00f3n corregida, as\u00ed que no se asume ninguna otra.",
+    "Confirmar que la certificaci\u00f3n del 2025-07-05T08:00Z consta en el sistema de entrenamiento y no solo en la publicaci\u00f3n, como exige la definici\u00f3n de disponibilidad de labels.",
+    "Decidir si E3 se excluye hasta tener evidencia o si se tolera como riesgo documentado. Esta decisi\u00f3n corresponde a una persona."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

@@ -1,0 +1,662 @@
+version: 0.1.0
+modules:
+- id: consulting_core
+  version: 0.1.0
+  trigger:
+    operator: equals
+    field: schema_version
+    value: 1
+  dependencies: []
+  capabilities:
+  - problem-framing
+  - evidence-synthesis
+  artifacts:
+  - path: context/business_context.md
+    template_id: notes
+    ownership: human
+  - path: framing/framing.yaml
+    template_id: contract
+    ownership: human
+  - path: evidence/findings.md
+    template_id: notes
+    ownership: human
+  - path: decision/recommendation.md
+    template_id: notes
+    ownership: human
+  - path: delivery/delivery_contract.md
+    template_id: notes
+    ownership: human
+  - path: handoff/runbook.md
+    template_id: notes
+    ownership: human
+  playbooks:
+  - research-impact-delivery.md
+  gates:
+  - id: discovery
+    stage: discovery
+    artifacts:
+    - context/business_context.md
+    required_fields: {}
+    human_review: true
+  - id: framing
+    stage: framing
+    artifacts:
+    - framing/framing.yaml
+    required_fields:
+      framing/framing.yaml:
+      - decision
+      - owner
+      - metric
+      - unit
+      - horizon
+    human_review: true
+  - id: diagnosis
+    stage: diagnosis
+    artifacts:
+    - evidence/findings.md
+    required_fields: {}
+    human_review: true
+  - id: execution
+    stage: execution
+    artifacts: []
+    required_fields: {}
+    human_review: true
+  - id: validation
+    stage: validation
+    artifacts: []
+    required_fields: {}
+    human_review: true
+  - id: delivery
+    stage: delivery
+    artifacts:
+    - decision/recommendation.md
+    - delivery/delivery_contract.md
+    required_fields: {}
+    human_review: true
+  - id: handoff
+    stage: handoff
+    artifacts:
+    - handoff/runbook.md
+    required_fields: {}
+    human_review: true
+- id: data_analysis
+  version: 0.1.0
+  trigger:
+    operator: any
+    rules:
+    - operator: contains
+      field: data.sources
+      value: csv
+    - operator: contains
+      field: data.sources
+      value: excel
+    - operator: contains
+      field: data.sources
+      value: parquet
+    - operator: contains
+      field: data.sources
+      value: sql
+    - operator: contains
+      field: data.sources
+      value: api
+    - operator: contains
+      field: data.sources
+      value: postgresql
+    - operator: contains
+      field: data.sources
+      value: bigquery
+    - operator: contains
+      field: data.sources
+      value: snowflake
+    - operator: equals
+      field: data.characteristics.tabular
+      value: true
+  dependencies: []
+  capabilities:
+  - dataset-understanding
+  artifacts:
+  - path: data/data_contract.yaml
+    template_id: data
+    ownership: human
+  - path: analysis/analysis_plan.md
+    template_id: notes
+    ownership: human
+  playbooks:
+  - data-understanding-analysis.md
+  gates:
+  - id: data-quality
+    stage: diagnosis
+    artifacts:
+    - data/data_contract.yaml
+    required_fields:
+      data/data_contract.yaml:
+      - grain
+      - keys
+      - coverage
+      - quality
+    human_review: true
+  - id: data_analysis-review
+    stage: validation
+    artifacts:
+    - analysis/analysis_plan.md
+    required_fields: {}
+    human_review: true
+- id: research
+  version: 0.1.0
+  trigger:
+    operator: contains
+    field: engagement.delivery_modes
+    value: research
+  dependencies: []
+  capabilities:
+  - research-comparison
+  artifacts:
+  - path: analysis/research_plan.md
+    template_id: notes
+    ownership: human
+  playbooks:
+  - research-impact-delivery.md
+  gates:
+  - id: research-review
+    stage: validation
+    artifacts:
+    - analysis/research_plan.md
+    required_fields: {}
+    human_review: true
+- id: supervised_model
+  version: 0.1.0
+  trigger:
+    operator: all
+    rules:
+    - operator: contains
+      field: engagement.archetypes
+      value: PREDICT
+    - operator: any
+      rules:
+      - operator: equals
+        field: data.characteristics.labeled
+        value: 'yes'
+      - operator: equals
+        field: data.characteristics.labeled
+        value: partial
+    - operator: equals
+      field: data.characteristics.supervised
+      value: true
+  dependencies:
+  - data_analysis
+  capabilities:
+  - supervised-validation
+  - leakage-audit
+  - feature-design
+  artifacts:
+  - path: modeling/model_brief.md
+    template_id: notes
+    ownership: human
+  - path: validation/model_validation.md
+    template_id: notes
+    ownership: human
+  playbooks:
+  - experiments-and-models.md
+  gates:
+  - id: supervised_model-review
+    stage: validation
+    artifacts:
+    - modeling/model_brief.md
+    required_fields: {}
+    human_review: true
+- id: forecast
+  version: 0.1.0
+  trigger:
+    operator: contains
+    field: engagement.archetypes
+    value: FORECAST
+  dependencies: []
+  capabilities:
+  - forecast-evaluation
+  artifacts:
+  - path: analysis/forecast_plan.md
+    template_id: notes
+    ownership: human
+  playbooks:
+  - experiments-and-models.md
+  gates:
+  - id: forecast-review
+    stage: validation
+    artifacts:
+    - analysis/forecast_plan.md
+    required_fields: {}
+    human_review: true
+- id: selection
+  version: 0.1.0
+  trigger:
+    operator: contains
+    field: engagement.archetypes
+    value: PRIORITIZE_SELECT
+  dependencies: []
+  capabilities:
+  - operational-selection
+  artifacts:
+  - path: analysis/selection_plan.md
+    template_id: notes
+    ownership: human
+  playbooks:
+  - experiments-and-models.md
+  gates:
+  - id: selection-review
+    stage: validation
+    artifacts:
+    - analysis/selection_plan.md
+    required_fields: {}
+    human_review: true
+- id: optimization
+  version: 0.1.0
+  trigger:
+    operator: contains
+    field: engagement.archetypes
+    value: OPTIMIZE
+  dependencies: []
+  capabilities:
+  - constrained-decision
+  artifacts:
+  - path: analysis/optimization_plan.md
+    template_id: notes
+    ownership: human
+  playbooks:
+  - data-understanding-analysis.md
+  gates:
+  - id: optimization-review
+    stage: validation
+    artifacts:
+    - analysis/optimization_plan.md
+    required_fields: {}
+    human_review: true
+- id: intervention
+  version: 0.1.0
+  trigger:
+    operator: contains
+    field: engagement.archetypes
+    value: EXPERIMENT_CAUSAL
+  dependencies: []
+  capabilities:
+  - causal-evaluation
+  artifacts:
+  - path: analysis/intervention_plan.md
+    template_id: notes
+    ownership: human
+  playbooks:
+  - experiments-and-models.md
+  gates:
+  - id: intervention-review
+    stage: validation
+    artifacts:
+    - analysis/intervention_plan.md
+    required_fields: {}
+    human_review: true
+- id: segmentation
+  version: 0.1.0
+  trigger:
+    operator: contains
+    field: engagement.archetypes
+    value: SEGMENT
+  dependencies: []
+  capabilities:
+  - segmentation-analysis
+  artifacts:
+  - path: analysis/segmentation_plan.md
+    template_id: notes
+    ownership: human
+  playbooks:
+  - data-understanding-analysis.md
+  gates:
+  - id: segmentation-review
+    stage: validation
+    artifacts:
+    - analysis/segmentation_plan.md
+    required_fields: {}
+    human_review: true
+- id: recommendation
+  version: 0.1.0
+  trigger:
+    operator: contains
+    field: engagement.archetypes
+    value: RECOMMEND
+  dependencies: []
+  capabilities:
+  - recommendation-evaluation
+  artifacts:
+  - path: analysis/recommendation_plan.md
+    template_id: notes
+    ownership: human
+  playbooks:
+  - data-understanding-analysis.md
+  gates:
+  - id: recommendation-review
+    stage: validation
+    artifacts:
+    - analysis/recommendation_plan.md
+    required_fields: {}
+    human_review: true
+- id: genai_solution
+  version: 0.1.0
+  trigger:
+    operator: equals
+    field: data.characteristics.genai
+    value: true
+  dependencies: []
+  capabilities:
+  - grounded-output-review
+  artifacts:
+  - path: solution/genai_contract.md
+    template_id: notes
+    ownership: human
+  playbooks:
+  - research-impact-delivery.md
+  gates:
+  - id: genai_solution-review
+    stage: validation
+    artifacts:
+    - solution/genai_contract.md
+    required_fields: {}
+    human_review: true
+- id: software_ui
+  version: 0.1.0
+  trigger:
+    operator: any
+    rules:
+    - operator: contains
+      field: engagement.delivery_modes
+      value: software
+    - operator: contains
+      field: engagement.delivery_modes
+      value: product
+    - operator: equals
+      field: data.characteristics.ui_required
+      value: true
+  dependencies: []
+  capabilities:
+  - software-design
+  - ui-planning
+  - figma-handoff
+  - visual-qa
+  artifacts:
+  - path: solution/architecture.md
+    template_id: notes
+    ownership: human
+  playbooks:
+  - product-ui-and-prototyping.md
+  gates:
+  - id: software_ui-review
+    stage: validation
+    artifacts:
+    - solution/architecture.md
+    required_fields: {}
+    human_review: true
+- id: operationalization
+  version: 0.1.0
+  trigger:
+    operator: contains
+    field: engagement.delivery_modes
+    value: production
+  dependencies: []
+  capabilities:
+  - operational-monitoring
+  artifacts:
+  - path: solution/operational_contract.md
+    template_id: notes
+    ownership: human
+  playbooks:
+  - research-impact-delivery.md
+  gates:
+  - id: operationalization-review
+    stage: validation
+    artifacts:
+    - solution/operational_contract.md
+    required_fields: {}
+    human_review: true
+- id: business_case
+  version: 0.1.0
+  trigger:
+    operator: any
+    rules:
+    - operator: contains
+      field: deliverables
+      value: business_case
+    - operator: contains
+      field: deliverables
+      value: roi
+    - operator: contains
+      field: deliverables
+      value: budget
+  dependencies: []
+  capabilities:
+  - decision-impact
+  artifacts:
+  - path: decision/business_case.md
+    template_id: notes
+    ownership: human
+  playbooks:
+  - research-impact-delivery.md
+  gates:
+  - id: business_case-review
+    stage: validation
+    artifacts:
+    - decision/business_case.md
+    required_fields: {}
+    human_review: true
+- id: executive_delivery
+  version: 0.1.0
+  trigger:
+    operator: any
+    rules:
+    - operator: contains
+      field: deliverables
+      value: executive_deck
+    - operator: contains
+      field: deliverables
+      value: decision_memo
+  dependencies: []
+  capabilities:
+  - executive-synthesis
+  artifacts:
+  - path: delivery/storyline.md
+    template_id: notes
+    ownership: human
+  playbooks:
+  - research-impact-delivery.md
+  gates:
+  - id: executive_delivery-review
+    stage: validation
+    artifacts:
+    - delivery/storyline.md
+    required_fields: {}
+    human_review: true
+templates:
+  notes: templates/notes.md
+  contract: templates/contract.yaml
+  data: templates/data.yaml
+capability_policies:
+  problem-framing:
+    skills: []
+    required_characteristics: {}
+    fallback: playbook
+    limit: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+      evidencia específica.
+    excluded_skills:
+    - run-skill-eval
+  evidence-synthesis:
+    skills: []
+    required_characteristics: {}
+    fallback: playbook
+    limit: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+      evidencia específica.
+    excluded_skills:
+    - run-skill-eval
+  dataset-understanding:
+    skills:
+    - understand-dataset
+    required_characteristics: {}
+    fallback: playbook
+    limit: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+      evidencia específica.
+    excluded_skills:
+    - run-skill-eval
+  research-comparison:
+    skills:
+    - research-intelligence
+    required_characteristics: {}
+    fallback: playbook
+    limit: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+      evidencia específica.
+    excluded_skills:
+    - run-skill-eval
+  supervised-validation:
+    skills:
+    - design-validation
+    required_characteristics: {}
+    fallback: playbook
+    limit: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+      evidencia específica.
+    excluded_skills:
+    - run-skill-eval
+  leakage-audit:
+    skills:
+    - detect-leakage
+    required_characteristics: {}
+    fallback: playbook
+    limit: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+      evidencia específica.
+    excluded_skills:
+    - run-skill-eval
+  feature-design:
+    skills:
+    - build-features
+    required_characteristics:
+      feature_design: true
+    fallback: playbook
+    limit: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+      evidencia específica.
+    excluded_skills:
+    - run-skill-eval
+  forecast-evaluation:
+    skills: []
+    required_characteristics: {}
+    fallback: playbook
+    limit: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+      evidencia específica.
+    excluded_skills:
+    - run-skill-eval
+  operational-selection:
+    skills: []
+    required_characteristics: {}
+    fallback: playbook
+    limit: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+      evidencia específica.
+    excluded_skills:
+    - run-skill-eval
+  constrained-decision:
+    skills: []
+    required_characteristics: {}
+    fallback: playbook
+    limit: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+      evidencia específica.
+    excluded_skills:
+    - run-skill-eval
+  causal-evaluation:
+    skills: []
+    required_characteristics: {}
+    fallback: playbook
+    limit: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+      evidencia específica.
+    excluded_skills:
+    - run-skill-eval
+  segmentation-analysis:
+    skills: []
+    required_characteristics: {}
+    fallback: playbook
+    limit: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+      evidencia específica.
+    excluded_skills:
+    - run-skill-eval
+  recommendation-evaluation:
+    skills: []
+    required_characteristics: {}
+    fallback: playbook
+    limit: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+      evidencia específica.
+    excluded_skills:
+    - run-skill-eval
+  grounded-output-review:
+    skills: []
+    required_characteristics: {}
+    fallback: playbook
+    limit: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+      evidencia específica.
+    excluded_skills:
+    - run-skill-eval
+  software-design:
+    skills: []
+    required_characteristics: {}
+    fallback: playbook
+    limit: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+      evidencia específica.
+    excluded_skills:
+    - run-skill-eval
+  ui-planning:
+    skills:
+    - ui-planning
+    required_characteristics:
+      ui_required: true
+    fallback: playbook
+    limit: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+      evidencia específica.
+    excluded_skills:
+    - run-skill-eval
+  figma-handoff:
+    skills:
+    - figma-handoff
+    required_characteristics:
+      ui_required: true
+      figma: true
+      design_system: true
+      stack: react-shadcn
+    fallback: playbook
+    limit: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+      evidencia específica.
+    excluded_skills:
+    - run-skill-eval
+  visual-qa:
+    skills:
+    - visual-qa
+    required_characteristics:
+      ui_required: true
+      implemented_ui: true
+      orca: true
+    fallback: playbook
+    limit: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+      evidencia específica.
+    excluded_skills:
+    - run-skill-eval
+  operational-monitoring:
+    skills: []
+    required_characteristics: {}
+    fallback: playbook
+    limit: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+      evidencia específica.
+    excluded_skills:
+    - run-skill-eval
+  decision-impact:
+    skills: []
+    required_characteristics: {}
+    fallback: playbook
+    limit: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+      evidencia específica.
+    excluded_skills:
+    - run-skill-eval
+  executive-synthesis:
+    skills: []
+    required_characteristics: {}
+    fallback: playbook
+    limit: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+      evidencia específica.
+    excluded_skills:
+    - run-skill-eval

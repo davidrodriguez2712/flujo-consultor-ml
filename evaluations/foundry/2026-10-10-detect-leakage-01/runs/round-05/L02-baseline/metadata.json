@@ -1,0 +1,112 @@
+{
+  "started_at": "2026-10-11T13:53:29.592303+00:00",
+  "argv": [
+    "claude",
+    "-p",
+    "--restricted",
+    "--no-chrome",
+    "--no-session-persistence",
+    "--setting-sources",
+    "",
+    "--settings",
+    "{\"disableBundledSkills\": true, \"permissions\": {\"allow\": [\"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L02-baseline/workspace/.runtime/check_inputs.py)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L02-baseline/workspace/case.md)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L02-baseline/workspace/inputs/context.md)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L02-baseline/workspace/inputs/observations.csv)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L02-baseline/workspace/inputs/pipeline.py)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L02-baseline/workspace/workflow.md)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L02-baseline/workspace/reports/leakage/audit.md)\", \"Bash(/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python /Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L02-baseline/workspace/.runtime/check_inputs.py)\", \"Skill(acos-eval:detect-leakage)\"], \"deny\": [\"Agent\", \"WebFetch\", \"WebSearch\", \"NotebookEdit\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L02-baseline/workspace/inputs/**)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L02-baseline/workspace/case.md)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L02-baseline/workspace/.runtime/**)\"]}}",
+    "--strict-mcp-config",
+    "--mcp-config",
+    "{\"mcpServers\":{}}",
+    "--permission-mode",
+    "dontAsk",
+    "--permission-prompts",
+    "none",
+    "--tools",
+    "Read,Write,Bash,Skill",
+    "--max-turns",
+    "8",
+    "--effort",
+    "low",
+    "--model",
+    "claude-haiku-5-5",
+    "--system-prompt",
+    "Responde en español. Audita solo el expediente público, respeta sus límites y no aceptes gates. Usa únicamente herramientas y capacidades disponibles. Entrega el reporte y su ruta según case.md.",
+    "--output-format",
+    "stream-json",
+    "--verbose"
+  ],
+  "runtime_success": true,
+  "condition": "baseline",
+  "skill_invoked": false,
+  "request_count": 4,
+  "returncode": 0,
+  "tool_calls": [
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L02-baseline/workspace/workflow.md"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L02-baseline/workspace/case.md"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L02-baseline/workspace/inputs/context.md"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L02-baseline/workspace/inputs/pipeline.py"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L02-baseline/workspace/inputs/observations.csv"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L02-baseline/workspace/.runtime/check_inputs.py"
+      }
+    },
+    {
+      "name": "Bash",
+      "input": {
+        "command": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python /Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L02-baseline/workspace/.runtime/check_inputs.py",
+        "description": "Run permitted input checker for hashes and CSV counts"
+      }
+    },
+    {
+      "name": "Write",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L02-baseline/workspace/reports/leakage/audit.md",
+        "content": "---\nfecha: 2026-10-11\ncaso: L02\nestado: completado-baseline (borrador de auditoría; sin aprobación de gate)\ncondicion: baseline\nskill: none\nskill_version: null\ninputs:\n  - path: case.md\n    sha256: 71613379fe4387f19de862020de6bcdedec00623aeb452bbdff9491690b61d39\n    bytes: 1725\n  - path: inputs/context.md\n    sha256: 2d20272658305e9620515452c404e52d7b2015db0d0a30412287c4aa02a0c1b0\n    bytes: 1051\n  - path: inputs/observations.csv\n    sha256: cbcae4e4f891739ea487feda3f7e1eac58cf9fbe3303b774b5563770f7127462\n    bytes: 593\n    filas: 6\n  - path: inputs/pipeline.py\n    sha256: 8fc757e4a3209efdedd3e1b8de6f0b77109557fb6335ac263cd3cea9b3788011\n    bytes: 391\n---\n\n# Auditoría de leakage — L02 (baseline)\n\n## Resumen\n\nEn el expediente público no encontré contaminación de información futura en las features declaradas (`usage_previous_30d`), en las particiones ni en el orden de preprocessing. El escaler se ajusta solo con `train` y se aplica a `evaluation`. Las marcas temporales de la muestra son consistentes con el escenario declarado. La reutilización de `customer_id` entre train y evaluation es una dependencia esperada en producción, no contaminación. Límites: la muestra tiene 6 filas, no hay métricas ni resultados de entrenamiento, y `pipeline.py` es un orden declarado, no código de producción verificado.\n\n## Hallazgos\n\n**H1 — Features y disponibilidad temporal (sin contaminación detectada)**\n- Componente: `usage_previous_30d`.\n- Mecanismo: la feature debe resumir los 30 días previos y estar disponible antes de `prediction_at`.\n- Fuente: `inputs/context.md` (párrafo 2); `inputs/observations.csv` filas 2–7.\n- Evidencia: en las 6 filas, `feature_available_at` ≤ `prediction_at` (train: 2025-04-30T23:00 vs 2025-05-01; evaluation: 2025-06-01T23:00 vs 2025-06-02).\n- Confianza: media. Verificación manual sobre la muestra; no automatizada.\n- Severidad: ninguna.\n- Acción: ninguna. Mantener el check de `feature_available_at ≤ prediction_at` en el pipeline real.\n\n**H2 — Etiquetas de train disponibles antes del entrenamiento (sin contaminación detectada)**\n- Mecanismo: el target de train debe estar certificado antes de 2025-06-01T00:00Z.\n- Fuente: `context.md` (párrafo 1); `observations.csv` filas 2–4 (`label_available_at` = 2025-05-09T00:00Z).\n- Evidencia: 2025-05-09 < 2025-06-01 en las tres filas de train.\n- Confianza: media. Verificación manual.\n- Severidad: ninguna.\n\n**H3 — Evaluación sin uso de outcomes para entrenar (sin contaminación detectada)**\n- Mecanismo: los outcomes de evaluation (`label_available_at` = 2025-06-10) solo deben usarse en evaluación retrospectiva.\n- Fuente: `context.md`; `observations.csv` filas 5–7; `pipeline.py` líneas 3–4 (las particiones no se mezclan en el ajuste).\n- Confianza: media. Severidad: ninguna.\n\n**H4 — Scaler ajustado solo con train (sin leakage)**\n- Componente: `pipeline.py`, líneas 6–7.\n- Mecanismo: `scaler.fit_transform` solo sobre `train`; `scaler.transform` sobre `evaluation`.\n- Confianza: alta para el código mostrado (lectura directa). Severidad: ninguna.\n\n**H5 — Mismo `customer_id` en train y evaluation (dependencia esperada, no contaminación)**\n- Mecanismo: C01, C02 y C03 aparecen en ambas particiones. El escenario declara que producción vuelve a puntuar clientes conocidos (`context.md`, párrafo 1).\n- Fuente: `observations.csv` filas 2–7.\n- Análisis: las ventanas de target de train (mayo, hasta 2025-05-08) no se solapan con la feature de evaluation (ventana que termina 2025-06-01). No hay solape de target entre particiones en la muestra.\n- Confianza: media. Severidad: baja (riesgo de diseño, no hallazgo de contaminación). Acción: en la evaluación real, verificar que la validación por cliente no sobreestime el desempeño; documentar que el resultado aplica a clientes conocidos.\n\n**H6 — Partición confiada a una etiqueta, sin aserción temporal en código (riesgo de proceso)**\n- Componente: `pipeline.py`, líneas 3–4 (filtrado por `partition`).\n- Mecanismo: el código separa por la columna `partition`; no comprueba `label_available_at ≤ instante de entrenamiento` ni `feature_available_at ≤ prediction_at`. Una fila mal etiquetada pasaría sin error.\n- Confianza: alta (lectura directa del código). Severidad: media en producción; no observable en la muestra.\n- Acción propuesta: añadir aserciones temporales antes del ajuste.\n\n## Verificaciones y límites\n\n- Ejecutado: `check_inputs.py` (sha256, bytes, columnas y conteo de filas). Resultado: 6 filas, columnas esperadas.\n- No ejecutado: `pipeline.py`, entrenamiento, métricas ni consultas. Las comprobaciones temporales (H1–H3) son lectura manual de la muestra.\n- Skill `acos-eval:detect-leakage`: no aparece en las skills disponibles; no se invocó. `skill: none`.\n- La muestra es sintética y pequeña; no acredita el código de producción.\n- No hay AUC ni resultados; no puedo evaluar si la señal de `usage_previous_30d` es \"demasiado alta\".\n- Fuente o expected del reviewer no forman parte del expediente; no se usaron.\n\n## Preguntas abiertas\n\n1. ¿El pipeline real aplica las mismas particiones y el mismo orden de scaler que `pipeline.py`?\n2. ¿Quién es el owner que acepta la definición de `prediction_at` y del corte temporal de entrenamiento?\n3. ¿Hay métricas de entrenamiento o evaluación que permitan comprobar la señal?\n\n## Recomendaciones\n\n1. Mantener el orden fit-en-train / transform-en-evaluation (H4).\n2. Añadir aserciones temporales de disponibilidad de features y etiquetas en el pipeline (H6).\n3. Confirmar con el owner la definición de clientes conocidos y documentar que la evaluación aplica a esa población (H5).\n4. Antes de cualquier aprobación, ejecutar el pipeline real sobre una muestra mayor con las comprobaciones temporales. Esto queda pendiente y no se realizó aquí.\n"
+      }
+    }
+  ],
+  "skill_invocation_requested": false,
+  "usage_known": true,
+  "report_persisted": true,
+  "report_sha256": "070899f081751d4b3f2162036b8174195916f8eb87869a5516213a9de0b5435e",
+  "model_usage": {
+    "claude-haiku-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 6351,
+      "cacheReadInputTokens": 27919,
+      "cacheCreationInputTokens": 12026,
+      "webSearchRequests": 0,
+      "costUSD": 0.0049587400000000005,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2311,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "finished_at": "2026-10-11T13:53:59.786450+00:00"
+}

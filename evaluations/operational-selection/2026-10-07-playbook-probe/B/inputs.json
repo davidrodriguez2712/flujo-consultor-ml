@@ -1,0 +1,30 @@
+{
+  "context": "Retención ficticia. Scoring 2025-02-01. Capacidad K=3. Excluir clientes contactados en [2025-01-02,2025-02-01), cooldown de 30 días ya aprobado. Sin otras exclusiones. No rellenar capacidad con excluidos. Score descendente e id ascendente. Labels completas. Métricas para población elegible después de cooldown, no para los cuatro originales.",
+  "k": 3,
+  "rows": [
+    {
+      "id": "A",
+      "score": 0.99,
+      "target": 1,
+      "last_contact": "2025-01-20"
+    },
+    {
+      "id": "B",
+      "score": 0.8,
+      "target": 0,
+      "last_contact": "2024-12-15"
+    },
+    {
+      "id": "C",
+      "score": 0.7,
+      "target": 1,
+      "last_contact": null
+    },
+    {
+      "id": "D",
+      "score": 0.9,
+      "target": 1,
+      "last_contact": "2025-01-31"
+    }
+  ]
+}

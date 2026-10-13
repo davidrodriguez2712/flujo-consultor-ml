@@ -1,0 +1,21 @@
+{
+  "status": "READY",
+  "findings": [
+    {
+      "statement": "El seguimiento puede prepararse; decisión, población/ventana y fuente autorizada siguen pendientes.",
+      "evidence_paths": [
+        "intake/questions.json",
+        "project/state.json"
+      ]
+    }
+  ],
+  "proposed_actions": [
+    "Preguntar qué decisión comercial debe informar la segmentación.",
+    "Preguntar qué población y ventana temporal se requieren.",
+    "Identificar la fuente propuesta y el procedimiento para autorizar su acceso."
+  ],
+  "next_step": "Recoger las tres respuestas antes de proponer ejecución analítica.",
+  "limitations": [
+    "Ejemplo del autor. No task, lectura de datos, segmentación ni aceptación de gates."
+  ]
+}

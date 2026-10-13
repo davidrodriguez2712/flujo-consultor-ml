@@ -1,0 +1,21 @@
+{
+  "project": "Piloto sintético de riesgo de crédito",
+  "stage": "diagnosis",
+  "status": "IN_PROGRESS",
+  "completed": [
+    "discovery",
+    "framing"
+  ],
+  "total_stages": 7,
+  "blockers": [],
+  "open_decisions": [
+    "Aprobar Diagnosis y data-quality con el diseño temporal y sus límites.",
+    "Congelar código y configuración del baseline antes de la evaluación final."
+  ],
+  "next_gates": [
+    "diagnosis",
+    "data-quality"
+  ],
+  "integrity": "OK",
+  "findings": []
+}

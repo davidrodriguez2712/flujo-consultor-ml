@@ -1,0 +1,8 @@
+{
+  "status": "APPROVED",
+  "execution_manifest_sha256": "c58084ab05a3bc1dbdb823e6fec55d68183507e7769538a002b22dc63ae5fd82",
+  "total_budget_usd": 0.01730825,
+  "package_accepted": true,
+  "basis": "User authorizes necessary rounds, continue recommendation, same cumulative ceiling0.10",
+  "prior_total_usd": 0.08269175
+}

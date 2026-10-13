@@ -1,0 +1,19 @@
+{
+  "status": "STOPPED",
+  "started_at_utc": "2026-10-09T21:19:00.364441+00:00",
+  "runtime_version": "2.1.296 (Claude Code)",
+  "model": "claude-haiku-5-5",
+  "approved_total_usd": 0.2,
+  "completed_invocations": [
+    "smoke",
+    "E01-baseline"
+  ],
+  "benchmark_invocations_completed": 0,
+  "stop_reason": "E01-baseline: fallo de runtime; conservar y no reintentar",
+  "semantic_review": "NOT_RUN",
+  "provider_requests": 2,
+  "estimated_api_cost_usd": 0.0015401750000000002,
+  "cost_usage_complete": true,
+  "committed_budget_usd": 0.0015401750000000002,
+  "finished_at_utc": "2026-10-09T21:19:11.651083+00:00"
+}

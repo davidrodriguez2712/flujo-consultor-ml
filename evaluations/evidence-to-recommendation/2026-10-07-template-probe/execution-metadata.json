@@ -1,0 +1,202 @@
+[
+  {
+    "case": "A",
+    "branch": "baseline",
+    "exit_code": 0,
+    "elapsed_seconds": 13.69,
+    "cost_usd": 0.034806000000000004,
+    "model_usage": {
+      "claude-sonnet-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1711,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 4423,
+        "webSearchRequests": 0,
+        "costUSD": 0.034806000000000004,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "is_error": false,
+    "session_id": "729ffeea-6c15-435d-af9f-11a16eaef882"
+  },
+  {
+    "case": "A",
+    "branch": "treatment",
+    "exit_code": 0,
+    "elapsed_seconds": 11.91,
+    "cost_usd": 0.035575999999999997,
+    "model_usage": {
+      "claude-sonnet-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1642,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 4788,
+        "webSearchRequests": 0,
+        "costUSD": 0.035575999999999997,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "is_error": false,
+    "session_id": "1baaffd3-42ae-4780-ad86-32bc50896401"
+  },
+  {
+    "case": "B",
+    "branch": "treatment",
+    "exit_code": 0,
+    "elapsed_seconds": 13.26,
+    "cost_usd": 0.037006,
+    "model_usage": {
+      "claude-sonnet-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1781,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 4798,
+        "webSearchRequests": 0,
+        "costUSD": 0.037006,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 124,
+        "canonicalModel": "claude-sonnet-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "is_error": false,
+    "session_id": "917d4daf-e125-46a3-9091-3f48e64cb427"
+  },
+  {
+    "case": "B",
+    "branch": "baseline",
+    "exit_code": 0,
+    "elapsed_seconds": 13.6,
+    "cost_usd": 0.035966,
+    "model_usage": {
+      "claude-sonnet-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1823,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 4433,
+        "webSearchRequests": 0,
+        "costUSD": 0.035966,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 100,
+        "canonicalModel": "claude-sonnet-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "is_error": false,
+    "session_id": "1473b77b-fe51-4dab-b828-58ab8da18b8a"
+  },
+  {
+    "case": "C",
+    "branch": "baseline",
+    "exit_code": 0,
+    "elapsed_seconds": 10.51,
+    "cost_usd": 0.032896,
+    "model_usage": {
+      "claude-sonnet-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1490,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 4498,
+        "webSearchRequests": 0,
+        "costUSD": 0.032896,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "is_error": false,
+    "session_id": "1c188a62-5db2-4c55-815a-df870fe64108"
+  },
+  {
+    "case": "C",
+    "branch": "treatment",
+    "exit_code": 0,
+    "elapsed_seconds": 10.98,
+    "cost_usd": 0.034606,
+    "model_usage": {
+      "claude-sonnet-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1515,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 4863,
+        "webSearchRequests": 0,
+        "costUSD": 0.034606,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "is_error": false,
+    "session_id": "91880047-ed7e-4095-895a-47b18460b091"
+  },
+  {
+    "case": "D",
+    "branch": "treatment",
+    "exit_code": 0,
+    "elapsed_seconds": 12.63,
+    "cost_usd": 0.037452,
+    "model_usage": {
+      "claude-sonnet-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1824,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 4802,
+        "webSearchRequests": 0,
+        "costUSD": 0.037452,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "is_error": false,
+    "session_id": "37bc9698-6ba8-4bcf-b599-3788953e47c4"
+  },
+  {
+    "case": "D",
+    "branch": "baseline",
+    "exit_code": 0,
+    "elapsed_seconds": 13.33,
+    "cost_usd": 0.035342,
+    "model_usage": {
+      "claude-sonnet-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1759,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 4437,
+        "webSearchRequests": 0,
+        "costUSD": 0.035342,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "is_error": false,
+    "session_id": "cf8e2fa9-16b7-473e-a521-0a52ad428572"
+  }
+]

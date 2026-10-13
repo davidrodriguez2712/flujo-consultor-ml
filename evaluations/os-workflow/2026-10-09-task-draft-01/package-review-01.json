@@ -1,0 +1,11 @@
+{
+  "status": "AUTHOR_REVIEW_COMPLETED",
+  "independent": false,
+  "blind": false,
+  "preparation_manifest_sha256": "cb7f2ae23e03418af3081005c17586719b2152bb604274d9235b314a504f5aba",
+  "user_instruction": "siguiente",
+  "scope": "Revisión/preparación de configuración sin calls. No aceptación humana de paquete ni permiso de gasto inferidos.",
+  "ruling": "Sin inconsistencias materiales detectadas; fixture inputs no respaldan operaciones ni datos inexistentes.",
+  "human_package_acceptance": "PENDING",
+  "paid_execution_authorized": false
+}

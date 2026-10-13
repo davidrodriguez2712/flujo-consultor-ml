@@ -1,0 +1,64 @@
+"""Comprobaciones ad hoc de Diagnosis; sin entrenamiento ni asignación de splits."""
+import csv,hashlib,json
+from pathlib import Path
+from collections import Counter
+from datetime import date,timedelta
+root=Path('pilots/riesgo-credito-sintetico')
+raw=root/'data/raw'
+tables={p.stem:list(csv.DictReader(p.open(newline='',encoding='utf-8'))) for p in sorted(raw.glob('*.csv'))}
+manifest=json.loads((raw/'manifest.json').read_text())
+inventory={}
+for name,rows in tables.items():
+    columns={}
+    for column in rows[0]:
+        values=[r[column] for r in rows];nonblank=[v for v in values if v!='']
+        if not nonblank: kind='empty'
+        elif all(len(v)==10 and v[4]=='-' and v[7]=='-' for v in nonblank):kind='date'
+        else:
+            try:
+                [int(v) for v in nonblank];kind='integer'
+            except ValueError:
+                try:[float(v) for v in nonblank];kind='number'
+                except ValueError:kind='string'
+        columns[column]={'type_inferred':kind,'missing':values.count(''),'unique_nonblank':len(set(nonblank)),'constant_nonblank':len(set(nonblank))==1}
+        if kind=='date':columns[column]['min']=min(nonblank);columns[column]['max']=max(nonblank)
+    ids=[r['application_id'] for r in rows]
+    inventory[name]={'rows':len(rows),'columns':columns,'duplicate_application_ids':len(ids)-len(set(ids)),'exact_duplicate_rows':len(rows)-len({tuple(sorted(r.items())) for r in rows}),'sample':rows[0],'sha256':hashlib.sha256((raw/(name+'.csv')).read_bytes()).hexdigest()}
+    assert inventory[name]['sha256']==manifest['files'][name+'.csv']['sha256']
+apps={r['application_id']:r for r in tables['applications']}
+outcomes={r['application_id']:r for r in tables['outcomes']}
+decisions={r['application_id']:r for r in tables['decisions']}
+history={r['application_id']:r for r in tables['history']}
+joins={name:{'same_application_ids':set(r['application_id'] for r in rows)==set(apps),'cardinality':'1:1' if inventory[name]['duplicate_application_ids']==0 and set(r['application_id'] for r in rows)==set(apps) else 'requires_review'} for name,rows in tables.items()}
+# Fan-out hipotético por customer_id; no se materializa el join incorrecto.
+ac=Counter(r['customer_id'] for r in tables['applications']);hc=Counter(r['customer_id'] for r in tables['history'])
+fanout=sum(n*hc[k] for k,n in ac.items())
+checks={
+ 'history_available_before_scoring':all(r['available_at']<=apps[r['application_id']]['scoring_at'] for r in tables['history']),
+ 'history_snapshot_before_available':all(r['snapshot_at']<=r['available_at'] for r in tables['history']),
+ 'decision_after_scoring':all(r['decision_at']>apps[r['application_id']]['scoring_at'] for r in tables['decisions']),
+ 'pending_target_blank':all(r['target_30dpd_90d']=='' for r in tables['outcomes'] if r['label_status']=='pending'),
+ 'rejected_target_blank':all(r['target_30dpd_90d']=='' for r in tables['outcomes'] if r['label_status']=='not_observed_rejected'),
+ 'observed_at_extract':all(r['label_available_at']<=r['extract_at'] and r['target_30dpd_90d'] in ['0','1'] for r in tables['outcomes'] if r['label_status']=='observed'),
+ 'delay_97_days':all(date.fromisoformat(r['label_available_at'])==date.fromisoformat(r['disbursed_at'])+timedelta(days=97) for r in tables['outcomes'] if r['disbursed_at']),
+ 'leakage_feature_available_late':all(r['available_at']>apps[r['application_id']]['scoring_at'] for r in tables['post_decision'] if r['max_dpd_90d']!=''),
+ 'leakage_feature_encodes_target':all(int(int(r['max_dpd_90d'])>=30)==int(outcomes[r['application_id']]['target_30dpd_90d']) for r in tables['post_decision'] if r['max_dpd_90d']!=''),
+ 'no_postdecision_values_for_pending_or_rejected':all(r['max_dpd_90d']=='' and r['available_at']=='' for r in tables['post_decision'] if outcomes[r['application_id']]['label_status']!='observed')}
+assert all(checks.values())
+# Son checks de viabilidad sobre rangos propuestos, no splits ejecutados/persistidos.
+def train_candidates(cutoff):
+    return [a for key,a in apps.items() if a['scoring_at']<cutoff and outcomes[key]['label_available_at'] and outcomes[key]['label_available_at']<=cutoff and outcomes[key]['label_status']=='observed']
+def train_summary(rows, cutoff):
+    return {'rows':len(rows),'customers':len({r['customer_id'] for r in rows}),'scoring_min':min(r['scoring_at'] for r in rows),'scoring_max':max(r['scoring_at'] for r in rows),'latest_label_available':max(outcomes[r['application_id']]['label_available_at'] for r in rows),'positive_labels':sum(int(outcomes[r['application_id']]['target_30dpd_90d']) for r in rows),'all_labels_available_at_cutoff':all(outcomes[r['application_id']]['label_available_at']<=cutoff for r in rows)}
+devtrain=train_candidates('2025-01-01');finaltrain=train_candidates('2025-07-01')
+devval=[a for a in apps.values() if '2025-01-01'<=a['scoring_at']<'2025-03-01' and outcomes[a['application_id']]['label_status']=='observed']
+finalrange=[a for a in apps.values() if '2025-07-01'<=a['scoring_at']<'2025-10-01']
+finalevaluable=[a for a in finalrange if outcomes[a['application_id']]['label_status']=='observed']
+assert all(outcomes[a['application_id']]['label_available_at']<='2025-06-15' for a in devval)
+assert all(outcomes[a['application_id']]['label_available_at']<='2026-01-15' for a in finalevaluable)
+assert max(r['scoring_at'] for r in finaltrain)<min(r['scoring_at'] for r in finalrange)
+repeated=len(set(a['customer_id'] for a in finaltrain)&set(a['customer_id'] for a in finalevaluable))
+late_at_final=[a for a in apps.values() if a['scoring_at']<'2025-07-01' and outcomes[a['application_id']]['label_status']=='observed' and outcomes[a['application_id']]['label_available_at']>'2025-07-01']
+result={'date':'2026-10-08','synthetic':True,'scope':'Checks ad hoc de estructura/viabilidad; sin modelos, split ejecutado ni métricas de holdout.','inventory':inventory,'joins':joins,'wrong_customer_join_rows':fanout,'intended_application_join_rows':len(apps),'checks':checks,'proposed_validation_feasibility':{'development_train':train_summary(devtrain,'2025-01-01'),'development_validation':{'rows':len(devval),'positive_labels':sum(int(outcomes[a['application_id']]['target_30dpd_90d']) for a in devval),'all_labels_available_at_selection_2025_06_15':True},'final_train':train_summary(finaltrain,'2025-07-01'),'reserved_final_period':{'applications':len(finalrange),'evaluable_funded_mature':len(finalevaluable),'rejected_unobserved':len(finalrange)-len(finalevaluable),'all_funded_labels_available_at_extract':True,'customers_overlapping_train_and_final':repeated,'positive_labels':'NOT_AGGREGATED_BY_HOLDOUT_IN_THIS_AUDIT','model_metrics':'NOT_COMPUTED'},'observed_at_extract_but_unavailable_at_final_training_cutoff':len(late_at_final)},'label_counts':dict(Counter(r['label_status'] for r in tables['outcomes']))}
+(root/'analysis/outputs/diagnosis-checks.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+print(json.dumps({k:v for k,v in result.items() if k not in ['inventory','joins']},ensure_ascii=False,indent=2))

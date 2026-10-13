@@ -1,0 +1,12 @@
+{
+  "context": "Mantenimiento ficticio. Target binario observado en extracción 2025-07-15; fecha de cierre de ventana 2025-06-30. No se proporcionan label_available_at, delay ni regla de certificación. La fecha de evento o fin de ventana no equivale automáticamente a disponibilidad.",
+  "cutoff": "2025-07-01T00:00:00Z",
+  "rows": [
+    {
+      "id": "D1",
+      "prediction_timestamp": "2025-05-01T00:00:00Z",
+      "window_end": "2025-06-30T00:00:00Z",
+      "target": 0
+    }
+  ]
+}

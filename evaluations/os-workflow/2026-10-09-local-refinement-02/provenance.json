@@ -1,0 +1,10 @@
+{
+  "prior_case": "T02",
+  "prior_run_manifest_sha256": "0cef7918311a6902d3709bd607d7bdb045b9b94dd9ff73393a5ab4c2fffdbfd5",
+  "change": "Fixture nuevo documenta precio, cantidad, coste e ingresos recalculados; contrato Markdown alineado con checker0.2.0.",
+  "prior_raw_regraded": false,
+  "prior_expected_modified": false,
+  "novel_case": false,
+  "agent_runs": 0,
+  "api_cost_usd": 0
+}

@@ -1,0 +1,112 @@
+{
+  "started_at": "2026-10-11T13:52:05.470874+00:00",
+  "argv": [
+    "claude",
+    "-p",
+    "--restricted",
+    "--no-chrome",
+    "--no-session-persistence",
+    "--setting-sources",
+    "",
+    "--settings",
+    "{\"disableBundledSkills\": true, \"permissions\": {\"allow\": [\"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L01-baseline/workspace/.runtime/check_inputs.py)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L01-baseline/workspace/case.md)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L01-baseline/workspace/inputs/context.md)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L01-baseline/workspace/inputs/observations.csv)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L01-baseline/workspace/inputs/pipeline.py)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L01-baseline/workspace/workflow.md)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L01-baseline/workspace/reports/leakage/audit.md)\", \"Bash(/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python /Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L01-baseline/workspace/.runtime/check_inputs.py)\", \"Skill(acos-eval:detect-leakage)\"], \"deny\": [\"Agent\", \"WebFetch\", \"WebSearch\", \"NotebookEdit\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L01-baseline/workspace/inputs/**)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L01-baseline/workspace/case.md)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L01-baseline/workspace/.runtime/**)\"]}}",
+    "--strict-mcp-config",
+    "--mcp-config",
+    "{\"mcpServers\":{}}",
+    "--permission-mode",
+    "dontAsk",
+    "--permission-prompts",
+    "none",
+    "--tools",
+    "Read,Write,Bash,Skill",
+    "--max-turns",
+    "8",
+    "--effort",
+    "low",
+    "--model",
+    "claude-haiku-5-5",
+    "--system-prompt",
+    "Responde en español. Audita solo el expediente público, respeta sus límites y no aceptes gates. Usa únicamente herramientas y capacidades disponibles. Entrega el reporte y su ruta según case.md.",
+    "--output-format",
+    "stream-json",
+    "--verbose"
+  ],
+  "runtime_success": true,
+  "condition": "baseline",
+  "skill_invoked": false,
+  "request_count": 4,
+  "returncode": 0,
+  "tool_calls": [
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L01-baseline/workspace/workflow.md"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L01-baseline/workspace/case.md"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L01-baseline/workspace/inputs/context.md"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L01-baseline/workspace/inputs/pipeline.py"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L01-baseline/workspace/inputs/observations.csv"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L01-baseline/workspace/.runtime/check_inputs.py"
+      }
+    },
+    {
+      "name": "Bash",
+      "input": {
+        "command": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python /Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L01-baseline/workspace/.runtime/check_inputs.py",
+        "description": "Run the authorized input check utility"
+      }
+    },
+    {
+      "name": "Write",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L01-baseline/workspace/reports/leakage/audit.md",
+        "content": "---\nfecha: 2026-10-11\ncaso: L01\nskill: none\nskill_version: null\nestado: borrador para revisión humana\ncondicion: baseline (sin skill cargada)\ninputs:\n  - path: case.md\n    sha256: 89f1c1a622a64a73dafb5b641d871d372e72a1076533a23378ec2446f11e1e14\n    bytes: 1728\n  - path: inputs/context.md\n    sha256: 3e3db7db6249d33479a7e01fdcaee3f8f8fec3f898f7c863e2d252398e613552\n    bytes: 776\n  - path: inputs/observations.csv\n    sha256: 29e4badcbbcbf9e242bde9f2d31b80d1f55091a52d094b658e6992a457ad0f19\n    bytes: 417\n    filas: 4\n  - path: inputs/pipeline.py\n    sha256: fb122bed11f58973887818405e1b992b1589a72f8faf0ea13daf98ddb2f3da63\n    bytes: 204\n---\n\n# Auditoría de leakage — L01\n\n## Resumen\n\nEl conjunto declarado de features (`history_kwh_90d`, `recovered_kwh`) contiene un mecanismo de leakage verificable: `recovered_kwh` solo existe para el sistema después de `recovered_available_at` (2025-06-09 a 2025-06-12), es decir, 8 a 11 días después del scoring (2025-06-01T00:00:00Z). Debe excluirse de las features de predicción. `history_kwh_90d` es temporalmente consistente en las 4 filas (disponible 2025-05-31T23:00:00Z, antes del scoring), aunque con evidencia limitada. `pipeline.py` no aplica ningún corte temporal, de modo que la protección depende de que los datos de entrada ya estén filtrados.\n\n## Hallazgos\n\n**H1 — Leakage por feature futura (`recovered_kwh`)**\n- Componente: `inputs/pipeline.py`, `FEATURE_COLUMNS`; `inputs/observations.csv`, columna `recovered_kwh` y `recovered_available_at`.\n- Mecanismo: el valor se determina al procesar la inspección y está disponible después del scoring. El cero posterior tampoco era conocido al scoring (`context.md`).\n- Fuente: `inputs/context.md`; filas S01–S04 de `observations.csv` (`recovered_available_at` = 06-09, 06-10, 06-11, 06-12 frente a `prediction_at` = 06-01).\n- Confianza: alta (la diferencia temporal es directa en los datos y en el contexto).\n- Severidad: alta.\n- Acción propuesta: retirar `recovered_kwh` de `FEATURE_COLUMNS`. Solo podría reconsiderarse si se define una versión con corte `recovered_available_at <= prediction_at`, lo que requiere decisión del owner.\n\n**H2 — Ausencia de corte temporal en el proceso de features**\n- Componente: `inputs/pipeline.py`, `build_features`.\n- Mecanismo: `build_features` solo selecciona columnas por nombre; no compara `*_available_at` con `prediction_at` ni descarta valores posteriores. Cualquier columna añadida a la lista se incorporaría sin control.\n- Fuente: `inputs/pipeline.py` líneas 2–4.\n- Confianza: alta para lo que el fragmento hace; el resto del pipeline no está en el expediente.\n- Severidad: media.\n- Acción propuesta: añadir una validación explícita de `available_at <= prediction_at` por feature antes de construir el vector.\n\n**H3 — `history_kwh_90d` consistente en temporalidad (sin hallazgo de leakage)**\n- Fuente: `context.md` (uso de días anteriores al scoring); `observations.csv`, `history_available_at` = 2025-05-31T23:00:00Z en las 4 filas.\n- Confianza: media. Solo se verificaron timestamps declarados en 4 filas sintéticas; no se auditó cómo se calcula la columna upstream.\n- Severidad: no aplica.\n- Acción propuesta: confirmar con el owner de datos la lógica de la ventana de 90 días.\n\n## Evidencia\n\n- Verificación determinista (utilidad `.runtime/check_inputs.py`, único comando ejecutado): hashes y tamaños de los cuatro inputs listados arriba; `observations.csv` con 4 filas y las 7 columnas esperadas.\n- Lectura directa de `case.md`, `workflow.md`, `inputs/context.md`, `inputs/pipeline.py`, `inputs/observations.csv`.\n- Comparación temporal: `prediction_at` (2025-06-01T00:00:00Z) frente a `history_available_at` y `recovered_available_at` en cada fila. Es una comparación manual de timestamps, no un cálculo de métricas.\n\n## Límites de inspección\n\n- No se ejecutó `pipeline.py`, no se entrenó, no se calcularon métricas de performance ni se evaluó la relación entre features y `fraud_confirmed`; según el encargo, esas partes están fuera de alcance.\n- Datos sintéticos de 4 filas: las conclusiones son sobre el mecanismo declarado, no sobre distribuciones.\n- No hay split, fit de transformaciones ni código de entrenamiento en el expediente; no se concluye sobre esas partes.\n- Skill: no se invocó `acos-eval:detect-leakage` porque no figura entre las skills disponibles. Por eso `skill: none`. La auditoría es manual y basada en lectura de código y timestamps.\n- Fuente/expected del reviewer no forman parte del expediente y no se usaron.\n\n## Preguntas abiertas\n\n1. ¿Qué owner acepta la definición de la feature `recovered_kwh` y puede confirmar que no se usará en ninguna versión sin corte temporal?\n2. ¿Cómo se genera `history_kwh_90d` en el sistema origen y se garantiza el corte de 2025-05-31T23:00:00Z?\n3. ¿Existe en otro código (fuera del expediente) un filtro temporal aplicado antes de `build_features`?\n\n## Recomendaciones\n\n1. Excluir `recovered_kwh` de las features de predicción (H1). Prioridad alta.\n2. Introducir una validación temporal explícita por feature en `build_features` (H2).\n3. Mantener `history_kwh_90d` pendiente de confirmación del owner de datos (H3).\n4. Antes de cualquier evaluación de performance, re-auditar con el pipeline completo; esta auditoría no lo cubre.\n"
+      }
+    }
+  ],
+  "skill_invocation_requested": false,
+  "usage_known": true,
+  "report_persisted": true,
+  "report_sha256": "d5af7396c869d6e12d73c1db5eb4de152cce5414b1e3e5f6569d03ef57feffa6",
+  "model_usage": {
+    "claude-haiku-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 4853,
+      "cacheReadInputTokens": 27405,
+      "cacheCreationInputTokens": 10381,
+      "webSearchRequests": 0,
+      "costUSD": 0.003998975,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1010,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "finished_at": "2026-10-11T13:52:28.525622+00:00"
+}

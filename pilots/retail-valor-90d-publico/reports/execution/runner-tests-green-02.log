@@ -1,0 +1,48 @@
+F.F.                                                                     [100%]
+=================================== FAILURES ===================================
+________________________ test_contract_changes_rejected ________________________
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1790/test_contract_changes_rejected0')
+
+    def test_contract_changes_rejected(tmp_path):
+     (tmp_path/'reports/execution').mkdir(parents=True);(tmp_path/'reports/diagnosis').mkdir(parents=True)
+     (tmp_path/'framing').mkdir();path=tmp_path/'framing/retail_contract.yaml';path.write_text('fixed')
+     h=hashlib.sha256(path.read_bytes()).hexdigest()
+     (tmp_path/'reports/diagnosis/human-approval.json').write_text(json.dumps({'decision':'PASS','contracts':{'framing/retail_contract.yaml':h}}))
+     (tmp_path/'reports/execution/approved-contracts.json').write_text(json.dumps({'approved_sha256':{'framing/retail_contract.yaml':h}}))
+>    assert checked_contracts(tmp_path)['approved_sha256']['framing/retail_contract.yaml']==h
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+pilots/retail-valor-90d-publico/analysis/test_retail_runner.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1790/test_contract_changes_rejected0')
+
+    def checked_contracts(root):
+        compiled=root/'reports/execution/approved-contracts.json'
+        b=json.loads(compiled.read_text())
+        a=json.loads((root/'reports/diagnosis/human-approval.json').read_text())
+>       if sha256(compiled)!=a.get('compiled_contract_sha256'):raise ValueError('representación del contrato modificada')
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       ValueError: representación del contrato modificada
+
+pilots/retail-valor-90d-publico/analysis/run_retail.py:28: ValueError
+____________________ test_path_escape_in_manifest_rejected _____________________
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1790/test_path_escape_in_manifest_r0')
+
+    def test_path_escape_in_manifest_rejected(tmp_path):
+     (tmp_path/'reports/execution').mkdir(parents=True);(tmp_path/'reports/diagnosis').mkdir(parents=True)
+     (tmp_path/'reports/diagnosis/human-approval.json').write_text(json.dumps({'decision':'PASS','contracts':{'../secret':'x'}}))
+     (tmp_path/'reports/execution/approved-contracts.json').write_text(json.dumps({'approved_sha256':{'../secret':'x'}}))
+>    with pytest.raises(ValueError,match='path'):checked_contracts(tmp_path)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E    AssertionError: Regex pattern did not match.
+E      Expected regex: 'path'
+E      Actual message: 'representación del contrato modificada'
+
+pilots/retail-valor-90d-publico/analysis/test_retail_runner.py:23: AssertionError
+=========================== short test summary info ============================
+FAILED pilots/retail-valor-90d-publico/analysis/test_retail_runner.py::test_contract_changes_rejected
+FAILED pilots/retail-valor-90d-publico/analysis/test_retail_runner.py::test_path_escape_in_manifest_rejected
+2 failed, 2 passed in 0.95s

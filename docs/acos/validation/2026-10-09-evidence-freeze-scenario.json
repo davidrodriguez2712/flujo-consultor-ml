@@ -1,0 +1,11 @@
+{
+  "scenario": "manual-freeze-policy",
+  "result": "PASS",
+  "project": "/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-evidence-vvtxfbjg/engagement",
+  "packaged_resources_match_canonical": true,
+  "generated_guidance_present": true,
+  "live_updates_preserve_frozen_hashes": true,
+  "frozen_tampering_detected": true,
+  "automatic_acos_enforcement": false,
+  "api_cost_usd": 0
+}

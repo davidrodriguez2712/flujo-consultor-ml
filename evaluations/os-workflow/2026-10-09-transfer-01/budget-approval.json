@@ -1,0 +1,10 @@
+{
+  "status": "APPROVED",
+  "by": "David",
+  "user_reply": "si aprobado",
+  "recorded_at_utc": "2026-10-10T04:13:15.716964+00:00",
+  "execution_manifest_sha256": "69529a3f59f7eb3c214a5ebfaa64b8a0e50610f1a366efdd6493443b0b6601a4",
+  "total_budget_usd": 0.1,
+  "scope": "Hasta US$0.10 adicionales para smoke y doce respuestas; un request por invoke, sin retries. No transfiere saldos previos.",
+  "prior_study_estimated_usd": 0.02065453
+}

@@ -1,0 +1,3 @@
+Smoke técnico completado. El CSV tiene 1 fila (`entity_id,value`) y la utility confirmó conteo y hash. No hay hash de referencia en el expediente, así que la integridad queda pendiente. No se evaluó leakage: con una sola fila los datos son insuficientes y el caso queda escalado al owner.
+
+Reporte: `/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/smoke-baseline/workspace/reports/leakage/audit.md`

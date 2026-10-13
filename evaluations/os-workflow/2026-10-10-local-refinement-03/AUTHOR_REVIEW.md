@@ -1,0 +1,3 @@
+# Revisión del autor
+
+Contenido específico del output futuro y criterios observables, distintos de métricas de rendimiento pendientes. No exigir campo particular. Headings/status siguen contrato; no cambia checker ni schema. El estado se refiere a la acción actual, no altera tracker, permisos o gates. Recursos/template generado coinciden; manual nuevo revisado localmente. Proyecto fraud inicialmenteBLOCKED por campos obligatorios vacíos, no error del ajuste. Pilotos/evaluaciones congelados intactos. Ejemplos del autor con casos expuestos, sin eficacia o generalización. No nueva suite ni llamadas.

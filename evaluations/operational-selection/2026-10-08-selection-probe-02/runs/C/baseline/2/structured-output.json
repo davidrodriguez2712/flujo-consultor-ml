@@ -1,0 +1,42 @@
+{
+  "output_type": "value_selection",
+  "selection_status": "determined",
+  "eligible_count": 3,
+  "capacity_k": 2,
+  "effective_k": 2,
+  "selected_ids": [
+    "B",
+    "C"
+  ],
+  "risk_ranking_ids": [
+    "A",
+    "B",
+    "C"
+  ],
+  "total_cost": 10,
+  "expected_net_value": 20,
+  "feasibility": "feasible",
+  "optimality": "optimal",
+  "causal_identification": {
+    "status": "not_requested",
+    "estimand": null,
+    "reason": "No se solicit\u00f3 estimaci\u00f3n causal; el net_value es un valor esperado suministrado por negocio, no evidencia de incrementalidad."
+  },
+  "metrics": {
+    "population_id": "eligible-C",
+    "precision": null,
+    "recall": null,
+    "lift": null,
+    "precision_status": "not_requested",
+    "recall_status": "not_requested",
+    "lift_status": "not_requested",
+    "reason": "No se solicitan m\u00e9tricas de labels (precision/recall/lift); no hay labels en el expediente."
+  },
+  "reason": "Los 3 elegibles son indivisibles, con capacidad m\u00e1x. 2 y presupuesto 10. Subconjuntos factibles: {A}: coste 6, valor 13; {B}: 5, 10; {C}: 5, 10; {B,C}: 10, 20; {A,B} y {A,C}: coste 11 > 10, infactibles. El \u00f3ptimo es {B,C} con valor 20 (net_value ya descuenta coste, no se resta de nuevo). Un greedy por net_value o risk_score escoger\u00eda A (13) y no podr\u00eda a\u00f1adir ning\u00fan otro por presupuesto, con valor 13 < 20. Ordenado por net_value desc/ID asc: B, C. El ranking por risk_score es A, B, C y es descriptivo; no determina la selecci\u00f3n. El valor es un escenario con supuestos de negocio aditivos, no efecto causal. Gate: NEEDS_REVIEW; no se aprueba.",
+  "open_questions": [
+    "\u00bfSe confirma que el presupuesto 10 es un l\u00edmite duro inclusivo (coste total \u2264 10)?",
+    "\u00bfSe confirma que net_value es aditivo sin interacciones y que su incertidumbre fue evaluada por negocio?",
+    "\u00bfC\u00f3mo se medir\u00e1 despu\u00e9s el resultado real, dado que no se solicita identificaci\u00f3n causal?"
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

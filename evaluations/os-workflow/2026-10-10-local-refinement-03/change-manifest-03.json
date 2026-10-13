@@ -1,0 +1,92 @@
+{
+  "id": "os-workflow-local-refinement-03",
+  "scope": "Pautas/código de manual, template, bundle, ejemplos y verificaciones locales. No eficacia de agente ni calls.",
+  "precedence_evidence": "local_only",
+  "files": [
+    {
+      "path": "AUTHOR_REVIEW.md",
+      "sha256": "9eb2377a6f9b9b11aa4ac651498ec84085658f35c702cc5e0a9470aafd4c05e6",
+      "bytes": 610
+    },
+    {
+      "path": "README.md",
+      "sha256": "1509079aed5e7e0aa29f172b7ac985ba391e47dac9878d8eb49226f25ecbe200",
+      "bytes": 548
+    },
+    {
+      "path": "compiler-checks.json",
+      "sha256": "079ccc364367744265b5230fb2a4832f4c7da861941ad5b6663257ee969f5ef4",
+      "bytes": 6982
+    },
+    {
+      "path": "design-approval.json",
+      "sha256": "72dfc37b4cb08acc28ab2f20bfa426ba036323a14edae391f801945b07673a80",
+      "bytes": 278
+    },
+    {
+      "path": "examples/counterexamples.md",
+      "sha256": "401d15d6449f7c27f5ff1f05ead6b1401105652d2a3a557455b61a6a01ba12ed",
+      "bytes": 869
+    },
+    {
+      "path": "examples/follow-up.json",
+      "sha256": "8711e87b91404c56e754fb5e03cb8379708c624b47619b38db6f980510cd543c",
+      "bytes": 731
+    },
+    {
+      "path": "examples/forecast-task.json",
+      "sha256": "f842dd56573aa76607798e98d31dfe75dcd3ee23ddb4e1af4d2322f82ea3dadf",
+      "bytes": 2810
+    },
+    {
+      "path": "examples/markdown-state.md",
+      "sha256": "88b87ba76e4801585bc93304c3e81c5e2077878336051bbee4000bcfe3c88881",
+      "bytes": 358
+    },
+    {
+      "path": "generated-MANUAL.md",
+      "sha256": "9b84370e3776fb7244a478a98adbfea959af8e0521a24991528a3e85c4520c67",
+      "bytes": 8527
+    },
+    {
+      "path": "generated-task-template.md",
+      "sha256": "11962ff5c52bcd74813b4b4a158dc42a8759405f60810fe11ff559cd59db08a9",
+      "bytes": 6886
+    },
+    {
+      "path": "historical-integrity.json",
+      "sha256": "bf87fe60f42dec7155d3617efdbaf7ee7ab5ba81ed68078eae29114e5793f7c3",
+      "bytes": 135
+    },
+    {
+      "path": "local-checks.json",
+      "sha256": "6f734c02213bdd00d859b87b6911485e86e2a2ce188abfdd0170134077370e45",
+      "bytes": 2227
+    },
+    {
+      "path": "snapshots/src/acos/render.py",
+      "sha256": "78485003a9e5fff3b8b04ed34fd4c2f6b058f7103794ac5f29ada6dab5d0e3f7",
+      "bytes": 16386
+    },
+    {
+      "path": "snapshots/src/acos/resources/os/templates/project-and-task.md",
+      "sha256": "11962ff5c52bcd74813b4b4a158dc42a8759405f60810fe11ff559cd59db08a9",
+      "bytes": 6886
+    },
+    {
+      "path": "snapshots/src/acos/resources/os/workflow/execution-and-qa.md",
+      "sha256": "af47b5625869819d53446a6b4b2f541d1c054a70d2767e2be3817d4efd27f422",
+      "bytes": 21394
+    },
+    {
+      "path": "snapshots/templates/project-and-task.md",
+      "sha256": "11962ff5c52bcd74813b4b4a158dc42a8759405f60810fe11ff559cd59db08a9",
+      "bytes": 6886
+    },
+    {
+      "path": "snapshots/workflow/execution-and-qa.md",
+      "sha256": "af47b5625869819d53446a6b4b2f541d1c054a70d2767e2be3817d4efd27f422",
+      "bytes": 21394
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+......................F.F                                                [100%]
+=================================== FAILURES ===================================
+_ test_development_run_matches_reference_population_and_does_not_evaluate_final _
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1561/test_development_run_matches_r0')
+
+    def test_development_run_matches_reference_population_and_does_not_evaluate_final(tmp_path):
+        c=code();root=fixture_project(tmp_path);freeze=freeze_file(c,root)
+        summary=c.run(root,root/'result',freeze)
+        assert summary['training_rows']==1248 and summary['validation_rows']==298
+        assert summary['reference_probability']==pytest.approx(134/1248)
+        assert summary['final_metrics_computed'] is False
+        assert (root/'result/model.json').is_file()
+        import json
+        detail=json.loads((root/'result/results.json').read_text())
+>       assert set(detail['customer_segments'])=={'known','new'}
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'customer_segments'
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:137: KeyError
+___________ test_reporting_separates_months_and_known_vs_new_clients ___________
+
+    def test_reporting_separates_months_and_known_vs_new_clients():
+        c=code()
+        train=[row('T',customer_id='C1')]
+        val=[row('A',0,customer_id='C1',scoring_at='2025-01-03'),row('B',1,customer_id='C2',scoring_at='2025-02-03')]
+        scores=[{'application_id':'A','score':.2},{'application_id':'B','score':.2}]
+        reference=[{'application_id':'A','score':.5},{'application_id':'B','score':.5}]
+>       actual=c.group_reports(scores,reference,train,val)
+               ^^^^^^^^^^^^^^^
+E       AttributeError: module 'credit_baseline_under_test' has no attribute 'group_reports'
+
+pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py:156: AttributeError
+=========================== short test summary info ============================
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_development_run_matches_reference_population_and_does_not_evaluate_final
+FAILED pilots/riesgo-credito-sintetico/analysis/test_credit_baseline.py::test_reporting_separates_months_and_known_vs_new_clients
+2 failed, 23 passed in 0.90s

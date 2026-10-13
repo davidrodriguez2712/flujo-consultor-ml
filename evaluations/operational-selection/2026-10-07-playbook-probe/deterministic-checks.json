@@ -1,0 +1,142 @@
+{
+  "results": [
+    {
+      "case": "A",
+      "branch": "baseline",
+      "checks": {
+        "ordered_selection": true,
+        "selection_membership": true,
+        "effective_k": true,
+        "metrics": true,
+        "decision": true,
+        "gate": true
+      },
+      "json_fence_present": true
+    },
+    {
+      "case": "A",
+      "branch": "treatment",
+      "checks": {
+        "ordered_selection": true,
+        "selection_membership": true,
+        "effective_k": true,
+        "metrics": true,
+        "decision": true,
+        "gate": true
+      },
+      "json_fence_present": true
+    },
+    {
+      "case": "B",
+      "branch": "baseline",
+      "checks": {
+        "ordered_selection": true,
+        "selection_membership": true,
+        "effective_k": true,
+        "metrics": true,
+        "decision": true,
+        "gate": true
+      },
+      "json_fence_present": true
+    },
+    {
+      "case": "B",
+      "branch": "treatment",
+      "checks": {
+        "ordered_selection": true,
+        "selection_membership": true,
+        "effective_k": true,
+        "metrics": true,
+        "decision": true,
+        "gate": true
+      },
+      "json_fence_present": true
+    },
+    {
+      "case": "C",
+      "branch": "baseline",
+      "checks": {
+        "ordered_selection": true,
+        "selection_membership": true,
+        "effective_k": true,
+        "metrics": true,
+        "decision": true,
+        "gate": true
+      },
+      "json_fence_present": true
+    },
+    {
+      "case": "C",
+      "branch": "treatment",
+      "checks": {
+        "ordered_selection": false,
+        "selection_membership": true,
+        "effective_k": true,
+        "metrics": true,
+        "decision": true,
+        "gate": true
+      },
+      "json_fence_present": true
+    },
+    {
+      "case": "D",
+      "branch": "baseline",
+      "checks": {
+        "ordered_selection": true,
+        "selection_membership": true,
+        "effective_k": true,
+        "metrics": true,
+        "decision": true,
+        "gate": true
+      },
+      "json_fence_present": true
+    },
+    {
+      "case": "D",
+      "branch": "treatment",
+      "checks": {
+        "ordered_selection": true,
+        "selection_membership": true,
+        "effective_k": true,
+        "metrics": true,
+        "decision": false,
+        "gate": true
+      },
+      "json_fence_present": true
+    }
+  ],
+  "summary": {
+    "baseline": {
+      "check_pass_counts": {
+        "ordered_selection": 4,
+        "selection_membership": 4,
+        "effective_k": 4,
+        "metrics": 4,
+        "decision": 4,
+        "gate": 4
+      },
+      "cases": 4,
+      "time_seconds": 52.46,
+      "cost_usd": 0.122268
+    },
+    "treatment": {
+      "check_pass_counts": {
+        "ordered_selection": 3,
+        "selection_membership": 4,
+        "effective_k": 4,
+        "metrics": 4,
+        "decision": 3,
+        "gate": 4
+      },
+      "cases": 4,
+      "time_seconds": 83.1,
+      "cost_usd": 0.123574
+    }
+  },
+  "frozen_inputs_unchanged": true,
+  "eight_sessions_distinct": true,
+  "models": [
+    "claude-sonnet-5-5"
+  ],
+  "review_independent": false
+}

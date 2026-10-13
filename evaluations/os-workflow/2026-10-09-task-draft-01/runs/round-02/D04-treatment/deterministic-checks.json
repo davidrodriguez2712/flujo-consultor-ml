@@ -1,0 +1,19 @@
+{
+  "checker_version": "0.1.0",
+  "strict_json_pass": true,
+  "schema_pass": true,
+  "status_matches": false,
+  "references_exist": true,
+  "unknown_references": [],
+  "semantic_review": "NOT_RUN",
+  "overall_content_pass": null,
+  "referenced_paths": [
+    "constraints/scope.json",
+    "intake/questions.json",
+    "project/state.json"
+  ],
+  "transfer_checker_version": "0.2.0",
+  "format": "json",
+  "format_pass": true,
+  "references_present": true
+}

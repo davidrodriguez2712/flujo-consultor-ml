@@ -1,0 +1,6 @@
+**Resumen**
+
+Smoke técnico completado: leí `case.md`, `workflow.md` y `inputs/data.csv`, y ejecuté la utility fija una sola vez. `data.csv` tiene 1 fila, columnas `entity_id,value`, 21 bytes y SHA-256 `8028f83b…be883dbab`. No evalué leakage ni entrené nada, porque el expediente no lo permite con 1 fila. Skill `acos-eval:detect-leakage`: none/null, no estaba disponible. Este smoke no cuenta como eficacia.
+
+**Ruta del reporte:**
+`/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/smoke-baseline/workspace/reports/leakage/audit.md`

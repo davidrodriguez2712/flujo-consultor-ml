@@ -1,0 +1,611 @@
+# Encargo de auditoría
+Revisa estos expedientes ficticios antes de reconstruir un entrenamiento histórico. Entrega una fila por registro en el schema proporcionado y una justificación verificable. El outcome se refiere a lo certificado en la extracción; la disponibilidad del label, al entrenamiento; la elegibilidad, a usar ese registro con sus features para ese entrenamiento. Los labels positivos representan el evento objetivo y los negativos su ausencia certificada. Usa pending cuando una regla conocida todavía no permite certificar y unknown cuando no se puede determinar el estado. No completes hechos ausentes. Incluye preguntas útiles, si existen. Esta revisión requiere decisión humana: gate_decision=NEEDS_REVIEW.
+
+# Pautas disponibles
+---
+name: design-validation
+description: >-
+  Diseña la estrategia de validación de un problema supervisado ANTES de construir
+  features o entrenar modelos. Analiza la estructura del problema —unidad de
+  observación, entidad, target, prediction timestamp, observation window,
+  prediction horizon, label delay, existencia de grupos, dependencia entre
+  observaciones, riesgo de overlap entre particiones— y el escenario real de
+  producción (cuándo se ejecuta el modelo, sobre qué población, con qué
+  frecuencia se puntúa y se reentrena), y a partir de ahí propone y justifica una
+  estrategia: random holdout, stratified holdout, group split, temporal holdout,
+  out-of-time validation, TimeSeriesSplit, GroupKFold, StratifiedGroupKFold,
+  rolling / expanding / walk-forward, nested cross-validation o combinaciones.
+  Distingue cuatro propósitos de evaluación: model development, final evaluation,
+  out-of-time evaluation y operational evaluation (Precision@K, Lift@K,
+  recuperación esperada, performance por período). Produce un reporte con la
+  estrategia recomendada, la definición de train / validation / test, el diseño de
+  cross-validation, el manejo de entidades, las salvaguardas de leakage, las
+  métricas, los riesgos y las alternativas descartadas con su motivo.
+  NO entrena ni optimiza modelos, NO ejecuta el split, NO aplica reglas automáticas
+  del tipo "hay fecha → temporal split" o "hay entity ID → GroupKFold", y NO
+  sustituye el conocimiento del proceso de negocio.
+  Úsala tras comprender el dataset y antes del feature engineering dependiente del
+  tiempo o del entrenamiento, cuando hay fechas, múltiples observaciones por
+  entidad o grupos relacionados, cuando se necesita backtesting u out-of-time,
+  cuando no está claro qué cross-validation usar o cuando las métricas parecen
+  demasiado optimistas; no la uses para la comprensión estructural inicial (usa
+  `understand-dataset`), para auditar el leakage de un pipeline ya construido (usa
+  `detect-leakage`), ni cuando la tarea es entrenar u optimizar un modelo.
+status: experimental
+version: 0.1.0
+domain: data-science
+---
+
+# Propósito
+
+Esta skill proporciona el **diseño explícito y justificado de la estrategia de
+validación** de un problema supervisado, antes del feature engineering dependiente
+del tiempo y antes del entrenamiento.
+
+El problema que resuelve: la estrategia de validación suele definirse demasiado
+tarde o elegirse por conveniencia (`train_test_split`, `StratifiedKFold`, `KFold`,
+cross-validation estándar) sin comprobar primero si representa cómo funcionará el
+modelo en producción. Una estrategia incorrecta produce métricas optimistas aunque
+no exista ningún error visible en el entrenamiento. Ocurre sobre todo cuando hay
+datos temporales, múltiples registros de una misma entidad, eventos repetidos,
+grupos relacionados, panel data, ventanas de observación, prediction horizons,
+cambios de distribución, o cuando entrenamiento y scoring ocurren en momentos
+distintos. También ocurre cuando la validación es técnicamente válida pero está
+desconectada de la decisión real (evaluar globalmente cuando operacionalmente solo
+importa el desempeño sobre los primeros K casos priorizados).
+
+El problema no es únicamente elegir entre train/test o cross-validation. Es diseñar
+una validación que represente correctamente cómo se genera la información, cuándo
+se realiza la predicción, sobre qué entidades, para qué horizonte, bajo qué
+restricciones y cómo se usará realmente el modelo.
+
+Principio rector:
+
+> La validación debe reproducir lo más fielmente posible la situación real en la
+> que el modelo generará predicciones: qué información existe, en qué momento,
+> sobre qué entidades y para qué decisión.
+
+La skill **no ejecuta el split ni entrena modelos**. Produce un diseño: qué
+estrategia se recomienda, por qué representa mejor el problema, qué alternativas se
+descartan y con qué motivo, cómo construir train / validation / test, qué datos
+quedan aislados y qué métricas deben calcularse.
+
+# Cuándo usar
+
+Usar esta skill cuando:
+
+- ya se comprende la estructura del dataset y falta decidir cómo evaluar;
+- antes de comenzar feature engineering dependiente del tiempo (lag, rolling,
+  acumulados, agregaciones con ventana);
+- antes de entrenar o comparar modelos;
+- existen columnas de fecha y podría haber un componente temporal en la decisión;
+- existen múltiples observaciones por entidad (cliente-mes, suministro-mes,
+  dispositivo, panel data);
+- existen grupos relacionados (hospitales, tiendas, usuarios, hogares);
+- se sospecha contaminación entre train y validation (entity o temporal);
+- se necesita un backtesting temporal o una evaluación out-of-time;
+- se compara performance histórica entre períodos;
+- no está claro qué tipo de cross-validation utilizar;
+- las métricas obtenidas parecen demasiado optimistas;
+- se prepara un modelo para producción.
+
+Ejemplos de disparador:
+
+> Diseña la estrategia de validación para este dataset.
+
+> Tengo observaciones cliente-mes. ¿Cómo debo separar train y test?
+
+> Revisa si StratifiedKFold es válido para este problema.
+
+> Diseña un backtesting temporal.
+
+> Necesito simular cómo funcionaría este modelo en producción.
+
+> Define la validación correcta antes de comenzar el feature engineering.
+
+> Tenemos los datos de EQUANS. Diseña cómo deberíamos evaluar los modelos sin
+> leakage.
+
+# Cuándo NO usar
+
+No utilizar esta skill cuando:
+
+- lo que se necesita es la **comprensión estructural inicial** del dataset
+  (unidad de observación, claves, granularidad, target candidato, calidad
+  básica): usar `understand-dataset`;
+- lo que se necesita es **auditar el data leakage** de un conjunto de features,
+  un pipeline o un código de feature engineering ya construido: usar
+  `detect-leakage`. Esta skill diseña la validación; `detect-leakage` comprueba si
+  un pipeline concreto la respeta;
+- la tarea pedida es entrenar, comparar, seleccionar u optimizar un modelo;
+- no hay **nada sobre lo que razonar**: ni estructura del dataset, ni descripción
+  del escenario de uso, ni código de validación existente;
+- ya existe un esquema de validación validado y acordado y solo se quiere
+  ejecutarlo;
+- el problema no es supervisado o no hay una decisión asociada respecto a la que
+  alinear la evaluación.
+
+# Inputs
+
+## Obligatorios
+
+- Al menos uno de:
+  - la **estructura del problema**: unidad de observación, entity ID, columna de
+    fecha, target y granularidad (aunque sea provisional);
+  - una **descripción del escenario operacional**: cuándo se ejecuta el modelo,
+    sobre qué población, con qué frecuencia se puntúa y se reentrena, qué decisión
+    soporta;
+  - **código de validación o backtesting existente** a revisar (split,
+    cross-validation, folds, orden temporal, grupos).
+
+## Opcionales
+
+- Dataset inspeccionable (CSV, Parquet, Excel, JSON, DataFrame en memoria).
+- Prevalencia del target, número de positivos y su distribución temporal.
+- Timestamp del evento objetivo y **label delay** (cuánto tarda en conocerse el
+  target).
+- Ventanas: prediction date, observation window, performance window, prediction
+  horizon.
+- Número de períodos disponibles y número de entidades.
+- Restricciones: poco volumen de datos, pocos positivos, períodos limitados,
+  pocos grupos, cambios de distribución o de proceso de negocio.
+- Métrica ligada a la decisión real (Top-K, recuperación esperada, eficiencia de
+  inspección).
+- Políticas de confidencialidad, almacenamiento y procesamiento del proyecto
+  (p. ej. las condiciones de datos de EQUANS).
+- Ruta de salida del reporte: si se indica, se usa en lugar de la ruta por
+  defecto (`reports/validation/validation-design-<YYYY-MM-DD>.md`).
+
+Cuando falte el escenario de producción, el prediction timestamp u otro contexto
+crítico, marcar el punto correspondiente como **No determinable** y llevarlo a
+"Preguntas abiertas". No inventar timestamps, ventanas ni semántica de negocio.
+
+# Preconditions
+
+Antes de ejecutar el workflow debe ser cierto:
+
+- Existe un target o evento objetivo, aunque sea provisional.
+- Hay al menos un artefacto sobre el que razonar: estructura del dataset,
+  descripción del escenario de uso o código de validación.
+- Está permitido procesar los datos de acuerdo con las políticas del proyecto.
+
+# Workflow
+
+## 1. Comprender el problema
+
+- Fijar: target / evento objetivo, unidad de observación y entidad.
+- Fijar el **prediction timestamp**: el instante en que el modelo debe decidir y
+  qué información existe legítimamente en ese instante. Para EQUANS: el momento de
+  priorizar qué suministro inspeccionar, antes de la inspección.
+- Situar el evento objetivo en la línea temporal del proceso de negocio y anotar
+  el **label delay** (cuándo se conoce el target respecto al prediction
+  timestamp).
+- Identificar la **decisión real** que soporta el modelo. No es lo mismo
+  "clasificar correctamente registros históricos elegidos al azar" que "priorizar
+  las próximas inspecciones con la información disponible hasta la fecha de
+  scoring". La validación debe aproximarse a la segunda.
+- Anotar el contexto que falta (definición del positivo, ventanas, frecuencia de
+  scoring y reentrenamiento, cambios de proceso). No inventarlo: pasa a
+  "Preguntas abiertas".
+
+## 2. Analizar los inputs
+
+Determinar, con checks deterministas cuando haya datos:
+
+- **Tipo de estructura**: IID, grouped, temporal, panel (`entidad × período`),
+  múltiples eventos por entidad.
+- **Dependencia entre observaciones**: ¿el comportamiento de una entidad es
+  estable a lo largo del tiempo? ¿varias filas de la misma entidad comparten
+  información casi idéntica?
+- **Riesgo de overlap**: ¿un split aleatorio pondría filas de la misma entidad en
+  train y en validation? ¿un split "temporal" tendría solape de fechas?
+- **Objetivo de generalización**: ¿generalizar a períodos futuros, a entidades
+  nuevas, o volver a puntuar mensualmente a las mismas entidades? Cada respuesta
+  implica una estrategia distinta.
+- **Viabilidad**: número de períodos frente a número de folds temporales
+  deseados; número de grupos; prevalencia y número de positivos por partición.
+
+## 3. Ejecutar el procedimiento
+
+Evaluar las estrategias candidatas contra la **estructura del problema y el
+escenario de producción**, no contra el tipo de algoritmo.
+
+Estrategias candidatas a considerar: random holdout, stratified holdout, group
+split, temporal holdout, out-of-time validation, TimeSeriesSplit, GroupKFold,
+StratifiedGroupKFold, rolling window, expanding window, walk-forward, nested
+cross-validation, y combinaciones (p. ej. grouped + stratified, temporal + OOT).
+
+Definir por separado los **propósitos de evaluación** y recomendar una estrategia
+para cada uno que aplique:
+
+- **Model development**: validación usada durante la selección de modelos e
+  hiperparámetros.
+- **Final evaluation**: conjunto completamente aislado para estimar
+  generalización una sola vez.
+- **Out-of-time evaluation**: período posterior usado para evaluar estabilidad
+  temporal (drift de discriminación y de prevalencia).
+- **Operational evaluation**: evaluación alineada con la decisión real —
+  Precision@K, Recall@K, Lift@K, recuperación esperada, eficiencia de inspección,
+  performance por período.
+
+Para cada estrategia recomendada:
+
+- dar una **justificación explícita** de por qué representa el problema;
+- listar las **alternativas descartadas con su motivo**;
+- revisar las **salvaguardas de leakage**: preprocessing, feature engineering,
+  target encoding, resampling, feature selection y hyperparameter tuning deben
+  ajustarse solo dentro de la ventana o fold correspondiente; el test final debe
+  quedar fuera de toda decisión; añadir gap / embargo solo si hay autocorrelación
+  o solape de ventanas que lo justifique.
+
+## 4. Verificar el resultado
+
+- Recorrer la checklist de "Verificación final".
+- Ejecutar los checks deterministas disponibles y registrar su resultado en el
+  reporte.
+- **Revisar falsos positivos**:
+  - no imponer temporal split solo porque exista una columna de fecha; la fecha
+    no implica que el objetivo sea generalizar temporalmente;
+  - no imponer group split si compartir entidades entre particiones es válido
+    para el escenario (p. ej. volver a puntuar cada mes a los mismos clientes);
+  - no marcar como incorrecto un pipeline con nested CV metodológicamente
+    correcto;
+  - no proponer complejidad (purging, embargo, nested CV, múltiples backtests) sin
+    una razón concreta;
+  - comprobar que la estrategia no deja demasiados pocos positivos o períodos para
+    entrenar o evaluar; si los deja, advertirlo.
+
+## 5. Construir el output
+
+- Redactar el reporte con la estructura de la sección "Output".
+- No transformar el reporte en una propuesta de modelo, algoritmo o
+  hiperparámetros.
+- **Persistir el reporte** como archivo `.md` en
+  `reports/validation/validation-design-<YYYY-MM-DD>.md` (fecha real de ejecución;
+  crear la carpeta `reports/validation/` si no existe). No sobrescribir: si ya
+  existe un archivo con esa fecha, añadir sufijo `-02`, `-03`, … Si el usuario
+  indicó una ruta de salida, usar esa.
+- Encabezar el archivo con el frontmatter de trazabilidad (ver "Output"): skill,
+  versión, fecha real, proyecto si se conoce, inputs analizados —con `sha256`
+  cuando sean archivos locales— y una línea de estado.
+- Respetar las políticas de confidencialidad del proyecto: no volcar en el archivo
+  datos sensibles, PII ni muestras de registros más allá de lo imprescindible como
+  evidencia (relevante para EQUANS).
+- Devolver al usuario un resumen breve **y la ruta del archivo escrito**.
+
+# Checks deterministas
+
+Siempre que sea posible, utilizar evidencia determinista antes de realizar
+inferencias. Ejecutar estas comprobaciones ad hoc sobre los datos o el código
+(p. ej. con pandas / scikit-learn); **no** crear scripts en `scripts/` para esto
+(ver `AGENTS.md` → "# Simplicidad").
+
+Checks disponibles:
+
+- **Solape de entidades entre particiones propuestas**:
+  `set(train[id]) & set(val[id])` no vacío ⇒ una estrategia que pretenda separar
+  entidades no lo está haciendo.
+- **Solape temporal entre particiones**: `train[fecha].max()` ≥
+  `val[fecha].min()` cuando el split pretende ser temporal; comprobar también que
+  el gap / embargo declarado se respeta.
+- **Positivos y tamaño por partición o fold**: `groupby(fold).agg(...)` sobre
+  número de filas, número de positivos y prevalencia; detectar folds con muy pocos
+  positivos o prevalencia inestable entre folds.
+- **Grupos por fold**: número de grupos distintos en cada fold y comprobación de
+  que ninguna entidad cruza folds en un esquema grouped.
+- **Períodos disponibles frente a folds temporales**: número de períodos ≥ número
+  de folds necesarios para expanding / rolling / walk-forward; si no, la estrategia
+  no es viable.
+- **Label delay frente a la ventana train→validation**: la separación entre el fin
+  de train y el inicio de validation debe cubrir el retraso con que se conoce el
+  target.
+- **Distribución temporal del target**: prevalencia por período; un drift claro es
+  indicio de necesidad de out-of-time evaluation.
+- **En código de validación existente**: orden entre la cross-validation y la
+  separación del test final (el test debe separarse primero); transformaciones
+  dentro de un `Pipeline` ejecutado por fold, no antes.
+
+# Reglas
+
+La skill debe:
+
+- derivar la estrategia de la **estructura del problema y del escenario de
+  producción**, no del tipo de algoritmo;
+- justificar de forma explícita por qué la estrategia recomendada representa el
+  problema real;
+- listar las **alternativas descartadas con su motivo**;
+- distinguir los cuatro propósitos de evaluación (model development, final
+  evaluation, out-of-time, operational) y recomendar una estrategia para cada uno
+  que aplique;
+- recomendar la **métrica alineada con la decisión real** (p. ej. Precision@K)
+  además de las métricas globales, e indicar cuál se usa para seleccionar modelos;
+- declarar **No determinable** cuando falte el prediction timestamp, el label
+  delay o el escenario de uso, y llevar el punto a "Preguntas abiertas";
+- justificar cualquier complejidad añadida (gap / embargo, purging, nested CV,
+  backtests múltiples); si no hay razón concreta, no proponerla.
+
+La skill no debe:
+
+- aplicar reglas automáticas del tipo "hay fecha → temporal split" o "hay entity
+  ID → GroupKFold";
+- ejecutar el split ni entrenar, comparar u optimizar modelos;
+- recomendar una estrategia que deje datos o positivos insuficientes sin
+  advertirlo;
+- optimizar la validación para maximizar el score de una hackathon o competición
+  en lugar de representar producción;
+- confundir la validación previa a producción con la monitorización posterior;
+- inventar timestamps, ventanas o semántica de negocio a partir de nombres de
+  columnas.
+
+# Output
+
+El reporte se entrega en dos formas: (a) un resumen en la respuesta al usuario;
+(b) un archivo `.md` persistido en
+`reports/validation/validation-design-<YYYY-MM-DD>.md` (o la ruta indicada por el
+usuario), encabezado con el frontmatter de trazabilidad. El archivo es la fuente
+de trazabilidad; su contenido bajo el frontmatter usa la estructura de esta
+sección.
+
+Frontmatter de trazabilidad del archivo:
+
+```yaml
+---
+skill: design-validation
+version: 0.1.0
+fecha: <YYYY-MM-DD>
+proyecto: <slug si se conoce; si no: (sin especificar)>
+inputs:
+  - <ruta o descripción del input>   # sha256:<hash> si es un archivo local
+estado: <resumen de una línea del resultado>
+---
+```
+
+El cuerpo del reporte debe utilizar la siguiente estructura:
+
+## Resumen
+
+- Estrategia recomendada (una frase) y escenario de producción que reproduce.
+- Principal precaución o limitación.
+- ¿Es posible una validación fiable con la información disponible, o depende de
+  confirmar preguntas abiertas?
+
+## Objetivo de validación
+
+Qué se quiere estimar realmente, en términos operacionales. Ejemplo:
+
+> Estimar qué tan bien el modelo priorizará suministros futuros utilizando
+> exclusivamente información disponible hasta la fecha de scoring.
+
+## Estructura de datos relevante
+
+Entidad, columna temporal, target, frecuencia, número de períodos, número de
+entidades, balance de clase y tipo de estructura (IID / grouped / temporal /
+panel / múltiples eventos por entidad). Solo lo relevante para la validación.
+
+## Estrategia recomendada y definición de splits
+
+Para cada propósito que aplique (model development, final evaluation, out-of-time,
+operational): la estrategia recomendada y la definición conceptual de train /
+validation / test (rangos de fecha o reglas de grupo). Qué datos quedan
+completamente aislados y hasta cuándo. Puede incluirse un diagrama textual del
+flujo temporal o de grupos.
+
+## Diseño de cross-validation
+
+Cuando aplique: expanding window, rolling window, grouped folds, stratification,
+gap / embargo, número de folds, y cómo se anida (nested CV) si se usa para
+selección de hiperparámetros.
+
+## Manejo de entidades
+
+Si una misma entidad puede aparecer en más de una partición y bajo qué
+condiciones; cómo se evita el overlap cuando no debe ocurrir.
+
+## Salvaguardas de leakage
+
+Qué debe ajustarse solo dentro de la ventana o fold correspondiente
+(preprocessing, feature engineering, target encoding, resampling, feature
+selection, hyperparameter tuning) y el orden respecto a la separación del test
+final. Nota: la auditoría detallada de un pipeline concreto corresponde a
+`detect-leakage`.
+
+## Métricas
+
+Globales (ROC-AUC, PR-AUC), de ranking (Precision@K, Recall@K, Lift@K) y de
+negocio (recuperación esperada, eficiencia de inspección). Indicar explícitamente
+qué métrica se usa para **seleccionar** modelos y por qué.
+
+## Riesgos, alternativas descartadas y preguntas abiertas
+
+- Limitaciones de la validación propuesta.
+- Alternativas rechazadas con su motivo (p. ej. "random stratified split:
+  rechazado porque el objetivo primario es la generalización temporal").
+- Información pendiente de confirmar con el usuario o un experto de negocio.
+- Guía breve de implementación posterior (sin ejecutar entrenamiento).
+
+> Nota de desviación respecto a `templates/SKILL.md`: la plantilla define la
+> sección Output como `Resumen / Hallazgos / Evidencia / Recomendaciones`. Esta
+> skill produce un **diseño**, no una auditoría de hallazgos, por lo que sustituye
+> "Hallazgos" por secciones de diseño (objetivo de validación, estrategia y
+> splits, cross-validation, manejo de entidades, salvaguardas de leakage,
+> métricas) y agrupa riesgos, alternativas descartadas y preguntas abiertas. El
+> candidate exige una justificación explícita de la estrategia y de las
+> alternativas rechazadas. Además, la skill **escribe un artefacto en disco**
+> (`reports/validation/…`), algo que la plantilla no contempla, para dar
+> persistencia y trazabilidad al diseño.
+
+# Verificación final
+
+Antes de terminar comprobar:
+
+- [ ] Se completaron todos los pasos del workflow.
+- [ ] La estrategia recomendada se deriva de la estructura del problema y del
+      escenario de producción, no del tipo de algoritmo.
+- [ ] Los cuatro propósitos de evaluación se consideraron y se recomendó una
+      estrategia para cada uno que aplica, o se descartó con motivo.
+- [ ] Cada estrategia recomendada tiene una justificación explícita.
+- [ ] Las alternativas descartadas aparecen con su motivo.
+- [ ] Se ejecutaron los checks deterministas disponibles y su resultado consta en
+      el reporte.
+- [ ] Se revisaron los falsos positivos: no se impuso temporal split por la mera
+      presencia de una fecha; no se impuso group split cuando compartir entidades
+      es válido; no se marcó como incorrecto un nested CV correcto; no se propuso
+      complejidad sin justificación.
+- [ ] Se comprobó que la estrategia no deja datos o positivos insuficientes; si
+      los deja, se advirtió.
+- [ ] El label delay se consideró cuando existe información temporal.
+- [ ] La información que falta está en "Preguntas abiertas", no inventada.
+- [ ] No se entrenó ningún modelo ni se ejecutó el split.
+- [ ] El reporte se escribió en `reports/validation/…md` (sin sobrescribir un
+      archivo previo) y su ruta se comunicó al usuario.
+- [ ] El archivo incluye el frontmatter de trazabilidad (skill, versión, fecha,
+      inputs, estado).
+- [ ] El archivo no contiene datos sensibles más allá de la evidencia mínima
+      necesaria.
+
+# Modos de fallo conocidos
+
+## Fallo 1 — Recomendar siempre temporal split
+
+Descripción: se impone un split temporal porque el dataset tiene una columna de
+fecha.
+
+Causa: se confunde "existe información temporal" con "el objetivo es generalizar
+temporalmente".
+
+Mitigación: paso 1 y paso 4; la decisión depende de la decisión real y del
+escenario de producción, no de la presencia de fechas.
+
+## Fallo 2 — Recomendar siempre GroupKFold
+
+Descripción: se impone separación por entidad porque hay un entity ID con filas
+repetidas.
+
+Causa: no se comprueba si el escenario real vuelve a puntuar a las mismas
+entidades.
+
+Mitigación: paso 2; si el modelo puntuará mensualmente a los mismos clientes,
+compartir entidades entre particiones puede ser válido.
+
+## Fallo 3 — Diseñar validaciones excesivamente complejas
+
+Descripción: se propone nested CV, purging, embargo o múltiples backtests para un
+problema que no lo requiere.
+
+Causa: aplicar el repertorio completo por defecto.
+
+Mitigación: regla de justificar toda complejidad añadida; si no hay una razón
+concreta (autocorrelación, solape de ventanas, selección de hiperparámetros
+sensible), no incluirla.
+
+## Fallo 4 — Reducir excesivamente los datos
+
+Descripción: la estrategia deja muy pocos positivos o muy pocos períodos para
+entrenar o evaluar.
+
+Causa: split demasiado conservador sin comprobar el volumen resultante.
+
+Mitigación: check determinista de positivos y tamaño por partición; advertir el
+trade-off en el reporte.
+
+## Fallo 5 — Optimizar por una única métrica global
+
+Descripción: la validación se diseña alrededor del ROC-AUC y no evalúa el
+desempeño en el Top-K operacional.
+
+Causa: se ignora la decisión real (priorización de inspecciones).
+
+Mitigación: sección "Métricas"; incluir Precision@K / Lift@K / recuperación
+esperada e indicar la métrica de selección.
+
+## Fallo 6 — Ignorar el label delay
+
+Descripción: la separación entre train y validation no cubre el retraso con que se
+conoce el target, creando una simulación irreal.
+
+Causa: no se pregunta cuándo se conoce el label.
+
+Mitigación: paso 1 y check determinista de label delay frente a la ventana
+train→validation.
+
+## Fallo 7 — Confundir model validation con monitoring
+
+Descripción: se mezcla la validación previa a producción con la monitorización
+posterior del modelo.
+
+Causa: ambos problemas usan particiones temporales y se tratan como el mismo.
+
+Mitigación: el objetivo declarado es diseñar la validación previa; la
+monitorización queda fuera de alcance y se menciona como tal si surge.
+
+## Fallo 8 — Inferir incorrectamente el momento de predicción
+
+Descripción: se asigna cada observación a una ventana sin contexto de negocio
+suficiente.
+
+Causa: sin el prediction timestamp real, la asignación es una suposición.
+
+Mitigación: marcar como No determinable y pedir el dato en "Preguntas abiertas";
+no construir el split sobre una suposición.
+
+## Fallo 9 — Sobreoptimizar la validación para la hackathon
+
+Descripción: la estrategia se construye para maximizar el score del concurso en
+lugar de representar producción.
+
+Causa: presión por el resultado inmediato.
+
+Mitigación: regla explícita; la validación debe representar el escenario real de
+priorización futura de inspecciones.
+
+## Fallo 10 — Sobrescribir un reporte anterior
+
+Descripción: se guarda el nuevo reporte con el mismo nombre y se pierde el
+anterior.
+
+Causa: no se comprueba la existencia del archivo antes de escribir.
+
+Mitigación: paso 5 del workflow; ante colisión de fecha, añadir sufijo `-02`,
+`-03`, … y no sobrescribir.
+
+# Límites
+
+Esta skill no garantiza:
+
+- que la estrategia recomendada sea óptima sin conocer el proceso de negocio real;
+- detectar la desalineación cuando el proceso operativo cambió y no está
+  documentado;
+- que ejecutar la estrategia recomendada elimine todo el leakage: la auditoría de
+  un pipeline concreto corresponde a `detect-leakage`;
+- sustituir el criterio de un experto del dominio sobre el momento de predicción y
+  la definición del target;
+- reproducibilidad exacta entre ejecuciones (el juicio semántico puede variar).
+
+# Referencias
+
+Consultar únicamente cuando sean necesarias:
+
+- `AGENTS.md` → "# Checks deterministas" (prioridad de la evidencia determinista),
+  "# Criterios de evaluación" (correctitud, cobertura, fundamentación, falsos
+  positivos, accionabilidad), "# Idioma", "# Simplicidad".
+- `candidates/2026-08-31-design-validation.md` → candidate de origen: problema
+  observado, capacidad propuesta, los cuatro propósitos de evaluación, los 10
+  casos de verificación previstos (incluidos los casos trampa: Caso 7 valid random
+  split y Caso 9 proper nested CV), riesgos y dimensiones de evaluación.
+- `experiments/skills/understand-dataset/SKILL.md` → skill hermana para la
+  comprensión estructural inicial del dataset.
+- `experiments/skills/detect-leakage/SKILL.md` → skill hermana para auditar el
+  data leakage de un pipeline o un conjunto de features ya construidos; define la
+  frontera de alcance con esta skill.
+
+# Documentos del engagement
+# Crédito con registros tardíos
+
+Todos los timestamps de los documentos están en UTC. Entrenamiento histórico: 2025-07-15T00:00:00Z. Extracción: 2025-08-15T00:00:00Z. La disponibilidad exactamente en el instante de entrenamiento o predicción está permitida. La población de los tres registros es válida. Salvo diferencias explícitas en cada expediente, la predicción ocurrió el 2025-06-01T00:00:00Z y todas las features usadas estaban disponibles el 2025-05-31T18:00:00Z. La disponibilidad de un label requiere el valor certificado en el sistema de entrenamiento, no solo la ocurrencia del evento.
+
+## Diccionario de riesgo
+Target=1 indica entrar en mora de 30 días durante [1 de junio, 1 de julio). La mora de 30 días es irreversible para este target aunque después se pague. El supervisor debe certificar el evento, y el label solo está disponible al publicarse esa certificación en el almacén usado por entrenamiento. La fecha de entrada en mora no es la fecha de publicación. Para un negativo, el acta final certifica ausencia de mora en la ventana y también debe publicarse.
+## Expedientes del supervisor y almacén
+- D1: entrada en mora el 25 de junio; certificación firmada el 28 de junio; publicación en almacén el 18 de julio a las 06:00. Extracto target=1.
+- D2: entrada en mora el 22 de junio; certificación y publicación el 24 de junio a las 06:00. Extracto target=1.
+- D3: sin mora en toda la ventana; acta final negativa firmada el 2 de julio, publicada el 9 de julio a las 06:00. Extracto target=0.

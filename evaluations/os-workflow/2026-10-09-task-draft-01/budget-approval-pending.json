@@ -1,0 +1,7 @@
+{
+  "status": "PENDING",
+  "execution_manifest_sha256": "b8c904441ae6c3e35c15d6a839a10892f8a7142e944d77267c95908382e608b8",
+  "proposed_total_budget_usd": 0.1,
+  "approved_total_budget_usd": null,
+  "paid_calls_authorized": false
+}

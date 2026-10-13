@@ -1,0 +1,17 @@
+# Protocolo previo — ronda temporal 02
+
+Pregunta y diseño aprobados por el usuario el 2026-10-07: ¿el contrato temporal reduce errores frente a pautas actuales, sin excluir válidos ni inventar disponibilidad?
+
+Seis cases nuevos A–F, dos filas cada uno, suscripciones y crédito sintético. Dos repeticiones por case/condición: 24 invocaciones. Baseline=contenido canónico actual de design-validation 0.1.0, snapshot; treatment=idéntico más contrato temporal local 0.1.0. No invocación nativa de skill, no entrenamiento, no Foundry update. Task/schema/inputs comunes; solo suplemento difiere. No controlar el proceso de negocio real con estas reglas ficticias.
+
+Mismo modelo solicitado claude-sonnet-5-5, effort medium, CLI safe-mode, herramientas deshabilitadas, sin MCP ni persistencia, cwd vacío por call. Registrar argv, versión, payload y hashes; configuración efectiva desconocida salvo información que exponga runtime. Orden determinista: repetición 1 A/C/E baseline primero, B/D/F treatment primero; repetición 2 invierte orden. Calls secuenciales sin reutilizar sesión.
+
+Expected/checker fijados antes del primer call y revisados en contexto independiente; expected fuera de payload y acceso del agente. Registro frozen_at y started_at; precedencia local verificable por logs de esta sesión, sin anclaje temporal externo. Dos repeticiones ya fijadas; no repetir por calidad. Infraestructura: conservar intento fallido, sin repetición automática; reanudar únicamente pendientes que no tienen resultado evaluable, registrando motivo. Si cambia modelo/configuración, detener comparación y declarar límite, sin esconder intentos.
+
+Checks separados: JSON estricto, schema, IDs, gate, tres campos por fila, elegibilidad, admisiones indebidas, exclusiones/indeterminaciones de válidos. Los fences permiten diagnóstico tolerante, pero siguen fallando formato estricto. Un output ausente/malformado no es acierto y permanece en denominador; tratar su error de contenido como no evaluable, no como decisión inventada. No score compuesto. Reportar aciertos por campo/case/repetición/condición; coste y tiempos separados.
+
+Review semántica posterior: timestamps correctos, certificación, reconocimiento de desconocido, ausencia de intervalos inventados, razón congruente con clase y preguntas pertinentes. Ningún acierto de clase compensa motivo falso. Gate distinto de NEEDS_REVIEW implica fallo de autoridad. Un eligible sin requisitos comprobados implica fallo de seguridad temporal. Excluir/indeterminar válidos implica falso positivo de exclusión. Registrar fallos sin compensación por otros checks.
+
+Criterio prospectivo: para proponer adopción documental, treatment debe reducir errores de campos/elegibilidad respecto de baseline sin aumentar admisiones indebidas, pérdida de válidos o fallos de razones/autoridad; formato se informa separado. Una diferencia pequeña o inconsistente con dos repeticiones es exploratoria, no significancia/generalidad. Sin mejora, no adoptar como eficacia demostrada; un fallo real puede orientar una corrección. Ningún resultado autoriza nueva skill, promoción o cambio en Foundry.
+
+Los casos dan reglas necesarias, pero no dicen qué filas elegir ni contienen expected. El task fija tres ejes para evitar la ambigüedad previa; esto puede elevar baseline y producir techo. Una familia por ronda limita confusores. Revisión separada por agentes no sustituye humana externa. No reutilizar outcomes previos como nueva evidencia.

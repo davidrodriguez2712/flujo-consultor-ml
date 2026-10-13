@@ -1,0 +1,21 @@
+{
+  "rows": {
+    "B1": {
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude"
+    },
+    "B2": {
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible"
+    },
+    "B3": {
+      "outcome_state_at_extraction": "unknown",
+      "label_availability_at_training": "indeterminate",
+      "train_eligibility": "indeterminate"
+    }
+  },
+  "review_notes": "B1 fecha_evento no es disponibilidad; B2 negativo certificado; B3 cero de semántica desconocida.",
+  "gate_decision": "NEEDS_REVIEW"
+}

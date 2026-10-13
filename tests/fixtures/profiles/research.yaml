@@ -1,0 +1,15 @@
+engagement:
+  archetypes:
+  - DIAGNOSE
+  delivery_modes:
+  - research
+  decision: Evaluar entrada a un mercado
+deliverables:
+- executive_deck
+schema_version: 1
+project:
+  slug: research
+  name: research
+runtimes:
+- codex
+- claude_code

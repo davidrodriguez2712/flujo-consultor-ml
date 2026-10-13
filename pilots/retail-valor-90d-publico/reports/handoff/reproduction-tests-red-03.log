@@ -1,0 +1,14 @@
+.....F                                                                   [100%]
+=================================== FAILURES ===================================
+________ test_reproduction_uses_persisted_snapshots_as_original_runner _________
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1842/test_reproduction_uses_persist0')
+
+    def test_reproduction_uses_persisted_snapshots_as_original_runner(tmp_path):
+>    from reproduce_retail import persist_and_read_snapshots
+E    ImportError: cannot import name 'persist_and_read_snapshots' from 'reproduce_retail' (/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/retail-valor-90d-publico/analysis/reproduce_retail.py)
+
+pilots/retail-valor-90d-publico/analysis/test_retail_reproduction.py:36: ImportError
+=========================== short test summary info ============================
+FAILED pilots/retail-valor-90d-publico/analysis/test_retail_reproduction.py::test_reproduction_uses_persisted_snapshots_as_original_runner
+1 failed, 5 passed in 1.26s

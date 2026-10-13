@@ -1,0 +1,3 @@
+
+
+Cuando se solicita un borrador de tarea, entregar el borrador redactado en el formato acordado, con objetivo, inputs conocidos, outputs propuestos y su contenido esperado, criterios observables de revisión, y dependencias con la acción que impiden. Una lista de instrucciones como «redactar la tarea» o «definir sus outputs» no cumple ese encargo. Si el contrato exige JSON, incluir el borrador dentro de los campos permitidos, sin añadir un documento Markdown fuera del objeto. Completar lo sustentado y marcar como pendiente lo desconocido; distinguir una propuesta de outputs o criterios de un acuerdo ya aprobado. No inventar owners, fuentes, fechas, permisos ni gates, y no ejecutar el trabajo descrito solo por haber redactado su tarea.

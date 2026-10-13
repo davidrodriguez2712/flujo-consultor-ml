@@ -1,0 +1,3 @@
+**Resumen:** Smoke técnico completado. La skill `acos-eval:detect-leakage` no está instalada, así que no se invocó (skill: none/null). Ejecuté la utilidad fija. `inputs/data.csv` tiene 21 bytes, columnas `entity_id,value` y 1 fila de datos (sha256 8028f83b…be883dbab). No se evaluó leakage, según el case. Con una sola fila, el insumo no permite evaluarlo. No se modificaron inputs.
+
+**Reporte:** `/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-04/smoke-baseline/workspace/reports/leakage/audit.md`

@@ -1,0 +1,12 @@
+{
+  "status": "STOPPED_NO_NATIVE_SKILL_INVOCATION",
+  "smoke": "PASS",
+  "baseline_L01": "completed",
+  "treatment_L01": "report persisted but Skill not invoked, none/null correctly declared",
+  "report_falsely_claims_skill": false,
+  "valid_skill_pairs": 0,
+  "effectiveness": "NOT_EVALUATED",
+  "round_cost_usd": 0.01059856,
+  "cumulative_usd": 0.028822925,
+  "scope": "Not pool with earlier/later cohort"
+}

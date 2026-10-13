@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python",
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/scripts/evaluations/selection_runner.py",
+    "--payload-file",
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/operational-selection/2026-10-08-selection-probe-02/payloads/D/baseline.txt",
+    "--output-dir",
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/operational-selection/2026-10-08-selection-probe-02/runs/D/baseline/1"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"runner_version\": \"0.1.0\",\n  \"runtime_success\": true,\n  \"schema_conformant\": true,\n  \"model_matches\": true,\n  \"content_validation\": \"NOT_RUN\",\n  \"cost_usd_reported\": 0.0293702,\n  \"findings\": []\n}\n",
+  "stderr": ""
+}

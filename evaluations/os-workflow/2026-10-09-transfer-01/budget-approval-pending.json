@@ -1,0 +1,8 @@
+{
+  "status": "PENDING",
+  "execution_manifest_sha256": "69529a3f59f7eb3c214a5ebfaa64b8a0e50610f1a366efdd6493443b0b6601a4",
+  "proposed_total_budget_usd": 0.1,
+  "scope": "Adicional para este estudio, smoke + doce celdas, sin retries. No es aprobación.",
+  "approved_total_budget_usd": null,
+  "model_calls": 0
+}

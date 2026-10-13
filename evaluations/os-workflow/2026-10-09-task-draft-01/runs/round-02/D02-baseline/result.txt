@@ -1,0 +1,31 @@
+## Estado
+**READY**
+
+La propuesta de revisión exploratoria puede prepararse dentro del mandato indicado en `intake/request.json`. Esto no autoriza ejecutar la revisión: faltan el revisor, los umbrales aprobados y datos de referencia, que se listan en Siguiente paso.
+
+## Hallazgos
+- `intake/request.json` autoriza redactar una propuesta de revisión exploratoria. Excluye paradas de equipos, etiquetado de fallos confirmados y entrenamiento de modelos supervisados. El revisor (`reviewer_name`) y los umbrales (`approved_thresholds`) figuran como `null`.
+- `data/readings.csv` contiene 3 lecturas de temperatura en Celsius de dos sensores. El sensor S-A registra 41 °C a las 08:00 y 58 °C a las 08:05 (UTC, 2025-09-15). Ese salto de 17 °C en 5 minutos es un candidato a revisión humana, no un fallo confirmado. El sensor S-B tiene una sola lectura (44 °C a las 08:00), así que no permite evaluar tendencia.
+- `data/dictionary.json` indica que no hay labels disponibles (`labels_available: false`) y que faltan rangos normales, calibración del sensor y línea base histórica. Sin esas referencias, no es posible decidir si 58 °C es anómalo para ese equipo.
+- `decisions/review-context.json` confirma que no existen labels de fallos confirmados, que el criterio de prioridad de triaje está pendiente y que las acciones de campo quedan fuera del mandato.
+
+## Acciones propuestas
+- Redactar una tarea de revisión exploratoria cuyo objetivo sea ordenar las lecturas inusuales para que una persona del equipo de mantenimiento las examine. No debe emitir diagnósticos.
+- Como criterio provisional de priorización, calcular la variación entre lecturas consecutivas de cada sensor y ordenar por magnitud. Este criterio debe marcarse como pendiente de aprobación.
+- Presentar cada lectura marcada con su sensor, timestamp, valor y motivo de revisión, sin etiquetarla como fallo.
+- Excluir del alcance cualquier entrenamiento supervisado, parada de equipos y acción sobre el campo.
+
+## Siguiente paso
+Antes de ejecutar la tarea, el equipo de mantenimiento (owner de los sensores) debe:
+- designar al revisor humano;
+- aprobar el criterio de priorización y, si procede, los umbrales;
+- aportar rangos normales, calibración del sensor y una línea base histórica, o confirmar que la revisión se hará sin esas referencias.
+
+Hasta que esas decisiones estén registradas, la tarea queda como borrador.
+
+## Límites
+- La evaluación se basa solo en tres lecturas. No permite inferir tendencias, estacionalidad ni representatividad.
+- No hay calibración documentada, así que no es posible descartar un error de medición.
+- Los rangos normales y la línea base no están disponibles, por lo que cualquier criterio de anomalía es provisional.
+- El salto de S-A es un candidato a revisión. No constituye evidencia de fallo, de causa física ni de riesgo para el equipo.
+- Esta propuesta no aprueba gates ni autoriza ejecución, escritura ni acciones sobre equipos.

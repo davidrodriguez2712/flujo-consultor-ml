@@ -1,0 +1,27 @@
+{
+  "suite_passed": 50,
+  "failed": 0,
+  "claims": 43,
+  "claim_types": {
+    "observed": 34,
+    "assumption": 5,
+    "limitation": 3,
+    "proposal": 1
+  },
+  "claims_source_and_value_checks": "PASS",
+  "claims_rendering_and_semantic_checks": "PASS",
+  "historical_manifests_verified": {
+    "reports/discovery/evidence-manifest-02.json": 44,
+    "reports/framing/evidence-manifest.json": 18,
+    "reports/diagnosis/evidence-manifest.json": 20,
+    "reports/execution/evidence-manifest.json": 43,
+    "reports/execution/dataset-manifest.json": 8,
+    "reports/validation/evidence-manifest.json": 42
+  },
+  "validation_and_four_reviews": "PASS",
+  "delivery": "NEEDS_REVIEW",
+  "handoff_reproduction": "PENDING",
+  "no_new_training_or_holdout_execution": true,
+  "no_publication_or_external_delivery": true,
+  "api_cost_usd": 0
+}

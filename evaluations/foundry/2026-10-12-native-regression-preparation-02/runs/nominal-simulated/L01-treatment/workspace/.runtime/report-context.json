@@ -1,0 +1,6 @@
+{
+  "condicion": "treatment",
+  "skill": "detect-leakage",
+  "version": "0.2.0",
+  "skill_sha256": "c2a2440477d9985489b71f4d8c50380ccd7985635d02eab330cfee0f7e5856c4"
+}

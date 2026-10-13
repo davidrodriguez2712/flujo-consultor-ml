@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-08",
+  "current_stage": "framing",
+  "discovery": "PASS",
+  "framing": "NEEDS_REVIEW",
+  "integrity": "OK",
+  "data_hashes_unchanged": true,
+  "prior_protected_files_unchanged": 1180,
+  "additional_api_calls": 0,
+  "model_training_performed": false,
+  "files": {
+    "framing/framing.yaml": "b4c3ca36f64eb3d823dc62a69240680be677d4d6fefeb0075a469085270b2fe4",
+    "framing/metrics.yaml": "9cc6288130578b8282efc7d59381c8fc33b9004b84967401034ee4772d083d4f",
+    "framing/scope.md": "9c6b2f6114e2ccd746df19241d6b993efbf5333ee492db029c58cd836163414f",
+    "framing/acceptance.md": "15d35e638f8f879639ce9f37a9ca872514dbd1369a992c3d01167935f740ba32",
+    "framing/review.md": "73965c0f68bc6078f66b9bd1df2e73b6c6c9ed748d88db0fa0a426842540160b"
+  },
+  "scope": "Checks de contratos, estado e integridad; no equivalen a revisión humana del contenido ni eficacia predictiva."
+}

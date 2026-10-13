@@ -1,0 +1,16 @@
+{
+  "rows": {
+    "B1": {
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible"
+    },
+    "B2": {
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude"
+    }
+  },
+  "review_notes": "Comparar con precisión de segundo: igualdad admite B1; +1s excluye B2.",
+  "gate_decision": "NEEDS_REVIEW"
+}

@@ -1,0 +1,63 @@
+```json
+{
+  "status": "MUST_CORRECT",
+  "findings": [
+    {
+      "statement": "El run original no reproduce el resultado de selección del run de reproducción. El writer CSV con format(float(value), .1f) redondea Q-17 de 14.96 a 15.0, de modo que el lector lo consume como 15.0 y la regla >= 15.0 lo selecciona. En la reproducción, que usa el objeto en memoria, Q-17 (14.96) no cumple la regla y selected_ids queda vacío.",
+      "evidence_paths": [
+        "data/source.json",
+        "runs/original/execution.json",
+        "runs/reproduction/execution.json",
+        "environment.json"
+      ]
+    },
+    {
+      "statement": "La discrepancia ocurre en la frontera de serialización, no en el criterio ni en el entorno. Ambos runs usan el mismo runtime y plataforma, y no hay aleatoriedad. El primer punto de divergencia es la persistencia numérica a .1f, que altera el valor consumido por la regla de decisión.",
+      "evidence_paths": [
+        "environment.json",
+        "runs/original/execution.json",
+        "runs/reproduction/execution.json"
+      ]
+    },
+    {
+      "statement": "El contrato de comparación exige selected_ids exactos. La diferencia numérica de Q-17 (0.04 min) está dentro de la tolerancia de 0.1 min, pero aun así cambia el conjunto seleccionado (['Q-17'] frente a []). La tolerancia numérica no permite validar el resultado operativo, y no debe ampliarse para convertir el fallo en PASS.",
+      "evidence_paths": [
+        "runs/original/execution.json",
+        "runs/reproduction/execution.json"
+      ]
+    },
+    {
+      "statement": "El run original sí consume un valor redondeado que cambia la decisión: Q-17 aparece como 15.0 y Q-28 como 8.0, mientras que la fuente contiene 14.96 y 8.02. Por tanto, el artifact original no sustenta por sí solo el resultado operativo que la regla aplicada sobre la fuente produciría.",
+      "evidence_paths": [
+        "data/source.json",
+        "runs/original/execution.json"
+      ]
+    },
+    {
+      "statement": "Los dos recorridos no sustentan el mismo resultado operativo. Según la regla declarada sobre la fuente sin pérdida de precisión, la selección correcta es vacía (ningún caso alcanza 15.0 min). El run original seleccionó Q-17 por un artefacto de redondeo.",
+      "evidence_paths": [
+        "data/source.json",
+        "runs/original/execution.json",
+        "runs/reproduction/execution.json"
+      ]
+    }
+  ],
+  "proposed_actions": [
+    "Conservar el run original, sus outputs y su manifest sin modificarlos; registrar la discrepancia como hallazgo del expediente.",
+    "Declarar que el run original no es válido como sustento del resultado operativo hasta que se corrija la frontera de serialización.",
+    "Ejecutar un nuevo run en un destino autorizado que preserve la precisión numérica del valor consumido por la regla (sin redondeo a .1f antes de aplicar >= 15.0), o bien documentar y revisar formalmente una regla de redondeo explícita antes de la comparación.",
+    "Comparar el nuevo run con la reproducción en cada frontera (tipos, keys únicas, cobertura) alineando por case_id, y verificar que selected_ids coincide exactamente.",
+    "No ampliar numeric_absolute_tolerance_minutes para hacer pasar la comparación. Si la regla de redondeo debe cambiar, registrar la decisión, su efecto y la revisión humana del alcance afectado.",
+    "Solicitar al owner del criterio la confirmación de la regla de decisión (>= 15.0 sobre el valor de precisión completa o sobre un valor redondeado) antes de dar por cerrada la reproducción."
+  ],
+  "next_step": "Solicitar al owner del criterio la confirmación de la regla de redondeo y, con esa decisión, generar un nuevo run sin pérdida de precisión en la frontera CSV para comparar selected_ids exactos con la reproducción.",
+  "limitations": [
+    "Revisión limitada al contenido del expediente incluido; no se ejecutó ningún run ni se consultaron archivos externos.",
+    "No se verificó el código del writer ni del reader; las descripciones provienen de execution.json y environment.json.",
+    "No se conocen los hashes de los artifacts, por lo que no se puede confirmar la identidad de bytes de los inputs.",
+    "La fuente muestra solo dos casos; el resultado no permite extrapolar el efecto del redondeo al conjunto completo de casos.",
+    "No se ha definido quién es el owner de la regla de decisión; la confirmación de la regla de redondeo queda pendiente de una decisión humana.",
+    "Esta recomendación no aprueba ningún gate ni modifica el criterio, el expected ni los outputs existentes."
+  ]
+}
+```

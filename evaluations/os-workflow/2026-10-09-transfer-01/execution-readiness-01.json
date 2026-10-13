@@ -1,0 +1,15 @@
+{
+  "status": "READY_FOR_BUDGET_REVIEW",
+  "package_approval": "review-approval.json",
+  "execution_manifest_sha256": "69529a3f59f7eb3c214a5ebfaa64b8a0e50610f1a366efdd6493443b0b6601a4",
+  "configuration_approved_for_paid_execution": false,
+  "paid_execution_authorized": false,
+  "local_tests_passed": 182,
+  "pending": [
+    "Autorización explícita de presupuesto nuevo",
+    "Preflight final de integridad/CLI y smoke real después de autorización",
+    "Doce respuestas y revisión semántica"
+  ],
+  "model_calls": 0,
+  "api_cost_usd": 0
+}

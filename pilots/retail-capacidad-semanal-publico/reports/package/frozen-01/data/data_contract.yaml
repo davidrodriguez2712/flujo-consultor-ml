@@ -1,0 +1,36 @@
+grain: Fila de producto/factura en fuente; target semanal cuenta invoice_id distintos
+  que tienen al menos una fila calificante.
+keys:
+- week_start + invoice_id para conteo
+- cutoff para semanal
+- cutoff + method para predicciones
+coverage:
+  raw_rows: 1067371
+  qualifying_item_rows: 958501
+  min_date: '2009-12-01'
+  max_date: '2011-12-09'
+  first_partial_week: '2009-11-30'
+  last_partial_week: '2011-12-05'
+  complete_calendar_weeks: 104
+  qualifying_invoice_ids_multiple_weeks: 0
+  zero_order_weeks: 2
+  completeness_assumption: Cobertura del calendario interior; no se verificó completitud
+    operativa externa.
+quality:
+  qualifying_rows: 958501
+  invoice_ids_multiple_weeks: 0
+  boundary_weeks_excluded:
+  - '2009-11-30'
+  - '2011-12-05'
+  zero_observed_weeks:
+  - '2009-12-28'
+  - '2010-12-27'
+  completeness: Asumida para calendario interior, no confirmada por operación.
+  duplicates: Contar invoice_id únicos por semana elimina inflación por líneas repetidas
+    y copias de hojas; no valida número de productos ni monto.
+  missing_customer: 'No excluido: ID de cliente no es necesario para volumen de facturas.'
+source: data/raw/transactions_normalized.csv.gz
+provenance: CSV derivado del piloto previo; no se reparsea el Excel original. Ver
+  data/source_manifest.json.
+availability: Timestamps naive sin zona verificada; disponibilidad inmediata retrospectiva
+  asumida.

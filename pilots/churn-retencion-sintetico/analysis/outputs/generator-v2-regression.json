@@ -1,0 +1,17 @@
+{
+  "before_future_cancellations": 1,
+  "after_future_cancellations": 0,
+  "changed_rows": [
+    {
+      "key": [
+        "SYN-01547",
+        "2026-01-01T00:00:00Z"
+      ],
+      "columns": [
+        "cancellation_at"
+      ]
+    }
+  ],
+  "other_csv_identical": true,
+  "observed_labels_unchanged": true
+}

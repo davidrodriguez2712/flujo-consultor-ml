@@ -1,0 +1,68 @@
+[
+  {
+    "gate": "validation",
+    "exit_code": 0,
+    "output": {
+      "status": "PASS",
+      "findings": [],
+      "evidence": [
+        "validation/model_validation.md",
+        "analysis/outputs/holdout-audit.json",
+        "evidence/approvals/2026-10-07-validation.md"
+      ]
+    }
+  },
+  {
+    "gate": "data_analysis-review",
+    "exit_code": 0,
+    "output": {
+      "status": "PASS",
+      "findings": [],
+      "evidence": [
+        "analysis/analysis_plan.md",
+        "validation/model_validation.md",
+        "evidence/approvals/2026-10-07-validation.md"
+      ]
+    }
+  },
+  {
+    "gate": "supervised_model-review",
+    "exit_code": 0,
+    "output": {
+      "status": "PASS",
+      "findings": [],
+      "evidence": [
+        "modeling/model_brief.md",
+        "validation/model_validation.md",
+        "analysis/outputs/holdout-final/metadata.json",
+        "evidence/approvals/2026-10-07-validation.md"
+      ]
+    }
+  },
+  {
+    "gate": "selection-review",
+    "exit_code": 0,
+    "output": {
+      "status": "PASS",
+      "findings": [],
+      "evidence": [
+        "analysis/selection_plan.md",
+        "analysis/outputs/holdout-final/results.json",
+        "evidence/approvals/2026-10-07-validation.md"
+      ]
+    }
+  },
+  {
+    "gate": "executive_delivery-review",
+    "exit_code": 0,
+    "output": {
+      "status": "PASS",
+      "findings": [],
+      "evidence": [
+        "delivery/storyline.md",
+        "validation/model_validation.md",
+        "evidence/approvals/2026-10-07-validation.md"
+      ]
+    }
+  }
+]

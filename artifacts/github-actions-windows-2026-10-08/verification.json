@@ -1,0 +1,21 @@
+{
+  "remote_conclusion": "success",
+  "head_sha": "051c46a71c80efaad3213e0b430d4cd4e18ada33",
+  "runner": "windows-2022",
+  "platform_reported": "Windows-10-10.0.20348-SP0",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "tests": 125,
+  "errors": 0,
+  "failures": 0,
+  "skips": 0,
+  "simulations": 24,
+  "stage_checks": 164,
+  "smoke_commands": 12,
+  "wheel_sha256": "708e44382726ff6128da18f45b1aa8cf4cc50e77a82c30962ef56f501a0223ba",
+  "runtime_api_calls": 0,
+  "limits": [
+    "Sin prueba de Windows 11/ARM ni harnesses Claude Code/Codex Windows",
+    "Sin eficacia o madurez de skills acreditada"
+  ],
+  "prior_attempts_preserved": true
+}

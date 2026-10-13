@@ -1,0 +1,72 @@
+{
+  "started_at": "2026-10-12T23:16:47.668608+00:00",
+  "argv": [
+    "/Users/davidrodriguez/.local/bin/claude",
+    "-p",
+    "--restricted",
+    "--no-chrome",
+    "--no-session-persistence",
+    "--setting-sources",
+    "",
+    "--settings",
+    "{\"disableBundledSkills\": true, \"permissions\": {\"allow\": [\"Read(//private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_preserves_invali0/run/workspace/.runtime/check_inputs.py)\", \"Read(//private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_preserves_invali0/run/workspace/.runtime/report-context.json)\", \"Read(//private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_preserves_invali0/run/workspace/case.md)\", \"Read(//private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_preserves_invali0/run/workspace/inputs/data.csv)\", \"Edit(//private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_preserves_invali0/run/workspace/reports/leakage/audit.md)\", \"Bash(/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python /private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_preserves_invali0/run/workspace/.runtime/check_inputs.py)\", \"Skill(acos-eval:detect-leakage)\"], \"deny\": [\"Agent\", \"WebFetch\", \"WebSearch\", \"NotebookEdit\", \"Edit(//private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_preserves_invali0/run/workspace/inputs/**)\", \"Edit(//private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_preserves_invali0/run/workspace/case.md)\", \"Edit(//private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_preserves_invali0/run/workspace/.runtime/**)\"]}}",
+    "--strict-mcp-config",
+    "--mcp-config",
+    "{\"mcpServers\":{}}",
+    "--permission-mode",
+    "dontAsk",
+    "--permission-prompts",
+    "none",
+    "--tools",
+    "Read,Write,Bash,Skill",
+    "--max-turns",
+    "8",
+    "--effort",
+    "low",
+    "--model",
+    "claude-haiku-5-5",
+    "--system-prompt",
+    "Responde en español. Audita solo el expediente público, respeta sus límites y no aceptes gates. Usa únicamente herramientas y capacidades disponibles. Entrega el reporte y su ruta según case.md.",
+    "--output-format",
+    "stream-json",
+    "--verbose"
+  ],
+  "runtime_success": true,
+  "condition": "baseline",
+  "skill_invoked": false,
+  "request_count": 2,
+  "prompt_sha256": "d339b2af67016f6876d87fa9cd09a58076aab4ff6279c35e0ba1241cc260457a",
+  "returncode": 0,
+  "tool_calls": [
+    {
+      "name": "Write",
+      "input": {
+        "file_path": "/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2271/test_real_cli_preserves_invali0/run/workspace/reports/leakage/audit.md",
+        "content": "## Resumen\nFaltan los campos del contrato.\n"
+      }
+    }
+  ],
+  "skill_invocation_requested": false,
+  "usage_known": true,
+  "report_persisted": true,
+  "report_sha256": "04c8919d35135b30dab54cfca9834b9f672c5d55fe35d0e9e725744a0cd275a2",
+  "model_usage": {
+    "claude-haiku-5-5": {
+      "inputTokens": 60,
+      "outputTokens": 60,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 3.6e-05,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "contract_success": false,
+  "execution_success": false,
+  "finished_at": "2026-10-12T23:16:47.889164+00:00"
+}

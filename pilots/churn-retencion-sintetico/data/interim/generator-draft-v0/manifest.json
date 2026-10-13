@@ -1,0 +1,24 @@
+{
+  "seed": 20261007,
+  "is_synthetic": true,
+  "generator": "analysis/generate_synthetic_data.py",
+  "extracted_at": "2026-01-15",
+  "files": {
+    "churn_labels.csv": {
+      "sha256": "5857977ba8be2dc820261f29c2c28ac23932fe478877c41c30913040bd49bf37",
+      "bytes": 3815469
+    },
+    "customers.csv": {
+      "sha256": "3fa233c2718cdaca44bbb64e7b8cb6d4ae9ce9d6b7313a61e6d5888c34d2b1f2",
+      "bytes": 117030
+    },
+    "monthly_snapshots.csv": {
+      "sha256": "eb3359d8850100d4bf178137263b00babc2e45c5cc1833a08a9b6fa103b42235",
+      "bytes": 2502701
+    },
+    "support_tickets.csv": {
+      "sha256": "f20cc7643568e95fe352d54367ed54b91ca000f7137ac5d8b12e766e600ffadd",
+      "bytes": 832698
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "rows": [
+    {
+      "id": "A1",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "Petici\u00f3n recibida el 2025-07-03T10:00Z. Con siete periodos de 24 h el plazo de retirada vence el 2025-07-10T10:00Z. No se retir\u00f3, as\u00ed que churn=1 queda certificado en esa fecha y entra al sistema de entrenamiento de inmediato. Esa fecha es anterior a training_timestamp (2025-07-15T00:00Z), as\u00ed que el label estaba disponible. Es anterior tambi\u00e9n a la extracci\u00f3n (2025-08-15T00:00Z), as\u00ed que el estado es observed_positive. Las features estaban listas el 2025-06-30T18:00Z, antes de la predicci\u00f3n del 2025-07-01T00:00Z. El evento cae en la ventana [2025-07-01, 2025-08-15) y la poblaci\u00f3n es v\u00e1lida. Se cumplen todas las condiciones."
+    },
+    {
+      "id": "A2",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "Petici\u00f3n recibida el 2025-07-12T10:00Z. El plazo de retirada vence el 2025-07-19T10:00Z. No se retir\u00f3, as\u00ed que churn=1 se certifica en esa fecha, antes de la extracci\u00f3n (2025-08-15T00:00Z). Por eso el estado en extracci\u00f3n es observed_positive. El label entra al sistema de entrenamiento en el momento de la certificaci\u00f3n, es decir, el 2025-07-19T10:00Z. Eso es posterior a training_timestamp (2025-07-15T00:00Z), as\u00ed que la regla prueba que no estaba disponible al entrenar. En esa fecha solo exist\u00eda una petici\u00f3n provisional, que no es churn definitivo. El churn=1 del extracto actual no demuestra disponibilidad previa. Las features s\u00ed estaban disponibles (2025-06-30T18:00Z \u2264 2025-07-01T00:00Z), pero el label no, as\u00ed que se excluye."
+    },
+    {
+      "id": "A3",
+      "outcome_state_at_extraction": "pending",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "Petici\u00f3n recibida el 2025-08-12T10:00Z, sin retirar al momento de la extracci\u00f3n. El plazo de siete periodos de 24 h vence el 2025-08-19T10:00Z, posterior a la extracci\u00f3n (2025-08-15T00:00Z). La regla conocida a\u00fan no permite certificar churn, as\u00ed que el estado es pending. flag_baja=1 con expediente abierto es solo una petici\u00f3n provisional y no se trata como churn=1 ni como negativo. La petici\u00f3n ni siquiera exist\u00eda en training_timestamp (2025-07-15T00:00Z), y el label certificado solo puede existir desde 2025-08-19T10:00Z. Por eso el label no estaba disponible al entrenar y la fila se excluye. Conserva el estado pending en extracci\u00f3n."
+    }
+  ],
+  "open_questions": [
+    "La introducci\u00f3n general indica predicci\u00f3n el 2025-06-01T00:00Z y features del 2025-05-31T18:00Z. La Nota de Operaciones fija el 2025-07-01T00:00Z y el 2025-06-30T18:00Z. Se aplic\u00f3 la nota por ser una diferencia expl\u00edcita para estos expedientes. \u00bfConfirma Operaciones esas fechas? El resultado no cambia con ninguna de las dos, porque en ambas las features son anteriores a la predicci\u00f3n.",
+    "\u00bfLos siete periodos de 24 h se cuentan exactamente desde la hora de recepci\u00f3n, como se asumi\u00f3, o hay un redondeo por calendario o por lote? Con los datos dados, ning\u00fan resultado depende de ello.",
+    "\u00bfExisten marcas de tiempo reales de certificaci\u00f3n en el sistema de entrenamiento (label_available_at) para A1 y A2? Aqu\u00ed se derivaron de la regla de la nota, no de un registro.",
+    "Para A3: \u00bfqu\u00e9 se har\u00e1 con el label cuando se certifique (despu\u00e9s de 2025-08-19T10:00Z) en una reconstrucci\u00f3n posterior? Si se retira la petici\u00f3n, no ser\u00eda churn=1, pero no se puede asumir un negativo sin una regla de certificaci\u00f3n para negativos."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

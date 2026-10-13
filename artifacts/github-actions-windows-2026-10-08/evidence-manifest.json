@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "files": {
+    "dispatch.json": {
+      "sha256": "b13f34da1a39461ec4d31e717a363e29b93683f29dc7e01a50559427167d2921",
+      "bytes": 858
+    },
+    "run-01/acos-windows-x64-python311-37878382343/dependencies.txt": {
+      "sha256": "50d7e25cd405faf38ecdafeceae707ac4dfc0aadf980dd1147d453603a41b9db",
+      "bytes": 375
+    },
+    "run-01/acos-windows-x64-python311-37878382343/pytest.log": {
+      "sha256": "3c8cdadf9ffe336cddc078a9f2e5ec22abef3b9a8f95c88ca498675db00138e1",
+      "bytes": 2259
+    },
+    "run-01/acos-windows-x64-python311-37878382343/pytest.xml": {
+      "sha256": "5673ab8b7c56c332ca7dc6474afd174ef75b3d2ba32c8ad83c9a523d535401e6",
+      "bytes": 15963
+    },
+    "run-02/acos-windows-x64-python311-37878523298/build.log": {
+      "sha256": "b6364f65104e881983abce7bf234dfde57e59178b9e69658ffd98462ca9a6099",
+      "bytes": 7068
+    },
+    "run-02/acos-windows-x64-python311-37878523298/dependencies.txt": {
+      "sha256": "50d7e25cd405faf38ecdafeceae707ac4dfc0aadf980dd1147d453603a41b9db",
+      "bytes": 375
+    },
+    "run-02/acos-windows-x64-python311-37878523298/pytest.log": {
+      "sha256": "86aff5120ef656fc97f1474226580e2bdf6ffd7715994afc35fd939b58b46d20",
+      "bytes": 184
+    },
+    "run-02/acos-windows-x64-python311-37878523298/pytest.xml": {
+      "sha256": "fa55c1ab3bef5a3cbcf950fc661b2bbcc39e156ce4a16670b0fd57a1e78d885c",
+      "bytes": 14126
+    },
+    "run-02/acos-windows-x64-python311-37878523298/simulations.json": {
+      "sha256": "ffec5b811b630155c590156020e70e1ea759bcd962cc0cd3dc1906411f2c819a",
+      "bytes": 17765
+    },
+    "run-02/acos-windows-x64-python311-37878523298/simulations.log": {
+      "sha256": "bad325e0885735ea27f72d6a8b602e4723186861ab6033ebe0d5cf34ff2d40a4",
+      "bytes": 282
+    },
+    "run-02/acos-windows-x64-python311-37878523298/smoke/results.json": {
+      "sha256": "9a357e48e69db8f955b9ac3592d0c545828f0e1954753a726a9fddccb2d5105c",
+      "bytes": 3771
+    },
+    "run-02/acos-windows-x64-python311-37878523298/smoke.log": {
+      "sha256": "0c2db8ee5670a030af883ff39f37ea2a16b7372eb118ec73fefdbcf5f58b7150",
+      "bytes": 709
+    },
+    "run-02/acos-windows-x64-python311-37878523298/wheel/agentic_consulting_os-0.1.0-py3-none-any.whl": {
+      "sha256": "61bb71ca6d2b01f8113264a25de7d156ca8a8ea7cfa43aa558370cce7254e826",
+      "bytes": 63010
+    },
+    "run-03/acos-windows-x64-python311-37878718698/build.log": {
+      "sha256": "03a484d4f4067651aac352d0beb3b30629f4f0c1b176fc5ec076f33dd2651adb",
+      "bytes": 7068
+    },
+    "run-03/acos-windows-x64-python311-37878718698/dependencies.txt": {
+      "sha256": "50d7e25cd405faf38ecdafeceae707ac4dfc0aadf980dd1147d453603a41b9db",
+      "bytes": 375
+    },
+    "run-03/acos-windows-x64-python311-37878718698/pytest.log": {
+      "sha256": "09037e64206b94d66f035d0c96878ad0c1b809abae27731b07974272a7737b2b",
+      "bytes": 184
+    },
+    "run-03/acos-windows-x64-python311-37878718698/pytest.xml": {
+      "sha256": "54afcd90278339441986349d187bb51bfd38eb655db2874155767426028d1139",
+      "bytes": 14126
+    },
+    "run-03/acos-windows-x64-python311-37878718698/simulations.json": {
+      "sha256": "ffec5b811b630155c590156020e70e1ea759bcd962cc0cd3dc1906411f2c819a",
+      "bytes": 17765
+    },
+    "run-03/acos-windows-x64-python311-37878718698/simulations.log": {
+      "sha256": "bad325e0885735ea27f72d6a8b602e4723186861ab6033ebe0d5cf34ff2d40a4",
+      "bytes": 282
+    },
+    "run-03/acos-windows-x64-python311-37878718698/smoke/results.json": {
+      "sha256": "74892cffabeb9c804f3192851710731426ff4e82b11ea588fe8a2b7220471265",
+      "bytes": 23141
+    },
+    "run-03/acos-windows-x64-python311-37878718698/smoke.log": {
+      "sha256": "f8450e574f148963df12bd32969aa0f57a57add3aa189710e0404d3a00db8e43",
+      "bytes": 317
+    },
+    "run-03/acos-windows-x64-python311-37878718698/wheel/agentic_consulting_os-0.1.0-py3-none-any.whl": {
+      "sha256": "708e44382726ff6128da18f45b1aa8cf4cc50e77a82c30962ef56f501a0223ba",
+      "bytes": 63010
+    },
+    "run-03-metadata.json": {
+      "sha256": "2dd884a6291a3e750b76e93e07b4ac0396c619e6056ef0eb8a3cab322011cd72",
+      "bytes": 2511
+    },
+    "verification.json": {
+      "sha256": "649001ed8f537d24fcf5490bca9f2c7e8623400d393a4271ce101ea9c381fdc3",
+      "bytes": 693
+    }
+  }
+}

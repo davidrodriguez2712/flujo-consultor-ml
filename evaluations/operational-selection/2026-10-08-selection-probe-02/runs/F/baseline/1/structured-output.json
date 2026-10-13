@@ -1,0 +1,42 @@
+{
+  "output_type": "not_determinable",
+  "selection_status": "indeterminate",
+  "eligible_count": 3,
+  "capacity_k": 2,
+  "effective_k": null,
+  "selected_ids": [],
+  "risk_ranking_ids": [
+    "P",
+    "Q",
+    "R"
+  ],
+  "total_cost": null,
+  "expected_net_value": null,
+  "feasibility": "indeterminate",
+  "optimality": "indeterminate",
+  "causal_identification": {
+    "status": "not_identifiable",
+    "estimand": "Efecto causal de la campa\u00f1a de contacto/retenci\u00f3n sobre la probabilidad de que cada cliente elegible no abandone (clientes salvados), frente a no contactar, en la poblaci\u00f3n elegible.",
+    "reason": "No hay experimento, estimaciones de efecto de contacto ni dise\u00f1o observacional con supuestos de identificaci\u00f3n. El risk_score de churn bajo la pol\u00edtica actual es una propensi\u00f3n, no un efecto incremental: un riesgo alto no implica que el contacto salve al cliente. Sin efectos no se puede calcular clientes salvados esperados."
+  },
+  "metrics": {
+    "population_id": "eligible-F",
+    "precision": null,
+    "recall": null,
+    "lift": null,
+    "precision_status": "not_requested",
+    "recall_status": "not_requested",
+    "lift_status": "not_requested",
+    "reason": "No se solicitaron m\u00e9tricas predictivas y no hay labels de churn para evaluarlas."
+  },
+  "reason": "El objetivo es maximizar clientes salvados (objetivo econ\u00f3mico/causal), pero faltan los efectos de contacto, por lo que no se puede definir un valor esperado por cliente. Adem\u00e1s, el coste de P es desconocido y no se puede imputar como cero, as\u00ed que la factibilidad de cualquier conjunto que incluya a P frente al presupuesto 8 es indeterminada. Capacidad 2 de 3 elegibles. Solo Q+R tiene coste conocido (4+4=8, igual al presupuesto, factible en coste y capacidad), pero elegirlo ser\u00eda una decisi\u00f3n arbitraria sin efectos ni comparaci\u00f3n contra P. Por tanto no se declara selecci\u00f3n ni optimalidad. El ranking descriptivo por risk_score (P 0.9, Q 0.8, R 0.7; sin empates) se entrega solo como orden de riesgo, no como recomendaci\u00f3n de contacto. CLV no sustituye al efecto del contacto. gate_decision=NEEDS_REVIEW; sin autoridad para aprobar.",
+  "open_questions": [
+    "\u00bfCu\u00e1l es el coste de contactar a P? \u00bfEs conocido o hay un rango/cota?",
+    "\u00bfExiste o puede dise\u00f1arse un experimento (p. ej. aleatorizaci\u00f3n con grupo de control) o un dise\u00f1o observacional con supuestos defendibles para estimar el efecto del contacto por cliente?",
+    "\u00bfCu\u00e1l es la probabilidad de salvar a cada cliente al contactarlo (efecto incremental) y su incertidumbre?",
+    "\u00bfEl objetivo es maximizar clientes salvados esperados o valor neto (efecto \u00d7 CLV \u2212 coste)? Esto cambia la selecci\u00f3n.",
+    "\u00bfEl presupuesto de 8 es l\u00edmite estricto y la capacidad 2 un m\u00e1ximo (se puede contactar a menos de 2)?",
+    "\u00bfSe aprueba usar Q+R solo como acci\u00f3n provisional descriptiva, asumiendo expl\u00edcitamente que no hay evidencia causal?"
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

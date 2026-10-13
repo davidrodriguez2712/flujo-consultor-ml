@@ -1,0 +1,27 @@
+from pathlib import Path
+import tempfile,shutil,subprocess,json,sys,hashlib,platform
+root=Path.cwd()/'pilots/riesgo-credito-sintetico'
+out=root/'reports/handoff'
+out.mkdir(exist_ok=True)
+report={'python':sys.version,'platform':platform.platform(),'scope':'Copia fuera del checkout, mismo macOS/Python; replay de evidencia observada, sin APIs ni nueva evaluación independiente.','commands':[],'comparisons':{}}
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+with tempfile.TemporaryDirectory(prefix='acos-credit-handoff-') as temp:
+    copy=Path(temp)/root.name
+    shutil.copytree(root,copy,ignore=shutil.ignore_patterns('__pycache__','.pytest_cache'))
+    commands=[(['/Users/davidrodriguez/.local/bin/acos','status'],0),(['/Users/davidrodriguez/.local/bin/acos','next'],0),(['/Users/davidrodriguez/.local/bin/acos','validate'],3),([sys.executable,'analysis/generate_synthetic_data.py','--output','replays/generated-data'],0),([sys.executable,'analysis/credit_baseline.py','--freeze-file','reports/execution/development-freeze.json','--output','replays/development'],0),([sys.executable,'analysis/credit_final.py','--freeze-file','reports/final-validation/final-freeze.json','--output','replays/final'],0)]
+    for cmd,expected in commands:
+        p=subprocess.run(cmd,cwd=copy,text=True,capture_output=True)
+        report['commands'].append({'argv':cmd,'returncode':p.returncode,'expected_returncode':expected,'stdout':p.stdout,'stderr':p.stderr})
+        assert p.returncode==expected,(cmd,p.stdout,p.stderr)
+    for label,old,new,names in [('data','data/raw','replays/generated-data',[p.name for p in (root/'data/raw').iterdir() if p.is_file()]),('development','analysis/outputs/baseline-development','replays/development',['model.json','results.json','summary.json','predictions.json','reference-predictions.json','execution-policy.json']),('final','analysis/outputs/baseline-final','replays/final',['model.json','predictions.json','reference-predictions.json','results.json','summary.json','evaluation-labels.json','execution-policy.json'])]:
+        checks={name:{'sha256':sha(root/old/name),'identical':(root/old/name).read_bytes()==(copy/new/name).read_bytes()} for name in names}
+        assert all(v['identical'] for v in checks.values()),checks
+        report['comparisons'][label]=checks
+    a=json.loads((root/'analysis/outputs/baseline-final/metadata.json').read_text());b=json.loads((copy/'replays/final/metadata.json').read_text())
+    report['metadata_timestamp_original']=a.pop('completed_at_utc');report['metadata_timestamp_replay']=b.pop('completed_at_utc')
+    report['metadata_other_fields_identical']=a==b
+    assert a==b
+report['passed']=True
+(out/'reproduction-checks.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+(out/'reproduction-command.py.txt').write_text(Path(__file__).read_text())
+print(json.dumps({'passed':True,'compared_files':{k:len(v) for k,v in report['comparisons'].items()},'metadata_other_fields_identical':a==b}))

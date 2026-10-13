@@ -1,0 +1,40 @@
+{
+  "capacity_k": 2,
+  "causal_identification": {
+    "status": "not_identifiable",
+    "estimand": "Efecto causal de la campa\u00f1a de contacto sobre la retenci\u00f3n (clientes salvados) por cliente elegible, es decir, retenci\u00f3n con contacto menos retenci\u00f3n sin contacto",
+    "reason": "No hay experimento, estimaciones de efecto de contacto ni dise\u00f1o observacional. risk_score y CLV describen riesgo y valor bajo la pol\u00edtica actual, no el efecto incremental del contacto. Un riesgo alto no implica que contactar evite el churn."
+  },
+  "effective_k": null,
+  "eligible_count": 3,
+  "expected_net_value": null,
+  "feasibility": "indeterminate",
+  "gate_decision": "NEEDS_REVIEW",
+  "metrics": {
+    "population_id": "eligible-F",
+    "precision": null,
+    "recall": null,
+    "lift": null,
+    "precision_status": "not_requested",
+    "recall_status": "not_requested",
+    "lift_status": "not_requested",
+    "reason": "No se solicitan m\u00e9tricas predictivas y no hay labels de churn, as\u00ed que precision, recall y lift no se calculan."
+  },
+  "open_questions": [
+    "\u00bfCu\u00e1l es el coste de contactar a P? Es cr\u00edtico: P es el cliente con mayor riesgo y CLV, y su coste cambia qu\u00e9 conjuntos son factibles y \u00f3ptimos.",
+    "\u00bfExiste o puede dise\u00f1arse un experimento aleatorizado, o un dise\u00f1o observacional defendible, para estimar el efecto incremental del contacto (probabilidad de salvar al cliente)?",
+    "\u00bfC\u00f3mo se convierte el 'cliente salvado' en valor esperado? Hace falta, por ejemplo, la probabilidad incremental de retenci\u00f3n \u00d7 CLV, y saber si el CLV ya es neto del coste.",
+    "\u00bfEs aceptable usar el ranking descriptivo de riesgo solo como priorizaci\u00f3n operativa, sin llamarlo efecto causal ni decisi\u00f3n \u00f3ptima?"
+  ],
+  "optimality": "indeterminate",
+  "output_type": "not_determinable",
+  "reason": "La selecci\u00f3n por valor no se puede resolver por dos razones. 1) Falta el coste de P (null), y no se puede tratar como cero. Con P fuera, Q+R cuesta 8, que cumple el presupuesto de 8 y la capacidad de 2. Pero P, con CLV 20, podr\u00eda combinarse con Q si su coste fuera \u22644, o con R en el mismo caso. El \u00f3ptimo depende de ese dato. 2) No hay efecto causal del contacto, as\u00ed que el valor esperado de 'salvar' no est\u00e1 definido. CLV y risk_score no son valor incremental. Maximizar la suma de CLV ser\u00eda suponer sin evidencia que el contacto salva a todos. Por eso selected_ids=[] significa decisi\u00f3n pendiente, no pol\u00edtica vac\u00eda. El ranking descriptivo de riesgo, con score descendente, es P (0.9), Q (0.8), R (0.7). No es una selecci\u00f3n ni una pol\u00edtica \u00f3ptima. Los desempates por ID no se activaron porque no hay scores iguales.",
+  "risk_ranking_ids": [
+    "P",
+    "Q",
+    "R"
+  ],
+  "selected_ids": [],
+  "selection_status": "indeterminate",
+  "total_cost": null
+}

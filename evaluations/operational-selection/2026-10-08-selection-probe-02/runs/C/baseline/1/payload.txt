@@ -1,0 +1,128 @@
+# Encargo común
+Audita la decisión operacional de este engagement ficticio. Usa solo la evidencia de negocio provista. Devuelve el objeto del schema nativo, sin actuar ni aprobar gates: gate_decision=NEEDS_REVIEW.
+
+Semántica común de output: selected_ids contiene la selección final ordenada; risk_ranking_ids el ranking completo de elegibles por risk_score descendente/ID ascendente si esos scores se proporcionan, o [] si no. effective_k es el tamaño seleccionado cuando la selección está determinada, y null si no se puede determinar. selected_ids=[] con selection_status=indeterminate significa decisión pendiente, no política vacía óptima. eligible_count y capacity_k son conteos diferentes.
+
+output_type: risk_ranking para un Top-K descriptivo, value_selection para selección por objetivo económico definido, not_determinable si no puede resolverse la selección solicitada. feasibility evalúa cumplimiento de restricciones con evidencia; optimality=optimal solo respecto del objetivo, coeficientes y reglas provistos; not_assessed para ranking descriptivo. total_cost suma costes cuando están conocidos; expected_net_value es valor neto aditivo solo cuando está definido.
+
+causal_identification.status se refiere al efecto solicitado (not_requested/identifiable/not_identifiable/indeterminate), separado del producto seleccionado. Identificar el estimand si se pide efecto; no exigir una redacción literal. precision/recall/lift se refieren a la población indicada: estados identified, undefined (denominador cero), not_identifiable (datos insuficientes) o not_requested. Para métricas no solicitadas usar null. Las razones y preguntas deben permitir revisar supuestos, cálculos y límites.
+
+# Playbook disponible
+# Experimentos y modelos
+
+Usar este playbook cuando se necesita estimar el efecto de una intervención o construir una predicción/ranking para una acción operativa. Primero acordar qué decisión cambiaría; no modelar solo porque existan datos.
+
+## Escoger entre intervención y predicción
+
+| Pregunta | Enfoque posible | No confundir con |
+|---|---|---|
+| ¿Qué efecto tuvo/tendría cambiar una acción? | Experimento o evaluación causal. Definir estimand y diseño. | Asociación o diferencia entre segmentos. |
+| ¿A quién priorizar para una acción existente? | Modelo de propensión/ranking, si cabe en capacidad operativa. | Efecto causal del contacto. |
+| ¿A quién cambia más la acción? | Estimación de heterogeneidad/uplift, solo con diseño/evidencia adecuados. | Mayor probabilidad de outcome sin acción. |
+| ¿Cuánto ocurrirá en períodos futuros? | Forecasting alineado al horizonte y proceso operativo. | Ranking de individuos o impacto de tratamiento. |
+
+Una propensión alta no significa que contactar a esa persona causará una mejora. Si se necesita medir incrementalidad, diseñar un experimento o una estrategia causal y documentar sus supuestos.
+
+## Diseño experimental/evaluación causal
+
+Antes de analizar:
+
+1. definir población elegible, intervención/comparador y outcome;
+2. declarar el **estimand**: qué efecto se quiere estimar y para quién;
+3. definir unidad y mecanismo de asignación, ventana, horizonte y exposición;
+4. evaluar potencia/tamaño de muestra, guardrails, interferencia y cumplimiento cuando corresponda;
+5. preespecificar outcome primario, exclusiones y enfoque analítico en el nivel proporcional;
+6. documentar supuestos, riesgos de contaminación y cambios de protocolo.
+
+Si la randomización no es viable, describir la alternativa observacional y sus supuestos; no nombrarla como causalmente equivalente. Leer resultados junto con sus incertidumbres, sample size, pérdidas y cambios operativos.
+
+## Gate para iniciar modelado
+
+No iniciar feature engineering/model training hasta poder describir:
+
+- decisión y acción que utilizará el score;
+- usuario/owner y capacidad operativa (por ejemplo, cuántos casos puede atender);
+- entidad de scoring y unidad del outcome;
+- target/regla de label, prediction timestamp, observation window y prediction horizon;
+- disponibilidad de features en tiempo de decisión, label delay y frecuencia de scoring;
+- baseline sencillo y métrica de negocio/operación;
+- estrategia de validación acordada.
+
+Si falta el escenario de uso, outcome o momento de decisión, resolverlo o declararlo no determinable. No aceptar nombres de columnas como definición del target.
+
+## Validación y prevención de leakage
+
+Diseñar `train`/`validation`/`test` antes de usar features que dependan del tiempo o de entidades. La estrategia se deriva de cómo se generarán predicciones y cómo se medirá el resultado, no de una regla automática por presencia de fecha o ID.
+
+Considerar según el problema:
+
+- random/stratified holdout cuando la independencia es razonable y representa el uso;
+- group split cuando generalizar a entidades/grupos no vistos es el objetivo;
+- temporal/out-of-time/backtesting cuando importa desempeño futuro o cambio por período;
+- paneles, eventos múltiples, label delay, ventanas solapadas, gaps/embargo e interferencia;
+- separación del test final antes de selección/tuning cuando se requiera estimación no sesgada.
+
+Fit de transformaciones, imputación, selección de features, target encoding y resampling ocurre dentro del fold/`Pipeline` correspondiente. Features solo pueden usar información disponible al prediction timestamp. Registrar checks de overlap, disponibilidad, cohortes por split y cantidad de outcomes. `VALIDATION.md` guarda el diseño si debe persistir; no duplicar estrategia en notebooks sin referencia.
+
+## Baselines y métricas
+
+Establecer al menos un baseline simple (regla de negocio, dummy o método actual) con el mismo split/protocolo. Elegir métricas según la acción:
+
+- clasificación: métricas globales como ROC-AUC/PR-AUC solo si responden la pregunta;
+- priorización limitada: Precision@K, Recall@K, Lift@K o recuperación esperada para la capacidad disponible;
+- probabilidades para decisión/umbral: calibración y coste de errores cuando sean pertinentes;
+- forecasting: métrica alineada a horizonte, escala, agregación y tolerancia de error operativa;
+- segmentación: estabilidad, separación útil y adopción, no solo una medida abstracta.
+
+No seleccionar por un único score si el uso es capacity-constrained o hay diferencias materiales entre grupos/períodos. Reportar conteos, intervalos/incertidumbre, baseline y métricas por período/segmento cuando cambien una decisión.
+
+## Diagnóstico, robustez e impacto
+
+Tras comparar opciones, revisar overfit, calibración si aplica, estabilidad temporal, performance por segmentos relevantes, errores representativos, supuestos de label y posibilidad de drift. No declarar el modelo válido por un run o por una métrica alta aislada.
+
+Separar cuatro decisiones:
+
+1. **Desempeño técnico:** qué tan bien ordena/estima bajo la validación definida.
+2. **Operabilidad:** si datos, latencia, frecuencia, interfaz y capacidad permiten usarlo.
+3. **Impacto causal:** si la acción cambia el resultado; requiere evidencia de intervención/causalidad adecuada.
+4. **Adopción y gobierno:** owner, monitoreo, overrides, revisión humana y política del cliente.
+
+El impacto esperado en un caso económico es un escenario calculado con supuestos, no evidencia de incremento causal. Exponer incertidumbre, costos y posibles pérdidas; acordar cómo medir después de la recomendación.
+
+## Salidas
+
+Persistir según necesidad: diseño de validación, manifest/metadatos de ejecución, comparación con baseline, reporte de diagnósticos, límites y recomendación. MLflow u observabilidad son opcionales; si no se usan, un manifest mínimo puede registrar datos, versión, parámetros, métrica y commit/referencia, sujeto a política del cliente.
+
+Cerrar sin modelo si una query, regla transparente, experimento o intervención de proceso responde mejor a la decisión. La UI para consumo del score se rige por la ruta condicional de `product-ui-and-prototyping.md` (referencia no seleccionada: `product-ui-and-prototyping.md`), no por este playbook.
+
+# Expediente de negocio
+{
+  "name": "Presupuesto indivisible y greedy insuficiente",
+  "business": "Seleccionar intervenciones indivisibles para maximizar suma de net_value, con capacidad máxima 2 y presupuesto 10. net_value ya descuenta coste operativo, está expresado en unidades monetarias y representa el valor esperado que negocio suministra para esta acción. No restar cost de nuevo. Valores aditivos, sin interacciones ni rutas. No se solicita estimación causal ni métricas de labels. Empates entre conjuntos: menor coste y luego lista de IDs ascendente; orden de miembros: net_value descendente/ID ascendente.",
+  "capacity_k": 2,
+  "budget": 10,
+  "metric_population": "eligible-C",
+  "rows": [
+    {
+      "id": "A",
+      "eligible": true,
+      "risk_score": 0.99,
+      "cost": 6,
+      "net_value": 13
+    },
+    {
+      "id": "B",
+      "eligible": true,
+      "risk_score": 0.8,
+      "cost": 5,
+      "net_value": 10
+    },
+    {
+      "id": "C",
+      "eligible": true,
+      "risk_score": 0.7,
+      "cost": 5,
+      "net_value": 10
+    }
+  ]
+}

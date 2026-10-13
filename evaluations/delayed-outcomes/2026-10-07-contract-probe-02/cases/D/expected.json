@@ -1,0 +1,16 @@
+{
+  "rows": {
+    "D1": {
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible"
+    },
+    "D2": {
+      "outcome_state_at_extraction": "pending",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude"
+    }
+  },
+  "review_notes": "D1 positivo irreversible certificado antes de train; D2 reversible sin cierre, no certificar flag provisional.",
+  "gate_decision": "NEEDS_REVIEW"
+}

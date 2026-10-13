@@ -1,0 +1,19 @@
+{
+  "checker_version": "0.1.0",
+  "strict_json_pass": true,
+  "schema_pass": true,
+  "status_matches": true,
+  "references_exist": true,
+  "unknown_references": [],
+  "semantic_review": "NOT_RUN",
+  "overall_content_pass": null,
+  "referenced_paths": [
+    "analysis/scores.json",
+    "contracts/shortlist.json",
+    "plans/shortlist.json"
+  ],
+  "transfer_checker_version": "0.1.0",
+  "format": "json",
+  "format_pass": true,
+  "references_present": true
+}

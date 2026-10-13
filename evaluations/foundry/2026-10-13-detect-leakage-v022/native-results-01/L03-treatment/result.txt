@@ -1,0 +1,5 @@
+Reporte escrito en `workspace/reports/leakage/audit.md`.
+
+Resultado: **No determinable** para `complaint_count`. No hay mecanismo de leakage demostrado, pero faltan ventana de conteo, disponibilidad efectiva y código de construcción. La exportación del 2025-08-01 no prueba disponibilidad al scoring del 2025-06-01. Acción provisional: no usar la feature sin evidencia y bajo autoridad del owner. Skill detect-leakage 0.2.2 cargada; check_inputs.py ejecutado (solo integridad).
+
+Ruta: `workspace/reports/leakage/audit.md`

@@ -1,0 +1,126 @@
+{
+  "seed": 20261007,
+  "synthetic": true,
+  "tables": {
+    "customers": {
+      "rows": 2400,
+      "columns": 6,
+      "key": [
+        "customer_id"
+      ],
+      "duplicate_keys": 0,
+      "missing": {
+        "customer_id": 0,
+        "signup_date": 0,
+        "plan": 0,
+        "channel": 0,
+        "market": 0,
+        "is_synthetic": 0
+      },
+      "constant_columns": [
+        "market",
+        "is_synthetic"
+      ]
+    },
+    "monthly_snapshots": {
+      "rows": 35990,
+      "columns": 11,
+      "key": [
+        "customer_id",
+        "prediction_timestamp"
+      ],
+      "duplicate_keys": 0,
+      "missing": {
+        "customer_id": 0,
+        "prediction_timestamp": 0,
+        "features_available_at": 0,
+        "tenure_months": 0,
+        "active_days_prev_month": 730,
+        "active_days_prev2_month": 0,
+        "failed_payments_prev_month": 0,
+        "support_tickets_prev_month": 0,
+        "mrr_usd": 0,
+        "discount_active": 0,
+        "is_synthetic": 0
+      },
+      "constant_columns": [
+        "is_synthetic"
+      ]
+    },
+    "churn_labels": {
+      "rows": 35990,
+      "columns": 9,
+      "key": [
+        "customer_id",
+        "prediction_timestamp"
+      ],
+      "duplicate_keys": 0,
+      "missing": {
+        "customer_id": 0,
+        "prediction_timestamp": 0,
+        "window_end_exclusive": 0,
+        "label_available_at": 0,
+        "churn_next_month": 972,
+        "label_status": 0,
+        "cancellation_at": 34534,
+        "extracted_at": 0,
+        "is_synthetic": 0
+      },
+      "constant_columns": [
+        "extracted_at",
+        "is_synthetic"
+      ]
+    },
+    "support_tickets": {
+      "rows": 11804,
+      "columns": 6,
+      "key": [
+        "ticket_id"
+      ],
+      "duplicate_keys": 0,
+      "missing": {
+        "ticket_id": 0,
+        "customer_id": 0,
+        "snapshot_prediction_timestamp": 0,
+        "opened_at": 0,
+        "category": 0,
+        "is_synthetic": 0
+      },
+      "constant_columns": [
+        "is_synthetic"
+      ]
+    }
+  },
+  "joins": {
+    "snapshots_labels": "1:1 por customer_id + prediction_timestamp",
+    "snapshots_customers": "N:1 por customer_id",
+    "snapshots_tickets": "1:N; agregar tickets antes del join",
+    "orphan_label_keys": 0,
+    "orphan_snapshot_keys": 0,
+    "ticket_join_rows": 36853,
+    "snapshot_rows": 35990
+  },
+  "temporal": {
+    "first_prediction": "2024-02-01T00:00:00Z",
+    "last_prediction": "2026-01-01T00:00:00Z",
+    "periods": 24,
+    "features_after_prediction": 0,
+    "labels_known_at_prediction": 0,
+    "ticket_events_not_before_prediction": 0
+  },
+  "target": {
+    "observed_rows": 35018,
+    "pending_rows": 972,
+    "positives": 1428,
+    "observed_rate": 0.040779027928493916,
+    "pending_zero_filled": 0,
+    "post_cutoff_labels_exposed": 0
+  },
+  "outcome": "PASS estructural; revisión humana y semántica pendientes",
+  "signup_coherence": {
+    "active_days_before_signup": 0,
+    "tickets_before_signup": 0,
+    "prior_usage_before_signup": 0
+  },
+  "generator_revision": "v1: ventanas limitadas por signup; v0 archivado y excluido del piloto"
+}

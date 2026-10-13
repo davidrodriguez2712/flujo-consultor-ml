@@ -1,0 +1,26 @@
+{
+  "project": "Piloto sintético de riesgo de crédito",
+  "stage": "validation",
+  "status": "IN_PROGRESS",
+  "completed": [
+    "discovery",
+    "framing",
+    "diagnosis",
+    "execution"
+  ],
+  "total_stages": 7,
+  "blockers": [],
+  "open_decisions": [
+    "Revisar y aprobar los gates de Validation con evidencia de evaluación final.",
+    "Definir la recomendación y límites de Delivery según resultados finales."
+  ],
+  "next_gates": [
+    "validation",
+    "data_analysis-review",
+    "supervised_model-review",
+    "selection-review",
+    "executive_delivery-review"
+  ],
+  "integrity": "OK",
+  "findings": []
+}

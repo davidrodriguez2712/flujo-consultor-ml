@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "verified_at_utc": "2026-10-09T19:44:10.656803+00:00",
+  "product_suite": {
+    "passed": 162,
+    "failed": 0,
+    "command": ".venv/bin/python -m pytest -q",
+    "providers": "simulados"
+  },
+  "forecast_pilot_tests": {
+    "passed": 7,
+    "failed": 0
+  },
+  "immutable_evidence": [
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/evidence-manifest-01.json",
+      "manifest_sha256": "90544d163b168930e86373699ede98b7f099b54d1b7d7d5ea9487d1c50362e19",
+      "files_checked": 48,
+      "status": "PASS"
+    },
+    {
+      "manifest": "pilots/retail-capacidad-semanal-publico/reports/package/evidence-manifest-01.json",
+      "manifest_sha256": "fdf2945c8935a3511a0766c3527fc9216609021ffa45eb5891f5c574c732e647",
+      "files_checked": 70,
+      "status": "PASS"
+    }
+  ],
+  "snapshot_code_matches": true,
+  "preparation_approval_verified": true,
+  "model_calls": 0,
+  "api_cost_usd": 0,
+  "native_paid_smoke": "NOT_RUN",
+  "semantic_review": "NOT_RUN"
+}

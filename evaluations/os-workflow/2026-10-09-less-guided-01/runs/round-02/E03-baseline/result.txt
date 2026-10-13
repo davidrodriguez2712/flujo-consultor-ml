@@ -1,0 +1,63 @@
+```json
+{
+  "status": "MUST_CORRECT",
+  "findings": [
+    {
+      "statement": "Los dos recorridos no producen el mismo conjunto de casos seleccionados. El run original selecciona Q-17 y el de reproducción no selecciona ninguno, lo que incumple el contrato `selected_ids: exact`.",
+      "evidence_paths": [
+        "runs/original/execution.json (selected_ids: [\"Q-17\"])",
+        "runs/reproduction/execution.json (selected_ids: [])",
+        "contexto.comparison_contract.selected_ids = exact"
+      ]
+    },
+    {
+      "statement": "La diferencia se origina en la etapa de serialización. El run original escribe Q-17 con formato `.1f` (14.96 pasa a 15.0) y después aplica la regla `>= 15.0`, de modo que el caso queda seleccionado. El run de reproducción aplica la regla sobre el valor crudo 14.96, que no cumple el umbral.",
+      "evidence_paths": [
+        "data/source.json (Q-17: 14.96)",
+        "runs/original/execution.json (steps: CSV writer numeric .1f -> CSV reader float -> rule >= 15.0; consumed Q-17: 15.0)",
+        "runs/reproduction/execution.json (steps: source object in memory -> rule >= 15.0; consumed Q-17: 14.96)",
+        "environment.json (writer: CSV, format(float(value), .1f))"
+      ]
+    },
+    {
+      "statement": "En valores numéricos, las diferencias están dentro de la tolerancia declarada de 0.1 minutos (Q-17: 0.04; Q-28: 0.02). Sin embargo, la tolerancia numérica no resuelve la discrepancia de selección, porque el umbral de decisión es discontinuo y el contrato exige coincidencia exacta de IDs seleccionados.",
+      "evidence_paths": [
+        "contexto.comparison_contract.numeric_absolute_tolerance_minutes = 0.1",
+        "contexto.comparison_contract.selected_ids = exact",
+        "data/source.json",
+        "runs/original/execution.json",
+        "runs/reproduction/execution.json"
+      ]
+    },
+    {
+      "statement": "El entorno de ejecución es el mismo en ambos runs y no hay aleatoriedad, por lo que la divergencia no se explica por variación de runtime. Queda explicada por la diferencia de pipeline (redondeo intermedio frente a valor crudo).",
+      "evidence_paths": [
+        "environment.json (both_runs: Same Python/runtime/platform; no randomness)"
+      ]
+    },
+    {
+      "statement": "Q-28 no se selecciona en ninguno de los dos runs, así que no cambia el resultado operativo. Su diferencia numérica es pequeña y no afecta la selección.",
+      "evidence_paths": [
+        "data/source.json (Q-28: 8.02)",
+        "runs/original/execution.json (Q-28: 8.0)",
+        "runs/reproduction/execution.json (Q-28: 8.02)"
+      ]
+    }
+  ],
+  "proposed_actions": [
+    "No modificar el criterio de decisión (>= 15.0), la tolerancia, los outputs ni los runs originales.",
+    "Registrar en el expediente la discrepancia de selección (Q-17) y su causa: redondeo `.1f` en la etapa de escritura CSV antes de aplicar la regla.",
+    "Pedir al owner del criterio de negocio/datos que determine si el valor canónico para la regla es el valor crudo de la fuente (14.96) o el valor redondeado a un decimal (15.0). No debe decidirlo el agente.",
+    "Una vez fijada la regla de canonicalización por el owner, repetir ambos recorridos con el mismo contrato de datos y verificar que selected_ids coincidan exactamente.",
+    "Declarar en el reporte de continuidad que, hasta resolver la discrepancia, los dos recorridos no sustentan el mismo resultado operativo."
+  ],
+  "next_step": "Escalar al owner del criterio la decisión sobre el valor canónico (crudo o redondeado) para la regla >= 15.0. Después, rerun controlado y reconciliación de selected_ids antes de cualquier continuidad.",
+  "limitations": [
+    "Revisión limitada al contenido del expediente incluido; no se usaron herramientas ni se consultaron archivos externos.",
+    "No se verificó la identidad ni la autoridad del owner del criterio; los registros de owner/aprobación pertenecen al fixture.",
+    "Esta revisión no aprueba ningún gate ni autoriza publicación, distribución o uso operativo.",
+    "No se evaluó si el redondeo a un decimal es el comportamiento intencionado de negocio; eso requiere decisión humana.",
+    "Solo se compararon dos casos (Q-17 y Q-28); no se puede generalizar la magnitud de la discrepancia a la población completa."
+  ]
+}
+```

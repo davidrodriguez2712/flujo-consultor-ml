@@ -1,0 +1,83 @@
+{
+  "date": "2026-10-07",
+  "checks": {
+    "six_complete_months": true,
+    "all_scores_in_holdout": true,
+    "only_available_binary_labels": true,
+    "frozen_model_hash_matches": true,
+    "frozen_policy_hash_matches": true,
+    "runner_hash_matches": true,
+    "all_month_checks_pass": true,
+    "approved_data_generator_protocol_unchanged": true,
+    "baseline_artifacts_unchanged": true
+  },
+  "all_pass": true,
+  "months": [
+    {
+      "month": "2025-07",
+      "rows": 1264,
+      "unique_ids": true,
+      "scores_from_frozen_model": true,
+      "metrics_recalculated": true,
+      "fixed_training_before_scoring": true
+    },
+    {
+      "month": "2025-08",
+      "rows": 1216,
+      "unique_ids": true,
+      "scores_from_frozen_model": true,
+      "metrics_recalculated": true,
+      "fixed_training_before_scoring": true
+    },
+    {
+      "month": "2025-09",
+      "rows": 1180,
+      "unique_ids": true,
+      "scores_from_frozen_model": true,
+      "metrics_recalculated": true,
+      "fixed_training_before_scoring": true
+    },
+    {
+      "month": "2025-10",
+      "rows": 1120,
+      "unique_ids": true,
+      "scores_from_frozen_model": true,
+      "metrics_recalculated": true,
+      "fixed_training_before_scoring": true
+    },
+    {
+      "month": "2025-11",
+      "rows": 1065,
+      "unique_ids": true,
+      "scores_from_frozen_model": true,
+      "metrics_recalculated": true,
+      "fixed_training_before_scoring": true
+    },
+    {
+      "month": "2025-12",
+      "rows": 1015,
+      "unique_ids": true,
+      "scores_from_frozen_model": true,
+      "metrics_recalculated": true,
+      "fixed_training_before_scoring": true
+    }
+  ],
+  "output_sha256": {
+    "metadata.json": "3a3ca31f6d5dddfe7721eb57b402cff671fb35ecd98857e52aa686a25a3118db",
+    "results.json": "bb8a3e04337b7b326189561b22241f54c1d5a351d7fa4070c79f6395b9633baf",
+    "scores.json": "24193600828899cd252d23b71e501653d57a10c7514e4176c6e30c920cf0cf3f",
+    "summary.json": "c5ccc832339f7d95d99df0eaaa3a152a7dce08602783f0453c0899255597e5fc"
+  },
+  "tests": {
+    "passed": 105,
+    "acos": 92,
+    "pilot": 13,
+    "failed": 0,
+    "seconds": 2.93
+  },
+  "evaluation_runs": 1,
+  "refits": 0,
+  "tuning_after_holdout": false,
+  "review_independent": false,
+  "verification": "recálculo de scores/métricas sobre outputs; sin nueva selección de modelo"
+}

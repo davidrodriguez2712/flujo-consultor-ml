@@ -1,0 +1,21 @@
+{
+  "project": "Priorización comercial retail con datos públicos",
+  "stage": "execution",
+  "status": "IN_PROGRESS",
+  "completed": [
+    "discovery",
+    "framing",
+    "diagnosis"
+  ],
+  "total_stages": 7,
+  "blockers": [],
+  "open_decisions": [
+    "Aprobación humana Execution pendiente.",
+    "Ningún modelo elegible en development; congelar baseline al pasar a Validation."
+  ],
+  "next_gates": [
+    "execution"
+  ],
+  "integrity": "OK",
+  "findings": []
+}

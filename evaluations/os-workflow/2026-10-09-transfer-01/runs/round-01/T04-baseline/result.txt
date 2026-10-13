@@ -1,0 +1,36 @@
+{
+  "status": "READY",
+  "findings": [
+    {
+      "statement": "La reproducción v1 es consistente con el contrato histórico. Con los `sales_units` de las tres semanas (100, 120, 140), la media de las últimas tres semanas es 120.0, igual al forecast registrado en `runs/v1/output.json`, cuyo target es unidades brutas vendidas.",
+      "evidence_paths": ["data/weeks.json", "contracts/v1.json", "runs/v1/output.json"]
+    },
+    {
+      "statement": "La variante v2 está definida de forma coherente con la autorización. Unidades netas = `sales_units` − `returned_units` produce 90, 100 y 110, con una media3 de 100.0. Esto diferiría del forecast bruto v1 en 20 unidades, por lo que los dos runs deben conservarse separados.",
+      "evidence_paths": ["data/weeks.json", "decisions/change-02.json"]
+    },
+    {
+      "statement": "La autorización de cambio aprobada (fixture) limita los destinos a `runs/reproduction-v1-new/` y `runs/v2-new/`, prohíbe sobrescribir `runs/v1` y no autoriza uso operativo ni aceptación automática. Esto permite preparar ambos runs sin ejecutarlos ni aprobar resultados en esta tarea.",
+      "evidence_paths": ["decisions/change-02.json", "runs/v1/output.json"]
+    },
+    {
+      "statement": "El contrato de serialización (writer JSON numérico → reader JSON → media) es el mismo para v1 y v2, lo que permite comparar la variante metodológica sin introducir un cambio de formato como fuente de diferencia.",
+      "evidence_paths": ["contracts/v1.json", "decisions/change-02.json"]
+    }
+  ],
+  "proposed_actions": [
+    "Preparar `runs/reproduction-v1-new/` con target bruto (`sales_units`), modelo media de tres semanas y serialización writer JSON numérico → reader JSON → media, sin tocar `runs/v1/`.",
+    "Preparar `runs/v2-new/` con target neto (`sales_units` − `returned_units`), modelo media de tres semanas y la misma serialización JSON, en un directorio separado.",
+    "Para cada run, registrar en un manifest de evidencia las rutas de entrada, el código/configuración, los comandos, los hashes de `data/weeks.json` y `contracts/v1.json`, y las salidas esperadas (v1 = 120.0 brutas; v2 = 100.0 netas, a verificar al ejecutar).",
+    "Mantener separadas las evidencias de v1 y v2, con criterios de comparación definidos antes de ejecutar: v1 reproducida frente a `runs/v1/output.json` con tolerancia cero y v2 comparada contra su cálculo independiente.",
+    "No ejecutar los runs en esta tarea. Dejar la aceptación de resultados y cualquier uso operativo pendientes de revisión humana del owner."
+  ],
+  "next_step": "El owner de planificación confirma el plan de preparación para ambos destinos autorizados. Después, un ejecutor prepara los directorios y manifests sin ejecutar los runs; la ejecución y la revisión de resultados quedan para una tarea posterior.",
+  "limitations": [
+    "La aprobación de `decisions/change-02.json` es un fixture sintético; no autoriza acciones reales ni sustituye la aprobación del owner real.",
+    "El expediente contiene solo tres semanas de datos, por lo que la media3 de v1 y v2 es sensible a pocos puntos y no permite validar la calidad predictiva.",
+    "No se ha verificado el momento en que las devoluciones se registran respecto a las ventas. Restar `returned_units` de la misma semana puede no reflejar la unidad neta de planificación real.",
+    "No se ejecutó ningún run ni se verificaron hashes de los archivos; las salidas de v2 (100.0) son un cálculo manual sobre el expediente y deben reproducirse en la ejecución autorizada.",
+    "Los hashes y el manifest de evidencia no existen todavía; deben generarse en la fase de preparación."
+  ]
+}

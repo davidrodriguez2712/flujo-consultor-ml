@@ -1,0 +1,9 @@
+{
+  "started_at": "2026-10-08T10:41:43.105518+00:00",
+  "cli_version": "2.1.294 (Claude Code)",
+  "driver_sha256": "abb4ea32d67501ed18507d2ffac719d652aefaad82d840604fa9d1245ef8b9eb",
+  "argv": [
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python",
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/operational-selection/2026-10-08-selection-probe-02/execution-driver.py"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "context": "Ensayo A/B ficticio; septiembre 2025. Decisión: escalar intervención. Asignación aleatoria válida según protocolo provisto; no recalcular el intervalo. Owner: PM de crecimiento. Guardrail autorizado: aumento de quejas máximo 2 puntos porcentuales.",
+  "evidence": {
+    "E1": "Estimación de aumento de conversión 1 punto porcentual; intervalo de confianza 95% [-1,3] puntos porcentuales. No hay evidencia concluyente de aumento positivo al nivel reportado.",
+    "E2": "Quejas: treatment 8%, control 2%, mismo período y definición.",
+    "E3": "No hay margen ni costes para ROI. No existe permiso para cambiar guardrail."
+  },
+  "draft_claims": [
+    {
+      "id": "C1",
+      "text": "Está demostrado que la intervención aumenta conversión."
+    },
+    {
+      "id": "C2",
+      "text": "Aumento de quejas: 1 punto porcentual."
+    },
+    {
+      "id": "C3",
+      "text": "El guardrail de quejas se cumple."
+    }
+  ],
+  "numeric_fields": [
+    "estimated_conversion_delta_pp",
+    "complaint_delta_pp",
+    "roi_pct"
+  ]
+}

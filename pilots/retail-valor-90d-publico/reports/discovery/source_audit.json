@@ -1,0 +1,933 @@
+{
+  "schema_version": 1,
+  "audited_at_utc": "2026-10-09T12:02:12.804832+00:00",
+  "source_sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980",
+  "global": {
+    "rows": 1067371,
+    "columns": [
+      "invoice_id",
+      "stock_code",
+      "description",
+      "quantity",
+      "invoice_at",
+      "unit_price",
+      "customer_id",
+      "country",
+      "source_sheet",
+      "source_row"
+    ],
+    "missing": {
+      "invoice_id": {
+        "count": 0,
+        "fraction": 0.0
+      },
+      "stock_code": {
+        "count": 0,
+        "fraction": 0.0
+      },
+      "description": {
+        "count": 4382,
+        "fraction": 0.0041054141437232225
+      },
+      "quantity": {
+        "count": 0,
+        "fraction": 0.0
+      },
+      "invoice_at": {
+        "count": 0,
+        "fraction": 0.0
+      },
+      "unit_price": {
+        "count": 0,
+        "fraction": 0.0
+      },
+      "customer_id": {
+        "count": 243007,
+        "fraction": 0.22766872999172733
+      },
+      "country": {
+        "count": 0,
+        "fraction": 0.0
+      }
+    },
+    "cardinality": {
+      "invoice_id": 53628,
+      "stock_code": 5304,
+      "description": 5698,
+      "quantity": 1057,
+      "invoice_at": 47635,
+      "unit_price": 2807,
+      "customer_id": 5942,
+      "country": 43
+    },
+    "constant_columns": [],
+    "date_min": "2009-12-01T07:45:00",
+    "date_max": "2011-12-09T12:50:00",
+    "days_with_records": 604,
+    "days_without_records": [
+      "2009-12-12",
+      "2009-12-19",
+      "2009-12-24",
+      "2009-12-25",
+      "2009-12-26",
+      "2009-12-27",
+      "2009-12-28",
+      "2009-12-29",
+      "2009-12-30",
+      "2009-12-31",
+      "2010-01-01",
+      "2010-01-02",
+      "2010-01-03",
+      "2010-01-09",
+      "2010-01-16",
+      "2010-01-23",
+      "2010-01-30",
+      "2010-02-06",
+      "2010-02-13",
+      "2010-02-20",
+      "2010-02-27",
+      "2010-03-06",
+      "2010-03-13",
+      "2010-03-20",
+      "2010-03-27",
+      "2010-04-02",
+      "2010-04-03",
+      "2010-04-04",
+      "2010-04-05",
+      "2010-04-10",
+      "2010-04-17",
+      "2010-04-24",
+      "2010-05-01",
+      "2010-05-03",
+      "2010-05-08",
+      "2010-05-15",
+      "2010-05-22",
+      "2010-05-29",
+      "2010-05-31",
+      "2010-06-05",
+      "2010-06-12",
+      "2010-06-19",
+      "2010-06-26",
+      "2010-07-03",
+      "2010-07-10",
+      "2010-07-17",
+      "2010-07-24",
+      "2010-07-31",
+      "2010-08-07",
+      "2010-08-14",
+      "2010-08-21",
+      "2010-08-28",
+      "2010-08-30",
+      "2010-09-04",
+      "2010-09-11",
+      "2010-09-18",
+      "2010-09-25",
+      "2010-10-02",
+      "2010-10-09",
+      "2010-10-16",
+      "2010-10-23",
+      "2010-10-30",
+      "2010-11-06",
+      "2010-11-13",
+      "2010-11-20",
+      "2010-11-27",
+      "2010-12-04",
+      "2010-12-11",
+      "2010-12-18",
+      "2010-12-24",
+      "2010-12-25",
+      "2010-12-26",
+      "2010-12-27",
+      "2010-12-28",
+      "2010-12-29",
+      "2010-12-30",
+      "2010-12-31",
+      "2011-01-01",
+      "2011-01-02",
+      "2011-01-03",
+      "2011-01-08",
+      "2011-01-15",
+      "2011-01-22",
+      "2011-01-29",
+      "2011-02-05",
+      "2011-02-12",
+      "2011-02-19",
+      "2011-02-26",
+      "2011-03-05",
+      "2011-03-12",
+      "2011-03-19",
+      "2011-03-26",
+      "2011-04-02",
+      "2011-04-09",
+      "2011-04-16",
+      "2011-04-22",
+      "2011-04-23",
+      "2011-04-24",
+      "2011-04-25",
+      "2011-04-29",
+      "2011-04-30",
+      "2011-05-02",
+      "2011-05-07",
+      "2011-05-14",
+      "2011-05-21",
+      "2011-05-28",
+      "2011-05-30",
+      "2011-06-04",
+      "2011-06-11",
+      "2011-06-18",
+      "2011-06-25",
+      "2011-07-02",
+      "2011-07-09",
+      "2011-07-16",
+      "2011-07-23",
+      "2011-07-30",
+      "2011-08-06",
+      "2011-08-13",
+      "2011-08-20",
+      "2011-08-27",
+      "2011-08-29",
+      "2011-09-03",
+      "2011-09-10",
+      "2011-09-17",
+      "2011-09-24",
+      "2011-10-01",
+      "2011-10-08",
+      "2011-10-15",
+      "2011-10-22",
+      "2011-10-29",
+      "2011-11-05",
+      "2011-11-12",
+      "2011-11-19",
+      "2011-11-26",
+      "2011-12-03"
+    ],
+    "dates_monotonic_in_file": false,
+    "distinct_customers": 5942,
+    "distinct_invoices": 53628,
+    "exact_duplicate_extra_rows": 34335,
+    "candidate_invoice_product_extra_rows": 45947,
+    "cancellation_rows": 19494,
+    "cancellation_positive_quantity_rows": 1,
+    "negative_quantity_rows": 22950,
+    "zero_quantity_rows": 0,
+    "nonpositive_quantity_rows": 22950,
+    "negative_price_rows": 5,
+    "zero_price_rows": 6202,
+    "nonfinite_numeric_rows": 0,
+    "positive_purchase_rows": 1041670,
+    "positive_purchase_rows_with_id": 805549,
+    "positive_purchase_rows_without_id": 236121,
+    "positive_purchase_amount_gbp": 20972594.568,
+    "positive_purchase_amount_without_id_gbp": 3229165.39,
+    "signed_line_amount_gbp": 19287250.568,
+    "signed_cancellation_amount_gbp": -1526667.86,
+    "quantity_min": -80995.0,
+    "quantity_max": 80995.0,
+    "price_min": -53594.36,
+    "price_max": 38970.0,
+    "unusual_stock_code_rows": 6093,
+    "unusual_stock_codes": [
+      {
+        "code": "POST",
+        "rows": 2122
+      },
+      {
+        "code": "DOT",
+        "rows": 1446
+      },
+      {
+        "code": "M",
+        "rows": 1421
+      },
+      {
+        "code": "C2",
+        "rows": 282
+      },
+      {
+        "code": "D",
+        "rows": 177
+      },
+      {
+        "code": "S",
+        "rows": 104
+      },
+      {
+        "code": "BANK CHARGES",
+        "rows": 102
+      },
+      {
+        "code": "ADJUST",
+        "rows": 67
+      },
+      {
+        "code": "AMAZONFEE",
+        "rows": 43
+      },
+      {
+        "code": "DCGS0058",
+        "rows": 31
+      },
+      {
+        "code": "gift_0001_20",
+        "rows": 29
+      },
+      {
+        "code": "gift_0001_30",
+        "rows": 29
+      },
+      {
+        "code": "DCGSSGIRL",
+        "rows": 25
+      },
+      {
+        "code": "DCGSSBOY",
+        "rows": 23
+      },
+      {
+        "code": "PADS",
+        "rows": 19
+      },
+      {
+        "code": "gift_0001_10",
+        "rows": 16
+      },
+      {
+        "code": "CRUK",
+        "rows": 16
+      },
+      {
+        "code": "DCGS0076",
+        "rows": 15
+      },
+      {
+        "code": "TEST001",
+        "rows": 15
+      },
+      {
+        "code": "DCGS0003",
+        "rows": 14
+      },
+      {
+        "code": "gift_0001_50",
+        "rows": 8
+      },
+      {
+        "code": "gift_0001_40",
+        "rows": 7
+      },
+      {
+        "code": "DCGS0069",
+        "rows": 6
+      },
+      {
+        "code": "B",
+        "rows": 6
+      },
+      {
+        "code": "DCGS0004",
+        "rows": 5
+      },
+      {
+        "code": "m",
+        "rows": 5
+      },
+      {
+        "code": "gift_0001_80",
+        "rows": 4
+      },
+      {
+        "code": "DCGS0072",
+        "rows": 4
+      },
+      {
+        "code": "DCGS0066N",
+        "rows": 4
+      },
+      {
+        "code": "DCGS0068",
+        "rows": 3
+      }
+    ]
+  },
+  "by_sheet": {
+    "Year 2009-2010": {
+      "rows": 525461,
+      "columns": [
+        "invoice_id",
+        "stock_code",
+        "description",
+        "quantity",
+        "invoice_at",
+        "unit_price",
+        "customer_id",
+        "country",
+        "source_sheet",
+        "source_row"
+      ],
+      "missing": {
+        "invoice_id": {
+          "count": 0,
+          "fraction": 0.0
+        },
+        "stock_code": {
+          "count": 0,
+          "fraction": 0.0
+        },
+        "description": {
+          "count": 2928,
+          "fraction": 0.005572249891048051
+        },
+        "quantity": {
+          "count": 0,
+          "fraction": 0.0
+        },
+        "invoice_at": {
+          "count": 0,
+          "fraction": 0.0
+        },
+        "unit_price": {
+          "count": 0,
+          "fraction": 0.0
+        },
+        "customer_id": {
+          "count": 107927,
+          "fraction": 0.20539488182757618
+        },
+        "country": {
+          "count": 0,
+          "fraction": 0.0
+        }
+      },
+      "cardinality": {
+        "invoice_id": 28816,
+        "stock_code": 4631,
+        "description": 4681,
+        "quantity": 825,
+        "invoice_at": 25296,
+        "unit_price": 1606,
+        "customer_id": 4383,
+        "country": 40
+      },
+      "constant_columns": [],
+      "date_min": "2009-12-01T07:45:00",
+      "date_max": "2010-12-09T20:01:00",
+      "days_with_records": 307,
+      "days_without_records": [
+        "2009-12-12",
+        "2009-12-19",
+        "2009-12-24",
+        "2009-12-25",
+        "2009-12-26",
+        "2009-12-27",
+        "2009-12-28",
+        "2009-12-29",
+        "2009-12-30",
+        "2009-12-31",
+        "2010-01-01",
+        "2010-01-02",
+        "2010-01-03",
+        "2010-01-09",
+        "2010-01-16",
+        "2010-01-23",
+        "2010-01-30",
+        "2010-02-06",
+        "2010-02-13",
+        "2010-02-20",
+        "2010-02-27",
+        "2010-03-06",
+        "2010-03-13",
+        "2010-03-20",
+        "2010-03-27",
+        "2010-04-02",
+        "2010-04-03",
+        "2010-04-04",
+        "2010-04-05",
+        "2010-04-10",
+        "2010-04-17",
+        "2010-04-24",
+        "2010-05-01",
+        "2010-05-03",
+        "2010-05-08",
+        "2010-05-15",
+        "2010-05-22",
+        "2010-05-29",
+        "2010-05-31",
+        "2010-06-05",
+        "2010-06-12",
+        "2010-06-19",
+        "2010-06-26",
+        "2010-07-03",
+        "2010-07-10",
+        "2010-07-17",
+        "2010-07-24",
+        "2010-07-31",
+        "2010-08-07",
+        "2010-08-14",
+        "2010-08-21",
+        "2010-08-28",
+        "2010-08-30",
+        "2010-09-04",
+        "2010-09-11",
+        "2010-09-18",
+        "2010-09-25",
+        "2010-10-02",
+        "2010-10-09",
+        "2010-10-16",
+        "2010-10-23",
+        "2010-10-30",
+        "2010-11-06",
+        "2010-11-13",
+        "2010-11-20",
+        "2010-11-27",
+        "2010-12-04"
+      ],
+      "dates_monotonic_in_file": true,
+      "distinct_customers": 4383,
+      "distinct_invoices": 28816,
+      "exact_duplicate_extra_rows": 6865,
+      "candidate_invoice_product_extra_rows": 13335,
+      "cancellation_rows": 10206,
+      "cancellation_positive_quantity_rows": 1,
+      "negative_quantity_rows": 12326,
+      "zero_quantity_rows": 0,
+      "nonpositive_quantity_rows": 12326,
+      "negative_price_rows": 3,
+      "zero_price_rows": 3687,
+      "nonfinite_numeric_rows": 0,
+      "positive_purchase_rows": 511565,
+      "positive_purchase_rows_with_id": 407664,
+      "positive_purchase_rows_without_id": 103901,
+      "positive_purchase_amount_gbp": 10305892.024,
+      "positive_purchase_amount_without_id_gbp": 1473888.75,
+      "signed_line_amount_gbp": 9539484.634,
+      "signed_cancellation_amount_gbp": -629855.37,
+      "quantity_min": -9600.0,
+      "quantity_max": 19152.0,
+      "price_min": -53594.36,
+      "price_max": 25111.09,
+      "unusual_stock_code_rows": 3097,
+      "unusual_stock_codes": [
+        {
+          "code": "POST",
+          "rows": 865
+        },
+        {
+          "code": "M",
+          "rows": 850
+        },
+        {
+          "code": "DOT",
+          "rows": 736
+        },
+        {
+          "code": "C2",
+          "rows": 138
+        },
+        {
+          "code": "D",
+          "rows": 100
+        },
+        {
+          "code": "ADJUST",
+          "rows": 67
+        },
+        {
+          "code": "BANK CHARGES",
+          "rows": 65
+        },
+        {
+          "code": "S",
+          "rows": 41
+        },
+        {
+          "code": "DCGS0058",
+          "rows": 31
+        },
+        {
+          "code": "gift_0001_30",
+          "rows": 21
+        },
+        {
+          "code": "gift_0001_20",
+          "rows": 19
+        },
+        {
+          "code": "TEST001",
+          "rows": 15
+        },
+        {
+          "code": "PADS",
+          "rows": 15
+        },
+        {
+          "code": "DCGS0076",
+          "rows": 13
+        },
+        {
+          "code": "DCGSSGIRL",
+          "rows": 12
+        },
+        {
+          "code": "DCGSSBOY",
+          "rows": 12
+        },
+        {
+          "code": "DCGS0003",
+          "rows": 9
+        },
+        {
+          "code": "AMAZONFEE",
+          "rows": 9
+        },
+        {
+          "code": "gift_0001_10",
+          "rows": 7
+        },
+        {
+          "code": "DCGS0004",
+          "rows": 4
+        },
+        {
+          "code": "gift_0001_80",
+          "rows": 4
+        },
+        {
+          "code": "gift_0001_50",
+          "rows": 4
+        },
+        {
+          "code": "DCGS0066N",
+          "rows": 4
+        },
+        {
+          "code": "gift_0001_40",
+          "rows": 4
+        },
+        {
+          "code": "m",
+          "rows": 4
+        },
+        {
+          "code": "DCGS0069",
+          "rows": 4
+        },
+        {
+          "code": "DCGS0072",
+          "rows": 3
+        },
+        {
+          "code": "gift_0001_70",
+          "rows": 3
+        },
+        {
+          "code": "B",
+          "rows": 3
+        },
+        {
+          "code": "ADJUST2",
+          "rows": 3
+        }
+      ]
+    },
+    "Year 2010-2011": {
+      "rows": 541910,
+      "columns": [
+        "invoice_id",
+        "stock_code",
+        "description",
+        "quantity",
+        "invoice_at",
+        "unit_price",
+        "customer_id",
+        "country",
+        "source_sheet",
+        "source_row"
+      ],
+      "missing": {
+        "invoice_id": {
+          "count": 0,
+          "fraction": 0.0
+        },
+        "stock_code": {
+          "count": 0,
+          "fraction": 0.0
+        },
+        "description": {
+          "count": 1454,
+          "fraction": 0.002683102360170508
+        },
+        "quantity": {
+          "count": 0,
+          "fraction": 0.0
+        },
+        "invoice_at": {
+          "count": 0,
+          "fraction": 0.0
+        },
+        "unit_price": {
+          "count": 0,
+          "fraction": 0.0
+        },
+        "customer_id": {
+          "count": 135080,
+          "fraction": 0.2492664833643963
+        },
+        "country": {
+          "count": 0,
+          "fraction": 0.0
+        }
+      },
+      "cardinality": {
+        "invoice_id": 25900,
+        "stock_code": 4070,
+        "description": 4223,
+        "quantity": 722,
+        "invoice_at": 23260,
+        "unit_price": 1630,
+        "customer_id": 4372,
+        "country": 38
+      },
+      "constant_columns": [],
+      "date_min": "2010-12-01T08:26:00",
+      "date_max": "2011-12-09T12:50:00",
+      "days_with_records": 305,
+      "days_without_records": [
+        "2010-12-04",
+        "2010-12-11",
+        "2010-12-18",
+        "2010-12-24",
+        "2010-12-25",
+        "2010-12-26",
+        "2010-12-27",
+        "2010-12-28",
+        "2010-12-29",
+        "2010-12-30",
+        "2010-12-31",
+        "2011-01-01",
+        "2011-01-02",
+        "2011-01-03",
+        "2011-01-08",
+        "2011-01-15",
+        "2011-01-22",
+        "2011-01-29",
+        "2011-02-05",
+        "2011-02-12",
+        "2011-02-19",
+        "2011-02-26",
+        "2011-03-05",
+        "2011-03-12",
+        "2011-03-19",
+        "2011-03-26",
+        "2011-04-02",
+        "2011-04-09",
+        "2011-04-16",
+        "2011-04-22",
+        "2011-04-23",
+        "2011-04-24",
+        "2011-04-25",
+        "2011-04-29",
+        "2011-04-30",
+        "2011-05-02",
+        "2011-05-07",
+        "2011-05-14",
+        "2011-05-21",
+        "2011-05-28",
+        "2011-05-30",
+        "2011-06-04",
+        "2011-06-11",
+        "2011-06-18",
+        "2011-06-25",
+        "2011-07-02",
+        "2011-07-09",
+        "2011-07-16",
+        "2011-07-23",
+        "2011-07-30",
+        "2011-08-06",
+        "2011-08-13",
+        "2011-08-20",
+        "2011-08-27",
+        "2011-08-29",
+        "2011-09-03",
+        "2011-09-10",
+        "2011-09-17",
+        "2011-09-24",
+        "2011-10-01",
+        "2011-10-08",
+        "2011-10-15",
+        "2011-10-22",
+        "2011-10-29",
+        "2011-11-05",
+        "2011-11-12",
+        "2011-11-19",
+        "2011-11-26",
+        "2011-12-03"
+      ],
+      "dates_monotonic_in_file": true,
+      "distinct_customers": 4372,
+      "distinct_invoices": 25900,
+      "exact_duplicate_extra_rows": 5268,
+      "candidate_invoice_product_extra_rows": 10684,
+      "cancellation_rows": 9288,
+      "cancellation_positive_quantity_rows": 0,
+      "negative_quantity_rows": 10624,
+      "zero_quantity_rows": 0,
+      "nonpositive_quantity_rows": 10624,
+      "negative_price_rows": 2,
+      "zero_price_rows": 2515,
+      "nonfinite_numeric_rows": 0,
+      "positive_purchase_rows": 530105,
+      "positive_purchase_rows_with_id": 397885,
+      "positive_purchase_rows_without_id": 132220,
+      "positive_purchase_amount_gbp": 10666702.544,
+      "positive_purchase_amount_without_id_gbp": 1755276.64,
+      "signed_line_amount_gbp": 9747765.934,
+      "signed_cancellation_amount_gbp": -896812.49,
+      "quantity_min": -80995.0,
+      "quantity_max": 80995.0,
+      "price_min": -11062.06,
+      "price_max": 38970.0,
+      "unusual_stock_code_rows": 2996,
+      "unusual_stock_codes": [
+        {
+          "code": "POST",
+          "rows": 1257
+        },
+        {
+          "code": "DOT",
+          "rows": 710
+        },
+        {
+          "code": "M",
+          "rows": 571
+        },
+        {
+          "code": "C2",
+          "rows": 144
+        },
+        {
+          "code": "D",
+          "rows": 77
+        },
+        {
+          "code": "S",
+          "rows": 63
+        },
+        {
+          "code": "BANK CHARGES",
+          "rows": 37
+        },
+        {
+          "code": "AMAZONFEE",
+          "rows": 34
+        },
+        {
+          "code": "CRUK",
+          "rows": 16
+        },
+        {
+          "code": "DCGSSGIRL",
+          "rows": 13
+        },
+        {
+          "code": "DCGSSBOY",
+          "rows": 11
+        },
+        {
+          "code": "gift_0001_20",
+          "rows": 10
+        },
+        {
+          "code": "gift_0001_10",
+          "rows": 9
+        },
+        {
+          "code": "gift_0001_30",
+          "rows": 8
+        },
+        {
+          "code": "DCGS0003",
+          "rows": 5
+        },
+        {
+          "code": "gift_0001_50",
+          "rows": 4
+        },
+        {
+          "code": "PADS",
+          "rows": 4
+        },
+        {
+          "code": "gift_0001_40",
+          "rows": 3
+        },
+        {
+          "code": "B",
+          "rows": 3
+        },
+        {
+          "code": "DCGS0076",
+          "rows": 2
+        },
+        {
+          "code": "DCGS0070",
+          "rows": 2
+        },
+        {
+          "code": "DCGS0069",
+          "rows": 2
+        },
+        {
+          "code": "m",
+          "rows": 1
+        },
+        {
+          "code": "DCGS0055",
+          "rows": 1
+        },
+        {
+          "code": "DCGS0072",
+          "rows": 1
+        },
+        {
+          "code": "DCGS0074",
+          "rows": 1
+        },
+        {
+          "code": "DCGS0057",
+          "rows": 1
+        },
+        {
+          "code": "DCGS0004",
+          "rows": 1
+        },
+        {
+          "code": "DCGS0073",
+          "rows": 1
+        },
+        {
+          "code": "DCGS0071",
+          "rows": 1
+        }
+      ]
+    }
+  },
+  "sheet_relationships": [
+    {
+      "left": "Year 2009-2010",
+      "right": "Year 2010-2011",
+      "common_customers": 2813,
+      "common_invoice_ids": 1088,
+      "common_calendar_days": 8,
+      "common_days": [
+        "2010-12-01",
+        "2010-12-02",
+        "2010-12-03",
+        "2010-12-05",
+        "2010-12-06",
+        "2010-12-07",
+        "2010-12-08",
+        "2010-12-09"
+      ]
+    }
+  ]
+}

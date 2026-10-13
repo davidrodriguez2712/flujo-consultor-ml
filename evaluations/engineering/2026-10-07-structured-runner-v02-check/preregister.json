@@ -1,0 +1,22 @@
+{
+  "frozen_at": "2026-10-08T03:52:36.660234+00:00",
+  "files": {
+    "frozen/check.py": "3571ceac65c6e6b066009d9c55926479db4e7d86f2226b2b3439325a1faae870",
+    "frozen/expected.json": "98997674c872a5ea4cc931ecd297cde75db076f53d4ff19412dea91e285f9562",
+    "frozen/schema.json": "62bf68c39f6359279edd89263fcf7381c6ef53c5e832234ae5b55e008503ac3d",
+    "frozen/temporal_runner.py": "bd5f981b13052e3fad3eb54118b917c073d4e87905db7959d705d956c34672fd",
+    "frozen/test_temporal_runner.py": "b68a7d65815ddc0c158bedfedc962cdfbf35f24d0ee91a38dd532a100d65a95b",
+    "payloads/baseline.txt": "5dd4dc1593e7132e0760503a08b9f273d7fb0fa897e7247db488ef04ab91cb1c",
+    "payloads/treatment.txt": "d341fcb50c45e8b1a94ada09c64611ef4c15cff8439cb6ac37a1cdfe6fd64b0a",
+    "protocol.md": "fd88cdedaa7d2637755c90c5fd488b39f44d131467be40f56d3556f5ca765259"
+  },
+  "sources": {
+    "payloads/baseline.txt": "evaluations/delayed-outcomes/2026-10-07-contract-probe-02/payloads/E/baseline.txt",
+    "payloads/treatment.txt": "evaluations/delayed-outcomes/2026-10-07-contract-probe-02/payloads/E/treatment.txt",
+    "frozen/expected.json": "evaluations/delayed-outcomes/2026-10-07-contract-probe-02/cases/E/expected.json",
+    "frozen/check.py": "evaluations/delayed-outcomes/2026-10-07-contract-probe-02/checker/check.py",
+    "frozen/temporal_runner.py": "scripts/evaluations/temporal_runner.py",
+    "frozen/schema.json": "schemas/temporal-audit-0.1.0.schema.json",
+    "frozen/test_temporal_runner.py": "tests/test_temporal_runner.py"
+  }
+}

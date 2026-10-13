@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-07",
+  "status": "PREPARED_FOR_REVIEW",
+  "scope": "Inventario de handoff al preparar revisión; la aprobación futura cambiará state/vistas y requerirá registrar otra revisión del inventario, conservando esta",
+  "files": [
+    {
+      "path": "handoff/runbook.md",
+      "sha256": "84690dd9e55b43e98a2aeda8aa67dbf748d5728f578d8778ace1354b16ce5149",
+      "bytes": 8625
+    },
+    {
+      "path": "handoff/capability_feedback.md",
+      "sha256": "22eba04d4d3e31d95a5df20388e80cd2f1de4af537d48021ec7bb127ca418ce0",
+      "bytes": 2925
+    },
+    {
+      "path": "delivery/delivery-manifest.json",
+      "sha256": "591d401b86859167ddfa159f49355a15c0e041b6e9edc78553ea90bb9ee4dcf7",
+      "bytes": 6170
+    },
+    {
+      "path": "evidence/approvals/2026-10-07-delivery.md",
+      "sha256": "025c573c86898edc133eb93a475949d9081cc5c25e9ea9060825f2b087bec1ac",
+      "bytes": 631
+    },
+    {
+      "path": ".acos/state.yaml",
+      "sha256": "9ce7e4913080e751191d874597f5dd3dc91cbad97e08b5febf27bcc24ba5a010",
+      "bytes": 3785
+    },
+    {
+      "path": "STATE.md",
+      "sha256": "3feab2b70e126324607ac14df1875300cbb6f0863e29e2a8a1ced2617ef8fcb4",
+      "bytes": 409
+    },
+    {
+      "path": "MANUAL.md",
+      "sha256": "fa8c0748db4d64489987155de0eeca48ceb9b14f0690a7418f918779a941166a",
+      "bytes": 3050
+    },
+    {
+      "path": "TASKS.md",
+      "sha256": "f77137e7261e0ccac4141252afc6161487ab2181a4e68b0dfd62c3d3a9f7b9d6",
+      "bytes": 639
+    },
+    {
+      "path": "README.md",
+      "sha256": "d7b2b96e329161f0ebdcfcb30405dddcaeedcee43b37d6a7d1dd6d65be729478",
+      "bytes": 2688
+    },
+    {
+      "path": "PILOT_REPORT.md",
+      "sha256": "83d70219200a5791a28389c328215a517dc8c25f104ab648aa5109a76457680a",
+      "bytes": 6626
+    },
+    {
+      "path": "DECISIONS.md",
+      "sha256": "b0a52e1bf95e5f48d83ac6452df6b9a82e219bcaea9ede1ed42537aec5660bff",
+      "bytes": 5947
+    },
+    {
+      "path": "analysis/outputs/delivery-checks.json",
+      "sha256": "2628899c01a9375e0625e2d8cc16fed7641a71cbc8b31a713cd64f2099bade73",
+      "bytes": 12937
+    }
+  ]
+}

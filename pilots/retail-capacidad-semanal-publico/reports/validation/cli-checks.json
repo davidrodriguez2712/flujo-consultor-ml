@@ -1,0 +1,121 @@
+{
+  "status": "PASS",
+  "commands": [
+    {
+      "argv": [
+        "acos",
+        "status"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "acos",
+        "next"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "acos",
+        "validate",
+        "--gate",
+        "discovery"
+      ],
+      "exit_code": 3
+    },
+    {
+      "argv": [
+        "acos",
+        "validate",
+        "--gate",
+        "framing"
+      ],
+      "exit_code": 3
+    },
+    {
+      "argv": [
+        "acos",
+        "validate",
+        "--gate",
+        "diagnosis"
+      ],
+      "exit_code": 3
+    },
+    {
+      "argv": [
+        "acos",
+        "validate",
+        "--gate",
+        "execution"
+      ],
+      "exit_code": 3
+    },
+    {
+      "argv": [
+        "acos",
+        "validate",
+        "--gate",
+        "validation"
+      ],
+      "exit_code": 3
+    },
+    {
+      "argv": [
+        "acos",
+        "validate",
+        "--gate",
+        "delivery"
+      ],
+      "exit_code": 3
+    },
+    {
+      "argv": [
+        "acos",
+        "validate",
+        "--gate",
+        "handoff"
+      ],
+      "exit_code": 3
+    },
+    {
+      "argv": [
+        "acos",
+        "validate",
+        "--gate",
+        "data-quality"
+      ],
+      "exit_code": 3
+    },
+    {
+      "argv": [
+        "acos",
+        "validate",
+        "--gate",
+        "data_analysis-review"
+      ],
+      "exit_code": 3
+    },
+    {
+      "argv": [
+        "acos",
+        "validate",
+        "--gate",
+        "forecast-review"
+      ],
+      "exit_code": 3
+    },
+    {
+      "argv": [
+        "acos",
+        "validate",
+        "--gate",
+        "executive_delivery-review"
+      ],
+      "exit_code": 3
+    }
+  ],
+  "acceptance": "All gates NEEDS_REVIEW; none PASS",
+  "stage": "validation",
+  "project_status": "IN_PROGRESS"
+}

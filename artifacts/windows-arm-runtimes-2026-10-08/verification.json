@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "run_id": 37882006292,
+  "remote_conclusion": "success",
+  "head_sha": "5b52a83e196e304a8b4fb1663802c0cba6261aeb",
+  "platforms": [
+    {
+      "artifact": "acos-native-windows-11-arm-37882006292",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:45:15) [MSC v.1944 64 bit (ARM64)]",
+      "architecture": "arm64",
+      "suite": {
+        "tests": 125,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "simulations": 24,
+      "stage_checks": 164,
+      "smoke_commands": 12,
+      "wheel_sha256": "17d2e7f0a95ccd798e861206d4d4d3fa62f775455055b1f8475d35f5ffcf7653",
+      "codex_version": "codex-cli 0.160.0",
+      "claude_version": "2.1.294 (Claude Code)",
+      "native_pe_architectures": [
+        "arm64",
+        "arm64",
+        "arm64"
+      ],
+      "discovery": "PASS_BOTH_RUNTIMES_BEFORE_AND_AFTER_MOVE"
+    },
+    {
+      "artifact": "acos-native-windows-2022-37882006292",
+      "platform": "Windows-10-10.0.20348-SP0",
+      "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+      "architecture": "x64",
+      "suite": {
+        "tests": 125,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "simulations": 24,
+      "stage_checks": 164,
+      "smoke_commands": 12,
+      "wheel_sha256": "ad8ba1df0e19c2381cf5674da86ff36a342594d6559af5f9a85253d1dc3afd83",
+      "codex_version": "codex-cli 0.160.0",
+      "claude_version": "2.1.294 (Claude Code)",
+      "native_pe_architectures": [
+        "x64",
+        "x64",
+        "x64"
+      ],
+      "discovery": "PASS_BOTH_RUNTIMES_BEFORE_AND_AFTER_MOVE"
+    }
+  ],
+  "limits": [
+    "Sin conversación, invocación de skills ni continuidad con modelos autenticados",
+    "Fixture de descubrimiento; no evaluación de eficacia ni promoción Foundry"
+  ],
+  "model_turns": 0,
+  "prior_windows_evidence_unchanged": true,
+  "credit_handoff_manifests_unchanged": true
+}

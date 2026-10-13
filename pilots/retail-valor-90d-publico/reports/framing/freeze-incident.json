@@ -1,0 +1,22 @@
+{
+  "cause": "El freeze de Discovery incluyó dos planes humanos mutables. Framing los actualizó según el plan y la comprobación detectó cambios.",
+  "changed": [
+    {
+      "path": "analysis/analysis_plan.md",
+      "discovery_sha256": "7c77cc859239917565bc9cbb753c32c4610f97a755afe1f668b991a29d769a6a",
+      "framing_sha256": "c1467b18e5870b4ae5b9926d5a1aa555d4839df91f092cdcd430244abb98d314",
+      "archived_original": "reports/discovery/frozen/analysis/analysis_plan.md",
+      "original_hash_verified": true
+    },
+    {
+      "path": "analysis/selection_plan.md",
+      "discovery_sha256": "d372cfdc2eb2ee96478be7ab1c89cfae41897a2b0f55dcb0a2988dc6fc2a7bb2",
+      "framing_sha256": "758119866555b1aea73aaf787215d3f56c53cab56ef50120e68a464535b31733",
+      "archived_original": "reports/discovery/frozen/analysis/selection_plan.md",
+      "original_hash_verified": true
+    }
+  ],
+  "resolution": "Conservar manifest inicial y planes actuales. Archivar contenido inicial con hash exacto y versionar manifest para apuntar a esas copias históricas.",
+  "source_or_snapshot_changes": false,
+  "verification_after_resolution": "44 registros verificables con sus hashes iniciales, 42 en paths originales y 2 en archive."
+}

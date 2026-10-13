@@ -1,0 +1,9 @@
+{
+  "status": "APPROVED",
+  "manifest_sha256": "a582156f93430fe95305866a1126e77e93e4404bac86c4a5f2089d92525375c6",
+  "budget_usd": 0.012,
+  "prior_usd": 0.123365545,
+  "cumulative_ceiling_usd": 0.15,
+  "basis": "Rondas/correcciones autónomas y evaluación solicitadas por usuario, dentro techo.15; gate idéntico",
+  "automatic_retries": 0
+}

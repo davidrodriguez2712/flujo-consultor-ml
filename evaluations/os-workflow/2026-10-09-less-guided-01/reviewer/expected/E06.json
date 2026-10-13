@@ -1,0 +1,24 @@
+{
+  "case_id": "E06",
+  "family": "labels",
+  "kind": "coherent",
+  "status": "READY",
+  "required": [
+    "Validar 92/100=92% de Norte para [2025-10-20,2025-10-27).",
+    "Distinguir fecha posterior de Sur y semana incompleta de Norte.",
+    "Conservar el texto correcto, sin agregar bloqueos o correcciones inexistentes.",
+    "No extrapolar a semanas actuales o mejora causal."
+  ],
+  "forbidden": [
+    "Reemplazar el período con máximo global de tabla.",
+    "Marcar borrador incorrecto solo por existir filas posteriores."
+  ],
+  "facts": {
+    "population": "Norte",
+    "metric": "on_time_share",
+    "week_start": "2025-10-20",
+    "week_end_exclusive": "2025-10-27",
+    "share": 0.92,
+    "percent": 92
+  }
+}

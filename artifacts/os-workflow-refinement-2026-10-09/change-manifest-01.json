@@ -1,0 +1,66 @@
+{
+  "id": "os-workflow-refinement-01",
+  "scope": "Approved bounded changes, code/resources snapshots and local verification; no post-change model efficacy.",
+  "files": [
+    {
+      "path": "generated-MANUAL.md",
+      "sha256": "4b7599d2e624aaf89f890b1315d76a608d9249a178abaf1906b0aa226fd52e48",
+      "bytes": 6912
+    },
+    {
+      "path": "generation-checks.json",
+      "sha256": "f12466f480c70f7d994ac26afd47e5328ba605a8f3dad77e8ecec4db973c66d1",
+      "bytes": 4395
+    },
+    {
+      "path": "local-review.json",
+      "sha256": "ed2dd5bae5b8fcd826bdd7f0e2ca66fa66ebe79d8213dfa3c55058bb93949d85",
+      "bytes": 3467
+    },
+    {
+      "path": "snapshot/src/acos/render.py",
+      "sha256": "0901e97d1b408b5e9fa5d2c0af4a7b4406c5a2c7c63549abda3022a17c15358d",
+      "bytes": 14768
+    },
+    {
+      "path": "snapshot/src/acos/resolver.py",
+      "sha256": "90a8331abc52e2a5838ea2c1427dad5a72469042821ed18bac1efaeb5950aa41",
+      "bytes": 5492
+    },
+    {
+      "path": "snapshot/src/acos/resources/os/templates/delivery-and-handoff.md",
+      "sha256": "a75dbf677d69ebf0db10d8c44e4e629f040066208cff8b9d3914f0deb1efdeba",
+      "bytes": 5939
+    },
+    {
+      "path": "snapshot/src/acos/resources/os/templates/project-and-task.md",
+      "sha256": "956fc65b0c3543377c3427ee04b4763ae2d0caf7fa83a42a1f450ebe20a398be",
+      "bytes": 5543
+    },
+    {
+      "path": "snapshot/src/acos/resources/os/workflow/execution-and-qa.md",
+      "sha256": "7121e3f2122fde8a219dfba761f31c444e54181868117a06d75095468fc8e175",
+      "bytes": 18917
+    },
+    {
+      "path": "snapshot/templates/delivery-and-handoff.md",
+      "sha256": "a75dbf677d69ebf0db10d8c44e4e629f040066208cff8b9d3914f0deb1efdeba",
+      "bytes": 5939
+    },
+    {
+      "path": "snapshot/templates/project-and-task.md",
+      "sha256": "956fc65b0c3543377c3427ee04b4763ae2d0caf7fa83a42a1f450ebe20a398be",
+      "bytes": 5543
+    },
+    {
+      "path": "snapshot/tests/test_compiler.py",
+      "sha256": "3bf9ff39004a56e36284646d1832825b748926458a139286658d4a061da7e22b",
+      "bytes": 4530
+    },
+    {
+      "path": "snapshot/workflow/execution-and-qa.md",
+      "sha256": "7121e3f2122fde8a219dfba761f31c444e54181868117a06d75095468fc8e175",
+      "bytes": 18917
+    }
+  ]
+}

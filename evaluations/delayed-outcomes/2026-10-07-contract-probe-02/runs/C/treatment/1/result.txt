@@ -1,0 +1,24 @@
+```json
+{
+  "rows": [
+    {
+      "id": "C1",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "available",
+      "train_eligibility": "exclude",
+      "reason": "La certification_rule dice que la fecha suministrada certifica el resultado final y su disponibilidad. label_available_at=2025-06-05T00:00:00Z es anterior a extraction_timestamp (2025-07-15), así que target_reported=1 es un positivo observado. Esa misma fecha cumple '<=' frente a training_timestamp (2025-07-10), por lo que la etiqueta está disponible. Sin embargo, feature_available_at=2025-05-01T09:00:01Z es posterior a prediction_timestamp=2025-05-01T09:00:00Z por 1 segundo. La feature_rule exige disponibilidad al instante de predicción, y '<=' no se cumple, así que hay una feature futura comprobada. Esto excluye la fila aunque la etiqueta esté disponible. El estado del outcome no cambia por la exclusión."
+    },
+    {
+      "id": "C2",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "indeterminate",
+      "reason": "La certification_rule dice que la fecha suministrada certifica el resultado final y su disponibilidad. label_available_at=2025-06-05T00:00:00Z es anterior a extraction_timestamp (2025-07-15), así que target_reported=0 es un negativo observado y certificado. Esa misma fecha cumple '<=' frente a training_timestamp (2025-07-10), por lo que la etiqueta está disponible. La ventana [2025-05-01T09:00:00Z, 2025-06-01T09:00:00Z) coincide con el prediction_timestamp y no hay otras exclusiones de población. Pero feature_available_at es null, es decir, no está verificado, y la feature_rule exige que las features estén disponibles al predecir. No hay una exclusión comprobada ni todas las condiciones verificadas, así que no se puede asignar eligible ni exclude."
+    }
+  ],
+  "open_questions": [
+    "C2: ¿cuál es el feature_available_at verificado (máximo sobre todas las features requeridas) y es <= 2025-05-01T09:00:00Z?"
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}
+```

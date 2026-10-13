@@ -1,0 +1,22 @@
+{
+  "version": "01",
+  "purpose": "Protocolo fijado antes de observar resultados; sin aceptaci\u00f3n humana ficticia",
+  "files": [
+    {
+      "path": "reports/protocol/frozen/analysis/forecast_plan.md",
+      "sha256": "cf61abb7be22eb88be8b0ea6c07bbb8a16b4a2c8f87d1bca5a1f1fa502bd06d3"
+    },
+    {
+      "path": "reports/protocol/frozen/analysis/protocol.json",
+      "sha256": "27e7d813a4aa7346e71dca77770893866a2bddb353c3d30af14bace05371baf1"
+    },
+    {
+      "path": "reports/protocol/frozen/data/source_manifest.json",
+      "sha256": "4ce7d42ed15e80f5bf881d7c8a54c8bd537abcd3a5a5daf2b76792f9fd47a990"
+    },
+    {
+      "path": "data/raw/transactions_normalized.csv.gz",
+      "sha256": "4d3618376972b427716f80c4ff6730ef1078ee9eed6670ea31361016cc6799ff"
+    }
+  ]
+}

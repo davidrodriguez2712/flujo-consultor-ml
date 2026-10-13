@@ -1,0 +1,22 @@
+```json
+{
+  "rows": [
+    {
+      "id": "D1",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "Evento irreversible: positive_certified_at 2025-06-10T00:00:00Z certifica el positivo y lo vuelve disponible aunque la ventana [2025-06-01, 2025-07-01) siga abierta. Esa fecha es <= extraction (2025-06-20) y <= training (2025-06-15), con comparador <=. Las features estaban disponibles (2025-05-31T23:00Z <= prediction 2025-06-01T00:00Z). No hay otras exclusiones de población."
+    },
+    {
+      "id": "D2",
+      "outcome_state_at_extraction": "pending",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "Evento reversible: target_reported=1 es solo un flag provisional y no certifica el target. El cierre ocurre 3 días (72 h) después del fin de ventana, es decir en 2025-07-04T00:00:00Z, posterior a extraction (2025-06-20) y a training (2025-06-15). No hay disponibilidad antes de esa fecha, y positive_certified_at y label_available_at son null. El valor no certificado puede cambiar, por lo que la fila no se puede usar con un label válido en este entrenamiento. Las features sí estaban disponibles (2025-05-31T23:00Z <= 2025-06-01T00:00Z)."
+    }
+  ],
+  "open_questions": [],
+  "gate_decision": "NEEDS_REVIEW"
+}
+```

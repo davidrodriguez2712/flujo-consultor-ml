@@ -1,0 +1,5 @@
+application,partition,prediction_at,amount,target
+R1,train,2025-08-01T00:00:00Z,100,0
+R2,train,2025-08-02T00:00:00Z,200,1
+R3,evaluation,2025-11-01T00:00:00Z,9000,1
+R4,evaluation,2025-11-02T00:00:00Z,12000,0

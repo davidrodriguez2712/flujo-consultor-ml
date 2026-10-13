@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-07",
+  "project": "churn-retencion-sintetico",
+  "status": "PREPARED_FOR_REVIEW",
+  "scope": "Inventario local de evidencia; no archivo empaquetado ni publicación",
+  "files": [
+    {
+      "path": "analysis/analysis_plan.md",
+      "sha256": "9be5e21a4e76f493048746f5c9a56159ec74ec95c7d5f94621d6f91ea73527f9",
+      "bytes": 1301
+    },
+    {
+      "path": "analysis/baseline.py",
+      "sha256": "8c41489662880ce04a5b3b860f261987abfd860d1672f07459444503db352c2f",
+      "bytes": 8290
+    },
+    {
+      "path": "analysis/evaluate_holdout.py",
+      "sha256": "8d81d405dbd5a266d504728dc6c34c01adbf6fbc7e9734d00f02e64fb48ecc64",
+      "bytes": 5368
+    },
+    {
+      "path": "analysis/generate_synthetic_data.py",
+      "sha256": "f195409ee5a05960e28466b71dcddc7405bc73860651fc8c5fab3b46de290dfc",
+      "bytes": 4608
+    },
+    {
+      "path": "analysis/outputs/baseline-audit.json",
+      "sha256": "dc44c044b8726de4630c83fe2728b02e7ca01a3c4d2065272e1e06bd57c5f298",
+      "bytes": 4971
+    },
+    {
+      "path": "analysis/outputs/baseline-development/development-models.json",
+      "sha256": "e8721a7dd8a5b554301ea0434c77ff6f53d2508635d22d2027afb5df9b8231f0",
+      "bytes": 9684
+    },
+    {
+      "path": "analysis/outputs/baseline-development/final-model.json",
+      "sha256": "8f257d69be172e08d76363580ef0296751051825515c7359ce6ce77ed1f0b581",
+      "bytes": 927
+    },
+    {
+      "path": "analysis/outputs/baseline-development/policy.json",
+      "sha256": "63d826c321117a8468c9bdd57e46f00750daadfa429086b253ac0b37edc507bb",
+      "bytes": 1135
+    },
+    {
+      "path": "analysis/outputs/baseline-development/results.json",
+      "sha256": "5af1bddc83c922eeee46a83562c1d2eb2e2e213ec3567f98f3b814f3717dc27c",
+      "bytes": 13516
+    },
+    {
+      "path": "analysis/outputs/baseline-development/summary.json",
+      "sha256": "9d604d57c8ad920b968b30e9986b9625ad68367896f265f7178839ac501f9a28",
+      "bytes": 388
+    },
+    {
+      "path": "analysis/outputs/holdout-audit.json",
+      "sha256": "a7739c5f5a9dcbdbaa9af6c35841598860701ea5df7e47b2930eea76df650d2b",
+      "bytes": 2353
+    },
+    {
+      "path": "analysis/outputs/holdout-final/metadata.json",
+      "sha256": "3a3ca31f6d5dddfe7721eb57b402cff671fb35ecd98857e52aa686a25a3118db",
+      "bytes": 441
+    },
+    {
+      "path": "analysis/outputs/holdout-final/results.json",
+      "sha256": "bb8a3e04337b7b326189561b22241f54c1d5a351d7fa4070c79f6395b9633baf",
+      "bytes": 8104
+    },
+    {
+      "path": "analysis/outputs/holdout-final/scores.json",
+      "sha256": "24193600828899cd252d23b71e501653d57a10c7514e4176c6e30c920cf0cf3f",
+      "bytes": 677168
+    },
+    {
+      "path": "analysis/outputs/holdout-final/summary.json",
+      "sha256": "c5ccc832339f7d95d99df0eaaa3a152a7dce08602783f0453c0899255597e5fc",
+      "bytes": 400
+    },
+    {
+      "path": "analysis/selection_plan.md",
+      "sha256": "8b36766e91fc8eace309ff2a9656c9b15e7e5240dc0ff6205a060b6f9677a6bf",
+      "bytes": 1114
+    },
+    {
+      "path": "analysis/test_baseline.py",
+      "sha256": "92f02ac2ea00880e7120c4a11de6daf67b2d52b24acd515bb39765cb0a9e3746",
+      "bytes": 2628
+    },
+    {
+      "path": "analysis/test_holdout.py",
+      "sha256": "b9d23abd8e8e1b56a8379f42ea748e7e365450915f72abf5b890f9f452ea0d76",
+      "bytes": 2693
+    },
+    {
+      "path": "data/data_contract.yaml",
+      "sha256": "0a3566cb0df36d2c0b28478f13f5a9a27b093b9f5205f85980320bb5bfc5f770",
+      "bytes": 649
+    },
+    {
+      "path": "data/dictionaries/README.md",
+      "sha256": "a4a86c6ee641d9b569d3bba6d7bdce438b46cbd300ea37a48fee37da9b95fdfe",
+      "bytes": 4514
+    },
+    {
+      "path": "data/raw/churn_labels.csv",
+      "sha256": "ed1898cfdabddee88711ff50efff0c99129b0fda253ab62b69f596c3a356820a",
+      "bytes": 3950212
+    },
+    {
+      "path": "data/raw/customers.csv",
+      "sha256": "53fbf9495621829ddb1accb36cd6335d8a35f0a28f869f0ad5e373ed8d53afc3",
+      "bytes": 117043
+    },
+    {
+      "path": "data/raw/manifest.json",
+      "sha256": "6021e7cb8ee17c1cb3455b5fc47651c7e152700aa77109c9c4eb263fe10006ce",
+      "bytes": 777
+    },
+    {
+      "path": "data/raw/monthly_snapshots.csv",
+      "sha256": "64cf0c93c4c02fdc5a42d4ed578c32135fa22efef2349cc6d362da7c46f0a8e9",
+      "bytes": 2588873
+    },
+    {
+      "path": "data/raw/support_tickets.csv",
+      "sha256": "c425d1997f9a5b0a72e122da4fb84c879afcf4472c27ff25f3d6eda5e6eaee50",
+      "bytes": 869621
+    },
+    {
+      "path": "decision/recommendation.md",
+      "sha256": "b14018eb4251911577d6df5b321a8bb87ab2153e50df78644712347e7433ac83",
+      "bytes": 5127
+    },
+    {
+      "path": "delivery/delivery_contract.md",
+      "sha256": "77429248a6f0b2036a6227d04fc469cb8d0d69e44b8bcdb64d5037d17e5f0ee6",
+      "bytes": 3835
+    },
+    {
+      "path": "evidence/approvals/2026-10-07-diagnosis.md",
+      "sha256": "704ec57736e9db7cb1f78e59135a8e1a6734b6afaf86ce8adc4614dda72b6726",
+      "bytes": 678
+    },
+    {
+      "path": "evidence/approvals/2026-10-07-discovery.md",
+      "sha256": "2492efcf2a49b165275d20bc199b25cf425082962fa7858dc372d60dd1bc8e5e",
+      "bytes": 875
+    },
+    {
+      "path": "evidence/approvals/2026-10-07-execution.md",
+      "sha256": "6f0fb57da96a837d5ca705f311fe36200a0891808411a8f73f5f629f1ee4f4a4",
+      "bytes": 556
+    },
+    {
+      "path": "evidence/approvals/2026-10-07-framing.md",
+      "sha256": "cc729792e517f48e7bbf28f9a5f9b93a1962549cfe9a82a7cfebd51ce6356f0f",
+      "bytes": 656
+    },
+    {
+      "path": "evidence/approvals/2026-10-07-validation.md",
+      "sha256": "3e3086dcddd76c6ee2fbc73972fb7cf5742411585c345fb562e0c42a4e86406a",
+      "bytes": 930
+    },
+    {
+      "path": "modeling/model_brief.md",
+      "sha256": "920353ac24426a9e6fda1499252c79af67b01e104b237499bef5ecd75e98e03e",
+      "bytes": 1717
+    },
+    {
+      "path": "validation/model_validation.md",
+      "sha256": "10b225df943fe8e52d11aa95ad7cfa5f04fa46f1b483fbc025b305d6cad072e2",
+      "bytes": 4432
+    },
+    {
+      "path": "validation/validation_design.md",
+      "sha256": "5addda286a3a07f392a5fc54c0353194abb74b3d0546b83d494758feacf9f0b2",
+      "bytes": 3676
+    }
+  ]
+}

@@ -1,0 +1,704 @@
+{
+  "kind": "simulación sintética del compiler; no evaluación de skills",
+  "cases_passed": 24,
+  "stages_checked": 164,
+  "foundry_skills_available": 9,
+  "foundry_findings": [],
+  "results": [
+    {
+      "case": "fraude-electrico",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "data_analysis",
+        "supervised_model",
+        "selection",
+        "optimization",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "understand-dataset",
+        "design-validation",
+        "detect-leakage"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "feature-design",
+        "operational-selection",
+        "constrained-decision",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "NEEDS_REVIEW",
+      "stages_checked": 7,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    },
+    {
+      "case": "riesgo-credito",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "data_analysis",
+        "supervised_model",
+        "selection",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "understand-dataset",
+        "design-validation",
+        "detect-leakage"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "feature-design",
+        "operational-selection",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "NEEDS_REVIEW",
+      "stages_checked": 7,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    },
+    {
+      "case": "churn",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "data_analysis",
+        "supervised_model",
+        "selection",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "understand-dataset",
+        "design-validation",
+        "detect-leakage"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "feature-design",
+        "operational-selection",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "NEEDS_REVIEW",
+      "stages_checked": 7,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    },
+    {
+      "case": "clv",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "data_analysis",
+        "supervised_model",
+        "optimization",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "understand-dataset",
+        "design-validation",
+        "detect-leakage"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "feature-design",
+        "constrained-decision",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "NEEDS_REVIEW",
+      "stages_checked": 7,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    },
+    {
+      "case": "uplift",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "data_analysis",
+        "selection",
+        "intervention",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "understand-dataset"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "operational-selection",
+        "causal-evaluation",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "NEEDS_REVIEW",
+      "stages_checked": 7,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    },
+    {
+      "case": "anomalias-sin-labels",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "data_analysis",
+        "selection",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "understand-dataset"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "operational-selection",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "NEEDS_REVIEW",
+      "stages_checked": 7,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    },
+    {
+      "case": "forecast-demanda",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "data_analysis",
+        "forecast",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "understand-dataset"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "forecast-evaluation",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "NEEDS_REVIEW",
+      "stages_checked": 7,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    },
+    {
+      "case": "inventario",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "data_analysis",
+        "forecast",
+        "optimization",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "understand-dataset"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "forecast-evaluation",
+        "constrained-decision",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "NEEDS_REVIEW",
+      "stages_checked": 7,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    },
+    {
+      "case": "pricing",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "data_analysis",
+        "optimization",
+        "intervention",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "understand-dataset"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "constrained-decision",
+        "causal-evaluation",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "NEEDS_REVIEW",
+      "stages_checked": 7,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    },
+    {
+      "case": "segmentacion",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "data_analysis",
+        "segmentation",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "understand-dataset"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "segmentation-analysis",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "NEEDS_REVIEW",
+      "stages_checked": 7,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    },
+    {
+      "case": "recomendaciones",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "data_analysis",
+        "recommendation",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "understand-dataset"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "recommendation-evaluation",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "NEEDS_REVIEW",
+      "stages_checked": 7,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    },
+    {
+      "case": "rutas",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "data_analysis",
+        "optimization",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "understand-dataset"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "constrained-decision",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "NEEDS_REVIEW",
+      "stages_checked": 7,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    },
+    {
+      "case": "staffing",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "data_analysis",
+        "forecast",
+        "optimization",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "understand-dataset"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "forecast-evaluation",
+        "constrained-decision",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "NEEDS_REVIEW",
+      "stages_checked": 7,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    },
+    {
+      "case": "experimento-ab",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "data_analysis",
+        "intervention",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "understand-dataset"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "causal-evaluation",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "NEEDS_REVIEW",
+      "stages_checked": 7,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    },
+    {
+      "case": "causal-observacional",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "data_analysis",
+        "intervention",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "understand-dataset"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "causal-evaluation",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "NEEDS_REVIEW",
+      "stages_checked": 7,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    },
+    {
+      "case": "entrada-mercado",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "research",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "research-intelligence"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "NEEDS_REVIEW",
+      "stages_checked": 7,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    },
+    {
+      "case": "rag",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "data_analysis",
+        "recommendation",
+        "genai_solution",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "understand-dataset"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "recommendation-evaluation",
+        "grounded-output-review",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "NEEDS_REVIEW",
+      "stages_checked": 7,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    },
+    {
+      "case": "extraccion-documentos",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "data_analysis",
+        "genai_solution",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "understand-dataset"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "grounded-output-review",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "NEEDS_REVIEW",
+      "stages_checked": 7,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    },
+    {
+      "case": "api-sin-ui",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "data_analysis",
+        "supervised_model",
+        "software_ui",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "understand-dataset",
+        "design-validation",
+        "detect-leakage"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "feature-design",
+        "software-design",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "NEEDS_REVIEW",
+      "stages_checked": 7,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    },
+    {
+      "case": "dashboard",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "data_analysis",
+        "software_ui",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "understand-dataset",
+        "ui-planning"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "software-design",
+        "figma-handoff",
+        "visual-qa",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "NEEDS_REVIEW",
+      "stages_checked": 7,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    },
+    {
+      "case": "figma-handoff",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "data_analysis",
+        "recommendation",
+        "software_ui",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "understand-dataset",
+        "ui-planning",
+        "figma-handoff"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "recommendation-evaluation",
+        "software-design",
+        "visual-qa",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "NEEDS_REVIEW",
+      "stages_checked": 7,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    },
+    {
+      "case": "visual-qa",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "data_analysis",
+        "software_ui",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "understand-dataset",
+        "ui-planning",
+        "visual-qa"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "software-design",
+        "figma-handoff",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "NEEDS_REVIEW",
+      "stages_checked": 7,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    },
+    {
+      "case": "modelo-heredado",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "data_analysis",
+        "supervised_model",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "understand-dataset",
+        "design-validation",
+        "detect-leakage"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "feature-design",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "BLOCKED",
+      "stages_checked": 3,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    },
+    {
+      "case": "modelo-produccion",
+      "result": "PASS",
+      "modules": [
+        "consulting_core",
+        "data_analysis",
+        "supervised_model",
+        "operationalization",
+        "business_case",
+        "executive_delivery"
+      ],
+      "skills": [
+        "understand-dataset",
+        "design-validation",
+        "detect-leakage",
+        "build-features"
+      ],
+      "partial_capabilities": [
+        "problem-framing",
+        "evidence-synthesis",
+        "operational-monitoring",
+        "decision-impact",
+        "executive-synthesis"
+      ],
+      "initial_gate": "NEEDS_REVIEW",
+      "stages_checked": 7,
+      "synthetic_closure": "PASS",
+      "moved": "PASS",
+      "profile_drift": "BLOCKED",
+      "read_only": true
+    }
+  ]
+}

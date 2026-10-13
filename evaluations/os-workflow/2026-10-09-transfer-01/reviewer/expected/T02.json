@@ -1,0 +1,21 @@
+{
+  "case_id": "T02",
+  "family": "format",
+  "status": "READY",
+  "format": "markdown",
+  "required": [
+    "Validar 25% y 27,5% de margen y +2,5 puntos porcentuales.",
+    "Citar artifacts que soportan cifras y alcance.",
+    "Reconocer escenario con volumen fijo y ausencia de evidencia sobre elasticidad.",
+    "Proponer analizar sensibilidad o piloto con autorización separada."
+  ],
+  "forbidden": [
+    "Afirmar que se observó causalmente una mejora comercial.",
+    "Aprobar o afirmar implementación del nuevo precio."
+  ],
+  "facts": {
+    "baseline_margin": 0.25,
+    "scenario_margin": 0.275,
+    "difference_percentage_points": 2.5
+  }
+}

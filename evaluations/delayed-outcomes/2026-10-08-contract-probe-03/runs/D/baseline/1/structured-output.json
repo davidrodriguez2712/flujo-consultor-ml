@@ -1,0 +1,32 @@
+{
+  "rows": [
+    {
+      "id": "D1",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "La mora de 30 d\u00edas ocurri\u00f3 el 25 de junio y se firm\u00f3 el 28 de junio, pero la publicaci\u00f3n en el almac\u00e9n fue el 18 de julio a las 06:00. Eso es posterior al entrenamiento (2025-07-15T00:00Z), as\u00ed que el label no estaba disponible entonces. A la extracci\u00f3n (2025-08-15) ya estaba publicado, por eso el extracto muestra target=1 y el estado es observed_positive. Las features (2025-05-31T18:00Z) son anteriores a la predicci\u00f3n, pero el registro no tiene label utilizable en ese entrenamiento y se excluye."
+    },
+    {
+      "id": "D2",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "La mora entr\u00f3 el 22 de junio, dentro de la ventana [1 de junio, 1 de julio). La certificaci\u00f3n y la publicaci\u00f3n fueron el 24 de junio a las 06:00, antes del entrenamiento del 15 de julio. La mora es irreversible, as\u00ed que el positivo es v\u00e1lido aunque la ventana a\u00fan no hubiera cerrado. Las features (2025-05-31T18:00Z) son anteriores a la predicci\u00f3n (2025-06-01T00:00Z)."
+    },
+    {
+      "id": "D3",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "El acta final negativa certifica que no hubo mora en toda la ventana. Se firm\u00f3 el 2 de julio y se public\u00f3 el 9 de julio a las 06:00, antes del entrenamiento del 15 de julio. El negativo estaba certificado y publicado entonces. Las features (2025-05-31T18:00Z) son anteriores a la predicci\u00f3n."
+    }
+  ],
+  "open_questions": [
+    "\u00bfEl almac\u00e9n de entrenamiento conserva la fecha de publicaci\u00f3n (snapshot as-of) como fuente verificable? La publicaci\u00f3n del 18 de julio de D1 es lo que decide su exclusi\u00f3n.",
+    "Excluir D1 y otros positivos de publicaci\u00f3n tard\u00eda puede sesgar el entrenamiento: quedan menos positivos y los que se certifican r\u00e1pido pesan m\u00e1s. \u00bfSe acepta, o se pospone el entrenamiento hasta que se publiquen los labels?",
+    "\u00bfQu\u00e9 hora y zona usa el almac\u00e9n para el corte de entrenamiento? Aqu\u00ed se asume UTC, como indican los documentos.",
+    "\u00bfHay m\u00e1s registros con certificaci\u00f3n pendiente o publicada tras el corte? Con solo tres expedientes no se puede medir el alcance."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

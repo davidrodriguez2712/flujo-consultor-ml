@@ -1,0 +1,16 @@
+{
+  "rows": {
+    "E1": {
+      "outcome_state_at_extraction": "pending",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude"
+    },
+    "E2": {
+      "outcome_state_at_extraction": "unknown",
+      "label_availability_at_training": "indeterminate",
+      "train_eligibility": "indeterminate"
+    }
+  },
+  "review_notes": "E1 cierre futuro conocido, E2 certificación desconocida; no inventar disponibilidad o negativo definitivo.",
+  "gate_decision": "NEEDS_REVIEW"
+}

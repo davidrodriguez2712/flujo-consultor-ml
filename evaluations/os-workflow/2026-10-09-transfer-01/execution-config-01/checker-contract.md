@@ -1,0 +1,7 @@
+# Reglas del checker de transferencia
+
+JSON reutiliza el checker existente de schema, keys duplicadas, finitos, status y rutas; conserva raw. Markdown comprueba los cinco H2 del contrato en orden y sin otros encabezados, sin prefacio ni fences envolventes; secciones no vacías y estado válido solo en Estado. Se acepta énfasis Markdown o inline code alrededor del estado. Fences internas correctamente cerradas son contenido y sus encabezados no son secciones del memo. No reescribe output.
+
+Extracción de referencias Markdown: rutas locales con directorio y extensión `.json` o `.md` en Hallazgos, en texto, inline code o destinos de links; comparación exacta con keys del expediente. Esto cubre los artifacts de T02, no es un parser universal de Markdown ni una comprobación de soporte. Citas atípicas, otras extensiones, URLs, anchors, prosa adicional o referencias fuera de Hallazgos requieren revisión humana; no normalizar para convertirlas en citas exactas. `references_present=false` separa ausencia de referencias de existencia de rutas. Listas vacías no prueban soporte. Un exit0 confirma checks deterministas, nunca contenido.
+
+`semantic_review=NOT_RUN` y `overall_content_pass=null` incluso con formato y estado conformes. En revisión posterior, falta de citas que soporten obligaciones o afirmaciones materiales falsas implica content FAIL conforme al protocolo, no aprobado por estructura.

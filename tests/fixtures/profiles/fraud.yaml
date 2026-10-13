@@ -1,0 +1,23 @@
+engagement:
+  archetypes:
+  - PREDICT
+  - PRIORITIZE_SELECT
+  - OPTIMIZE
+  decision: Priorizar inspecciones de fraude eléctrico
+  current_stage: framing
+data:
+  sources:
+  - csv
+  characteristics:
+    labeled: partial
+    supervised: true
+deliverables:
+- decision_memo
+- business_case
+schema_version: 1
+project:
+  slug: fraud
+  name: fraud
+runtimes:
+- codex
+- claude_code

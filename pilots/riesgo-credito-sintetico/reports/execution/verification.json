@@ -1,0 +1,37 @@
+{
+  "verified_at_utc": "2026-10-08T11:44:05.807456+00:00",
+  "stage": "execution",
+  "gate": "NEEDS_REVIEW",
+  "integrity": "OK",
+  "tests": {
+    "product": 125,
+    "credit_baseline": 25,
+    "credit_generator": 6,
+    "combined": 182
+  },
+  "frozen_inputs_code_policy_contracts_unchanged": true,
+  "approved_diagnosis_hashes_unchanged": true,
+  "prior_protected_files_unchanged": 1180,
+  "output_arithmetic_matches": true,
+  "summary": {
+    "scope": "development; solo concedidas con labels disponibles",
+    "training_rows": 1248,
+    "validation_rows": 298,
+    "reference_probability": 0.10737179487179487,
+    "brier_model": 0.10409171041242656,
+    "brier_reference": 0.11693224733485125,
+    "brier_improvement": 0.012840536922424692,
+    "roc_auc_model": 0.7084302325581395,
+    "final_metrics_computed": false,
+    "last_train_scoring": "2024-09-25",
+    "latest_train_label_available": "2025-01-01"
+  },
+  "additional_runtime_api_calls": 0,
+  "review": "agent-output-review.md",
+  "limitations": [
+    "Development sintético; sin generalización real ni causalidad.",
+    "Execution requiere revisión humana.",
+    "Periodo final no evaluado; wrapper aún pendiente.",
+    "Dos mejoras Minor de cobertura de pruebas documentadas, sin bug observado."
+  ]
+}

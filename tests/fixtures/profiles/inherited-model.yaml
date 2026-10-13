@@ -1,0 +1,20 @@
+engagement:
+  archetypes:
+  - PREDICT
+  decision: Auditar modelo heredado
+  current_stage: validation
+data:
+  sources:
+  - sql
+  characteristics:
+    labeled: 'yes'
+    supervised: true
+deliverables:
+- report
+schema_version: 1
+project:
+  slug: inherited-model
+  name: inherited-model
+runtimes:
+- codex
+- claude_code

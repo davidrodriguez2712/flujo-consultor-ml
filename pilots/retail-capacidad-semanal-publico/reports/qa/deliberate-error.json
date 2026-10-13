@@ -1,0 +1,11 @@
+{
+  "label": "Última semana completa del tramo final",
+  "source_row": {
+    "cutoff": "2011-08-01",
+    "week_end_exclusive": "2011-08-08",
+    "method": "mean_previous_4_weeks",
+    "actual": "286",
+    "prediction": "317.5"
+  },
+  "status": "DELIBERATELY_WRONG_TEST_COPY"
+}

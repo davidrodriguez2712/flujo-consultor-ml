@@ -1,0 +1,9 @@
+{
+  "success": true,
+  "errors": [],
+  "report_words": 59,
+  "final_words": 3,
+  "report_word_limit": 500,
+  "final_word_limit": 80,
+  "semantic_review": "REQUIRED"
+}

@@ -1,0 +1,11 @@
+{
+  "status": "APPROVED",
+  "manifest_sha256": "9e4bf57fc97cc73d3116576ece5fc5d573caaca6ecdbd3e041bd84d4155bf343",
+  "budget_usd": 0.0165,
+  "prior_usd": 0.115103045,
+  "cumulative_ceiling_usd": 0.15,
+  "basis": "Usuario autoriza rondas/correcciones y techoUS$0.15; pide mejorar incertidumbre y evaluarlo",
+  "automatic_retries": 0,
+  "mode": "text_only_not_native",
+  "per_arm_reps": 5
+}

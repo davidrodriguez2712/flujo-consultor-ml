@@ -1,0 +1,19 @@
+{
+  "manifest_verified": true,
+  "cli_version": "2.1.296 (Claude Code)",
+  "pricing_verified_on": "2026-10-11",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "standard_mtok": {
+    "input": 0.1,
+    "output": 0.5,
+    "cache_write_5m": 0.125,
+    "cache_read": 0.01
+  },
+  "long_mtok": {
+    "input": 0.5,
+    "output": 2.5,
+    "cache_write_5m": 0.625,
+    "cache_read": 0.05
+  },
+  "credential_source": "Solo ANTHROPIC_API_KEY de .env local; no conservar valor"
+}

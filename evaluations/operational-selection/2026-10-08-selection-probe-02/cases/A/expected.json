@@ -1,0 +1,37 @@
+{
+  "output_type": "risk_ranking",
+  "selection_status": "determined",
+  "eligible_count": 2,
+  "capacity_k": 3,
+  "effective_k": 2,
+  "selected_ids": [
+    "Y",
+    "Z"
+  ],
+  "risk_ranking_ids": [
+    "Y",
+    "Z"
+  ],
+  "total_cost": 4,
+  "expected_net_value": null,
+  "feasibility": "feasible",
+  "optimality": "not_assessed",
+  "causal_identification": {
+    "status": "not_requested",
+    "estimand": null,
+    "reason": "Expected separado."
+  },
+  "metrics": {
+    "population_id": "eligible-A",
+    "precision": 0.5,
+    "recall": 1,
+    "lift": 1,
+    "precision_status": "identified",
+    "recall_status": "identified",
+    "lift_status": "identified",
+    "reason": "Referencia para revisión; no se envía al modelo."
+  },
+  "reason": "Expected separado.",
+  "open_questions": [],
+  "gate_decision": "NEEDS_REVIEW"
+}

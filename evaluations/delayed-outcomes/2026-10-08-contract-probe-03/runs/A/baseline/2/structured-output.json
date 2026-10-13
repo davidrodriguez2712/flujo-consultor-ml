@@ -1,0 +1,33 @@
+{
+  "rows": [
+    {
+      "id": "A1",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "Petici\u00f3n recibida el 2025-07-03T10:00Z; sin retirada, el plazo de 7\u00d724h venci\u00f3 el 2025-07-10T10:00Z. Ah\u00ed se certific\u00f3 churn=1 y el label entr\u00f3 al sistema de inmediato, antes del entrenamiento (2025-07-15T00:00Z). El extracto lo confirma. Las features (2025-06-30T18:00Z) son anteriores a la predicci\u00f3n (2025-07-01T00:00Z) y el evento cae en la ventana [1 jul, 15 ago)."
+    },
+    {
+      "id": "A2",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "Petici\u00f3n recibida el 2025-07-12T10:00Z; el plazo venci\u00f3 el 2025-07-19T10:00Z. El churn=1 se certific\u00f3 ese d\u00eda, despu\u00e9s del entrenamiento (2025-07-15T00:00Z) y antes de la extracci\u00f3n (2025-08-15T00:00Z), as\u00ed que el extracto lo muestra como positivo. En el entrenamiento la petici\u00f3n era solo provisional y el label no estaba certificado. Usarlo con churn=1 filtrar\u00eda informaci\u00f3n posterior al entrenamiento, y tratarlo como negativo ser\u00eda falso. Se excluye de esta reconstrucci\u00f3n."
+    },
+    {
+      "id": "A3",
+      "outcome_state_at_extraction": "pending",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "Petici\u00f3n recibida el 2025-08-12T10:00Z; el plazo vence el 2025-08-19T10:00Z, posterior a la extracci\u00f3n (2025-08-15T00:00Z). Sigue abierta y no retirada, pero la regla a\u00fan no permite certificar churn. flag_baja=1 con expediente abierto es una petici\u00f3n provisional, no churn definitivo. No hay label certificado ni en el entrenamiento ni en la extracci\u00f3n. No debe tratarse como positivo ni como negativo."
+    }
+  ],
+  "open_questions": [
+    "\u00bfSe confirma que para estos expedientes rige la predicci\u00f3n del 2025-07-01T00:00Z y features del 2025-06-30T18:00Z de la Nota de Operaciones, y no las del encabezado (2025-06-01 y 2025-05-31T18:00Z)? Se aplic\u00f3 la Nota por ser la diferencia expl\u00edcita. En ambos casos las features son anteriores a la predicci\u00f3n y no cambia ninguna fila.",
+    "\u00bfEl plazo de siete periodos de 24 horas se cuenta exactamente desde la hora de recepci\u00f3n? Se asumi\u00f3 as\u00ed, con vencimiento a las 10:00Z de 7 d\u00edas despu\u00e9s.",
+    "\u00bfCu\u00e1l es el timestamp certificado en el sistema de entrenamiento para A1 y A2? Se infiri\u00f3 de la regla, no de un registro de certificaci\u00f3n.",
+    "\u00bfDebe reevaluarse A3 tras el 2025-08-19T10:00Z, con una extracci\u00f3n posterior, cuando pueda certificarse como churn=1 o como retirado (churn=0)?",
+    "\u00bfSe reentrenar\u00e1 con un corte posterior que permita incluir A2? Con un corte posterior al 2025-07-19T10:00Z, A2 ser\u00eda elegible como positivo."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

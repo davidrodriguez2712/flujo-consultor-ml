@@ -1,0 +1,405 @@
+schema_version: 1
+catalog_version: 0.1.0
+profile_sha256: 8378a1642bebb9491c8804019427c9f1fe41c684b16f281388ea50fbc04173e8
+modules:
+- consulting_core
+- data_analysis
+- supervised_model
+- selection
+- executive_delivery
+capabilities:
+- id: problem-framing
+  coverage: partial
+  artifact: playbook
+  reason: Sin skill operativa compatible
+  limits: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+    evidencia específica.
+- id: evidence-synthesis
+  coverage: partial
+  artifact: playbook
+  reason: Sin skill operativa compatible
+  limits: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+    evidencia específica.
+- id: dataset-understanding
+  coverage: skill
+  skill: understand-dataset
+  status: experimental
+  version: 0.1.0
+  reason: Propósito y condiciones compatibles con política del catálogo
+  limits: '
+
+    # Propósito
+
+
+    Esta skill proporciona una **comprensión estructural y metodológica de un dataset
+
+    antes de comenzar el análisis o el modelado**.
+
+
+    El problema que resuelve: la comprensión inicial de los datos suele hacerse de
+    forma
+
+    improvisada y se salta directamente a estadísticas descriptivas, gráficos,
+
+    tratamiento de missing, feature engineering o entrenamiento. Antes de esas
+
+    actividades quedan sin resolver preguntas fundamentales —qué representa una fila,
+
+    cuál es la unidad de observación, cuál es el target y cuándo se conoce, qué
+
+    información estaba disponible al momento de predecir, qué variables son posteriores
+
+    al evento, qué joins duplican registros—.
+
+
+    Una comprensión incorrecta en esta etapa produce errores (target leakage, temporal
+
+    leakage, granularidad mal definida, duplicación por joins, train/test contamination,
+
+    uso incorrecto de identificadores, mala interpretación del target) que **luego
+    no son
+
+    visibles en las métricas del modelo**: el modelo puede tener métricas excelentes
+    y
+
+    aun así ser inválido.
+
+
+    La skill establece primero una comprensión confiable de los datos y señala los
+
+    principales riesgos y preguntas abiertas. No decide que el dataset esté listo
+    para
+
+    modelar.
+
+
+    # Cuándo usar
+
+
+    Usar esta skill cuando:
+
+
+    - se recibe un dataset desconocido o solo su estructura (columnas, tipos, muestra);
+
+    - se inicia un nuevo proyecto de Data Science supervisado;
+
+    - se recibe una tabla nueva o se incorpora una nueva fuente de información;
+
+    - se recibe una nueva versión de un dataset ya conocido;
+
+    - se hereda un proyecto creado por otra persona;
+
+    - no está clara la unidad de observación o la granularidad;
+
+    - no se conoce con certeza el target;
+
+    - existe información temporal y hay riesgo de usar información futura;
+
+    - existen múltiples tablas que podrían relacionarse entre sí;
+
+    - existe'
+- id: supervised-validation
+  coverage: skill
+  skill: design-validation
+  status: experimental
+  version: 0.1.0
+  reason: Propósito y condiciones compatibles con política del catálogo
+  limits: '
+
+    # Propósito
+
+
+    Esta skill proporciona el **diseño explícito y justificado de la estrategia de
+
+    validación** de un problema supervisado, antes del feature engineering dependiente
+
+    del tiempo y antes del entrenamiento.
+
+
+    El problema que resuelve: la estrategia de validación suele definirse demasiado
+
+    tarde o elegirse por conveniencia (`train_test_split`, `StratifiedKFold`, `KFold`,
+
+    cross-validation estándar) sin comprobar primero si representa cómo funcionará
+    el
+
+    modelo en producción. Una estrategia incorrecta produce métricas optimistas aunque
+
+    no exista ningún error visible en el entrenamiento. Ocurre sobre todo cuando hay
+
+    datos temporales, múltiples registros de una misma entidad, eventos repetidos,
+
+    grupos relacionados, panel data, ventanas de observación, prediction horizons,
+
+    cambios de distribución, o cuando entrenamiento y scoring ocurren en momentos
+
+    distintos. También ocurre cuando la validación es técnicamente válida pero está
+
+    desconectada de la decisión real (evaluar globalmente cuando operacionalmente
+    solo
+
+    importa el desempeño sobre los primeros K casos priorizados).
+
+
+    El problema no es únicamente elegir entre train/test o cross-validation. Es diseñar
+
+    una validación que represente correctamente cómo se genera la información, cuándo
+
+    se realiza la predicción, sobre qué entidades, para qué horizonte, bajo qué
+
+    restricciones y cómo se usará realmente el modelo.
+
+
+    Principio rector:
+
+
+    > La validación debe reproducir lo más fielmente posible la situación real en
+    la
+
+    > que el modelo generará predicciones: qué información existe, en qué momento,
+
+    > sobre qué entidades y para qué decisión.
+
+
+    La skill **no ejecuta el split ni entrena modelos**. Produce un diseño: qué
+
+    estrategia se recomienda, por qué representa mejor el problema, qué alternativas
+    se
+
+    descartan y con qué motivo, cómo cons'
+- id: leakage-audit
+  coverage: skill
+  skill: detect-leakage
+  status: experimental
+  version: 0.1.0
+  reason: Propósito y condiciones compatibles con política del catálogo
+  limits: "\n# Propósito\n\nEsta skill proporciona una **auditoría dedicada de data\
+    \ leakage** sobre el\nproceso completo de construcción de datos y validación de\
+    \ un problema\nsupervisado.\n\nEl problema que resuelve: es posible construir\
+    \ modelos con métricas aparentemente\nexcelentes utilizando información que, directa\
+    \ o indirectamente, no estaría\ndisponible en el momento real de realizar la predicción.\
+    \ Ese leakage hace que el\nmodelo obtenga métricas artificialmente altas, parezca\
+    \ generalizar durante\nvalidación, seleccione features aparentemente muy predictivas\
+    \ y luego falle en\nproducción o produzca conclusiones de negocio incorrectas.\n\
+    \nEl problema no se reduce a identificar columnas \"sospechosas\". Muchas formas\
+    \ de\nleakage dependen de comprender cuándo se genera una variable, cuándo ocurre\
+    \ el\nevento objetivo, cuándo se realiza la predicción, qué información conoce\n\
+    realmente el sistema en ese momento, cómo se construyeron las features, cómo se\n\
+    dividieron train y test, y cómo se ejecutaron transformaciones, agregaciones y\n\
+    joins. La skill audita el pipeline y la estrategia de validación, no sólo la\n\
+    lista de features.\n\nPrincipio rector:\n\n> El modelo solamente debería utilizar\
+    \ información que habría estado\n> legítimamente disponible en el momento real\
+    \ de realizar la predicción.\n\nLa skill **no elimina variables** ni decide que\
+    \ un pipeline sea válido. Explica\ncuál es el posible problema, por qué podría\
+    \ constituir leakage, qué evidencia\nexiste, qué información falta, cómo podría\
+    \ comprobarse y qué acción sería\nrecomendable.\n\n# Cuándo usar\n\nUsar esta\
+    \ skill cuando:\n\n- se recibe un nuevo dataset y ya hay un target (o evento objetivo)\
+    \ definido;\n- existen timestamps y múltiples observaciones por entidad;\n- se\
+    \ construyen features temporales: lag features, rolling features,\n  tendencias,\
+    \ acumulados;\n- se"
+- id: feature-design
+  coverage: partial
+  artifact: playbook
+  reason: Preconditions no confirmadas
+  limits: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+    evidencia específica.
+- id: operational-selection
+  coverage: partial
+  artifact: playbook
+  reason: Sin skill operativa compatible
+  limits: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+    evidencia específica.
+- id: executive-synthesis
+  coverage: partial
+  artifact: playbook
+  reason: Sin skill operativa compatible
+  limits: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+    evidencia específica.
+gates:
+- id: discovery
+  stage: discovery
+  artifacts:
+  - context/business_context.md
+  required_fields: {}
+  human_review: true
+- id: framing
+  stage: framing
+  artifacts:
+  - framing/framing.yaml
+  required_fields:
+    framing/framing.yaml:
+    - decision
+    - owner
+    - metric
+    - unit
+    - horizon
+  human_review: true
+- id: diagnosis
+  stage: diagnosis
+  artifacts:
+  - evidence/findings.md
+  required_fields: {}
+  human_review: true
+- id: execution
+  stage: execution
+  artifacts: []
+  required_fields: {}
+  human_review: true
+- id: validation
+  stage: validation
+  artifacts: []
+  required_fields: {}
+  human_review: true
+- id: delivery
+  stage: delivery
+  artifacts:
+  - decision/recommendation.md
+  - delivery/delivery_contract.md
+  required_fields: {}
+  human_review: true
+- id: handoff
+  stage: handoff
+  artifacts:
+  - handoff/runbook.md
+  required_fields: {}
+  human_review: true
+- id: data-quality
+  stage: diagnosis
+  artifacts:
+  - data/data_contract.yaml
+  required_fields:
+    data/data_contract.yaml:
+    - grain
+    - keys
+    - coverage
+    - quality
+  human_review: true
+- id: data_analysis-review
+  stage: validation
+  artifacts:
+  - analysis/analysis_plan.md
+  required_fields: {}
+  human_review: true
+- id: supervised_model-review
+  stage: validation
+  artifacts:
+  - modeling/model_brief.md
+  required_fields: {}
+  human_review: true
+- id: selection-review
+  stage: validation
+  artifacts:
+  - analysis/selection_plan.md
+  required_fields: {}
+  human_review: true
+- id: executive_delivery-review
+  stage: validation
+  artifacts:
+  - delivery/storyline.md
+  required_fields: {}
+  human_review: true
+excluded:
+- capability: feature-design
+  reason: 'Preconditions sin confirmar: feature_design'
+gaps:
+- capability: problem-framing
+  reason: Sin skill operativa compatible
+  fallback: playbook
+  limits: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+    evidencia específica.
+- capability: evidence-synthesis
+  reason: Sin skill operativa compatible
+  fallback: playbook
+  limits: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+    evidencia específica.
+- capability: feature-design
+  reason: Preconditions no confirmadas
+  fallback: playbook
+  limits: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+    evidencia específica.
+- capability: operational-selection
+  reason: Sin skill operativa compatible
+  fallback: playbook
+  limits: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+    evidencia específica.
+- capability: executive-synthesis
+  reason: Sin skill operativa compatible
+  fallback: playbook
+  limits: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+    evidencia específica.
+reasons:
+- module: consulting_core
+  signal:
+    operator: equals
+    field: schema_version
+    value: 1
+  dependencies: []
+- module: data_analysis
+  signal:
+    operator: any
+    rules:
+    - operator: contains
+      field: data.sources
+      value: csv
+    - operator: contains
+      field: data.sources
+      value: excel
+    - operator: contains
+      field: data.sources
+      value: parquet
+    - operator: contains
+      field: data.sources
+      value: sql
+    - operator: contains
+      field: data.sources
+      value: api
+    - operator: contains
+      field: data.sources
+      value: postgresql
+    - operator: contains
+      field: data.sources
+      value: bigquery
+    - operator: contains
+      field: data.sources
+      value: snowflake
+    - operator: equals
+      field: data.characteristics.tabular
+      value: true
+  dependencies: []
+- module: supervised_model
+  signal:
+    operator: all
+    rules:
+    - operator: contains
+      field: engagement.archetypes
+      value: PREDICT
+    - operator: any
+      rules:
+      - operator: equals
+        field: data.characteristics.labeled
+        value: 'yes'
+      - operator: equals
+        field: data.characteristics.labeled
+        value: partial
+    - operator: equals
+      field: data.characteristics.supervised
+      value: true
+  dependencies:
+  - data_analysis
+- module: selection
+  signal:
+    operator: contains
+    field: engagement.archetypes
+    value: PRIORITIZE_SELECT
+  dependencies: []
+- module: executive_delivery
+  signal:
+    operator: any
+    rules:
+    - operator: contains
+      field: deliverables
+      value: executive_deck
+    - operator: contains
+      field: deliverables
+      value: decision_memo
+  dependencies: []

@@ -1,0 +1,33 @@
+{
+  "rows": [
+    {
+      "id": "C1",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "Ventana [2025-06-01, 2025-07-01) con seguimiento completo. El acta negativa se public\u00f3 el 2025-07-05T08:00Z, antes del entrenamiento (2025-07-15T00:00Z). El churn=0 estaba certificado y disponible al entrenar. Las features estaban disponibles el 2025-05-31T18:00Z, antes de la predicci\u00f3n del 2025-06-01. La poblaci\u00f3n es v\u00e1lida."
+    },
+    {
+      "id": "C2",
+      "outcome_state_at_extraction": "pending",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "La ventana llega hasta el 2025-09-01 y la extracci\u00f3n es del 2025-08-15, as\u00ed que el seguimiento sigue abierto y la ventana no ha terminado. El acta est\u00e1 prevista no antes del cierre. El churn=0 del CSV es un valor provisional, no un negativo certificado. Al entrenar el 2025-07-15 tampoco exist\u00eda acta. Se excluye para no tratar un cero provisional como negativo."
+    },
+    {
+      "id": "C3",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "La ventana termin\u00f3 el 2025-07-01 y el seguimiento fue completo. Al extraer (2025-08-15) el negativo estaba certificado, porque el acta se public\u00f3 el 2025-07-20T08:00Z. Esa publicaci\u00f3n es posterior al entrenamiento del 2025-07-15T00:00Z, as\u00ed que el label no estaba certificado en el sistema de entrenamiento en ese momento. Usarlo en el entrenamiento hist\u00f3rico filtrar\u00eda informaci\u00f3n futura. Se excluye de ese entrenamiento. Ser\u00eda elegible en un reentrenamiento posterior al 2025-07-20."
+    }
+  ],
+  "open_questions": [
+    "\u00bfEl entrenamiento hist\u00f3rico debe reconstruirse con el conocimiento disponible al 2025-07-15T00:00Z (point-in-time)? Si es as\u00ed, C3 queda excluido. Si se admite un reentrenamiento posterior al 2025-07-20, C3 pasar\u00eda a elegible.",
+    "\u00bfCu\u00e1l es la fecha prevista exacta del acta de C2? Solo consta 'no antes del cierre' de la ventana (2025-09-01).",
+    "\u00bfLas features de C1, C2 y C3 se calcularon con corte al 2025-05-31T18:00Z, o alguna se recalcul\u00f3 despu\u00e9s?",
+    "\u00bfEl churn=0 del CSV de C2 tiene marca de provisionalidad, o puede confundirse con un negativo certificado en el pipeline?",
+    "\u00bfLos timestamps de publicaci\u00f3n de las actas son los del sistema de entrenamiento o los de otro sistema? La disponibilidad requiere el valor certificado en el sistema de entrenamiento."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

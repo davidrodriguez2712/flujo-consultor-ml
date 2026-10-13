@@ -1,0 +1,34 @@
+{
+  "selected_ids": [],
+  "total_cost": 0,
+  "expected_net_value": 0,
+  "candidates": [
+    {
+      "selected_ids": [],
+      "total_cost": 0,
+      "expected_net_value": 0
+    },
+    {
+      "selected_ids": [
+        "P"
+      ],
+      "total_cost": 2,
+      "expected_net_value": -1
+    },
+    {
+      "selected_ids": [
+        "Q"
+      ],
+      "total_cost": 1,
+      "expected_net_value": -3
+    },
+    {
+      "selected_ids": [
+        "P",
+        "Q"
+      ],
+      "total_cost": 3,
+      "expected_net_value": -4
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "id": "detect-leakage-configuration-review-01",
+  "scope": "Tres probes locales sin generación, review y propuesta de configuración/transport; no ejecutable ni paidcalls.",
+  "files": [
+    {
+      "path": "configuration-proposal-01/TRANSPORT-DESIGN.md",
+      "sha256": "3001f8a6264409b0cd3fbe123bec437325b79d292253da9187783498081e3bd9",
+      "bytes": 4232
+    },
+    {
+      "path": "configuration-proposal-01/config-proposal.json",
+      "sha256": "84a13187d363028ff15b62ebff019c1d1380666cb9c179612f56030f7f273bbb",
+      "bytes": 3424
+    },
+    {
+      "path": "native-preflight-01/baseline.json",
+      "sha256": "2ca1ba593c1e2d4277e3b91a8d4b973289cfdaf0684672e6209226c6c23125f2",
+      "bytes": 14621
+    },
+    {
+      "path": "native-preflight-01/summary.json",
+      "sha256": "28bf7dd115dc7327caf62e5a1ae97e757b08c42224cd91351b949b493819aa1a",
+      "bytes": 553
+    },
+    {
+      "path": "native-preflight-01/treatment.json",
+      "sha256": "d93b9d8ca9699754f50ccb0c531c6b717a224ac30b269d74f303d227b7efc8b6",
+      "bytes": 14623
+    },
+    {
+      "path": "native-preflight-02/baseline.json",
+      "sha256": "d06669386f1ef96da625866e6648350e6a9fd157c82fb5f9dd6ba665c9f417f2",
+      "bytes": 14087
+    },
+    {
+      "path": "native-preflight-02/summary.json",
+      "sha256": "9fc6cc612631eda9d20ab5ea618d24c5e728d7a1c767aecb48495e6a8f870a65",
+      "bytes": 685
+    },
+    {
+      "path": "native-preflight-02/treatment.json",
+      "sha256": "f5689a8113d0ba9470c981a0549cf7fcd822c46a45e88617e4dc4b8d2c1b39ef",
+      "bytes": 14089
+    },
+    {
+      "path": "native-preflight-03/baseline.json",
+      "sha256": "5908bc9766d4e5af17f8ccf58f38d73c9c5a1bf7dc7e538fb3e541fb9aafe041",
+      "bytes": 14084
+    },
+    {
+      "path": "native-preflight-03/summary.json",
+      "sha256": "730f638e48db7e88462e144fc92e865dd52d539a7e28d641bb3f8b96b424eb68",
+      "bytes": 714
+    },
+    {
+      "path": "native-preflight-03/treatment.json",
+      "sha256": "3459f290c0f88a37262bab2e722a683d041ee60b28c87c9bc9468ef1c8ed458a",
+      "bytes": 17882
+    },
+    {
+      "path": "package-review-01.json",
+      "sha256": "be9bc26e03ac418d44572b84dcefd1ea65b641edf23b2001d226e906091067ca",
+      "bytes": 585
+    }
+  ]
+}

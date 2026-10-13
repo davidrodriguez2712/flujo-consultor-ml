@@ -1,0 +1,9 @@
+{
+  "status": "APPROVED",
+  "total_budget_usd": 0.2,
+  "execution_manifest_sha256": "2e8dc56a6c95c15e61189fd59a8b944316b3dc8d88d275ce531e28c8775a85d4",
+  "reviewer": "David",
+  "user_message": "Aprobado",
+  "recorded_at_utc": "2026-10-09T21:09:33.790580+00:00",
+  "scope": "Un smoke y doce ejecuciones de la configuración aprobada, sin reintentos."
+}

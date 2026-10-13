@@ -1,0 +1,28 @@
+{
+  "files": [
+    {
+      "path": "development_predictions.csv",
+      "sha256": "9173a735410a4bf7c11894818e6559b7f9e05280390d54e4ca732ed58ee25f63"
+    },
+    {
+      "path": "environment.json",
+      "sha256": "a142af7d8a787d1c2e85ceabbb0029d9fe21b8052448f629b2949bc705d35b7a"
+    },
+    {
+      "path": "final_predictions.csv",
+      "sha256": "e1bf7bdf30940569c80c966c2a07e11035af201fbeb0c24d37be9aa0ca2d47cf"
+    },
+    {
+      "path": "result.json",
+      "sha256": "4468aa321f7958ee701dcb8ea35e58820cafd73875949d53b0ff2bdeb0807014"
+    },
+    {
+      "path": "strategy.json",
+      "sha256": "c2a1c491f7ae545098dfc5dd886094a82c77a41dce0db260d6a752a6b5e1e873"
+    },
+    {
+      "path": "weekly_counts.csv",
+      "sha256": "73e9543140b95b87430385d79ae7220311a892d86b88f1c790294ed5990c2e6c"
+    }
+  ]
+}

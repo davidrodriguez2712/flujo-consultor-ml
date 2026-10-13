@@ -1,0 +1,44 @@
+```json
+{
+  "status": "MUST_CORRECT",
+  "findings": [
+    {
+      "statement": "analysis/plan.md incorpora una sensibilidad por tipo de vehículo que no figura en la versión congelada. El plan vivo dice 'Comparar consumo por ruta semanal y añadir sensibilidad por tipo de vehículo', mientras que reports/frozen-01/plan.md solo dice 'Comparar consumo por ruta semanal'.",
+      "evidence_paths": ["analysis/plan.md", "reports/frozen-01/plan.md"]
+    },
+    {
+      "statement": "El escaneo de integridad confirma la divergencia: el hash observado de analysis/plan.md (0a24a358...) es distinto del hash del plan congelado (66decbbb...), que coincide con el hash registrado en el manifest.",
+      "evidence_paths": ["reports/integrity-scan.json", "reports/manifest-01.json", "analysis/plan.md", "reports/frozen-01/plan.md"]
+    },
+    {
+      "statement": "El manifest-01 solo cubre reports/frozen-01/plan.md. La segmentación por vehículo no está incluida en ningún paquete congelado, por lo que no tiene trazabilidad de versión ni de contenido aprobado.",
+      "evidence_paths": ["reports/manifest-01.json"]
+    },
+    {
+      "statement": "El registro de aprobación (approval-01.json, marcado como fixture) referencia manifest-01 con manifest_sha256 41299ac9.... Esa aprobación corresponde al paquete anterior y no puede extenderse a la nueva segmentación. Además, no se ha verificado el hash del manifest porque no ejecuté cálculos de SHA-256 ni consulté archivos.",
+      "evidence_paths": ["reports/approval-01.json", "reports/manifest-01.json"]
+    },
+    {
+      "statement": "La tarea solicitada, 'Analizar segmentación por vehículo', depende de un plan que todavía no está congelado, aprobado ni incluido en un manifest, por lo que no cumple el criterio de inicio de trabajo dependiente.",
+      "evidence_paths": ["analysis/plan.md", "reports/manifest-01.json", "reports/approval-01.json"]
+    }
+  ],
+  "proposed_actions": [
+    "No iniciar el análisis por vehículo hasta que el plan con segmentación quede congelado en una nueva versión y exista trazabilidad completa.",
+    "Congelar el plan actualizado en una ruta nueva (por ejemplo, reports/frozen-02/plan.md) sin modificar reports/frozen-01/plan.md ni manifest-01.json.",
+    "Preparar manifest-02.json con el hash SHA-256 del plan congelado nuevo, siguiendo la convención de bytes UTF-8 incluida en integrity-scan.json.",
+    "Solicitar al owner una nueva decisión de aprobación sobre manifest-02; no reutilizar approval-01.json para la segmentación.",
+    "Actualizar integrity-scan.json con los hashes observados de analysis/plan.md y del nuevo plan congelado, y registrar la discrepancia con frozen-01 como cambio de alcance pendiente.",
+    "Redactar la tarea ANALYSIS-002 con task_id, project_id, objetivo, inputs (plan congelado nuevo y fuentes autorizadas), write_scope (rutas de salida acordadas), restricciones, criterios de aceptación y output esperado. Dejar pendientes los campos que no estén confirmados.",
+    "Mantener la aprobación de frozen-01 limitada a su alcance original y no tratarla como gate para la segmentación por vehículo."
+  ],
+  "next_step": "Obtener la decisión del owner sobre el plan con segmentación por vehículo, congelarlo como nueva versión con su manifest e integridad verificada, y después redactar la tarea ANALYSIS-002.",
+  "limitations": [
+    "No se verificó el SHA-256 de manifest-01.json ni de los planes; solo se compararon los valores registrados en los artifacts.",
+    "No se verificó la autenticidad ni la vigencia del registro de aprobación, que está marcado como fixture; no se aceptó ningún gate.",
+    "No se conocen el owner definitivo de la segmentación ni los criterios de aceptación de la nueva tarea; se dejan como pendientes.",
+    "La revisión se limita al contenido del expediente proporcionado y no incluye datos de flota ni resultados de análisis.",
+    "No se han realizado cambios de archivos, publicación ni uso operativo."
+  ]
+}
+```

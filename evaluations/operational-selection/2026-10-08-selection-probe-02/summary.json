@@ -1,0 +1,42 @@
+{
+  "baseline": {
+    "calls": 12,
+    "runtime_success": 12,
+    "schema_conformant": 12,
+    "model_matches": 12,
+    "outputs_all_checked_fields_match": 12,
+    "members_match": 12,
+    "order_match": 12,
+    "ranking_match": 12,
+    "capacity_match": 12,
+    "value_match": 12,
+    "feasibility_match": 12,
+    "optimality_match": 12,
+    "causal_status_match": 12,
+    "metrics_match": 12,
+    "gate_matches": 12,
+    "cost_usd_reported": 0.4061322,
+    "wall_seconds": 180.317,
+    "provider_duration_ms": 168137
+  },
+  "treatment": {
+    "calls": 12,
+    "runtime_success": 12,
+    "schema_conformant": 12,
+    "model_matches": 12,
+    "outputs_all_checked_fields_match": 12,
+    "members_match": 12,
+    "order_match": 12,
+    "ranking_match": 12,
+    "capacity_match": 12,
+    "value_match": 12,
+    "feasibility_match": 12,
+    "optimality_match": 12,
+    "causal_status_match": 12,
+    "metrics_match": 12,
+    "gate_matches": 12,
+    "cost_usd_reported": 0.4543664,
+    "wall_seconds": 206.286,
+    "provider_duration_ms": 194283
+  }
+}

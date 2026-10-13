@@ -1,0 +1,382 @@
+{
+  "condition": "treatment",
+  "user_messages": 0,
+  "credential_loaded": false,
+  "runtime_version": "2.1.296 (Claude Code)",
+  "argv": [
+    "/Users/davidrodriguez/.local/bin/claude",
+    "--print",
+    "--input-format",
+    "stream-json",
+    "--output-format",
+    "stream-json",
+    "--verbose",
+    "--restricted",
+    "--setting-sources",
+    "project",
+    "--settings",
+    "{\"disableBundledSkills\":true}",
+    "--strict-mcp-config",
+    "--mcp-config",
+    "{\"mcpServers\":{}}",
+    "--no-session-persistence",
+    "--tools",
+    "Read,Write,Skill",
+    "--permission-mode",
+    "dontAsk",
+    "--permission-prompts",
+    "none"
+  ],
+  "discovery_status": "FAIL",
+  "initialize_response": {
+    "subtype": "success",
+    "request_id": "acos-native-init",
+    "response": {
+      "commands": [
+        {
+          "name": "doctor",
+          "description": "Health-check the user's Claude Code setup and fix issues: diagnose installation health — what the `claude doctor` terminal diagnostics cover — from local data (duplicate or leftover installs, PATH, unparseable settings files, broken or colliding agent definitions, skills whose frontmatter fails to parse); find unused skills, MCP servers, and plugins versus their context cost and disable dead weight; deduplicate local CLAUDE.md files against checked-in ones; trim checked-in CLAUDE.md files by cutting content a session could derive from the codebase (directory layouts, tech-stack lists, architecture overviews) while keeping gotchas, rationale, and non-standard conventions; migrate always-loaded CLAUDE.md guidance into lazy skills and nested CLAUDE.md files; flag slow hooks and context-heavy extensions; check the installed version is current; make auto mode the default permission mode; and pre-approve frequently denied read-only commands. Use when the user asks for a doctor run, checkup, audit, tune-up, or cleanup of their Claude Code setup or configuration.",
+          "argumentHint": "[prompt-audit [<path>]]",
+          "aliases": [
+            "checkup"
+          ],
+          "builtin": true
+        },
+        {
+          "name": "plugin-authoring",
+          "description": "Make a mod: a change to Claude's own interface or behaviour, such as a live pane or panel, a band above the prompt, a status line, a toast, a slash command, or a hook on tool calls or prompts. Use to make, change or debug a mod or its hooks module.",
+          "argumentHint": "",
+          "builtin": true
+        },
+        {
+          "name": "agents",
+          "description": "(removed) Ask Claude to create/manage subagents, or edit .claude/agents/",
+          "argumentHint": "",
+          "builtin": true
+        },
+        {
+          "name": "auto-mode-setup",
+          "description": "Teach auto mode about your environment, plus optional rule tweaks",
+          "argumentHint": "[--request-id <uuid>] (--wizard posture=… scope=… depth=… --propose | --expect-sha256 <64-hex> --apply-file <path>)",
+          "builtin": true
+        },
+        {
+          "name": "autocompact",
+          "description": "Configure the auto-compact window size",
+          "argumentHint": "[auto|<tokens>]",
+          "builtin": true
+        },
+        {
+          "name": "clear",
+          "description": "Start a new session with empty context; previous session stays on disk (resumable with /resume)",
+          "argumentHint": "[name]",
+          "aliases": [
+            "reset",
+            "new"
+          ],
+          "builtin": true
+        },
+        {
+          "name": "color",
+          "description": "Set the prompt bar color for this session",
+          "argumentHint": "[red|blue|green|yellow|purple|orange|pink|cyan|default]",
+          "builtin": true
+        },
+        {
+          "name": "compact",
+          "description": "Free up context by summarizing the conversation so far",
+          "argumentHint": "<optional custom summarization instructions>",
+          "builtin": true
+        },
+        {
+          "name": "config",
+          "description": "Set a setting by key",
+          "argumentHint": "key=value",
+          "aliases": [
+            "settings"
+          ],
+          "builtin": true
+        },
+        {
+          "name": "output-style",
+          "description": "List output styles or switch to one",
+          "argumentHint": "[style]",
+          "builtin": true
+        },
+        {
+          "name": "context",
+          "description": "Show current context usage",
+          "argumentHint": "",
+          "builtin": true
+        },
+        {
+          "name": "effort",
+          "description": "Set effort level for model usage",
+          "argumentHint": "<low|medium|high|xhigh|max|auto|ultracode [on|off]>",
+          "builtin": true
+        },
+        {
+          "name": "fast",
+          "description": "Toggle fast mode (Opus 5.5)",
+          "argumentHint": "[on|off]",
+          "builtin": true
+        },
+        {
+          "name": "focus",
+          "description": "Toggle focus view: just your prompt, summary, and response",
+          "argumentHint": "[on|off]",
+          "builtin": true
+        },
+        {
+          "name": "heapdump",
+          "description": "Dump the JS heap to the Desktop; on Linux with no Desktop folder, the home directory",
+          "argumentHint": "",
+          "builtin": true
+        },
+        {
+          "name": "init",
+          "description": "Initialize a new CLAUDE.md file with codebase documentation",
+          "argumentHint": "",
+          "builtin": true
+        },
+        {
+          "name": "mcp",
+          "description": "Manage MCP servers",
+          "argumentHint": "[reconnect|enable|disable [<server>|all]]",
+          "builtin": true
+        },
+        {
+          "name": "model",
+          "description": "Set the AI model for Claude Code",
+          "argumentHint": "<model>",
+          "builtin": true
+        },
+        {
+          "name": "__remote-workflow",
+          "description": "Run the workflow script delivered in this session environment (server-launched sessions only)",
+          "argumentHint": "",
+          "builtin": true
+        },
+        {
+          "name": "workflow-launch-exec",
+          "description": "Execute a server-launched workflow handoff (workflow_launch event sessions only)",
+          "argumentHint": "",
+          "builtin": true
+        },
+        {
+          "name": "reload-plugins",
+          "description": "Activate pending plugin changes in the current session",
+          "argumentHint": "[--force]",
+          "builtin": true
+        },
+        {
+          "name": "reload-skills",
+          "description": "Pick up skills added or changed on disk during this session",
+          "argumentHint": "",
+          "builtin": true
+        },
+        {
+          "name": "rename",
+          "description": "Rename the current conversation",
+          "argumentHint": "[name]",
+          "aliases": [
+            "name"
+          ],
+          "builtin": true
+        },
+        {
+          "name": "security-review",
+          "description": "Complete a security review of the pending changes on the current branch",
+          "argumentHint": "",
+          "builtin": true
+        },
+        {
+          "name": "usage",
+          "description": "Show session cost, plan usage, and what's contributing to your limits",
+          "argumentHint": "",
+          "aliases": [
+            "cost",
+            "stats"
+          ],
+          "builtin": true
+        },
+        {
+          "name": "insights",
+          "description": "Generate a report analyzing your Claude Code sessions",
+          "argumentHint": "",
+          "builtin": true
+        },
+        {
+          "name": "recap",
+          "description": "Generate a one-line session recap now",
+          "argumentHint": "",
+          "builtin": true
+        },
+        {
+          "name": "goal",
+          "description": "Set a goal — keep working until the condition is met",
+          "argumentHint": "",
+          "builtin": true
+        },
+        {
+          "name": "list-agents",
+          "description": "List subagents, teammates, and other Claude sessions you can message",
+          "argumentHint": "",
+          "aliases": [
+            "peers"
+          ],
+          "builtin": true
+        },
+        {
+          "name": "team-onboarding",
+          "description": "Help teammates ramp on Claude Code with a guide from your usage",
+          "argumentHint": "",
+          "builtin": true
+        }
+      ],
+      "agents": [
+        {
+          "name": "claude",
+          "description": "Catch-all for any task that doesn't fit a more specific agent. FleetView's default when no agent name is typed."
+        },
+        {
+          "name": "Explore",
+          "description": "Fast read-only search agent for locating code. Use it to find files by pattern (eg. \"src/components/**/*.tsx\"), grep for symbols or keywords (eg. \"API endpoints\"), or answer \"where is X defined / which files reference Y.\" Do NOT use it for code review, design-doc auditing, cross-file consistency checks, or open-ended analysis — it reads excerpts rather than whole files and will miss content past its read window. When calling, specify search breadth: \"quick\" for a single targeted lookup, \"medium\" for moderate exploration, or \"very thorough\" to search across multiple locations and naming conventions.",
+          "model": "inherit"
+        },
+        {
+          "name": "general-purpose",
+          "description": "General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you."
+        },
+        {
+          "name": "Plan",
+          "description": "Software architect agent for designing implementation plans. Use this when you need to plan the implementation strategy for a task. Returns step-by-step plans, identifies critical files, and considers architectural trade-offs.",
+          "model": "inherit"
+        },
+        {
+          "name": "statusline-setup",
+          "description": "Use this agent to configure the user's Claude Code status line setting.",
+          "model": "sonnet"
+        }
+      ],
+      "output_style": "default",
+      "available_output_styles": [
+        "default",
+        "Proactive",
+        "Concise",
+        "Explanatory",
+        "Learning"
+      ],
+      "user_output_styles_dir": "/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-native-discovery02-cdykazw7/treatment-config/output-styles",
+      "models": [
+        {
+          "value": "default",
+          "resolvedModel": "claude-opus-5-5",
+          "displayName": "Default (recommended)",
+          "description": "Use the default model (currently Opus 5.5) · $4/$20 per Mtok",
+          "supportsEffort": true,
+          "supportedEffortLevels": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ],
+          "supportsAdaptiveThinking": true,
+          "supportsFastMode": true,
+          "supportsAutoMode": true
+        },
+        {
+          "value": "opus",
+          "resolvedModel": "claude-opus-5-5",
+          "displayName": "Opus",
+          "description": "Opus 5.5 · Best for everyday, complex tasks · $4/$20 per Mtok",
+          "supportsEffort": true,
+          "supportedEffortLevels": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ],
+          "supportsAdaptiveThinking": true,
+          "supportsFastMode": true,
+          "supportsAutoMode": true
+        },
+        {
+          "value": "fable",
+          "resolvedModel": "claude-fable-5-1",
+          "displayName": "Fable",
+          "description": "Fable 5.1 · Most capable for your hardest and longest-running tasks · $10/$50 per Mtok",
+          "supportsEffort": true,
+          "supportedEffortLevels": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ],
+          "supportsAdaptiveThinking": true,
+          "supportsAutoMode": true
+        },
+        {
+          "value": "sonnet",
+          "resolvedModel": "claude-sonnet-5-5",
+          "displayName": "Sonnet",
+          "description": "Sonnet 5.5 · Efficient for routine tasks · $2/$10 per Mtok",
+          "supportsEffort": true,
+          "supportedEffortLevels": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ],
+          "supportsAdaptiveThinking": true,
+          "supportsAutoMode": true
+        },
+        {
+          "value": "haiku",
+          "resolvedModel": "claude-haiku-5-5",
+          "displayName": "Haiku",
+          "description": "Haiku 5.5 · Fastest for quick answers · $0.10/$0.50 per Mtok ($0.50/$2.50 for prompts over 100k)",
+          "supportsEffort": true,
+          "supportedEffortLevels": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ],
+          "supportsAdaptiveThinking": true,
+          "supportsAutoMode": true
+        }
+      ],
+      "account": {
+        "tokenSource": "none",
+        "apiProvider": "firstParty"
+      },
+      "pid": 16069,
+      "claude_code_version": "2.1.296",
+      "current_permission_mode": "dontAsk",
+      "feedback_mode": {
+        "kind": "disabled"
+      },
+      "analytics_disabled": true,
+      "remote_control_auto_enable": false,
+      "remote_control_auto_connect_default": false,
+      "remote_control_available": false,
+      "remote_control_auto_on_by_default": false,
+      "ide_rc_auto_enable_gate": false,
+      "fast_mode_state": "off",
+      "fast_mode_disabled_reason": "sdk_opt_in_required",
+      "session_state": "idle",
+      "capabilities": [
+        "ui_surface_v1"
+      ]
+    },
+    "pending_permission_requests": [],
+    "pending_user_dialog_requests": []
+  },
+  "detect_leakage_count": 0
+}

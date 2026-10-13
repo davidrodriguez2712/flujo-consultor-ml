@@ -1,0 +1,9 @@
+{
+  "status": "APPROVED_PREPARATION_ONLY",
+  "by": "David",
+  "user_reply": "aprobado",
+  "at_utc": "2026-10-10T10:33:17.164686+00:00",
+  "scope": "Preparar nueva configuración con smoke explícito y límite acumulado US$0.10; no calls.",
+  "prepared_execution_manifest_sha256": "76ce8d316d09bd679e4efeea012792092c71640a134e7de326f4cc1226fc5a7e",
+  "paid_execution_authorized": false
+}

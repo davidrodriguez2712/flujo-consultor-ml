@@ -1,0 +1,142 @@
+{
+  "platform": "Windows-10-10.0.20348-SP0",
+  "machine": "AMD64",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "wheel_sha256": "708e44382726ff6128da18f45b1aa8cf4cc50e77a82c30962ef56f501a0223ba",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\tool\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "install",
+        "D:\\a\\agentic-consulting-os\\agentic-consulting-os\\evidence\\wheel\\agentic_consulting_os-0.1.0-py3-none-any.whl"
+      ],
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "stdout": "Processing d:\\a\\agentic-consulting-os\\agentic-consulting-os\\evidence\\wheel\\agentic_consulting_os-0.1.0-py3-none-any.whl\nCollecting pydantic<3,>=2 (from agentic-consulting-os==0.1.0)\n  Using cached pydantic-2.14.0-py3-none-any.whl.metadata (131 kB)\nCollecting PyYAML<7,>=6 (from agentic-consulting-os==0.1.0)\n  Using cached pyyaml-6.0.3-cp311-cp311-win_amd64.whl.metadata (2.4 kB)\nCollecting platformdirs<5,>=4 (from agentic-consulting-os==0.1.0)\n  Using cached platformdirs-4.12.4-py3-none-any.whl.metadata (5.5 kB)\nCollecting annotated-types>=0.6.0 (from pydantic<3,>=2->agentic-consulting-os==0.1.0)\n  Using cached annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)\nCollecting pydantic-core==2.50.0 (from pydantic<3,>=2->agentic-consulting-os==0.1.0)\n  Using cached pydantic_core-2.50.0-cp311-cp311-win_amd64.whl.metadata (6.7 kB)\nCollecting typing-extensions>=4.16.0 (from pydantic<3,>=2->agentic-consulting-os==0.1.0)\n  Using cached typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)\nCollecting typing-inspection>=0.4.4 (from pydantic<3,>=2->agentic-consulting-os==0.1.0)\n  Using cached typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)\nUsing cached platformdirs-4.12.4-py3-none-any.whl (32 kB)\nUsing cached pydantic-2.14.0-py3-none-any.whl (487 kB)\nUsing cached pydantic_core-2.50.0-cp311-cp311-win_amd64.whl (2.2 MB)\nUsing cached pyyaml-6.0.3-cp311-cp311-win_amd64.whl (158 kB)\nUsing cached annotated_types-0.8.0-py3-none-any.whl (13 kB)\nUsing cached typing_extensions-4.16.0-py3-none-any.whl (45 kB)\nUsing cached typing_inspection-0.4.4-py3-none-any.whl (14 kB)\nInstalling collected packages: typing-extensions, PyYAML, platformdirs, annotated-types, typing-inspection, pydantic-core, pydantic, agentic-consulting-os\nSuccessfully installed PyYAML-6.0.3 agentic-consulting-os-0.1.0 annotated-types-0.8.0 platformdirs-4.12.4 pydantic-2.14.0 pydantic-core-2.50.0 typing-extensions-4.16.0 typing-inspection-0.4.4\n",
+      "stderr": "\n[notice] A new release of pip is available: 24.0 -> 26.2.1\n[notice] To update, run: C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\tool\\Scripts\\python.exe -m pip install --upgrade pip\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\tool\\Scripts\\acos.exe",
+        "--version"
+      ],
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "stdout": "0.1.0\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\tool\\Scripts\\python.exe",
+        "-c",
+        "import acos,sys; from pathlib import Path; assert sys.prefix != sys.base_prefix; assert Path(acos.__file__).resolve().is_relative_to(Path(sys.prefix).resolve()); print(acos.__file__)"
+      ],
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "stdout": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\tool\\Lib\\site-packages\\acos\\__init__.py\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\tool\\Scripts\\acos.exe",
+        "init",
+        "--profile-file",
+        "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\origin with spaces\\profile.yaml"
+      ],
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "stdout": "Ruta Foundry local (vacío para continuar sin Foundry): Perfil propuesto:\n{\n  \"schema_version\": 1,\n  \"project\": {\n    \"slug\": \"research\",\n    \"name\": \"Research\",\n    \"client\": null,\n    \"industry\": null,\n    \"market\": null,\n    \"role\": null\n  },\n  \"engagement\": {\n    \"decision\": \"Evaluar entrada a un mercado\",\n    \"problem\": null,\n    \"success_metric\": null,\n    \"decision_owner\": null,\n    \"users\": null,\n    \"archetypes\": [\n      \"DIAGNOSE\"\n    ],\n    \"delivery_modes\": [\n      \"research\"\n    ],\n    \"current_stage\": \"discovery\",\n    \"open_questions\": []\n  },\n  \"data\": {\n    \"sources\": [],\n    \"characteristics\": {}\n  },\n  \"constraints\": [],\n  \"deliverables\": [\n    \"executive_deck\"\n  ],\n  \"runtimes\": [\n    \"codex\",\n    \"claude_code\"\n  ]\n}\nClasificación propuesta:\n{\n  \"archetypes\": [\n    \"DIAGNOSE\"\n  ],\n  \"proposals\": [\n    {\n      \"archetype\": \"DIAGNOSE\",\n      \"rule_id\": \"declared-archetype\",\n      \"signal\": \"engagement.archetypes contiene DIAGNOSE\",\n      \"certainty\": \"explicit\"\n    }\n  ],\n  \"unresolved\": []\n}\nConfirma clasificación/perfil [s], corrige arquetipos separados por coma, o cancela [n]: Proyecto: Research\nDecisión: Evaluar entrada a un mercado\nEtapa inicial: discovery\nMódulos: consulting_core, research, executive_delivery\nCapacidades y cobertura:\n- problem-framing: partial — Sin skill operativa compatible\n  Límites: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\n- evidence-synthesis: partial — Sin skill operativa compatible\n  Límites: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\n- research-comparison: partial — Sin skill operativa compatible\n  Límites: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\n- executive-synthesis: partial — Sin skill operativa compatible\n  Límites: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\n- foundry-missing: Foundry no disponible; continuar con pautas OS y gaps.\nArchivos propuestos:\n  .acos/manifest.yaml\n  .acos/modules.yaml\n  .acos/project-profile.yaml\n  .acos/state.yaml\n  AGENTS.md\n  CAPABILITIES.md\n  CLAUDE.md\n  DECISIONS.md\n  MANUAL.md\n  PROJECT.md\n  STATE.md\n  TASKS.md\n  analysis/research_plan.md\n  context/business_context.md\n  decision/recommendation.md\n  delivery/delivery_contract.md\n  delivery/storyline.md\n  evidence/findings.md\n  framing/framing.yaml\n  handoff/runbook.md\n  playbooks/research-impact-delivery.md\n  workflow/capability-lifecycle.md\n  workflow/execution-and-qa.md\n  workflow/isolation-and-context.md\n  workflow/project-lifecycle.md\nConfirmar incluye uso provisional de los snapshots experimentales indicados; no los promueve.\nDestino: C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\origin with spaces\\research\n¿Confirmar composición y generar workspace? [s/N]: Proyecto listo: C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\origin with spaces\\research\nSiguiente: cd \"C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\origin with spaces\\research\"\nLee MANUAL.md o ejecuta acos next.\nRuntime: codex\nRuntime: claude\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\tool\\Scripts\\acos.exe",
+        "status"
+      ],
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "stdout": "{\n  \"project\": \"Research\",\n  \"stage\": \"discovery\",\n  \"status\": \"NOT_STARTED\",\n  \"completed\": [],\n  \"total_stages\": 7,\n  \"blockers\": [],\n  \"open_decisions\": [],\n  \"next_gates\": [\n    \"discovery\"\n  ],\n  \"integrity\": \"OK\",\n  \"findings\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\tool\\Scripts\\acos.exe",
+        "next"
+      ],
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "stdout": "{\n  \"stage\": \"discovery\",\n  \"status\": \"NOT_STARTED\",\n  \"objective\": \"Comprender contexto, stakeholders, fuentes y restricciones.\",\n  \"questions\": [\n    \"¿Quién decide y qué acción cambiará?\",\n    \"¿Qué fuentes y restricciones existen?\"\n  ],\n  \"outputs\": [\n    \"context/business_context.md\"\n  ],\n  \"capabilities\": [\n    {\n      \"id\": \"problem-framing\",\n      \"coverage\": \"partial\",\n      \"artifact\": \"playbook\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"id\": \"evidence-synthesis\",\n      \"coverage\": \"partial\",\n      \"artifact\": \"playbook\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"id\": \"research-comparison\",\n      \"coverage\": \"partial\",\n      \"artifact\": \"playbook\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"id\": \"executive-synthesis\",\n      \"coverage\": \"partial\",\n      \"artifact\": \"playbook\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    }\n  ],\n  \"gaps\": [\n    {\n      \"capability\": \"problem-framing\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"fallback\": \"playbook\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"capability\": \"evidence-synthesis\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"fallback\": \"playbook\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"capability\": \"research-comparison\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"fallback\": \"playbook\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"capability\": \"executive-synthesis\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"fallback\": \"playbook\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    }\n  ],\n  \"gate\": \"Obtener evidencia y revisión humana antes de registrar un avance de etapa.\",\n  \"integrity\": \"OK\",\n  \"findings\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\tool\\Scripts\\acos.exe",
+        "validate"
+      ],
+      "expected_exit_code": 3,
+      "exit_code": 3,
+      "stdout": "{\n  \"status\": \"NEEDS_REVIEW\",\n  \"findings\": [\n    {\n      \"code\": \"human-review\",\n      \"message\": \"Revisión/evidencia pendiente para discovery\",\n      \"paths\": []\n    }\n  ],\n  \"evidence\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\tool\\Scripts\\acos.exe",
+        "status"
+      ],
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "stdout": "{\n  \"project\": \"Research\",\n  \"stage\": \"discovery\",\n  \"status\": \"NOT_STARTED\",\n  \"completed\": [],\n  \"total_stages\": 7,\n  \"blockers\": [],\n  \"open_decisions\": [],\n  \"next_gates\": [\n    \"discovery\"\n  ],\n  \"integrity\": \"OK\",\n  \"findings\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\tool\\Scripts\\acos.exe",
+        "next"
+      ],
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "stdout": "{\n  \"stage\": \"discovery\",\n  \"status\": \"NOT_STARTED\",\n  \"objective\": \"Comprender contexto, stakeholders, fuentes y restricciones.\",\n  \"questions\": [\n    \"¿Quién decide y qué acción cambiará?\",\n    \"¿Qué fuentes y restricciones existen?\"\n  ],\n  \"outputs\": [\n    \"context/business_context.md\"\n  ],\n  \"capabilities\": [\n    {\n      \"id\": \"problem-framing\",\n      \"coverage\": \"partial\",\n      \"artifact\": \"playbook\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"id\": \"evidence-synthesis\",\n      \"coverage\": \"partial\",\n      \"artifact\": \"playbook\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"id\": \"research-comparison\",\n      \"coverage\": \"partial\",\n      \"artifact\": \"playbook\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"id\": \"executive-synthesis\",\n      \"coverage\": \"partial\",\n      \"artifact\": \"playbook\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    }\n  ],\n  \"gaps\": [\n    {\n      \"capability\": \"problem-framing\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"fallback\": \"playbook\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"capability\": \"evidence-synthesis\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"fallback\": \"playbook\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"capability\": \"research-comparison\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"fallback\": \"playbook\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    },\n    {\n      \"capability\": \"executive-synthesis\",\n      \"reason\": \"Sin skill operativa compatible\",\n      \"fallback\": \"playbook\",\n      \"limits\": \"Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\"\n    }\n  ],\n  \"gate\": \"Obtener evidencia y revisión humana antes de registrar un avance de etapa.\",\n  \"integrity\": \"OK\",\n  \"findings\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\tool\\Scripts\\acos.exe",
+        "validate"
+      ],
+      "expected_exit_code": 3,
+      "exit_code": 3,
+      "stdout": "{\n  \"status\": \"NEEDS_REVIEW\",\n  \"findings\": [\n    {\n      \"code\": \"human-review\",\n      \"message\": \"Revisión/evidencia pendiente para discovery\",\n      \"paths\": []\n    }\n  ],\n  \"evidence\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\tool\\Scripts\\acos.exe",
+        "init",
+        "--here",
+        "--profile-file",
+        "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\origin with spaces\\profile.yaml"
+      ],
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "stdout": "Ruta Foundry local (vacío para continuar sin Foundry): Perfil propuesto:\n{\n  \"schema_version\": 1,\n  \"project\": {\n    \"slug\": \"research\",\n    \"name\": \"Research\",\n    \"client\": null,\n    \"industry\": null,\n    \"market\": null,\n    \"role\": null\n  },\n  \"engagement\": {\n    \"decision\": \"Evaluar entrada a un mercado\",\n    \"problem\": null,\n    \"success_metric\": null,\n    \"decision_owner\": null,\n    \"users\": null,\n    \"archetypes\": [\n      \"DIAGNOSE\"\n    ],\n    \"delivery_modes\": [\n      \"research\"\n    ],\n    \"current_stage\": \"discovery\",\n    \"open_questions\": []\n  },\n  \"data\": {\n    \"sources\": [],\n    \"characteristics\": {}\n  },\n  \"constraints\": [],\n  \"deliverables\": [\n    \"executive_deck\"\n  ],\n  \"runtimes\": [\n    \"codex\",\n    \"claude_code\"\n  ]\n}\nClasificación propuesta:\n{\n  \"archetypes\": [\n    \"DIAGNOSE\"\n  ],\n  \"proposals\": [\n    {\n      \"archetype\": \"DIAGNOSE\",\n      \"rule_id\": \"declared-archetype\",\n      \"signal\": \"engagement.archetypes contiene DIAGNOSE\",\n      \"certainty\": \"explicit\"\n    }\n  ],\n  \"unresolved\": []\n}\nConfirma clasificación/perfil [s], corrige arquetipos separados por coma, o cancela [n]: Proyecto: Research\nDecisión: Evaluar entrada a un mercado\nEtapa inicial: discovery\nMódulos: consulting_core, research, executive_delivery\nCapacidades y cobertura:\n- problem-framing: partial — Sin skill operativa compatible\n  Límites: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\n- evidence-synthesis: partial — Sin skill operativa compatible\n  Límites: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\n- research-comparison: partial — Sin skill operativa compatible\n  Límites: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\n- executive-synthesis: partial — Sin skill operativa compatible\n  Límites: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\n- foundry-missing: Foundry no disponible; continuar con pautas OS y gaps.\nArchivos propuestos:\n  .acos/manifest.yaml\n  .acos/modules.yaml\n  .acos/project-profile.yaml\n  .acos/state.yaml\n  AGENTS.md\n  CAPABILITIES.md\n  CLAUDE.md\n  DECISIONS.md\n  MANUAL.md\n  PROJECT.md\n  STATE.md\n  TASKS.md\n  analysis/research_plan.md\n  context/business_context.md\n  decision/recommendation.md\n  delivery/delivery_contract.md\n  delivery/storyline.md\n  evidence/findings.md\n  framing/framing.yaml\n  handoff/runbook.md\n  playbooks/research-impact-delivery.md\n  workflow/capability-lifecycle.md\n  workflow/execution-and-qa.md\n  workflow/isolation-and-context.md\n  workflow/project-lifecycle.md\nConfirmar incluye uso provisional de los snapshots experimentales indicados; no los promueve.\nDestino: C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\here\n¿Confirmar composición y generar workspace? [s/N]: Proyecto listo: C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\here\nSiguiente: cd \"C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\here\"\nLee MANUAL.md o ejecuta acos next.\nRuntime: codex\nRuntime: claude\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\tool\\Scripts\\acos.exe",
+        "init",
+        "--here",
+        "--profile-file",
+        "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\origin with spaces\\profile.yaml"
+      ],
+      "expected_exit_code": 4,
+      "exit_code": 4,
+      "stdout": "Ruta Foundry local (vacío para continuar sin Foundry): Perfil propuesto:\n{\n  \"schema_version\": 1,\n  \"project\": {\n    \"slug\": \"research\",\n    \"name\": \"Research\",\n    \"client\": null,\n    \"industry\": null,\n    \"market\": null,\n    \"role\": null\n  },\n  \"engagement\": {\n    \"decision\": \"Evaluar entrada a un mercado\",\n    \"problem\": null,\n    \"success_metric\": null,\n    \"decision_owner\": null,\n    \"users\": null,\n    \"archetypes\": [\n      \"DIAGNOSE\"\n    ],\n    \"delivery_modes\": [\n      \"research\"\n    ],\n    \"current_stage\": \"discovery\",\n    \"open_questions\": []\n  },\n  \"data\": {\n    \"sources\": [],\n    \"characteristics\": {}\n  },\n  \"constraints\": [],\n  \"deliverables\": [\n    \"executive_deck\"\n  ],\n  \"runtimes\": [\n    \"codex\",\n    \"claude_code\"\n  ]\n}\nClasificación propuesta:\n{\n  \"archetypes\": [\n    \"DIAGNOSE\"\n  ],\n  \"proposals\": [\n    {\n      \"archetype\": \"DIAGNOSE\",\n      \"rule_id\": \"declared-archetype\",\n      \"signal\": \"engagement.archetypes contiene DIAGNOSE\",\n      \"certainty\": \"explicit\"\n    }\n  ],\n  \"unresolved\": []\n}\nConfirma clasificación/perfil [s], corrige arquetipos separados por coma, o cancela [n]: Proyecto: Research\nDecisión: Evaluar entrada a un mercado\nEtapa inicial: discovery\nMódulos: consulting_core, research, executive_delivery\nCapacidades y cobertura:\n- problem-framing: partial — Sin skill operativa compatible\n  Límites: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\n- evidence-synthesis: partial — Sin skill operativa compatible\n  Límites: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\n- research-comparison: partial — Sin skill operativa compatible\n  Límites: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\n- executive-synthesis: partial — Sin skill operativa compatible\n  Límites: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye evidencia específica.\n- foundry-missing: Foundry no disponible; continuar con pautas OS y gaps.\nArchivos propuestos:\n  .acos/manifest.yaml\n  .acos/modules.yaml\n  .acos/project-profile.yaml\n  .acos/state.yaml\n  AGENTS.md\n  CAPABILITIES.md\n  CLAUDE.md\n  DECISIONS.md\n  MANUAL.md\n  PROJECT.md\n  STATE.md\n  TASKS.md\n  analysis/research_plan.md\n  context/business_context.md\n  decision/recommendation.md\n  delivery/delivery_contract.md\n  delivery/storyline.md\n  evidence/findings.md\n  framing/framing.yaml\n  handoff/runbook.md\n  playbooks/research-impact-delivery.md\n  workflow/capability-lifecycle.md\n  workflow/execution-and-qa.md\n  workflow/isolation-and-context.md\n  workflow/project-lifecycle.md\nConfirmar incluye uso provisional de los snapshots experimentales indicados; no los promueve.\nDestino: C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\acos installed smoke xesthnnw\\collision\nConflictos antes de escribir: Archivo existente: MANUAL.md\n",
+      "stderr": ""
+    }
+  ],
+  "passed": true,
+  "scope": "CLI instalada sin Foundry ni runtimes LLM; no evaluación de eficacia de skills."
+}

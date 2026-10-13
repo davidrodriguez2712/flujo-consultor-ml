@@ -1,0 +1,21 @@
+{
+  "status": "STOPPED",
+  "started_at_utc": "2026-10-10T10:30:04.531276+00:00",
+  "runtime_version": "2.1.296 (Claude Code)",
+  "model": "claude-haiku-5-5",
+  "approved_new_budget_usd": 0.1,
+  "prior_study_estimated_usd": 0.04153488,
+  "completed_invocations": [
+    "smoke"
+  ],
+  "benchmark_completed": 0,
+  "semantic_review": "NOT_RUN",
+  "provider_requests": 1,
+  "usage_complete": true,
+  "known_cost_subtotal_usd": 0.000241,
+  "estimated_new_api_cost_usd": 0.000241,
+  "estimated_cumulative_studies_usd": 0.04177588,
+  "committed_budget_usd": 0.000241,
+  "stop_reason": "Smoke: fallo de contrato",
+  "finished_at_utc": "2026-10-10T10:30:07.123458+00:00"
+}

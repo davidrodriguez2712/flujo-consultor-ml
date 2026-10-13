@@ -1,0 +1,86 @@
+{
+  "started_at": "2026-10-12T23:24:31.987972+00:00",
+  "argv": [
+    "/Users/davidrodriguez/.local/bin/claude",
+    "-p",
+    "--restricted",
+    "--no-chrome",
+    "--no-session-persistence",
+    "--setting-sources",
+    "",
+    "--settings",
+    "{\"disableBundledSkills\": true, \"permissions\": {\"allow\": [\"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/nominal-simulated/L02-treatment/workspace/.runtime/check_inputs.py)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/nominal-simulated/L02-treatment/workspace/.runtime/plugin/.claude-plugin/plugin.json)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/nominal-simulated/L02-treatment/workspace/.runtime/plugin/skills/detect-leakage/SKILL.md)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/nominal-simulated/L02-treatment/workspace/.runtime/report-context.json)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/nominal-simulated/L02-treatment/workspace/case.md)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/nominal-simulated/L02-treatment/workspace/inputs/context.md)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/nominal-simulated/L02-treatment/workspace/inputs/observations.csv)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/nominal-simulated/L02-treatment/workspace/inputs/pipeline.py)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/nominal-simulated/L02-treatment/workspace/workflow.md)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/nominal-simulated/L02-treatment/workspace/reports/leakage/audit.md)\", \"Bash(/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python /Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/nominal-simulated/L02-treatment/workspace/.runtime/check_inputs.py)\", \"Skill(acos-eval:detect-leakage)\"], \"deny\": [\"Agent\", \"WebFetch\", \"WebSearch\", \"NotebookEdit\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/nominal-simulated/L02-treatment/workspace/inputs/**)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/nominal-simulated/L02-treatment/workspace/case.md)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/nominal-simulated/L02-treatment/workspace/.runtime/**)\"]}}",
+    "--strict-mcp-config",
+    "--mcp-config",
+    "{\"mcpServers\":{}}",
+    "--permission-mode",
+    "dontAsk",
+    "--permission-prompts",
+    "none",
+    "--tools",
+    "Read,Write,Bash,Skill",
+    "--max-turns",
+    "8",
+    "--effort",
+    "low",
+    "--model",
+    "claude-haiku-5-5",
+    "--system-prompt",
+    "Responde en español. Audita solo el expediente público, respeta sus límites y no aceptes gates. Usa únicamente herramientas y capacidades disponibles. Entrega el reporte y su ruta según case.md.",
+    "--output-format",
+    "stream-json",
+    "--verbose",
+    "--plugin-dir",
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/nominal-simulated/L02-treatment/workspace/.runtime/plugin"
+  ],
+  "runtime_success": true,
+  "condition": "treatment",
+  "skill_invoked": true,
+  "request_count": 4,
+  "prompt_sha256": "48677018d45f7227759b29cd49ef336213d1c127fb734aee554ca565c4500e9b",
+  "returncode": 0,
+  "tool_calls": [
+    {
+      "name": "Skill",
+      "input": {
+        "skill": "acos-eval:detect-leakage"
+      }
+    },
+    {
+      "name": "Bash",
+      "input": {
+        "command": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python /Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/nominal-simulated/L02-treatment/workspace/.runtime/check_inputs.py"
+      }
+    },
+    {
+      "name": "Write",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-12-native-regression-preparation-02/runs/nominal-simulated/L02-treatment/workspace/reports/leakage/audit.md",
+        "content": "---\nskill: detect-leakage\nversion: \"0.2.0\"\nfecha: 2026-10-12\nestado: infraestructura_simulada\ncondicion: treatment\ninputs:\n  - path: case.md\n    sha256: 71613379fe4387f19de862020de6bcdedec00623aeb452bbdff9491690b61d39\n  - path: inputs/context.md\n    sha256: 2d20272658305e9620515452c404e52d7b2015db0d0a30412287c4aa02a0c1b0\n  - path: inputs/observations.csv\n    sha256: cbcae4e4f891739ea487feda3f7e1eac58cf9fbe3303b774b5563770f7127462\n  - path: inputs/pipeline.py\n    sha256: 8fc757e4a3209efdedd3e1b8de6f0b77109557fb6335ac263cd3cea9b3788011\n---\n## Resumen\nRespuesta sintética; no se evalúa contenido del caso ni eficacia.\n## Hallazgos\nRespuesta sintética; no se evalúa contenido del caso ni eficacia.\n## Evidencia\nRespuesta sintética; no se evalúa contenido del caso ni eficacia.\n## Preguntas abiertas\nRespuesta sintética; no se evalúa contenido del caso ni eficacia.\n## Recomendaciones\nRespuesta sintética; no se evalúa contenido del caso ni eficacia.\n"
+      }
+    }
+  ],
+  "skill_invocation_requested": true,
+  "usage_known": true,
+  "report_persisted": true,
+  "report_sha256": "f8b4205b8fcce2df14c2837e9cdabdeb0039e0c542fdfe08fb710e954e731c96",
+  "model_usage": {
+    "claude-haiku-5-5": {
+      "inputTokens": 120,
+      "outputTokens": 120,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 7.2e-05,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "contract_success": true,
+  "execution_success": true,
+  "finished_at": "2026-10-12T23:24:33.194409+00:00"
+}

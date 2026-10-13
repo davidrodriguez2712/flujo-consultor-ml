@@ -1,0 +1,67 @@
+--- baseline/workflow.md
++++ treatment/workflow.md
+@@ -45,9 +45,25 @@
+   - "evidencia observable que define una salida suficiente"
+ output:
+   - "findings, consulta, artifact o handoff esperado"
++output_contract:
++  format: "Formato acordado: Markdown, JSON puro u otro"
++  schema: "Campos/tipos o referencia al esquema, si corresponde"
++  additional_text: "Indicar si se permite texto fuera del artifact"
+ ```
+ 
+ Los campos se ajustan a la tarea; no se inventan IDs, permisos, presupuesto o aceptación. Si falta un dato crítico, convertirlo en pregunta/bloqueo y detener la acción dependiente. La plantilla copiable está en [`../templates/project-and-task.md`](../templates/project-and-task.md).
++
++### Formato y consumidor de la salida
++
++El contrato específico de salida de la tarea controla su formato; los ejemplos Markdown del OS no autorizan a envolver una respuesta que exige JSON puro. Cuando se pide un único objeto JSON, entregar únicamente ese objeto: sin fences, prefacio, explicación posterior ni segundo objeto. Respetar campos, tipos y restricciones acordados. Para una salida destinada a una persona, usar el formato humano acordado; JSON no es obligatorio para todo engagement.
++
++Comprobar formato y contenido por separado. Una salida parseable puede ser incorrecta, y un diagnóstico acertado dentro de fences puede incumplir un contrato de JSON puro. Registrar y conservar una salida inválida; no quitar wrappers ni modificarla para presentarla como conforme. Si hace falta corregirla, registrar una versión nueva según la autorización y los límites de la tarea; no efectuar reintentos de pago por iniciativa propia. Un runtime con salida estructurada puede usarse cuando ese mecanismo esté configurado y verificado, sin confundir su validación de esquema con aceptación del contenido.
++
++### Preparar, ejecutar y aceptar
++
++Preparar una propuesta de tarea, revisar trazabilidad, actualizar un plan vivo y ejecutar análisis son acciones distintas. Dentro de un mandato de revisión/propuesta, redactar la siguiente tarea con sus pendientes y preguntas, aunque todavía falten decisiones necesarias para ejecutarla. Marcar esas dependencias sin inventar permisos ni presentar el borrador como listo para ejecución.
++
++Una copia histórica íntegra y su aceptación conservan su alcance aunque el plan vivo evolucione. Esa diferencia por sí sola no impide preparar la siguiente tarea ni obliga a congelar/aprobar cada edición del plan. Congelar la versión cuando sustente una aceptación o un entregable que lo requiera. Si la acción siguiente amplía alcance o depende de un gate pendiente, detener esa acción hasta la decisión correspondiente; la aceptación previa no se transfiere al alcance nuevo. La falta de autoridad para ejecutar no convierte automáticamente un expediente histórico coherente en evidencia defectuosa.
+ 
+ ### Criterios para delegar
+ 
+@@ -91,6 +107,8 @@
+ 4. Obtener revisión y aceptación humana del manifest exacto. La aprobación se guarda fuera del paquete para evitar que registrar la decisión altere la evidencia aprobada. En ACOS, referenciar ese registro y la evidencia en `gate_reviews` y DECISIONS antes de avanzar; conservar el esquema vigente del state.
+ 5. Continuar actualizando los documentos vivos. Una corrección de evidencia requiere una nueva versión y revisión del alcance afectado: conservar el original, indicar paquete anterior, archivos cambiados, motivo e impacto sobre la aceptación previa. No transferir una aprobación automáticamente a la versión nueva.
+ 
++Estos pasos se aplican al paquete sujeto a revisión/aceptación. No son un requisito previo para toda propuesta de trabajo ni para editar un plan vivo. Ante un cambio de plan, comprobar primero qué ruta/versión identifica el manifest: una discrepancia con el archivo incluido bloquea la revisión afectada; una diferencia respecto a un archivo vivo excluido no invalida la copia histórica íntegra.
++
+ Ejemplo de rutas para un gate de análisis:
+ 
+ ```text
+@@ -119,12 +137,20 @@
+ 
+ No imponer CSV ni un formato universal. Para SQL o servicios, identificar query, snapshot/versionado, parámetros y reglas de lectura equivalentes. Un hash prueba identidad de bytes, no que dos pipelines ejecutaron el mismo recorrido o que dos artifacts diferentes sean semánticamente equivalentes.
+ 
++### Reproducir, diagnosticar y corregir el método
++
++- **Reproducir:** repetir el método y sus fronteras originales bajo el contrato acordado, en un destino nuevo autorizado. Mantener writer/reader, precisión, parsing y reglas materiales, incluyendo comportamientos que parezcan cuestionables.
++- **Diagnosticar:** localizar la primera diferencia y explicar su efecto. No decidir que la fuente cruda es el valor canónico correcto si el contrato usa el valor representado tras persistencia. Una reproducción discrepante no demuestra por sí sola que el método original sea incorrecto para el negocio.
++- **Corregir el método:** proponer por separado el cambio, motivo, impacto y decisión requerida. Ejecutarlo solo dentro de la autorización correspondiente y registrar un nuevo run; no sustituye la reproducción fiel ni reescribe su resultado.
++
++Ejemplo: si el original escribe `14.96` con `.1f`, relee `15.0` y aplica `>= 15.0`, reproducir ese recorrido debe seleccionar el mismo caso. Aplicar el umbral directamente a `14.96` reproduce otro recorrido. Si se cuestiona el redondeo, registrar una pregunta sobre el método de negocio; no declarar automáticamente correcta la selección sobre la fuente cruda ni eliminar `.1f` para hacer pasar la reproducción.
++
+ ### Comparar y resolver discrepancias
+ 
+ 1. Reproducir en un destino nuevo autorizado, conservando el run original, sus outputs, manifest y decisiones. Resolver dependencias y documentar límites sin reabrir un holdout para seleccionar estrategias.
+ 2. Comparar en cada frontera: esquema/tipos, keys únicas, filas/cobertura y orden material. Alinear por keys explícitas antes de comparar valores; no ocultar duplicados o pérdidas mediante un join.
+ 3. Comparar outputs finales, métricas y decisiones. Definir qué debe ser exacto (por ejemplo, IDs seleccionados o regla de desempate) y qué admite tolerancia numérica, con unidades y motivo. Valores cercanos no garantizan el mismo ranking, threshold o split de un modelo.
+-4. Ante una discrepancia, registrar ambas ejecuciones, la primera frontera distinta y su impacto. Revisar entorno, parsing, serialización y método antes de atribuirla a ruido. Conservar el intento fallido y generar outputs nuevos para la corrección.
++4. Ante una discrepancia, registrar ambas ejecuciones, la primera frontera distinta y su impacto. Revisar entorno, parsing, serialización y método antes de atribuirla a ruido. Conservar el intento fallido. Si la reproducción omitió una frontera, repetir el writer/reader originales en un destino nuevo autorizado antes de proponer cambiar el método. Registrar por separado cualquier corrección metodológica y su autorización.
+ 5. No ampliar tolerancias para convertir un fallo en PASS. Si el criterio debe cambiar por una razón justificada, registrar la decisión, su efecto y la revisión humana del alcance afectado. Declarar qué parte pudo reproducirse y qué sigue pendiente.
+ 
+ Usar el registro de reproducción en [`../templates/delivery-and-handoff.md`](../templates/delivery-and-handoff.md). El procedimiento es explícito: `acos validate` no ejecuta el análisis ni verifica por sí mismo su reproducibilidad.
+@@ -150,6 +176,7 @@
+ - separa hechos observados, verificaciones deterministas, inferencias, supuestos y recomendaciones;
+ - documenta limitaciones, supuestos materiales y verificaciones pendientes;
+ - los checks definidos para la tarea se ejecutaron y sus resultados están representados con honestidad;
++- la salida cumple el formato específico acordado, con checks de formato y contenido separados;
+ - actualiza aceptación/owner/siguiente paso y el estado persistente cuando corresponde;
+ - no se realizaron acciones externas o de producción fuera del alcance autorizado.
+ 

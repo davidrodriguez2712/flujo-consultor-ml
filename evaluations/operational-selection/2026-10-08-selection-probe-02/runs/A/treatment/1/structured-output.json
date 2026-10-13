@@ -1,0 +1,41 @@
+{
+  "output_type": "risk_ranking",
+  "selection_status": "determined",
+  "eligible_count": 2,
+  "capacity_k": 3,
+  "effective_k": 2,
+  "selected_ids": [
+    "Y",
+    "Z"
+  ],
+  "risk_ranking_ids": [
+    "Y",
+    "Z"
+  ],
+  "total_cost": 4,
+  "expected_net_value": null,
+  "feasibility": "feasible",
+  "optimality": "not_assessed",
+  "causal_identification": {
+    "status": "not_requested",
+    "estimand": null,
+    "reason": "Solo se pide priorizar revisiones por riesgo; no se solicita estimar el efecto de intervenir. El ranking es descriptivo y no implica efecto causal de la revisi\u00f3n."
+  },
+  "metrics": {
+    "population_id": "eligible-A",
+    "precision": 0.5,
+    "recall": 1,
+    "lift": 1,
+    "precision_status": "identified",
+    "recall_status": "identified",
+    "lift_status": "identified",
+    "reason": "Poblaci\u00f3n eligible-A = {Y, Z} (X y V excluidos por no elegibles antes de ordenar, pese a sus scores altos). Labels completos: Z=1, Y=0, por lo que hay 1 positivo de 2 (prevalencia 0,5). Seleccionados = {Y, Z}: precision = 1/2 = 0,5; recall = 1/1 = 1; lift = 0,5/0,5 = 1. Con K efectivo igual a toda la poblaci\u00f3n elegible, la selecci\u00f3n no discrimina, por lo que lift=1 es esperable."
+  },
+  "reason": "Se filtr\u00f3 elegibilidad antes de ordenar: X y V no son elegibles y quedan fuera del ranking y de las m\u00e9tricas. Quedan 2 elegibles (Y y Z), menos que la capacidad K=3, que es un m\u00e1ximo y no una obligaci\u00f3n de llenado. Por eso se selecciona min(3,2)=2 y effective_k=2. Y y Z empatan en score 0,8; el desempate preespecificado por ID ascendente da el orden Y, Z, que se mantiene en la selecci\u00f3n. Coste total = 2 revisiones \u00d7 2 = 4. No hay presupuesto ni objetivo monetario, as\u00ed que no se define valor neto esperado (null) y la optimalidad no se eval\u00faa (ranking descriptivo). La factibilidad se cumple porque 2 \u2264 3 y todos son elegibles. Los scores se fijaron antes de los labels, lo que limita el riesgo de leakage en las m\u00e9tricas. Las m\u00e9tricas se calculan sobre solo 2 casos, as\u00ed que son muy poco informativas y no tienen incertidumbre cuantificada. La decisi\u00f3n requiere aprobaci\u00f3n humana y este output no autoriza ejecutar las revisiones.",
+  "open_questions": [
+    "\u00bfSe debe dejar sin usar el cupo restante (1 de 3) o existe una lista de reserva de elegibles fuera del lote actual (eligible-A)?",
+    "\u00bfSe necesita evaluar el efecto causal de la revisi\u00f3n? Eso exigir\u00eda un dise\u00f1o experimental, no este ranking.",
+    "\u00bfSe confirma que el desempate por ID ascendente es la regla aprobada, dado que Y y Z empatan en 0,8 y esto decide el orden?"
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

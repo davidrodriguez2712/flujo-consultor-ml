@@ -1,0 +1,35 @@
+{
+  "output_type": "value_selection",
+  "selection_status": "determined",
+  "eligible_count": 2,
+  "capacity_k": 5,
+  "effective_k": 0,
+  "selected_ids": [],
+  "risk_ranking_ids": [],
+  "total_cost": 0,
+  "expected_net_value": 0,
+  "feasibility": "feasible",
+  "optimality": "optimal",
+  "causal_identification": {
+    "status": "not_requested",
+    "estimand": null,
+    "reason": "El expediente no pide un efecto causal; solo una selecci\u00f3n por valor neto aditivo y m\u00e9tricas descriptivas."
+  },
+  "metrics": {
+    "population_id": "eligible-D",
+    "precision": null,
+    "recall": 0,
+    "lift": null,
+    "precision_status": "undefined",
+    "recall_status": "identified",
+    "lift_status": "undefined",
+    "reason": "La poblaci\u00f3n eligible-D est\u00e1 formada por P y Q, con labels completos: positivos = 1 (P) y prevalencia = 1/2 = 0,5. La selecci\u00f3n final es vac\u00eda. Precision = positivos seleccionados / seleccionados = 0/0, por lo que es indefinida. Recall = 0/1 = 0. Lift = precision/prevalencia, as\u00ed que tambi\u00e9n es indefinido porque no hay precision."
+  },
+  "reason": "R no es elegible (eligible=false) y se excluye antes de optimizar, aunque su valor sea 100. Entre P y Q, net_value ya es neto y no se resta el coste otra vez. P aporta -1 con coste 2 y Q aporta -3 con coste 1. Los subconjuntos posibles son: {} = 0 con coste 0; {P} = -1 con coste 2; {Q} = -3 con coste 1; {P,Q} = -4 con coste 3. Todos cumplen presupuesto \u226410 y capacidad \u22645. El m\u00e1ximo es 0, con el conjunto vac\u00edo, que adem\u00e1s tiene el menor coste. La capacidad es un m\u00e1ximo, no una obligaci\u00f3n de llenado, y no hay valor positivo disponible. La optimalidad vale solo para los valores declarados, sin interacciones y sin incertidumbre. Este resultado no autoriza ninguna ejecuci\u00f3n. gate_decision=NEEDS_REVIEW y requiere aprobaci\u00f3n humana.",
+  "open_questions": [
+    "\u00bfEs correcto excluir R por no ser elegible, aunque tenga net_value 100? Incluirlo cambiar\u00eda la decisi\u00f3n.",
+    "\u00bfLos net_value de P y Q son estimaciones puntuales? Si tienen incertidumbre material, la optimalidad no se extiende a esa incertidumbre.",
+    "\u00bfExiste una raz\u00f3n no econ\u00f3mica, como cumplimiento normativo, para ejecutar P pese a su valor neto negativo? Eso exigir\u00eda otro objetivo."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

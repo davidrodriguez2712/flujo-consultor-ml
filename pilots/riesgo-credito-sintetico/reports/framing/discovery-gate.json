@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "findings": [],
+  "evidence": [
+    "reports/discovery/discovery-review.md",
+    "context/business_context.md",
+    "data/dictionaries/README.md",
+    "reports/discovery/verification.json"
+  ]
+}

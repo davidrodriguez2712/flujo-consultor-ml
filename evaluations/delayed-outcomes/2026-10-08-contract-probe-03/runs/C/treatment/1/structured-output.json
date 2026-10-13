@@ -1,0 +1,32 @@
+{
+  "rows": [
+    {
+      "id": "C1",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "Ventana [2025-06-01, 2025-07-01) con seguimiento completo; el acta negativa publicada el 2025-07-05T08:00Z certifica el negativo (churn=0) y lo hace disponible. Esa publicaci\u00f3n es anterior al entrenamiento (2025-07-15T00:00Z) y a la extracci\u00f3n (2025-08-15T00:00Z), por lo que cumple la regla <=. Las features estaban disponibles el 2025-05-31T18:00Z, antes de la predicci\u00f3n del 2025-06-01T00:00Z, y la poblaci\u00f3n es v\u00e1lida. Se cumplen todas las condiciones."
+    },
+    {
+      "id": "C2",
+      "outcome_state_at_extraction": "pending",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "La ventana [2025-06-01, 2025-09-01) segu\u00eda abierta en la extracci\u00f3n (2025-08-15) y el seguimiento segu\u00eda en curso. El churn=0 del CSV es un valor provisional, no un negativo certificado, porque la regla exige seguimiento completo de toda la ventana y un acta publicada. El acta est\u00e1 prevista no antes del cierre, que es posterior al entrenamiento (2025-07-15), as\u00ed que el label no estaba disponible. Se excluye por label no disponible. El estado del outcome sigue siendo pending."
+    },
+    {
+      "id": "C3",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "Ventana [2025-06-01, 2025-07-01) con seguimiento completo; el acta negativa se public\u00f3 el 2025-07-20T08:00Z, antes de la extracci\u00f3n (2025-08-15), as\u00ed que el negativo est\u00e1 certificado en ese momento. Esa fecha es posterior al entrenamiento (2025-07-15T00:00Z), as\u00ed que el label no estaba disponible al entrenar. Que se observe despu\u00e9s no demuestra disponibilidad previa. Se excluye aunque las features sean v\u00e1lidas."
+    }
+  ],
+  "open_questions": [
+    "No hay preguntas bloqueantes para clasificar los tres registros con las reglas dadas. Para C2, \u00bfcu\u00e1l es la fecha real de publicaci\u00f3n del acta? Solo se sabe que no es anterior al cierre de la ventana, y no cambia la exclusi\u00f3n.",
+    "\u00bfSe confirma que 'no se registraron eventos positivos' vale para todo el seguimiento de la muestra? El enunciado lo afirma, pero con tan pocos registros no hay positivos con los que evaluar la validaci\u00f3n.",
+    "La muestra tiene tres filas y ning\u00fan positivo, y solo C1 es elegible. \u00bfEs esta la poblaci\u00f3n completa o un extracto? Si es completa, el entrenamiento no es viable con estos datos.",
+    "Decisi\u00f3n humana pendiente: \u00bfse acepta excluir C2 y C3 o se reconstruye el entrenamiento con otro training_timestamp? No se puede aprobar el gate."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

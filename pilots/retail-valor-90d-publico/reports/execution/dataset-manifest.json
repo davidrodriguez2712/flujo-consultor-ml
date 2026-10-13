@@ -1,0 +1,36 @@
+{
+  "files": {
+    "data/processed/customer_snapshots.csv": {
+      "sha256": "1c4a1af9b368185672d99ee18e06b94cf3da579ffdb26329e5e24ff14f3e3405",
+      "bytes": 6249937
+    },
+    "data/processed/reserved/holdout_snapshot.csv": {
+      "sha256": "4c0779f404a3969de210db28caf59d92e2156cd0210954be643546ccc820e3e2",
+      "bytes": 451272
+    },
+    "data/processed/cross_sheet_copy_map.csv.gz": {
+      "sha256": "7be279c16b61f2eeb6821995660aafbc8ed0c83b18fc2d01a8204069db8ead60",
+      "bytes": 478875
+    },
+    "data/processed/excluded_transactions.csv.gz": {
+      "sha256": "262dfc155fcd9d36645b5fdda951000ebac0f5a996af16c0336a5892233c6e38",
+      "bytes": 4776535
+    },
+    "framing/retail_contract.yaml": {
+      "sha256": "0e537ce003ac0c125d89f5a0aa301f3c29a09316f3e90d985a4b82cc642c6ab4",
+      "bytes": 4889
+    },
+    "validation/evaluation_contract.yaml": {
+      "sha256": "7c006d5440b88e07e3b04cad040d57775714510695c51ae6a30874c52ab8f83b",
+      "bytes": 4731
+    },
+    "data/raw/online_retail_II.xlsx": {
+      "sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980",
+      "bytes": 45622278
+    },
+    "analysis/retail_temporal.py": {
+      "sha256": "0b4bc6e72647dff21f16ca3bbd2abc245e84eca1e1963a72f95ef08ea1616825",
+      "bytes": 4179
+    }
+  }
+}

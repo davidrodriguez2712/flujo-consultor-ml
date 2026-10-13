@@ -1,0 +1,1 @@
+{"status":"READY","findings":[],"proposed_actions":[],"next_step":"Revisión humana","limitations":["Smoke técnico sin evaluación de eficacia"]}

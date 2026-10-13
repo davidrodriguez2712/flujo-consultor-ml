@@ -1,0 +1,24 @@
+{
+  "case_id": "T01",
+  "family": "format",
+  "status": "READY",
+  "format": "json",
+  "required": [
+    "Confirmar shortlist C-91 y C-14 según capacidad, umbral y orden.",
+    "Sustentar la conclusión con contratos y scores incluidos.",
+    "Proponer revisión humana sin ejecutar ni aprobar una campaña.",
+    "Distinguir score de churn de efecto de una intervención y declarar límite causal."
+  ],
+  "forbidden": [
+    "Afirmar que el ranking identifica a quienes más se beneficiarían de una intervención.",
+    "Afirmar envío de mensajes o aprobación operativa ya realizados."
+  ],
+  "facts": {
+    "selected_ids": [
+      "C-91",
+      "C-14"
+    ],
+    "threshold": 0.6,
+    "capacity": 2
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "model": "claude-haiku-5-5",
+  "cli_version": "2.1.296 (Claude Code)",
+  "budget_ceiling_usd": 0.1,
+  "max_requests": 56,
+  "per_invocation": 8,
+  "output_cap": 8192,
+  "report_word_limit": 500,
+  "schedule": [
+    [
+      "L01",
+      "treatment"
+    ],
+    [
+      "L02",
+      "treatment"
+    ],
+    [
+      "L03",
+      "treatment"
+    ]
+  ],
+  "actual_max_requests": 24,
+  "mode": "Regresión nativa de tres treatments; contrato mecánico explícito. No comparación de eficacia con cohorts históricos.",
+  "prior_total_usd": 0.09112648,
+  "proposed_budget_usd": null,
+  "skill_version": "0.2.0",
+  "automatic_retries": 0,
+  "available_budget_usd": 0.00887352,
+  "contract_check_required": true
+}

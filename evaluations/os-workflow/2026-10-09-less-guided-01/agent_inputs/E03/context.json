@@ -1,0 +1,10 @@
+{
+  "engagement": "Tiempos de atención de soporte",
+  "scope": "Revisión retrospectiva de reproducibilidad, sin modificar criterio ni outputs.",
+  "decision_rule": "Casos cuyo tiempo representado es >= 15.0 minutos se derivan a revisión.",
+  "comparison_contract": {
+    "key": "case_id",
+    "numeric_absolute_tolerance_minutes": 0.1,
+    "selected_ids": "exact"
+  }
+}

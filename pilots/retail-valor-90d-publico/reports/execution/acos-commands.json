@@ -1,0 +1,17 @@
+{
+  "status": {
+    "exit_code": 0
+  },
+  "next": {
+    "exit_code": 0
+  },
+  "validate-diagnosis": {
+    "exit_code": 0
+  },
+  "validate-data-quality": {
+    "exit_code": 0
+  },
+  "validate-execution": {
+    "exit_code": 3
+  }
+}

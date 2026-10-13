@@ -1,0 +1,18 @@
+{
+  "repository": "https://github.com/davidrodriguez2712/agentic-consulting-os",
+  "visibility": "private",
+  "run_url": "https://github.com/davidrodriguez2712/agentic-consulting-os/actions/runs/37878382343",
+  "run_id": 37878382343,
+  "head_sha": "f6468bf454dd07ea9300a9eb17213f94122e2391",
+  "runner": "windows-2022",
+  "python": "3.11",
+  "uploaded_files": 69,
+  "local_tests_passed": 125,
+  "runtime_api_calls": 0,
+  "uploaded_scope": "Código, recursos, tests, schemas, utilidades y checker usado por tests. Sin Foundry, pilotos o evidencia histórica.",
+  "files": {
+    ".github/workflows/windows-validation.yml": "7eb84a840d2fb58144f1d20d4362e0a8189a9bb8c16d261a3d7a082424054682",
+    "scripts/ci/windows_smoke.py": "1316be1af8a7cd1e52846a861dd5571cf1232464c2545cea56afc8c7647b1e5a"
+  },
+  "status": "RUNNING_OR_QUEUED; resultado remoto pendiente"
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="1.740" timestamp="2026-10-12T18:57:27.536453-05:00" hostname="Joels-Mac-Studio.local"><testcase classname="tests.test_foundry_native_transport" name="test_real_cli_receives_explicit_common_tool_limits" time="1.674"><failure message="assert '---\\nskill: &lt;skill de report-context&gt;\\nversion: &lt;version de report-context&gt;' in '{&quot;model&quot;: &quot;claude-haiku-5-5&quot;, &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: [{&quot;type&quot;: &quot;text&quot;, &quot;text&quot;: &quot;&lt;system-reminder&gt;\\...8558e\\&quot;}&quot;}, &quot;max_tokens&quot;: 8192, &quot;output_config&quot;: {&quot;effort&quot;: &quot;low&quot;}, &quot;stream&quot;: true, &quot;thinking&quot;: {&quot;type&quot;: &quot;adaptive&quot;}}'">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2293/test_real_cli_receives_explici0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x10671cb00&gt;
+
+    def test_real_cli_receives_explicit_common_tool_limits(tmp_path,monkeypatch):
+        import shutil,shlex,sys
+        cli=shutil.which('claude')
+        if not cli:pytest.skip('Claude CLI no instalado')
+        m=module();b=budget_module();case=tmp_path/'case';(case/'inputs').mkdir(parents=True)
+        (case/'case.md').write_text('public');(case/'inputs/data.csv').write_text('x\n1\n')
+        out=tmp_path/'run';root=out/'workspace';command=shlex.join([sys.executable,str(root/'.runtime/check_inputs.py')])
+        sequence=[sse(m.MODEL,[{'type':'tool_use','id':'bash1','name':'Bash','input':{'command':command}}],'tool_use'),
+                  sse(m.MODEL,[{'type':'tool_use','id':'write1','name':'Write','input':{'file_path':str(root/'reports/leakage/audit.md'),'content':'Mock infrastructure report'}}],'tool_use'),
+                  sse(m.MODEL,[{'type':'text','text':'Listo.'}],'end_turn')]
+        requests=fake_upstream(b,monkeypatch,sequence)
+        with b.Proxy('claude','fake-key',.2,model=m.MODEL,max_requests=8,max_output_tokens=8192) as proxy:
+            result=m.invoke(case,out,proxy,cli,report_word_limit=500)
+            assert result['runtime_success']
+            context=json.dumps(requests[0],ensure_ascii=False)
+            assert 'Contrato operativo de herramientas' in context
+            assert 'máximo 500 palabras' in context
+&gt;           assert '---\\nskill: &lt;skill de report-context&gt;\\nversion: &lt;version de report-context&gt;' in context
+E           assert '---\\nskill: &lt;skill de report-context&gt;\\nversion: &lt;version de report-context&gt;' in '{"model": "claude-haiku-5-5", "messages": [{"role": "user", "content": [{"type": "text", "text": "&lt;system-reminder&gt;\\...8558e\\"}"}, "max_tokens": 8192, "output_config": {"effort": "low"}, "stream": true, "thinking": {"type": "adaptive"}}'
+
+tests/test_foundry_native_transport.py:273: AssertionError</failure></testcase></testsuite></testsuites>

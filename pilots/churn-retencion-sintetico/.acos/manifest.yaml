@@ -1,0 +1,150 @@
+schema_version: 1
+acos_version: 0.1.0
+catalog_version: 0.1.0
+profile_sha256: 8378a1642bebb9491c8804019427c9f1fe41c684b16f281388ea50fbc04173e8
+modules_sha256: e1727472475a36bc507491d1d4bb766d87d31f3a9c39590a9c7430630f847022
+source_os_version: '2.0'
+artifacts:
+- path: .acos/modules.yaml
+  ownership: human
+  initial_sha256: ffd3f1fcab4bc6d82c67d151144e773c92952544aeedd55616caad8e06b7aa86
+- path: .acos/project-profile.yaml
+  ownership: human
+  initial_sha256: 11dc6e27c86b059e7e706cfef2b62e40255f8491af6af96c6769812a4b085e5b
+- path: .acos/state.yaml
+  ownership: human
+  initial_sha256: 0f0137e7e2f8a73ca1505ead19a9421fc3cff702b5071bd2762dac45053b32a8
+- path: .agents/skills/design-validation/SKILL.md
+  ownership: acos
+  initial_sha256: 70883c3b75b07334fc95bad1b5c6749fd7b5e623b648f6b48fb6c14b2d32b8f9
+- path: .agents/skills/detect-leakage/SKILL.md
+  ownership: acos
+  initial_sha256: 2ea060606202840ee4ce49ff27c9beb6b29ffae27edebcf755683e9c9bc99fce
+- path: .agents/skills/understand-dataset/SKILL.md
+  ownership: acos
+  initial_sha256: 1f21d325cf3e43afd7ea26f1d24214fa734c2562a031bb8263dfdf899521f058
+- path: .claude/skills/design-validation/SKILL.md
+  ownership: acos
+  initial_sha256: 70883c3b75b07334fc95bad1b5c6749fd7b5e623b648f6b48fb6c14b2d32b8f9
+- path: .claude/skills/detect-leakage/SKILL.md
+  ownership: acos
+  initial_sha256: 2ea060606202840ee4ce49ff27c9beb6b29ffae27edebcf755683e9c9bc99fce
+- path: .claude/skills/understand-dataset/SKILL.md
+  ownership: acos
+  initial_sha256: 1f21d325cf3e43afd7ea26f1d24214fa734c2562a031bb8263dfdf899521f058
+- path: AGENTS.md
+  ownership: acos
+  initial_sha256: 3b91d5a51afe8e1982b1df0528108256dc9f2daa256d220d89ccf65dcf9ba65b
+- path: CAPABILITIES.md
+  ownership: human
+  initial_sha256: ca49f695130beb7c8663982ec474fa27ee52ea7bb0293d4c86ff81b514d30e28
+- path: CLAUDE.md
+  ownership: human
+  initial_sha256: c7b68087d1a5c37d3481b6dc5d0729067df52cbd6816fbaa713df5eae1c39701
+- path: DECISIONS.md
+  ownership: human
+  initial_sha256: 4dc4f395f8caa97d532c0c4dd693e861bb00b50c8b95dd4f3b0389190ab406f9
+- path: MANUAL.md
+  ownership: human
+  initial_sha256: 21504258a446b3015444e080c13eb45aa060d826a7e7e80badd32cedf25fe786
+- path: PROJECT.md
+  ownership: human
+  initial_sha256: 91ad77c53ae90cad7619c45686b76600bbb669ebf8323aee2ed8b9646d76e39f
+- path: STATE.md
+  ownership: human
+  initial_sha256: 01097aef534639ea094b243547fefea483e389460619e81ef49a1180fda075b6
+- path: TASKS.md
+  ownership: human
+  initial_sha256: 8d74b3fc21fa7d301ec103791977e4020e3a5b35af733dda10d16b0be57ed4c2
+- path: analysis/analysis_plan.md
+  ownership: human
+  initial_sha256: 20474bac8f0123828aa912bd657f13b18d69a2e9f7eb048a132b82a496c27add
+- path: analysis/selection_plan.md
+  ownership: human
+  initial_sha256: e34c58f6d8f189bc28097f7c815ee4a2f92130a38f4116241c13505ba20e3aff
+- path: context/business_context.md
+  ownership: human
+  initial_sha256: 2ce2c76f46b22ab2bc33d76661602cff9f9999a631987eb33324ccd7eed68f35
+- path: data/data_contract.yaml
+  ownership: human
+  initial_sha256: d282935521ceca75a03e6dc3f0691f4df68db5f554821884a8c73c0538b9ad17
+- path: decision/recommendation.md
+  ownership: human
+  initial_sha256: cdb9e7bb3644c56626a6a071a15ad234cb19bdcfe18f29981ae5914b4b8f6a91
+- path: delivery/delivery_contract.md
+  ownership: human
+  initial_sha256: 9058008d6d5708d313433671008c3185143f4e4c547c3c47e02651cfbe0c7a59
+- path: delivery/storyline.md
+  ownership: human
+  initial_sha256: 314d3b22e00ca8cab9ca7a74e83dcddeee3377910c6b09243d9924bc06f0d578
+- path: evidence/findings.md
+  ownership: human
+  initial_sha256: a7ffb72e3c50f4a72ef2972210638ce8896728c5287a367cb9c25e98b61b7852
+- path: framing/framing.yaml
+  ownership: human
+  initial_sha256: e468213e977d959fd8beb6a6152e9dceabdff08c238c92d993e90de07462b242
+- path: handoff/runbook.md
+  ownership: human
+  initial_sha256: a6aa540519f5ebf07d8c56d41cf7fd2969245b23ecec8994a192acb01715544d
+- path: modeling/model_brief.md
+  ownership: human
+  initial_sha256: 9059a3d765ed3749644cce0cc413fc1767f4eaa36ffd2d7c74a25698176a18d6
+- path: playbooks/data-understanding-analysis.md
+  ownership: acos
+  initial_sha256: d0fed209aa81906fd2de38d68c2f114de4e180207a74c1791e25cba0d65192a0
+- path: playbooks/experiments-and-models.md
+  ownership: acos
+  initial_sha256: 26958488b727796fc0f589e43464d2a1071cba5362519b6f175fb1b3dcb5eff7
+- path: playbooks/research-impact-delivery.md
+  ownership: acos
+  initial_sha256: ef1456fe97f27bdb5329bc747d367812d7f49db430c6185ebeb9794c737626ae
+- path: validation/model_validation.md
+  ownership: human
+  initial_sha256: 84b3d7c87d969c370264f876cf094bc5412edeceb0668f5b330e80543d14452d
+- path: workflow/capability-lifecycle.md
+  ownership: acos
+  initial_sha256: 98c569bbf33ba7d95d1c8bc6cd3893ed1ccbc784a7850d5a3cf700097942bd23
+- path: workflow/execution-and-qa.md
+  ownership: acos
+  initial_sha256: 0b5f7ae01a7daf90ace2380b1d5ddd223b171ce895cf8af838e824d17df07120
+- path: workflow/isolation-and-context.md
+  ownership: acos
+  initial_sha256: 580a22286bc11b44aae574fd38b6690a95990f10b0ff5d76b4e4ad8bd14dd153
+- path: workflow/project-lifecycle.md
+  ownership: acos
+  initial_sha256: e0bfcf31b53bdb73f6cb8c84627aed3e82788f486f073729c64dae976d89e770
+skills:
+- name: understand-dataset
+  status: experimental
+  version: 0.1.0
+  source_ref: foundry:experiments/skills/understand-dataset
+  tree_sha256: 6fa84b9cea6729a27c383507811ece060aca84c5c3396c8887de4cd9dccf2693
+  files:
+  - relative_path: SKILL.md
+    sha256: 1f21d325cf3e43afd7ea26f1d24214fa734c2562a031bb8263dfdf899521f058
+  runtime_paths:
+  - .agents/skills/understand-dataset
+  - .claude/skills/understand-dataset
+- name: design-validation
+  status: experimental
+  version: 0.1.0
+  source_ref: foundry:experiments/skills/design-validation
+  tree_sha256: ad3d59e9bfe164de64c92d0eeeb3a12d6d7af6b4091ef5362a16d703498a1aa9
+  files:
+  - relative_path: SKILL.md
+    sha256: 70883c3b75b07334fc95bad1b5c6749fd7b5e623b648f6b48fb6c14b2d32b8f9
+  runtime_paths:
+  - .agents/skills/design-validation
+  - .claude/skills/design-validation
+- name: detect-leakage
+  status: experimental
+  version: 0.1.0
+  source_ref: foundry:experiments/skills/detect-leakage
+  tree_sha256: d193cc5b86f1045cf073783e1d5f9325cb4eb09ab263abe4fe08fcf22baa502f
+  files:
+  - relative_path: SKILL.md
+    sha256: 2ea060606202840ee4ce49ff27c9beb6b29ffae27edebcf755683e9c9bc99fce
+  runtime_paths:
+  - .agents/skills/detect-leakage
+  - .claude/skills/detect-leakage
+initialization: complete

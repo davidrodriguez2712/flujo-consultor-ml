@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-13",
+  "micro_package": "micro-package02",
+  "micro01_not_executed": true,
+  "task_change_before_any_api_output": "Aclaración mecánica de delimitadores/fences; sin añadir respuestas semánticas",
+  "private_expected_unchanged": true,
+  "native_gate": "5/5 treatments sin defectos semánticos fijados + contrato completo/review; no rebajar tras outputs",
+  "regressions_mode_override": "Dispatch original informa guía textual, no native; hashes/utility/persistencia reales. Sin afirmar guardToolPolicy o contrato native verificados",
+  "canonical_modified": false
+}

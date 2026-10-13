@@ -1,0 +1,13 @@
+{
+  "hits": 32,
+  "holdout_metrics_computed": true,
+  "mean_lift": 2.5187266463080418,
+  "mean_precision": 0.10666666666666666,
+  "mean_random_expected_precision": 0.04280790600227937,
+  "mean_random_expected_recall": 0.04398342702134858,
+  "mean_recall": 0.11018009552893274,
+  "months": 6,
+  "rows": 6860,
+  "scope": "holdout sintético julio–diciembre 2025",
+  "selected_customer_months": 300
+}

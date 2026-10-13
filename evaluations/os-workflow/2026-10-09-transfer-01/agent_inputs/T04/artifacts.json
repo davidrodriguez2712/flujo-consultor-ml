@@ -1,0 +1,40 @@
+{
+  "data/weeks.json": [
+    {
+      "week": "2025-09-01",
+      "sales_units": 100,
+      "returned_units": 10
+    },
+    {
+      "week": "2025-09-08",
+      "sales_units": 120,
+      "returned_units": 20
+    },
+    {
+      "week": "2025-09-15",
+      "sales_units": 140,
+      "returned_units": 30
+    }
+  ],
+  "contracts/v1.json": {
+    "target": "unidades brutas vendidas",
+    "model": "media de últimas tres semanas",
+    "serialization": "writer JSON numérico -> reader JSON -> media",
+    "next_week": "2025-09-22"
+  },
+  "runs/v1/output.json": {
+    "forecast": 120.0,
+    "target": "unidades brutas vendidas"
+  },
+  "decisions/change-02.json": {
+    "owner": "Planning owner (fixture)",
+    "status": "APPROVED",
+    "scope": "Preparar reproducción v1 y variante v2: unidades netas = sales_units - returned_units; media3; mismo writer/reader JSON",
+    "destinations": [
+      "runs/reproduction-v1-new/",
+      "runs/v2-new/"
+    ],
+    "preserve": "No sobrescribir runs/v1 ni cambiar su target histórico",
+    "not_authorized": "Uso operativo o aceptación automática de resultados"
+  }
+}

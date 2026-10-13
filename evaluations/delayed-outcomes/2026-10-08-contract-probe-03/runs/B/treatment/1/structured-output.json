@@ -1,0 +1,34 @@
+{
+  "rows": [
+    {
+      "id": "B1",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "El ticket documenta la primera certificaci\u00f3n y publicaci\u00f3n del positivo el 2025-08-05T09:00Z. Eso es anterior a la extracci\u00f3n (2025-08-15), as\u00ed que en la extracci\u00f3n el outcome es observed_positive. Es posterior al entrenamiento (2025-07-15T00:00Z) y no hay otros canales de publicaci\u00f3n, as\u00ed que con la regla <= el label no estaba disponible al entrenar. Antes de esa fecha solo hab\u00eda un flag sin resolver. El CSV actual reemplaza valores previos, y fecha_evento (20 de junio) es la fecha del negocio, no la de disponibilidad. Las features (2025-05-31T18:00Z) cumplen la condici\u00f3n y la poblaci\u00f3n es v\u00e1lida, pero la fila se excluye porque el label no estaba disponible."
+    },
+    {
+      "id": "B2",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "La ventana objetivo [2025-06-01, 2025-07-01) hab\u00eda terminado. Auditor\u00eda certific\u00f3 la ausencia de churn y la public\u00f3 el 2025-07-10T09:00Z, sin revisiones posteriores. Eso es anterior al entrenamiento (2025-07-15T00:00Z) y a la extracci\u00f3n (2025-08-15), y no hay otros canales de publicaci\u00f3n. Por tanto el negativo est\u00e1 certificado en la extracci\u00f3n y disponible al entrenar. Las features (2025-05-31T18:00Z) est\u00e1n disponibles en la predicci\u00f3n (2025-06-01T00:00Z) y la poblaci\u00f3n es v\u00e1lida. Se cumplen todas las condiciones comprobadas."
+    },
+    {
+      "id": "B3",
+      "outcome_state_at_extraction": "unknown",
+      "label_availability_at_training": "indeterminate",
+      "train_eligibility": "indeterminate",
+      "reason": "El CSV actual muestra churn=0 con fecha_evento vac\u00eda. El export no incluye certificaci\u00f3n, ticket ni historial de publicaci\u00f3n, y no se document\u00f3 la regla que produce el cero. Sin una regla conocida no se puede decir que el cero sea un negativo certificado (observed_negative) ni que la regla a\u00fan no permita certificar (pending), as\u00ed que el estado es unknown. Faltan fechas de certificaci\u00f3n y publicaci\u00f3n, por lo que la disponibilidad al entrenar es indeterminate. No hay una exclusi\u00f3n comprobada ni todas las condiciones comprobadas, as\u00ed que la elegibilidad es indeterminate. No se asume ninguna fecha ni regla."
+    }
+  ],
+  "open_questions": [
+    "B3: \u00bfQu\u00e9 regla produce el churn=0 y ese valor est\u00e1 certificado? \u00bfEs un cero por defecto o provisional?",
+    "B3: \u00bfCu\u00e1ndo se certific\u00f3 y public\u00f3 el valor en el sistema de entrenamiento? \u00bfFue en 2025-07-15T00:00Z o antes, y existe historial de versiones del label?",
+    "B3: \u00bfPor qu\u00e9 fecha_evento est\u00e1 vac\u00eda? \u00bfSignifica ausencia de evento, dato faltante o fila sin resolver?",
+    "B1: \u00bfCu\u00e1l era el flag sin resolver antes del 5 de agosto, y debe tratarse como no disponible en el entrenamiento? Esta auditor\u00eda lo trata as\u00ed, y el ticket no lo contradice.",
+    "\u00bfSe puede reconstruir un snapshot as-of 2025-07-15 de los labels, dado que el CSV actual reemplaza valores anteriores?",
+    "\u00bfHay documentada una regla de certificaci\u00f3n que admita positivos tempranos o negativos al cierre de ventana? Los expedientes solo la describen para B1 y B2 mediante tickets."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

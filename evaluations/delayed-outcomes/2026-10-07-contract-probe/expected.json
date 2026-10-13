@@ -1,0 +1,71 @@
+{
+  "A": {
+    "rows": [
+      {
+        "id": "A1",
+        "eligibility": "eligible",
+        "label_state": "observed_negative"
+      },
+      {
+        "id": "A2",
+        "eligibility": "exclude",
+        "label_state": "observed_negative"
+      },
+      {
+        "id": "A3",
+        "eligibility": "eligible",
+        "label_state": "observed_positive"
+      }
+    ],
+    "requires_question": false,
+    "gate_decision": "NEEDS_REVIEW"
+  },
+  "B": {
+    "rows": [
+      {
+        "id": "B1",
+        "eligibility": "eligible",
+        "label_state": "observed_negative"
+      },
+      {
+        "id": "B2",
+        "eligibility": "exclude",
+        "label_state": "observed_negative"
+      }
+    ],
+    "requires_question": false,
+    "gate_decision": "NEEDS_REVIEW"
+  },
+  "C": {
+    "rows": [
+      {
+        "id": "C1",
+        "eligibility": "exclude",
+        "label_state": "pending"
+      },
+      {
+        "id": "C2",
+        "eligibility": "exclude",
+        "label_state": "pending"
+      },
+      {
+        "id": "C3",
+        "eligibility": "eligible",
+        "label_state": "observed_negative"
+      }
+    ],
+    "requires_question": false,
+    "gate_decision": "NEEDS_REVIEW"
+  },
+  "D": {
+    "rows": [
+      {
+        "id": "D1",
+        "eligibility": "indeterminate",
+        "label_state": "observed_negative"
+      }
+    ],
+    "requires_question": true,
+    "gate_decision": "NEEDS_REVIEW"
+  }
+}

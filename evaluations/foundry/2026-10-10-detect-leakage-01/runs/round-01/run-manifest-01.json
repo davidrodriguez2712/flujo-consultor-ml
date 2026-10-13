@@ -1,0 +1,72 @@
+{
+  "id": "detect-leakage-run-round-01",
+  "execution_manifest_sha256": "64a52f85b39eedcff77a7ca47f17c5b8664791db48aea0063971e3915480ede0",
+  "scope": "Intento smoke real fallido preservado, no benchmark completado",
+  "files": [
+    {
+      "path": "ledger.json",
+      "sha256": "6d9b1d2e96a3735c6d17e8ed45bd5ca4e42954d319fa069860e0a60130628228",
+      "bytes": 930
+    },
+    {
+      "path": "review.json",
+      "sha256": "f0adbab1719019559f5296bface2684aa42eb6a697bf9b7f592d9a1c0492f27e",
+      "bytes": 1053
+    },
+    {
+      "path": "smoke-baseline/isolated-config/.claude.json",
+      "sha256": "0a0c8231ebcec4abd129a5b4541fcdba77550b9c06232a85f68c0da8744bf798",
+      "bytes": 719
+    },
+    {
+      "path": "smoke-baseline/isolated-config/backups/.claude.json.backup.1791724992392",
+      "sha256": "f8042913fc5ab1e65dd7b63cd4f96b9b09a050a43117741440563db8b9f7dcbf",
+      "bytes": 84
+    },
+    {
+      "path": "smoke-baseline/metadata.json",
+      "sha256": "ab2943dd759343986029556665080734254dd0d7b06f407758df96505289eacb",
+      "bytes": 2926
+    },
+    {
+      "path": "smoke-baseline/result.txt",
+      "sha256": "536077aa5c5ab80094b49b6014d34030c76c8a4e0ff97ae82983e10d650c7f1b",
+      "bytes": 74
+    },
+    {
+      "path": "smoke-baseline/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "smoke-baseline/stdout.jsonl",
+      "sha256": "0aba317472f852795a8259acc3e1c6e4c2fba15f6d9741ae3c714f3a6aa80da7",
+      "bytes": 3907
+    },
+    {
+      "path": "smoke-baseline/workspace/.runtime/check_inputs.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "smoke-baseline/workspace/case.md",
+      "sha256": "c55d6e5472cc2697b8c2c491ec1786ee9acd2e0cae2d311c691fea646a51e232",
+      "bytes": 290
+    },
+    {
+      "path": "smoke-baseline/workspace/inputs/data.csv",
+      "sha256": "8028f83b208c1c7608522c1680cb03dfeaf3a79fa2224fd257d7e31be883dbab",
+      "bytes": 21
+    },
+    {
+      "path": "smoke-baseline/workspace/workflow.md",
+      "sha256": "af47b5625869819d53446a6b4b2f541d1c054a70d2767e2be3817d4efd27f422",
+      "bytes": 21394
+    },
+    {
+      "path": "summary.json",
+      "sha256": "f6d8de07ba27b657b44044144ededa25ae90473980778fe9893f47a76aa8bc40",
+      "bytes": 191
+    }
+  ]
+}

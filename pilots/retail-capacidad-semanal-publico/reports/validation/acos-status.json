@@ -1,0 +1,20 @@
+{
+  "project": "Forecasting de volumen semanal para capacidad retail",
+  "stage": "validation",
+  "status": "IN_PROGRESS",
+  "completed": [],
+  "total_stages": 3,
+  "blockers": [],
+  "open_decisions": [
+    "Aceptar o corregir el ensayo técnico conjunto y sus límites.",
+    "No autorizar uso real sin inputs operativos actuales."
+  ],
+  "next_gates": [
+    "validation",
+    "data_analysis-review",
+    "forecast-review",
+    "executive_delivery-review"
+  ],
+  "integrity": "OK",
+  "findings": []
+}

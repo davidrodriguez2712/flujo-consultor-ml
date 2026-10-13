@@ -1,0 +1,14 @@
+{
+  "checker_version": "0.1.0",
+  "strict_json_pass": true,
+  "schema_pass": false,
+  "status_matches": null,
+  "references_exist": null,
+  "unknown_references": [],
+  "semantic_review": "NOT_RUN",
+  "overall_content_pass": null,
+  "transfer_checker_version": "0.1.0",
+  "format": "json",
+  "format_pass": false,
+  "references_present": false
+}

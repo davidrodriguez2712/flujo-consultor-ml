@@ -1,0 +1,397 @@
+schema_version: 1
+scope: Piloto retail histórico; observed, assumption, proposal y limitation separados.
+claims:
+- id: OBS001
+  type: observed
+  text: 'Método recomendado: historical_sales.'
+  source: reports/validation/holdout-results.json
+  field: decision.recommended_method
+  source_sha256: 8f37c0be10896a065deb484b529df8e9b7fbb8e8bf4bfdfa984abc9b63c9ce68
+  value: historical_sales
+  format: text
+  display: historical_sales
+- id: OBS002
+  type: observed
+  text: 'Clientes elegibles finales: 2.768.'
+  source: reports/validation/holdout-results.json
+  field: metrics.historical_sales.eligible_count
+  source_sha256: 8f37c0be10896a065deb484b529df8e9b7fbb8e8bf4bfdfa984abc9b63c9ce68
+  value: 2768
+  format: integer
+  display: '2.768'
+- id: OBS003
+  type: observed
+  text: 'Top-K efectivo final: 100.'
+  source: reports/validation/holdout-results.json
+  field: metrics.historical_sales.effective_k
+  source_sha256: 8f37c0be10896a065deb484b529df8e9b7fbb8e8bf4bfdfa984abc9b63c9ce68
+  value: 100
+  format: integer
+  display: '100'
+- id: OBS004
+  type: observed
+  text: 'Ventas válidas futuras observadas en seleccionados: GBP 993.347,93.'
+  source: reports/validation/holdout-results.json
+  field: metrics.historical_sales.top_k_sales
+  source_sha256: 8f37c0be10896a065deb484b529df8e9b7fbb8e8bf4bfdfa984abc9b63c9ce68
+  value: 993347.93
+  format: money
+  display: GBP 993.347,93
+- id: OBS005
+  type: observed
+  text: 'Ventas válidas futuras de todos los elegibles: GBP 2.408.052,35.'
+  source: reports/validation/holdout-results.json
+  field: metrics.historical_sales.eligible_sales
+  source_sha256: 8f37c0be10896a065deb484b529df8e9b7fbb8e8bf4bfdfa984abc9b63c9ce68
+  value: 2408052.35
+  format: money
+  display: GBP 2.408.052,35
+- id: OBS006
+  type: observed
+  text: 'Fracción de ventas elegibles en seleccionados: 41,25%.'
+  source: reports/validation/holdout-results.json
+  field: metrics.historical_sales.sales_share
+  source_sha256: 8f37c0be10896a065deb484b529df8e9b7fbb8e8bf4bfdfa984abc9b63c9ce68
+  value: 0.412510936483586
+  format: percent_fraction
+  display: 41,25%
+- id: OBS007
+  type: observed
+  text: 'MAE monetario por cliente: GBP 633,47.'
+  source: reports/validation/holdout-results.json
+  field: metrics.historical_sales.mae
+  source_sha256: 8f37c0be10896a065deb484b529df8e9b7fbb8e8bf4bfdfa984abc9b63c9ce68
+  value: 633.4734934971099
+  format: money
+  display: GBP 633,47
+- id: OBS008
+  type: observed
+  text: 'Concentración Top-1 por outcome dentro de seleccionados: 11,84%.'
+  source: reports/validation/holdout-results.json
+  field: metrics.historical_sales.top1_sales_share_within_top_k
+  source_sha256: 8f37c0be10896a065deb484b529df8e9b7fbb8e8bf4bfdfa984abc9b63c9ce68
+  value: 0.11842228331819245
+  format: percent_fraction
+  display: 11,84%
+- id: OBS009
+  type: observed
+  text: 'Concentración Top-10 por outcome dentro de seleccionados: 54,57%.'
+  source: reports/validation/holdout-results.json
+  field: metrics.historical_sales.top10_sales_share_within_top_k
+  source_sha256: 8f37c0be10896a065deb484b529df8e9b7fbb8e8bf4bfdfa984abc9b63c9ce68
+  value: 0.5457175312178886
+  format: percent_fraction
+  display: 54,57%
+- id: OBS010
+  type: observed
+  text: 'Períodos development: 4.'
+  source: reports/validation/holdout-results.json
+  field: decision.development_selection.period_count
+  source_sha256: 8f37c0be10896a065deb484b529df8e9b7fbb8e8bf4bfdfa984abc9b63c9ce68
+  value: 4
+  format: integer
+  display: '4'
+- id: OBS011
+  type: observed
+  text: 'Cutoff final: 2011-09-01.'
+  source: reports/validation/holdout-results.json
+  field: cutoff
+  source_sha256: 8f37c0be10896a065deb484b529df8e9b7fbb8e8bf4bfdfa984abc9b63c9ce68
+  value: '2011-09-01T00:00:00'
+  format: date
+  display: '2011-09-01'
+- id: OBS012
+  type: observed
+  text: 'Fin exclusivo del horizonte final: 2011-11-30.'
+  source: reports/validation/holdout-results.json
+  field: label_end
+  source_sha256: 8f37c0be10896a065deb484b529df8e9b7fbb8e8bf4bfdfa984abc9b63c9ce68
+  value: '2011-11-30T00:00:00'
+  format: date
+  display: '2011-11-30'
+- id: OBS013
+  type: observed
+  text: 'Gasto API del piloto: 0.'
+  source: reports/validation/holdout-results.json
+  field: api_cost_usd
+  source_sha256: 8f37c0be10896a065deb484b529df8e9b7fbb8e8bf4bfdfa984abc9b63c9ce68
+  value: 0
+  format: integer
+  display: '0'
+- id: OBS014
+  type: observed
+  text: 'Ventas Top-K agregadas baseline development: GBP 2.606.803,55.'
+  source: reports/execution/development-summary.json
+  field: development_sales_top_k_gbp.historical_sales
+  source_sha256: a19d95c50fb3bd42109aed1e76df866a518c32fe4a9c31bc05acf6fdcb39d20c
+  value: 2606803.55
+  format: money
+  display: GBP 2.606.803,55
+- id: OBS015
+  type: observed
+  text: 'Ventas Top-K agregadas Ridge development: GBP 2.217.514,29.'
+  source: reports/execution/development-summary.json
+  field: development_sales_top_k_gbp.ridge_log
+  source_sha256: a19d95c50fb3bd42109aed1e76df866a518c32fe4a9c31bc05acf6fdcb39d20c
+  value: 2217514.29
+  format: money
+  display: GBP 2.217.514,29
+- id: OBS016
+  type: observed
+  text: 'Ventas Top-K agregadas HistGradient development: GBP 2.487.103,96.'
+  source: reports/execution/development-summary.json
+  field: development_sales_top_k_gbp.hist_gradient_log
+  source_sha256: a19d95c50fb3bd42109aed1e76df866a518c32fe4a9c31bc05acf6fdcb39d20c
+  value: 2487103.96
+  format: money
+  display: GBP 2.487.103,96
+- id: OBS017
+  type: observed
+  text: 'Variación Ridge frente a baseline development: -14,93%.'
+  source: reports/execution/development-summary.json
+  field: relative_to_baseline_pct.ridge_log
+  source_sha256: a19d95c50fb3bd42109aed1e76df866a518c32fe4a9c31bc05acf6fdcb39d20c
+  value: -14.933586383983554
+  format: percent
+  display: -14,93%
+- id: OBS018
+  type: observed
+  text: 'Variación HistGradient frente a baseline development: -4,59%.'
+  source: reports/execution/development-summary.json
+  field: relative_to_baseline_pct.hist_gradient_log
+  source_sha256: a19d95c50fb3bd42109aed1e76df866a518c32fe4a9c31bc05acf6fdcb39d20c
+  value: -4.591814753359524
+  format: percent
+  display: -4,59%
+- id: OBS019
+  type: observed
+  text: 'Períodos perdidos Ridge: 4.'
+  source: reports/execution/development-summary.json
+  field: losing_periods.ridge_log
+  source_sha256: a19d95c50fb3bd42109aed1e76df866a518c32fe4a9c31bc05acf6fdcb39d20c
+  value: 4
+  format: integer
+  display: '4'
+- id: OBS020
+  type: observed
+  text: 'Períodos perdidos HistGradient: 4.'
+  source: reports/execution/development-summary.json
+  field: losing_periods.hist_gradient_log
+  source_sha256: a19d95c50fb3bd42109aed1e76df866a518c32fe4a9c31bc05acf6fdcb39d20c
+  value: 4
+  format: integer
+  display: '4'
+- id: OBS021
+  type: observed
+  text: 'Líneas originales: 1.067.371.'
+  source: reports/execution/snapshot_checks.json
+  field: source_rows
+  source_sha256: a764ecb9a0f21c78fbc2f2e1c2a5984c99e47de5ab33f23087500dfe33c6c939
+  value: 1067371
+  format: integer
+  display: 1.067.371
+- id: OBS022
+  type: observed
+  text: 'Líneas de compras válidas: 788.187.'
+  source: reports/execution/snapshot_checks.json
+  field: valid_rows
+  source_sha256: a764ecb9a0f21c78fbc2f2e1c2a5984c99e47de5ab33f23087500dfe33c6c939
+  value: 788187
+  format: integer
+  display: '788.187'
+- id: OBS023
+  type: observed
+  text: 'Copias entre hojas reconciliadas: 22.523.'
+  source: reports/execution/snapshot_checks.json
+  field: cross_sheet_copies
+  source_sha256: a764ecb9a0f21c78fbc2f2e1c2a5984c99e47de5ab33f23087500dfe33c6c939
+  value: 22523
+  format: integer
+  display: '22.523'
+- id: OBS024
+  type: observed
+  text: 'Líneas excluidas: 256.661.'
+  source: reports/execution/snapshot_checks.json
+  field: excluded_rows
+  source_sha256: a764ecb9a0f21c78fbc2f2e1c2a5984c99e47de5ab33f23087500dfe33c6c939
+  value: 256661
+  format: integer
+  display: '256.661'
+- id: OBS025
+  type: observed
+  text: 'Líneas excluidas por ID ausente: 226.758.'
+  source: reports/execution/snapshot_checks.json
+  field: exclusion_counts.missing_customer_id
+  source_sha256: a764ecb9a0f21c78fbc2f2e1c2a5984c99e47de5ab33f23087500dfe33c6c939
+  value: 226758
+  format: integer
+  display: '226.758'
+- id: OBS026
+  type: observed
+  text: 'Líneas excluidas por códigos no estándar: 4.709.'
+  source: reports/execution/snapshot_checks.json
+  field: exclusion_counts.nonstandard_code
+  source_sha256: a764ecb9a0f21c78fbc2f2e1c2a5984c99e47de5ab33f23087500dfe33c6c939
+  value: 4709
+  format: integer
+  display: '4.709'
+- id: OBS027
+  type: observed
+  text: 'Cancelaciones de seleccionados en horizonte final: 522.'
+  source: reports/validation/selection-diagnostics.json
+  field: selected_final_cancellations.lines
+  source_sha256: 1ad3a50eb92ebef5840e50d2065807e4401f008f04a126898934dc82678638cd
+  value: 522
+  format: integer
+  display: '522'
+- id: OBS028
+  type: observed
+  text: 'Seleccionados con cancelaciones en horizonte: 51.'
+  source: reports/validation/selection-diagnostics.json
+  field: selected_final_cancellations.customers
+  source_sha256: 1ad3a50eb92ebef5840e50d2065807e4401f008f04a126898934dc82678638cd
+  value: 51
+  format: integer
+  display: '51'
+- id: OBS029
+  type: observed
+  text: 'Importe firmado de cancelaciones de seleccionados: GBP -47.363,08.'
+  source: reports/validation/selection-diagnostics.json
+  field: selected_final_cancellations.signed_amount_gbp
+  source_sha256: 1ad3a50eb92ebef5840e50d2065807e4401f008f04a126898934dc82678638cd
+  value: -47363.08
+  format: money
+  display: GBP -47.363,08
+- id: OBS030
+  type: observed
+  text: 'Miembros que permanecen en ranking final respecto a previo: 60.'
+  source: reports/validation/selection-diagnostics-correction.json
+  field: last_baseline_stability.shared_selected_customers
+  source_sha256: a3f31a8575420457acf994ef44abdee0f78209df92d0188f62f4628c35f710ba
+  value: 60
+  format: integer
+  display: '60'
+- id: OBS031
+  type: observed
+  text: 'Jaccard entre últimos rankings baseline: 0,429.'
+  source: reports/validation/selection-diagnostics-correction.json
+  field: last_baseline_stability.jaccard
+  source_sha256: a3f31a8575420457acf994ef44abdee0f78209df92d0188f62f4628c35f710ba
+  value: 0.42857142857142855
+  format: decimal3
+  display: 0,429
+- id: OBS032
+  type: observed
+  text: 'Tests del piloto que pasan: 50.'
+  source: reports/validation/verification.json
+  field: suite_passed
+  source_sha256: 1f750026d5182a769b0618d6ceba4fa45850a38eef3fb53f9a31f5621b46e01b
+  value: 50
+  format: integer
+  display: '50'
+- id: OBS033
+  type: observed
+  text: 'Métodos evaluados en holdout: [''historical_sales''].'
+  source: reports/validation/holdout-results.json
+  field: evaluated_methods
+  source_sha256: 8f37c0be10896a065deb484b529df8e9b7fbb8e8bf4bfdfa984abc9b63c9ce68
+  value:
+  - historical_sales
+  format: text
+  display: '[''historical_sales'']'
+- id: OBS034
+  type: observed
+  text: 'Holdout ejecutado una vez: 1.'
+  source: reports/validation/verification.json
+  field: holdout_attempts
+  source_sha256: 1f750026d5182a769b0618d6ceba4fa45850a38eef3fb53f9a31f5621b46e01b
+  value: 1
+  format: integer
+  display: '1'
+- id: ASM001
+  type: assumption
+  text: 'Historia para elegibilidad: 180.'
+  source: reports/execution/approved-contracts.json
+  field: retail.history_days
+  source_sha256: 6b723ab9122e933550fcc5024e67920c8a4392bf94db491458fb03efa51e1301
+  value: 180
+  format: integer
+  display: '180'
+- id: ASM002
+  type: assumption
+  text: 'Horizonte del outcome: 90.'
+  source: reports/execution/approved-contracts.json
+  field: retail.horizon_days
+  source_sha256: 6b723ab9122e933550fcc5024e67920c8a4392bf94db491458fb03efa51e1301
+  value: 90
+  format: integer
+  display: '90'
+- id: ASM003
+  type: assumption
+  text: 'Ventana del baseline: 90.'
+  source: reports/execution/approved-contracts.json
+  field: retail.baseline_days
+  source_sha256: 6b723ab9122e933550fcc5024e67920c8a4392bf94db491458fb03efa51e1301
+  value: 90
+  format: integer
+  display: '90'
+- id: ASM004
+  type: assumption
+  text: 'Capacidad simulada: 100.'
+  source: reports/execution/approved-contracts.json
+  field: retail.capacity
+  source_sha256: 6b723ab9122e933550fcc5024e67920c8a4392bf94db491458fb03efa51e1301
+  value: 100
+  format: integer
+  display: '100'
+- id: ASM005
+  type: assumption
+  text: 'Observabilidad supuesta: Transacciones observables en su invoice_at para
+    simulación retrospectiva; no se acredita latencia operacional ni historial de
+    revisiones..'
+  source: reports/execution/approved-contracts.json
+  field: retail.timestamp_policy.availability_assumption
+  source_sha256: 6b723ab9122e933550fcc5024e67920c8a4392bf94db491458fb03efa51e1301
+  value: Transacciones observables en su invoice_at para simulación retrospectiva;
+    no se acredita latencia operacional ni historial de revisiones.
+  format: text
+  display: Transacciones observables en su invoice_at para simulación retrospectiva;
+    no se acredita latencia operacional ni historial de revisiones.
+- id: LIM001
+  type: limitation
+  text: 'El target no identifica: [''Ventas netas'', ''Margen o beneficio'', ''CLV
+    completo'', ''Efecto de contacto o uplift'', ''ROI de campaña''].'
+  source: reports/execution/approved-contracts.json
+  field: retail.target.not_identified
+  source_sha256: 6b723ab9122e933550fcc5024e67920c8a4392bf94db491458fb03efa51e1301
+  value:
+  - Ventas netas
+  - Margen o beneficio
+  - CLV completo
+  - Efecto de contacto o uplift
+  - ROI de campaña
+  format: text
+  display: '[''Ventas netas'', ''Margen o beneficio'', ''CLV completo'', ''Efecto
+    de contacto o uplift'', ''ROI de campaña'']'
+- id: LIM002
+  type: limitation
+  text: Encargo, cliente y capacidad simulados; no existe campaña observada.
+  source: PROJECT.md
+  source_sha256: e250485a50a580db5508b505ea5cc31615b5b72a3baa04b4218aa6c6749826a6
+  evidence_excerpt: no existe un cliente contratante ni campaña observada
+- id: LIM003
+  type: limitation
+  text: El holdout describe únicamente baseline, sin nueva comparación contra modelos
+    descartados.
+  source: reports/validation/holdout-results.json
+  field: interpretation
+  source_sha256: 8f37c0be10896a065deb484b529df8e9b7fbb8e8bf4bfdfa984abc9b63c9ce68
+  value: Si seleccionado es baseline, final es descriptivo; no comparación con modelos
+    descartados ni afirmación de mejora.
+- id: PROP001
+  type: proposal
+  text: Si se quiere decidir una campaña, validar datos actuales as-of y diseñar una
+    prueba causal con grupos comparables, outcome y costes acordados.
+  source: reports/validation/review.md
+  source_sha256: a1d478309d3275b1bbb210042e10f3f224b685e9c2ec451c388d90116f954a47
+  evidence_excerpt: se requiere prueba causal distinta

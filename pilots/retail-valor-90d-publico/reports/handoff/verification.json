@@ -1,0 +1,29 @@
+{
+  "original_tests_passed": 56,
+  "rebuilt_environment_tests_passed": 56,
+  "failed": 0,
+  "reproduction": "PASS",
+  "comparison_groups": 6,
+  "numeric_rtol": 1e-08,
+  "numeric_atol": 1e-06,
+  "decision_ids_ranking": "EXACT",
+  "all_17_locked_packages_match": true,
+  "historical_manifests_verified": {
+    "reports/discovery/evidence-manifest-02.json": 44,
+    "reports/framing/evidence-manifest.json": 18,
+    "reports/diagnosis/evidence-manifest.json": 20,
+    "reports/execution/evidence-manifest.json": 43,
+    "reports/execution/dataset-manifest.json": 8,
+    "reports/validation/evidence-manifest.json": 42,
+    "reports/delivery/evidence-manifest.json": 28
+  },
+  "no_analysis_code_absolute_device_paths_or_foundry_dependency": true,
+  "skills_snapshot_integrity": "PASS via acos integrity checks",
+  "original_holdout_marker_unchanged": true,
+  "delivery": "PASS",
+  "handoff": "NEEDS_REVIEW",
+  "final_review": "Nativa del ejecutor; no revisión independiente.",
+  "platform_coverage": "macOS arm64 Python3.13.2, no prueba analítica Windows/Linux.",
+  "foundry_changes": false,
+  "api_cost_usd": 0
+}

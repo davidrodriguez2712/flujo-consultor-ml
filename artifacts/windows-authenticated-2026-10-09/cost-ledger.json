@@ -1,0 +1,128 @@
+{
+  "authorization_usd": 1,
+  "api_estimated_usd": 0.346215125,
+  "conservative_committed_usd": 0.565150375,
+  "scope": "Estimación de APIs por usage; reservas sin usage no equivalen a cargos. GitHub Actions excluido.",
+  "attempts": [
+    {
+      "attempt": "run-01",
+      "architecture": "x64",
+      "runtime": "codex",
+      "passed": false,
+      "estimated_usd": 0,
+      "committed_usd": 0
+    },
+    {
+      "attempt": "run-02",
+      "architecture": "x64",
+      "runtime": "codex",
+      "passed": false,
+      "estimated_usd": 0.029015,
+      "committed_usd": 0.029015
+    },
+    {
+      "attempt": "run-03",
+      "architecture": "x64",
+      "runtime": "codex",
+      "passed": false,
+      "estimated_usd": 0.055135500000000004,
+      "committed_usd": 0.055135500000000004
+    },
+    {
+      "attempt": "run-04",
+      "architecture": "x64",
+      "runtime": "codex",
+      "passed": false,
+      "estimated_usd": 0.00269929,
+      "committed_usd": 0.00269929
+    },
+    {
+      "attempt": "run-05",
+      "architecture": "x64",
+      "runtime": "codex",
+      "passed": false,
+      "estimated_usd": 0,
+      "committed_usd": 0
+    },
+    {
+      "attempt": "run-06",
+      "architecture": "x64",
+      "runtime": "codex",
+      "passed": false,
+      "estimated_usd": 0,
+      "committed_usd": 0
+    },
+    {
+      "attempt": "run-07",
+      "architecture": "x64",
+      "runtime": "codex",
+      "passed": true,
+      "estimated_usd": 0.00772443,
+      "committed_usd": 0.00772443
+    },
+    {
+      "attempt": "run-07",
+      "architecture": "x64",
+      "runtime": "claude",
+      "passed": false,
+      "estimated_usd": 0,
+      "committed_usd": 0.133524
+    },
+    {
+      "attempt": "run-08",
+      "architecture": "x64",
+      "runtime": "claude",
+      "passed": false,
+      "estimated_usd": 0,
+      "committed_usd": 0.08541125
+    },
+    {
+      "attempt": "run-09",
+      "architecture": "arm64",
+      "runtime": "codex",
+      "passed": true,
+      "estimated_usd": 0.007780755,
+      "committed_usd": 0.007780755
+    },
+    {
+      "attempt": "run-10",
+      "architecture": "x64",
+      "runtime": "claude",
+      "passed": false,
+      "estimated_usd": 0.03511705,
+      "committed_usd": 0.03511705
+    },
+    {
+      "attempt": "run-11",
+      "architecture": "x64",
+      "runtime": "claude",
+      "passed": false,
+      "estimated_usd": 0.02797065,
+      "committed_usd": 0.02797065
+    },
+    {
+      "attempt": "run-12",
+      "architecture": "x64",
+      "runtime": "claude",
+      "passed": false,
+      "estimated_usd": 0.0592314,
+      "committed_usd": 0.0592314
+    },
+    {
+      "attempt": "run-13",
+      "architecture": "x64",
+      "runtime": "claude",
+      "passed": true,
+      "estimated_usd": 0.05479895,
+      "committed_usd": 0.05479895
+    },
+    {
+      "attempt": "run-14",
+      "architecture": "arm64",
+      "runtime": "claude",
+      "passed": true,
+      "estimated_usd": 0.0667421,
+      "committed_usd": 0.0667421
+    }
+  ]
+}

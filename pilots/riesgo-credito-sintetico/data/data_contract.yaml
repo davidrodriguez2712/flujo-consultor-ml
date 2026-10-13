@@ -1,0 +1,36 @@
+grain: Una fila por solicitud, application_id; varias solicitudes por customer_id,
+  incluso dentro del mismo mes.
+keys:
+  primary: application_id
+  entity: customer_id
+  join: application_id, 1:1 en las cinco tablas
+coverage:
+  applications: 7200
+  unique_customers: 1766
+  scoring_start: '2024-01-01'
+  scoring_end: '2025-12-28'
+  months: 24
+  applications_per_month: 300
+  extract_at: '2026-01-15'
+  label_counts:
+    not_observed_rejected: 3726
+    observed: 3084
+    pending: 390
+  limits:
+  - Solo concedidas con label disponible son evaluables; rechazadas sin outcome.
+  - Historia sintética, no ledger real.
+quality:
+  status: CHECKED_NEEDS_HUMAN_REVIEW
+  exact_duplicates: 0
+  duplicate_application_keys: 0
+  same_ids_across_tables: true
+  checks_file: analysis/outputs/diagnosis-checks.json
+  known_risks:
+  - Información posterior deliberada; separar del scoring.
+  - Label delay exige corte por disponibilidad.
+  - Join por cliente produce fan-out.
+  - Dependencia por cliente y sesgo de selección.
+target: 30 días de mora alcanzados en 90 días desde desembolso; label completa al
+  día97
+validation_design: validation/validation_design.yaml
+status: PROPOSED_NEEDS_REVIEW

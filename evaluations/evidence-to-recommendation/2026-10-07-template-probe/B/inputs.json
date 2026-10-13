@@ -1,0 +1,27 @@
+{
+  "context": "Research comercial ficticio, septiembre 2025. Decisión: rollout global por supuesta mejora de conversión en todos los mercados. Fuentes describen el mismo período; no hay baseline previo ni experimento. Owner: gerente comercial.",
+  "evidence": {
+    "E1": "Mercado Norte: 100 exposiciones, 40 conversiones.",
+    "E2": "Mercado Sur: 900 exposiciones, 90 conversiones.",
+    "E3": "Norte y Sur son particiones disjuntas del total provisto, sin otras regiones. Conteos comparables; no hay cambio causal demostrado ni medición anterior."
+  },
+  "draft_claims": [
+    {
+      "id": "B1",
+      "text": "La conversión global es 25%."
+    },
+    {
+      "id": "B2",
+      "text": "La solución mejoró conversión en todos los mercados."
+    },
+    {
+      "id": "B3",
+      "text": "Sur tiene 10% de conversión observada."
+    }
+  ],
+  "numeric_fields": [
+    "global_conversion",
+    "north_conversion",
+    "south_conversion"
+  ]
+}

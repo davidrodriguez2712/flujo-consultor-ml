@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-08",
+  "phase": "discovery_prepared",
+  "gate_status": "NEEDS_REVIEW",
+  "integrity": "OK",
+  "completed_stages": [],
+  "monthly_application_counts": {
+    "2024-01": 300,
+    "2024-02": 300,
+    "2024-03": 300,
+    "2024-04": 300,
+    "2024-05": 300,
+    "2024-06": 300,
+    "2024-07": 300,
+    "2024-08": 300,
+    "2024-09": 300,
+    "2024-10": 300,
+    "2024-11": 300,
+    "2024-12": 300,
+    "2025-01": 300,
+    "2025-02": 300,
+    "2025-03": 300,
+    "2025-04": 300,
+    "2025-05": 300,
+    "2025-06": 300,
+    "2025-07": 300,
+    "2025-08": 300,
+    "2025-09": 300,
+    "2025-10": 300,
+    "2025-11": 300,
+    "2025-12": 300
+  },
+  "protected_prior_files": 1180,
+  "prior_hashes_unchanged": true,
+  "generator_hash_matches": true,
+  "manifest_sizes_match": true,
+  "additional_api_calls": 0,
+  "tests": {
+    "product": 125,
+    "generator": 6,
+    "combined": 157
+  },
+  "review": "agent-review.md",
+  "limits": [
+    "No se ejecutaron modelos ni runtimes nativos nuevos.",
+    "No se evaluó eficacia de skills ni se modificó Foundry.",
+    "Revisión humana de Discovery pendiente."
+  ]
+}

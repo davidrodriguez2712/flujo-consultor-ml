@@ -1,0 +1,33 @@
+{
+  "rows": [
+    {
+      "id": "B1",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "La versi\u00f3n actual (churn=1, fecha_evento 20-jun) corresponde a la primera certificaci\u00f3n y publicaci\u00f3n del positivo el 2025-08-05T09:00Z, posterior al entrenamiento (2025-07-15T00:00Z) y anterior a la extracci\u00f3n (2025-08-15). Seg\u00fan el extracto, la versi\u00f3n actual se public\u00f3 en el sistema en ese mismo instante y no hay otros canales de publicaci\u00f3n. Antes solo exist\u00eda un flag sin resolver, que no es un valor certificado. Que el evento ocurriera el 20-jun no basta para disponibilidad. Usar el churn=1 actual en un entrenamiento del 15-jul ser\u00eda leakage retrospectivo. Las features (disponibles 2025-05-31T18:00Z, antes de la predicci\u00f3n del 2025-06-01) no son el problema."
+    },
+    {
+      "id": "B2",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "La ausencia de churn en la ventana [2025-06-01, 2025-07-01) se certific\u00f3 y public\u00f3 el 2025-07-10T09:00Z, sin revisiones posteriores. Eso es anterior al entrenamiento (2025-07-15T00:00Z), as\u00ed que el cero actual coincide con el valor disponible entonces. Las features estaban disponibles el 2025-05-31T18:00Z, antes de la predicci\u00f3n del 2025-06-01T00:00Z. La poblaci\u00f3n es v\u00e1lida, as\u00ed que el registro es elegible."
+    },
+    {
+      "id": "B3",
+      "outcome_state_at_extraction": "unknown",
+      "label_availability_at_training": "indeterminate",
+      "train_eligibility": "indeterminate",
+      "reason": "El CSV muestra churn=0 con fecha_evento vac\u00eda, pero el export no incluye certificaci\u00f3n, ticket ni historial de publicaci\u00f3n, y no se document\u00f3 la regla que produce este cero. El cero podr\u00eda ser una ausencia certificada, un valor por defecto o un dato no resuelto, y no hay base para elegir. Por eso no se puede certificar negativo y tampoco es pending, porque no se conoce una regla que explique la espera. Tampoco se puede saber si ese valor estaba en el sistema el 2025-07-15. Una fecha_evento vac\u00eda no demuestra ausencia de churn. No se completan hechos ausentes. Las features no presentan problema de tiempo."
+    }
+  ],
+  "open_questions": [
+    "B3: \u00bfQu\u00e9 regla o proceso produce churn=0 con fecha_evento vac\u00eda (ausencia certificada, valor por defecto o no resuelto)?",
+    "B3: \u00bfExisti\u00f3 certificaci\u00f3n de Auditor\u00eda para la ventana [2025-06-01, 2025-07-01)? Si existi\u00f3, \u00bfcu\u00e1ndo se public\u00f3 en el sistema de entrenamiento: antes, en o despu\u00e9s de 2025-07-15T00:00Z?",
+    "B3: \u00bfHay historial de versiones o logs de publicaci\u00f3n del label que permitan reconstruir el valor vigente el 2025-07-15?",
+    "B1: \u00bfHay confirmaci\u00f3n de que el flag sin resolver previo al 2025-08-05 no se public\u00f3 nunca como 0 ni como 1 certificado? Se asume que no, seg\u00fan el ticket.",
+    "General: \u00bfSe puede obtener un snapshot as-of 2025-07-15T00:00Z de los labels para reconstruir el entrenamiento sin depender del CSV, que reemplaza valores anteriores?"
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

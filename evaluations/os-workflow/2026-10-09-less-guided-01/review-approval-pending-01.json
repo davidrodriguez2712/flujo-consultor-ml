@@ -1,0 +1,10 @@
+{
+  "status": "PENDING_REVIEW",
+  "manifest": "evidence-manifest-01.json",
+  "manifest_sha256": "90544d163b168930e86373699ede98b7f099b54d1b7d7d5ea9487d1c50362e19",
+  "reviewer": null,
+  "decision": null,
+  "scope": "Revisar protocolo/cases/expected concretos; ejecución y presupuesto no autorizados por aceptación de preparación.",
+  "preparation_authorization": "Usuario: aprobado",
+  "recorded_at_utc": "2026-10-09T17:45:11.799352+00:00"
+}

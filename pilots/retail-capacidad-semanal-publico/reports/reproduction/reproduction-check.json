@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "independent_workspace": "/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-forecast-reproduction-oodzo9vi/project",
+  "command": "python analysis/run_forecast.py --project . --output reports/reproduced-01",
+  "same_host_same_python": true,
+  "writes_reads": "raw gzip CSV -> weekly CSV write/read -> dev predictions CSV write/read -> strategy JSON write/read -> final CSV write/read",
+  "comparisons": [
+    {
+      "file": "weekly_counts.csv",
+      "original_sha256": "73e9543140b95b87430385d79ae7220311a892d86b88f1c790294ed5990c2e6c",
+      "reproduced_sha256": "73e9543140b95b87430385d79ae7220311a892d86b88f1c790294ed5990c2e6c",
+      "match": "exact_bytes"
+    },
+    {
+      "file": "development_predictions.csv",
+      "original_sha256": "9173a735410a4bf7c11894818e6559b7f9e05280390d54e4ca732ed58ee25f63",
+      "reproduced_sha256": "9173a735410a4bf7c11894818e6559b7f9e05280390d54e4ca732ed58ee25f63",
+      "match": "exact_bytes"
+    },
+    {
+      "file": "final_predictions.csv",
+      "original_sha256": "e1bf7bdf30940569c80c966c2a07e11035af201fbeb0c24d37be9aa0ca2d47cf",
+      "reproduced_sha256": "e1bf7bdf30940569c80c966c2a07e11035af201fbeb0c24d37be9aa0ca2d47cf",
+      "match": "exact_bytes"
+    },
+    {
+      "file": "strategy.json",
+      "original_sha256": "c2a1c491f7ae545098dfc5dd886094a82c77a41dce0db260d6a752a6b5e1e873",
+      "reproduced_sha256": "c2a1c491f7ae545098dfc5dd886094a82c77a41dce0db260d6a752a6b5e1e873",
+      "match": "exact_bytes"
+    },
+    {
+      "file": "result.json",
+      "original_sha256": "4468aa321f7958ee701dcb8ea35e58820cafd73875949d53b0ff2bdeb0807014",
+      "reproduced_sha256": "4468aa321f7958ee701dcb8ea35e58820cafd73875949d53b0ff2bdeb0807014",
+      "match": "exact_bytes"
+    },
+    {
+      "file": "environment.json",
+      "original_sha256": "a142af7d8a787d1c2e85ceabbb0029d9fe21b8052448f629b2949bc705d35b7a",
+      "reproduced_sha256": "a142af7d8a787d1c2e85ceabbb0029d9fe21b8052448f629b2949bc705d35b7a",
+      "match": "exact_bytes"
+    },
+    {
+      "file": "outputs-manifest.json",
+      "original_sha256": "7e04414b06496f2dc5db637a2187156775d198dda076fc5acb81471206811e80",
+      "reproduced_sha256": "7e04414b06496f2dc5db637a2187156775d198dda076fc5acb81471206811e80",
+      "match": "exact_bytes"
+    }
+  ],
+  "source_sha256": "4d3618376972b427716f80c4ff6730ef1078ee9eed6670ea31361016cc6799ff",
+  "original_run_unchanged": true,
+  "fresh_data_or_strategy_evaluation": false,
+  "api_cost_usd": 0
+}

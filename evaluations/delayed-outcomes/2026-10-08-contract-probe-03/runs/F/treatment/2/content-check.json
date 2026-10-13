@@ -1,0 +1,36 @@
+{
+  "strict_format_pass": true,
+  "diagnostic_parse_used": false,
+  "payload_schema_pass": true,
+  "content_evaluable": true,
+  "ids_exact": true,
+  "gate_matches": true,
+  "field_matches": 9,
+  "field_total": 9,
+  "row_decisions_correct": 3,
+  "row_total": 3,
+  "eligible_false_positives": 0,
+  "valid_rows_excluded": 0,
+  "valid_rows_indeterminate": 0,
+  "mismatches": [],
+  "row_checks": [
+    {
+      "id": "F1",
+      "outcome_state_at_extraction": true,
+      "label_availability_at_training": true,
+      "train_eligibility": true
+    },
+    {
+      "id": "F2",
+      "outcome_state_at_extraction": true,
+      "label_availability_at_training": true,
+      "train_eligibility": true
+    },
+    {
+      "id": "F3",
+      "outcome_state_at_extraction": true,
+      "label_availability_at_training": true,
+      "train_eligibility": true
+    }
+  ]
+}

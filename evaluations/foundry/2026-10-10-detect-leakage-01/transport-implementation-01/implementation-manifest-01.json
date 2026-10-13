@@ -1,0 +1,452 @@
+{
+  "id": "foundry-native-transport-implementation-01",
+  "scope": "Código, pruebas y probes nativos con proveedor simulado; no estudio de eficacia ni autorización de API",
+  "precedence_evidence": "local_only",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "257cba4b82f4ac91ed394d314c1ccd5488f3f104b3df4a4c9f610d1bd6919e27",
+      "bytes": 894
+    },
+    {
+      "path": "historical-integrity.json",
+      "sha256": "31a0dd69154aae0eaa9627f7bf06b02b66ae90d4227289c4bd4aac28c98d0470",
+      "bytes": 3105
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_sk0/isolated-config/.claude.json",
+      "sha256": "6d8f36cd5f89b76a89d5894156d43f711f3f3026fe6c5c124b79c8ad188682e7",
+      "bytes": 961
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_sk0/isolated-config/backups/.claude.json.backup.1791631929793",
+      "sha256": "d9edd929011ad206c38ee2cf42471ff611845e67e2109e73010f8ab0614fd1c4",
+      "bytes": 84
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_sk0/metadata.json",
+      "sha256": "04e9d9da3c63544a934864c40922be226c342abb5e86e24af528851e595c7bb9",
+      "bytes": 4150
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_sk0/result.txt",
+      "sha256": "4f7034e1560a97bc6d474d235c0c4f315573904d1f2935ed7159a44cac2f3120",
+      "bytes": 17
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_sk0/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_sk0/stdout.jsonl",
+      "sha256": "0cb888be43a752125139a6f7e52441c6cfe14b19e495b10814c334e08f00d168",
+      "bytes": 33110
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_sk0/workspace/.runtime/check_inputs.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_sk0/workspace/.runtime/plugin/.claude-plugin/plugin.json",
+      "sha256": "6ae3e6d4507deea2a98ee78108d415ddb06881953ab31452fa003d6967dcbfef",
+      "bytes": 41
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_sk0/workspace/.runtime/plugin/skills/detect-leakage/SKILL.md",
+      "sha256": "2ea060606202840ee4ce49ff27c9beb6b29ffae27edebcf755683e9c9bc99fce",
+      "bytes": 25559
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_sk0/workspace/case.md",
+      "sha256": "8a26607fc9e02805d7e445aacc58cd132809a2cbcd75b44b1f3cf9b7d992ae8b",
+      "bytes": 12
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_sk0/workspace/inputs/data.csv",
+      "sha256": "daff832f802000e645771a60983c76c963f6ee602a6230e45237bd360e91cc1a",
+      "bytes": 4
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_sk0/workspace/reports/leakage/audit.md",
+      "sha256": "f5def84c41e2736f3dfaa14b0ea423a2b06242355c341bf0256aef7f1fe7941d",
+      "bytes": 39
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_skcurrent/isolated-config/.claude.json",
+      "sha256": "6d8f36cd5f89b76a89d5894156d43f711f3f3026fe6c5c124b79c8ad188682e7",
+      "bytes": 961
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_skcurrent/isolated-config/backups/.claude.json.backup.1791631929793",
+      "sha256": "d9edd929011ad206c38ee2cf42471ff611845e67e2109e73010f8ab0614fd1c4",
+      "bytes": 84
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_skcurrent/metadata.json",
+      "sha256": "04e9d9da3c63544a934864c40922be226c342abb5e86e24af528851e595c7bb9",
+      "bytes": 4150
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_skcurrent/result.txt",
+      "sha256": "4f7034e1560a97bc6d474d235c0c4f315573904d1f2935ed7159a44cac2f3120",
+      "bytes": 17
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_skcurrent/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_skcurrent/stdout.jsonl",
+      "sha256": "0cb888be43a752125139a6f7e52441c6cfe14b19e495b10814c334e08f00d168",
+      "bytes": 33110
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_skcurrent/workspace/.runtime/check_inputs.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_skcurrent/workspace/.runtime/plugin/.claude-plugin/plugin.json",
+      "sha256": "6ae3e6d4507deea2a98ee78108d415ddb06881953ab31452fa003d6967dcbfef",
+      "bytes": 41
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_skcurrent/workspace/.runtime/plugin/skills/detect-leakage/SKILL.md",
+      "sha256": "2ea060606202840ee4ce49ff27c9beb6b29ffae27edebcf755683e9c9bc99fce",
+      "bytes": 25559
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_skcurrent/workspace/case.md",
+      "sha256": "8a26607fc9e02805d7e445aacc58cd132809a2cbcd75b44b1f3cf9b7d992ae8b",
+      "bytes": 12
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_skcurrent/workspace/inputs/data.csv",
+      "sha256": "daff832f802000e645771a60983c76c963f6ee602a6230e45237bd360e91cc1a",
+      "bytes": 4
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_invokes_exact_skcurrent/workspace/reports/leakage/audit.md",
+      "sha256": "f5def84c41e2736f3dfaa14b0ea423a2b06242355c341bf0256aef7f1fe7941d",
+      "bytes": 39
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f0/isolated-config/.claude.json",
+      "sha256": "89095166d512f3523c77aa51876f3321d96eb2ddf3cad18fe8648f60101b9ed9",
+      "bytes": 719
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f0/isolated-config/backups/.claude.json.backup.1791631927692",
+      "sha256": "77a07186aa94e024b7ddbf49e18f1c4111e3e51d13dcfe7ec9e60223bf876722",
+      "bytes": 84
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f0/metadata.json",
+      "sha256": "6c102fc008fd8aceb8be34032cc9bc6e6a2f12b0bc51125db422bb12feab935b",
+      "bytes": 2519
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f0/result.txt",
+      "sha256": "536077aa5c5ab80094b49b6014d34030c76c8a4e0ff97ae82983e10d650c7f1b",
+      "bytes": 74
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f0/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f0/stdout.jsonl",
+      "sha256": "0ab5b0fdda0a7b5ccc890a64c1210fae877ec951f09c29b68a2f931f736b1a3a",
+      "bytes": 3871
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f0/workspace/.runtime/check_inputs.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f0/workspace/case.md",
+      "sha256": "5ba6b34cf6d460a3db389e9d3e5f7d53de35678c81c1fa1945feac3163c02561",
+      "bytes": 11
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f0/workspace/inputs/data.csv",
+      "sha256": "daff832f802000e645771a60983c76c963f6ee602a6230e45237bd360e91cc1a",
+      "bytes": 4
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f1/isolated-config/.claude.json",
+      "sha256": "70d6263c08d949cbf7d009de935e8addd0e169e6c62802dc5ee59af5e905de36",
+      "bytes": 719
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f1/isolated-config/backups/.claude.json.backup.1791631928392",
+      "sha256": "c15e3325264ffea79aeac973a6f0857c493c297afc6d669e909273474b544c96",
+      "bytes": 84
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f1/metadata.json",
+      "sha256": "c133bec9435a14f8a595bd9988c5a87b782d86ddd5e91ef86568ff876741e204",
+      "bytes": 2519
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f1/result.txt",
+      "sha256": "536077aa5c5ab80094b49b6014d34030c76c8a4e0ff97ae82983e10d650c7f1b",
+      "bytes": 74
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f1/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f1/stdout.jsonl",
+      "sha256": "8dd9adbaae58858f0e7975ef85831851cfbeba72f068704d0f363c6122da21cc",
+      "bytes": 3871
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f1/workspace/.runtime/check_inputs.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f1/workspace/case.md",
+      "sha256": "5ba6b34cf6d460a3db389e9d3e5f7d53de35678c81c1fa1945feac3163c02561",
+      "bytes": 11
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f1/workspace/inputs/data.csv",
+      "sha256": "daff832f802000e645771a60983c76c963f6ee602a6230e45237bd360e91cc1a",
+      "bytes": 4
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f2/isolated-config/.claude.json",
+      "sha256": "1c9e4751f26ccb8b74d16daf516ce8e702d81bc88132206c24e24bb43ae51b65",
+      "bytes": 719
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f2/isolated-config/backups/.claude.json.backup.1791631929096",
+      "sha256": "666fed080e8f92660c3181e547db059989185388180e0687a8a8face9bd7336c",
+      "bytes": 84
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f2/metadata.json",
+      "sha256": "90ec49c6666cfaf794c53051fb2eca7c25639dc2c507f9d9edc10bf0352fbc6e",
+      "bytes": 2519
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f2/result.txt",
+      "sha256": "536077aa5c5ab80094b49b6014d34030c76c8a4e0ff97ae82983e10d650c7f1b",
+      "bytes": 74
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f2/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f2/stdout.jsonl",
+      "sha256": "a1b338445395d91da3acc4f1b992ddfddcb2ca138cc47e4c9eae37a99675391c",
+      "bytes": 3871
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f2/workspace/.runtime/check_inputs.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f2/workspace/case.md",
+      "sha256": "5ba6b34cf6d460a3db389e9d3e5f7d53de35678c81c1fa1945feac3163c02561",
+      "bytes": 11
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_f2/workspace/inputs/data.csv",
+      "sha256": "daff832f802000e645771a60983c76c963f6ee602a6230e45237bd360e91cc1a",
+      "bytes": 4
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_fcurrent/isolated-config/.claude.json",
+      "sha256": "1c9e4751f26ccb8b74d16daf516ce8e702d81bc88132206c24e24bb43ae51b65",
+      "bytes": 719
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_fcurrent/isolated-config/backups/.claude.json.backup.1791631929096",
+      "sha256": "666fed080e8f92660c3181e547db059989185388180e0687a8a8face9bd7336c",
+      "bytes": 84
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_fcurrent/metadata.json",
+      "sha256": "90ec49c6666cfaf794c53051fb2eca7c25639dc2c507f9d9edc10bf0352fbc6e",
+      "bytes": 2519
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_fcurrent/result.txt",
+      "sha256": "536077aa5c5ab80094b49b6014d34030c76c8a4e0ff97ae82983e10d650c7f1b",
+      "bytes": 74
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_fcurrent/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_fcurrent/stdout.jsonl",
+      "sha256": "a1b338445395d91da3acc4f1b992ddfddcb2ca138cc47e4c9eae37a99675391c",
+      "bytes": 3871
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_fcurrent/workspace/.runtime/check_inputs.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_fcurrent/workspace/case.md",
+      "sha256": "5ba6b34cf6d460a3db389e9d3e5f7d53de35678c81c1fa1945feac3163c02561",
+      "bytes": 11
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_never_executes_fcurrent/workspace/inputs/data.csv",
+      "sha256": "daff832f802000e645771a60983c76c963f6ee602a6230e45237bd360e91cc1a",
+      "bytes": 4
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_reads_writes_and0/isolated-config/.claude.json",
+      "sha256": "c82cf188bc65176e670d5ef8c1e390f5351d21b6d159974f17dfe9d0f3959790",
+      "bytes": 719
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_reads_writes_and0/isolated-config/backups/.claude.json.backup.1791631926446",
+      "sha256": "a46fc24ff9c0a0a5f6d90e29c099d9c9f08583d82910737e193f886778340dcc",
+      "bytes": 84
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_reads_writes_and0/metadata.json",
+      "sha256": "ada31f2c37e9e6fcce66f8b9cb3cb1a6160d6fc90551c094372f26a5f9250e62",
+      "bytes": 3509
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_reads_writes_and0/result.txt",
+      "sha256": "71fbf5dadc024e80fdf900fe9aed1b6d823bb07a1b32561e2d48f9a0a8a97fad",
+      "bytes": 45
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_reads_writes_and0/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_reads_writes_and0/stdout.jsonl",
+      "sha256": "6b6715a1ae991db8b4d7f27cc957fca89bd5668318dcfaf42a33007cf7e73270",
+      "bytes": 6625
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_reads_writes_and0/workspace/.runtime/check_inputs.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_reads_writes_and0/workspace/case.md",
+      "sha256": "8892375525d208ec1a00c5cec0698b3531a23c1803c6833b1a58002231ca29e0",
+      "bytes": 68
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_reads_writes_and0/workspace/inputs/data.csv",
+      "sha256": "daff832f802000e645771a60983c76c963f6ee602a6230e45237bd360e91cc1a",
+      "bytes": 4
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_reads_writes_and0/workspace/reports/leakage/audit.md",
+      "sha256": "f9e28839d41ad322045f9dd520d20633e1055c9dd0a722caacba8c40a3b78e5b",
+      "bytes": 69
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_reads_writes_andcurrent/isolated-config/.claude.json",
+      "sha256": "c82cf188bc65176e670d5ef8c1e390f5351d21b6d159974f17dfe9d0f3959790",
+      "bytes": 719
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_reads_writes_andcurrent/isolated-config/backups/.claude.json.backup.1791631926446",
+      "sha256": "a46fc24ff9c0a0a5f6d90e29c099d9c9f08583d82910737e193f886778340dcc",
+      "bytes": 84
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_reads_writes_andcurrent/metadata.json",
+      "sha256": "ada31f2c37e9e6fcce66f8b9cb3cb1a6160d6fc90551c094372f26a5f9250e62",
+      "bytes": 3509
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_reads_writes_andcurrent/result.txt",
+      "sha256": "71fbf5dadc024e80fdf900fe9aed1b6d823bb07a1b32561e2d48f9a0a8a97fad",
+      "bytes": 45
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_reads_writes_andcurrent/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_reads_writes_andcurrent/stdout.jsonl",
+      "sha256": "6b6715a1ae991db8b4d7f27cc957fca89bd5668318dcfaf42a33007cf7e73270",
+      "bytes": 6625
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_reads_writes_andcurrent/workspace/.runtime/check_inputs.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_reads_writes_andcurrent/workspace/case.md",
+      "sha256": "8892375525d208ec1a00c5cec0698b3531a23c1803c6833b1a58002231ca29e0",
+      "bytes": 68
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_reads_writes_andcurrent/workspace/inputs/data.csv",
+      "sha256": "daff832f802000e645771a60983c76c963f6ee602a6230e45237bd360e91cc1a",
+      "bytes": 4
+    },
+    {
+      "path": "native-mock-runs/test_real_cli_reads_writes_andcurrent/workspace/reports/leakage/audit.md",
+      "sha256": "f9e28839d41ad322045f9dd520d20633e1055c9dd0a722caacba8c40a3b78e5b",
+      "bytes": 69
+    },
+    {
+      "path": "pytest-results.xml",
+      "sha256": "2f0f964e1b0bc1facc21710708c41c5090d7a66f5290ed0ac5321df8b5b55e24",
+      "bytes": 28263
+    },
+    {
+      "path": "snapshots/scripts/ci/runtime_budget.py",
+      "sha256": "e05709ccd5f86df221995f45bd5714536e608ea9af34218a4ec6c2a132378832",
+      "bytes": 19191
+    },
+    {
+      "path": "snapshots/scripts/evaluations/foundry_input_facts.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "snapshots/scripts/evaluations/foundry_native_transport.py",
+      "sha256": "5f52d4194ce0ad8ae37018cbc46b5acc8a3f9b11f328c17c3b406be956ad001a",
+      "bytes": 11844
+    },
+    {
+      "path": "snapshots/tests/test_foundry_native_transport.py",
+      "sha256": "0527b53d15c361cad981fba8966b7cb774920ba7d3f77f3da1c2da6a1c27b6d4",
+      "bytes": 15194
+    },
+    {
+      "path": "snapshots/tests/test_runtime_budget.py",
+      "sha256": "2c1668fe2dd04fcc34d7035cc2ac43154bb6088b56edf9c4f48ce5fdf5586ded",
+      "bytes": 12521
+    },
+    {
+      "path": "verification-summary.json",
+      "sha256": "d59b263119d6a71f8e73056f2f6b7a98b06ed68a8fd607f37d0ed095146d6eb0",
+      "bytes": 624
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "rows": [
+    {
+      "id": "D1",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "La mora de 30 d\u00edas es irreversible y el supervisor la certific\u00f3 el 2025-06-28. El extracto (2025-08-15T00:00:00Z) muestra target=1, ya publicado, as\u00ed que el outcome es observed_positive. La regla del diccionario exige que el label est\u00e9 publicado en el almac\u00e9n de entrenamiento. Se public\u00f3 el 2025-07-18T06:00:00Z, posterior al entrenamiento (2025-07-15T00:00:00Z), y 2025-07-18 > 2025-07-15 no cumple '<='. La firma del 28 de junio y la fecha de entrada en mora (25 de junio) no sustituyen la publicaci\u00f3n. Hay exclusi\u00f3n comprobada: el label no estaba disponible al entrenar. Las features (2025-05-31T18:00Z <= 2025-06-01T00:00Z) y la poblaci\u00f3n son v\u00e1lidas, pero no compensan."
+    },
+    {
+      "id": "D2",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "Entr\u00f3 en mora el 2025-06-22, dentro de [2025-06-01, 2025-07-01). El evento es irreversible y fue certificado y publicado el 2025-06-24T06:00:00Z. El extracto muestra target=1, por lo que es observed_positive. La publicaci\u00f3n es anterior al entrenamiento (2025-06-24 <= 2025-07-15T00:00:00Z), as\u00ed que el label estaba disponible. Las features estaban disponibles el 2025-05-31T18:00Z, antes de la predicci\u00f3n (2025-06-01T00:00Z), y la poblaci\u00f3n es v\u00e1lida. Se cumplen todas las condiciones, por lo que es elegible. El positivo temprano es definitivo porque la regla del target lo permite (irreversible, certificado)."
+    },
+    {
+      "id": "D3",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "No hubo mora en toda la ventana [2025-06-01, 2025-07-01). El acta final negativa se firm\u00f3 el 2025-07-02 y se public\u00f3 el 2025-07-09T06:00:00Z. La regla exige acta final y publicaci\u00f3n para certificar un negativo, y ambas existen antes de la extracci\u00f3n. El target=0 es por tanto observed_negative y no un cero provisional. La publicaci\u00f3n es anterior al entrenamiento (2025-07-09 <= 2025-07-15T00:00:00Z), as\u00ed que el label estaba disponible. Las features estaban disponibles el 2025-05-31T18:00Z, antes de la predicci\u00f3n, y la poblaci\u00f3n es v\u00e1lida. Es elegible."
+    }
+  ],
+  "open_questions": [
+    "\u00bfSe confirma que el 'almac\u00e9n usado por entrenamiento' es el mismo sistema donde constan las fechas de publicaci\u00f3n (D1: 2025-07-18T06:00Z)? Si el entrenamiento ley\u00f3 otro almac\u00e9n, la disponibilidad de D1 podr\u00eda cambiar.",
+    "\u00bfHay registros de auditor\u00eda de la publicaci\u00f3n de D1 que descarten una publicaci\u00f3n previa o una versi\u00f3n anterior del label? Con los datos provistos, la publicaci\u00f3n fue el 18 de julio.",
+    "Excluir D1 elimina un positivo de dos. \u00bfQu\u00e9 efecto tiene sobre la prevalencia y el tama\u00f1o del entrenamiento? Conviene revisar la tasa de positivos con el conjunto completo.",
+    "\u00bfLas features de los tres expedientes comparten realmente la disponibilidad 2025-05-31T18:00Z? Los documentos dicen 'salvo diferencias expl\u00edcitas' y no declaran ninguna, as\u00ed que se asumi\u00f3 la regla general."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

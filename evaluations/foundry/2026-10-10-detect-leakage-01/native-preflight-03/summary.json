@@ -1,0 +1,26 @@
+{
+  "status": "PASS_LOCAL_DISCOVERY",
+  "results": [
+    {
+      "condition": "baseline",
+      "discovery_status": "PASS",
+      "detect_leakage_commands": []
+    },
+    {
+      "condition": "treatment",
+      "discovery_status": "PASS",
+      "detect_leakage_commands": [
+        "acos-eval:detect-leakage"
+      ]
+    }
+  ],
+  "local_configuration_change": "Plugin local explícito, sin bare/safe, settingsources vacío y restricted.",
+  "credential_loaded": false,
+  "user_messages": 0,
+  "model_generation_requested": false,
+  "api_cost_usd": 0,
+  "skill_body_invocation_verified": false,
+  "tool_read_write_verified": false,
+  "filesystem_isolation_verified": false,
+  "budget_transport_compatible": false
+}

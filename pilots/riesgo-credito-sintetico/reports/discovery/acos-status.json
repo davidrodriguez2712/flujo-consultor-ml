@@ -1,0 +1,17 @@
+{
+  "project": "Piloto sintético de riesgo de crédito",
+  "stage": "discovery",
+  "status": "IN_PROGRESS",
+  "completed": [],
+  "total_stages": 7,
+  "blockers": [],
+  "open_decisions": [
+    "Revisar Discovery con los datos generados antes de aprobar su gate.",
+    "Confirmar política de ranking y criterio de aceptación antes de observar el holdout."
+  ],
+  "next_gates": [
+    "discovery"
+  ],
+  "integrity": "OK",
+  "findings": []
+}

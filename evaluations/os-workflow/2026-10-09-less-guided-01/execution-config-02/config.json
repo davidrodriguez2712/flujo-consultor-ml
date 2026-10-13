@@ -1,0 +1,144 @@
+{
+  "id": "os-workflow-less-guided-execution-02",
+  "status": "PREPARED_NOT_EXECUTED",
+  "preparation_manifest_sha256": "90544d163b168930e86373699ede98b7f099b54d1b7d7d5ea9487d1c50362e19",
+  "runtime": {
+    "name": "Claude Code",
+    "version": "2.1.296 (Claude Code)",
+    "executable": "/Users/davidrodriguez/.local/bin/claude",
+    "model": "claude-haiku-5-5",
+    "effort": "low"
+  },
+  "budget": {
+    "proposed_total_usd": 0.2,
+    "authorized": true,
+    "max_provider_requests": 13,
+    "max_requests_per_invocation": 1,
+    "max_output_tokens_including_thinking": 8192,
+    "retries": 0,
+    "includes": "Un smoke técnico separado y doce invocaciones del benchmark",
+    "reservation": "Bytes UTF-8 +16384, cache write 5m y output largo, hasta8192; limit de proxy=presupuesto acumulado menos coste previo.",
+    "prior_round_estimated_usd": 0.0015401750000000002,
+    "remaining_authorized_usd": 0.198459825
+  },
+  "isolation": {
+    "fresh_process": true,
+    "fresh_empty_temporary_cwd": true,
+    "bare": true,
+    "safe_mode": true,
+    "tools": [],
+    "mcp_servers": {},
+    "skills": false,
+    "chrome": false,
+    "session_persistence": false,
+    "settings_sources": [],
+    "payload_only": true,
+    "expected_exposed": false,
+    "system_prompt": "Responde en español y cumple el contrato JSON incluido en el expediente. Revisa únicamente el contenido proporcionado. No uses herramientas ni apruebes gates.",
+    "limits": "Sin sandbox OS nuevo; políticas administradas aún pueden aplicar. Compatibilidad real y aislamiento del CLI por confirmar con smoke pagado, no probado por mocks."
+  },
+  "output": {
+    "cli_envelope": "json",
+    "model_result": "Texto con un único JSON, sin --json-schema",
+    "repair": false,
+    "semantic_review": "Separada, con expected privados. NOT_RUN hasta revisión explícita."
+  },
+  "stop_conditions": [
+    "Smoke inválido",
+    "Runtime error, rechazo, timeout o truncación",
+    "Uso desconocido o modelo distinto",
+    "Más de un request por invocación",
+    "Reserva supera presupuesto o usage supera reserva",
+    "Integridad o versión del CLI distinta"
+  ],
+  "benchmark_format_failure": "Conservar respuesta y puntuar formato; sin retry. No tratar error de contenido como error de transporte.",
+  "order": [
+    {
+      "case": "E01",
+      "condition": "baseline",
+      "payload": "payloads/E01/baseline.txt"
+    },
+    {
+      "case": "E01",
+      "condition": "treatment",
+      "payload": "payloads/E01/treatment.txt"
+    },
+    {
+      "case": "E02",
+      "condition": "treatment",
+      "payload": "payloads/E02/treatment.txt"
+    },
+    {
+      "case": "E02",
+      "condition": "baseline",
+      "payload": "payloads/E02/baseline.txt"
+    },
+    {
+      "case": "E03",
+      "condition": "baseline",
+      "payload": "payloads/E03/baseline.txt"
+    },
+    {
+      "case": "E03",
+      "condition": "treatment",
+      "payload": "payloads/E03/treatment.txt"
+    },
+    {
+      "case": "E04",
+      "condition": "treatment",
+      "payload": "payloads/E04/treatment.txt"
+    },
+    {
+      "case": "E04",
+      "condition": "baseline",
+      "payload": "payloads/E04/baseline.txt"
+    },
+    {
+      "case": "E05",
+      "condition": "baseline",
+      "payload": "payloads/E05/baseline.txt"
+    },
+    {
+      "case": "E05",
+      "condition": "treatment",
+      "payload": "payloads/E05/treatment.txt"
+    },
+    {
+      "case": "E06",
+      "condition": "treatment",
+      "payload": "payloads/E06/treatment.txt"
+    },
+    {
+      "case": "E06",
+      "condition": "baseline",
+      "payload": "payloads/E06/baseline.txt"
+    }
+  ],
+  "model_calls": 0,
+  "api_cost_usd": 0,
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "migration_source": "https://platform.claude.com/docs/en/models/haiku-5-5/migration-guide",
+  "rates_usd_per_million": {
+    "up_to_100000_input": {
+      "input": 0.1,
+      "output": 0.5,
+      "cache_write_5m": 0.125,
+      "cache_write_1h": 0.2,
+      "cache_read": 0.01
+    },
+    "over_100000_input": {
+      "input": 0.5,
+      "output": 2.5,
+      "cache_write_5m": 0.625,
+      "cache_write_1h": 1,
+      "cache_read": 0.05
+    }
+  },
+  "pricing_verified_on": "2026-10-09",
+  "max_repetitions": 1,
+  "result_scope": "Señal exploratoria de las tres pautas; no evaluación de Foundry ni de independencia estadística.",
+  "prior_round": "runs/round-01/run-manifest-01.json",
+  "prior_round_manifest_sha256": "7cbc09d54baea334f4d712edbd1502089aebeaea1c33e72a85ca407d98ad10b4",
+  "upstream_stop_reason_recorded": true,
+  "novelty_limit": "E01-baseline ya expuesto en intento fallido; no presentarlo completamente inédito."
+}

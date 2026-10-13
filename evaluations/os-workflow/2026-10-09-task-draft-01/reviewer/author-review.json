@@ -1,0 +1,29 @@
+{
+  "status": "REVIEWED_LOCALLY",
+  "independent": false,
+  "blind": false,
+  "checks": {
+    "four_approved_cases": true,
+    "single_paragraph_contrast": true,
+    "no_expected_in_payload_sources": true,
+    "concrete_content_not_field_names": true,
+    "unknowns_do_not_block_draft": true,
+    "proposed_not_approved_outputs": true,
+    "follow_up_control_no_task": true,
+    "Markdown_contract_matches_checker_v02": true
+  },
+  "limitations": [
+    "Mismo autor diseña casos/rúbrica; no review independiente.",
+    "Rúbrica responde a fallo T05 conocido; no diseño sin conocimiento previo.",
+    "Cuatro fixtures sintéticos y una repetición propuesta no prueban generalización.",
+    "Criterios de contenido requieren juicio manual con citas; no aprobación por presencia de fields."
+  ],
+  "pending": [
+    "Revisión/aceptación concreta de paquete y rúbrica.",
+    "Nueva configuración y autorización de gasto antes de calls.",
+    "Compatibilidad/aislamiento real del runtime.",
+    "Outputs y revisión semántica."
+  ],
+  "model_calls": 0,
+  "api_cost_usd": 0
+}

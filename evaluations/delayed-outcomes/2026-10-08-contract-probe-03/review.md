@@ -1,0 +1,10 @@
+# Revisión semántica — ronda 03
+Revisión manual del autor, después de leer las 24 respuestas completas; no ciega, independiente ni humana externa. El checker no verifica razones ni pertinencia de preguntas. Ver semantic-review.json para el texto y clasificación de cada entrada y los 72 motivos revisados.
+
+Las 72 razones (36 por condición) son coherentes con las decisiones y el caso: no se observó error material. Ambos distinguen solicitudes reversibles, publicación tardía, seguimiento incompleto, features reconstruidas y conflictos de igual autoridad. F1 permanece indeterminado, F2 respeta prioridad documentada y F3 conserva exclusión demostrada aun con conflicto de features.
+
+Dos outputs baseline contienen preguntas problemáticas, una en cada repetición y en casos distintos. A/baseline/2, pregunta 4, equipara retirada a churn=0 sin certificación negativa documentada. C/baseline/1, pregunta 1, sugiere cambiar pending mediante un acta anterior a extracción aunque la regla exige cerrar la ventana el 1 de septiembre. No cambian sus decisiones finales correctas. No se observaron preguntas con contradicción equivalente en treatment.
+
+Ambas condiciones generan preguntas redundantes y recomendaciones contextuales. Algunos elementos de open_questions son declaraciones, no preguntas: el schema admite strings y no verifica su forma interrogativa. Se clasifican como opcionales contextuales o redundantes según su contenido. Pedir evidencia independiente o proponer otra reconstrucción puede ser útil fuera del encargo y se cuenta como opcional; reconfirmar hechos explícitos para decidir el caso se cuenta como redundante. Estos recuentos requieren juicio y pueden cambiar con otro revisor.
+
+La reducción de dos preguntas problemáticas a cero es una señal secundaria, no una ventaja demostrada en las decisiones temporales ni prueba suficiente para crear/promover una skill. No cumple la mejora decisional prospectiva en al menos dos escenarios. Las preguntas siguen siendo abundantes; merece considerar un criterio general de pertinencia antes de añadir más instrucciones a la validación temporal.

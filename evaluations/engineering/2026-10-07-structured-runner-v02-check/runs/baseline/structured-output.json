@@ -1,0 +1,24 @@
+{
+  "rows": [
+    {
+      "id": "E1",
+      "outcome_state_at_extraction": "pending",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "Ventana [2025-06-01, 2025-07-01) sigue abierta en extracci\u00f3n (2025-06-20) y en entrenamiento (2025-06-15). Seg\u00fan source_rule el valor definitivo existe solo a cierre + 3 d\u00edas (3\u00d724 h) = 2025-07-04T00:00:00Z, posterior a ambos instantes; el cero reportado es provisional. Feature disponible (2025-05-31T23:00Z <= 2025-06-01T00:00Z), pero la etiqueta no estaba certificada al entrenar."
+    },
+    {
+      "id": "E2",
+      "outcome_state_at_extraction": "unknown",
+      "label_availability_at_training": "indeterminate",
+      "train_eligibility": "indeterminate",
+      "reason": "La ventana [2025-04-01, 2025-05-01) cerr\u00f3 antes del entrenamiento (2025-06-15), pero no hay regla de cierre, historial de certificaci\u00f3n, delay ni label_available_at (null). El cero es solo el valor registrado, no certificado, y no se puede asumir que sea definitivo ni negativo observado. Feature disponible (2025-03-31T23:00Z <= 2025-04-01T00:00Z). Falta confirmar la pol\u00edtica de certificaci\u00f3n."
+    }
+  ],
+  "open_questions": [
+    "E2: \u00bfcu\u00e1l es la regla de cierre/certificaci\u00f3n del target (delay tras el fin de ventana) y cu\u00e1ndo qued\u00f3 certificado el valor 0?",
+    "E2: \u00bfexiste historial de certificaci\u00f3n o un label_available_at verificable anterior a 2025-06-15T00:00:00Z?",
+    "E1: confirmar que la certificaci\u00f3n definitiva ocurre en 2025-07-04T00:00:00Z y que no hay recertificaciones posteriores."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

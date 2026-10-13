@@ -1,0 +1,165 @@
+{
+  "source_rows": 1067371,
+  "reconciled_rows": 1044848,
+  "valid_rows": 788187,
+  "cross_sheet_copies": 22523,
+  "excluded_rows": 256661,
+  "exclusion_counts": {
+    "missing_customer_id": 226758,
+    "cancellation": 19165,
+    "nonpositive": 6029,
+    "nonstandard_code": 4709
+  },
+  "snapshots": [
+    {
+      "cutoff": "2010-06-01T00:00:00",
+      "rows": 2652,
+      "feature_time_checks": "PASS",
+      "target_time_checks": "PASS",
+      "zero_targets": 1325,
+      "target_sales_sum": 1484599.67
+    },
+    {
+      "cutoff": "2010-07-01T00:00:00",
+      "rows": 2737,
+      "feature_time_checks": "PASS",
+      "target_time_checks": "PASS",
+      "zero_targets": 1343,
+      "target_sales_sum": 1587475.6400000001
+    },
+    {
+      "cutoff": "2010-08-01T00:00:00",
+      "rows": 2813,
+      "feature_time_checks": "PASS",
+      "target_time_checks": "PASS",
+      "zero_targets": 1209,
+      "target_sales_sum": 1883994.92
+    },
+    {
+      "cutoff": "2010-09-01T00:00:00",
+      "rows": 2822,
+      "feature_time_checks": "PASS",
+      "target_time_checks": "PASS",
+      "zero_targets": 1072,
+      "target_sales_sum": 2255804.12
+    },
+    {
+      "cutoff": "2010-10-01T00:00:00",
+      "rows": 2899,
+      "feature_time_checks": "PASS",
+      "target_time_checks": "PASS",
+      "zero_targets": 1219,
+      "target_sales_sum": 2178501.53
+    },
+    {
+      "cutoff": "2010-11-01T00:00:00",
+      "rows": 3196,
+      "feature_time_checks": "PASS",
+      "target_time_checks": "PASS",
+      "zero_targets": 1619,
+      "target_sales_sum": 1924451.27
+    },
+    {
+      "cutoff": "2010-12-01T00:00:00",
+      "rows": 3465,
+      "feature_time_checks": "PASS",
+      "target_time_checks": "PASS",
+      "zero_targets": 2147,
+      "target_sales_sum": 1398598.5100000002
+    },
+    {
+      "cutoff": "2011-01-01T00:00:00",
+      "rows": 3403,
+      "feature_time_checks": "PASS",
+      "target_time_checks": "PASS",
+      "zero_targets": 2119,
+      "target_sales_sum": 1284176.4300000002
+    },
+    {
+      "cutoff": "2011-02-01T00:00:00",
+      "rows": 3348,
+      "feature_time_checks": "PASS",
+      "target_time_checks": "PASS",
+      "zero_targets": 2020,
+      "target_sales_sum": 1235643.38
+    },
+    {
+      "cutoff": "2011-03-01T00:00:00",
+      "rows": 3338,
+      "feature_time_checks": "PASS",
+      "target_time_checks": "PASS",
+      "zero_targets": 1924,
+      "target_sales_sum": 1393138.1099999999
+    },
+    {
+      "cutoff": "2011-04-01T00:00:00",
+      "rows": 3299,
+      "feature_time_checks": "PASS",
+      "target_time_checks": "PASS",
+      "zero_targets": 1851,
+      "target_sales_sum": 1438276.06
+    },
+    {
+      "cutoff": "2011-05-01T00:00:00",
+      "rows": 3047,
+      "feature_time_checks": "PASS",
+      "target_time_checks": "PASS",
+      "zero_targets": 1591,
+      "target_sales_sum": 1563836.69
+    },
+    {
+      "cutoff": "2011-06-01T00:00:00",
+      "rows": 2658,
+      "feature_time_checks": "PASS",
+      "target_time_checks": "PASS",
+      "zero_targets": 1330,
+      "target_sales_sum": 1531307.7999999998
+    },
+    {
+      "cutoff": "2011-09-01T00:00:00",
+      "rows": 2768,
+      "feature_time_checks": "PASS",
+      "target_time_checks": "PASS",
+      "outcomes": "Reservados; no resumen de ceros/importe."
+    }
+  ],
+  "fit_checks": [
+    {
+      "fit_at": "2010-09-01T00:00:00",
+      "train_rows": 2652,
+      "train_snapshots": 1,
+      "shared_customer_ids": 2200,
+      "max_train_label_end": "2010-08-30T00:00:00"
+    },
+    {
+      "fit_at": "2010-12-01T00:00:00",
+      "train_rows": 11024,
+      "train_snapshots": 4,
+      "shared_customer_ids": 2514,
+      "max_train_label_end": "2010-11-30T00:00:00"
+    },
+    {
+      "fit_at": "2011-03-01T00:00:00",
+      "train_rows": 20584,
+      "train_snapshots": 7,
+      "shared_customer_ids": 3065,
+      "max_train_label_end": "2011-03-01T00:00:00"
+    },
+    {
+      "fit_at": "2011-06-01T00:00:00",
+      "train_rows": 30673,
+      "train_snapshots": 10,
+      "shared_customer_ids": 2261,
+      "max_train_label_end": "2011-05-30T00:00:00"
+    },
+    {
+      "fit_at": "2011-09-01T00:00:00",
+      "train_rows": 39677,
+      "train_snapshots": 13,
+      "shared_customer_ids": 2451,
+      "max_train_label_end": "2011-08-30T00:00:00"
+    }
+  ],
+  "holdout_outcomes_inspected": false,
+  "api_cost_usd": 0
+}

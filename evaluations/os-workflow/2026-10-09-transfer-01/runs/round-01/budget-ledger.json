@@ -1,0 +1,294 @@
+{
+  "new_limit_usd": 0.1,
+  "entries": [
+    {
+      "reserved_usd": 0.037715625,
+      "committed_usd": 0.00013130000000000002,
+      "estimated_usd": 0.00013130000000000002,
+      "usage": {
+        "input_tokens": 318,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 199,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "end_turn"
+    },
+    {
+      "reserved_usd": 0.048009375,
+      "committed_usd": 0.001393775,
+      "estimated_usd": 0.001393775,
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 6595,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 6595,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 1138,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 366
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "end_turn"
+    },
+    {
+      "reserved_usd": 0.050726875,
+      "committed_usd": 0.00158215,
+      "estimated_usd": 0.00158215,
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 8230,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 8230,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 1106,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 335
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "end_turn"
+    },
+    {
+      "reserved_usd": 0.050741875,
+      "committed_usd": 0.0021119,
+      "estimated_usd": 0.0021119,
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 8268,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 8268,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 2156,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 656
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "end_turn"
+    },
+    {
+      "reserved_usd": 0.048024375,
+      "committed_usd": 0.001656525,
+      "estimated_usd": 0.001656525,
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 6633,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 6633,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 1654,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 552
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "end_turn"
+    },
+    {
+      "reserved_usd": 0.04842,
+      "committed_usd": 0.00182065,
+      "estimated_usd": 0.00182065,
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 6826,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 6826,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 1934,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 640
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "end_turn"
+    },
+    {
+      "reserved_usd": 0.0511375,
+      "committed_usd": 0.001988025,
+      "estimated_usd": 0.001988025,
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 8461,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 8461,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 1860,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 583
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "end_turn"
+    },
+    {
+      "reserved_usd": 0.051123125,
+      "committed_usd": 0.0020639,
+      "estimated_usd": 0.0020639,
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 8468,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 8468,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 2010,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 563
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "end_turn"
+    },
+    {
+      "reserved_usd": 0.048405625,
+      "committed_usd": 0.001915025,
+      "estimated_usd": 0.001915025,
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 6833,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 6833,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 2121,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 649
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "end_turn"
+    },
+    {
+      "reserved_usd": 0.048379375,
+      "committed_usd": 0.00162965,
+      "estimated_usd": 0.00162965,
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 6866,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 6866,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 1542,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 494
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "end_turn"
+    },
+    {
+      "reserved_usd": 0.051096875,
+      "committed_usd": 0.001734525,
+      "estimated_usd": 0.001734525,
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 8501,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 8501,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 1343,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 510
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "end_turn"
+    },
+    {
+      "reserved_usd": 0.050913125,
+      "committed_usd": 0.0016454,
+      "estimated_usd": 0.0016454,
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 8340,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 8340,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 1205,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 144
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "end_turn"
+    },
+    {
+      "reserved_usd": 0.048195625,
+      "committed_usd": 0.001207525,
+      "estimated_usd": 0.001207525,
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 6705,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 6705,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 738,
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        }
+      },
+      "http_status": 200,
+      "provider_stop_reason": "end_turn"
+    }
+  ],
+  "rejections": [],
+  "prior_study_estimated_usd": 0.02065453,
+  "execution_manifest_sha256": "69529a3f59f7eb3c214a5ebfaa64b8a0e50610f1a366efdd6493443b0b6601a4"
+}

@@ -1,0 +1,10 @@
+{
+  "status": "APPROVED",
+  "by": "David",
+  "user_reply": "aprobado",
+  "recorded_at_utc": "2026-10-10T10:29:51.091220+00:00",
+  "execution_manifest_sha256": "b8c904441ae6c3e35c15d6a839a10892f8a7142e944d77267c95908382e608b8",
+  "total_budget_usd": 0.1,
+  "scope": "Un smoke y ocho respuestas fijadas; sin retries ni transferencia de saldos.",
+  "prior_studies_estimated_usd": 0.04153488
+}

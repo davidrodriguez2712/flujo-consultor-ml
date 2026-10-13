@@ -1,0 +1,22 @@
+{
+  "completed_at_utc": "2026-10-08T12:12:27.628451+00:00",
+  "events": [
+    "freeze_verified",
+    "final_refit_completed",
+    "predictions_computed_without_evaluation_labels",
+    "predictions_persisted",
+    "evaluation_labels_loaded",
+    "metrics_computed"
+  ],
+  "configuration_fixed_from_development": true,
+  "hyperparameter_search": false,
+  "model_updates_during_test": 0,
+  "additional_runtime_api_calls": 0,
+  "freeze_sha256": "13d03d735e9eaa3a695a5109aef1777c7d68fffa279995231ad9ca4d693e1cad",
+  "limits": [
+    "Sin eficacia causal de revisión.",
+    "Sin métricas globales identificadas para rechazadas.",
+    "Benchmark Top-K retrospectivo, no política online.",
+    "Raw accesible: evaluación no ciega."
+  ]
+}

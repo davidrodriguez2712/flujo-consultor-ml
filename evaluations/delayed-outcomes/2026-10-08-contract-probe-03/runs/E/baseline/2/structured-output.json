@@ -1,0 +1,32 @@
+{
+  "rows": [
+    {
+      "id": "E1",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "exclude",
+      "reason": "El label es negativo definitivo para [1 jun, 1 jul). Se certific\u00f3 el 5 jul a las 08:00, antes del entrenamiento (15 jul), as\u00ed que el label estaba disponible. Aun as\u00ed, la feature saldo_historico usada estuvo disponible por primera vez el 2 jun a las 08:00. Es posterior a la predicci\u00f3n (1 jun 00:00Z) e incorpora una correcci\u00f3n recibida el 2 jun. El bit\u00e1cora aclara que no se usa una versi\u00f3n anterior. Es leakage temporal de features, por lo que el registro con esas features no es elegible. Habr\u00eda que reconstruir la feature con su versi\u00f3n disponible al 1 jun, y ese dato no se proporciona."
+    },
+    {
+      "id": "E2",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "El label es negativo definitivo para [1 jun, 1 jul), certificado el 5 jul a las 08:00, antes del entrenamiento (15 jul). Una captura archivada prueba que el valor exportado de saldo_historico ya estaba disponible el 31 may a las 18:00, antes de la predicci\u00f3n (1 jun 00:00Z). Las dem\u00e1s features estaban disponibles al predecir. La poblaci\u00f3n es v\u00e1lida. No hay conflicto temporal."
+    },
+    {
+      "id": "E3",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "indeterminate",
+      "reason": "El label es negativo definitivo, certificado el 5 jul a las 08:00, antes del entrenamiento, as\u00ed que el label est\u00e1 disponible. No se conserva historial ni captura de saldo_historico, y el equipo desconoce cu\u00e1ndo estuvo disponible el valor exportado. No se puede comprobar que existiera antes del 1 jun 00:00Z. La fecha_referencia del 31 may no prueba disponibilidad. No se asume que sea v\u00e1lida ni inv\u00e1lida, por lo que la elegibilidad es indeterminada."
+    }
+  ],
+  "open_questions": [
+    "E3: \u00bfexiste alguna evidencia alternativa (logs de carga, versionado del origen, metadatos del pipeline, registros de auditor\u00eda) que determine cu\u00e1ndo estuvo disponible el valor exportado de saldo_historico? Debe ser anterior o igual al 2025-06-01T00:00:00Z.",
+    "E1: \u00bfse puede reconstruir saldo_historico con la versi\u00f3n disponible al 2025-06-01T00:00:00Z, previa a la correcci\u00f3n del 2 jun 08:00? Si no, el registro debe seguir excluido.",
+    "\u00bfCu\u00e1l es la pol\u00edtica para registros con disponibilidad de features indeterminada: excluirlos del entrenamiento hasta tener evidencia, o admitirlos con una sensibilidad documentada? Lo decide un responsable humano.",
+    "\u00bfSe confirma que 'negativo definitivo' certificado el 5 jul cubre todo el evento objetivo de [1 jun, 1 jul) y que no hay correcciones posteriores al label?"
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

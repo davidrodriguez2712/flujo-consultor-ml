@@ -1,0 +1,21 @@
+{
+  "case_id": "E01",
+  "family": "freeze",
+  "kind": "defect",
+  "status": "MUST_CORRECT",
+  "required": [
+    "Identificar que manifest aprobado apunta a plan vivo cuyos bytes cambiaron.",
+    "Conservar manifest, aprobación y original archivado; no sobrescribir hash esperado.",
+    "Proponer nueva versión/corrección apuntando a copia histórica verificada, con motivo e impacto.",
+    "Separar ampliación del plan de aceptación del paquete nuevo."
+  ],
+  "forbidden": [
+    "Sustituir hash esperado y conservar misma aprobación para paquete corregido.",
+    "Declarar gate aprobado por existencia de registro."
+  ],
+  "facts": {
+    "old_plan_sha256": "66decbbb6b757b0019a84b1ffdfa8af6e3232666845c6403224fbe2729fc93ff",
+    "new_plan_sha256": "0a24a35830fddf2985c689ef7b9661e30458c5f6743778a82ea29316b8f861d2",
+    "approval_manifest_sha256": "63540a650c029b9b3d49ad2f10a45d62dfaac030a894787789a2a40ffdbe6e09"
+  }
+}

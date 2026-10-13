@@ -1,0 +1,10 @@
+version: 0.1.0
+training_cutoff: '2025-07-01'
+scoring_start: '2025-07-01'
+scoring_end_exclusive: '2025-10-01'
+evaluation_timestamp: '2026-01-15'
+refit_count: 1
+model_update_during_test: false
+hyperparameter_search: false
+k: 100
+tie_break: application_id ascending

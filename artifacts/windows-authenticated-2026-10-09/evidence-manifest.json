@@ -1,0 +1,353 @@
+{
+  "schema_version": 1,
+  "files": {
+    "authorization.json": {
+      "sha256": "eded83bbee11d8d5eed1f1a1ad843aea2825551ae172df5cc2633b1936583401",
+      "bytes": 475
+    },
+    "cost-ledger.json": {
+      "sha256": "cc52fb368e9886dac9ed976701ecb19671747e7b55995a688d6302e102ee78d9",
+      "bytes": 2994
+    },
+    "final-prior-integrity.json": {
+      "sha256": "2864122d91a2552d079f9231cd7df354df2c48157c0aefa6923f64c5bd0ede04",
+      "bytes": 621
+    },
+    "final-verification.json": {
+      "sha256": "f8f8315010e4ee6c1cbcedd363a8b16fb32b772f49b2102b82cf48eb20553cd6",
+      "bytes": 1100
+    },
+    "prior-integrity.json": {
+      "sha256": "8193350f28c89f4cc1f73edbd7ca75709b28d8add9930bdb4f520fde0297cb43",
+      "bytes": 525
+    },
+    "run-01/acos-authenticated-x64-37887984029/authenticated/codex-guided-stderr.txt": {
+      "sha256": "c6b5053c67cc6f7dda29a58e5d2b8c97f3880785a6526eff66f2491c756abfb7",
+      "bytes": 40
+    },
+    "run-01/acos-authenticated-x64-37887984029/authenticated/codex-guided.jsonl": {
+      "sha256": "d4f0d67682ea615f6fff573e00573a555c300ddcda4bcdd3e125e25aea391fc2",
+      "bytes": 496
+    },
+    "run-01/acos-authenticated-x64-37887984029/authenticated/results.json": {
+      "sha256": "22c3759e9d7a2c224ec5cdd6bf5a519462de2d6dd9799f6f25d4cdf2fceb8041",
+      "bytes": 1053
+    },
+    "run-01/acos-authenticated-x64-37887984029/checks.xml": {
+      "sha256": "a284f59cbe9a1c73afbb2b3dd81134b4aaa4af06ad613676d6a80d32f47a06f6",
+      "bytes": 1673
+    },
+    "run-01-metadata.json": {
+      "sha256": "1a7b5fc75fd3a03f1f6ec5803b79ea86f0b4390a63a0da05b071e9b6ff4b8d4c",
+      "bytes": 2314
+    },
+    "run-02/acos-authenticated-x64-37888361017/authenticated/codex-guided-stderr.txt": {
+      "sha256": "87899fbe71835ff72baf90519500d3db03ced691255ece317a10b2ed0594a34e",
+      "bytes": 576
+    },
+    "run-02/acos-authenticated-x64-37888361017/authenticated/codex-guided.jsonl": {
+      "sha256": "261f8bb8683aba71d8da5379c593b97b7a94756383c711c8b2cc39c742f1ed4b",
+      "bytes": 844
+    },
+    "run-02/acos-authenticated-x64-37888361017/authenticated/results.json": {
+      "sha256": "571d2e511cbda24b367d62090a9e6aaa18e9d46f2fd841fc1144fd13426adee4",
+      "bytes": 2172
+    },
+    "run-02/acos-authenticated-x64-37888361017/checks.xml": {
+      "sha256": "66100aa0dfda006023e04735f7d41b6cb0270c25d002898ff20498ee21f39204",
+      "bytes": 1918
+    },
+    "run-02-metadata.json": {
+      "sha256": "61fd782601593e3de1c252347f0ac56f88cc48d2f9326b7da32801f7da588c10",
+      "bytes": 2314
+    },
+    "run-03/acos-authenticated-x64-37888709671/authenticated/codex-guided-stderr.txt": {
+      "sha256": "c6b5053c67cc6f7dda29a58e5d2b8c97f3880785a6526eff66f2491c756abfb7",
+      "bytes": 40
+    },
+    "run-03/acos-authenticated-x64-37888709671/authenticated/codex-guided.jsonl": {
+      "sha256": "a25c35a4715b911da0dd0d2b30482f27304cd9eff176945054e48cdd333ec73c",
+      "bytes": 30118
+    },
+    "run-03/acos-authenticated-x64-37888709671/authenticated/results.json": {
+      "sha256": "48c058aa0f388db73302040d45e44459363ed652888c6b0a879c4533562b8670",
+      "bytes": 4738
+    },
+    "run-03/acos-authenticated-x64-37888709671/checks.xml": {
+      "sha256": "b4526d90fbb1fefffc976bd0086b9ff76879b492335bb6e6e84f3f15cfc532d7",
+      "bytes": 2047
+    },
+    "run-03-metadata.json": {
+      "sha256": "a5c3a5103c710847c7f0bc57ec61129cc579ef968ef9908dde01090cccbd3d21",
+      "bytes": 2314
+    },
+    "run-04/acos-authenticated-x64-37889008234/authenticated/codex-guided-stderr.txt": {
+      "sha256": "c6b5053c67cc6f7dda29a58e5d2b8c97f3880785a6526eff66f2491c756abfb7",
+      "bytes": 40
+    },
+    "run-04/acos-authenticated-x64-37889008234/authenticated/codex-guided.jsonl": {
+      "sha256": "bab750cd42b9619ce109fcbb6e226ac8c164d33cc8bc6c95193bdc7094971530",
+      "bytes": 7777
+    },
+    "run-04/acos-authenticated-x64-37889008234/authenticated/results.json": {
+      "sha256": "76a2aac5d3c3a465c5b744eece355cbd45755fb3c1964818f508e402707f75cc",
+      "bytes": 5801
+    },
+    "run-04/acos-authenticated-x64-37889008234/checks.xml": {
+      "sha256": "4084fcffaf8e7fffe798afe7b347c560132fcf15262214ee62adfcd328a88c34",
+      "bytes": 2047
+    },
+    "run-04-metadata.json": {
+      "sha256": "37cf80758e36a7e04686f119c60c5226a4392531e6dff17625bef1f84677777e",
+      "bytes": 2314
+    },
+    "run-05/acos-authenticated-x64-37889315873/authenticated/results.json": {
+      "sha256": "6e50d19fd86d88f5f939e8b107824f0486a240a682d31ae3389d31e1db69734a",
+      "bytes": 1038
+    },
+    "run-05/acos-authenticated-x64-37889315873/checks.xml": {
+      "sha256": "cfe7c759cc4fd224f86bd798cda1b8c215a24ea17a6b984c4ce511cde5c30b6c",
+      "bytes": 2047
+    },
+    "run-05-metadata.json": {
+      "sha256": "f3181d0c8a58fdab88bfb6b7ab4bf0cfa5cf80e509b06a5b83ceac03fbe7adff",
+      "bytes": 2314
+    },
+    "run-06/acos-authenticated-x64-37889540953/authenticated/results.json": {
+      "sha256": "43caaa84608c59609ac3782ee22861034fcf563cbaf0902a4d9b7936b34aff7a",
+      "bytes": 666
+    },
+    "run-06/acos-authenticated-x64-37889540953/checks.xml": {
+      "sha256": "f3b787d846da915a5236a83918ac0ce13b2c5faedaeb94d2638fdcc02122360b",
+      "bytes": 2047
+    },
+    "run-06-metadata.json": {
+      "sha256": "26f9f904684eb1475f74bf61811be2373dff12e137fe867caad9ebe83b04f329",
+      "bytes": 2314
+    },
+    "run-07/acos-authenticated-x64-37889843366/authenticated/claude-guided-stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "run-07/acos-authenticated-x64-37889843366/authenticated/claude-guided.jsonl": {
+      "sha256": "84bec3a40c1ff352be43c3d0aa40072187faf075b73dced41e158407718827ec",
+      "bytes": 4730
+    },
+    "run-07/acos-authenticated-x64-37889843366/authenticated/codex-continuity-stderr.txt": {
+      "sha256": "c6b5053c67cc6f7dda29a58e5d2b8c97f3880785a6526eff66f2491c756abfb7",
+      "bytes": 40
+    },
+    "run-07/acos-authenticated-x64-37889843366/authenticated/codex-continuity.jsonl": {
+      "sha256": "2b5fe74579bc3a5bc9f32bd55a5e9e18e16d52238b25b22c5fa313159e18e2f4",
+      "bytes": 37035
+    },
+    "run-07/acos-authenticated-x64-37889843366/authenticated/codex-guided-stderr.txt": {
+      "sha256": "c6b5053c67cc6f7dda29a58e5d2b8c97f3880785a6526eff66f2491c756abfb7",
+      "bytes": 40
+    },
+    "run-07/acos-authenticated-x64-37889843366/authenticated/codex-guided.jsonl": {
+      "sha256": "69cbaa5e162d2753377ce182e69042682c51dc60264bc6cfd790038d599a1222",
+      "bytes": 41899
+    },
+    "run-07/acos-authenticated-x64-37889843366/authenticated/codex-sandbox-read-stderr.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "run-07/acos-authenticated-x64-37889843366/authenticated/codex-sandbox-read-stdout.bin": {
+      "sha256": "086c564b9d8edbf6497d658dba9fb8da098eef6fba4be14ff68e573e4843e0f0",
+      "bytes": 297
+    },
+    "run-07/acos-authenticated-x64-37889843366/authenticated/results.json": {
+      "sha256": "24954b1220ee4bccbf79b5b4f4157e8326044ac9112f29c0b42249eeab741c3d",
+      "bytes": 26850
+    },
+    "run-07/acos-authenticated-x64-37889843366/checks.xml": {
+      "sha256": "b21720b02a172934091a915dd63006859418765a923ea7eff6d8c288c4c651f9",
+      "bytes": 2190
+    },
+    "run-07-metadata.json": {
+      "sha256": "cd8f2973a25e0a2943bfabc8e54a2a6d713b26d695d7f3004dfc47c3306688e3",
+      "bytes": 2314
+    },
+    "run-08/acos-authenticated-x64-37890423824/authenticated/claude-guided-stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "run-08/acos-authenticated-x64-37890423824/authenticated/claude-guided.jsonl": {
+      "sha256": "46312b4fc0a932584fcd6eb6590d7f1be2f748ec154483c188be1276b0d40efa",
+      "bytes": 4656
+    },
+    "run-08/acos-authenticated-x64-37890423824/authenticated/results.json": {
+      "sha256": "9f622cdbbcdfcf249abaa2bb8096f2c56626f959a3101a655e6d69d9614b2ff7",
+      "bytes": 1879
+    },
+    "run-08/acos-authenticated-x64-37890423824/checks.xml": {
+      "sha256": "425adcc3467670f5a05fcc9ca51faed13c9b972f6fac50f804624f95e863cee5",
+      "bytes": 2190
+    },
+    "run-08-metadata.json": {
+      "sha256": "740d7f3b0b0a3f32ca0c4ed25fefc93abe74eee7315493cc0a292c5609850dcc",
+      "bytes": 2314
+    },
+    "run-09/acos-authenticated-arm64-37890429413/authenticated/codex-continuity-stderr.txt": {
+      "sha256": "c6b5053c67cc6f7dda29a58e5d2b8c97f3880785a6526eff66f2491c756abfb7",
+      "bytes": 40
+    },
+    "run-09/acos-authenticated-arm64-37890429413/authenticated/codex-continuity.jsonl": {
+      "sha256": "aba7a927b8b57c1d0e9980bb7745c762690b7ba4e9edf02b948db9c2207613cc",
+      "bytes": 43759
+    },
+    "run-09/acos-authenticated-arm64-37890429413/authenticated/codex-guided-stderr.txt": {
+      "sha256": "c6b5053c67cc6f7dda29a58e5d2b8c97f3880785a6526eff66f2491c756abfb7",
+      "bytes": 40
+    },
+    "run-09/acos-authenticated-arm64-37890429413/authenticated/codex-guided.jsonl": {
+      "sha256": "441886ef3b7f6f0a1feec6d794f3885fd4522b17f0aaa9381a4ba8bce375c130",
+      "bytes": 41854
+    },
+    "run-09/acos-authenticated-arm64-37890429413/authenticated/codex-sandbox-read-stderr.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "run-09/acos-authenticated-arm64-37890429413/authenticated/codex-sandbox-read-stdout.bin": {
+      "sha256": "e9908798a14294338e09eb54f9fdc2f43686eff1353d226f52e4c0fb2d01dd7f",
+      "bytes": 297
+    },
+    "run-09/acos-authenticated-arm64-37890429413/authenticated/results.json": {
+      "sha256": "3c09fb51c40e2440dbec42c68917aa40a719fdde437488e027f865ead0c15d75",
+      "bytes": 20965
+    },
+    "run-09/acos-authenticated-arm64-37890429413/checks.xml": {
+      "sha256": "ac575ef15c22cc99aeba438d2b4ac2d9e9fa0c1afa99f23971e60a8fc50c7fd9",
+      "bytes": 2190
+    },
+    "run-09-metadata.json": {
+      "sha256": "73f8680b48dd3414a6c6b804f4db1bc71f857851bb05bae11ce352c81eb4760c",
+      "bytes": 2314
+    },
+    "run-10/acos-authenticated-x64-37890712083/authenticated/claude-guided-stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "run-10/acos-authenticated-x64-37890712083/authenticated/claude-guided.jsonl": {
+      "sha256": "54953c651cfd820f72216a69bf32ccc7e99c9e93f19ef205945cc65f6db38c04",
+      "bytes": 81114
+    },
+    "run-10/acos-authenticated-x64-37890712083/authenticated/results.json": {
+      "sha256": "b2d033bae11d692ac53049fdb3fb93bb5847e62796ef11fdc4af67ae2411872a",
+      "bytes": 5643
+    },
+    "run-10/acos-authenticated-x64-37890712083/checks.xml": {
+      "sha256": "814e7022b7b97a15bc9a27061a5424bad6d77d5b714733ec31d9a7dd61729d9d",
+      "bytes": 2429
+    },
+    "run-10-metadata.json": {
+      "sha256": "37951d9d8dd2a2dddab0d9c589ea5adad912095dc66cab4fba5bc8b5cc7f9f97",
+      "bytes": 2314
+    },
+    "run-11/acos-authenticated-x64-37891296383/authenticated/claude-guided-stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "run-11/acos-authenticated-x64-37891296383/authenticated/claude-guided.jsonl": {
+      "sha256": "d73f83e79c2cee1c24d633321c413b8ea9e468b3c24063b0f5140b877f86813b",
+      "bytes": 36449
+    },
+    "run-11/acos-authenticated-x64-37891296383/authenticated/results.json": {
+      "sha256": "2e342e9e0a41bdc505e9124374c6e2c2f24fae1420042b1b1c84250f1df39fcf",
+      "bytes": 4112
+    },
+    "run-11/acos-authenticated-x64-37891296383/checks.xml": {
+      "sha256": "a80b21f7ad6129cdb6d307f245c0aba5d4f91ac112cc4b06d3deb6a82209719d",
+      "bytes": 2567
+    },
+    "run-11-metadata.json": {
+      "sha256": "f7d7ec4b876aaf8d3f62ec2bba973a940d63c029c2e8d97879b52f244c3653c2",
+      "bytes": 2314
+    },
+    "run-12/acos-authenticated-x64-37891497677/authenticated/claude-continuity-stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "run-12/acos-authenticated-x64-37891497677/authenticated/claude-continuity.jsonl": {
+      "sha256": "990bdb024e44b8a13951a8b2cec77bb4a597eb3963a8fef991ce36bafb080e3e",
+      "bytes": 55956
+    },
+    "run-12/acos-authenticated-x64-37891497677/authenticated/claude-guided-stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "run-12/acos-authenticated-x64-37891497677/authenticated/claude-guided.jsonl": {
+      "sha256": "edb7667151a81cebc2e519efc99ad62f582e905bc06348b97e631935396d4a92",
+      "bytes": 45478
+    },
+    "run-12/acos-authenticated-x64-37891497677/authenticated/results.json": {
+      "sha256": "691d31c607d6d06b6814257fc2bbf4a54fc280588b84a86b11c14af03106e0b9",
+      "bytes": 15500
+    },
+    "run-12/acos-authenticated-x64-37891497677/checks.xml": {
+      "sha256": "3e6f6392b1102330dc40920aebdf5d27dd92d233f8442a4aed01ca2362a514eb",
+      "bytes": 2567
+    },
+    "run-12-metadata.json": {
+      "sha256": "a78d782c55d4aa4d1dd1fbfa3641db962d3315738b18c5f4f6e02939bc5eccbc",
+      "bytes": 2314
+    },
+    "run-13/acos-authenticated-x64-37891756918/authenticated/claude-continuity-stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "run-13/acos-authenticated-x64-37891756918/authenticated/claude-continuity.jsonl": {
+      "sha256": "96b96710ffa3d9d70a129d6bf265ebeb71034fbaa40d65b8af4b96d7abc7292b",
+      "bytes": 44695
+    },
+    "run-13/acos-authenticated-x64-37891756918/authenticated/claude-guided-stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "run-13/acos-authenticated-x64-37891756918/authenticated/claude-guided.jsonl": {
+      "sha256": "62d078ec9704e321393968d7c08ca97490488720acd98c5c1a44e36fc0e7337f",
+      "bytes": 46337
+    },
+    "run-13/acos-authenticated-x64-37891756918/authenticated/results.json": {
+      "sha256": "f983621cc4da124feab22baeeb932670a88fa3816d1a77f20d9e81aaa983ec0c",
+      "bytes": 13751
+    },
+    "run-13/acos-authenticated-x64-37891756918/checks.xml": {
+      "sha256": "329bece70f9fc3c7ffd262c05f659e0b1c6063f87d573477f76134cdd18f6d3f",
+      "bytes": 2567
+    },
+    "run-13-metadata.json": {
+      "sha256": "fd7caadb14d367d579ff258420ac46ab9f2e4c3a31aec54716aa8182cf72181d",
+      "bytes": 2314
+    },
+    "run-14/acos-authenticated-arm64-37891953156/authenticated/claude-continuity-stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "run-14/acos-authenticated-arm64-37891953156/authenticated/claude-continuity.jsonl": {
+      "sha256": "4f4363dfd8a2845eed2c16cb54c8301eb097072596e5198ea338c8608388177d",
+      "bytes": 61018
+    },
+    "run-14/acos-authenticated-arm64-37891953156/authenticated/claude-guided-stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "run-14/acos-authenticated-arm64-37891953156/authenticated/claude-guided.jsonl": {
+      "sha256": "394de7b9d34a0607cb220afb772bbfce55daa9a9257e714953e22cf5ce5b3662",
+      "bytes": 45464
+    },
+    "run-14/acos-authenticated-arm64-37891953156/authenticated/results.json": {
+      "sha256": "d60f98bfca6ded2ef4478306aabce591b9e08bdbcbdbac5928de9df66d3de521",
+      "bytes": 18521
+    },
+    "run-14/acos-authenticated-arm64-37891953156/checks.xml": {
+      "sha256": "1a16415390fe613efcf12c821ced43af689304e3879f3e276dbb8d7d3b658b65",
+      "bytes": 2567
+    },
+    "run-14-metadata.json": {
+      "sha256": "c21ac6911d1525eebe6cca6fb4c4f60a934864dde536d784dcbcaae0327cbcf2",
+      "bytes": 2314
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="0.788" timestamp="2026-10-12T18:11:15.575040-05:00" hostname="Joels-Mac-Studio.local"><testcase classname="tests.test_foundry_native_transport" name="test_real_cli_preserves_invalid_report_and_prompt_then_closes_budget" time="0.726"><failure message="KeyError: 'contract_success'">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2262/test_real_cli_preserves_invali0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x101e4c2b0&gt;
+
+    def test_real_cli_preserves_invalid_report_and_prompt_then_closes_budget(tmp_path,monkeypatch):
+        import hashlib,shutil
+        cli=shutil.which('claude')
+        if not cli:pytest.skip('Claude CLI no instalado')
+        m=module();b=budget_module();case=tmp_path/'case';(case/'inputs').mkdir(parents=True)
+        (case/'case.md').write_text('Auditar expediente');(case/'inputs/data.csv').write_text('x\n1\n')
+        out=tmp_path/'run';root=out/'workspace';invalid='## Resumen\nFaltan los campos del contrato.\n'
+        sequence=[sse(m.MODEL,[{'type':'tool_use','id':'write1','name':'Write','input':{'file_path':str(root/'reports/leakage/audit.md'),'content':invalid}}],'tool_use'),
+                  sse(m.MODEL,[{'type':'text','text':'Informe guardado.'}],'end_turn')]
+        requests=fake_upstream(b,monkeypatch,sequence)
+        with b.Proxy('claude','fake-not-a-secret',.2,model=m.MODEL,max_requests=8,max_output_tokens=8192) as proxy:
+            result=m.invoke(case,out,proxy,cli,report_word_limit=500)
+&gt;           assert result['runtime_success'] is True and result['contract_success'] is False
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'contract_success'
+
+tests/test_foundry_native_transport.py:291: KeyError</failure></testcase></testsuite></testsuites>

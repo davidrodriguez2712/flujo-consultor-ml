@@ -1,0 +1,50 @@
+name: ACOS Windows validation
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-2022
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Instalar dependencias de pruebas
+        run: |
+          New-Item -ItemType Directory -Force evidence | Out-Null
+          python -m pip install ".[dev]" "setuptools>=68" wheel
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m pip freeze | Out-File -Encoding utf8 evidence/dependencies.txt
+      - name: Ejecutar suite
+        run: |
+          python -m pytest -q --junitxml=evidence/pytest.xml 2>&1 | Tee-Object evidence/pytest.log
+          exit $LASTEXITCODE
+      - name: Simulaciones del compiler
+        run: |
+          python scripts/validate_business_scenarios.py --output evidence/simulations.json 2>&1 | Tee-Object evidence/simulations.log
+          exit $LASTEXITCODE
+      - name: Construir wheel vigente
+        run: |
+          python -m build --wheel --no-isolation --outdir evidence/wheel 2>&1 | Tee-Object evidence/build.log
+          exit $LASTEXITCODE
+      - name: Comprobar executable aislado y portabilidad
+        run: |
+          $acosWheel = (Get-ChildItem evidence/wheel/*.whl | Select-Object -First 1).FullName
+          python scripts/ci/windows_smoke.py --wheel $acosWheel --output evidence/smoke 2>&1 | Tee-Object evidence/smoke.log
+          exit $LASTEXITCODE
+      - name: Conservar evidencia
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: acos-windows-x64-python311-${{ github.run_id }}
+          path: evidence/
+          if-no-files-found: error
+          retention-days: 14

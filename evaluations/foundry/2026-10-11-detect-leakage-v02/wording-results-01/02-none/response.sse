@@ -1,0 +1,267 @@
+event: message_start
+data: {"type":"message_start","message":{"model":"claude-haiku-5-5","id":"msg_011Cfwj3svQXrMbdzGJm3XqD","type":"message","role":"assistant","content":[],"container":null,"stop_reason":null,"stop_sequence":null,"stop_details":null,"usage":{"input_tokens":441,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"output_tokens":4,"service_tier":"standard","inference_geo":"global"},"diagnostics":null}   }
+
+event: content_block_start
+data: {"type":"content_block_start","index":0,"content_block":{"type":"thinking","thinking":"","signature":""}    }
+
+event: ping
+data: {"type": "ping"}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":0,"delta":{"type":"thinking_delta","thinking":""}              }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":0,"delta":{"type":"signature_delta","signature":"CAQS+QoKEAgSGAI4AUIIdGhpbmtpbmcSDLOFJTmJIeCBq840JRoMr83DDxTuSitWqUEsIjCfbUXmDiYMoaeIdXxPUKtQO41ccpSkDqvYk6Dq7fMVaPuB+/13A/CYlDxCpQMfxqYqlgqyir3/3VjZjpZQxV2bnyB4aBBMyj1hjszuYk5nmZHSwBcffR7IwFSadmp04ZdOVKlxHBAq9bvH00tl4Xbsvp/0wGBkwc6OQBTf8vixDicIlzcBh0yZbY1232msDK3DCEi6vRzqEfx7yaQv86ZKBBm8qpK7GpBLaxmajED91SgLrXd0CP4oVp9sQD+0PUocM9nOrDwQb3+KsTNRCvnjv4ko+EddL18h21dGZvkxE2awXkj2RQTxCvf0AkIuoH7NOsT1V/KLjPuDeeuiAQADuk43OJ3gNqgkDMKDJUHM3h6ageXo5FNlybRb3Kwqe6hs1g34q6J/la+jdosiLM+hXXC1EgrlkySRRn5lNUYGnLqWyyN27o+vvzYCueMCPnP0eh/ekexWbY5XSqVdyRnnZSXYKZgFGZJCc8HvQ+tONuo0yFOmbjKYEOkmsvrlZQdUPOf7RvravU9FMKvHQ3en6dQtgst92JVhVWSrYuvxTeblr8b6fintwPABdbjSNiMYbqwDUN0xAKpAKmhix1ua/mHElVXOs2UcgRmOy0WtiM/I48vL3Zutl2875hBfoCjsOora+KjlV7Dwzp6ZSoEddYjKr4NlDYImPbHKsyuQAsTRJNQHd1wGmZspnt5NqQCfZR7ILEEuHuaXHgC5lCD8uTYL5XDcRP7SdwhBZiXTcBjmuS2vWgFJBPzL4WHBjPLT14gt7py8Y/hnhS0DCze1Jz6OgSb2VoN99DUtKB2O9UqFjat7pWaJR/b0QrsKzF0e1wJHjZq3dcozlmearrylJjdvwGBkp18XLJnMCj8Qg/LuMyEfKf6eIjUxzg/wp45kt0o3L9592ILf7gGIUTL3f5MtfFDyJ/xrbLzaD4xCj+4QXbmqVsWAFw4e4us2UrOuK00150KXuUNby+eWlotgtbm9ArpfBUcKDmeCObIklKKm+WkAhsyB6SXzVaekPhkhoPwjDxFmpj12EYPNECc5eMxyqdqGUc4lk5iimVlmJZ2RT77JbiitgfO8gUuCh3/dwBG0U4Zh1Wmwc9wbYBWRuNYmyYiNQprH0bc+VFjApduZhZs4muqd2vm8+llcbCMwk/zp2grcmNtyJ4M0BT4RuK0QOR1LRDTQjYT3DVdwC+9MwAbrh4Aw+MhU3TGsxv+80nGhj2P9cly2hcZ9nssQCEbLJXd5ZZ2v84aQiHd8pES3eTvJnVLgtxlD1af2i3DHy9k41IwQlS+Wsc6p4A64LOPV1rCpt3PqbArKdkiYKlybPptexM+vvkFoLX4nAwDl19RlANl45B0sXl1FxULuhHe2R/2EONxW2tsxXLGBiRjjzFPXTJRW0Erg2g5I8npuEdBpdlDNBNk49tT6EuRLCfRFjvEq0ObXqXdTiS2vk1QuqlrZteEhcScDMBaL/QgfiseRoxfO9Juq+wuGBB0SOqrQIM212NKG5IqpalV28Y11OYCUUUeQ0LeW0rhS1sFlM8hJhuxHbJOjbHnCD3MuVyZfmKNJdqF+8adTov83zSpkfj8h/1Y/OW9WnH8Aujnu+NTR7xpGQZcr4foqplRJ8NGc3zqgnfQLP8lsB8RAs186NBl+CqKm4+kQRZHCCM0838UXe7gbTa8fG35sAljJ/0/8UnmkXC4nppWqjPUarJL/Wi23AnGFhY8jAOA8RGNuUggRjpYM8wzkwitfG8d56QUJkJVR//ze8P1XZCnnE9b1OAsCIGNmi9bQNzv+NRrUNa9Ge766N3gYAQ=="}     }
+
+event: content_block_stop
+data: {"type":"content_block_stop","index":0       }
+
+event: content_block_start
+data: {"type":"content_block_start","index":1,"content_block":{"type":"text","text":""}  }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"```"}          }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"markdown\n---\nskill"}         }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":": none\nversion: null\nf"}            }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"echa: 2026-10"}    }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"-11\nestado_de_"}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"auditoria: no conc"}         }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"luy"}         }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ente (exp"}               }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ediente s"}  }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"in cont"}      }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"enido ver"}      }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ificable)\ncondicion:"}        }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" rehearsal\ndecision"}           }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"_id: RET-01"}             }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\ninputs: expediente inc"}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"rustado\n---\n\n##"} }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" Resumen\nNo"}  }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" se recibió cont"}               }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"enido de"}         }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" expediente incrustado;"}              }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" la"}             }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" auditoría no pu"}              }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ede ver"}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ificar "}         }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ofertas ni sc"}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"o"}             }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ring.\n\n## Hallaz"} }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"gos\n- No"}         }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" h"}   }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ay datos de"}   }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" ofertas, sc"}              }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"oring ni us"}         }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"age_previous_30d."}            }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\n- No hay split, f"}          }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"it ni código real para validar"} }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":".\n\n## Evidencia"}        }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\n- El m"}   }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ensaje no"}           }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" contiene t"}               }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ablas,"}             }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" registros ni f"}              }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"rag"}             }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"mentos del expediente."}        }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\n- La ventana decl"}             }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"arada (dis"}         }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ponible 2025-10-"}     }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"31T23:00Z;"}      }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" scoring 2025-11"}              }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"-01T08:00Z"}              }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":") no pu"}             }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ede cont"}    }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"rastarse.\n\n##"}    }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" Preguntas abiertas"}       }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\n-"}            }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" ¿Pu"} }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ede inc"}           }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"rustarse el expediente"}             }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" complet"}           }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"o con "}  }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ofertas, tim"}       }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"estamps y"}       }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" métricas de u"}          }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"so?\n\n## Recomend"}          }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"aciones\n- No"}       }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" priorizar ofertas"}           }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" para cancelación en 7"} }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" días hasta rec"}          }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ibir y"}            }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" auditar el expediente."}      }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\n\n## Límites"}           }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\nSin ev"}           }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"idencia, es"}            }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ta auditoría no resp"}             }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"alda ninguna con"}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"clusión de"}}
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":" seguridad "}      }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"ni de pri"}               }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"orización."} }
+
+event: content_block_delta
+data: {"type":"content_block_delta","index":1,"delta":{"type":"text_delta","text":"\n```"}         }
+
+event: content_block_stop
+data: {"type":"content_block_stop","index":1   }
+
+event: message_delta
+data: {"type":"message_delta","delta":{"stop_reason":"end_turn","stop_sequence":null,"stop_details":null,"container":null},"usage":{"input_tokens":441,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":728,"output_tokens_details":{"thinking_tokens":311}}            }
+
+event: message_stop
+data: {"type":"message_stop"            }
+

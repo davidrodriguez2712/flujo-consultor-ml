@@ -1,0 +1,67 @@
+{
+  "execution_manifest_sha256": "b8ef2799245a463cc3e33be88c25e94b1b26af13072862d9f6c613ac2e0da044",
+  "paid_approval_rejected": true,
+  "mode": "REAL_CLI_SIMULATED_PROVIDER_NOT_LLM_EFFICACY",
+  "results": [
+    {
+      "name": "nominal-simulated",
+      "synthetic_budget_usd": 0.1,
+      "status": "COMPLETED_PENDING_CONTENT_REVIEW",
+      "runs": [
+        {
+          "case": "L01",
+          "condition": "treatment",
+          "runtime_success": true,
+          "contract_success": true
+        },
+        {
+          "case": "L02",
+          "condition": "treatment",
+          "runtime_success": true,
+          "contract_success": true
+        },
+        {
+          "case": "L03",
+          "condition": "treatment",
+          "runtime_success": true,
+          "contract_success": true
+        }
+      ],
+      "simulated_provider_requests": 12,
+      "real_provider_requests": 0,
+      "real_api_cost_usd": 0,
+      "rejections": [],
+      "synthetic_ledger_only": true
+    },
+    {
+      "name": "remaining-budget-simulated",
+      "synthetic_budget_usd": 0.00887352,
+      "status": "STOPPED_RUNTIME_FAILURE",
+      "runs": [
+        {
+          "case": "L01",
+          "condition": "treatment",
+          "runtime_success": false,
+          "contract_success": false
+        }
+      ],
+      "simulated_provider_requests": 2,
+      "real_provider_requests": 0,
+      "real_api_cost_usd": 0,
+      "rejections": [
+        {
+          "reason": "límite de presupuesto",
+          "request_bytes": 22629,
+          "quote_usd": 0.008994625,
+          "tool_types": [
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "synthetic_ledger_only": true
+    }
+  ]
+}

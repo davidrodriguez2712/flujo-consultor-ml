@@ -1,0 +1,41 @@
+{
+  "output_type": "not_determinable",
+  "selection_status": "indeterminate",
+  "eligible_count": 3,
+  "capacity_k": 2,
+  "effective_k": null,
+  "selected_ids": [],
+  "risk_ranking_ids": [
+    "P",
+    "Q",
+    "R"
+  ],
+  "total_cost": null,
+  "expected_net_value": null,
+  "feasibility": "indeterminate",
+  "optimality": "indeterminate",
+  "causal_identification": {
+    "status": "not_identifiable",
+    "estimand": "Efecto causal de la campa\u00f1a de contacto sobre la retenci\u00f3n (clientes salvados) en la poblaci\u00f3n elegible, es decir, retenci\u00f3n con contacto menos retenci\u00f3n sin contacto.",
+    "reason": "No hay experimento, estimaciones de efecto de contacto ni dise\u00f1o observacional. El risk_score de churn bajo la pol\u00edtica actual y el CLV son descriptivos y no identifican cu\u00e1nto cambia el contacto la probabilidad de retenci\u00f3n. Un riesgo alto no implica efecto incremental."
+  },
+  "metrics": {
+    "population_id": "eligible-F",
+    "precision": null,
+    "recall": null,
+    "lift": null,
+    "precision_status": "not_requested",
+    "recall_status": "not_requested",
+    "lift_status": "not_requested",
+    "reason": "No se solicitan m\u00e9tricas predictivas y no hay labels en la poblaci\u00f3n eligible-F. Por eso las m\u00e9tricas son null."
+  },
+  "reason": "Los 3 clientes (P, Q, R) son elegibles. La capacidad es un m\u00e1ximo de 2 y el presupuesto es 8. El objetivo es maximizar los clientes salvados, pero ese valor requiere el efecto causal del contacto, que no est\u00e1 identificado. Sin ese efecto no hay valor neto aditivo por cliente. El CLV no es el valor esperado de la campa\u00f1a, porque falta la probabilidad incremental de salvar al cliente. El coste de P es desconocido y no se puede tratar como cero. No se puede afirmar la factibilidad ni la optimalidad. Q y R cuestan 4 cada uno, suman 8 y caben en el presupuesto y en la capacidad. Pero esto no demuestra que sean la mejor selecci\u00f3n, porque P podr\u00eda ser factible y valioso con un coste de hasta 4 solo junto con Q o R. P+Q o P+R es factible solo si el coste de P es como m\u00e1ximo 4. P solo es factible si su coste es como m\u00e1ximo 8. El ranking descriptivo por risk_score es P (0.9), Q (0.8), R (0.7), sin empates. Es un ranking descriptivo y no una pol\u00edtica resuelta. Se deja la decisi\u00f3n pendiente. Esta auditor\u00eda no aprueba el gate ni autoriza ejecutar la campa\u00f1a.",
+  "open_questions": [
+    "\u00bfCu\u00e1l es el coste de contactar a P? Cambia la factibilidad de las combinaciones con P.",
+    "\u00bfExiste o se puede dise\u00f1ar un experimento aleatorizado, o una estrategia observacional defendible, para estimar el efecto incremental del contacto sobre la retenci\u00f3n, incluso por estrato?",
+    "\u00bfEl objetivo es CLV incremental esperado (efecto \u00d7 CLV \u2212 coste) o el n\u00famero de clientes salvados? Hay que definir si el valor ya es neto o si hay que restar el coste.",
+    "\u00bfHay restricciones o riesgos de contaminaci\u00f3n que limiten usar el risk_score como criterio de asignaci\u00f3n?",
+    "\u00bfQui\u00e9n es el owner con autoridad para aprobar el gate (aprobaci\u00f3n humana)?"
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

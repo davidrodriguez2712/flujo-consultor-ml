@@ -1,0 +1,8 @@
+{
+  "source": "../2026-10-13-detect-leakage-v021/MICRO_REVIEW.md",
+  "failure": "v0.2.1 solo1/5en250palabras y reservas exportación/outcomes; no se relajó el gate ni se ejecutó native",
+  "expected_and_task_unchanged": true,
+  "variant": "0.2.2 compacta, mismas familias/fuentes/autoridad; comparación contra canonical0.2.0",
+  "canonical_modified": false,
+  "draft_sha256": "f2af88d48f521e71c60aa654a24fefde890dd96cea17f9ac8718bba33522f946"
+}

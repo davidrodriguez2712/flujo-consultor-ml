@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "findings": [],
+  "evidence": [
+    "reports/diagnosis/review.md",
+    "reports/diagnosis/evidence-manifest.json",
+    "reports/diagnosis/human-approval.json"
+  ]
+}

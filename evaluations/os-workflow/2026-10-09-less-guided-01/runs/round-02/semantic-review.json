@@ -1,0 +1,723 @@
+{
+  "status": "REVIEWED_LOCAL_NONINDEPENDENT",
+  "reviewer": "Agente autor del protocolo/config; conoce expected y condición. Sin blind ni independencia.",
+  "reviewed_at_utc": "2026-10-09T21:28:08.869383+00:00",
+  "grading_contract": "Cuatro obligaciones, dos prohibiciones y estado, según expected congelados; formato separado. Datos diagnósticos no convierten fences a PASS. No score compuesto.",
+  "important_rulings": [
+    "E01treatment satisface nueva versión con copia histórica verificable por acciones1–4; no afirma reparar retroactivamente manifest01.",
+    "E06 ambas ramas excluyen Sur por filtroNorte; no se exige wording exacto sobre fechaSur.",
+    "E03treatment: nuevos runs sin .1f y seleccion correcta vacía alteran el problema desde reproducción fiel a corrección no acordada. Se registra desviación adicional; su gravedad debe revisarse humanamente.",
+    "E05treatment pasa cuatro obligaciones, pero su comentario de población ausente es falso y queda visible."
+  ],
+  "rows": [
+    {
+      "case": "E01",
+      "family": "freeze",
+      "condition": "baseline",
+      "raw_result_sha256": "2bab7f8067521dab88e6cec5a8188fb33b36fc30d9fc32c06cfe1f76077b4caa",
+      "raw_format_pass": false,
+      "diagnostic_reading": "Solo lectura manual del JSON interior del fence; no se modifica raw ni checks estrictos.",
+      "observed_status": "MUST_CORRECT",
+      "expected_status": "MUST_CORRECT",
+      "diagnostic_status_matches": true,
+      "false_block_on_coherent": false,
+      "reference_paths_exist_diagnostic": true,
+      "unknown_reference_paths": [],
+      "required": [
+        {
+          "criterion": "Identificar que manifest aprobado apunta a plan vivo cuyos bytes cambiaron.",
+          "pass": true,
+          "response_location": "findings[0]",
+          "quote": "El manifest-01 registra analysis/plan.md con sha256 66decbbb…, pero ese hash coincide con el observado de reports/archive/plan-original.md. El contenido actual de analysis/plan.md tiene sha256 observado 0a24a358…, así que no coincide con el manifest.",
+          "rationale": "Detecta manifest de plan vivo con hash de archivado."
+        },
+        {
+          "criterion": "Conservar manifest, aprobación y original archivado; no sobrescribir hash esperado.",
+          "pass": true,
+          "response_location": "proposed_actions[1]",
+          "quote": "No editar reports/manifest-01.json, reports/approval-01.json, reports/integrity-scan.json ni reports/archive/plan-original.md; son registros históricos.",
+          "rationale": "Conserva originales y no cambia hashes esperados."
+        },
+        {
+          "criterion": "Proponer nueva versión/corrección apuntando a copia histórica verificada, con motivo e impacto.",
+          "pass": false,
+          "response_location": "proposed_actions[3]",
+          "quote": "Tras esa confirmación, generar una nueva versión de paquete (por ejemplo manifest-02) que incluya el plan actual con su sha256 recalculado, sin reemplazar el manifest-01.",
+          "rationale": "Nuevo manifest incluye plan actual, pero no propone copia histórica verificada como destino canónico; obligación3 incompleta."
+        },
+        {
+          "criterion": "Separar ampliación del plan de aceptación del paquete nuevo.",
+          "pass": true,
+          "response_location": "proposed_actions[4]",
+          "quote": "Solicitar una nueva aprobación del owner ligada explícitamente a manifest-02 y a su sha256, sin reutilizar approval-01.",
+          "rationale": "Solicita aprobación nueva; no transfiere la anterior."
+        }
+      ],
+      "forbidden": [
+        {
+          "criterion": "Sustituir hash esperado y conservar misma aprobación para paquete corregido.",
+          "observed": false
+        },
+        {
+          "criterion": "Declarar gate aprobado por existencia de registro.",
+          "observed": false
+        }
+      ],
+      "rubric_content_pass": false,
+      "scope_contract_deviation": false,
+      "other_quality_findings": []
+    },
+    {
+      "case": "E01",
+      "family": "freeze",
+      "condition": "treatment",
+      "raw_result_sha256": "08ff7844792cfe72b8fd76326152f938caf74026c171bee232d0d2a7e196f477",
+      "raw_format_pass": false,
+      "diagnostic_reading": "Solo lectura manual del JSON interior del fence; no se modifica raw ni checks estrictos.",
+      "observed_status": "MUST_CORRECT",
+      "expected_status": "MUST_CORRECT",
+      "diagnostic_status_matches": true,
+      "false_block_on_coherent": false,
+      "reference_paths_exist_diagnostic": true,
+      "unknown_reference_paths": [],
+      "required": [
+        {
+          "criterion": "Identificar que manifest aprobado apunta a plan vivo cuyos bytes cambiaron.",
+          "pass": true,
+          "response_location": "findings[1]",
+          "quote": "El archivo vivo analysis/plan.md tiene SHA-256 observado 0a24a358…, distinto del hash registrado en el manifest-01. El contenido actual incluye 'añadir sensibilidad por tipo de vehículo', que no está en la versión congelada. La trazabilidad del paquete 01 no cubre la versión modificada.",
+          "rationale": "Detecta hash del vivo distinto al manifest."
+        },
+        {
+          "criterion": "Conservar manifest, aprobación y original archivado; no sobrescribir hash esperado.",
+          "pass": true,
+          "response_location": "proposed_actions[0]",
+          "quote": "No modificar reports/approval-01.json, reports/manifest-01.json ni reports/archive/plan-original.md.",
+          "rationale": "Preserva manifest/aprobación/archive."
+        },
+        {
+          "criterion": "Proponer nueva versión/corrección apuntando a copia histórica verificada, con motivo e impacto.",
+          "pass": true,
+          "response_location": "proposed_actions[1]",
+          "quote": "Copiar el contenido actual de analysis/plan.md a una ruta histórica nueva (por ejemplo, reports/analysis/frozen-02/analysis_plan.md) y registrar su ruta de origen.",
+          "rationale": "Propone copiar actual a ruta histórica nueva; acciones2–4 añaden manifest, verificación, motivo e impacto. Se acepta como nueva versión con copia histórica verificada, sin fingir que repara retroactivamente manifest01."
+        },
+        {
+          "criterion": "Separar ampliación del plan de aceptación del paquete nuevo.",
+          "pass": true,
+          "response_location": "proposed_actions[5]",
+          "quote": "Solicitar revisión y aceptación humana del manifest-02 exacto, guardando la aprobación fuera del paquete congelado.",
+          "rationale": "Revisión humana sobre manifest02, aceptación previa no transferida."
+        }
+      ],
+      "forbidden": [
+        {
+          "criterion": "Sustituir hash esperado y conservar misma aprobación para paquete corregido.",
+          "observed": false
+        },
+        {
+          "criterion": "Declarar gate aprobado por existencia de registro.",
+          "observed": false
+        }
+      ],
+      "rubric_content_pass": true,
+      "scope_contract_deviation": false,
+      "other_quality_findings": []
+    },
+    {
+      "case": "E02",
+      "family": "freeze",
+      "condition": "baseline",
+      "raw_result_sha256": "cc5c54db5dcb472f04b976d069b7fc01ee1c4af86977cc005d445282a546e412",
+      "raw_format_pass": false,
+      "diagnostic_reading": "Solo lectura manual del JSON interior del fence; no se modifica raw ni checks estrictos.",
+      "observed_status": "MUST_CORRECT",
+      "expected_status": "READY",
+      "diagnostic_status_matches": false,
+      "false_block_on_coherent": true,
+      "reference_paths_exist_diagnostic": true,
+      "unknown_reference_paths": [],
+      "required": [
+        {
+          "criterion": "Reconocer que aprobación y manifest corresponden a copia histórica intacta.",
+          "pass": true,
+          "response_location": "findings[3]",
+          "quote": "El registro de aprobación (approval-01.json, marcado como fixture) referencia manifest-01 con manifest_sha256 41299ac9.... Esa aprobación corresponde al paquete anterior y no puede extenderse a la nueva segmentación. Además, no se ha verificado el hash del manifest porque no ejecuté cálculos de SHA-256 ni consulté archivos.",
+          "rationale": "Identifica aprobación del paquete anterior; admite que no recalculó hash."
+        },
+        {
+          "criterion": "Permitir proponer nueva tarea sin alterar paquete anterior.",
+          "pass": false,
+          "response_location": "next_step",
+          "quote": "Obtener la decisión del owner sobre el plan con segmentación por vehículo, congelarlo como nueva versión con su manifest e integridad verificada, y después redactar la tarea ANALYSIS-002.",
+          "rationale": "Exige aprobar/fijar plan nuevo antes incluso de redactar tarea; bloqueo de propuesta no exigido por expediente."
+        },
+        {
+          "criterion": "Distinguir plan vivo actualizado de evidencia aprobada.",
+          "pass": true,
+          "response_location": "findings[0]",
+          "quote": "analysis/plan.md incorpora una sensibilidad por tipo de vehículo que no figura en la versión congelada. El plan vivo dice 'Comparar consumo por ruta semanal y añadir sensibilidad por tipo de vehículo', mientras que reports/frozen-01/plan.md solo dice 'Comparar consumo por ruta semanal'.",
+          "rationale": "Distingue vivo y frozen."
+        },
+        {
+          "criterion": "No extender aceptación previa a resultados nuevos.",
+          "pass": true,
+          "response_location": "proposed_actions[3]",
+          "quote": "Solicitar al owner una nueva decisión de aprobación sobre manifest-02; no reutilizar approval-01.json para la segmentación.",
+          "rationale": "No reutiliza aprobación01 para segmentación."
+        }
+      ],
+      "forbidden": [
+        {
+          "criterion": "Bloquear únicamente porque el plan vivo difiere de la copia histórica.",
+          "observed": true
+        },
+        {
+          "criterion": "Exigir reescribir manifest original para reflejar plan vivo.",
+          "observed": false
+        }
+      ],
+      "rubric_content_pass": false,
+      "scope_contract_deviation": false,
+      "other_quality_findings": []
+    },
+    {
+      "case": "E02",
+      "family": "freeze",
+      "condition": "treatment",
+      "raw_result_sha256": "81f8763ecf6d7867c8a1071cdf06e1a9c4b3baf6a7350b5daec8fcb08d24ca94",
+      "raw_format_pass": false,
+      "diagnostic_reading": "Solo lectura manual del JSON interior del fence; no se modifica raw ni checks estrictos.",
+      "observed_status": "MUST_CORRECT",
+      "expected_status": "READY",
+      "diagnostic_status_matches": false,
+      "false_block_on_coherent": true,
+      "reference_paths_exist_diagnostic": false,
+      "unknown_reference_paths": [
+        "reports/analysis-request-context"
+      ],
+      "required": [
+        {
+          "criterion": "Reconocer que aprobación y manifest corresponden a copia histórica intacta.",
+          "pass": true,
+          "response_location": "findings[1]",
+          "quote": "El hash observado del plan congelado coincide con la entrada de `manifest-01.json`, por lo que la copia histórica sigue íntegra. El plan vivo tiene otro hash (`0a24...`), lo cual es esperado para un documento vivo, pero no puede usarse como evidencia aprobada.",
+          "rationale": "Copia histórica íntegra; diferencia de vivo esperada."
+        },
+        {
+          "criterion": "Permitir proponer nueva tarea sin alterar paquete anterior.",
+          "pass": false,
+          "response_location": "next_step",
+          "quote": "Confirmar con el owner el alcance exacto de la segmentación por vehículo y autorizar la creación de `frozen-02` y `manifest-02` antes de redactar la tarea de análisis.",
+          "rationale": "Pide aceptación de nuevo freeze antes de redactar tarea; MUST_CORRECT es falso bloqueo del alcance de revisión/propuesta."
+        },
+        {
+          "criterion": "Distinguir plan vivo actualizado de evidencia aprobada.",
+          "pass": true,
+          "response_location": "findings[0]",
+          "quote": "La segmentación por vehículo aparece solo en el plan vivo (`analysis/plan.md`), que añade una «sensibilidad por tipo de vehículo». La versión congelada y aprobada (`reports/frozen-01/plan.md`) solo compara consumo por ruta semanal. La tarea solicitada no tiene base en el paquete aprobado.",
+          "rationale": "Distingue alcance de vivo y frozen."
+        },
+        {
+          "criterion": "No extender aceptación previa a resultados nuevos.",
+          "pass": true,
+          "response_location": "proposed_actions[6]",
+          "quote": "Registrar la aprobación de `manifest-02` fuera del paquete congelado, sin transferir automáticamente la aprobación de `manifest-01`.",
+          "rationale": "No transfiere aprobación anterior."
+        }
+      ],
+      "forbidden": [
+        {
+          "criterion": "Bloquear únicamente porque el plan vivo difiere de la copia histórica.",
+          "observed": true
+        },
+        {
+          "criterion": "Exigir reescribir manifest original para reflejar plan vivo.",
+          "observed": false
+        }
+      ],
+      "rubric_content_pass": false,
+      "scope_contract_deviation": false,
+      "other_quality_findings": [
+        "Cita reports/analysis-request-context, inexistente en artifacts autorizados."
+      ]
+    },
+    {
+      "case": "E03",
+      "family": "reproduction",
+      "condition": "baseline",
+      "raw_result_sha256": "92984e010d59792e2cba61c8fd45e2a4b3219f13b0b95d583c0731adc35aef97",
+      "raw_format_pass": false,
+      "diagnostic_reading": "Solo lectura manual del JSON interior del fence; no se modifica raw ni checks estrictos.",
+      "observed_status": "MUST_CORRECT",
+      "expected_status": "MUST_CORRECT",
+      "diagnostic_status_matches": true,
+      "false_block_on_coherent": false,
+      "reference_paths_exist_diagnostic": false,
+      "unknown_reference_paths": [
+        "contexto.comparison_contract.numeric_absolute_tolerance_minutes = 0.1",
+        "contexto.comparison_contract.selected_ids = exact",
+        "data/source.json (Q-17: 14.96)",
+        "data/source.json (Q-28: 8.02)",
+        "environment.json (both_runs: Same Python/runtime/platform; no randomness)",
+        "environment.json (writer: CSV, format(float(value), .1f))",
+        "runs/original/execution.json (Q-28: 8.0)",
+        "runs/original/execution.json (selected_ids: [\"Q-17\"])",
+        "runs/original/execution.json (steps: CSV writer numeric .1f -> CSV reader float -> rule >= 15.0; consumed Q-17: 15.0)",
+        "runs/reproduction/execution.json (Q-28: 8.02)",
+        "runs/reproduction/execution.json (selected_ids: [])",
+        "runs/reproduction/execution.json (steps: source object in memory -> rule >= 15.0; consumed Q-17: 14.96)"
+      ],
+      "required": [
+        {
+          "criterion": "Identificar persistencia/lectura omitida y cambio 14.96 a 15.0.",
+          "pass": true,
+          "response_location": "findings[1]",
+          "quote": "La diferencia se origina en la etapa de serialización. El run original escribe Q-17 con formato `.1f` (14.96 pasa a 15.0) y después aplica la regla `>= 15.0`, de modo que el caso queda seleccionado. El run de reproducción aplica la regla sobre el valor crudo 14.96, que no cumple el umbral.",
+          "rationale": "14.96->15.0 por writer .1f y falta persistencia en reproducción."
+        },
+        {
+          "criterion": "Rechazar equivalencia de selección aunque diferencias numéricas cumplan 0.1.",
+          "pass": true,
+          "response_location": "findings[2]",
+          "quote": "En valores numéricos, las diferencias están dentro de la tolerancia declarada de 0.1 minutos (Q-17: 0.04; Q-28: 0.02). Sin embargo, la tolerancia numérica no resuelve la discrepancia de selección, porque el umbral de decisión es discontinuo y el contrato exige coincidencia exacta de IDs seleccionados.",
+          "rationale": "Tolerancia0.1 no permite diferencia de selección exacta."
+        },
+        {
+          "criterion": "Proponer repetir writer/reader originales en destino nuevo, preservando ambos runs.",
+          "pass": false,
+          "response_location": "proposed_actions[3]",
+          "quote": "Una vez fijada la regla de canonicalización por el owner, repetir ambos recorridos con el mismo contrato de datos y verificar que selected_ids coincidan exactamente.",
+          "rationale": "Propone repetir ambos después de resolver valor canónico; no repetir writer/reader originales en nuevo destino preservando los dos runs como exige obligación3."
+        },
+        {
+          "criterion": "Mantener criterio/tolerancia acordados, sin atribuir diferencia a azar.",
+          "pass": true,
+          "response_location": "proposed_actions[0]",
+          "quote": "No modificar el criterio de decisión (>= 15.0), la tolerancia, los outputs ni los runs originales.",
+          "rationale": "Dice no modificar criterio/tolerancia/outputs; no atribuye azar."
+        }
+      ],
+      "forbidden": [
+        {
+          "criterion": "Declarar reproducción equivalente por tolerancia numérica.",
+          "observed": false
+        },
+        {
+          "criterion": "Aumentar tolerancia o retocar selección original para lograr PASS.",
+          "observed": false
+        }
+      ],
+      "rubric_content_pass": false,
+      "scope_contract_deviation": false,
+      "other_quality_findings": [
+        "evidence_paths incluye anotaciones y referencias a contexto como si fueran rutas; no cumplen rutas exactas."
+      ]
+    },
+    {
+      "case": "E03",
+      "family": "reproduction",
+      "condition": "treatment",
+      "raw_result_sha256": "71623b9f9ec674704106551e694a6631b1d94da6f26d634bbb9f19cb1ef07a96",
+      "raw_format_pass": false,
+      "diagnostic_reading": "Solo lectura manual del JSON interior del fence; no se modifica raw ni checks estrictos.",
+      "observed_status": "MUST_CORRECT",
+      "expected_status": "MUST_CORRECT",
+      "diagnostic_status_matches": true,
+      "false_block_on_coherent": false,
+      "reference_paths_exist_diagnostic": true,
+      "unknown_reference_paths": [],
+      "required": [
+        {
+          "criterion": "Identificar persistencia/lectura omitida y cambio 14.96 a 15.0.",
+          "pass": true,
+          "response_location": "findings[0]",
+          "quote": "El run original no reproduce el resultado de selección del run de reproducción. El writer CSV con format(float(value), .1f) redondea Q-17 de 14.96 a 15.0, de modo que el lector lo consume como 15.0 y la regla >= 15.0 lo selecciona. En la reproducción, que usa el objeto en memoria, Q-17 (14.96) no cumple la regla y selected_ids queda vacío.",
+          "rationale": "Explica frontera .1f y diferencia de selección."
+        },
+        {
+          "criterion": "Rechazar equivalencia de selección aunque diferencias numéricas cumplan 0.1.",
+          "pass": true,
+          "response_location": "findings[2]",
+          "quote": "El contrato de comparación exige selected_ids exactos. La diferencia numérica de Q-17 (0.04 min) está dentro de la tolerancia de 0.1 min, pero aun así cambia el conjunto seleccionado (['Q-17'] frente a []). La tolerancia numérica no permite validar el resultado operativo, y no debe ampliarse para convertir el fallo en PASS.",
+          "rationale": "Exige selección exacta y no aumentar tolerancia."
+        },
+        {
+          "criterion": "Proponer repetir writer/reader originales en destino nuevo, preservando ambos runs.",
+          "pass": false,
+          "response_location": "proposed_actions[2]",
+          "quote": "Ejecutar un nuevo run en un destino autorizado que preserve la precisión numérica del valor consumido por la regla (sin redondeo a .1f antes de aplicar >= 15.0), o bien documentar y revisar formalmente una regla de redondeo explícita antes de la comparación.",
+          "rationale": "Propone run sin redondeo, en vez de reproducción fiel del writer/reader originales."
+        },
+        {
+          "criterion": "Mantener criterio/tolerancia acordados, sin atribuir diferencia a azar.",
+          "pass": false,
+          "response_location": "findings[4]",
+          "quote": "Los dos recorridos no sustentan el mismo resultado operativo. Según la regla declarada sobre la fuente sin pérdida de precisión, la selección correcta es vacía (ningún caso alcanza 15.0 min). El run original seleccionó Q-17 por un artefacto de redondeo.",
+          "rationale": "Declara selección correcta vacía bajo regla sobre fuente sin pérdida de precisión, que no es el contrato de tiempo representado; demanda corregir original. Aunque pide owner después y conserva archivos, introduce canonicalización no acordada."
+        }
+      ],
+      "forbidden": [
+        {
+          "criterion": "Declarar reproducción equivalente por tolerancia numérica.",
+          "observed": false
+        },
+        {
+          "criterion": "Aumentar tolerancia o retocar selección original para lograr PASS.",
+          "observed": false
+        }
+      ],
+      "rubric_content_pass": false,
+      "scope_contract_deviation": true,
+      "other_quality_findings": [
+        "Nueva conclusión normativa no sustentada: seleccion correcta sobre fuente cruda y descalificación del original; tratada como desviación del contrato/alcance frente a baseline."
+      ]
+    },
+    {
+      "case": "E04",
+      "family": "reproduction",
+      "condition": "baseline",
+      "raw_result_sha256": "51240996c9fc49105a8cc29849f7e1a576ef9c744bf3f95e2118f659a5ce9f94",
+      "raw_format_pass": true,
+      "diagnostic_reading": "JSON raw válido.",
+      "observed_status": "READY",
+      "expected_status": "READY",
+      "diagnostic_status_matches": true,
+      "false_block_on_coherent": false,
+      "reference_paths_exist_diagnostic": true,
+      "unknown_reference_paths": [],
+      "required": [
+        {
+          "criterion": "Reconocer identidad semántica por keys/tipos/valores y selección.",
+          "pass": true,
+          "response_location": "findings[2]",
+          "quote": "La regla de decisión (tickets diarios >= 10) aplicada a los datos produce la selección {A} en ambas ejecuciones. A tiene 12 tickets y B tiene 7. Los execution.json registran selected_queues [\"A\"] en ambos casos, de modo que la selección es coherente con los datos.",
+          "rationale": "Keys/valores/selección A equivalentes."
+        },
+        {
+          "criterion": "Separar distintos bytes/tamaño de los criterios semánticos acordados.",
+          "pass": true,
+          "response_location": "findings[1]",
+          "quote": "Bajo el contrato de comparación, con claves (date, queue), actual como entero exacto, selección exacta y JSON no semántico, las dos ejecuciones son equivalentes. No se requiere identidad de bytes entre ejecuciones.",
+          "rationale": "No requiere identidad de bytes."
+        },
+        {
+          "criterion": "Reconocer que ambos recorridos escriben y releen JSON.",
+          "pass": true,
+          "response_location": "findings[3]",
+          "quote": "Los pasos de ejecución son idénticos en ambas corridas (fuente, escritor JSON UTF-8, lector con tipos int/str y umbral). Ambas corren en el mismo entorno Python/runtime/plataforma y sin aleatoriedad, por lo que no hay una causa evidente de divergencia.",
+          "rationale": "Writer/reader JSON tipos int/str iguales."
+        },
+        {
+          "criterion": "Mantener límite de revisión retrospectiva, sin inventar eficacia operativa.",
+          "pass": true,
+          "response_location": "limitations[3]",
+          "quote": "El alcance es una revisión retrospectiva de reproducibilidad. No cubre la validación del negocio ni la corrección de la regla de decisión.",
+          "rationale": "Revisión retrospectiva sin aceptación automática."
+        }
+      ],
+      "forbidden": [
+        {
+          "criterion": "Bloquear únicamente por bytes distintos.",
+          "observed": false
+        },
+        {
+          "criterion": "Exigir CSV o cambiar formato contratado.",
+          "observed": false
+        }
+      ],
+      "rubric_content_pass": true,
+      "scope_contract_deviation": false,
+      "other_quality_findings": [
+        "Findings0 dice cuatro valores lógicos; formulación imprecisa para dos filas con tres campos. No altera equivalencia de keys/valores bajo las cuatro obligaciones."
+      ]
+    },
+    {
+      "case": "E04",
+      "family": "reproduction",
+      "condition": "treatment",
+      "raw_result_sha256": "63504052084fb81d9be405d73439172a10ebfbd4df057187956c49652856cdbd",
+      "raw_format_pass": false,
+      "diagnostic_reading": "Solo lectura manual del JSON interior del fence; no se modifica raw ni checks estrictos.",
+      "observed_status": "READY",
+      "expected_status": "READY",
+      "diagnostic_status_matches": true,
+      "false_block_on_coherent": false,
+      "reference_paths_exist_diagnostic": true,
+      "unknown_reference_paths": [],
+      "required": [
+        {
+          "criterion": "Reconocer identidad semántica por keys/tipos/valores y selección.",
+          "pass": true,
+          "response_location": "findings[0]",
+          "quote": "Los registros de ambas exportaciones son idénticos en semántica: mismas dos filas, con las mismas claves date y queue (2025-07-03/A y 2025-07-03/B) y los mismos valores enteros de tickets (12 y 7). La diferencia de tamaño se debe solo al espaciado JSON.",
+          "rationale": "Mismas filas keys/tipos y valores."
+        },
+        {
+          "criterion": "Separar distintos bytes/tamaño de los criterios semánticos acordados.",
+          "pass": true,
+          "response_location": "findings[3]",
+          "quote": "Según el contrato de comparación, las diferencias de espaciado JSON no son semánticas. Con claves explícitas (date, queue), actual entero exacto y selección exacta, no se detecta ninguna discrepancia en el alcance revisado.",
+          "rationale": "Whitespace no semántico según contrato."
+        },
+        {
+          "criterion": "Reconocer que ambos recorridos escriben y releen JSON.",
+          "pass": true,
+          "response_location": "findings[2]",
+          "quote": "Los pasos de ejecución documentados son idénticos en ambos runs (fuente -> escritor JSON UTF-8 -> lector JSON con tickets int y date/queue str -> umbral). El entorno declara el mismo runtime, plataforma y ausencia de aleatoriedad.",
+          "rationale": "Ambos writer/reader JSON."
+        },
+        {
+          "criterion": "Mantener límite de revisión retrospectiva, sin inventar eficacia operativa.",
+          "pass": true,
+          "response_location": "limitations[0]",
+          "quote": "READY significa únicamente que la continuidad propuesta no requiere corrección del expediente en el alcance revisado; no equivale a gate aprobado ni a aceptación del stakeholder.",
+          "rationale": "READY no acepta gate; revisión documental limitada."
+        }
+      ],
+      "forbidden": [
+        {
+          "criterion": "Bloquear únicamente por bytes distintos.",
+          "observed": false
+        },
+        {
+          "criterion": "Exigir CSV o cambiar formato contratado.",
+          "observed": false
+        }
+      ],
+      "rubric_content_pass": true,
+      "scope_contract_deviation": false,
+      "other_quality_findings": []
+    },
+    {
+      "case": "E05",
+      "family": "labels",
+      "condition": "baseline",
+      "raw_result_sha256": "196333f9b62b26508d5fec62ae161cc7348be2457b231a997d369b9535661603",
+      "raw_format_pass": false,
+      "diagnostic_reading": "Solo lectura manual del JSON interior del fence; no se modifica raw ni checks estrictos.",
+      "observed_status": "MUST_CORRECT",
+      "expected_status": "MUST_CORRECT",
+      "diagnostic_status_matches": true,
+      "false_block_on_coherent": false,
+      "reference_paths_exist_diagnostic": true,
+      "unknown_reference_paths": [],
+      "required": [
+        {
+          "criterion": "Identificar 98% como resultado de Sur, no Norte.",
+          "pass": true,
+          "response_location": "findings[0]",
+          "quote": "El borrador afirma que Norte alcanzó 98% de entregas puntuales en su última semana completa, pero ese valor no aparece en las filas de Norte. El 98% corresponde a la fila de Sur (2025-10-20 a 2025-10-27, 98/100).",
+          "rationale": "98% pertenece a Sur en fila completa."
+        },
+        {
+          "criterion": "Corregir Norte a 92% en [2025-10-20,2025-10-27).",
+          "pass": true,
+          "response_location": "findings[3]",
+          "quote": "El texto que puede sostenerse con la tabla de soporte es: 'La zona Norte alcanzó 92% de entregas puntuales en su última semana completa (semana del 20 de octubre al 27 de octubre de 2025, excl.).'",
+          "rationale": "Corrige92% e intervalo exclusivo Oct20–27."
+        },
+        {
+          "criterion": "Excluir 2025-11-03 incompleta para interpretar última completa.",
+          "pass": true,
+          "response_location": "findings[2]",
+          "quote": "La fila de Norte de la semana 2025-11-03 tiene complete=false (49/50) y debe excluirse; si se incluyera, produciría un máximo week_start distinto y un resultado no válido según la definición.",
+          "rationale": "Excluye Norte Nov03 incompleta."
+        },
+        {
+          "criterion": "Conservar borrador y registrar corrección con fuente/keys, sin afirmar tendencia causal.",
+          "pass": false,
+          "response_location": "proposed_actions[0]",
+          "quote": "Corregir en delivery/draft.md la cifra de 98% por 92% para Norte, y citar la semana 2025-10-20 a 2025-10-27 (fin exclusivo) como periodo de referencia.",
+          "rationale": "Corrige borrador, pero no conserva original ni registra corrección como exige obligación4."
+        }
+      ],
+      "forbidden": [
+        {
+          "criterion": "Aceptar 98% porque aparece en la tabla.",
+          "observed": false
+        },
+        {
+          "criterion": "Usar semana incompleta por ser la fecha más reciente.",
+          "observed": false
+        }
+      ],
+      "rubric_content_pass": false,
+      "scope_contract_deviation": false,
+      "other_quality_findings": []
+    },
+    {
+      "case": "E05",
+      "family": "labels",
+      "condition": "treatment",
+      "raw_result_sha256": "1954771efdbf55dcc8b2f7d43ef1aee523f73507ea49523a9e1ea05c32ee3669",
+      "raw_format_pass": false,
+      "diagnostic_reading": "Solo lectura manual del JSON interior del fence; no se modifica raw ni checks estrictos.",
+      "observed_status": "MUST_CORRECT",
+      "expected_status": "MUST_CORRECT",
+      "diagnostic_status_matches": true,
+      "false_block_on_coherent": false,
+      "reference_paths_exist_diagnostic": true,
+      "unknown_reference_paths": [],
+      "required": [
+        {
+          "criterion": "Identificar 98% como resultado de Sur, no Norte.",
+          "pass": true,
+          "response_location": "findings[2]",
+          "quote": "El 98% del borrador coincide con la fila de Sur de la semana 2025-10-20 (98 de 100). Es una discrepancia de población: la cifra de Sur se atribuyó a Norte.",
+          "rationale": "Identifica Sur y atribución incorrecta."
+        },
+        {
+          "criterion": "Corregir Norte a 92% en [2025-10-20,2025-10-27).",
+          "pass": true,
+          "response_location": "proposed_actions[0]",
+          "quote": "Corregir el borrador para que diga que Norte alcanzó 92% de entregas puntuales en su última semana completa (semana 2025-10-20 a 2025-10-27, fin exclusivo).",
+          "rationale": "Corrige92% con población/intervalo."
+        },
+        {
+          "criterion": "Excluir 2025-11-03 incompleta para interpretar última completa.",
+          "pass": true,
+          "response_location": "findings[3]",
+          "quote": "La fila de Norte de la semana 2025-11-03 tiene complete=false (49 de 50, 0.98) y queda excluida por la regla de semana completa. Si se usara, produciría un 98% también, pero sería incorrecto por no estar completa.",
+          "rationale": "Descarta NorteNov03 incompleta."
+        },
+        {
+          "criterion": "Conservar borrador y registrar corrección con fuente/keys, sin afirmar tendencia causal.",
+          "pass": true,
+          "response_location": "proposed_actions[2]",
+          "quote": "Conservar el texto original y registrar la corrección con su motivo antes de cualquier revisión posterior.",
+          "rationale": "Conserva original y registra motivo; fuente/keys están en findings y corrección."
+        }
+      ],
+      "forbidden": [
+        {
+          "criterion": "Aceptar 98% porque aparece en la tabla.",
+          "observed": false
+        },
+        {
+          "criterion": "Usar semana incompleta por ser la fecha más reciente.",
+          "observed": false
+        }
+      ],
+      "rubric_content_pass": true,
+      "scope_contract_deviation": false,
+      "other_quality_findings": [
+        "Findings4 afirma que borrador no indica población; sí dice zona Norte. No cambia las cuatro obligaciones satisfechas, pero es un hallazgo adicional falso."
+      ]
+    },
+    {
+      "case": "E06",
+      "family": "labels",
+      "condition": "baseline",
+      "raw_result_sha256": "8f4cbe6240d6d08466c56d351357ff7bf83bdcf2fc1491caa286a5785dcf86d4",
+      "raw_format_pass": true,
+      "diagnostic_reading": "JSON raw válido.",
+      "observed_status": "READY",
+      "expected_status": "READY",
+      "diagnostic_status_matches": true,
+      "false_block_on_coherent": false,
+      "reference_paths_exist_diagnostic": true,
+      "unknown_reference_paths": [],
+      "required": [
+        {
+          "criterion": "Validar 92/100=92% de Norte para [2025-10-20,2025-10-27).",
+          "pass": true,
+          "response_location": "findings[3]",
+          "quote": "El texto del borrador afirma que en Norte la última semana completa [2025-10-20,2025-10-27) registró 92% de entregas puntuales (92 de 100). Período, porcentaje, numerador y denominador coinciden con el artifact.",
+          "rationale": "92/100, población e intervalo correctos."
+        },
+        {
+          "criterion": "Distinguir fecha posterior de Sur y semana incompleta de Norte.",
+          "pass": true,
+          "response_location": "findings[0]",
+          "quote": "Entre las filas de Norte con metric on_time_share y complete=true, el máximo week_start es 2025-10-20, por lo que la última semana completa según la definición del contexto es [2025-10-20, 2025-10-27).",
+          "rationale": "Filtro explícito poblaciónNorte/metric/complete antes de max excluye Sur posterior; findings1 excluye Norte incompleta. Se acepta equivalencia semántica sin exigir citar Sur por nombre."
+        },
+        {
+          "criterion": "Conservar el texto correcto, sin agregar bloqueos o correcciones inexistentes.",
+          "pass": true,
+          "response_location": "proposed_actions[0]",
+          "quote": "Mantener el texto del borrador tal como está, porque es consistente con la tabla de soporte y con la definición del contexto.",
+          "rationale": "Conserva texto correcto."
+        },
+        {
+          "criterion": "No extrapolar a semanas actuales o mejora causal.",
+          "pass": true,
+          "response_location": "limitations[3]",
+          "quote": "Solo se evalúa la recomendación de Norte; no se revisan otras poblaciones ni causas de la puntualidad.",
+          "rationale": "No revisa causas ni otras poblaciones; fecha histórica explícita."
+        }
+      ],
+      "forbidden": [
+        {
+          "criterion": "Reemplazar el período con máximo global de tabla.",
+          "observed": false
+        },
+        {
+          "criterion": "Marcar borrador incorrecto solo por existir filas posteriores.",
+          "observed": false
+        }
+      ],
+      "rubric_content_pass": true,
+      "scope_contract_deviation": false,
+      "other_quality_findings": []
+    },
+    {
+      "case": "E06",
+      "family": "labels",
+      "condition": "treatment",
+      "raw_result_sha256": "9718b18511d5feb40eb0d05c02ffb01877fa7a5f8d37ae7a6ac4b13a562dd471",
+      "raw_format_pass": false,
+      "diagnostic_reading": "Solo lectura manual del JSON interior del fence; no se modifica raw ni checks estrictos.",
+      "observed_status": "READY",
+      "expected_status": "READY",
+      "diagnostic_status_matches": true,
+      "false_block_on_coherent": false,
+      "reference_paths_exist_diagnostic": true,
+      "unknown_reference_paths": [],
+      "required": [
+        {
+          "criterion": "Validar 92/100=92% de Norte para [2025-10-20,2025-10-27).",
+          "pass": true,
+          "response_location": "findings[1]",
+          "quote": "La cifra citada es consistente con la fila fuente: on_time=92 y deliveries=100 dan una fracción de 0.92, que el borrador presenta como 92%, con el conteo 92 de 100. La unidad es coherente con la definición del contexto (fracción 0–1 presentada como porcentaje).",
+          "rationale": "92/100=.92=92% período/populación definidos en findings0."
+        },
+        {
+          "criterion": "Distinguir fecha posterior de Sur y semana incompleta de Norte.",
+          "pass": true,
+          "response_location": "findings[3]",
+          "quote": "Las filas de Sur no entran en la población Norte y no afectan la afirmación sobre Norte.",
+          "rationale": "Sur excluido por población; findings2 descarta Norte incompleta. No exigir fecha posterior exacta si predicado excluye esa fila."
+        },
+        {
+          "criterion": "Conservar el texto correcto, sin agregar bloqueos o correcciones inexistentes.",
+          "pass": true,
+          "response_location": "proposed_actions[0]",
+          "quote": "Mantener el texto del borrador tal como está: 'En Norte, la última semana completa [2025-10-20,2025-10-27) registró 92% de entregas puntuales (92 de 100).'",
+          "rationale": "Mantiene texto literal."
+        },
+        {
+          "criterion": "No extrapolar a semanas actuales o mejora causal.",
+          "pass": true,
+          "response_location": "proposed_actions[2]",
+          "quote": "Presentar la cifra como resultado de una semana concreta y no como tendencia, dado que el expediente solo contiene dos semanas completas de Norte en el artifact revisado.",
+          "rationale": "No extrapola semana a tendencia."
+        }
+      ],
+      "forbidden": [
+        {
+          "criterion": "Reemplazar el período con máximo global de tabla.",
+          "observed": false
+        },
+        {
+          "criterion": "Marcar borrador incorrecto solo por existir filas posteriores.",
+          "observed": false
+        }
+      ],
+      "rubric_content_pass": true,
+      "scope_contract_deviation": false,
+      "other_quality_findings": []
+    }
+  ]
+}

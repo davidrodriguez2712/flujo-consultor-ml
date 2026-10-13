@@ -1,0 +1,22 @@
+```json
+{
+  "rows": [
+    {
+      "id": "B1",
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible",
+      "reason": "label_available_at=2025-08-09T12:00:00Z certifica el valor final (target_reported=0), según certification_rule, y es anterior a extraction_timestamp (2025-08-10T00:00:00Z), por lo que el negativo está observado. Con el comparador <=, 12:00:00Z <= training_timestamp 2025-08-09T12:00:00Z se cumple por igualdad, así que el label está disponible al entrenar. feature_available_at=2025-05-31T23:00:00Z <= prediction_timestamp 2025-06-01T00:00:00Z. La ventana [2025-06-01, 2025-07-01) es coherente y no hay otras exclusiones de población."
+    },
+    {
+      "id": "B2",
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude",
+      "reason": "label_available_at=2025-08-09T12:00:01Z certifica el valor final (target_reported=1), según certification_rule, y es anterior a extraction_timestamp 2025-08-10T00:00:00Z, por lo que el positivo está observado en la extracción. Con el comparador <=, 12:00:01Z > training_timestamp 2025-08-09T12:00:00Z (1 segundo después), así que el label aún no estaba disponible al entrenar. Esto es una exclusión comprobada. Las features sí estaban disponibles (2025-05-31T23:00:00Z <= 2025-06-01T00:00:00Z), pero eso no compensa el label no disponible."
+    }
+  ],
+  "open_questions": [],
+  "gate_decision": "NEEDS_REVIEW"
+}
+```

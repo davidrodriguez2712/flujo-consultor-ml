@@ -1,0 +1,43 @@
+{
+  "output_type": "risk_ranking",
+  "selection_status": "determined",
+  "eligible_count": 4,
+  "capacity_k": 2,
+  "effective_k": 2,
+  "selected_ids": [
+    "W",
+    "Q"
+  ],
+  "risk_ranking_ids": [
+    "W",
+    "Q",
+    "R",
+    "T"
+  ],
+  "total_cost": 2,
+  "expected_net_value": null,
+  "feasibility": "feasible",
+  "optimality": "not_assessed",
+  "causal_identification": {
+    "status": "not_requested",
+    "estimand": null,
+    "reason": "No se pide ning\u00fan efecto causal; el ranking de riesgo es descriptivo y no mide el efecto de inspeccionar."
+  },
+  "metrics": {
+    "population_id": "eligible-B",
+    "precision": 0.5,
+    "recall": null,
+    "lift": null,
+    "precision_status": "identified",
+    "recall_status": "not_identifiable",
+    "lift_status": "not_identifiable",
+    "reason": "Precision = positivos seleccionados / seleccionados = 1/2 = 0,5. W tiene label 1 y Q tiene label 0, as\u00ed que los dos seleccionados est\u00e1n etiquetados y la precision se identifica sin cobertura poblacional completa. Recall y lift necesitan los positivos de los 4 elegibles de eligible-B. W=1 y T=1 son conocidos, pero R no tiene label. Su ausencia no equivale a 0, as\u00ed que los positivos totales son 2 o 3. El recall podr\u00eda ser 1/2 o 1/3, y no se puede fijar un punto. La prevalencia tambi\u00e9n queda indeterminada, entre 0,5 y 0,75, y el lift se mueve con ella. Esas cifras son solo cotas por casos, no estimaciones. No se supone sesgo ni no representatividad, porque el mecanismo de selecci\u00f3n hist\u00f3rica de las inspecciones no est\u00e1 documentado."
+  },
+  "reason": "Los 4 registros son elegibles y no hay filtros que aplicar. Se ordenan por risk_score descendente: W 0,95, Q 0,90, R 0,60, T 0,20. No hay empates, as\u00ed que no se usa el desempate por ID. Con K=2 y 4 elegibles, la selecci\u00f3n es min(2,4)=2, es decir W y Q, en orden de ranking. El coste es 1+1=2, que cumple la capacidad de 2. No hay presupuesto ni objetivo econ\u00f3mico, por lo que no se eval\u00faa optimalidad ni valor neto. Es un Top-K descriptivo. Precision@2 es 0,5. Recall y lift no se identifican porque falta el label de R. Este resultado no autoriza ejecutar inspecciones y requiere revisi\u00f3n y aprobaci\u00f3n humana.",
+  "open_questions": [
+    "\u00bfSe puede obtener o confirmar el label de R (positivo o negativo) en eligible-B? Con \u00e9l se fijar\u00edan recall y lift.",
+    "\u00bfCu\u00e1l fue el mecanismo de selecci\u00f3n de las inspecciones hist\u00f3ricas que generaron los labels? Est\u00e1 sin documentar, y aclararlo permitir\u00eda juzgar la cobertura de labels.",
+    "\u00bfLos labels de W, Q y T corresponden al mismo horizonte y definici\u00f3n de positivo que se quiere predecir?"
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

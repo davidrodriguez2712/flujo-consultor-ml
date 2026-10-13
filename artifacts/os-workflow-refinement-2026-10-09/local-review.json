@@ -1,0 +1,71 @@
+{
+  "status": "LOCAL_VERIFICATION_PASS",
+  "product_tests_passed": 165,
+  "new_test": "test_new_project_installs_task_contract_template_with_integrity_tracking; observed RED missing template, GREEN after resolver change. Test initial field corrected to API initial_sha256, not sha256.",
+  "generation_check": "PASS; status/next exit0 with integrityOK, validate exit3NEEDS_REVIEW expected, wheel resources equal source bundle.",
+  "initial_probe_notes": [
+    "Plain python could not import local acos until PYTHONPATH=src.",
+    "Unresolved temp /var rejected as symlink; used resolved /private/var path, retaining compiler protection.",
+    "Generated workflow rewrites an optional UI link when UI module is absent. Source/bundle/wheel bytes match; templates match generated copies. Reviewed this intended link rewrite separately."
+  ],
+  "instruction_review": [
+    {
+      "case": "JSON puro",
+      "ruling": "Task output contract takes precedence over illustrative Markdown; no fences or accepted silent repairs.",
+      "evidence_level": "Author review of instructions, not agent experiment."
+    },
+    {
+      "case": "CSV .1f reproduction",
+      "ruling": "Repeat original writer/reader then threshold. Questions about canonicalization are separate proposals, not grounds to select raw source by default.",
+      "evidence_level": "Author review; historical test remains frozen."
+    },
+    {
+      "case": "Live plan changed with coherent historical freeze",
+      "ruling": "Prepare proposed task and record execution dependencies; do not declare historical freeze defective merely because live plan evolved.",
+      "evidence_level": "Author review; no autonomous gate acceptance."
+    }
+  ],
+  "immutable_evidence": [
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/evidence-manifest-01.json",
+      "sha256": "90544d163b168930e86373699ede98b7f099b54d1b7d7d5ea9487d1c50362e19",
+      "files_checked": 48,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/execution-config-01/execution-manifest-01.json",
+      "sha256": "2e8dc56a6c95c15e61189fd59a8b944316b3dc8d88d275ce531e28c8775a85d4",
+      "files_checked": 12,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/execution-config-02/execution-manifest-02.json",
+      "sha256": "c844052205a518f94c5c4bbd02520749385f752be73abee59ef97a66791c2a41",
+      "files_checked": 10,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/runs/round-01/run-manifest-01.json",
+      "sha256": "7cbc09d54baea334f4d712edbd1502089aebeaea1c33e72a85ca407d98ad10b4",
+      "files_checked": 15,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/runs/round-02/run-manifest-02.json",
+      "sha256": "0b808f1561cbc0519ebae06ab67d4e9c9b3f6b5d65653fa84fe7af7eb228e49c",
+      "files_checked": 86,
+      "status": "PASS"
+    },
+    {
+      "manifest": "pilots/retail-capacidad-semanal-publico/reports/package/evidence-manifest-01.json",
+      "sha256": "fdf2945c8935a3511a0766c3527fc9216609021ffa45eb5891f5c574c732e647",
+      "files_checked": 70,
+      "status": "PASS"
+    }
+  ],
+  "model_calls_this_change": 0,
+  "api_cost_usd_this_change": 0,
+  "cumulative_last_evaluation_api_cost_usd": 0.02065453,
+  "effectiveness_after_change": "NOT_EVALUATED",
+  "foundry_modified": false
+}

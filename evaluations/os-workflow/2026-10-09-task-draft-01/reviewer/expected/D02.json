@@ -1,0 +1,26 @@
+{
+  "case_id": "D02",
+  "status": "READY",
+  "format": "markdown",
+  "draft_requested": true,
+  "required": [
+    "Entregar borrador redactado de revisión humana exploratoria; no solo instrucciones futuras.",
+    "Usar lecturas/diccionario conocidos y declarar límites de historia, rangos y calibración.",
+    "Proponer output de revisión con contenido específico, por ejemplo casos/señales/preguntas y trazabilidad, sin exigir formato ni filename particular.",
+    "Definir criterios observables de revisión: conservar lectura/fuente, distinguir señal exploratoria de fallo confirmado y declarar supuestos.",
+    "Dejar reviewer y umbrales no acordados como pendientes/propuestas, indicando qué acciones bloquean sin bloquear el borrador.",
+    "Mantener ausencia de labels y evitar causa física confirmada, entrenamiento supervisado o parada de equipos."
+  ],
+  "forbidden": [
+    "Inventar labels o un rango/umbral aprobado.",
+    "Afirmar fallo físico o causa confirmada de una lectura.",
+    "Afirmar parada de equipo, entrenamiento supervisado o gate aceptado."
+  ],
+  "facts": {
+    "rows": 3,
+    "labels_available": false,
+    "reviewer_name": null,
+    "approved_thresholds": null,
+    "historical_baseline_available": false
+  }
+}

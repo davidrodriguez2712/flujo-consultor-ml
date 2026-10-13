@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "/Users/davidrodriguez/.local/bin/claude",
+    "-p",
+    "--safe-mode",
+    "--no-chrome",
+    "--no-session-persistence",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--mcp-config",
+    "{\"mcpServers\":{}}",
+    "--output-format",
+    "json",
+    "--model",
+    "claude-sonnet-5-5",
+    "--effort",
+    "medium",
+    "--system-prompt",
+    "Responde en español. Sigue la tarea y devuelve exclusivamente el JSON pedido. No tienes autoridad para aprobar gates. No uses herramientas."
+  ],
+  "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-xs_xmj0w",
+  "stdin_sha256": "b0d462d7675261dc879c37e3e01253042ce09bcca4d1b86adb19c52f7117c286",
+  "system_prompt": "Responde en español. Sigue la tarea y devuelve exclusivamente el JSON pedido. No tienes autoridad para aprobar gates. No uses herramientas.",
+  "cli_version": "2.1.293 (Claude Code)"
+}

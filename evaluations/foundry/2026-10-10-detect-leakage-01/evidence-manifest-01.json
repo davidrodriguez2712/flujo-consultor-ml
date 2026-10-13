@@ -1,0 +1,142 @@
+{
+  "id": "foundry-detect-leakage-preparation-01",
+  "scope": "Skill/template snapshots, workflow común, tres cases públicos, expected privados y protocolo para revisión. No eval ejecutada ni promoción.",
+  "precedence_evidence": "local_only",
+  "files": [
+    {
+      "path": "AUTHOR_REVIEW.md",
+      "sha256": "b5a12e4ddcffb2e6b1bb7b3dd8d838951f7c31d67a8ed57dc897c812e599ff36",
+      "bytes": 866
+    },
+    {
+      "path": "README.md",
+      "sha256": "9cecbaf694413157c36b3fc4d675b6b3d16397e8e5a68fb4c51db2c66613cc55",
+      "bytes": 880
+    },
+    {
+      "path": "cases/L01/case.md",
+      "sha256": "89f1c1a622a64a73dafb5b641d871d372e72a1076533a23378ec2446f11e1e14",
+      "bytes": 1728
+    },
+    {
+      "path": "cases/L01/inputs/context.md",
+      "sha256": "3e3db7db6249d33479a7e01fdcaee3f8f8fec3f898f7c863e2d252398e613552",
+      "bytes": 776
+    },
+    {
+      "path": "cases/L01/inputs/observations.csv",
+      "sha256": "29e4badcbbcbf9e242bde9f2d31b80d1f55091a52d094b658e6992a457ad0f19",
+      "bytes": 417
+    },
+    {
+      "path": "cases/L01/inputs/pipeline.py",
+      "sha256": "fb122bed11f58973887818405e1b992b1589a72f8faf0ea13daf98ddb2f3da63",
+      "bytes": 204
+    },
+    {
+      "path": "cases/L02/case.md",
+      "sha256": "71613379fe4387f19de862020de6bcdedec00623aeb452bbdff9491690b61d39",
+      "bytes": 1725
+    },
+    {
+      "path": "cases/L02/inputs/context.md",
+      "sha256": "2d20272658305e9620515452c404e52d7b2015db0d0a30412287c4aa02a0c1b0",
+      "bytes": 1051
+    },
+    {
+      "path": "cases/L02/inputs/observations.csv",
+      "sha256": "cbcae4e4f891739ea487feda3f7e1eac58cf9fbe3303b774b5563770f7127462",
+      "bytes": 593
+    },
+    {
+      "path": "cases/L02/inputs/pipeline.py",
+      "sha256": "8fc757e4a3209efdedd3e1b8de6f0b77109557fb6335ac263cd3cea9b3788011",
+      "bytes": 391
+    },
+    {
+      "path": "cases/L03/case.md",
+      "sha256": "db7f2572bc7e591a8d537735dade9cdbcc1da74a100ecb2dd245673b3540e951",
+      "bytes": 1711
+    },
+    {
+      "path": "cases/L03/inputs/context.md",
+      "sha256": "ae79d0d67bdd4f71349d51644732c99ae1ce547ad618a6d663a30195042b1c7e",
+      "bytes": 644
+    },
+    {
+      "path": "cases/L03/inputs/dictionary.json",
+      "sha256": "72636cf89cf406c70e90c0c1325ddcb7c89229a915199153c35c9f167c414fe3",
+      "bytes": 150
+    },
+    {
+      "path": "cases/L03/inputs/observations.csv",
+      "sha256": "32ae7c42472e440093583da2798aba677eb2ceae58289e5d5dc77f3e46354532",
+      "bytes": 223
+    },
+    {
+      "path": "design-approval.json",
+      "sha256": "72dfc37b4cb08acc28ab2f20bfa426ba036323a14edae391f801945b07673a80",
+      "bytes": 278
+    },
+    {
+      "path": "local-checks.json",
+      "sha256": "ea8e4970b290eda1b30acf4cbdbd07ef2f31d804711f1b5d63308ba74d7d57bc",
+      "bytes": 847
+    },
+    {
+      "path": "preparation.json",
+      "sha256": "c06c8beafca974e15247070c31acb7e1d24e995d78bd540486bde4aea8d04de8",
+      "bytes": 616
+    },
+    {
+      "path": "protocol.md",
+      "sha256": "4dbba71522236171f8481fb7dc18d8df4664a2deac14916c985e2aa2df114f48",
+      "bytes": 5223
+    },
+    {
+      "path": "reviewer/L01/expected.md",
+      "sha256": "cb0aed9a6188f5d5928d59543d0b559a29371c749c77217e3ba12bfefe150501",
+      "bytes": 2886
+    },
+    {
+      "path": "reviewer/L02/expected.md",
+      "sha256": "5b058789afdeefccf34957f4a48d17a4b6db6ddbfef2ceb3bad5400ee27fcccf",
+      "bytes": 2905
+    },
+    {
+      "path": "reviewer/L03/expected.md",
+      "sha256": "331122d7573ab6f6178bc9bcb256bae99a7dd62754ee01e10b6a2eb14b7cfa72",
+      "bytes": 2738
+    },
+    {
+      "path": "snapshots/experiments/skills/detect-leakage/SKILL.md",
+      "sha256": "2ea060606202840ee4ce49ff27c9beb6b29ffae27edebcf755683e9c9bc99fce",
+      "bytes": 25559
+    },
+    {
+      "path": "snapshots/os/workflow/execution-and-qa.md",
+      "sha256": "af47b5625869819d53446a6b4b2f541d1c054a70d2767e2be3817d4efd27f422",
+      "bytes": 21394
+    },
+    {
+      "path": "snapshots/templates/case.md",
+      "sha256": "96af3efb71f14746f4389d568bd05ad2999c4e176a63e0fb0f00b6c0f75b8d24",
+      "bytes": 420
+    },
+    {
+      "path": "snapshots/templates/evaluation.md",
+      "sha256": "8d0f429a7ae4b9adf19002faaf329e5e25d5bf829e64cbc6ae5dd108a00af391",
+      "bytes": 894
+    },
+    {
+      "path": "snapshots/templates/expected.md",
+      "sha256": "f218d987f365e086eb3f553f2863f811dbc9aab557982845c555dab91f3a0fc5",
+      "bytes": 573
+    },
+    {
+      "path": "source.json",
+      "sha256": "5d5a1745ae8548b3efa5f6da3c364c4c1872f83a905a277e50cceb76a2eed21a",
+      "bytes": 507
+    }
+  ]
+}

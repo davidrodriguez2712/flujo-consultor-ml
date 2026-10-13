@@ -1,0 +1,1 @@
+Reporte sintético en reports/leakage/audit.md; semántica no evaluada.

@@ -1,0 +1,11 @@
+{
+  "tests_passed": 226,
+  "api_calls_during_local_verification": 0,
+  "new_common_prompt": "Reporte≤700palabras y respuesta≤80, sin omitir evidencia esencial",
+  "common_workflow": "Extracto literal de autoridad, Definition of Done y escalamiento",
+  "cases_expected_skill_unchanged": true,
+  "old_results_not_pooled": true,
+  "remaining_budget_usd": 0.081775635,
+  "execution_manifest03": "ec8e8432fb5e5acf469a4100fa30e6252382269b51cc56b0226397285abb4b73",
+  "authorization": "Autonomía para rondas necesarias según usuario, dentro de techo originalUS$0.10"
+}

@@ -1,0 +1,47 @@
+schema_version: 1
+project:
+  slug: churn-retencion-sintetico
+  name: Piloto sintético de churn y retención
+  client: Empresa ficticia de suscripciones
+  industry: SaaS / suscripciones
+  market: Mercado ficticio
+  role: Consultor Data & AI
+engagement:
+  decision: Proponer qué clientes activos priorizar para revisión de retención cada
+    mes.
+  problem: 'Caso ficticio: capacidad de contacto limitada y necesidad de anticipar
+    cancelaciones.'
+  success_metric: 'Propuesta: Precision@50 mensual y valor en riesgo; impacto causal
+    de retención no identificado.'
+  decision_owner: null
+  users: Equipo ficticio de retención
+  archetypes:
+  - DIAGNOSE
+  - PREDICT
+  - PRIORITIZE_SELECT
+  delivery_modes:
+  - analysis
+  current_stage: discovery
+  open_questions:
+  - Confirmar capacidad de 50 contactos/mes y definición de éxito del piloto.
+  - Revisar definición de churn y horizonte calendario del caso sintético.
+  - Designar reviewer de gates.
+data:
+  sources:
+  - csv
+  characteristics:
+    supervised: true
+    labeled: partial
+    temporal: true
+    panel: true
+    tabular: true
+constraints:
+- Datos 100% sintéticos, seed 20261007; no conclusiones sobre clientes reales.
+- 'Capacidad operativa propuesta: 50 contactos por mes; pendiente de revisión.'
+- 'Sin tratamiento/control ni campañas: no estimar uplift ni ROI causal.'
+deliverables:
+- analytical_report
+- decision_memo
+runtimes:
+- codex
+- claude_code

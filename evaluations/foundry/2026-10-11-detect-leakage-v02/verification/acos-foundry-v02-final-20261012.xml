@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="16" skipped="0" tests="233" time="3.664" timestamp="2026-10-12T00:07:34.073421-05:00" hostname="Joels-Mac-Studio.local"><testcase classname="tests.test_catalog" name="test_catalog_reference_integrity" time="0.013" /><testcase classname="tests.test_catalog" name="test_overlapping_modules_deduplicate_artifacts" time="0.011" /><testcase classname="tests.test_catalog" name="test_invalid_catalog_operator_rejected" time="0.000" /><testcase classname="tests.test_classifier" name="test_rules_use_explicit_signals" time="0.011" /><testcase classname="tests.test_classifier" name="test_ambiguous_brief_remains_unresolved" time="0.011" /><testcase classname="tests.test_classifier" name="test_no_ui_or_ml_from_report_delivery" time="0.011" /><testcase classname="tests.test_classifier" name="test_missing_label_never_inferred" time="0.012" /><testcase classname="tests.test_cli" name="test_profile_file_still_requires_review" time="0.016" /><testcase classname="tests.test_cli" name="test_default_init_creates_child" time="0.042" /><testcase classname="tests.test_cli" name="test_here_requires_no_positional_name" time="0.000" /><testcase classname="tests.test_cli" name="test_four_commands_exit_codes" time="0.053" /><testcase classname="tests.test_cli" name="test_cli_eof_cancels_without_writing" time="0.001" /><testcase classname="tests.test_cli" name="test_help_is_spanish" time="0.000" /><testcase classname="tests.test_compiler" name="test_manifest_written_last" time="0.038" /><testcase classname="tests.test_compiler" name="test_cancelled_plan_writes_nothing" time="0.012" /><testcase classname="tests.test_compiler" name="test_existing_target_blocked" time="0.026" /><testcase classname="tests.test_compiler" name="test_here_preserves_unrelated_files" time="0.038" /><testcase classname="tests.test_compiler" name="test_here_collision_writes_nothing" time="0.027" /><testcase classname="tests.test_compiler" name="test_failure_rolls_back_only_own_files" time="0.032" /><testcase classname="tests.test_compiler" name="test_foundry_mutation_after_preview_blocks_commit" time="0.013" /><testcase classname="tests.test_compiler" name="test_decision_change_after_preview_requires_reconfirmation" time="0.013" /><testcase classname="tests.test_compiler" name="test_bundle_resources_identical_for_both_runtimes" time="0.042" /><testcase classname="tests.test_compiler" name="test_new_project_includes_delivery_handoff_template" time="0.037" /><testcase classname="tests.test_compiler" name="test_new_project_includes_findings_qa_template" time="0.039" /><testcase classname="tests.test_compiler" name="test_new_project_installs_task_contract_template_with_integrity_tracking" time="0.037" /><testcase classname="tests.test_config" name="test_config_path_separate_from_project" time="0.001" /><testcase classname="tests.test_config" name="test_config_invalid_does_not_get_overwritten" time="0.000" /><testcase classname="tests.test_contracts" name="test_profile_schema_roundtrip" time="0.001" /><testcase classname="tests.test_contracts" name="test_duplicate_yaml_key_rejected" time="0.000" /><testcase classname="tests.test_contracts" name="test_unknown_schema_rejected" time="0.000" /><testcase classname="tests.test_contracts" name="test_unknown_fields_rejected" time="0.000" /><testcase classname="tests.test_contracts" name="test_missing_business_fields_remain_null" time="0.000" /><testcase classname="tests.test_contracts" name="test_unsafe_slug_windows_reserved[CON]" time="0.000" /><testcase classname="tests.test_contracts" name="test_unsafe_slug_windows_reserved[NUL]" time="0.000" /><testcase classname="tests.test_contracts" name="test_unsafe_slug_windows_reserved[con.txt]" time="0.000" /><testcase classname="tests.test_contracts" name="test_unsafe_slug_windows_reserved[..]" time="0.000" /><testcase classname="tests.test_contracts" name="test_unsafe_slug_windows_reserved[a/b]" time="0.000" /><testcase classname="tests.test_contracts" name="test_unsafe_slug_windows_reserved[a\\b]" time="0.000" /><testcase classname="tests.test_contracts" name="test_unsafe_slug_windows_reserved[/tmp/a]" time="0.000" /><testcase classname="tests.test_contracts" name="test_unsafe_slug_windows_reserved[a.]" time="0.000" /><testcase classname="tests.test_contracts" name="test_unsafe_slug_windows_reserved[aux]" time="0.000" /><testcase classname="tests.test_contracts" name="test_unsafe_slug_windows_reserved[aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]" time="0.000" /><testcase classname="tests.test_distribution" name="test_installed_wheel_contains_catalog_and_templates" time="0.380" /><testcase classname="tests.test_e2e" name="test_seven_profiles_compile_only_selected_modules[fraud-needed0-absent0]" time="0.065" /><testcase classname="tests.test_e2e" name="test_seven_profiles_compile_only_selected_modules[research-needed1-absent1]" time="0.048" /><testcase classname="tests.test_e2e" name="test_seven_profiles_compile_only_selected_modules[clv-needed2-absent2]" time="0.059" /><testcase classname="tests.test_e2e" name="test_seven_profiles_compile_only_selected_modules[uplift-needed3-absent3]" time="0.056" /><testcase classname="tests.test_e2e" name="test_seven_profiles_compile_only_selected_modules[unlabeled-anomaly-needed4-absent4]" time="0.053" /><testcase classname="tests.test_e2e" name="test_seven_profiles_compile_only_selected_modules[ui-handoff-needed5-absent5]" time="0.060" /><testcase classname="tests.test_e2e" name="test_seven_profiles_compile_only_selected_modules[inherited-model-needed6-absent6]" time="0.056" /><testcase classname="tests.test_e2e" name="test_moved_workspace_runs_without_foundry" time="0.055" /><testcase classname="tests.test_e2e" name="test_reproducible_plan_from_confirmed_profile" time="0.023" /><testcase classname="tests.test_e2e" name="test_no_network_in_local_path" time="0.039" /><testcase classname="tests.test_e2e" name="test_runtime_skill_paths_match_selection" time="0.045" /><testcase classname="tests.test_foundry" name="test_missing_foundry_returns_gap" time="0.000" /><testcase classname="tests.test_foundry" name="test_only_operational_roots_scanned" time="0.001" /><testcase classname="tests.test_foundry" name="test_scratch_excluded_despite_experimental_metadata" time="0.001" /><testcase classname="tests.test_foundry" name="test_explicit_knowledge_decision_excludes_match" time="0.001" /><testcase classname="tests.test_foundry" name="test_bad_frontmatter_excluded" time="0.001" /><testcase classname="tests.test_foundry" name="test_resource_symlink_escape_rejected" time="0.001" /><testcase classname="tests.test_foundry" name="test_bundle_hash_stable_and_detects_resource_change" time="0.001" /><testcase classname="tests.test_foundry" name="test_conflicting_operational_records_are_not_auto_selected" time="0.001" /><testcase classname="tests.test_foundry" name="test_hidden_resource_is_included_and_hashed" time="0.001" /><testcase classname="tests.test_foundry" name="test_non_operational_or_unknown_decision_excludes_skill[rechazado]" time="0.001" /><testcase classname="tests.test_foundry" name="test_non_operational_or_unknown_decision_excludes_skill[no usar]" time="0.001" /><testcase classname="tests.test_foundry" name="test_non_operational_or_unknown_decision_excludes_skill[decisi\xf3n desconocida]" time="0.001" /><testcase classname="tests.test_foundry_native_transport" name="test_policy_limits_read_write_and_fixed_command" time="0.002" /><testcase classname="tests.test_foundry_native_transport" name="test_policy_rejects_symlink_and_input_mutation" time="0.001" /><testcase classname="tests.test_foundry_native_transport" name="test_skill_event_requires_exact_installed_name" time="0.001" /><testcase classname="tests.test_foundry_native_transport" name="test_guard_assembles_split_tool_input_before_allowing_delivery" time="0.001" /><testcase classname="tests.test_foundry_native_transport" name="test_workspace_copies_only_public_inputs_and_exact_skill" time="0.002" /><testcase classname="tests.test_foundry_native_transport" name="test_workspace_preserves_common_workflow_snapshot" time="0.001" /><testcase classname="tests.test_foundry_native_transport" name="test_proxy_rejects_provider_model_before_delivering_tool" time="0.001"><failure message="PermissionError: [Errno 1] Operation not permitted">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2259/test_proxy_rejects_provider_mo0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x104db9f40&gt;
+
+    def test_proxy_rejects_provider_model_before_delivering_tool(tmp_path,monkeypatch):
+        m,p=policy(tmp_path);b=budget_module()
+        payload=sse('different-model',[{'type':'tool_use','id':'t','name':'Write','input':{'file_path':str(p.report),'content':'no'}}],'tool_use')
+        payload=payload.replace(b'"output_tokens": 30',b'"output_tokens": 30, "input_tokens": 30')
+        fake_upstream(b,monkeypatch,[payload])
+&gt;       with b.Proxy('claude','fake-key',.2,model=m.MODEL,local_tool_policy=p) as proxy:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_foundry_native_transport.py:128: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/ci/runtime_budget.py:338: in __init__
+    self.server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/miniconda3/lib/python3.13/socketserver.py:457: in __init__
+    self.server_bind()
+/opt/miniconda3/lib/python3.13/http/server.py:136: in server_bind
+    socketserver.TCPServer.server_bind(self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;http.server.ThreadingHTTPServer object at 0x1053716a0&gt;
+
+    def server_bind(self):
+        """Called by constructor to bind the socket.
+    
+        May be overridden.
+    
+        """
+        if self.allow_reuse_address and hasattr(socket, "SO_REUSEADDR"):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # Since Linux 6.12.9, SO_REUSEPORT is not allowed
+        # on other address families than AF_INET/AF_INET6.
+        if (
+            self.allow_reuse_port and hasattr(socket, "SO_REUSEPORT")
+            and self.address_family in (socket.AF_INET, socket.AF_INET6)
+        ):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+&gt;       self.socket.bind(self.server_address)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/opt/miniconda3/lib/python3.13/socketserver.py:478: PermissionError</failure></testcase><testcase classname="tests.test_foundry_native_transport" name="test_proxy_unknown_usage_never_delivers_tool_and_stops_requests" time="0.001"><failure message="PermissionError: [Errno 1] Operation not permitted">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2259/test_proxy_unknown_usage_never0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x1053bac10&gt;
+
+    def test_proxy_unknown_usage_never_delivers_tool_and_stops_requests(tmp_path,monkeypatch):
+        m,p=policy(tmp_path);b=budget_module()
+        payload=sse(m.MODEL,[{'type':'tool_use','id':'t','name':'Read','input':{'file_path':str(p.root/'case.md')}}],'tool_use')
+        payload=payload.replace(b'"input_tokens": 30',b'"cache_read_input_tokens": 30')
+        requests=fake_upstream(b,monkeypatch,[payload])
+&gt;       with b.Proxy('claude','fake-key',.2,model=m.MODEL,local_tool_policy=p) as proxy:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_foundry_native_transport.py:142: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/ci/runtime_budget.py:338: in __init__
+    self.server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/miniconda3/lib/python3.13/socketserver.py:457: in __init__
+    self.server_bind()
+/opt/miniconda3/lib/python3.13/http/server.py:136: in server_bind
+    socketserver.TCPServer.server_bind(self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;http.server.ThreadingHTTPServer object at 0x104e29a90&gt;
+
+    def server_bind(self):
+        """Called by constructor to bind the socket.
+    
+        May be overridden.
+    
+        """
+        if self.allow_reuse_address and hasattr(socket, "SO_REUSEADDR"):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # Since Linux 6.12.9, SO_REUSEPORT is not allowed
+        # on other address families than AF_INET/AF_INET6.
+        if (
+            self.allow_reuse_port and hasattr(socket, "SO_REUSEPORT")
+            and self.address_family in (socket.AF_INET, socket.AF_INET6)
+        ):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+&gt;       self.socket.bind(self.server_address)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/opt/miniconda3/lib/python3.13/socketserver.py:478: PermissionError</failure></testcase><testcase classname="tests.test_foundry_native_transport" name="test_real_cli_reads_writes_and_finishes_against_simulated_provider" time="0.001"><failure message="PermissionError: [Errno 1] Operation not permitted">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2259/test_real_cli_reads_writes_and0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x1053bbcb0&gt;
+
+    def test_real_cli_reads_writes_and_finishes_against_simulated_provider(tmp_path,monkeypatch):
+        # Claude real, HTTPS del proveedor sustituido en el proxy por SSE local determinista.
+        import shutil
+        cli=shutil.which('claude')
+        if not cli:pytest.skip('Claude CLI no instalado en este entorno')
+        m=module();b=budget_module();case=tmp_path/'public';(case/'inputs').mkdir(parents=True)
+        (case/'case.md').write_text('Lee inputs/data.csv; entrega reports/leakage/audit.md. Sin expected.')
+        (case/'inputs/data.csv').write_text('x\n1\n');out=tmp_path/'run';root=out/'workspace'
+        sequence=[sse(m.MODEL,[{'type':'tool_use','id':'read1','name':'Read','input':{'file_path':str(root/'inputs/data.csv')}}],'tool_use'),
+                  sse(m.MODEL,[{'type':'tool_use','id':'write1','name':'Write','input':{'file_path':str(root/'reports/leakage/audit.md'),'content':'## Resumen\nReporte del proveedor simulado; no evidencia de eficacia.\n'}}],'tool_use'),
+                  sse(m.MODEL,[{'type':'text','text':'Reporte guardado en reports/leakage/audit.md.'}],'end_turn')]
+        requests=fake_upstream(b,monkeypatch,sequence)
+&gt;       with b.Proxy('claude','fake-not-a-secret',.2,model=m.MODEL,max_requests=8,max_output_tokens=8192) as proxy:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_foundry_native_transport.py:164: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/ci/runtime_budget.py:338: in __init__
+    self.server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/miniconda3/lib/python3.13/socketserver.py:457: in __init__
+    self.server_bind()
+/opt/miniconda3/lib/python3.13/http/server.py:136: in server_bind
+    socketserver.TCPServer.server_bind(self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;http.server.ThreadingHTTPServer object at 0x104e2ac10&gt;
+
+    def server_bind(self):
+        """Called by constructor to bind the socket.
+    
+        May be overridden.
+    
+        """
+        if self.allow_reuse_address and hasattr(socket, "SO_REUSEADDR"):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # Since Linux 6.12.9, SO_REUSEPORT is not allowed
+        # on other address families than AF_INET/AF_INET6.
+        if (
+            self.allow_reuse_port and hasattr(socket, "SO_REUSEPORT")
+            and self.address_family in (socket.AF_INET, socket.AF_INET6)
+        ):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+&gt;       self.socket.bind(self.server_address)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/opt/miniconda3/lib/python3.13/socketserver.py:478: PermissionError</failure></testcase><testcase classname="tests.test_foundry_native_transport" name="test_proxy_transport_failure_blocks_next_provider_request" time="0.001"><failure message="PermissionError: [Errno 1] Operation not permitted">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2259/test_proxy_transport_failure_b0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x105415640&gt;
+
+    def test_proxy_transport_failure_blocks_next_provider_request(tmp_path,monkeypatch):
+        m,p=policy(tmp_path);b=budget_module();forwarded=[]
+        class Connection:
+            def __init__(self,*args,**kwargs):pass
+            def request(self,*args,**kwargs):forwarded.append(1);raise OSError('simulated failure')
+            def close(self):pass
+        monkeypatch.setattr(b.http.client,'HTTPSConnection',Connection)
+&gt;       with b.Proxy('claude','fake-key',.2,model=m.MODEL,local_tool_policy=p) as proxy:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_foundry_native_transport.py:184: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/ci/runtime_budget.py:338: in __init__
+    self.server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/miniconda3/lib/python3.13/socketserver.py:457: in __init__
+    self.server_bind()
+/opt/miniconda3/lib/python3.13/http/server.py:136: in server_bind
+    socketserver.TCPServer.server_bind(self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;http.server.ThreadingHTTPServer object at 0x105468640&gt;
+
+    def server_bind(self):
+        """Called by constructor to bind the socket.
+    
+        May be overridden.
+    
+        """
+        if self.allow_reuse_address and hasattr(socket, "SO_REUSEADDR"):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # Since Linux 6.12.9, SO_REUSEPORT is not allowed
+        # on other address families than AF_INET/AF_INET6.
+        if (
+            self.allow_reuse_port and hasattr(socket, "SO_REUSEPORT")
+            and self.address_family in (socket.AF_INET, socket.AF_INET6)
+        ):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+&gt;       self.socket.bind(self.server_address)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/opt/miniconda3/lib/python3.13/socketserver.py:478: PermissionError</failure></testcase><testcase classname="tests.test_foundry_native_transport" name="test_real_cli_never_executes_forbidden_provider_tool[external_read]" time="0.001"><failure message="PermissionError: [Errno 1] Operation not permitted">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2259/test_real_cli_never_executes_f0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x104d97410&gt;
+attack = 'external_read'
+
+    @pytest.mark.parametrize('attack',['external_read','input_write','arbitrary_bash'])
+    def test_real_cli_never_executes_forbidden_provider_tool(tmp_path,monkeypatch,attack):
+        import shutil
+        cli=shutil.which('claude')
+        if not cli:pytest.skip('Claude CLI no instalado')
+        m=module();b=budget_module();case=tmp_path/'case';(case/'inputs').mkdir(parents=True)
+        (case/'case.md').write_text('Public case');(case/'inputs/data.csv').write_text('x\n1\n')
+        private=tmp_path/'expected.md';private.write_text('PRIVATE_EXPECTED_MARKER')
+        out=tmp_path/'run';root=out/'workspace';side_effect=tmp_path/'side-effect'
+        if attack=='external_read':name,args='Read',{'file_path':str(private)}
+        elif attack=='input_write':name,args='Write',{'file_path':str(root/'inputs/data.csv'),'content':'MUTATED'}
+        else:name,args='Bash',{'command':'touch '+str(side_effect)}
+        requests=fake_upstream(b,monkeypatch,[sse(m.MODEL,[{'type':'tool_use','id':'bad1','name':name,'input':args}],'tool_use')])
+&gt;       with b.Proxy('claude','fake-key',.2,model=m.MODEL,max_requests=8,max_output_tokens=8192) as proxy:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_foundry_native_transport.py:208: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/ci/runtime_budget.py:338: in __init__
+    self.server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/miniconda3/lib/python3.13/socketserver.py:457: in __init__
+    self.server_bind()
+/opt/miniconda3/lib/python3.13/http/server.py:136: in server_bind
+    socketserver.TCPServer.server_bind(self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;http.server.ThreadingHTTPServer object at 0x105469ba0&gt;
+
+    def server_bind(self):
+        """Called by constructor to bind the socket.
+    
+        May be overridden.
+    
+        """
+        if self.allow_reuse_address and hasattr(socket, "SO_REUSEADDR"):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # Since Linux 6.12.9, SO_REUSEPORT is not allowed
+        # on other address families than AF_INET/AF_INET6.
+        if (
+            self.allow_reuse_port and hasattr(socket, "SO_REUSEPORT")
+            and self.address_family in (socket.AF_INET, socket.AF_INET6)
+        ):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+&gt;       self.socket.bind(self.server_address)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/opt/miniconda3/lib/python3.13/socketserver.py:478: PermissionError</failure></testcase><testcase classname="tests.test_foundry_native_transport" name="test_real_cli_never_executes_forbidden_provider_tool[input_write]" time="0.001"><failure message="PermissionError: [Errno 1] Operation not permitted">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2259/test_real_cli_never_executes_f1')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x104d95f10&gt;
+attack = 'input_write'
+
+    @pytest.mark.parametrize('attack',['external_read','input_write','arbitrary_bash'])
+    def test_real_cli_never_executes_forbidden_provider_tool(tmp_path,monkeypatch,attack):
+        import shutil
+        cli=shutil.which('claude')
+        if not cli:pytest.skip('Claude CLI no instalado')
+        m=module();b=budget_module();case=tmp_path/'case';(case/'inputs').mkdir(parents=True)
+        (case/'case.md').write_text('Public case');(case/'inputs/data.csv').write_text('x\n1\n')
+        private=tmp_path/'expected.md';private.write_text('PRIVATE_EXPECTED_MARKER')
+        out=tmp_path/'run';root=out/'workspace';side_effect=tmp_path/'side-effect'
+        if attack=='external_read':name,args='Read',{'file_path':str(private)}
+        elif attack=='input_write':name,args='Write',{'file_path':str(root/'inputs/data.csv'),'content':'MUTATED'}
+        else:name,args='Bash',{'command':'touch '+str(side_effect)}
+        requests=fake_upstream(b,monkeypatch,[sse(m.MODEL,[{'type':'tool_use','id':'bad1','name':name,'input':args}],'tool_use')])
+&gt;       with b.Proxy('claude','fake-key',.2,model=m.MODEL,max_requests=8,max_output_tokens=8192) as proxy:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_foundry_native_transport.py:208: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/ci/runtime_budget.py:338: in __init__
+    self.server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/miniconda3/lib/python3.13/socketserver.py:457: in __init__
+    self.server_bind()
+/opt/miniconda3/lib/python3.13/http/server.py:136: in server_bind
+    socketserver.TCPServer.server_bind(self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;http.server.ThreadingHTTPServer object at 0x105395a30&gt;
+
+    def server_bind(self):
+        """Called by constructor to bind the socket.
+    
+        May be overridden.
+    
+        """
+        if self.allow_reuse_address and hasattr(socket, "SO_REUSEADDR"):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # Since Linux 6.12.9, SO_REUSEPORT is not allowed
+        # on other address families than AF_INET/AF_INET6.
+        if (
+            self.allow_reuse_port and hasattr(socket, "SO_REUSEPORT")
+            and self.address_family in (socket.AF_INET, socket.AF_INET6)
+        ):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+&gt;       self.socket.bind(self.server_address)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/opt/miniconda3/lib/python3.13/socketserver.py:478: PermissionError</failure></testcase><testcase classname="tests.test_foundry_native_transport" name="test_real_cli_never_executes_forbidden_provider_tool[arbitrary_bash]" time="0.001"><failure message="PermissionError: [Errno 1] Operation not permitted">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2259/test_real_cli_never_executes_f2')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x1053f90d0&gt;
+attack = 'arbitrary_bash'
+
+    @pytest.mark.parametrize('attack',['external_read','input_write','arbitrary_bash'])
+    def test_real_cli_never_executes_forbidden_provider_tool(tmp_path,monkeypatch,attack):
+        import shutil
+        cli=shutil.which('claude')
+        if not cli:pytest.skip('Claude CLI no instalado')
+        m=module();b=budget_module();case=tmp_path/'case';(case/'inputs').mkdir(parents=True)
+        (case/'case.md').write_text('Public case');(case/'inputs/data.csv').write_text('x\n1\n')
+        private=tmp_path/'expected.md';private.write_text('PRIVATE_EXPECTED_MARKER')
+        out=tmp_path/'run';root=out/'workspace';side_effect=tmp_path/'side-effect'
+        if attack=='external_read':name,args='Read',{'file_path':str(private)}
+        elif attack=='input_write':name,args='Write',{'file_path':str(root/'inputs/data.csv'),'content':'MUTATED'}
+        else:name,args='Bash',{'command':'touch '+str(side_effect)}
+        requests=fake_upstream(b,monkeypatch,[sse(m.MODEL,[{'type':'tool_use','id':'bad1','name':name,'input':args}],'tool_use')])
+&gt;       with b.Proxy('claude','fake-key',.2,model=m.MODEL,max_requests=8,max_output_tokens=8192) as proxy:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_foundry_native_transport.py:208: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/ci/runtime_budget.py:338: in __init__
+    self.server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/miniconda3/lib/python3.13/socketserver.py:457: in __init__
+    self.server_bind()
+/opt/miniconda3/lib/python3.13/http/server.py:136: in server_bind
+    socketserver.TCPServer.server_bind(self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;http.server.ThreadingHTTPServer object at 0x104d87ce0&gt;
+
+    def server_bind(self):
+        """Called by constructor to bind the socket.
+    
+        May be overridden.
+    
+        """
+        if self.allow_reuse_address and hasattr(socket, "SO_REUSEADDR"):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # Since Linux 6.12.9, SO_REUSEPORT is not allowed
+        # on other address families than AF_INET/AF_INET6.
+        if (
+            self.allow_reuse_port and hasattr(socket, "SO_REUSEPORT")
+            and self.address_family in (socket.AF_INET, socket.AF_INET6)
+        ):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+&gt;       self.socket.bind(self.server_address)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/opt/miniconda3/lib/python3.13/socketserver.py:478: PermissionError</failure></testcase><testcase classname="tests.test_foundry_native_transport" name="test_real_cli_invokes_exact_skill_and_readonly_utility" time="0.001"><failure message="PermissionError: [Errno 1] Operation not permitted">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2259/test_real_cli_invokes_exact_sk0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x1056dd440&gt;
+
+    def test_real_cli_invokes_exact_skill_and_readonly_utility(tmp_path,monkeypatch):
+        import shlex,shutil,sys
+        cli=shutil.which('claude')
+        if not cli:pytest.skip('Claude CLI no instalado')
+        m=module();b=budget_module();case=tmp_path/'case';(case/'inputs').mkdir(parents=True)
+        (case/'case.md').write_text('Public audit');(case/'inputs/data.csv').write_text('x\n1\n')
+        skill=Path(__file__).parents[1]/'evaluations/foundry/2026-10-10-detect-leakage-01/snapshots/experiments/skills/detect-leakage/SKILL.md'
+        out=tmp_path/'run';root=out/'workspace'
+        command=shlex.join([sys.executable,str(root/'.runtime/check_inputs.py')])
+        sequence=[sse(m.MODEL,[{'type':'tool_use','id':'skill1','name':'Skill','input':{'skill':m.SKILL}}],'tool_use'),
+                  sse(m.MODEL,[{'type':'tool_use','id':'bash1','name':'Bash','input':{'command':command}}],'tool_use'),
+                  sse(m.MODEL,[{'type':'tool_use','id':'write1','name':'Write','input':{'file_path':str(root/'reports/leakage/audit.md'),'content':'Reporte simulado; no eficacia de skill.'}}],'tool_use'),
+                  sse(m.MODEL,[{'type':'text','text':'Reporte guardado.'}],'end_turn')]
+        requests=fake_upstream(b,monkeypatch,sequence)
+&gt;       with b.Proxy('claude','fake-key',.2,model=m.MODEL,max_requests=8,max_output_tokens=8192) as proxy:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_foundry_native_transport.py:232: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/ci/runtime_budget.py:338: in __init__
+    self.server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/miniconda3/lib/python3.13/socketserver.py:457: in __init__
+    self.server_bind()
+/opt/miniconda3/lib/python3.13/http/server.py:136: in server_bind
+    socketserver.TCPServer.server_bind(self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;http.server.ThreadingHTTPServer object at 0x1054116a0&gt;
+
+    def server_bind(self):
+        """Called by constructor to bind the socket.
+    
+        May be overridden.
+    
+        """
+        if self.allow_reuse_address and hasattr(socket, "SO_REUSEADDR"):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # Since Linux 6.12.9, SO_REUSEPORT is not allowed
+        # on other address families than AF_INET/AF_INET6.
+        if (
+            self.allow_reuse_port and hasattr(socket, "SO_REUSEPORT")
+            and self.address_family in (socket.AF_INET, socket.AF_INET6)
+        ):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+&gt;       self.socket.bind(self.server_address)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/opt/miniconda3/lib/python3.13/socketserver.py:478: PermissionError</failure></testcase><testcase classname="tests.test_foundry_native_transport" name="test_proxy_deleted_input_blocks_before_provider" time="0.001"><failure message="PermissionError: [Errno 1] Operation not permitted">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2259/test_proxy_deleted_input_block0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x1055140f0&gt;
+
+    def test_proxy_deleted_input_blocks_before_provider(tmp_path,monkeypatch):
+        m,p=policy(tmp_path);b=budget_module()
+        requests=fake_upstream(b,monkeypatch,[])
+        (p.root/'inputs/data.csv').unlink()
+&gt;       with b.Proxy('claude','fake-key',.2,model=m.MODEL,local_tool_policy=p) as proxy:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_foundry_native_transport.py:248: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/ci/runtime_budget.py:338: in __init__
+    self.server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/miniconda3/lib/python3.13/socketserver.py:457: in __init__
+    self.server_bind()
+/opt/miniconda3/lib/python3.13/http/server.py:136: in server_bind
+    socketserver.TCPServer.server_bind(self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;http.server.ThreadingHTTPServer object at 0x10541e450&gt;
+
+    def server_bind(self):
+        """Called by constructor to bind the socket.
+    
+        May be overridden.
+    
+        """
+        if self.allow_reuse_address and hasattr(socket, "SO_REUSEADDR"):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # Since Linux 6.12.9, SO_REUSEPORT is not allowed
+        # on other address families than AF_INET/AF_INET6.
+        if (
+            self.allow_reuse_port and hasattr(socket, "SO_REUSEPORT")
+            and self.address_family in (socket.AF_INET, socket.AF_INET6)
+        ):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+&gt;       self.socket.bind(self.server_address)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/opt/miniconda3/lib/python3.13/socketserver.py:478: PermissionError</failure></testcase><testcase classname="tests.test_foundry_native_transport" name="test_real_cli_receives_explicit_common_tool_limits" time="0.001"><failure message="PermissionError: [Errno 1] Operation not permitted">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2259/test_real_cli_receives_explici0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x10570d630&gt;
+
+    def test_real_cli_receives_explicit_common_tool_limits(tmp_path,monkeypatch):
+        import shutil,shlex,sys
+        cli=shutil.which('claude')
+        if not cli:pytest.skip('Claude CLI no instalado')
+        m=module();b=budget_module();case=tmp_path/'case';(case/'inputs').mkdir(parents=True)
+        (case/'case.md').write_text('public');(case/'inputs/data.csv').write_text('x\n1\n')
+        out=tmp_path/'run';root=out/'workspace';command=shlex.join([sys.executable,str(root/'.runtime/check_inputs.py')])
+        sequence=[sse(m.MODEL,[{'type':'tool_use','id':'bash1','name':'Bash','input':{'command':command}}],'tool_use'),
+                  sse(m.MODEL,[{'type':'tool_use','id':'write1','name':'Write','input':{'file_path':str(root/'reports/leakage/audit.md'),'content':'Mock infrastructure report'}}],'tool_use'),
+                  sse(m.MODEL,[{'type':'text','text':'Listo.'}],'end_turn')]
+        requests=fake_upstream(b,monkeypatch,sequence)
+&gt;       with b.Proxy('claude','fake-key',.2,model=m.MODEL,max_requests=8,max_output_tokens=8192) as proxy:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_foundry_native_transport.py:267: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/ci/runtime_budget.py:338: in __init__
+    self.server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/miniconda3/lib/python3.13/socketserver.py:457: in __init__
+    self.server_bind()
+/opt/miniconda3/lib/python3.13/http/server.py:136: in server_bind
+    socketserver.TCPServer.server_bind(self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;http.server.ThreadingHTTPServer object at 0x10541dc50&gt;
+
+    def server_bind(self):
+        """Called by constructor to bind the socket.
+    
+        May be overridden.
+    
+        """
+        if self.allow_reuse_address and hasattr(socket, "SO_REUSEADDR"):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # Since Linux 6.12.9, SO_REUSEPORT is not allowed
+        # on other address families than AF_INET/AF_INET6.
+        if (
+            self.allow_reuse_port and hasattr(socket, "SO_REUSEPORT")
+            and self.address_family in (socket.AF_INET, socket.AF_INET6)
+        ):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+&gt;       self.socket.bind(self.server_address)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/opt/miniconda3/lib/python3.13/socketserver.py:478: PermissionError</failure></testcase><testcase classname="tests.test_foundry_native_transport" name="test_proxy_keeps_redacted_rejected_tool_input" time="0.001"><failure message="PermissionError: [Errno 1] Operation not permitted">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2259/test_proxy_keeps_redacted_reje0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x1053dcef0&gt;
+
+    def test_proxy_keeps_redacted_rejected_tool_input(tmp_path,monkeypatch):
+        m,p=policy(tmp_path);b=budget_module();key='fake-private-api-key'
+        attempted={'command':'cat ../expected.md; echo '+key+' sk-ant-private-test-secret-value','token':'private-token-value'}
+        requests=fake_upstream(b,monkeypatch,[sse(m.MODEL,[{'type':'tool_use','id':'bad1','name':'Bash','input':attempted}],'tool_use')])
+&gt;       with b.Proxy('claude',key,.2,model=m.MODEL,local_tool_policy=p) as proxy:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_foundry_native_transport.py:283: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/ci/runtime_budget.py:338: in __init__
+    self.server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/miniconda3/lib/python3.13/socketserver.py:457: in __init__
+    self.server_bind()
+/opt/miniconda3/lib/python3.13/http/server.py:136: in server_bind
+    socketserver.TCPServer.server_bind(self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;http.server.ThreadingHTTPServer object at 0x1056ed7c0&gt;
+
+    def server_bind(self):
+        """Called by constructor to bind the socket.
+    
+        May be overridden.
+    
+        """
+        if self.allow_reuse_address and hasattr(socket, "SO_REUSEADDR"):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # Since Linux 6.12.9, SO_REUSEPORT is not allowed
+        # on other address families than AF_INET/AF_INET6.
+        if (
+            self.allow_reuse_port and hasattr(socket, "SO_REUSEPORT")
+            and self.address_family in (socket.AF_INET, socket.AF_INET6)
+        ):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+&gt;       self.socket.bind(self.server_address)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/opt/miniconda3/lib/python3.13/socketserver.py:478: PermissionError</failure></testcase><testcase classname="tests.test_foundry_native_transport" name="test_rejection_diagnostic_is_bounded_and_redacts_sensitive_fields" time="0.001" /><testcase classname="tests.test_foundry_native_transport" name="test_proxy_stops_if_observed_input_exceeds_reserved_token_bound" time="0.001"><failure message="PermissionError: [Errno 1] Operation not permitted">tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-2259/test_proxy_stops_if_observed_i0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x10544bed0&gt;
+
+    def test_proxy_stops_if_observed_input_exceeds_reserved_token_bound(tmp_path,monkeypatch):
+        m,p=policy(tmp_path);b=budget_module()
+        response=sse(m.MODEL,[{'type':'tool_use','id':'r1','name':'Read','input':{'file_path':str(p.root/'case.md')}}],'tool_use').replace(b'"input_tokens": 30',b'"input_tokens": 18000')
+        fake_upstream(b,monkeypatch,[response])
+&gt;       with b.Proxy('claude','fake-key',.2,model=m.MODEL,local_tool_policy=p) as proxy:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_foundry_native_transport.py:310: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/ci/runtime_budget.py:338: in __init__
+    self.server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/miniconda3/lib/python3.13/socketserver.py:457: in __init__
+    self.server_bind()
+/opt/miniconda3/lib/python3.13/http/server.py:136: in server_bind
+    socketserver.TCPServer.server_bind(self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;http.server.ThreadingHTTPServer object at 0x1056ee210&gt;
+
+    def server_bind(self):
+        """Called by constructor to bind the socket.
+    
+        May be overridden.
+    
+        """
+        if self.allow_reuse_address and hasattr(socket, "SO_REUSEADDR"):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # Since Linux 6.12.9, SO_REUSEPORT is not allowed
+        # on other address families than AF_INET/AF_INET6.
+        if (
+            self.allow_reuse_port and hasattr(socket, "SO_REUSEPORT")
+            and self.address_family in (socket.AF_INET, socket.AF_INET6)
+        ):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+&gt;       self.socket.bind(self.server_address)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/opt/miniconda3/lib/python3.13/socketserver.py:478: PermissionError</failure></testcase><testcase classname="tests.test_foundry_study" name="test_authorization_fail_closed[approval0]" time="0.000" /><testcase classname="tests.test_foundry_study" name="test_authorization_fail_closed[approval1]" time="0.000" /><testcase classname="tests.test_foundry_study" name="test_authorization_fail_closed[approval2]" time="0.000" /><testcase classname="tests.test_foundry_study" name="test_authorization_fail_closed[approval3]" time="0.000" /><testcase classname="tests.test_foundry_study" name="test_authorization_fail_closed[approval4]" time="0.000" /><testcase classname="tests.test_foundry_study" name="test_authorization_exact_package" time="0.000" /><testcase classname="tests.test_foundry_study" name="test_schedule_shared_workflow_and_stop[None]" time="0.001" /><testcase classname="tests.test_foundry_study" name="test_schedule_shared_workflow_and_stop[2]" time="0.001" /><testcase classname="tests.test_foundry_study" name="test_exception_preserves_ledger_and_stops" time="0.001" /><testcase classname="tests.test_foundry_study" name="test_config_preserves_caps_and_validates_word_limit[4096-500-True]" time="0.001" /><testcase classname="tests.test_foundry_study" name="test_config_preserves_caps_and_validates_word_limit[8192-700-True]" time="0.001" /><testcase classname="tests.test_foundry_study" name="test_config_preserves_caps_and_validates_word_limit[4096-True-False]" time="0.001" /><testcase classname="tests.test_foundry_study" name="test_config_preserves_caps_and_validates_word_limit[8193-500-False]" time="0.001" /><testcase classname="tests.test_gates" name="test_existing_output_does_not_pass_gate" time="0.043" /><testcase classname="tests.test_gates" name="test_human_review_requires_reviewer_and_evidence" time="0.050" /><testcase classname="tests.test_gates" name="test_profile_drift_blocks_gate" time="0.045" /><testcase classname="tests.test_gates" name="test_invalid_stage_sequence_reports_block" time="0.043" /><testcase classname="tests.test_gates" name="test_skill_snapshot_tampering_blocks_gate" time="0.048" /><testcase classname="tests.test_gates" name="test_blocked_state_cannot_pass_even_without_blocker_text" time="0.046" /><testcase classname="tests.test_gates" name="test_completed_requires_handoff_and_all_stages" time="0.051" /><testcase classname="tests.test_gates" name="test_malformed_gate_cli_returns_blocked" time="0.045" /><testcase classname="tests.test_intake" name="test_wizard_core_questions_at_most_twelve" time="0.000" /><testcase classname="tests.test_intake" name="test_conditional_questions_only_when_relevant" time="0.000" /><testcase classname="tests.test_intake" name="test_eof_and_ctrl_c_never_confirm" time="0.011" /><testcase classname="tests.test_llm_adapter" name="test_llm_no_consent_no_subprocess" time="0.000" /><testcase classname="tests.test_llm_adapter" name="test_llm_invalid_or_timeout_falls_back" time="0.011" /><testcase classname="tests.test_llm_adapter" name="test_llm_cannot_change_business_facts" time="0.018" /><testcase classname="tests.test_llm_adapter" name="test_llm_timeout_returns_to_local" time="0.024" /><testcase classname="tests.test_project" name="test_state_is_authoritative_over_markdown" time="0.043" /><testcase classname="tests.test_project" name="test_read_commands_preserve_all_bytes" time="0.046" /><testcase classname="tests.test_project" name="test_removed_foundry_does_not_break_project" time="0.047" /><testcase classname="tests.test_project" name="test_valid_completion_has_no_pending_work" time="0.107" /><testcase classname="tests.test_project" name="test_inconsistent_completion_reports_repairs" time="0.096" /><testcase classname="tests.test_project" name="test_completion_without_review_is_not_hidden" time="0.069" /><testcase classname="tests.test_project" name="test_completed_snapshot_drift_is_not_hidden" time="0.076" /><testcase classname="tests.test_project" name="test_active_project_keeps_current_work" time="0.044" /><testcase classname="tests.test_render" name="test_manual_is_business_specific" time="0.025" /><testcase classname="tests.test_render" name="test_no_absolute_foundry_paths" time="0.026" /><testcase classname="tests.test_resolver" name="test_fraud_composes_data_selection_optimization_without_genai" time="0.011" /><testcase classname="tests.test_resolver" name="test_research_omits_modeling" time="0.011" /><testcase classname="tests.test_resolver" name="test_unlabeled_anomaly_not_supervised_by_default" time="0.011" /><testcase classname="tests.test_resolver" name="test_ui_preconditions_not_assumed" time="0.012" /><testcase classname="tests.test_resolver" name="test_experimental_requires_visible_confirmation" time="0.012" /><testcase classname="tests.test_resolver" name="test_deferred_or_knowledge_not_operational" time="0.012" /><testcase classname="tests.test_resolver" name="test_missing_foundry_preserves_os_fallback" time="0.011" /><testcase classname="tests.test_resolver" name="test_init_at_validation_keeps_prior_requirements_visible" time="0.011" /><testcase classname="tests.test_resolver" name="test_api_without_ui_does_not_require_ui_capabilities" time="0.011" /><testcase classname="tests.test_runtime_budget" name="test_reservation_blocks_before_forwarding" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_unknown_usage_keeps_full_reservation" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_settlement_releases_only_measured_usage" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_request_count_independent_of_cost" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_only_selected_text_model_and_local_tools" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_codex_function_namespace_is_local_but_remote_tool_is_blocked" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_json_schema_type_can_be_an_object" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_disabling_thinking_removes_dependent_context_edit" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_claude_uses_short_cache_to_reduce_cost" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_price_estimate_includes_anthropic_cache_writes" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_bound_exceeded_stops_future_requests" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_blocked_http_request_never_contacts_provider" time="0.000"><failure message="PermissionError: [Errno 1] Operation not permitted">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x104cc1550&gt;
+
+    def test_blocked_http_request_never_contacts_provider(monkeypatch):
+        m = module()
+        def forbidden(*args, **kwargs): raise AssertionError('No debe abrir conexión con proveedor')
+        monkeypatch.setattr(m.http.client, 'HTTPSConnection', forbidden)
+&gt;       with m.Proxy('codex', 'fake-not-a-secret', 0.00001) as proxy:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_runtime_budget.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/ci/runtime_budget.py:338: in __init__
+    self.server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/miniconda3/lib/python3.13/socketserver.py:457: in __init__
+    self.server_bind()
+/opt/miniconda3/lib/python3.13/http/server.py:136: in server_bind
+    socketserver.TCPServer.server_bind(self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;http.server.ThreadingHTTPServer object at 0x1057174d0&gt;
+
+    def server_bind(self):
+        """Called by constructor to bind the socket.
+    
+        May be overridden.
+    
+        """
+        if self.allow_reuse_address and hasattr(socket, "SO_REUSEADDR"):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # Since Linux 6.12.9, SO_REUSEPORT is not allowed
+        # on other address families than AF_INET/AF_INET6.
+        if (
+            self.allow_reuse_port and hasattr(socket, "SO_REUSEPORT")
+            and self.address_family in (socket.AF_INET, socket.AF_INET6)
+        ):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+&gt;       self.socket.bind(self.server_address)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/opt/miniconda3/lib/python3.13/socketserver.py:478: PermissionError</failure></testcase><testcase classname="tests.test_runtime_budget" name="test_usage_is_settled_before_terminal_event_reaches_client" time="0.000"><failure message="PermissionError: [Errno 1] Operation not permitted">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x105593310&gt;
+
+    def test_usage_is_settled_before_terminal_event_reaches_client(monkeypatch):
+        import json
+        import threading
+        m = module()
+        release = threading.Event()
+        class Response:
+            status = 200
+            def __init__(self): self.sent = False
+            def getheader(self, *args): return 'text/event-stream'
+            def readline(self):
+                if not self.sent:
+                    self.sent = True
+                    return ('data: ' + json.dumps({'type':'response.completed', 'response':{
+                        'usage':{'input_tokens':1,'output_tokens':1},'output':[]}}) + '\n').encode()
+                release.wait(timeout=5)
+                return b''
+        class Connection:
+            def __init__(self, *args, **kwargs): pass
+            def request(self, *args, **kwargs): pass
+            def getresponse(self): return Response()
+            def close(self): pass
+        monkeypatch.setattr(m.http.client, 'HTTPSConnection', Connection)
+&gt;       with m.Proxy('codex', 'fake-key', 0.10) as proxy:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_runtime_budget.py:141: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/ci/runtime_budget.py:338: in __init__
+    self.server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/miniconda3/lib/python3.13/socketserver.py:457: in __init__
+    self.server_bind()
+/opt/miniconda3/lib/python3.13/http/server.py:136: in server_bind
+    socketserver.TCPServer.server_bind(self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;http.server.ThreadingHTTPServer object at 0x1053baeb0&gt;
+
+    def server_bind(self):
+        """Called by constructor to bind the socket.
+    
+        May be overridden.
+    
+        """
+        if self.allow_reuse_address and hasattr(socket, "SO_REUSEADDR"):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # Since Linux 6.12.9, SO_REUSEPORT is not allowed
+        # on other address families than AF_INET/AF_INET6.
+        if (
+            self.allow_reuse_port and hasattr(socket, "SO_REUSEPORT")
+            and self.address_family in (socket.AF_INET, socket.AF_INET6)
+        ):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+&gt;       self.socket.bind(self.server_address)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/opt/miniconda3/lib/python3.13/socketserver.py:478: PermissionError</failure></testcase><testcase classname="tests.test_runtime_budget" name="test_haiku55_price_uses_all_input_classes_for_context_tier" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_haiku55_preparation_caps_output_and_removes_incompatible_sampling" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_haiku55_preparation_blocks_tools_and_model_substitution" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_haiku55_proxy_enforces_single_shared_request_limit_before_provider" time="0.000"><failure message="PermissionError: [Errno 1] Operation not permitted">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x104cc19b0&gt;
+
+    def test_haiku55_proxy_enforces_single_shared_request_limit_before_provider(monkeypatch):
+        # Rompe si el proxy no transmite el modelo seleccionado al filtro o ignora count.
+        import json
+        m = module()
+        def forbidden(*args, **kwargs): raise AssertionError('Proveedor prohibido en este test')
+        monkeypatch.setattr(m.http.client, 'HTTPSConnection', forbidden)
+&gt;       with m.Proxy('claude', 'fake-key', 0.20, model='claude-haiku-5-5', max_requests=1) as proxy:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_runtime_budget.py:192: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/ci/runtime_budget.py:338: in __init__
+    self.server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/miniconda3/lib/python3.13/socketserver.py:457: in __init__
+    self.server_bind()
+/opt/miniconda3/lib/python3.13/http/server.py:136: in server_bind
+    socketserver.TCPServer.server_bind(self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;http.server.ThreadingHTTPServer object at 0x105416f70&gt;
+
+    def server_bind(self):
+        """Called by constructor to bind the socket.
+    
+        May be overridden.
+    
+        """
+        if self.allow_reuse_address and hasattr(socket, "SO_REUSEADDR"):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # Since Linux 6.12.9, SO_REUSEPORT is not allowed
+        # on other address families than AF_INET/AF_INET6.
+        if (
+            self.allow_reuse_port and hasattr(socket, "SO_REUSEPORT")
+            and self.address_family in (socket.AF_INET, socket.AF_INET6)
+        ):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+&gt;       self.socket.bind(self.server_address)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/opt/miniconda3/lib/python3.13/socketserver.py:478: PermissionError</failure></testcase><testcase classname="tests.test_runtime_budget" name="test_haiku55_rejects_pricing_overrides_before_reservation" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_haiku55_explicit_output_cap_reserves_larger_request" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_claude_proxy_records_upstream_stop_reason" time="0.000"><failure message="PermissionError: [Errno 1] Operation not permitted">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x104cc20b0&gt;
+
+    def test_claude_proxy_records_upstream_stop_reason(monkeypatch):
+        # Rompe si el stop del proveedor se pierde y el 403 local se confunde con él.
+        import json
+        m=module()
+        events=[{'type':'message_start','message':{'usage':{'input_tokens':1,'output_tokens':0}}},
+            {'type':'message_delta','delta':{'stop_reason':'max_tokens'},'usage':{'output_tokens':8192}},
+            {'type':'message_stop'}]
+        class Response:
+            status=200
+            def getheader(self,*args):return 'text/event-stream'
+            def readline(self):return ('data: '+json.dumps(events.pop(0))+'\n').encode() if events else b''
+        class Connection:
+            def __init__(self,*args,**kwargs):pass
+            def request(self,method,path,body,headers):
+                assert json.loads(body)['max_tokens']==8192
+            def getresponse(self):return Response()
+            def close(self):pass
+        monkeypatch.setattr(m.http.client,'HTTPSConnection',Connection)
+&gt;       with m.Proxy('claude','fake-key',0.20,model='claude-haiku-5-5',max_output_tokens=8192) as proxy:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_runtime_budget.py:241: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/ci/runtime_budget.py:338: in __init__
+    self.server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/miniconda3/lib/python3.13/socketserver.py:457: in __init__
+    self.server_bind()
+/opt/miniconda3/lib/python3.13/http/server.py:136: in server_bind
+    socketserver.TCPServer.server_bind(self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;http.server.ThreadingHTTPServer object at 0x104d96810&gt;
+
+    def server_bind(self):
+        """Called by constructor to bind the socket.
+    
+        May be overridden.
+    
+        """
+        if self.allow_reuse_address and hasattr(socket, "SO_REUSEADDR"):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # Since Linux 6.12.9, SO_REUSEPORT is not allowed
+        # on other address families than AF_INET/AF_INET6.
+        if (
+            self.allow_reuse_port and hasattr(socket, "SO_REUSEPORT")
+            and self.address_family in (socket.AF_INET, socket.AF_INET6)
+        ):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+&gt;       self.socket.bind(self.server_address)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/opt/miniconda3/lib/python3.13/socketserver.py:478: PermissionError</failure></testcase><testcase classname="tests.test_runtime_budget" name="test_haiku_local_tools_require_explicit_opt_in[Read]" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_haiku_local_tools_require_explicit_opt_in[Write]" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_haiku_local_tools_require_explicit_opt_in[Bash]" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_haiku_local_tools_require_explicit_opt_in[Skill]" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_opt_in_rejects_remote_agents_and_invalid_tool_schema[tool0]" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_opt_in_rejects_remote_agents_and_invalid_tool_schema[tool1]" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_opt_in_rejects_remote_agents_and_invalid_tool_schema[tool2]" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_opt_in_rejects_remote_agents_and_invalid_tool_schema[tool3]" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_opt_in_rejects_remote_agents_and_invalid_tool_schema[tool4]" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_opt_in_rejects_remote_agents_and_invalid_tool_schema[tool5]" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_local_tool_reservation_uses_tier_of_conservative_input_bound[1000]" time="0.000" /><testcase classname="tests.test_runtime_budget" name="test_local_tool_reservation_uses_tier_of_conservative_input_bound[100000]" time="0.001" /><testcase classname="tests.test_selection_evaluation" name="test_native_response_and_schema" time="0.044" /><testcase classname="tests.test_selection_evaluation" name="test_bad_structure_is_archived[duplicate]" time="0.030" /><testcase classname="tests.test_selection_evaluation" name="test_bad_structure_is_archived[negative_capacity]" time="0.030" /><testcase classname="tests.test_selection_evaluation" name="test_bad_structure_is_archived[blank]" time="0.029" /><testcase classname="tests.test_selection_evaluation" name="test_bad_structure_is_archived[unicode]" time="0.033" /><testcase classname="tests.test_selection_evaluation" name="test_bad_structure_is_archived[extra]" time="0.031" /><testcase classname="tests.test_selection_evaluation" name="test_no_result_fallback" time="0.031" /><testcase classname="tests.test_selection_evaluation" name="test_schema_does_not_force_correct_selection_or_gate" time="0.033" /><testcase classname="tests.test_selection_evaluation" name="test_budget_oracle_defeats_greedy" time="0.000" /><testcase classname="tests.test_selection_evaluation" name="test_oracle_all_negative_selects_nobody" time="0.000" /><testcase classname="tests.test_selection_evaluation" name="test_checker_distinguishes_order_null_and_population" time="0.000" /><testcase classname="tests.test_selection_evaluation" name="test_checker_numeric_tolerance_and_bool_rejection" time="0.000" /><testcase classname="tests.test_selection_evaluation" name="test_checker_exposes_risk_ranking_separately" time="0.000" /><testcase classname="tests.test_temporal_runner" name="test_empty_result_with_structured_object_is_valid" time="0.028" /><testcase classname="tests.test_temporal_runner" name="test_valid_result_text_does_not_replace_missing_structured_output" time="0.022" /><testcase classname="tests.test_temporal_runner" name="test_invalid_structured_object_is_preserved_and_blocked[missing_reason]" time="0.022" /><testcase classname="tests.test_temporal_runner" name="test_invalid_structured_object_is_preserved_and_blocked[duplicate_id]" time="0.021" /><testcase classname="tests.test_temporal_runner" name="test_invalid_structured_object_is_preserved_and_blocked[empty_question]" time="0.021" /><testcase classname="tests.test_temporal_runner" name="test_schema_does_not_force_correct_decision_or_human_approval" time="0.021" /><testcase classname="tests.test_temporal_runner" name="test_runtime_failure_is_separate_from_valid_schema" time="0.021" /><testcase classname="tests.test_temporal_runner" name="test_malformed_model_usage_gets_metadata" time="0.020" /><testcase classname="tests.test_temporal_runner" name="test_wrong_model_is_not_hidden" time="0.020" /><testcase classname="tests.test_temporal_runner" name="test_existing_destination_preserves_files" time="0.002" /><testcase classname="tests.test_temporal_runner" name="test_cli_receives_supported_schema_dialect" time="0.028" /><testcase classname="tests.test_temporal_runner" name="test_invalid_unicode_is_archived_and_fails_local_validation[id]" time="0.021" /><testcase classname="tests.test_temporal_runner" name="test_invalid_unicode_is_archived_and_fails_local_validation[reason]" time="0.021" /><testcase classname="tests.test_temporal_runner" name="test_invalid_unicode_is_archived_and_fails_local_validation[question]" time="0.021" /><testcase classname="tests.test_temporal_runner" name="test_invalid_unicode_in_optional_text_does_not_erase_metadata" time="0.020" /><testcase classname="tests.test_windows_authenticated_probe" name="test_skill_claim_is_not_trace" time="0.000" /><testcase classname="tests.test_windows_authenticated_probe" name="test_codex_read_and_state_are_verified" time="0.000" /><testcase classname="tests.test_windows_authenticated_probe" name="test_claude_requires_native_skill_tool" time="0.000" /><testcase classname="tests.test_windows_authenticated_probe" name="test_claude_skill_error_is_not_a_successful_invocation" time="0.000" /><testcase classname="tests.test_windows_authenticated_probe" name="test_fixture_is_generated_with_stale_views_and_no_gate_approvals" time="0.044" /><testcase classname="tests.test_windows_authenticated_probe" name="test_console_decoding_preserves_ascii_marker_with_oem_bytes" time="0.000" /><testcase classname="tests.test_workflow_native_transport" name="test_budget_authorization_rejects_missing_or_unbound_approval" time="0.000" /><testcase classname="tests.test_workflow_native_transport" name="test_native_transport_preserves_text_and_stops_after_one_request" time="0.001" /><testcase classname="tests.test_workflow_native_transport" name="test_native_transport_keeps_malformed_output_without_repair" time="0.001" /><testcase classname="tests.test_workflow_native_transport" name="test_transfer_system_prompt_is_explicit_and_preserves_markdown" time="0.001" /><testcase classname="tests.test_workflow_output_checker" name="test_json_format_is_not_semantic_approval" time="0.000" /><testcase classname="tests.test_workflow_output_checker" name="test_invalid_strict_json_is_preserved_as_failure[```json\n{}\n```]" time="0.000" /><testcase classname="tests.test_workflow_output_checker" name="test_invalid_strict_json_is_preserved_as_failure[{&quot;status&quot;:&quot;READY&quot;,&quot;status&quot;:&quot;READY&quot;}]" time="0.000" /><testcase classname="tests.test_workflow_output_checker" name="test_invalid_strict_json_is_preserved_as_failure[{&quot;value&quot;:NaN}]" time="0.000" /><testcase classname="tests.test_workflow_output_checker" name="test_invalid_strict_json_is_preserved_as_failure[{&quot;value&quot;:1e999}]" time="0.000" /><testcase classname="tests.test_workflow_output_checker" name="test_unknown_reference_and_wrong_status_are_separate" time="0.000" /><testcase classname="tests.test_workflow_output_checker" name="test_types_and_required_fields_are_checked" time="0.000" /><testcase classname="tests.test_workflow_output_checker" name="test_valid_output_may_include_extra_fields_not_forbidden_by_frozen_contract" time="0.000" /><testcase classname="tests.test_workflow_transfer_checker" name="test_markdown_format_does_not_imply_content_approval" time="0.000" /><testcase classname="tests.test_workflow_transfer_checker" name="test_markdown_rejects_wrong_structure_without_repair[Prefacio\n## Estado\nREADY\n\n## Hallazgos\nEscenario documentado en `analysis/scenario.json` y [borrador](drafts/pricing.md).\n\n## Acciones propuestas\nRevisar sensibilidad.\n\n## Siguiente paso\nRevisar con owner.\n\n## L\xedmites\nSimulaci\xf3n, no evidencia causal.\n]" time="0.000" /><testcase classname="tests.test_workflow_transfer_checker" name="test_markdown_rejects_wrong_structure_without_repair[```markdown\n## Estado\nREADY\n\n## Hallazgos\nEscenario documentado en `analysis/scenario.json` y [borrador](drafts/pricing.md).\n\n## Acciones propuestas\nRevisar sensibilidad.\n\n## Siguiente paso\nRevisar con owner.\n\n## L\xedmites\nSimulaci\xf3n, no evidencia causal.\n```]" time="0.000" /><testcase classname="tests.test_workflow_transfer_checker" name="test_markdown_rejects_wrong_structure_without_repair[## Otro\nREADY\n\n## Hallazgos\nEscenario documentado en `analysis/scenario.json` y [borrador](drafts/pricing.md).\n\n## Acciones propuestas\nRevisar sensibilidad.\n\n## Siguiente paso\nRevisar con owner.\n\n## L\xedmites\nSimulaci\xf3n, no evidencia causal.\n]" time="0.000" /><testcase classname="tests.test_workflow_transfer_checker" name="test_markdown_rejects_wrong_structure_without_repair[## Estado\nREADY\n\n## Hallazgos\nEscenario documentado en `analysis/scenario.json` y [borrador](drafts/pricing.md).\n\n## Acciones propuestas\nRevisar sensibilidad.\n\n## Siguiente paso\nRevisar con owner.\n\n### L\xedmites\nSimulaci\xf3n, no evidencia causal.\n]" time="0.000" /><testcase classname="tests.test_workflow_transfer_checker" name="test_markdown_rejects_wrong_structure_without_repair[## Estado\nREADY\n\n## Hallazgos\nEscenario documentado en `analysis/scenario.json` y [borrador](drafts/pricing.md).\n\n## Acciones propuestas\nRevisar sensibilidad.\n\n## Siguiente paso\nRevisar con owner.\n\n## L\xedmites\nSimulaci\xf3n, no evidencia causal.\n\n## Extra\nTexto.]" time="0.000" /><testcase classname="tests.test_workflow_transfer_checker" name="test_markdown_rejects_wrong_structure_without_repair[## Estado\nREADY\nMUST_CORRECT\n\n## Hallazgos\nEscenario documentado en `analysis/scenario.json` y [borrador](drafts/pricing.md).\n\n## Acciones propuestas\nRevisar sensibilidad.\n\n## Siguiente paso\nRevisar con owner.\n\n## L\xedmites\nSimulaci\xf3n, no evidencia causal.\n]" time="0.000" /><testcase classname="tests.test_workflow_transfer_checker" name="test_markdown_rejects_wrong_structure_without_repair[## Estado\nAPROBADO\n\n## Hallazgos\nEscenario documentado en `analysis/scenario.json` y [borrador](drafts/pricing.md).\n\n## Acciones propuestas\nRevisar sensibilidad.\n\n## Siguiente paso\nRevisar con owner.\n\n## L\xedmites\nSimulaci\xf3n, no evidencia causal.\n]" time="0.000" /><testcase classname="tests.test_workflow_transfer_checker" name="test_markdown_rejects_wrong_structure_without_repair[## Estado\nREADY\n\n## Hallazgos\nEscenario documentado en `analysis/scenario.json` y [borrador](drafts/pricing.md).\n\n## Acciones propuestas\nRevisar sensibilidad.\n\n## Siguiente paso\nRevisar con owner.\n\n## L\xedmites\n\n]" time="0.000" /><testcase classname="tests.test_workflow_transfer_checker" name="test_markdown_rejects_wrong_structure_without_repair[{&quot;status&quot;: &quot;READY&quot;}]" time="0.000" /><testcase classname="tests.test_workflow_transfer_checker" name="test_markdown_keeps_wrong_status_and_unknown_paths_separate" time="0.000" /><testcase classname="tests.test_workflow_transfer_checker" name="test_markdown_accepts_emphasis_plain_paths_and_ignores_inner_code_headings" time="0.000" /><testcase classname="tests.test_workflow_transfer_checker" name="test_missing_references_is_not_support_proof" time="0.000" /><testcase classname="tests.test_workflow_transfer_checker" name="test_json_reuses_strict_checker_without_repair" time="0.000" /><testcase classname="tests.test_workflow_transfer_checker" name="test_unknown_format_fails_closed" time="0.000" /><testcase classname="tests.test_workflow_transfer_checker" name="test_transfer_checker_cli_preserves_file_and_returns_failure" time="0.020" /><testcase classname="tests.test_workflow_transfer_checker" name="test_markdown_allows_explanation_after_first_status_line[READY]" time="0.000" /><testcase classname="tests.test_workflow_transfer_checker" name="test_markdown_allows_explanation_after_first_status_line[**READY**]" time="0.000" /><testcase classname="tests.test_workflow_transfer_checker" name="test_markdown_rejects_second_standalone_status_after_explanation[READY]" time="0.000" /><testcase classname="tests.test_workflow_transfer_checker" name="test_markdown_rejects_second_standalone_status_after_explanation[MUST_CORRECT]" time="0.000" /><testcase classname="tests.test_workflow_transfer_checker" name="test_markdown_rejects_second_standalone_status_after_explanation[**READY**]" time="0.000" /><testcase classname="tests.test_workflow_transfer_checker" name="test_markdown_rejects_second_standalone_status_after_explanation[`NOT_DETERMINABLE`]" time="0.000" /><testcase classname="tests.test_workflow_transfer_checker" name="test_checker_cli_accepts_status_explanation_without_changing_raw" time="0.019" /></testsuite></testsuites>

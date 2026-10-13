@@ -1,0 +1,29 @@
+{
+  "status": {
+    "exit_code": 0
+  },
+  "next": {
+    "exit_code": 0
+  },
+  "validate-execution": {
+    "exit_code": 0
+  },
+  "validate": {
+    "exit_code": 3
+  },
+  "validate-validation": {
+    "exit_code": 3
+  },
+  "validate-data_analysis-review": {
+    "exit_code": 3
+  },
+  "validate-supervised_model-review": {
+    "exit_code": 3
+  },
+  "validate-selection-review": {
+    "exit_code": 3
+  },
+  "validate-executive_delivery-review": {
+    "exit_code": 3
+  }
+}

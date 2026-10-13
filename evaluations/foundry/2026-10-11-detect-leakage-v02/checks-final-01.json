@@ -1,0 +1,469 @@
+{
+  "date": "2026-10-12",
+  "historical_manifests": [
+    {
+      "path": "evaluations/foundry/2026-10-10-detect-leakage-01/evidence-manifest-01.json",
+      "files": 27,
+      "mismatches": []
+    },
+    {
+      "path": "evaluations/foundry/2026-10-10-detect-leakage-01/configuration-review-manifest-01.json",
+      "files": 12,
+      "mismatches": []
+    },
+    {
+      "path": "evaluations/foundry/2026-10-10-detect-leakage-01/local-correction-01/correction-manifest-01.json",
+      "files": 13,
+      "mismatches": []
+    },
+    {
+      "path": "evaluations/foundry/2026-10-10-detect-leakage-01/execution-config-01/execution-manifest-01.json",
+      "files": 29,
+      "mismatches": []
+    },
+    {
+      "path": "evaluations/foundry/2026-10-10-detect-leakage-01/reviewer-followup-05/review-manifest-05.json",
+      "files": 3,
+      "mismatches": []
+    },
+    {
+      "path": "evaluations/foundry/2026-10-10-detect-leakage-01/execution-config-05/execution-manifest-01.json",
+      "files": 29,
+      "mismatches": []
+    },
+    {
+      "path": "evaluations/foundry/2026-10-10-detect-leakage-01/execution-config-02/execution-manifest-01.json",
+      "files": 29,
+      "mismatches": []
+    },
+    {
+      "path": "evaluations/foundry/2026-10-10-detect-leakage-01/transport-implementation-01/implementation-manifest-01.json",
+      "files": 89,
+      "mismatches": []
+    },
+    {
+      "path": "evaluations/foundry/2026-10-10-detect-leakage-01/execution-config-03/execution-manifest-01.json",
+      "files": 29,
+      "mismatches": []
+    },
+    {
+      "path": "evaluations/foundry/2026-10-10-detect-leakage-01/execution-config-04/execution-manifest-01.json",
+      "files": 29,
+      "mismatches": []
+    },
+    {
+      "path": "evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-01/run-manifest-01.json",
+      "files": 13,
+      "mismatches": []
+    },
+    {
+      "path": "evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-03/run-manifest-03.json",
+      "files": 45,
+      "mismatches": []
+    },
+    {
+      "path": "evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-04/run-manifest-04.json",
+      "files": 43,
+      "mismatches": []
+    },
+    {
+      "path": "evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/run-manifest-05.json",
+      "files": 107,
+      "mismatches": []
+    },
+    {
+      "path": "evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-02/run-manifest-02.json",
+      "files": 44,
+      "mismatches": []
+    }
+  ],
+  "reports": [
+    {
+      "path": "evaluations/foundry/2026-10-11-detect-leakage-v02/forward-tests/N01-baseline/reports/leakage/audit.md",
+      "words": 516,
+      "condition": "baseline",
+      "version": null,
+      "date": "2026-10-11T23:54:09-05:00",
+      "hashes": [
+        {
+          "path": "case.md",
+          "match": true
+        },
+        {
+          "path": "inputs/context.md",
+          "match": true
+        },
+        {
+          "path": "inputs/observations.csv",
+          "match": true
+        },
+        {
+          "path": "inputs/pipeline.py",
+          "match": true
+        }
+      ]
+    },
+    {
+      "path": "evaluations/foundry/2026-10-11-detect-leakage-v02/forward-tests/N02-treatment/reports/leakage/audit.md",
+      "words": 507,
+      "condition": "treatment",
+      "version": "0.2.0",
+      "date": "2026-10-11",
+      "hashes": [
+        {
+          "path": "case.md",
+          "match": true
+        },
+        {
+          "path": "inputs/context.md",
+          "match": true
+        },
+        {
+          "path": "inputs/observations.csv",
+          "match": true
+        },
+        {
+          "path": "inputs/pipeline.py",
+          "match": true
+        }
+      ]
+    },
+    {
+      "path": "evaluations/foundry/2026-10-11-detect-leakage-v02/forward-tests/N03-treatment/reports/leakage/audit.md",
+      "words": 486,
+      "condition": "treatment",
+      "version": "0.2.0",
+      "date": "2026-10-12",
+      "hashes": [
+        {
+          "path": "case.md",
+          "match": true
+        },
+        {
+          "path": "inputs/context.md",
+          "match": true
+        },
+        {
+          "path": "inputs/observations.csv",
+          "match": true
+        },
+        {
+          "path": "inputs/pipeline.py",
+          "match": true
+        }
+      ]
+    },
+    {
+      "path": "evaluations/foundry/2026-10-11-detect-leakage-v02/forward-tests/L02-regression/reports/leakage/audit.md",
+      "words": 564,
+      "condition": "treatment",
+      "version": "0.2.0",
+      "date": "2026-10-12",
+      "hashes": [
+        {
+          "path": "case.md",
+          "match": true
+        },
+        {
+          "path": "inputs/context.md",
+          "match": true
+        },
+        {
+          "path": "inputs/observations.csv",
+          "match": true
+        },
+        {
+          "path": "inputs/pipeline.py",
+          "match": true
+        }
+      ]
+    },
+    {
+      "path": "evaluations/foundry/2026-10-11-detect-leakage-v02/forward-tests/N02-baseline/reports/leakage/audit.md",
+      "words": 539,
+      "condition": "baseline",
+      "version": null,
+      "date": "2026-10-11",
+      "hashes": [
+        {
+          "path": "case.md",
+          "match": true
+        },
+        {
+          "path": "inputs/context.md",
+          "match": true
+        },
+        {
+          "path": "inputs/observations.csv",
+          "match": true
+        },
+        {
+          "path": "inputs/pipeline.py",
+          "match": true
+        }
+      ]
+    },
+    {
+      "path": "evaluations/foundry/2026-10-11-detect-leakage-v02/forward-tests/N03-baseline/reports/leakage/audit.md",
+      "words": 478,
+      "condition": "baseline",
+      "version": null,
+      "date": "2026-10-12",
+      "hashes": [
+        {
+          "path": "case.md",
+          "match": true
+        },
+        {
+          "path": "inputs/context.md",
+          "match": true
+        },
+        {
+          "path": "inputs/observations.csv",
+          "match": true
+        },
+        {
+          "path": "inputs/pipeline.py",
+          "match": true
+        }
+      ]
+    },
+    {
+      "path": "evaluations/foundry/2026-10-11-detect-leakage-v02/forward-tests/L03-regression/reports/leakage/audit.md",
+      "words": 531,
+      "condition": "treatment",
+      "version": "0.2.0",
+      "date": "2026-10-12",
+      "hashes": [
+        {
+          "path": "case.md",
+          "match": true
+        },
+        {
+          "path": "inputs/context.md",
+          "match": true
+        },
+        {
+          "path": "inputs/dictionary.json",
+          "match": true
+        },
+        {
+          "path": "inputs/observations.csv",
+          "match": true
+        }
+      ]
+    },
+    {
+      "path": "evaluations/foundry/2026-10-11-detect-leakage-v02/forward-tests/N01-treatment/reports/leakage/audit.md",
+      "words": 453,
+      "condition": "treatment",
+      "version": "0.2.0",
+      "date": "2026-10-11",
+      "hashes": [
+        {
+          "path": "case.md",
+          "match": true
+        },
+        {
+          "path": "inputs/context.md",
+          "match": true
+        },
+        {
+          "path": "inputs/observations.csv",
+          "match": true
+        },
+        {
+          "path": "inputs/pipeline.py",
+          "match": true
+        }
+      ]
+    },
+    {
+      "path": "evaluations/foundry/2026-10-11-detect-leakage-v02/runs/native-01/L01-treatment/workspace/reports/leakage/audit.md",
+      "words": 528,
+      "condition": "treatment",
+      "version": "0.2.0",
+      "date": "2026-10-11",
+      "hashes": [
+        {
+          "path": "case.md",
+          "match": true
+        },
+        {
+          "path": "inputs/context.md",
+          "match": true
+        },
+        {
+          "path": "inputs/observations.csv",
+          "match": true
+        },
+        {
+          "path": "inputs/pipeline.py",
+          "match": true
+        }
+      ]
+    }
+  ],
+  "case_integrity": [
+    {
+      "frame": "L02-regression",
+      "path": "case.md",
+      "match": true
+    },
+    {
+      "frame": "L02-regression",
+      "path": "inputs/context.md",
+      "match": true
+    },
+    {
+      "frame": "L02-regression",
+      "path": "inputs/pipeline.py",
+      "match": true
+    },
+    {
+      "frame": "L02-regression",
+      "path": "inputs/observations.csv",
+      "match": true
+    },
+    {
+      "frame": "L03-regression",
+      "path": "case.md",
+      "match": true
+    },
+    {
+      "frame": "L03-regression",
+      "path": "inputs/context.md",
+      "match": true
+    },
+    {
+      "frame": "L03-regression",
+      "path": "inputs/dictionary.json",
+      "match": true
+    },
+    {
+      "frame": "L03-regression",
+      "path": "inputs/observations.csv",
+      "match": true
+    },
+    {
+      "frame": "N01-baseline",
+      "path": "case.md",
+      "match": true
+    },
+    {
+      "frame": "N01-baseline",
+      "path": "inputs/context.md",
+      "match": true
+    },
+    {
+      "frame": "N01-baseline",
+      "path": "inputs/pipeline.py",
+      "match": true
+    },
+    {
+      "frame": "N01-baseline",
+      "path": "inputs/observations.csv",
+      "match": true
+    },
+    {
+      "frame": "N01-treatment",
+      "path": "case.md",
+      "match": true
+    },
+    {
+      "frame": "N01-treatment",
+      "path": "inputs/context.md",
+      "match": true
+    },
+    {
+      "frame": "N01-treatment",
+      "path": "inputs/pipeline.py",
+      "match": true
+    },
+    {
+      "frame": "N01-treatment",
+      "path": "inputs/observations.csv",
+      "match": true
+    },
+    {
+      "frame": "N02-baseline",
+      "path": "case.md",
+      "match": true
+    },
+    {
+      "frame": "N02-baseline",
+      "path": "inputs/context.md",
+      "match": true
+    },
+    {
+      "frame": "N02-baseline",
+      "path": "inputs/pipeline.py",
+      "match": true
+    },
+    {
+      "frame": "N02-baseline",
+      "path": "inputs/observations.csv",
+      "match": true
+    },
+    {
+      "frame": "N02-treatment",
+      "path": "case.md",
+      "match": true
+    },
+    {
+      "frame": "N02-treatment",
+      "path": "inputs/context.md",
+      "match": true
+    },
+    {
+      "frame": "N02-treatment",
+      "path": "inputs/pipeline.py",
+      "match": true
+    },
+    {
+      "frame": "N02-treatment",
+      "path": "inputs/observations.csv",
+      "match": true
+    },
+    {
+      "frame": "N03-baseline",
+      "path": "case.md",
+      "match": true
+    },
+    {
+      "frame": "N03-baseline",
+      "path": "inputs/context.md",
+      "match": true
+    },
+    {
+      "frame": "N03-baseline",
+      "path": "inputs/pipeline.py",
+      "match": true
+    },
+    {
+      "frame": "N03-baseline",
+      "path": "inputs/observations.csv",
+      "match": true
+    },
+    {
+      "frame": "N03-treatment",
+      "path": "case.md",
+      "match": true
+    },
+    {
+      "frame": "N03-treatment",
+      "path": "inputs/context.md",
+      "match": true
+    },
+    {
+      "frame": "N03-treatment",
+      "path": "inputs/pipeline.py",
+      "match": true
+    },
+    {
+      "frame": "N03-treatment",
+      "path": "inputs/observations.csv",
+      "match": true
+    }
+  ]
+}

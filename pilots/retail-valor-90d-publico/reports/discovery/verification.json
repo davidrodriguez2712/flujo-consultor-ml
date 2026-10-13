@@ -1,0 +1,46 @@
+{
+  "checks": [
+    {
+      "check": "data/source_manifest.json",
+      "passed": true,
+      "bytes": 45622278
+    },
+    {
+      "check": "data/interim/manifest.json",
+      "passed": true,
+      "bytes": 18402623
+    },
+    {
+      "check": "discovery_requires_review",
+      "passed": true
+    },
+    {
+      "check": "tests",
+      "passed": true
+    },
+    {
+      "check": "prior_evidence:artifacts/github-actions-windows-2026-10-08/evidence-manifest.json",
+      "passed": true,
+      "entries": 24
+    },
+    {
+      "check": "prior_evidence:artifacts/windows-arm-runtimes-2026-10-08/evidence-manifest.json",
+      "passed": true,
+      "entries": 53
+    },
+    {
+      "check": "prior_evidence:pilots/riesgo-credito-sintetico/handoff/handoff-manifest.json",
+      "passed": true,
+      "entries": 13
+    },
+    {
+      "check": "prior_evidence:pilots/riesgo-credito-sintetico/handoff/handoff-manifest-02-closed.json",
+      "passed": true,
+      "entries": 13
+    }
+  ],
+  "api_cost_usd": 0,
+  "trained_models": 0,
+  "source_rows_preserved": 1067371,
+  "gate_status": "NEEDS_REVIEW"
+}

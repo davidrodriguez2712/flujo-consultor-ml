@@ -1,0 +1,11 @@
+--- baseline/workflow.md
++++ treatment/workflow.md
+@@ -62,6 +62,8 @@
+ ### Preparar, ejecutar y aceptar
+ 
+ Preparar una propuesta de tarea, revisar trazabilidad, actualizar un plan vivo y ejecutar análisis son acciones distintas. Dentro de un mandato de revisión/propuesta, redactar la siguiente tarea con sus pendientes y preguntas, aunque todavía falten decisiones necesarias para ejecutarla. Marcar esas dependencias sin inventar permisos ni presentar el borrador como listo para ejecución.
++
++Cuando se solicita un borrador de tarea, entregar el borrador redactado en el formato acordado, con objetivo, inputs conocidos, outputs propuestos y su contenido esperado, criterios observables de revisión, y dependencias con la acción que impiden. Una lista de instrucciones como «redactar la tarea» o «definir sus outputs» no cumple ese encargo. Si el contrato exige JSON, incluir el borrador dentro de los campos permitidos, sin añadir un documento Markdown fuera del objeto. Completar lo sustentado y marcar como pendiente lo desconocido; distinguir una propuesta de outputs o criterios de un acuerdo ya aprobado. No inventar owners, fuentes, fechas, permisos ni gates, y no ejecutar el trabajo descrito solo por haber redactado su tarea.
+ 
+ Una copia histórica íntegra y su aceptación conservan su alcance aunque el plan vivo evolucione. Esa diferencia por sí sola no impide preparar la siguiente tarea ni obliga a congelar/aprobar cada edición del plan. Congelar la versión cuando sustente una aceptación o un entregable que lo requiera. Si la acción siguiente amplía alcance o depende de un gate pendiente, detener esa acción hasta la decisión correspondiente; la aceptación previa no se transfiere al alcance nuevo. La falta de autoridad para ejecutar no convierte automáticamente un expediente histórico coherente en evidencia defectuosa.
+ 

@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "manifest": "retail-valor-90d-publico/handoff/handoff-manifest.json",
+  "files_checked": 263,
+  "mismatches": [],
+  "source_normalized_matches": true
+}

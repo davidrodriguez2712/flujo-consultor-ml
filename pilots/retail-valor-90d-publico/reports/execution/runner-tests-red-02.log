@@ -1,0 +1,21 @@
+...F                                                                     [100%]
+=================================== FAILURES ===================================
+___________ test_compiled_contract_representation_tampering_rejected ___________
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1789/test_compiled_contract_represe0')
+
+    def test_compiled_contract_representation_tampering_rejected(tmp_path):
+     (tmp_path/'reports/execution').mkdir(parents=True);(tmp_path/'reports/diagnosis').mkdir(parents=True)
+     path=tmp_path/'reports/execution/approved-contracts.json';path.write_text(json.dumps({'approved_sha256':{},'retail':{'capacity':100}}))
+     approved=hashlib.sha256(path.read_bytes()).hexdigest()
+     (tmp_path/'reports/diagnosis/human-approval.json').write_text(json.dumps({'decision':'PASS','contracts':{},'compiled_contract_sha256':approved}))
+     assert checked_contracts(tmp_path)['retail']['capacity']==100
+     path.write_text(json.dumps({'approved_sha256':{},'retail':{'capacity':999}}))
+>    with pytest.raises(ValueError,match='representación'):checked_contracts(tmp_path)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E    Failed: DID NOT RAISE ValueError
+
+pilots/retail-valor-90d-publico/analysis/test_retail_runner.py:32: Failed
+=========================== short test summary info ============================
+FAILED pilots/retail-valor-90d-publico/analysis/test_retail_runner.py::test_compiled_contract_representation_tampering_rejected
+1 failed, 3 passed in 0.89s

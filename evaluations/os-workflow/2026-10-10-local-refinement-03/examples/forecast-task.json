@@ -1,0 +1,66 @@
+{
+  "status": "READY",
+  "findings": [
+    {
+      "statement": "La preparación está autorizada; ejecutar la evaluación exige resolver acceso, ventana y datos de forecast histórico. Metadata describe 10SKU por52semanas, no raw verificado.",
+      "evidence_paths": [
+        "data/inventory-metadata.json",
+        "intake/request.json",
+        "decisions/open.json"
+      ]
+    }
+  ],
+  "proposed_actions": [
+    "Revisar la propuesta siguiente y registrar decisiones pendientes sin ejecutar análisis."
+  ],
+  "next_step": "Revisar outputs y criterios propuestos; pedir al responsable las decisiones de acceso y ventana para una ejecución posterior.",
+  "limitations": [
+    "Ejemplo del autor, no respuesta de un modelo.",
+    "No acceso a raw, entrenamiento, compra ni aceptación de gate."
+  ],
+  "task_draft": {
+    "objective": "Evaluar retrospectivamente forecast de ventas observadas por SKU-semana para informar una futura decisión de reposición.",
+    "inputs_known": [
+      "Metadata con grano SKU-semana;10SKU,52semanas,520filas descritas.",
+      "Mandato de redactar propuesta y objetivo de ventas observadas."
+    ],
+    "inputs_pending": [
+      "CSV autorizado",
+      "Previsiones históricas o definición de baseline propuesto para la comparación",
+      "Cutoff y ventana de evaluación"
+    ],
+    "outputs_proposed": [
+      {
+        "artifact": "Informe de evaluación retrospectiva, ruta por acordar",
+        "content": [
+          "Comparación de forecast y baseline propuesto contra ventas observadas por SKU y semana",
+          "Errores por SKU-semana y cobertura de datos/stockouts",
+          "Fuentes, corte temporal, supuestos y limitaciones sobre demanda no observada"
+        ]
+      }
+    ],
+    "review_criteria_proposed": [
+      "Cada comparación usa el mismo target, población y ventana declarados",
+      "Documenta que las features y el forecast respetan el corte temporal",
+      "Identifica las filas/semanas con stockouts conocidos y la cobertura parcial, sin estimar demanda latente como hecho",
+      "Toda cifra cita su fuente y método; no afirma desempeño antes de ejecutar"
+    ],
+    "performance_metric_and_threshold": "Pendientes de acuerdo; estos criterios revisan trazabilidad y método, no inventan un objetivo numérico.",
+    "dependencies": [
+      {
+        "pending": "Autorización del CSV",
+        "affected_action": "Leer ventas detalladas y ejecutar evaluación"
+      },
+      {
+        "pending": "Ventana/cutoff y previsiones históricas o baseline",
+        "affected_action": "Construir comparación retrospectiva"
+      }
+    ],
+    "owner_name": null,
+    "deadline": null,
+    "limits": [
+      "No entrenamiento ni cambio de compras autorizados",
+      "Redacción no autoriza ejecución ni acepta gates"
+    ]
+  }
+}

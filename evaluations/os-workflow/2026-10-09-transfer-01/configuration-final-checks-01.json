@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "preparation_files": 50,
+  "execution_files": 13,
+  "historical_files": 253,
+  "live_snapshots_match": true,
+  "package_approval_bound": true,
+  "budget_authorization": "PENDING",
+  "snapshot_checker_smoke": "PASS_LOCAL_ONLY",
+  "api_calls": 0,
+  "api_cost_usd": 0
+}

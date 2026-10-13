@@ -1,0 +1,11 @@
+{
+  "status": "STOPPED_RESERVATION_BUDGET",
+  "smoke": "PASS",
+  "L01_baseline": "report persisted",
+  "L01_treatment": "Skill invoked but next reservation not affordable",
+  "valid_skill_pairs": 0,
+  "cost_usd": 0.008666675,
+  "study_cumulative_usd": 0.0374896,
+  "rejected_request_quote_usd": 0.063191875,
+  "effectiveness": "NO_COMPLETE_NATIVE_PAIRS"
+}

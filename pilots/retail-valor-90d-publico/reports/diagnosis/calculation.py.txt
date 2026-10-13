@@ -1,0 +1,38 @@
+from pathlib import Path
+import pandas as pd
+import numpy as np
+import json,sys
+p=Path('/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/retail-valor-90d-publico')
+def dump(rel,obj):
+ path=p/rel;path.write_text(json.dumps(obj,indent=2,ensure_ascii=False,default=str)+'\n')
+sys.path.insert(0,str(p/'analysis'));from retail_source import FIELDS
+f=pd.read_csv(p/'data/interim/transactions_normalized.csv.gz',dtype={k:'string' for k in ['invoice_id','stock_code','description','customer_id','country','source_sheet']},parse_dates=['invoice_at'])
+f['occurrence_in_sheet']=f.groupby(['source_sheet']+FIELDS,dropna=False,sort=False).cumcount()
+r=f.loc[~f.duplicated(FIELDS+['occurrence_in_sheet'])].copy()
+positive=(r.quantity>0)&(r.unit_price>0)&np.isfinite(r.quantity)&np.isfinite(r.unit_price)
+cancel=r.invoice_id.str.match('^[cC]',na=False)
+valid=positive&~cancel&r.stock_code.str.fullmatch(r'\d{5}[A-Za-z]*',na=False)&r.customer_id.notna()&r.invoice_id.notna()&r.invoice_at.notna()
+v=r.loc[valid].copy();v['amount']=v.quantity*v.unit_price
+assert len(v)==788187
+customer=v.groupby('customer_id').agg(sales=('amount','sum'),invoices=('invoice_id','nunique'),first=('invoice_at','min'),last=('invoice_at','max')).sort_values('sales',ascending=False)
+monthly=v.groupby(v.invoice_at.dt.to_period('M')).agg(lines=('amount','size'),customers=('customer_id','nunique'),invoices=('invoice_id','nunique'),sales=('amount','sum'))
+monthly.index=monthly.index.astype(str);monthly.to_csv(p/'reports/diagnosis/monthly-summary.csv')
+cohorts=customer.groupby(customer['first'].dt.to_period('M')).agg(customers=('sales','size'),observed_sales=('sales','sum'));cohorts.index=cohorts.index.astype(str);cohorts.to_csv(p/'reports/diagnosis/observed-cohorts.csv')
+a=v.drop_duplicates(FIELDS)
+cutoffs=[t for t in pd.date_range(f.invoice_at.min().normalize(),f.invoice_at.max().normalize(),freq='MS') if t-pd.Timedelta(days=180)>=f.invoice_at.min() and t+pd.Timedelta(days=90)<=f.invoice_at.max()]
+holdout=cutoffs[-1];dev=[];anchor=holdout
+for t in reversed(cutoffs[:-1]):
+ mature=[s for s in cutoffs if s+pd.Timedelta(days=90)<=t]
+ if (anchor-t).days>=90 and mature:
+  dev.append(t);anchor=t
+  if len(dev)==4:break
+dev.sort();rows=[]
+for t in dev+[holdout]:
+ hist=v.loc[(v.invoice_at>=t-pd.Timedelta(days=180))&(v.invoice_at<t)]
+ mature=[s for s in cutoffs if s+pd.Timedelta(days=90)<=t]
+ delayed=[s for s in mature if s+pd.Timedelta(days=97)<=t]
+ rows.append({'cutoff':t.isoformat(),'purpose':'holdout' if t==holdout else 'development','label_end':(t+pd.Timedelta(days=90)).isoformat(),'eligible_customers':int(hist.customer_id.nunique()),'mature_training_cutoffs':[s.isoformat() for s in mature],'hypothetical_delay_7d_mature_cutoffs':[s.isoformat() for s in delayed]})
+assert len(dev)>=2 and all((b-a).days>=90 for a,b in zip(dev,dev[1:]+[holdout]))
+summary={'scope':'Descriptivo de toda la historia; sin outcomes por horizonte de holdout ni modelos.','valid_lines':len(v),'customers':len(customer),'countries':int(v.country.nunique()),'sales_gbp':float(v.amount.sum()),'top1_share':float(customer.sales.iloc[:1].sum()/customer.sales.sum()),'top10_share':float(customer.sales.iloc[:10].sum()/customer.sales.sum()),'top100_share':float(customer.sales.iloc[:100].sum()/customer.sales.sum()),'customers_multiple_invoices':int((customer.invoices>1).sum()),'observed_cohorts_caution':'Primera compra observada, no adquisición real; primeras cohortes censuradas a izquierda. Último mes incompleto.','cancellation_lines':int(cancel.sum()),'cancellation_signed_amount_gbp':float((r.loc[cancel,'quantity']*r.loc[cancel,'unit_price']).sum()),'cancellation_interpretation':'Importe firmado separado; no vinculación causal a compra original ni ventas netas.','within_sheet_repetition_sensitivity':{'alternative':'Una representación por patrón completo; escenario descriptivo, no regla autorizada.','removed_valid_lines':len(v)-len(a),'sales_gbp':float(a.amount.sum()),'sales_change_pct':float(100*(a.amount.sum()/v.amount.sum()-1)),'customers':int(a.customer_id.nunique()),'top100_share':float(a.groupby('customer_id').amount.sum().nlargest(100).sum()/a.amount.sum())},'api_cost_usd':0}
+dump('reports/diagnosis/diagnostic-summary.json',summary);dump('reports/diagnosis/cutoff-proposal.json',{'rule':'Último cutoff mensual admisible para holdout; hasta cuatro anteriores separados >=90d y con >=1 snapshot maduro.','source_min':f.invoice_at.min(),'source_max':f.invoice_at.max(),'first_admissible':cutoffs[0],'cutoffs':rows,'no_target_or_features_generated':True})
+print(json.dumps(summary,indent=2,ensure_ascii=False));print(json.dumps(rows,indent=2))

@@ -1,0 +1,26 @@
+{
+  "case": "T02",
+  "ruling": "EXCLUDE_BOTH_CONDITIONS_FROM_COMPARATIVE_INFERENCE",
+  "expected_unchanged": "READY",
+  "issues": [
+    {
+      "type": "fixture_ambiguity",
+      "source": "agent_inputs/T02/artifacts.json",
+      "observation": "Revenue 200000 en ambos, gross_profit 50000/55000, volumen fijo. Falta mecanismo que haga interpretable “escenario de pricing”; cambio de COGS implícito 150000->145000.",
+      "implication": "Ambas respuestas MUST_CORRECT pueden ser legítimas por necesidad de documentar el escenario, por lo que el oracle READY no separa bien falsos bloqueos."
+    },
+    {
+      "type": "checker_contract_mismatch",
+      "source": "execution-config-01/snapshots/scripts/evaluations/workflow_transfer_checker.py",
+      "observation": "Checker exige que toda sección Estado sea solo el status; contrato de tarea permite prosa dentro de secciones y solo pide escribir estado debajo del heading. Treatment añade explicación y es rechazado.",
+      "implication": "El FAIL congelado se conserva; no atribuirlo inequívocamente al modelo ni recalcular formato tras ajustar checker."
+    }
+  ],
+  "model_outputs_preserved": true,
+  "expected_changed": false,
+  "checker_changed_during_or_after_run": false,
+  "paid_retries": 0,
+  "affected_pair_comparison": "STOPPED_EXCLUDED",
+  "possible_future_action": "Diseño nuevo con fixture de pricing inequívoco y contrato/checker alineados; nueva versión/criterios antes de nuevos outputs. Caso T02 ya expuesto, no reutilizar como inédito.",
+  "scope": "Los otros cinco pares no usan contrato Markdown ni cifras de T02; resultados parciales descriptivos, cobertura planeada incompleta."
+}

@@ -1,0 +1,77 @@
+{
+  "runner_version": "0.1.0",
+  "schema_version": "0.1.0",
+  "started_at": "2026-10-08T10:47:48.758179+00:00",
+  "finished_at": "2026-10-08T10:48:01.081183+00:00",
+  "wall_seconds": 12.323,
+  "provider_duration_ms": 11095,
+  "exit_code": 0,
+  "runtime_success": true,
+  "structured_present": true,
+  "schema_conformant": true,
+  "model_matches": true,
+  "content_validation": "NOT_RUN",
+  "findings": [],
+  "session_id": "118e6267-a770-4879-8495-ca2509a690cb",
+  "num_turns": 2,
+  "model_usage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1454,
+      "cacheReadInputTokens": 2051,
+      "cacheCreationInputTokens": 4098,
+      "webSearchRequests": 0,
+      "costUSD": 0.031346200000000005,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "model_usage_reported": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1454,
+      "cacheReadInputTokens": 2051,
+      "cacheCreationInputTokens": 4098,
+      "webSearchRequests": 0,
+      "costUSD": 0.031346200000000005,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "cost_usd_reported": 0.031346200000000005,
+  "cli_version": "2.1.294 (Claude Code)",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "python_version": "3.13.2",
+  "payload_sha256": "dccfc358f6fc29621fd5307f1d160295ff2d12da789710e8cc8360e0dd0afe79",
+  "schema_sha256": "2f65e387b04356d4efc7b0efd32ae3c69181d40a7b4221ea4664913e09e2ce74",
+  "request_sha256": "a245b0ee40a4608c6a29d118f5bf9129ff8ecb0031ab8caf9de80c81c65258f3",
+  "runner_sha256": "7680658bd63999509ae11e7569a98ecb9c40e37870b1394f0cad750b6be278cc",
+  "effective_configuration": {
+    "resolved_models": [
+      "claude-sonnet-5-5"
+    ],
+    "effort": "unknown",
+    "tools": "unknown",
+    "safe_mode": "unknown",
+    "mcp": "unknown",
+    "session_persistence": "unknown"
+  },
+  "artifact_sha256": {
+    "payload.txt": "dccfc358f6fc29621fd5307f1d160295ff2d12da789710e8cc8360e0dd0afe79",
+    "raw.json": "ef8dd63f238e2dbf42092faca133654f92d86f53ab690c1c37fdb9370806eb4b",
+    "request.json": "a245b0ee40a4608c6a29d118f5bf9129ff8ecb0031ab8caf9de80c81c65258f3",
+    "result.txt": "eb136064f2eecc7e235008889b2055f4ede3df3da25a42f574f6b9fbaa4a2b7d",
+    "schema.json": "2f65e387b04356d4efc7b0efd32ae3c69181d40a7b4221ea4664913e09e2ce74",
+    "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout.txt": "ef8dd63f238e2dbf42092faca133654f92d86f53ab690c1c37fdb9370806eb4b",
+    "structured-output.json": "98edf4e37f13fcd009882551d69e736de8cd074bd9f122a4a181ab2804bd0c95"
+  }
+}

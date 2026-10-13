@@ -1,0 +1,102 @@
+{
+  "id": "os-workflow-local-refinement-02",
+  "scope": "Fixture de pricing corregido (no inédito), ejemplo del autor, recursos/código actualizados y checks locales. Sin configuración ni gasto de otra evaluación.",
+  "precedence_evidence": "local_only",
+  "files": [
+    {
+      "path": "AUTHOR_REVIEW.md",
+      "sha256": "fbe00a6feedd183347f414fd1a2a213a7cb80688f3575020268e2f0432d5e8e4",
+      "bytes": 882
+    },
+    {
+      "path": "README.md",
+      "sha256": "fbada4a840d4c39a579109cdd42c247ecb1b3f9bf0b1bd0a18bc4ea6846b75eb",
+      "bytes": 776
+    },
+    {
+      "path": "agent_inputs/P02-v02/artifacts.json",
+      "sha256": "8b16f50addc844aa56ba4e8118ad7d96cc8a43026c80c0599ad44261cce4b43f",
+      "bytes": 1548
+    },
+    {
+      "path": "agent_inputs/P02-v02/context.json",
+      "sha256": "910e85920bded7a7284dfc67d2d814d5451235757c583b3fdfeb1db2c40d581a",
+      "bytes": 249
+    },
+    {
+      "path": "agent_inputs/P02-v02/task.md",
+      "sha256": "1f84f6fc5b7d83987b10e3753d0fecfaa8bdd30241912917b4ad014286144b73",
+      "bytes": 710
+    },
+    {
+      "path": "design-approval.json",
+      "sha256": "f81b33248b6d21f7005bb549aad98f300543b0b3c3a01387c4e84d4bd4f54cae",
+      "bytes": 251
+    },
+    {
+      "path": "examples/task-commercial-coverage.md",
+      "sha256": "06496d1ca479fb4ecf6db4c35f2c6605bfccfc3027e81ea459ed2b110c2f9847",
+      "bytes": 2851
+    },
+    {
+      "path": "generated-MANUAL.md",
+      "sha256": "5e4aa014507bf7c20cf2954692cdd499a1ff4a259436d71ec9c6b9286f93e771",
+      "bytes": 7466
+    },
+    {
+      "path": "generated-task-template.md",
+      "sha256": "6e94004d89b739ca91c425bca5b9a2679b227ed5d496c147b6af07f2180b3b86",
+      "bytes": 6164
+    },
+    {
+      "path": "local-checks.json",
+      "sha256": "64a8ca6e433720c0328ac263b6d55061b27a85a1de773299a20075d3b5396941",
+      "bytes": 5897
+    },
+    {
+      "path": "provenance.json",
+      "sha256": "7e98de860831a7202ae1562c7569bd68b483b206ffe90bd7d3f17c1b3948ab1f",
+      "bytes": 388
+    },
+    {
+      "path": "reviewer/expected/P02-v02.json",
+      "sha256": "d972638b27524fe18b14b4ba5ee20a3501ea3c47fef6083d0987121bf7383833",
+      "bytes": 901
+    },
+    {
+      "path": "snapshots/scripts/evaluations/workflow_transfer_checker.py",
+      "sha256": "06429a91ea38eaeb790d7749f92e948d2c49d93937b0db588e6219da73a39370",
+      "bytes": 4392
+    },
+    {
+      "path": "snapshots/src/acos/render.py",
+      "sha256": "54f5d2fe1ece6355d5d749c056d0739f2f8dd6db33eff99175ca2ce0d3c8fba7",
+      "bytes": 15315
+    },
+    {
+      "path": "snapshots/src/acos/resources/os/templates/project-and-task.md",
+      "sha256": "6e94004d89b739ca91c425bca5b9a2679b227ed5d496c147b6af07f2180b3b86",
+      "bytes": 6164
+    },
+    {
+      "path": "snapshots/src/acos/resources/os/workflow/execution-and-qa.md",
+      "sha256": "dd4fb9f55cbaead81d3794c9d8ec3229b61b35b42951b423da940e01ef26daf3",
+      "bytes": 19668
+    },
+    {
+      "path": "snapshots/templates/project-and-task.md",
+      "sha256": "6e94004d89b739ca91c425bca5b9a2679b227ed5d496c147b6af07f2180b3b86",
+      "bytes": 6164
+    },
+    {
+      "path": "snapshots/tests/test_workflow_transfer_checker.py",
+      "sha256": "2f26cced79be1116790c3ca6a8c7addf6f4f7b6bc024cc61c2f4cad0a562cc27",
+      "bytes": 6292
+    },
+    {
+      "path": "snapshots/workflow/execution-and-qa.md",
+      "sha256": "dd4fb9f55cbaead81d3794c9d8ec3229b61b35b42951b423da940e01ef26daf3",
+      "bytes": 19668
+    }
+  ]
+}

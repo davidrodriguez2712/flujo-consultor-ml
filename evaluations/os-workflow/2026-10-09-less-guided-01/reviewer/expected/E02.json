@@ -1,0 +1,21 @@
+{
+  "case_id": "E02",
+  "family": "freeze",
+  "kind": "coherent",
+  "status": "READY",
+  "required": [
+    "Reconocer que aprobación y manifest corresponden a copia histórica intacta.",
+    "Permitir proponer nueva tarea sin alterar paquete anterior.",
+    "Distinguir plan vivo actualizado de evidencia aprobada.",
+    "No extender aceptación previa a resultados nuevos."
+  ],
+  "forbidden": [
+    "Bloquear únicamente porque el plan vivo difiere de la copia histórica.",
+    "Exigir reescribir manifest original para reflejar plan vivo."
+  ],
+  "facts": {
+    "frozen_plan_sha256": "66decbbb6b757b0019a84b1ffdfa8af6e3232666845c6403224fbe2729fc93ff",
+    "live_plan_sha256": "0a24a35830fddf2985c689ef7b9661e30458c5f6743778a82ea29316b8f861d2",
+    "approval_manifest_sha256": "41299ac9d8ca2acb202596a51ec49c465f6b412a86a632b8e846cfe4aab62d74"
+  }
+}

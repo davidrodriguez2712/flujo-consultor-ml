@@ -1,0 +1,126 @@
+version: 0.1.0
+status: DELIVERY_REVIEW_PENDING
+claims:
+- id: CLM-01
+  type: fact
+  statement: La evaluación final puntuó 900 solicitudes y evaluó 447 concedidas maduras;
+    453 rechazadas sin outcome.
+  source: analysis/outputs/baseline-final/summary.json
+  fields:
+    scored_rows: 900
+    evaluated_rows: 447
+    unobserved_rejected_rows: 453
+  source_sha256: 0fcc8f80e6a05eedf6f8b75d48ef7aa0fa072bb086babd0ee07eabcf0e764d08
+- id: CLM-02
+  type: fact
+  statement: Brier final del modelo y referencia en idéntica población evaluable.
+  source: analysis/outputs/baseline-final/summary.json
+  fields:
+    brier_model: 0.10248743162638262
+    brier_reference: 0.11653042732257032
+    roc_auc_model: 0.7522825150732128
+  source_sha256: 0fcc8f80e6a05eedf6f8b75d48ef7aa0fa072bb086babd0ee07eabcf0e764d08
+- id: CLM-03
+  type: interpretation
+  statement: Mejora puntual de Brier en el fixture; sin inferencia de significancia
+    ni generalización real.
+  source: analysis/outputs/baseline-final/summary.json
+  fields:
+    brier_improvement: 0.014042995696187707
+  limit: Comparación puntual sobre concedidas; no eficacia causal/skills.
+  source_sha256: 0fcc8f80e6a05eedf6f8b75d48ef7aa0fa072bb086babd0ee07eabcf0e764d08
+- id: CLM-04
+  type: fact
+  statement: La cobertura de labels del Top-100 global es 26%,22%,26%; no métricas
+    globales identificadas.
+  source: analysis/outputs/baseline-final/results.json
+  fields:
+    all_applications_monthly.2025-07.label_coverage_selected: 0.26
+    all_applications_monthly.2025-08.label_coverage_selected: 0.22
+    all_applications_monthly.2025-09.label_coverage_selected: 0.26
+    all_applications_monthly.2025-07.precision: null
+    all_applications_monthly.2025-08.precision: null
+    all_applications_monthly.2025-09.precision: null
+  source_sha256: 2fc52c9d3fbb0ca67769a2b02b7a3282212b6b41c1b01b925653db58c4746f14
+- id: CLM-05
+  type: fact
+  statement: Bins de calibración fijos con evidencia desigual; media global no certifica
+    calibración.
+  source: analysis/outputs/baseline-final/results.json
+  fields:
+    evaluable.model.mean_score: 0.12695747796756163
+    evaluable.model.positive_rate: 0.1342281879194631
+    evaluable.model.calibration.2.rows: 55
+    evaluable.model.calibration.2.mean_score: 0.2694918447261925
+    evaluable.model.calibration.2.positive_rate: 0.34545454545454546
+    evaluable.model.calibration.3.rows: 14
+    evaluable.model.calibration.4.rows: 4
+    evaluable.model.calibration.5.rows: 0
+  source_sha256: 2fc52c9d3fbb0ca67769a2b02b7a3282212b6b41c1b01b925653db58c4746f14
+- id: CLM-06
+  type: fact
+  statement: Configuración conservada, sin tuning o actualización mensual durante
+    final.
+  source: analysis/outputs/baseline-final/metadata.json
+  fields:
+    configuration_fixed_from_development: true
+    hyperparameter_search: false
+    model_updates_during_test: 0
+    additional_runtime_api_calls: 0
+  source_sha256: f1fe59fdca6e34cac46f793c3ec318d9eefdeae32396dc93291397ba3f19c931
+- id: CLM-07
+  type: recommendation
+  statement: Conservar prototipo y definir política/outcome/evaluación antes de uso
+    real.
+  sources:
+  - validation/model_validation.md
+  - delivery/storyline.md
+  - delivery/decision_memo.md
+  verification: Revisión semántica y humana; no hecho probado por un campo JSON.
+- id: CLM-08
+  type: fact
+  statement: Brier mejora puntualmente en tres meses y ambos segmentos; corte nuevo
+    y métricas globales ausentes trazables.
+  source: analysis/outputs/baseline-final/results.json
+  source_sha256: 2fc52c9d3fbb0ca67769a2b02b7a3282212b6b41c1b01b925653db58c4746f14
+  fields:
+    evaluable.monthly.2025-07.model.brier_score: 0.09338673434720557
+    evaluable.monthly.2025-07.reference.brier_score: 0.10944973360118788
+    evaluable.monthly.2025-07.model.rows: 152
+    evaluable.monthly.2025-07.reference.rows: 152
+    evaluable.monthly.2025-07.model.positives: 19
+    evaluable.monthly.2025-07.reference.positives: 19
+    all_applications_monthly.2025-07.recall: null
+    all_applications_monthly.2025-07.lift: null
+    evaluable.monthly.2025-08.model.brier_score: 0.1380705911888752
+    evaluable.monthly.2025-08.reference.brier_score: 0.14239633415765504
+    evaluable.monthly.2025-08.model.rows: 131
+    evaluable.monthly.2025-08.reference.rows: 131
+    evaluable.monthly.2025-08.model.positives: 22
+    evaluable.monthly.2025-08.reference.positives: 22
+    all_applications_monthly.2025-08.recall: null
+    all_applications_monthly.2025-08.lift: null
+    evaluable.monthly.2025-09.model.brier_score: 0.08249909067362883
+    evaluable.monthly.2025-09.reference.brier_score: 0.10243183982411928
+    evaluable.monthly.2025-09.model.rows: 164
+    evaluable.monthly.2025-09.reference.rows: 164
+    evaluable.monthly.2025-09.model.positives: 19
+    evaluable.monthly.2025-09.reference.positives: 19
+    all_applications_monthly.2025-09.recall: null
+    all_applications_monthly.2025-09.lift: null
+    evaluable.customer_segments.known.model.rows: 324
+    evaluable.customer_segments.known.reference.rows: 324
+    evaluable.customer_segments.known.model.brier_score: 0.09321666732320297
+    evaluable.customer_segments.known.reference.brier_score: 0.10116111008670768
+    evaluable.customer_segments.known.model.mean_score: 0.11748354034557026
+    evaluable.customer_segments.known.reference.mean_score: 0.11635514018691588
+    evaluable.customer_segments.known.model.positive_rate: 0.11419753086419752
+    evaluable.customer_segments.known.reference.positive_rate: 0.11419753086419752
+    evaluable.customer_segments.new.model.rows: 123
+    evaluable.customer_segments.new.reference.rows: 123
+    evaluable.customer_segments.new.model.brier_score: 0.1269079814981729
+    evaluable.customer_segments.new.reference.brier_score: 0.1570154580902085
+    evaluable.customer_segments.new.model.mean_score: 0.1519132160937828
+    evaluable.customer_segments.new.reference.mean_score: 0.11635514018691588
+    evaluable.customer_segments.new.model.positive_rate: 0.18699186991869918
+    evaluable.customer_segments.new.reference.positive_rate: 0.18699186991869918

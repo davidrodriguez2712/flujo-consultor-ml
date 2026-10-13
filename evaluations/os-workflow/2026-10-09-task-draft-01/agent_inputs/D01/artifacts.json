@@ -1,0 +1,34 @@
+{
+  "intake/request.json": {
+    "authorized": "Redactar propuesta para evaluación retrospectiva de forecast",
+    "owner_role": "Responsable de inventario",
+    "owner_name": null,
+    "deadline": null,
+    "not_authorized": [
+      "Leer ventas detalladas",
+      "Entrenar modelos",
+      "Cambiar política de compra"
+    ]
+  },
+  "data/inventory-metadata.json": {
+    "available_description": "CSV descrito por el equipo, no accesible todavía en este expediente",
+    "grain": "SKU-semana",
+    "sku_count": 10,
+    "complete_weeks": 52,
+    "described_rows": 520,
+    "columns": [
+      "sku",
+      "week_start",
+      "sold_units",
+      "stock_available"
+    ],
+    "stockout_recording": "Parcial",
+    "raw_access": "PENDING"
+  },
+  "decisions/open.json": {
+    "metric_and_acceptance_threshold": "PENDING",
+    "cutoff_and_evaluation_window": "PENDING",
+    "data_access": "PENDING",
+    "business_target": "Ventas observadas; no demanda latente estimada"
+  }
+}

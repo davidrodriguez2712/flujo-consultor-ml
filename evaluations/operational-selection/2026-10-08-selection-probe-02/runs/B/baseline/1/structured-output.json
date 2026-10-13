@@ -1,0 +1,45 @@
+{
+  "output_type": "risk_ranking",
+  "selection_status": "determined",
+  "eligible_count": 4,
+  "capacity_k": 2,
+  "effective_k": 2,
+  "selected_ids": [
+    "W",
+    "Q"
+  ],
+  "risk_ranking_ids": [
+    "W",
+    "Q",
+    "R",
+    "T"
+  ],
+  "total_cost": 2,
+  "expected_net_value": null,
+  "feasibility": "feasible",
+  "optimality": "not_assessed",
+  "causal_identification": {
+    "status": "not_requested",
+    "estimand": null,
+    "reason": "No se pide efecto causal de la inspecci\u00f3n; es un Top-K descriptivo por riesgo."
+  },
+  "metrics": {
+    "population_id": "eligible-B",
+    "precision": 0.5,
+    "recall": null,
+    "lift": null,
+    "precision_status": "identified",
+    "recall_status": "not_identifiable",
+    "lift_status": "not_identifiable",
+    "reason": "Poblaci\u00f3n eligible-B (4 elegibles). Top-2 = W (0.95) y Q (0.90), ambos con label observado: W=1, Q=0, as\u00ed que Precision@2 = 1/2 = 0.5. Recall@2 requiere el total de positivos: W y T son positivos conocidos (2), pero R no tiene label (sin inspecci\u00f3n y con mecanismo hist\u00f3rico de selecci\u00f3n no documentado). Recall ser\u00eda 1/2 si R=0 o 1/3 si R=1, y no hay base para imputarlo ni para asumir que los no inspeccionados son negativos. Lift@2 = precision / tasa base, y la tasa base ser\u00eda 2/4 = 0.5 (lift 1.0) o 3/4 = 0.75 (lift \u2248 0.667), as\u00ed que tampoco es identificable. Precision@2 est\u00e1 identificada solo sobre los labels observados; puede estar sesgada por la selecci\u00f3n hist\u00f3rica para inspecci\u00f3n."
+  },
+  "reason": "Los 4 elegibles se ordenan por risk_score descendente (W 0.95, Q 0.90, R 0.60, T 0.20), sin empates. Con K=2 y coste unitario 1, se seleccionan W y Q; coste total 2, dentro de la capacidad. No hay objetivo econ\u00f3mico, as\u00ed que no se calcula valor neto ni se eval\u00faa optimalidad. Las m\u00e9tricas dependen de labels observados parcialmente: no se imputa el label de R.",
+  "open_questions": [
+    "\u00bfCu\u00e1l fue el mecanismo hist\u00f3rico por el que se inspeccion\u00f3 cada unidad? Sin \u00e9l, los labels observados pueden estar sesgados por selecci\u00f3n.",
+    "\u00bfEl label ausente de R significa no inspeccionado, resultado pendiente o negativo? Eso determina recall y lift.",
+    "\u00bfSe pueden obtener los outcomes de R o una muestra aleatoria de inspecciones para estimar la tasa base y el recall?",
+    "\u00bfSe acepta Precision@2 = 0.5 como estimaci\u00f3n sobre solo 2 casos? La incertidumbre es muy grande.",
+    "\u00bfSe necesita una revisi\u00f3n humana antes de usar la selecci\u00f3n? Este audit no aprueba el gate."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

@@ -1,0 +1,18 @@
+{
+  "gates": [
+    "diagnosis",
+    "data-quality"
+  ],
+  "decision": "PASS",
+  "reviewer": "David",
+  "authorization": "Mensaje explícito «aprobado» al paquete Diagnosis, data-quality y reglas de evaluación.",
+  "recorded_at_utc": "2026-10-09T12:31:32.701925+00:00",
+  "contracts": {
+    "framing/retail_contract.yaml": "0e537ce003ac0c125d89f5a0aa301f3c29a09316f3e90d985a4b82cc642c6ab4",
+    "validation/evaluation_contract.yaml": "7c006d5440b88e07e3b04cad040d57775714510695c51ae6a30874c52ab8f83b",
+    "data/data_contract.yaml": "89f10b639e39a72d73d411e345e3bfae9727d3ddf3b1883bca5e44ed057e4868"
+  },
+  "scope": "Cerrar Diagnosis/data-quality y ejecutar dataset temporal y development; holdout permanece reservado hasta Execution aprobado.",
+  "compiled_contract_sha256": "6b723ab9122e933550fcc5024e67920c8a4392bf94db491458fb03efa51e1301",
+  "compiled_contract_note": "Representación JSON derivada sin cambios semánticos de YAML aprobados; evita añadir PyYAML al entorno analítico."
+}

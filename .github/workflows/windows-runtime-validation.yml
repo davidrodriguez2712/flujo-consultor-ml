@@ -1,0 +1,79 @@
+name: ACOS Windows ARM and native runtimes
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: windows-2022
+            architecture: x64
+            python: '3.11'
+          - runner: windows-11-arm
+            architecture: arm64
+            python: '3.13'
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 25
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      PYTHONUTF8: '1'
+      DISABLE_AUTOUPDATER: '1'
+      DISABLE_TELEMETRY: '1'
+      DISABLE_ERROR_REPORTING: '1'
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python }}
+          architecture: ${{ matrix.architecture }}
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          architecture: ${{ matrix.architecture }}
+      - name: Dependencias y entorno
+        run: |
+          New-Item -ItemType Directory -Force evidence | Out-Null
+          python -m pip install ".[dev]" "setuptools>=68" wheel
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m pip freeze | Out-File -Encoding utf8 evidence/dependencies.txt
+          node -p 'JSON.stringify({platform:process.platform,arch:process.arch,version:process.version})' | Out-File -Encoding utf8 evidence/node.json
+      - name: Suite de ACOS
+        run: |
+          python -m pytest -q --junitxml=evidence/pytest.xml 2>&1 | Tee-Object evidence/pytest.log
+          exit $LASTEXITCODE
+      - name: Simulaciones y wheel
+        run: |
+          python scripts/validate_business_scenarios.py --output evidence/simulations.json 2>&1 | Tee-Object evidence/simulations.log
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m build --wheel --no-isolation --outdir evidence/wheel 2>&1 | Tee-Object evidence/build.log
+          exit $LASTEXITCODE
+      - name: Smoke aislado de ACOS
+        run: |
+          $acosWheel = (Get-ChildItem evidence/wheel/*.whl | Select-Object -First 1).FullName
+          python scripts/ci/windows_smoke.py --wheel $acosWheel --output evidence/smoke 2>&1 | Tee-Object evidence/smoke.log
+          exit $LASTEXITCODE
+      - name: Instalar runtimes nativos versionados
+        run: |
+          $acosPrefix = Join-Path $env:RUNNER_TEMP 'acos-native-runtimes'
+          npm install --global --prefix $acosPrefix @openai/codex@0.160.0 @anthropic-ai/claude-code@2.1.294 2>&1 | Tee-Object evidence/npm-install.log
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          "ACOS_RUNTIME_PREFIX=$acosPrefix" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+      - name: Arranque y descubrimiento sin modelos
+        run: |
+          $acosCodex = Join-Path $env:ACOS_RUNTIME_PREFIX 'codex.cmd'
+          $acosClaude = Join-Path $env:ACOS_RUNTIME_PREFIX 'claude.cmd'
+          python scripts/ci/windows_runtime_probe.py --codex $acosCodex --claude $acosClaude --npm-prefix $env:ACOS_RUNTIME_PREFIX --architecture '${{ matrix.architecture }}' --output evidence/runtimes 2>&1 | Tee-Object evidence/runtimes.log
+          exit $LASTEXITCODE
+      - name: Conservar resultados incluso ante fallo
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: acos-native-${{ matrix.runner }}-${{ github.run_id }}
+          path: evidence/
+          if-no-files-found: error
+          retention-days: 14

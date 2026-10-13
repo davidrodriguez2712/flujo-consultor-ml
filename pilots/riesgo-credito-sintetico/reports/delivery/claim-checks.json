@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-08",
+  "scope": "Trazabilidad de afirmaciones y links; no valida por sí solo la semántica/recomendación.",
+  "claims": [
+    {
+      "id": "CLM-01",
+      "source_hash_match": true,
+      "fields_match": 3
+    },
+    {
+      "id": "CLM-02",
+      "source_hash_match": true,
+      "fields_match": 3
+    },
+    {
+      "id": "CLM-03",
+      "source_hash_match": true,
+      "fields_match": 1
+    },
+    {
+      "id": "CLM-04",
+      "source_hash_match": true,
+      "fields_match": 6
+    },
+    {
+      "id": "CLM-05",
+      "source_hash_match": true,
+      "fields_match": 8
+    },
+    {
+      "id": "CLM-06",
+      "source_hash_match": true,
+      "fields_match": 4
+    },
+    {
+      "id": "CLM-07",
+      "check": "Sources presentes; recomendación requiere revisión semántica/humana"
+    },
+    {
+      "id": "CLM-08",
+      "source_hash_match": true,
+      "fields_match": 40
+    }
+  ],
+  "same_population_final_brier_reference": true,
+  "all_months_and_segments_show_point_brier_improvement": true,
+  "links_checked": 19,
+  "all_links_exist": true,
+  "placeholders_absent": true,
+  "additional_runtime_api_calls": 0,
+  "model_execution": false
+}

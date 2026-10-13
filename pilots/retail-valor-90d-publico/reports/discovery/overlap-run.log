@@ -1,0 +1,21 @@
+[
+  {
+    "left": "Year 2009-2010",
+    "right": "Year 2010-2011",
+    "common_customers": 2813,
+    "common_invoice_ids": 1088,
+    "common_calendar_days": 8,
+    "common_days": [
+      "2010-12-01",
+      "2010-12-02",
+      "2010-12-03",
+      "2010-12-05",
+      "2010-12-06",
+      "2010-12-07",
+      "2010-12-08",
+      "2010-12-09"
+    ],
+    "common_row_patterns": 22202,
+    "matching_rows_at_min_multiplicity": 22523
+  }
+]

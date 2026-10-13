@@ -1,0 +1,3 @@
+# Contexto de scoring
+
+Unidad: suministro en una fecha de scoring. Target: fraude confirmado en inspección dentro de los14 días posteriores al scoring. El scoring ocurre 2025-06-01T00:00:00Z, antes de la inspección. El reporte es retrospectivo: el target registrado después se usa como outcome para evaluar; no es una feature. history_kwh_90d usa días anteriores al scoring y está disponible 2025-05-31T23:00:00Z. recovered_kwh se determina al procesar la inspección y no existe para el sistema hasta recovered_available_at; un cero posterior tampoco era dato conocido al scoring. Las dos columnas declaradas en pipeline.py son todas las features auditadas. No hay split, fit de transformaciones ni métricas en este expediente; no concluir sobre esas partes ausentes.

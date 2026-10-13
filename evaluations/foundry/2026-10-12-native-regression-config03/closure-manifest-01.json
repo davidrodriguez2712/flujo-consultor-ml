@@ -1,0 +1,466 @@
+{
+  "date": "2026-10-12",
+  "scope": "Ronda real, reportes originales, revisión y coste; sin promoción",
+  "files": [
+    {
+      "path": "CLOSURE_CHECKS.json",
+      "sha256": "091c7560579394dbad38d405d9486327cbd159db425fdbcefcc2262c0f5632cb",
+      "bytes": 1996
+    },
+    {
+      "path": "CONFIG_REVIEW.md",
+      "sha256": "a6e5f29b3cd3b178097aa7b7f768e385917b92e178594f893cff7d4413cd4da6",
+      "bytes": 5536
+    },
+    {
+      "path": "REPORT.md",
+      "sha256": "a8ebab7211fb447fbdc69a3d302fccd9fe09f291a491500a5a9820f22f9a9aba",
+      "bytes": 6097
+    },
+    {
+      "path": "REVIEW-REAL-01.md",
+      "sha256": "585139a6e15cbbd69d60c7a3346bac74fa371eff1fee5dceb22f705cbbda5c63",
+      "bytes": 11026
+    },
+    {
+      "path": "acos-frontmatter-full.xml",
+      "sha256": "953d02f548bca4560bc27cd7816a1ba2052d22adeb48b59396d33c14fd4fb897",
+      "bytes": 35073
+    },
+    {
+      "path": "acos-frontmatter-red.xml",
+      "sha256": "152c7d3e65a54ed6c84f81f2b5a0178af0a6ac5887d60323d25a07ca48c8acab",
+      "bytes": 3097
+    },
+    {
+      "path": "approved-real-01.json",
+      "sha256": "2f63eab1a4595f99b86a4983759f7937cd94350c990b89fe2bbb707493310be1",
+      "bytes": 421
+    },
+    {
+      "path": "launch.json",
+      "sha256": "733f17550f927df97ce301285f755434826b80744b76ecfce93c601bb5a5cfc7",
+      "bytes": 590
+    },
+    {
+      "path": "package/RUNBOOK.md",
+      "sha256": "6b65991d0eac15ad6b316d7aa0c44b9d6093d534f0d0d10378ff07355b6f7c88",
+      "bytes": 599
+    },
+    {
+      "path": "package/config.json",
+      "sha256": "584bda2d8011061edd2ed71c94b0bbf65aa7b7f65b3cf09a05935f5021857bdf",
+      "bytes": 694
+    },
+    {
+      "path": "package/execution-manifest-01.json",
+      "sha256": "6ea839f67965ae100c51daedabb66376b4dfd7e082789ba72d2160bc4e0bedae",
+      "bytes": 3816
+    },
+    {
+      "path": "package/public/L01/case.md",
+      "sha256": "89f1c1a622a64a73dafb5b641d871d372e72a1076533a23378ec2446f11e1e14",
+      "bytes": 1728
+    },
+    {
+      "path": "package/public/L01/inputs/context.md",
+      "sha256": "3e3db7db6249d33479a7e01fdcaee3f8f8fec3f898f7c863e2d252398e613552",
+      "bytes": 776
+    },
+    {
+      "path": "package/public/L01/inputs/observations.csv",
+      "sha256": "29e4badcbbcbf9e242bde9f2d31b80d1f55091a52d094b658e6992a457ad0f19",
+      "bytes": 417
+    },
+    {
+      "path": "package/public/L01/inputs/pipeline.py",
+      "sha256": "fb122bed11f58973887818405e1b992b1589a72f8faf0ea13daf98ddb2f3da63",
+      "bytes": 204
+    },
+    {
+      "path": "package/public/L02/case.md",
+      "sha256": "71613379fe4387f19de862020de6bcdedec00623aeb452bbdff9491690b61d39",
+      "bytes": 1725
+    },
+    {
+      "path": "package/public/L02/inputs/context.md",
+      "sha256": "2d20272658305e9620515452c404e52d7b2015db0d0a30412287c4aa02a0c1b0",
+      "bytes": 1051
+    },
+    {
+      "path": "package/public/L02/inputs/observations.csv",
+      "sha256": "cbcae4e4f891739ea487feda3f7e1eac58cf9fbe3303b774b5563770f7127462",
+      "bytes": 593
+    },
+    {
+      "path": "package/public/L02/inputs/pipeline.py",
+      "sha256": "8fc757e4a3209efdedd3e1b8de6f0b77109557fb6335ac263cd3cea9b3788011",
+      "bytes": 391
+    },
+    {
+      "path": "package/public/L03/case.md",
+      "sha256": "db7f2572bc7e591a8d537735dade9cdbcc1da74a100ecb2dd245673b3540e951",
+      "bytes": 1711
+    },
+    {
+      "path": "package/public/L03/inputs/context.md",
+      "sha256": "ae79d0d67bdd4f71349d51644732c99ae1ce547ad618a6d663a30195042b1c7e",
+      "bytes": 644
+    },
+    {
+      "path": "package/public/L03/inputs/dictionary.json",
+      "sha256": "72636cf89cf406c70e90c0c1325ddcb7c89229a915199153c35c9f167c414fe3",
+      "bytes": 150
+    },
+    {
+      "path": "package/public/L03/inputs/observations.csv",
+      "sha256": "32ae7c42472e440093583da2798aba677eb2ceae58289e5d5dc77f3e46354532",
+      "bytes": 223
+    },
+    {
+      "path": "package/reviewer/L01/expected.md",
+      "sha256": "cb0aed9a6188f5d5928d59543d0b559a29371c749c77217e3ba12bfefe150501",
+      "bytes": 2886
+    },
+    {
+      "path": "package/reviewer/L02/expected.md",
+      "sha256": "5b058789afdeefccf34957f4a48d17a4b6db6ddbfef2ceb3bad5400ee27fcccf",
+      "bytes": 2905
+    },
+    {
+      "path": "package/reviewer/L03/expected.md",
+      "sha256": "331122d7573ab6f6178bc9bcb256bae99a7dd62754ee01e10b6a2eb14b7cfa72",
+      "bytes": 2738
+    },
+    {
+      "path": "package/skill/SKILL.md",
+      "sha256": "c2a2440477d9985489b71f4d8c50380ccd7985635d02eab330cfee0f7e5856c4",
+      "bytes": 5703
+    },
+    {
+      "path": "package/snapshots/scripts/ci/runtime_budget.py",
+      "sha256": "be80e0784f3751b5225b2aa51ee8c335c90c084d3e95061365f23cf714c2b0c7",
+      "bytes": 21090
+    },
+    {
+      "path": "package/snapshots/scripts/evaluations/foundry_input_facts.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "package/snapshots/scripts/evaluations/foundry_native_transport.py",
+      "sha256": "690dcafc3e604381a5d76655498f135df84ada3ba3a9c1ad5c6c6ed313e28b46",
+      "bytes": 22516
+    },
+    {
+      "path": "package/snapshots/scripts/evaluations/foundry_study.py",
+      "sha256": "94786bee32645fb9642ee8656eec466e68212a014dfc33e90e278b8d71df3d18",
+      "bytes": 5765
+    },
+    {
+      "path": "package/workflow.md",
+      "sha256": "0cc2f01287ed857dc98c005ec8f5143d3c155d671f4404c8d27f43dd0c60a35f",
+      "bytes": 2973
+    },
+    {
+      "path": "runs/real-01/L01-treatment/isolated-config/.claude.json",
+      "sha256": "b6a64268aacec023bf0218d1d443de8da222115740fffd0d2d1cc03036dfe932",
+      "bytes": 961
+    },
+    {
+      "path": "runs/real-01/L01-treatment/isolated-config/.last-cleanup",
+      "sha256": "28d1b316eef70af84f0e36352b35546e44fce2eff2ab1c0ef22e803f34d23585",
+      "bytes": 24
+    },
+    {
+      "path": "runs/real-01/L01-treatment/isolated-config/backups/.claude.json.backup.1791849535711",
+      "sha256": "b36e0135fbe0638f991c8b9b100f70060d4ddfba1dd2efb27dc4f6ab741cf0e0",
+      "bytes": 84
+    },
+    {
+      "path": "runs/real-01/L01-treatment/metadata.json",
+      "sha256": "3033a772a806200e5c2228b83b15ef9db08749475f71bd4d89ef478de1142744",
+      "bytes": 10347
+    },
+    {
+      "path": "runs/real-01/L01-treatment/prompt.txt",
+      "sha256": "619186897be5e47186ee888a8a7b62cf2852ca2b2d74756af8f298ab985ee768",
+      "bytes": 4838
+    },
+    {
+      "path": "runs/real-01/L01-treatment/report-contract.json",
+      "sha256": "496156ab49fc9a4a39463dd2c79d758f81dced804769ab9eb803fd97c302f6d2",
+      "bytes": 169
+    },
+    {
+      "path": "runs/real-01/L01-treatment/result.txt",
+      "sha256": "153a3a7226aa63494fe30b91de6932fd6452f932a3f8717f023ac37c3c16ec28",
+      "bytes": 493
+    },
+    {
+      "path": "runs/real-01/L01-treatment/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/real-01/L01-treatment/stdout.jsonl",
+      "sha256": "c4b754475af6ccdb49d63b5a3a4a596a5a914966409b879a056bfcafe2ceb92b",
+      "bytes": 58076
+    },
+    {
+      "path": "runs/real-01/L01-treatment/workspace/.runtime/check_inputs.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "runs/real-01/L01-treatment/workspace/.runtime/plugin/.claude-plugin/plugin.json",
+      "sha256": "5972aa4f54c7e8c2710fffadfee255003714f33148d63c788d7d6cebe42fbb08",
+      "bytes": 41
+    },
+    {
+      "path": "runs/real-01/L01-treatment/workspace/.runtime/plugin/skills/detect-leakage/SKILL.md",
+      "sha256": "c2a2440477d9985489b71f4d8c50380ccd7985635d02eab330cfee0f7e5856c4",
+      "bytes": 5703
+    },
+    {
+      "path": "runs/real-01/L01-treatment/workspace/.runtime/report-context.json",
+      "sha256": "3e6760875e5763433490875735edaacbb63da2e970c62530ac78da2c68850f52",
+      "bytes": 168
+    },
+    {
+      "path": "runs/real-01/L01-treatment/workspace/case.md",
+      "sha256": "89f1c1a622a64a73dafb5b641d871d372e72a1076533a23378ec2446f11e1e14",
+      "bytes": 1728
+    },
+    {
+      "path": "runs/real-01/L01-treatment/workspace/inputs/context.md",
+      "sha256": "3e3db7db6249d33479a7e01fdcaee3f8f8fec3f898f7c863e2d252398e613552",
+      "bytes": 776
+    },
+    {
+      "path": "runs/real-01/L01-treatment/workspace/inputs/observations.csv",
+      "sha256": "29e4badcbbcbf9e242bde9f2d31b80d1f55091a52d094b658e6992a457ad0f19",
+      "bytes": 417
+    },
+    {
+      "path": "runs/real-01/L01-treatment/workspace/inputs/pipeline.py",
+      "sha256": "fb122bed11f58973887818405e1b992b1589a72f8faf0ea13daf98ddb2f3da63",
+      "bytes": 204
+    },
+    {
+      "path": "runs/real-01/L01-treatment/workspace/reports/leakage/audit.md",
+      "sha256": "11282c03a9159b897f4bdce725882206b14b53cf51db67080284e981a84cc24d",
+      "bytes": 3212
+    },
+    {
+      "path": "runs/real-01/L01-treatment/workspace/workflow.md",
+      "sha256": "0cc2f01287ed857dc98c005ec8f5143d3c155d671f4404c8d27f43dd0c60a35f",
+      "bytes": 2973
+    },
+    {
+      "path": "runs/real-01/L02-treatment/isolated-config/.claude.json",
+      "sha256": "60a133909072cf5fa296169600fbd00039dc958e9c6677b02f5045366b2399f4",
+      "bytes": 961
+    },
+    {
+      "path": "runs/real-01/L02-treatment/isolated-config/.last-cleanup",
+      "sha256": "e4af30a8e451e1a239e81b7393b0453d528e296ce358b05ef30d5445b72b401c",
+      "bytes": 24
+    },
+    {
+      "path": "runs/real-01/L02-treatment/isolated-config/backups/.claude.json.backup.1791849555611",
+      "sha256": "f9fb0ccdb68037255808f1a1872274e57d3ef8c47522f4d919c72964e65eb9f8",
+      "bytes": 84
+    },
+    {
+      "path": "runs/real-01/L02-treatment/metadata.json",
+      "sha256": "bb20531391dfa559b695349f909380875267f6e491d4048dca6c6de00b40e175",
+      "bytes": 10870
+    },
+    {
+      "path": "runs/real-01/L02-treatment/prompt.txt",
+      "sha256": "5bb80235d5f2bcaa263cda9559c355083c8f1e716336e6afe333d3ee75644904",
+      "bytes": 4838
+    },
+    {
+      "path": "runs/real-01/L02-treatment/report-contract.json",
+      "sha256": "97c7dc58d9cb5bc43bbccec073ad0871904c4b4a34391483cd6933ed2def7b8d",
+      "bytes": 169
+    },
+    {
+      "path": "runs/real-01/L02-treatment/result.txt",
+      "sha256": "0ec69e94f6d622bd331d01aec8d9962c5ea3530262c845de0b6187fb0148c3e8",
+      "bytes": 415
+    },
+    {
+      "path": "runs/real-01/L02-treatment/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/real-01/L02-treatment/stdout.jsonl",
+      "sha256": "193154b4440e3a2fcd4055c5d1cbc0df8b9b36edee3014c145ff5389f14a61ba",
+      "bytes": 73437
+    },
+    {
+      "path": "runs/real-01/L02-treatment/workspace/.runtime/check_inputs.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "runs/real-01/L02-treatment/workspace/.runtime/plugin/.claude-plugin/plugin.json",
+      "sha256": "5972aa4f54c7e8c2710fffadfee255003714f33148d63c788d7d6cebe42fbb08",
+      "bytes": 41
+    },
+    {
+      "path": "runs/real-01/L02-treatment/workspace/.runtime/plugin/skills/detect-leakage/SKILL.md",
+      "sha256": "c2a2440477d9985489b71f4d8c50380ccd7985635d02eab330cfee0f7e5856c4",
+      "bytes": 5703
+    },
+    {
+      "path": "runs/real-01/L02-treatment/workspace/.runtime/report-context.json",
+      "sha256": "3e6760875e5763433490875735edaacbb63da2e970c62530ac78da2c68850f52",
+      "bytes": 168
+    },
+    {
+      "path": "runs/real-01/L02-treatment/workspace/case.md",
+      "sha256": "71613379fe4387f19de862020de6bcdedec00623aeb452bbdff9491690b61d39",
+      "bytes": 1725
+    },
+    {
+      "path": "runs/real-01/L02-treatment/workspace/inputs/context.md",
+      "sha256": "2d20272658305e9620515452c404e52d7b2015db0d0a30412287c4aa02a0c1b0",
+      "bytes": 1051
+    },
+    {
+      "path": "runs/real-01/L02-treatment/workspace/inputs/observations.csv",
+      "sha256": "cbcae4e4f891739ea487feda3f7e1eac58cf9fbe3303b774b5563770f7127462",
+      "bytes": 593
+    },
+    {
+      "path": "runs/real-01/L02-treatment/workspace/inputs/pipeline.py",
+      "sha256": "8fc757e4a3209efdedd3e1b8de6f0b77109557fb6335ac263cd3cea9b3788011",
+      "bytes": 391
+    },
+    {
+      "path": "runs/real-01/L02-treatment/workspace/reports/leakage/audit.md",
+      "sha256": "a34e9b44dd3146e81076d0b7b0b5760072d49d6e8b499ed2ab4270f65d9a8763",
+      "bytes": 3742
+    },
+    {
+      "path": "runs/real-01/L02-treatment/workspace/workflow.md",
+      "sha256": "0cc2f01287ed857dc98c005ec8f5143d3c155d671f4404c8d27f43dd0c60a35f",
+      "bytes": 2973
+    },
+    {
+      "path": "runs/real-01/L03-treatment/isolated-config/.claude.json",
+      "sha256": "d585daf30d6e64463db6d47add40a1b083a99b17750d81844919497b415b76e4",
+      "bytes": 961
+    },
+    {
+      "path": "runs/real-01/L03-treatment/isolated-config/.last-cleanup",
+      "sha256": "fe18441d7fa56668b50529fb692d8151e330e38b7122d33234c140c62a0eaa9c",
+      "bytes": 24
+    },
+    {
+      "path": "runs/real-01/L03-treatment/isolated-config/backups/.claude.json.backup.1791849590431",
+      "sha256": "b1499b8061e447e5851cd0768fc8fb15f7cb2e72ae3d79312bee9f7590d22f0f",
+      "bytes": 84
+    },
+    {
+      "path": "runs/real-01/L03-treatment/metadata.json",
+      "sha256": "be672566ab6bdacfbad3839e35639e918cfb16c9a72f94187e4404cca788ac5b",
+      "bytes": 10623
+    },
+    {
+      "path": "runs/real-01/L03-treatment/prompt.txt",
+      "sha256": "c1d6ce6e134a02228176177f2d1f48807f616354d94f243364c3e2a5fb4fb10c",
+      "bytes": 4842
+    },
+    {
+      "path": "runs/real-01/L03-treatment/report-contract.json",
+      "sha256": "ab32788641d50d564b9bdb42d323f178f341c2f69a95bede0ca77156f16c3a9a",
+      "bytes": 169
+    },
+    {
+      "path": "runs/real-01/L03-treatment/result.txt",
+      "sha256": "8d9191d79fc58ae60a5af225844e3cc8e6bcd05ffa88c2122e91db9ad13d9fac",
+      "bytes": 624
+    },
+    {
+      "path": "runs/real-01/L03-treatment/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "runs/real-01/L03-treatment/stdout.jsonl",
+      "sha256": "90dac59a47380f89446294b1d1a3a18a22d6c70b2d1107c21bba551a2c6e1946",
+      "bytes": 58651
+    },
+    {
+      "path": "runs/real-01/L03-treatment/workspace/.runtime/check_inputs.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "runs/real-01/L03-treatment/workspace/.runtime/plugin/.claude-plugin/plugin.json",
+      "sha256": "5972aa4f54c7e8c2710fffadfee255003714f33148d63c788d7d6cebe42fbb08",
+      "bytes": 41
+    },
+    {
+      "path": "runs/real-01/L03-treatment/workspace/.runtime/plugin/skills/detect-leakage/SKILL.md",
+      "sha256": "c2a2440477d9985489b71f4d8c50380ccd7985635d02eab330cfee0f7e5856c4",
+      "bytes": 5703
+    },
+    {
+      "path": "runs/real-01/L03-treatment/workspace/.runtime/report-context.json",
+      "sha256": "3e6760875e5763433490875735edaacbb63da2e970c62530ac78da2c68850f52",
+      "bytes": 168
+    },
+    {
+      "path": "runs/real-01/L03-treatment/workspace/case.md",
+      "sha256": "db7f2572bc7e591a8d537735dade9cdbcc1da74a100ecb2dd245673b3540e951",
+      "bytes": 1711
+    },
+    {
+      "path": "runs/real-01/L03-treatment/workspace/inputs/context.md",
+      "sha256": "ae79d0d67bdd4f71349d51644732c99ae1ce547ad618a6d663a30195042b1c7e",
+      "bytes": 644
+    },
+    {
+      "path": "runs/real-01/L03-treatment/workspace/inputs/dictionary.json",
+      "sha256": "72636cf89cf406c70e90c0c1325ddcb7c89229a915199153c35c9f167c414fe3",
+      "bytes": 150
+    },
+    {
+      "path": "runs/real-01/L03-treatment/workspace/inputs/observations.csv",
+      "sha256": "32ae7c42472e440093583da2798aba677eb2ceae58289e5d5dc77f3e46354532",
+      "bytes": 223
+    },
+    {
+      "path": "runs/real-01/L03-treatment/workspace/reports/leakage/audit.md",
+      "sha256": "7bb542521ee3c834d9bda2473cfab3515129dc0649a59da0f95d4b714123f4ed",
+      "bytes": 3452
+    },
+    {
+      "path": "runs/real-01/L03-treatment/workspace/workflow.md",
+      "sha256": "0cc2f01287ed857dc98c005ec8f5143d3c155d671f4404c8d27f43dd0c60a35f",
+      "bytes": 2973
+    },
+    {
+      "path": "runs/real-01/ledger.json",
+      "sha256": "71340764c8c7fcb48fb6090b4bade104be0f622b096672c079b5e87bfb307600",
+      "bytes": 8873
+    },
+    {
+      "path": "runs/real-01/summary.json",
+      "sha256": "5362191aae5f4ed91368444caa2a0f4c775637f23b44ea7180871f5af88d56a8",
+      "bytes": 486
+    },
+    {
+      "path": "tests-snapshot/test_foundry_native_transport.py",
+      "sha256": "be05556cd1c42af1b8903ead0404ffc274389906927cfa510c17cc9ea57eee83",
+      "bytes": 23799
+    }
+  ]
+}

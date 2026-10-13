@@ -1,0 +1,6 @@
+{
+  "returncode": 0,
+  "stdout": "{\"mode\": \"TEXT_ONLY_NOT_NATIVE\", \"runs\": [{\"rep\": 1, \"arm\": \"0.2.0\", \"transport_success\": true}, {\"rep\": 1, \"arm\": \"0.2.1\", \"transport_success\": true}, {\"rep\": 2, \"arm\": \"0.2.1\", \"transport_success\": true}, {\"rep\": 2, \"arm\": \"0.2.0\", \"transport_success\": true}, {\"rep\": 3, \"arm\": \"0.2.0\", \"transport_success\": true}, {\"rep\": 3, \"arm\": \"0.2.1\", \"transport_success\": true}, {\"rep\": 4, \"arm\": \"0.2.1\", \"transport_success\": true}, {\"rep\": 4, \"arm\": \"0.2.0\", \"transport_success\": true}, {\"rep\": 5, \"arm\": \"0.2.0\", \"transport_success\": true}, {\"rep\": 5, \"arm\": \"0.2.1\", \"transport_success\": true}], \"status\": \"COMPLETED_PENDING_CONTENT_REVIEW\"}\n",
+  "stderr": "",
+  "manifest": "fd4369e44c286fa7da66cd5b7730c8b8a5d3dcf44abfbf297ff63738d6c3d110"
+}

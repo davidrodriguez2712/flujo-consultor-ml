@@ -1,0 +1,26 @@
+{
+  "intake/request.json": {
+    "authorized": "Preparar propuesta de evaluación con documentos de muestra y preguntas sintéticas",
+    "business_owner_role": "Responsable de soporte",
+    "reviewer_name": null,
+    "not_authorized": [
+      "Leer tickets privados",
+      "Enviar contenido a proveedores de modelos",
+      "Aceptar piloto"
+    ]
+  },
+  "sources/public-demo.md": "Documento de muestra sintético y autorizado. Para restablecer acceso al portal, seguir el enlace de recuperación y verificar el correo. Si la organización usa SSO, contactar a su administrador. No contiene credenciales ni políticas de clientes reales.",
+  "constraints/access.json": {
+    "public_demo_document": "Autorizado en este expediente",
+    "private_tickets": "PENDING_APPROVAL",
+    "provider_api_calls": "NOT_AUTHORIZED",
+    "evaluation_thresholds": "PENDING",
+    "pii": "No usar datos personales de tickets reales"
+  },
+  "solution/status.json": {
+    "rag_runtime": "No disponible en este expediente",
+    "retrieval_config": "No proporcionada",
+    "model_version": "No proporcionada",
+    "existing_eval_results": null
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "status": {
+    "exit_code": 0
+  },
+  "next": {
+    "exit_code": 0
+  },
+  "validate-delivery": {
+    "exit_code": 0
+  },
+  "validate": {
+    "exit_code": 3
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "status": "STOPPED_CONTRACT_FAILURE",
+  "runs": [
+    {
+      "case": "L01",
+      "condition": "treatment",
+      "runtime_success": true,
+      "contract_success": true
+    },
+    {
+      "case": "L02",
+      "condition": "treatment",
+      "runtime_success": true,
+      "contract_success": false
+    }
+  ],
+  "effectiveness": "NOT_REVIEWED"
+}

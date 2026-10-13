@@ -1,0 +1,14 @@
+{
+  "framing": "PASS",
+  "diagnosis": "NEEDS_REVIEW",
+  "data-quality": "NEEDS_REVIEW",
+  "historical_hashes_verified": {
+    "reports/discovery/evidence-manifest-02.json": 44,
+    "reports/framing/evidence-manifest.json": 18
+  },
+  "source_tests_passed": 9,
+  "temporal_proposal_checks": "PASS: full horizons, >=90d development separation, mature train calendar",
+  "holdout_outcomes_inspected": false,
+  "features_labels_models_created": false,
+  "api_cost_usd": 0
+}

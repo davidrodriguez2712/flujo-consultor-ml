@@ -1,0 +1,482 @@
+{
+  "created_at_utc": "2026-10-09T12:37:47.536352+00:00",
+  "api_cost_usd": 0,
+  "elapsed_seconds": 0.48139766603708267,
+  "seed": 20261009,
+  "models": [
+    {
+      "id": "ridge_log",
+      "alpha": 1,
+      "preprocessing": "StandardScaler ajustado solo en train",
+      "target": "log1p",
+      "inverse": "max(0,expm1(prediction))"
+    },
+    {
+      "id": "hist_gradient_log",
+      "learning_rate": 0.1,
+      "max_iter": 100,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 20,
+      "early_stopping": false,
+      "random_state": 20261009,
+      "target": "log1p",
+      "inverse": "max(0,expm1(prediction))"
+    }
+  ],
+  "baseline": "historical_sales",
+  "rfm_role": "Comparador ordinal informativo; sin selecci\u00f3n.",
+  "runs": [
+    {
+      "cutoff": "2010-09-01T00:00:00",
+      "model_id": "historical_sales",
+      "train_rows": 2652,
+      "score_rows": 2822,
+      "seconds": 0.0011056666262447834,
+      "feature_columns": [
+        "recency_days",
+        "orders_90d",
+        "orders_180d",
+        "sales_90d",
+        "sales_180d",
+        "units_180d",
+        "distinct_products_180d",
+        "tenure_observed_days"
+      ],
+      "max_train_label_end": "2010-08-30T00:00:00"
+    },
+    {
+      "cutoff": "2010-09-01T00:00:00",
+      "model_id": "rfm",
+      "train_rows": 2652,
+      "score_rows": 2822,
+      "seconds": 0.0013336250558495522,
+      "feature_columns": [
+        "recency_days",
+        "orders_90d",
+        "orders_180d",
+        "sales_90d",
+        "sales_180d",
+        "units_180d",
+        "distinct_products_180d",
+        "tenure_observed_days"
+      ],
+      "max_train_label_end": "2010-08-30T00:00:00"
+    },
+    {
+      "cutoff": "2010-09-01T00:00:00",
+      "model_id": "ridge_log",
+      "train_rows": 2652,
+      "score_rows": 2822,
+      "seconds": 0.003597833216190338,
+      "feature_columns": [
+        "recency_days",
+        "orders_90d",
+        "orders_180d",
+        "sales_90d",
+        "sales_180d",
+        "units_180d",
+        "distinct_products_180d",
+        "tenure_observed_days"
+      ],
+      "max_train_label_end": "2010-08-30T00:00:00"
+    },
+    {
+      "cutoff": "2010-09-01T00:00:00",
+      "model_id": "hist_gradient_log",
+      "train_rows": 2652,
+      "score_rows": 2822,
+      "seconds": 0.03904962493106723,
+      "feature_columns": [
+        "recency_days",
+        "orders_90d",
+        "orders_180d",
+        "sales_90d",
+        "sales_180d",
+        "units_180d",
+        "distinct_products_180d",
+        "tenure_observed_days"
+      ],
+      "max_train_label_end": "2010-08-30T00:00:00"
+    },
+    {
+      "cutoff": "2010-12-01T00:00:00",
+      "model_id": "historical_sales",
+      "train_rows": 11024,
+      "score_rows": 3465,
+      "seconds": 0.0009477501735091209,
+      "feature_columns": [
+        "recency_days",
+        "orders_90d",
+        "orders_180d",
+        "sales_90d",
+        "sales_180d",
+        "units_180d",
+        "distinct_products_180d",
+        "tenure_observed_days"
+      ],
+      "max_train_label_end": "2010-11-30T00:00:00"
+    },
+    {
+      "cutoff": "2010-12-01T00:00:00",
+      "model_id": "rfm",
+      "train_rows": 11024,
+      "score_rows": 3465,
+      "seconds": 0.0013690418563783169,
+      "feature_columns": [
+        "recency_days",
+        "orders_90d",
+        "orders_180d",
+        "sales_90d",
+        "sales_180d",
+        "units_180d",
+        "distinct_products_180d",
+        "tenure_observed_days"
+      ],
+      "max_train_label_end": "2010-11-30T00:00:00"
+    },
+    {
+      "cutoff": "2010-12-01T00:00:00",
+      "model_id": "ridge_log",
+      "train_rows": 11024,
+      "score_rows": 3465,
+      "seconds": 0.002043291926383972,
+      "feature_columns": [
+        "recency_days",
+        "orders_90d",
+        "orders_180d",
+        "sales_90d",
+        "sales_180d",
+        "units_180d",
+        "distinct_products_180d",
+        "tenure_observed_days"
+      ],
+      "max_train_label_end": "2010-11-30T00:00:00"
+    },
+    {
+      "cutoff": "2010-12-01T00:00:00",
+      "model_id": "hist_gradient_log",
+      "train_rows": 11024,
+      "score_rows": 3465,
+      "seconds": 0.05750462505966425,
+      "feature_columns": [
+        "recency_days",
+        "orders_90d",
+        "orders_180d",
+        "sales_90d",
+        "sales_180d",
+        "units_180d",
+        "distinct_products_180d",
+        "tenure_observed_days"
+      ],
+      "max_train_label_end": "2010-11-30T00:00:00"
+    },
+    {
+      "cutoff": "2011-03-01T00:00:00",
+      "model_id": "historical_sales",
+      "train_rows": 20584,
+      "score_rows": 3338,
+      "seconds": 0.0010992921888828278,
+      "feature_columns": [
+        "recency_days",
+        "orders_90d",
+        "orders_180d",
+        "sales_90d",
+        "sales_180d",
+        "units_180d",
+        "distinct_products_180d",
+        "tenure_observed_days"
+      ],
+      "max_train_label_end": "2011-03-01T00:00:00"
+    },
+    {
+      "cutoff": "2011-03-01T00:00:00",
+      "model_id": "rfm",
+      "train_rows": 20584,
+      "score_rows": 3338,
+      "seconds": 0.0014798329211771488,
+      "feature_columns": [
+        "recency_days",
+        "orders_90d",
+        "orders_180d",
+        "sales_90d",
+        "sales_180d",
+        "units_180d",
+        "distinct_products_180d",
+        "tenure_observed_days"
+      ],
+      "max_train_label_end": "2011-03-01T00:00:00"
+    },
+    {
+      "cutoff": "2011-03-01T00:00:00",
+      "model_id": "ridge_log",
+      "train_rows": 20584,
+      "score_rows": 3338,
+      "seconds": 0.0025369576178491116,
+      "feature_columns": [
+        "recency_days",
+        "orders_90d",
+        "orders_180d",
+        "sales_90d",
+        "sales_180d",
+        "units_180d",
+        "distinct_products_180d",
+        "tenure_observed_days"
+      ],
+      "max_train_label_end": "2011-03-01T00:00:00"
+    },
+    {
+      "cutoff": "2011-03-01T00:00:00",
+      "model_id": "hist_gradient_log",
+      "train_rows": 20584,
+      "score_rows": 3338,
+      "seconds": 0.08287166710942984,
+      "feature_columns": [
+        "recency_days",
+        "orders_90d",
+        "orders_180d",
+        "sales_90d",
+        "sales_180d",
+        "units_180d",
+        "distinct_products_180d",
+        "tenure_observed_days"
+      ],
+      "max_train_label_end": "2011-03-01T00:00:00"
+    },
+    {
+      "cutoff": "2011-06-01T00:00:00",
+      "model_id": "historical_sales",
+      "train_rows": 30673,
+      "score_rows": 2658,
+      "seconds": 0.0010228338651359081,
+      "feature_columns": [
+        "recency_days",
+        "orders_90d",
+        "orders_180d",
+        "sales_90d",
+        "sales_180d",
+        "units_180d",
+        "distinct_products_180d",
+        "tenure_observed_days"
+      ],
+      "max_train_label_end": "2011-05-30T00:00:00"
+    },
+    {
+      "cutoff": "2011-06-01T00:00:00",
+      "model_id": "rfm",
+      "train_rows": 30673,
+      "score_rows": 2658,
+      "seconds": 0.0014085001312196255,
+      "feature_columns": [
+        "recency_days",
+        "orders_90d",
+        "orders_180d",
+        "sales_90d",
+        "sales_180d",
+        "units_180d",
+        "distinct_products_180d",
+        "tenure_observed_days"
+      ],
+      "max_train_label_end": "2011-05-30T00:00:00"
+    },
+    {
+      "cutoff": "2011-06-01T00:00:00",
+      "model_id": "ridge_log",
+      "train_rows": 30673,
+      "score_rows": 2658,
+      "seconds": 0.0029641250148415565,
+      "feature_columns": [
+        "recency_days",
+        "orders_90d",
+        "orders_180d",
+        "sales_90d",
+        "sales_180d",
+        "units_180d",
+        "distinct_products_180d",
+        "tenure_observed_days"
+      ],
+      "max_train_label_end": "2011-05-30T00:00:00"
+    },
+    {
+      "cutoff": "2011-06-01T00:00:00",
+      "model_id": "hist_gradient_log",
+      "train_rows": 30673,
+      "score_rows": 2658,
+      "seconds": 0.10758083313703537,
+      "feature_columns": [
+        "recency_days",
+        "orders_90d",
+        "orders_180d",
+        "sales_90d",
+        "sales_180d",
+        "units_180d",
+        "distinct_products_180d",
+        "tenure_observed_days"
+      ],
+      "max_train_label_end": "2011-05-30T00:00:00"
+    }
+  ],
+  "metrics": [
+    {
+      "cutoff": "2010-09-01T00:00:00",
+      "model_id": "historical_sales",
+      "effective_k": 100,
+      "eligible_count": 2822,
+      "top_k_sales": 823041.6099999999,
+      "sales_share": 0.3648550876837657,
+      "mae": 592.154610205528,
+      "mae_note": null
+    },
+    {
+      "cutoff": "2010-09-01T00:00:00",
+      "model_id": "rfm",
+      "effective_k": 100,
+      "eligible_count": 2822,
+      "top_k_sales": 711945.8500000001,
+      "sales_share": 0.31560623712310626,
+      "mae": null,
+      "mae_note": "RFM score es ordinal; MAE monetario no aplicable."
+    },
+    {
+      "cutoff": "2010-09-01T00:00:00",
+      "model_id": "ridge_log",
+      "effective_k": 100,
+      "eligible_count": 2822,
+      "top_k_sales": 710108.14,
+      "sales_share": 0.31479157862341345,
+      "mae": 1500282600.084519,
+      "mae_note": null
+    },
+    {
+      "cutoff": "2010-09-01T00:00:00",
+      "model_id": "hist_gradient_log",
+      "effective_k": 100,
+      "eligible_count": 2822,
+      "top_k_sales": 772491.1099999999,
+      "sales_share": 0.3424460054625664,
+      "mae": 657.749036179894,
+      "mae_note": null
+    },
+    {
+      "cutoff": "2010-12-01T00:00:00",
+      "model_id": "historical_sales",
+      "effective_k": 100,
+      "eligible_count": 3465,
+      "top_k_sales": 541630.9600000001,
+      "sales_share": 0.3872669362417668,
+      "mae": 619.049746031746,
+      "mae_note": null
+    },
+    {
+      "cutoff": "2010-12-01T00:00:00",
+      "model_id": "rfm",
+      "effective_k": 100,
+      "eligible_count": 3465,
+      "top_k_sales": 408810.17,
+      "sales_share": 0.29229987525154727,
+      "mae": null,
+      "mae_note": "RFM score es ordinal; MAE monetario no aplicable."
+    },
+    {
+      "cutoff": "2010-12-01T00:00:00",
+      "model_id": "ridge_log",
+      "effective_k": 100,
+      "eligible_count": 3465,
+      "top_k_sales": 451904.61,
+      "sales_share": 0.3231124634903264,
+      "mae": 851037859.6481532,
+      "mae_note": null
+    },
+    {
+      "cutoff": "2010-12-01T00:00:00",
+      "model_id": "hist_gradient_log",
+      "effective_k": 100,
+      "eligible_count": 3465,
+      "top_k_sales": 515001.30999999994,
+      "sales_share": 0.3682266971670089,
+      "mae": 427.7594982865562,
+      "mae_note": null
+    },
+    {
+      "cutoff": "2011-03-01T00:00:00",
+      "model_id": "historical_sales",
+      "effective_k": 100,
+      "eligible_count": 3338,
+      "top_k_sales": 547015.89,
+      "sales_share": 0.39265015153450944,
+      "mae": 363.3311533852606,
+      "mae_note": null
+    },
+    {
+      "cutoff": "2011-03-01T00:00:00",
+      "model_id": "rfm",
+      "effective_k": 100,
+      "eligible_count": 3338,
+      "top_k_sales": 458997.44000000006,
+      "sales_share": 0.32947016286848985,
+      "mae": null,
+      "mae_note": "RFM score es ordinal; MAE monetario no aplicable."
+    },
+    {
+      "cutoff": "2011-03-01T00:00:00",
+      "model_id": "ridge_log",
+      "effective_k": 100,
+      "eligible_count": 3338,
+      "top_k_sales": 426086.82,
+      "sales_share": 0.3058467907392183,
+      "mae": 24387999.056713656,
+      "mae_note": null
+    },
+    {
+      "cutoff": "2011-03-01T00:00:00",
+      "model_id": "hist_gradient_log",
+      "effective_k": 100,
+      "eligible_count": 3338,
+      "top_k_sales": 530462.6200000001,
+      "sales_share": 0.3807681493976216,
+      "mae": 332.29838534311625,
+      "mae_note": null
+    },
+    {
+      "cutoff": "2011-06-01T00:00:00",
+      "model_id": "historical_sales",
+      "effective_k": 100,
+      "eligible_count": 2658,
+      "top_k_sales": 695115.0900000001,
+      "sales_share": 0.4539355771582958,
+      "mae": 458.39155003762227,
+      "mae_note": null
+    },
+    {
+      "cutoff": "2011-06-01T00:00:00",
+      "model_id": "rfm",
+      "effective_k": 100,
+      "eligible_count": 2658,
+      "top_k_sales": 581023.2500000001,
+      "sales_share": 0.3794294328024713,
+      "mae": null,
+      "mae_note": "RFM score es ordinal; MAE monetario no aplicable."
+    },
+    {
+      "cutoff": "2011-06-01T00:00:00",
+      "model_id": "ridge_log",
+      "effective_k": 100,
+      "eligible_count": 2658,
+      "top_k_sales": 629414.72,
+      "sales_share": 0.4110308325994291,
+      "mae": 105818.64265978686,
+      "mae_note": null
+    },
+    {
+      "cutoff": "2011-06-01T00:00:00",
+      "model_id": "hist_gradient_log",
+      "effective_k": 100,
+      "eligible_count": 2658,
+      "top_k_sales": 669148.9199999999,
+      "sales_share": 0.43697871845229286,
+      "mae": 446.5676292127072,
+      "mae_note": null
+    }
+  ],
+  "holdout_outcomes_inspected": false,
+  "selection_status": "Pendiente decisi\u00f3n development congelada en Validation; no holdout ejecutado."
+}

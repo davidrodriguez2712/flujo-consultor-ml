@@ -1,0 +1,17 @@
+Smoke técnico sin engagement. No uses herramientas, archivos ni rutas. Devuelve exactamente la siguiente estructura Markdown: la primera línea de toda la respuesta debe ser ## Estado; READY debe ir debajo de ese encabezado, nunca antes. Sin prefacio, fences, encabezados adicionales ni texto posterior. Esto es un ejemplo técnico literal; no demuestra eficacia ni aprueba gates.
+
+## Estado
+READY
+Prueba técnica de transporte; no demuestra eficacia.
+
+## Hallazgos
+Prueba técnica sin artifacts; evaluación de negocio pendiente.
+
+## Acciones propuestas
+Ninguna acción de negocio.
+
+## Siguiente paso
+Confirmar recepción técnica; evaluación de negocio pendiente.
+
+## Límites
+No se usan herramientas ni se aprueban gates; no demuestra eficacia.

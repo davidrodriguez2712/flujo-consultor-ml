@@ -1,0 +1,16 @@
+{
+  "arms": [
+    "none",
+    "0.1.0",
+    "0.2.0"
+  ],
+  "reps": 5,
+  "model": "claude-haiku-5-5",
+  "cap": 4096,
+  "max_requests": 15,
+  "budget_ceiling_study": 0.1,
+  "budget_remaining": 0.02943475,
+  "mode": "Text-only micro-test, no native skill or filesystem execution by model",
+  "hypothesis": "0.2 conserva campos caller y salida breve sin reinterpretar el contrato",
+  "api_authorized": "Usuario autorizó rondas necesarias dentro de techo original; no más0.10 acumulados"
+}

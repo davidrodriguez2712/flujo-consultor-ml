@@ -1,0 +1,26 @@
+{
+  "intake/request.json": {
+    "authorized": "Redactar propuesta de revisión exploratoria",
+    "sensor_owner_role": "Equipo de mantenimiento",
+    "reviewer_name": null,
+    "approved_thresholds": null,
+    "not_authorized": [
+      "Parar equipos",
+      "Etiquetar fallos confirmados",
+      "Entrenar modelo supervisado"
+    ]
+  },
+  "data/readings.csv": "sensor_id,timestamp,temperature_c\nS-A,2025-09-15T08:00:00Z,41\nS-A,2025-09-15T08:05:00Z,58\nS-B,2025-09-15T08:00:00Z,44\n",
+  "data/dictionary.json": {
+    "temperature_c": "Lectura del sensor, Celsius",
+    "labels_available": false,
+    "normal_ranges": "No proporcionados",
+    "sensor_calibration": "No proporcionada",
+    "historical_baseline": "No proporcionado"
+  },
+  "decisions/review-context.json": {
+    "triage_priority": "Criterio pendiente, se permiten propuestas exploratorias para revisión",
+    "fault_labels": "No existen labels confirmados",
+    "field_actions": "Fuera del mandato"
+  }
+}

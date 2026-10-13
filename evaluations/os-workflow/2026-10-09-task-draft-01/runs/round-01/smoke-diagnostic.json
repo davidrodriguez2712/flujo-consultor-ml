@@ -1,0 +1,14 @@
+{
+  "status": "CONFIRMED_FORMAT_FAILURE",
+  "runtime_success": true,
+  "provider_stop_reason": "end_turn",
+  "expected": "El texto comienza por ## Estado y READY es la primera línea no vacía de su cuerpo.",
+  "observed": "READY y la explicación aparecen antes del primer H2; el cuerpo de Estado no contiene un status válido.",
+  "raw_changed": false,
+  "checker_changed": false,
+  "fixture_contract_consistent": true,
+  "cause_limit": "Se observó incumplimiento de instrucciones de orden/ubicación. Una llamada no identifica causa general ni demuestra que otra redacción lo resuelva.",
+  "paid_retries": 0,
+  "benchmark_cases_exposed_to_runtime": 0,
+  "proposed_follow_up": "Revisar un smoke con plantilla literal y una nueva configuración antes de autorizar otra ronda."
+}

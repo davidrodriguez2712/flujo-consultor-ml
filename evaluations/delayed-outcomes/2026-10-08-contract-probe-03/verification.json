@@ -1,0 +1,11 @@
+{
+  "runner_checker_tests": 23,
+  "full_tests": 138,
+  "commands": [
+    ".venv/bin/pytest tests/test_temporal_runner.py evaluations/delayed-outcomes/2026-10-07-contract-probe-02/checker/test_checker.py -q",
+    ".venv/bin/pytest tests pilots/churn-retencion-sintetico/analysis/test_baseline.py pilots/churn-retencion-sintetico/analysis/test_holdout.py evaluations/delayed-outcomes/2026-10-07-contract-probe-02/checker/test_checker.py evaluations/delayed-outcomes/2026-10-07-contract-probe-02/runner/test_runner.py -q"
+  ],
+  "execution_status": "complete",
+  "semantic_review": "author_only",
+  "human_conclusion_review": "pending"
+}

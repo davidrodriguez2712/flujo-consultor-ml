@@ -1,0 +1,42 @@
+{
+  "generator_version": "0.1.0",
+  "seed": 20261008,
+  "synthetic": true,
+  "extract_at": "2026-01-15",
+  "files": {
+    "applications.csv": {
+      "rows": 7200,
+      "sha256": "512ed2cc0797ffec199cfa9bd3aad48ea1a5954a1be81bad60ff645b28f052f6",
+      "bytes": 341328
+    },
+    "history.csv": {
+      "rows": 7200,
+      "sha256": "2a2da6b8dea82df9a4f2b8e066a0439219935f337e2af45970529a6359970ca5",
+      "bytes": 280870
+    },
+    "decisions.csv": {
+      "rows": 7200,
+      "sha256": "1bac356ab25a8c3a6bcb9a76c8c6230ff9cf48e7085be0be2148d3ae0066ff29",
+      "bytes": 273747
+    },
+    "outcomes.csv": {
+      "rows": 7200,
+      "sha256": "3cdfdd1ce17e854a40d83dced1f331eee56aca95e7750ec782d2edc747d586f7",
+      "bytes": 393052
+    },
+    "post_decision.csv": {
+      "rows": 7200,
+      "sha256": "21662662dda0bdcf67f5a0c28060db8acb245d2070dce07913d929038e3812a5",
+      "bytes": 115337
+    }
+  },
+  "applications": 7200,
+  "unique_customers": 1766,
+  "label_counts": {
+    "not_observed_rejected": 3726,
+    "observed": 3084,
+    "pending": 390
+  },
+  "observed_positives": 380,
+  "generator_sha256": "63db985307b2c1a9e110599927154471a8a1ff1642438047134bd1a35695442c"
+}

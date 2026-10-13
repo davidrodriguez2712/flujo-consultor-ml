@@ -1,0 +1,47 @@
+{
+  "entries": [
+    {
+      "reserved_usd": 0.008092625,
+      "committed_usd": 1.8e-05,
+      "estimated_usd": 1.8e-05,
+      "usage": {
+        "input_tokens": 30,
+        "output_tokens": 30
+      },
+      "input_token_bound": 31973,
+      "http_status": 200,
+      "provider_stop_reason": "tool_use",
+      "tool_names": [
+        "Skill"
+      ]
+    },
+    {
+      "reserved_usd": 0.00884375,
+      "committed_usd": 1.8e-05,
+      "estimated_usd": 1.8e-05,
+      "usage": {
+        "input_tokens": 30,
+        "output_tokens": 30
+      },
+      "input_token_bound": 37982,
+      "http_status": 200,
+      "provider_stop_reason": "tool_use",
+      "tool_names": [
+        "Bash"
+      ]
+    }
+  ],
+  "rejections": [
+    {
+      "reason": "l\u00edmite de presupuesto",
+      "request_bytes": 22629,
+      "quote_usd": 0.008994625,
+      "tool_types": [
+        null,
+        null,
+        null,
+        null
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "model": "claude-haiku-5-5",
+  "cli_version": "2.1.296 (Claude Code)",
+  "budget_ceiling_usd": 0.1,
+  "max_requests": 56,
+  "per_invocation": 8,
+  "output_cap": 4096,
+  "report_word_limit": 500,
+  "schedule": [
+    [
+      "L01",
+      "treatment"
+    ],
+    [
+      "L02",
+      "treatment"
+    ],
+    [
+      "L03",
+      "treatment"
+    ]
+  ],
+  "actual_max_requests": 24,
+  "mode": "Native regression on previous cases, no fresh paired efficacy comparison with earlier cohort",
+  "prior_total_usd": 0.08269175,
+  "proposed_budget_usd": 0.01730825,
+  "skill_version": "0.2.0",
+  "automatic_retries": 0
+}

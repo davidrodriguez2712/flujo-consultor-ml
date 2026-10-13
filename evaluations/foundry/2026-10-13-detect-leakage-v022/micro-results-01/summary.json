@@ -1,0 +1,46 @@
+{
+  "mode": "TEXT_ONLY_NOT_NATIVE",
+  "runs": [
+    {
+      "rep": 1,
+      "arm": "0.2.0",
+      "transport_success": true
+    },
+    {
+      "rep": 1,
+      "arm": "0.2.2",
+      "transport_success": true
+    },
+    {
+      "rep": 2,
+      "arm": "0.2.2",
+      "transport_success": true
+    },
+    {
+      "rep": 2,
+      "arm": "0.2.0",
+      "transport_success": true
+    },
+    {
+      "rep": 3,
+      "arm": "0.2.0",
+      "transport_success": true
+    },
+    {
+      "rep": 3,
+      "arm": "0.2.2",
+      "transport_success": true
+    },
+    {
+      "rep": 4,
+      "arm": "0.2.2",
+      "transport_success": true
+    },
+    {
+      "rep": 4,
+      "arm": "0.2.0",
+      "transport_success": false
+    }
+  ],
+  "status": "STOPPED_TRANSPORT_OR_BUDGET"
+}

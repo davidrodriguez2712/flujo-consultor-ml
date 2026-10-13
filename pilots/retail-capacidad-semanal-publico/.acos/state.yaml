@@ -1,0 +1,100 @@
+schema_version: 1
+current_stage: handoff
+status: COMPLETED
+objective: Ensayo técnico aceptado y cerrado; uso operativo y eficacia comparativa
+  fuera de alcance.
+completed_stages:
+- validation
+- delivery
+- handoff
+blockers: []
+open_decisions: []
+gate_reviews:
+  discovery:
+    decision: PASS
+    reviewer: David — aceptación técnica con límites
+    evidence:
+    - handoff/human-approval.json
+    - reports/package/evidence-manifest-01.json
+    - reports/validation/integrated-review.md
+    profile_sha256: de55bdd2a1a02de2b50d601af3e881ef227c8464a49cddcd3d2be2de8329deb7
+  framing:
+    decision: PASS
+    reviewer: David — aceptación técnica con límites
+    evidence:
+    - handoff/human-approval.json
+    - reports/package/evidence-manifest-01.json
+    - reports/validation/integrated-review.md
+    profile_sha256: de55bdd2a1a02de2b50d601af3e881ef227c8464a49cddcd3d2be2de8329deb7
+  diagnosis:
+    decision: PASS
+    reviewer: David — aceptación técnica con límites
+    evidence:
+    - handoff/human-approval.json
+    - reports/package/evidence-manifest-01.json
+    - reports/validation/integrated-review.md
+    profile_sha256: de55bdd2a1a02de2b50d601af3e881ef227c8464a49cddcd3d2be2de8329deb7
+  execution:
+    decision: PASS
+    reviewer: David — aceptación técnica con límites
+    evidence:
+    - handoff/human-approval.json
+    - reports/package/evidence-manifest-01.json
+    - reports/validation/integrated-review.md
+    profile_sha256: de55bdd2a1a02de2b50d601af3e881ef227c8464a49cddcd3d2be2de8329deb7
+  validation:
+    decision: PASS
+    reviewer: David — aceptación técnica con límites
+    evidence:
+    - handoff/human-approval.json
+    - reports/package/evidence-manifest-01.json
+    - reports/validation/integrated-review.md
+    profile_sha256: de55bdd2a1a02de2b50d601af3e881ef227c8464a49cddcd3d2be2de8329deb7
+  delivery:
+    decision: PASS
+    reviewer: David — aceptación técnica con límites
+    evidence:
+    - handoff/human-approval.json
+    - reports/package/evidence-manifest-01.json
+    - reports/validation/integrated-review.md
+    profile_sha256: de55bdd2a1a02de2b50d601af3e881ef227c8464a49cddcd3d2be2de8329deb7
+  handoff:
+    decision: PASS
+    reviewer: David — aceptación técnica con límites
+    evidence:
+    - handoff/human-approval.json
+    - reports/package/evidence-manifest-01.json
+    - reports/validation/integrated-review.md
+    profile_sha256: de55bdd2a1a02de2b50d601af3e881ef227c8464a49cddcd3d2be2de8329deb7
+  data-quality:
+    decision: PASS
+    reviewer: David — aceptación técnica con límites
+    evidence:
+    - handoff/human-approval.json
+    - reports/package/evidence-manifest-01.json
+    - reports/validation/integrated-review.md
+    profile_sha256: de55bdd2a1a02de2b50d601af3e881ef227c8464a49cddcd3d2be2de8329deb7
+  data_analysis-review:
+    decision: PASS
+    reviewer: David — aceptación técnica con límites
+    evidence:
+    - handoff/human-approval.json
+    - reports/package/evidence-manifest-01.json
+    - reports/validation/integrated-review.md
+    profile_sha256: de55bdd2a1a02de2b50d601af3e881ef227c8464a49cddcd3d2be2de8329deb7
+  forecast-review:
+    decision: PASS
+    reviewer: David — aceptación técnica con límites
+    evidence:
+    - handoff/human-approval.json
+    - reports/package/evidence-manifest-01.json
+    - reports/validation/integrated-review.md
+    profile_sha256: de55bdd2a1a02de2b50d601af3e881ef227c8464a49cddcd3d2be2de8329deb7
+  executive_delivery-review:
+    decision: PASS
+    reviewer: David — aceptación técnica con límites
+    evidence:
+    - handoff/human-approval.json
+    - reports/package/evidence-manifest-01.json
+    - reports/validation/integrated-review.md
+    profile_sha256: de55bdd2a1a02de2b50d601af3e881ef227c8464a49cddcd3d2be2de8329deb7

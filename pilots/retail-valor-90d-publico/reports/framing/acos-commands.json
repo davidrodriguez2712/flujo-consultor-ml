@@ -1,0 +1,17 @@
+[
+  {
+    "command": "acos status",
+    "exit_code": 0,
+    "stderr": ""
+  },
+  {
+    "command": "acos next",
+    "exit_code": 0,
+    "stderr": ""
+  },
+  {
+    "command": "acos validate --gate framing",
+    "exit_code": 3,
+    "stderr": ""
+  }
+]

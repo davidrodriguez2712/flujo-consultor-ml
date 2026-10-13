@@ -1,0 +1,202 @@
+{
+  "id": "os-workflow-task-draft-01",
+  "scope": "Preparación: cuatro fixtures, expected privados, contraste de un párrafo, ocho payloads y checks locales. Sin configuración ni gasto autorizados.",
+  "precedence_evidence": "local_only",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "ae265638eb2cdc121df82bf9c6131ff0e28822646f1f3f584b80d532f8c3906c",
+      "bytes": 738
+    },
+    {
+      "path": "agent_inputs/D01/artifacts.json",
+      "sha256": "d17fa1d2d9f6d1936a8ab3501765b4384d29e2828d8c3de8b1aea455b37f0ebf",
+      "bytes": 975
+    },
+    {
+      "path": "agent_inputs/D01/context.json",
+      "sha256": "48622cf6de10fb91303f2c1b4a25cd9dd3f87007645d3317d733a5d0c68a9bb2",
+      "bytes": 242
+    },
+    {
+      "path": "agent_inputs/D01/task.md",
+      "sha256": "571dc704b381d37b5cc6df8223514e4439f8313349be7c8b66158973fd9cdc45",
+      "bytes": 612
+    },
+    {
+      "path": "agent_inputs/D02/artifacts.json",
+      "sha256": "131234a5a973a8cbcac2dfb6206a2bd42295a48c3a5a8f76efe812ac329f6b5d",
+      "bytes": 973
+    },
+    {
+      "path": "agent_inputs/D02/context.json",
+      "sha256": "c425cd173a85a15ab699450a0d91a0aa20367ea3f7c67088f7cd268d5c7c8551",
+      "bytes": 256
+    },
+    {
+      "path": "agent_inputs/D02/task.md",
+      "sha256": "ef9e7f33e5f7e50ab3144975a424edb7f5e3b07993d593280796c1ab8f3534b4",
+      "bytes": 667
+    },
+    {
+      "path": "agent_inputs/D03/artifacts.json",
+      "sha256": "3804dc5ab172bc3bb63cf76293914fde6e8960fcdf5ee9f0d9abd5382e52fafb",
+      "bytes": 1129
+    },
+    {
+      "path": "agent_inputs/D03/context.json",
+      "sha256": "f4c9ee76e4ce859542460295bd7ae3aaed67dc747ce6518c653355d0276a5717",
+      "bytes": 253
+    },
+    {
+      "path": "agent_inputs/D03/task.md",
+      "sha256": "a64e6df66bc2527d56bac8eeee8d8d3afea720d9af79f1fc285196091a385077",
+      "bytes": 601
+    },
+    {
+      "path": "agent_inputs/D04/artifacts.json",
+      "sha256": "e45b9b42dc97e6d68a1ed2a1412ddec0537c03cdef17ea7271dbaaea8f81a2bc",
+      "bytes": 693
+    },
+    {
+      "path": "agent_inputs/D04/context.json",
+      "sha256": "06132aabb6249f103ff6a19efaba9b327a6a80f094cd7b623a00aaebd7d3dd75",
+      "bytes": 230
+    },
+    {
+      "path": "agent_inputs/D04/task.md",
+      "sha256": "e7bd0e3740bdd00a05f2a35faf82d7e59b5e287155bf3c22615d453052a51e05",
+      "bytes": 611
+    },
+    {
+      "path": "common/task-contract.txt",
+      "sha256": "ef316745f12c743dcfc9cc316876bf51d810a0d8ee1683cf7cef175c7dbfb5c9",
+      "bytes": 612
+    },
+    {
+      "path": "conditions/baseline/workflow.md",
+      "sha256": "7121e3f2122fde8a219dfba761f31c444e54181868117a06d75095468fc8e175",
+      "bytes": 18917
+    },
+    {
+      "path": "conditions/source.json",
+      "sha256": "f5490cae3cc4f3ee109fc5fc9727aa99fffac4e13e4eee11bea42fb8f39b0ba6",
+      "bytes": 609
+    },
+    {
+      "path": "conditions/treatment/supplement.txt",
+      "sha256": "6f56fa12f08f665d037dd3a24bbe83051612be18b0f77f78532b3c7981d0e798",
+      "bytes": 751
+    },
+    {
+      "path": "conditions/treatment/workflow.md",
+      "sha256": "dd4fb9f55cbaead81d3794c9d8ec3229b61b35b42951b423da940e01ef26daf3",
+      "bytes": 19668
+    },
+    {
+      "path": "conditions/workflow.diff",
+      "sha256": "d45c356000854c1178112c5f31d10c07a41fb3ed35b80e2abb0473b33d86c25b",
+      "bytes": 1871
+    },
+    {
+      "path": "design-approval.json",
+      "sha256": "dd13c156039abfacc1b838a780670311d50697d9c8fb1e42f32058f5b317cf43",
+      "bytes": 253
+    },
+    {
+      "path": "payloads/D01/baseline.txt",
+      "sha256": "f29c024435469e92a32cac9f8bff2fb9abeae719b393df9a52059a5e74626728",
+      "bytes": 21410
+    },
+    {
+      "path": "payloads/D01/treatment.txt",
+      "sha256": "207867d3fb922d6b30546eb80319a2e0a5fbdf3cd34602da6ac81cc8d9003e8e",
+      "bytes": 22161
+    },
+    {
+      "path": "payloads/D02/baseline.txt",
+      "sha256": "8c2963f3ad3f7bb472e511cdd1cb0563dacdd216cb011d8fccfa4a80e194f4a9",
+      "bytes": 21477
+    },
+    {
+      "path": "payloads/D02/treatment.txt",
+      "sha256": "0234e9570e7d9c19f3292bfae910d437ece0e4baa35348c1e2edbc29715ce51c",
+      "bytes": 22228
+    },
+    {
+      "path": "payloads/D03/baseline.txt",
+      "sha256": "66557de44a7d42e6a3ce8956a15007e0e6c6ab06aa4ca4e3495f14c465461f7d",
+      "bytes": 21564
+    },
+    {
+      "path": "payloads/D03/treatment.txt",
+      "sha256": "618c94d579f2ef0f734e60bb58439802ee94c41e88bab5b74d782dba20e5ee8b",
+      "bytes": 22315
+    },
+    {
+      "path": "payloads/D04/baseline.txt",
+      "sha256": "52ce3bfc92dda452fc5bd915025e8bb174d008ee55fe6f2b580e5cc6e30d4832",
+      "bytes": 21115
+    },
+    {
+      "path": "payloads/D04/treatment.txt",
+      "sha256": "e69509b6fd038593d60d20f302325de1d4293a019beb8f3cdc39423e976703b7",
+      "bytes": 21866
+    },
+    {
+      "path": "preparation-checks.json",
+      "sha256": "1f03ca378a5b390ced4747983cea64e3d222e8f862cac76655d74cb5836c8fdd",
+      "bytes": 3156
+    },
+    {
+      "path": "preparation.json",
+      "sha256": "26dc45bc36b91e1f0b11769749da69eec695a5a3f39e3c566be9cd8f79e198a1",
+      "bytes": 377
+    },
+    {
+      "path": "protocol.md",
+      "sha256": "20cdecdc5813c32b13abfe5930162c9a160fe3638793e4c6cb1d1efe69020052",
+      "bytes": 4346
+    },
+    {
+      "path": "reviewer/author-review.json",
+      "sha256": "35efccefaf16ddabd901c1fc2ae8a42f2e96d816eb61d468af0f72e107b061d1",
+      "bytes": 1082
+    },
+    {
+      "path": "reviewer/case-index.json",
+      "sha256": "2718e48057f5ed4be0506291fec8123bfe7813ff72c5371ad1dac204c6d468f5",
+      "bytes": 741
+    },
+    {
+      "path": "reviewer/expected/D01.json",
+      "sha256": "1d493972e7b822666ced5ed737fc3edfffba736179220a75c288998d02fe82be",
+      "bytes": 1306
+    },
+    {
+      "path": "reviewer/expected/D02.json",
+      "sha256": "7da96f952b7e29a774ffdaf72244d6ecbc5675f7f67b734cca1fffa140238d22",
+      "bytes": 1252
+    },
+    {
+      "path": "reviewer/expected/D03.json",
+      "sha256": "2cf4334d1b1e06e7bf25dfb9e97a27bfe84c6e610cd3a5ca1e92daf612199d4c",
+      "bytes": 1311
+    },
+    {
+      "path": "reviewer/expected/D04.json",
+      "sha256": "2d0e0bdf330877dd27c1e921c75fc7870bb799199784f3991ee11bffe37eeaf2",
+      "bytes": 914
+    },
+    {
+      "path": "reviewer/rubric.md",
+      "sha256": "4c0831156efb82b802011d1c2317f48228e203e20fb9a51b0514470d3b52b67e",
+      "bytes": 1857
+    },
+    {
+      "path": "verify_preparation.py",
+      "sha256": "6fdeeb1b11c59f529f90f7297f02c0f623daf8499ee73e59d337202e5ee37053",
+      "bytes": 6287
+    }
+  ]
+}

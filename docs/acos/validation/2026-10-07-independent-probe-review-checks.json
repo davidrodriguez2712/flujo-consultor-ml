@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-07",
+  "review_type": "Contextos independientes de agentes; no revisión humana externa ni evaluación canónica del Foundry",
+  "reviewers": [
+    "/root/review_temporal_probe",
+    "/root/review_selection_probe",
+    "/root/review_delivery_probe"
+  ],
+  "checks": [
+    {
+      "evaluation": "evaluations/delayed-outcomes/2026-10-07-contract-probe",
+      "manifest_files_checked": 57,
+      "manifest_mismatches": [],
+      "raw_markdown_pairs_match": 8,
+      "distinct_successful_sessions": 8,
+      "frozen_files_checked": 24
+    },
+    {
+      "evaluation": "evaluations/evidence-to-recommendation/2026-10-07-template-probe",
+      "manifest_files_checked": 52,
+      "manifest_mismatches": [],
+      "raw_markdown_pairs_match": 8,
+      "distinct_successful_sessions": 8,
+      "frozen_files_checked": 24
+    },
+    {
+      "evaluation": "evaluations/operational-selection/2026-10-07-playbook-probe",
+      "manifest_files_checked": 52,
+      "manifest_mismatches": [],
+      "raw_markdown_pairs_match": 8,
+      "distinct_successful_sessions": 8,
+      "frozen_files_checked": 24
+    }
+  ],
+  "total_manifest_files_checked": 161,
+  "total_distinct_sessions": 24,
+  "original_expected_outputs_and_foundry_unchanged": true,
+  "human_review": "PENDING",
+  "pilot_manifests_checked": [
+    {
+      "manifest": "handoff/handoff-manifest-02-closed.json",
+      "files": 13,
+      "mismatches": []
+    },
+    {
+      "manifest": "delivery/delivery-manifest.json",
+      "files": 35,
+      "mismatches": []
+    }
+  ]
+}

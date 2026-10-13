@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "verification_scope": "Preparación y consistencia de fixtures; no resultados de modelos",
+  "cases": 6,
+  "condition_payloads": 12,
+  "defect_cases": 3,
+  "coherent_cases": 3,
+  "payload_expected_sources_excluded": true,
+  "conditions_differ_only_in_three_sections": true,
+  "freeze_fixtures": [
+    {
+      "case_id": "E01",
+      "manifest_file_hash_matches": false,
+      "approval_reference_matches": true
+    },
+    {
+      "case_id": "E02",
+      "manifest_file_hash_matches": true,
+      "approval_reference_matches": true
+    }
+  ],
+  "serialization_counterexample_verified": true,
+  "JSON_whitespace_semantic_equivalence_verified": true,
+  "labels_permutations": [
+    {
+      "case_id": "E05",
+      "orders_checked": 24,
+      "share": 0.92,
+      "week_start": "2025-10-20"
+    },
+    {
+      "case_id": "E06",
+      "orders_checked": 24,
+      "share": 0.92,
+      "week_start": "2025-10-20"
+    }
+  ],
+  "model_calls": 0,
+  "api_cost_usd": 0,
+  "runtime_isolation_verified": false
+}

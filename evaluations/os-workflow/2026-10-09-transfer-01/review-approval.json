@@ -1,0 +1,9 @@
+{
+  "status": "APPROVED",
+  "by": "David",
+  "user_reply": "aprobado",
+  "manifest_sha256": "ee7a0d2a15b46a82cf6a986f694d9023e9f2c3fb48825ef1560365f7d6453650",
+  "scope": "Paquete de seis casos y expected; ajuste de runner/checker y preparación de configuración/verificación local aprobados.",
+  "paid_execution_authorized": false,
+  "api_budget_authorized_usd": null
+}

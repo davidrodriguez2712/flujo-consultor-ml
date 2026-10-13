@@ -1,0 +1,23 @@
+{
+  "model": "claude-haiku-5-5",
+  "cli_version": "2.1.296 (Claude Code)",
+  "budget_ceiling_usd": 0.1,
+  "max_requests": 56,
+  "per_invocation": 8,
+  "output_cap": 4096,
+  "report_word_limit": 500,
+  "schedule": [
+    [
+      "L03",
+      "treatment"
+    ]
+  ],
+  "actual_max_requests": 8,
+  "mode": "Diagnóstico nativeL03único posterior micro5/5; cap4096 por saldo; no comparacióncausal con cohorts8192",
+  "prior_total_usd": 0.135630545,
+  "proposed_budget_usd": null,
+  "skill_version": "0.2.2",
+  "automatic_retries": 0,
+  "available_budget_usd": 0.014369455,
+  "contract_check_required": true
+}

@@ -1,0 +1,18 @@
+{
+  "project": "Priorización comercial retail con datos públicos",
+  "stage": "discovery",
+  "status": "IN_PROGRESS",
+  "completed": [],
+  "total_stages": 7,
+  "blockers": [],
+  "open_decisions": [
+    "Revisión humana de Discovery pendiente.",
+    "Acordar reconciliación entre hojas, clasificación de códigos y población con ID.",
+    "Aprobar target, disponibilidad y evaluación temporal antes de Modeling."
+  ],
+  "next_gates": [
+    "discovery"
+  ],
+  "integrity": "OK",
+  "findings": []
+}

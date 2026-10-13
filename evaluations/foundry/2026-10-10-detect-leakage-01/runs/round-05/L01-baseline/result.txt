@@ -1,0 +1,5 @@
+Auditoría completada. Reporte en: `/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L01-baseline/workspace/reports/leakage/audit.md`
+
+Hallazgo principal: `recovered_kwh` es leakage. Solo está disponible entre el 9 y el 12 de junio de 2025, después del scoring del 1 de junio. `pipeline.py` no aplica ningún corte temporal. `history_kwh_90d` es consistente en los timestamps de las 4 filas, con evidencia limitada.
+
+Skill `acos-eval:detect-leakage` no estaba disponible, así que la auditoría fue manual (`skill: none`). Solo ejecuté la utilidad de hashes. No ejecuté el pipeline ni calculé métricas.

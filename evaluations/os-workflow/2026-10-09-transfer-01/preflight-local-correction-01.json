@@ -1,0 +1,10 @@
+{
+  "status": "LOCAL_PREFLIGHT_CORRECTED_BEFORE_PROVIDER",
+  "initial_issue": "Comparación rglob incluyó pycache generado, fuera del manifest aprobado.",
+  "evidence": "scripts/evaluations/__pycache__/workflow_transfer_checker.cpython-313.pyc",
+  "resolution": "Comparar solo snapshots listados en manifest; verificar todos sus hashes. No cambiar freeze ni código producto.",
+  "credential_loaded_in_initial_attempt": false,
+  "provider_requests": 0,
+  "api_cost_usd": 0,
+  "not_a_provider_retry": true
+}

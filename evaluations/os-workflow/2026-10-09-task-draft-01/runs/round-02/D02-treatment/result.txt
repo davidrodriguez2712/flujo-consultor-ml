@@ -1,0 +1,41 @@
+**READY**
+
+La propuesta de tarea puede prepararse dentro del mandato de revisión exploratoria. Su ejecución sigue pendiente de las dependencias señaladas abajo.
+
+## Hallazgos
+
+- `data/readings.csv` contiene 3 lecturas de temperatura en Celsius: dos del sensor S-A (41 °C a las 08:00 y 58 °C a las 08:05 UTC del 2025-09-15) y una del sensor S-B (44 °C a las 08:00 UTC).
+- La variación de S-A entre lecturas consecutivas de 5 minutos (+17 °C) es una lectura inusual candidata a revisión humana. Con 3 filas, no hay base para establecer tendencia, frecuencia ni comportamiento normal.
+- `data/dictionary.json` indica `labels_available: false`, y no proporciona rangos normales, calibración del sensor ni línea base histórica.
+- `decisions/review-context.json` confirma que no existen labels de fallo confirmados, que las acciones de campo están fuera del mandato y que el criterio de prioridad de triaje está pendiente.
+- `intake/request.json` autoriza redactar una propuesta de revisión exploratoria. No autoriza parar equipos, etiquetar fallos confirmados ni entrenar un modelo supervisado. El `reviewer_name` y los `approved_thresholds` son nulos.
+
+## Acciones propuestas
+
+Borrador de tarea (pendiente de aprobación):
+
+- **Tipo:** revisión exploratoria de lecturas inusuales.
+- **Objetivo:** priorizar, para examen humano, las lecturas de `data/readings.csv` que presenten variaciones o valores atípicos, sin confirmar causas ni diagnosticar fallos.
+- **Inputs conocidos:** `data/readings.csv`, `data/dictionary.json`, `decisions/review-context.json`, `intake/request.json`.
+- **Outputs propuestos:** lista ordenada de lecturas candidatas a revisión, con sensor, timestamp, valor y motivo de inusualidad observado (por ejemplo, salto respecto a la lectura previa del mismo sensor); y lista de limitaciones de datos.
+- **Criterios observables de revisión:** cada candidato cita su fila de origen; se distingue explícitamente entre hecho observado, inferencia y recomendación; no aparece ninguna etiqueta de fallo confirmado; no hay conclusiones de causa física.
+- **Dependencias que impiden ejecutarla:**
+  - nombre del revisor (`reviewer_name` nulo);
+  - umbrales aprobados o criterio de inusualidad (`approved_thresholds` nulo; criterio de triaje pendiente);
+  - ruta de escritura de salida, que no está definida;
+  - confirmación de que el equipo de mantenimiento (`sensor_owner_role`) acepta el alcance.
+
+## Siguiente paso
+
+1. Designar al revisor humano responsable y registrar su nombre.
+2. Definir, con el equipo de mantenimiento, el criterio exploratorio de prioridad y, si procede, umbrales de referencia provisionales marcados como no validados.
+3. Acordar la ruta de salida y confirmar el alcance de escritura.
+4. Con esas decisiones registradas, emitir la tarea final para ejecución.
+
+## Límites
+
+- Con 3 lecturas de 2 sensores, cualquier priorización es preliminar y no generalizable.
+- No hay línea base, rangos normales ni calibración; la inusualidad solo puede describirse como variación relativa observada.
+- Esta propuesta no diagnostica fallos, no confirma causas y no recomienda parar equipos ni intervenciones de campo.
+- No se entrena ningún modelo supervisado, ya que no existen labels.
+- Este memo no aprueba umbrales, no designa revisor ni acepta gates; esas decisiones corresponden a las personas indicadas.

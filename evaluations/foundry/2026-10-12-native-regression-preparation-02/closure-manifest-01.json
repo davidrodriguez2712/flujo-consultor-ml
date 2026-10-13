@@ -1,0 +1,536 @@
+{
+  "id": "native-regression-preparation-02-local-simulations",
+  "scope": "Configuración congelada y simulaciones; sin eficacia LLM ni autorización de ampliar gasto",
+  "files": [
+    {
+      "path": "BUDGET_PROPOSAL.json",
+      "bytes": 889,
+      "sha256": "4a54b91223adbc049c3f56b3d4a36c2db5e5897044d53ba010de5c62e069700c"
+    },
+    {
+      "path": "REPORT.md",
+      "bytes": 4498,
+      "sha256": "a2afd2084651e97384d4cd1b1ef08a59529a72fc366d99fd5e79433b951f0065"
+    },
+    {
+      "path": "approval.json",
+      "bytes": 373,
+      "sha256": "fb8d9954698b67fe4fd49cc22bd903f1ebe5c74e5f3d768df2f9462490fde17e"
+    },
+    {
+      "path": "checks.json",
+      "bytes": 663,
+      "sha256": "7ed7bede6ba30e8941150784fed7df7e0961f6a99a62cdc42de30284cf61e6f3"
+    },
+    {
+      "path": "package/RUNBOOK.md",
+      "bytes": 1244,
+      "sha256": "243e0eb56434e011b3b31db3f709c97d7504155babc326bae634f106052a2fa6"
+    },
+    {
+      "path": "package/config.json",
+      "bytes": 707,
+      "sha256": "ee6ed38e8eb7597712931f53d98b4162a0cd25c878110e32182c95491db48f47"
+    },
+    {
+      "path": "package/execution-manifest-01.json",
+      "bytes": 3803,
+      "sha256": "b8ef2799245a463cc3e33be88c25e94b1b26af13072862d9f6c613ac2e0da044"
+    },
+    {
+      "path": "package/public/L01/case.md",
+      "bytes": 1728,
+      "sha256": "89f1c1a622a64a73dafb5b641d871d372e72a1076533a23378ec2446f11e1e14"
+    },
+    {
+      "path": "package/public/L01/inputs/context.md",
+      "bytes": 776,
+      "sha256": "3e3db7db6249d33479a7e01fdcaee3f8f8fec3f898f7c863e2d252398e613552"
+    },
+    {
+      "path": "package/public/L01/inputs/observations.csv",
+      "bytes": 417,
+      "sha256": "29e4badcbbcbf9e242bde9f2d31b80d1f55091a52d094b658e6992a457ad0f19"
+    },
+    {
+      "path": "package/public/L01/inputs/pipeline.py",
+      "bytes": 204,
+      "sha256": "fb122bed11f58973887818405e1b992b1589a72f8faf0ea13daf98ddb2f3da63"
+    },
+    {
+      "path": "package/public/L02/case.md",
+      "bytes": 1725,
+      "sha256": "71613379fe4387f19de862020de6bcdedec00623aeb452bbdff9491690b61d39"
+    },
+    {
+      "path": "package/public/L02/inputs/context.md",
+      "bytes": 1051,
+      "sha256": "2d20272658305e9620515452c404e52d7b2015db0d0a30412287c4aa02a0c1b0"
+    },
+    {
+      "path": "package/public/L02/inputs/observations.csv",
+      "bytes": 593,
+      "sha256": "cbcae4e4f891739ea487feda3f7e1eac58cf9fbe3303b774b5563770f7127462"
+    },
+    {
+      "path": "package/public/L02/inputs/pipeline.py",
+      "bytes": 391,
+      "sha256": "8fc757e4a3209efdedd3e1b8de6f0b77109557fb6335ac263cd3cea9b3788011"
+    },
+    {
+      "path": "package/public/L03/case.md",
+      "bytes": 1711,
+      "sha256": "db7f2572bc7e591a8d537735dade9cdbcc1da74a100ecb2dd245673b3540e951"
+    },
+    {
+      "path": "package/public/L03/inputs/context.md",
+      "bytes": 644,
+      "sha256": "ae79d0d67bdd4f71349d51644732c99ae1ce547ad618a6d663a30195042b1c7e"
+    },
+    {
+      "path": "package/public/L03/inputs/dictionary.json",
+      "bytes": 150,
+      "sha256": "72636cf89cf406c70e90c0c1325ddcb7c89229a915199153c35c9f167c414fe3"
+    },
+    {
+      "path": "package/public/L03/inputs/observations.csv",
+      "bytes": 223,
+      "sha256": "32ae7c42472e440093583da2798aba677eb2ceae58289e5d5dc77f3e46354532"
+    },
+    {
+      "path": "package/reviewer/L01/expected.md",
+      "bytes": 2886,
+      "sha256": "cb0aed9a6188f5d5928d59543d0b559a29371c749c77217e3ba12bfefe150501"
+    },
+    {
+      "path": "package/reviewer/L02/expected.md",
+      "bytes": 2905,
+      "sha256": "5b058789afdeefccf34957f4a48d17a4b6db6ddbfef2ceb3bad5400ee27fcccf"
+    },
+    {
+      "path": "package/reviewer/L03/expected.md",
+      "bytes": 2738,
+      "sha256": "331122d7573ab6f6178bc9bcb256bae99a7dd62754ee01e10b6a2eb14b7cfa72"
+    },
+    {
+      "path": "package/skill/SKILL.md",
+      "bytes": 5703,
+      "sha256": "c2a2440477d9985489b71f4d8c50380ccd7985635d02eab330cfee0f7e5856c4"
+    },
+    {
+      "path": "package/snapshots/scripts/ci/runtime_budget.py",
+      "bytes": 21090,
+      "sha256": "be80e0784f3751b5225b2aa51ee8c335c90c084d3e95061365f23cf714c2b0c7"
+    },
+    {
+      "path": "package/snapshots/scripts/evaluations/foundry_input_facts.py",
+      "bytes": 971,
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4"
+    },
+    {
+      "path": "package/snapshots/scripts/evaluations/foundry_native_transport.py",
+      "bytes": 21777,
+      "sha256": "0708fed167ade740ac2d208e16a77f821e866476455678b44e4c6eca9631d0de"
+    },
+    {
+      "path": "package/snapshots/scripts/evaluations/foundry_study.py",
+      "bytes": 5765,
+      "sha256": "94786bee32645fb9642ee8656eec466e68212a014dfc33e90e278b8d71df3d18"
+    },
+    {
+      "path": "package/workflow.md",
+      "bytes": 2973,
+      "sha256": "0cc2f01287ed857dc98c005ec8f5143d3c155d671f4404c8d27f43dd0c60a35f"
+    },
+    {
+      "path": "probe-support/test_foundry_native_transport.py",
+      "bytes": 23693,
+      "sha256": "1c1c16e149e429913297e5a62b4f966711ac83e940d725e82652cbd725c11456"
+    },
+    {
+      "path": "runs/nominal-simulated/L01-treatment/isolated-config/.claude.json",
+      "bytes": 961,
+      "sha256": "3c97484274c8fc8207db1678f070adead3e6bcc1f97263db82b59471277ad03a"
+    },
+    {
+      "path": "runs/nominal-simulated/L01-treatment/isolated-config/backups/.claude.json.backup.1791847470875",
+      "bytes": 84,
+      "sha256": "51068b2f6929a8d28388b29a57b4d327d98d9afca4d4a6c9e5d612b2b237e2ac"
+    },
+    {
+      "path": "runs/nominal-simulated/L01-treatment/metadata.json",
+      "bytes": 6788,
+      "sha256": "a61de644e463f771edbc4110d8a348260b3f437eca573afa8f588a6e069450b5"
+    },
+    {
+      "path": "runs/nominal-simulated/L01-treatment/prompt.txt",
+      "bytes": 4313,
+      "sha256": "baa63d45f0b2c3c8c03b6d7c8e11e3a7d2b80341876ad8e0f749bf7ce445fc95"
+    },
+    {
+      "path": "runs/nominal-simulated/L01-treatment/report-contract.json",
+      "bytes": 167,
+      "sha256": "485830b7c4f1b7c2f554e9ef8f5133a58b1056c5e23da3a5b065dd78f7606c8f"
+    },
+    {
+      "path": "runs/nominal-simulated/L01-treatment/result.txt",
+      "bytes": 71,
+      "sha256": "eddad8ff2ce2a370b1367e14d3180e0add3fd1d6634269db8949a28214af6c25"
+    },
+    {
+      "path": "runs/nominal-simulated/L01-treatment/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/nominal-simulated/L01-treatment/stdout.jsonl",
+      "bytes": 17373,
+      "sha256": "4cc8fee13371b7240ab596b9b93f5ac950b961d4413d7317eb40e96ec56a1760"
+    },
+    {
+      "path": "runs/nominal-simulated/L01-treatment/workspace/.runtime/check_inputs.py",
+      "bytes": 971,
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4"
+    },
+    {
+      "path": "runs/nominal-simulated/L01-treatment/workspace/.runtime/plugin/.claude-plugin/plugin.json",
+      "bytes": 41,
+      "sha256": "5972aa4f54c7e8c2710fffadfee255003714f33148d63c788d7d6cebe42fbb08"
+    },
+    {
+      "path": "runs/nominal-simulated/L01-treatment/workspace/.runtime/plugin/skills/detect-leakage/SKILL.md",
+      "bytes": 5703,
+      "sha256": "c2a2440477d9985489b71f4d8c50380ccd7985635d02eab330cfee0f7e5856c4"
+    },
+    {
+      "path": "runs/nominal-simulated/L01-treatment/workspace/.runtime/report-context.json",
+      "bytes": 168,
+      "sha256": "3e6760875e5763433490875735edaacbb63da2e970c62530ac78da2c68850f52"
+    },
+    {
+      "path": "runs/nominal-simulated/L01-treatment/workspace/case.md",
+      "bytes": 1728,
+      "sha256": "89f1c1a622a64a73dafb5b641d871d372e72a1076533a23378ec2446f11e1e14"
+    },
+    {
+      "path": "runs/nominal-simulated/L01-treatment/workspace/inputs/context.md",
+      "bytes": 776,
+      "sha256": "3e3db7db6249d33479a7e01fdcaee3f8f8fec3f898f7c863e2d252398e613552"
+    },
+    {
+      "path": "runs/nominal-simulated/L01-treatment/workspace/inputs/observations.csv",
+      "bytes": 417,
+      "sha256": "29e4badcbbcbf9e242bde9f2d31b80d1f55091a52d094b658e6992a457ad0f19"
+    },
+    {
+      "path": "runs/nominal-simulated/L01-treatment/workspace/inputs/pipeline.py",
+      "bytes": 204,
+      "sha256": "fb122bed11f58973887818405e1b992b1589a72f8faf0ea13daf98ddb2f3da63"
+    },
+    {
+      "path": "runs/nominal-simulated/L01-treatment/workspace/reports/leakage/audit.md",
+      "bytes": 962,
+      "sha256": "49f38c5da86146002326aaa19de77edbaa62bf23915a1a35e2a496c913e400a5"
+    },
+    {
+      "path": "runs/nominal-simulated/L01-treatment/workspace/workflow.md",
+      "bytes": 2973,
+      "sha256": "0cc2f01287ed857dc98c005ec8f5143d3c155d671f4404c8d27f43dd0c60a35f"
+    },
+    {
+      "path": "runs/nominal-simulated/L02-treatment/isolated-config/.claude.json",
+      "bytes": 961,
+      "sha256": "0fe8a58e82a1385f827e42059d555ad6f3fbb56f3a1a4d39e3c47225ece63ca3"
+    },
+    {
+      "path": "runs/nominal-simulated/L02-treatment/isolated-config/backups/.claude.json.backup.1791847472065",
+      "bytes": 84,
+      "sha256": "141e064e457bf18dde8f1c8e4aad78cc93bd6f156fe3f37eb12d076dccf93652"
+    },
+    {
+      "path": "runs/nominal-simulated/L02-treatment/metadata.json",
+      "bytes": 6788,
+      "sha256": "8b31a8833e93a993307b69790e46694f23f5ff925d2f4498e362b102c2f5f1ba"
+    },
+    {
+      "path": "runs/nominal-simulated/L02-treatment/prompt.txt",
+      "bytes": 4313,
+      "sha256": "48677018d45f7227759b29cd49ef336213d1c127fb734aee554ca565c4500e9b"
+    },
+    {
+      "path": "runs/nominal-simulated/L02-treatment/report-contract.json",
+      "bytes": 167,
+      "sha256": "485830b7c4f1b7c2f554e9ef8f5133a58b1056c5e23da3a5b065dd78f7606c8f"
+    },
+    {
+      "path": "runs/nominal-simulated/L02-treatment/result.txt",
+      "bytes": 71,
+      "sha256": "eddad8ff2ce2a370b1367e14d3180e0add3fd1d6634269db8949a28214af6c25"
+    },
+    {
+      "path": "runs/nominal-simulated/L02-treatment/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/nominal-simulated/L02-treatment/stdout.jsonl",
+      "bytes": 17373,
+      "sha256": "2de27979357a29699308291302fa48185b29eb68e5ab222019ecc60b9a225c59"
+    },
+    {
+      "path": "runs/nominal-simulated/L02-treatment/workspace/.runtime/check_inputs.py",
+      "bytes": 971,
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4"
+    },
+    {
+      "path": "runs/nominal-simulated/L02-treatment/workspace/.runtime/plugin/.claude-plugin/plugin.json",
+      "bytes": 41,
+      "sha256": "5972aa4f54c7e8c2710fffadfee255003714f33148d63c788d7d6cebe42fbb08"
+    },
+    {
+      "path": "runs/nominal-simulated/L02-treatment/workspace/.runtime/plugin/skills/detect-leakage/SKILL.md",
+      "bytes": 5703,
+      "sha256": "c2a2440477d9985489b71f4d8c50380ccd7985635d02eab330cfee0f7e5856c4"
+    },
+    {
+      "path": "runs/nominal-simulated/L02-treatment/workspace/.runtime/report-context.json",
+      "bytes": 168,
+      "sha256": "3e6760875e5763433490875735edaacbb63da2e970c62530ac78da2c68850f52"
+    },
+    {
+      "path": "runs/nominal-simulated/L02-treatment/workspace/case.md",
+      "bytes": 1725,
+      "sha256": "71613379fe4387f19de862020de6bcdedec00623aeb452bbdff9491690b61d39"
+    },
+    {
+      "path": "runs/nominal-simulated/L02-treatment/workspace/inputs/context.md",
+      "bytes": 1051,
+      "sha256": "2d20272658305e9620515452c404e52d7b2015db0d0a30412287c4aa02a0c1b0"
+    },
+    {
+      "path": "runs/nominal-simulated/L02-treatment/workspace/inputs/observations.csv",
+      "bytes": 593,
+      "sha256": "cbcae4e4f891739ea487feda3f7e1eac58cf9fbe3303b774b5563770f7127462"
+    },
+    {
+      "path": "runs/nominal-simulated/L02-treatment/workspace/inputs/pipeline.py",
+      "bytes": 391,
+      "sha256": "8fc757e4a3209efdedd3e1b8de6f0b77109557fb6335ac263cd3cea9b3788011"
+    },
+    {
+      "path": "runs/nominal-simulated/L02-treatment/workspace/reports/leakage/audit.md",
+      "bytes": 962,
+      "sha256": "f8b4205b8fcce2df14c2837e9cdabdeb0039e0c542fdfe08fb710e954e731c96"
+    },
+    {
+      "path": "runs/nominal-simulated/L02-treatment/workspace/workflow.md",
+      "bytes": 2973,
+      "sha256": "0cc2f01287ed857dc98c005ec8f5143d3c155d671f4404c8d27f43dd0c60a35f"
+    },
+    {
+      "path": "runs/nominal-simulated/L03-treatment/isolated-config/.claude.json",
+      "bytes": 961,
+      "sha256": "acf81e4a39cbff16690feec4abde385a6d1369d2a863c7ca2396c69bedf49d7e"
+    },
+    {
+      "path": "runs/nominal-simulated/L03-treatment/isolated-config/backups/.claude.json.backup.1791847473276",
+      "bytes": 84,
+      "sha256": "d8d84cd4913647acff110339d29c572699c1260fe3cad0152244ab6f8c5887bc"
+    },
+    {
+      "path": "runs/nominal-simulated/L03-treatment/metadata.json",
+      "bytes": 6796,
+      "sha256": "fe8e6f53b024415fa038ab764c42b0feade9ef2e3820ff497399a331957ed98d"
+    },
+    {
+      "path": "runs/nominal-simulated/L03-treatment/prompt.txt",
+      "bytes": 4317,
+      "sha256": "88d748f18afdaf6a3098280f2fde216c1a117feda24ae8a44fdd33e3ea58fe97"
+    },
+    {
+      "path": "runs/nominal-simulated/L03-treatment/report-contract.json",
+      "bytes": 167,
+      "sha256": "485830b7c4f1b7c2f554e9ef8f5133a58b1056c5e23da3a5b065dd78f7606c8f"
+    },
+    {
+      "path": "runs/nominal-simulated/L03-treatment/result.txt",
+      "bytes": 71,
+      "sha256": "eddad8ff2ce2a370b1367e14d3180e0add3fd1d6634269db8949a28214af6c25"
+    },
+    {
+      "path": "runs/nominal-simulated/L03-treatment/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/nominal-simulated/L03-treatment/stdout.jsonl",
+      "bytes": 17287,
+      "sha256": "830a71aa626b7993d5a498f3651337b94fa4031566bc925a5fca321e877c231c"
+    },
+    {
+      "path": "runs/nominal-simulated/L03-treatment/workspace/.runtime/check_inputs.py",
+      "bytes": 971,
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4"
+    },
+    {
+      "path": "runs/nominal-simulated/L03-treatment/workspace/.runtime/plugin/.claude-plugin/plugin.json",
+      "bytes": 41,
+      "sha256": "5972aa4f54c7e8c2710fffadfee255003714f33148d63c788d7d6cebe42fbb08"
+    },
+    {
+      "path": "runs/nominal-simulated/L03-treatment/workspace/.runtime/plugin/skills/detect-leakage/SKILL.md",
+      "bytes": 5703,
+      "sha256": "c2a2440477d9985489b71f4d8c50380ccd7985635d02eab330cfee0f7e5856c4"
+    },
+    {
+      "path": "runs/nominal-simulated/L03-treatment/workspace/.runtime/report-context.json",
+      "bytes": 168,
+      "sha256": "3e6760875e5763433490875735edaacbb63da2e970c62530ac78da2c68850f52"
+    },
+    {
+      "path": "runs/nominal-simulated/L03-treatment/workspace/case.md",
+      "bytes": 1711,
+      "sha256": "db7f2572bc7e591a8d537735dade9cdbcc1da74a100ecb2dd245673b3540e951"
+    },
+    {
+      "path": "runs/nominal-simulated/L03-treatment/workspace/inputs/context.md",
+      "bytes": 644,
+      "sha256": "ae79d0d67bdd4f71349d51644732c99ae1ce547ad618a6d663a30195042b1c7e"
+    },
+    {
+      "path": "runs/nominal-simulated/L03-treatment/workspace/inputs/dictionary.json",
+      "bytes": 150,
+      "sha256": "72636cf89cf406c70e90c0c1325ddcb7c89229a915199153c35c9f167c414fe3"
+    },
+    {
+      "path": "runs/nominal-simulated/L03-treatment/workspace/inputs/observations.csv",
+      "bytes": 223,
+      "sha256": "32ae7c42472e440093583da2798aba677eb2ceae58289e5d5dc77f3e46354532"
+    },
+    {
+      "path": "runs/nominal-simulated/L03-treatment/workspace/reports/leakage/audit.md",
+      "bytes": 966,
+      "sha256": "83be578b9a6a2fc01b8e96d53c2de7834d54bee9db75fcf17885b9224eac347d"
+    },
+    {
+      "path": "runs/nominal-simulated/L03-treatment/workspace/workflow.md",
+      "bytes": 2973,
+      "sha256": "0cc2f01287ed857dc98c005ec8f5143d3c155d671f4404c8d27f43dd0c60a35f"
+    },
+    {
+      "path": "runs/nominal-simulated/ledger.json",
+      "bytes": 4071,
+      "sha256": "6552c49effd6e508f0495b03171f78edb444d7b261dd793ba496173a628f8c0e"
+    },
+    {
+      "path": "runs/nominal-simulated/summary.json",
+      "bytes": 486,
+      "sha256": "5362191aae5f4ed91368444caa2a0f4c775637f23b44ea7180871f5af88d56a8"
+    },
+    {
+      "path": "runs/remaining-budget-simulated/L01-treatment/isolated-config/.claude.json",
+      "bytes": 961,
+      "sha256": "86fcdb7700e2fe2cde3428d0e3e9f86c0b71d8bac2a182730d5e9c192f3d8a89"
+    },
+    {
+      "path": "runs/remaining-budget-simulated/L01-treatment/isolated-config/backups/.claude.json.backup.1791847474978",
+      "bytes": 84,
+      "sha256": "c4a99c8904c471356874ab7be84b395c981daa04b2cece6ccaf8f6c691be3b9b"
+    },
+    {
+      "path": "runs/remaining-budget-simulated/L01-treatment/metadata.json",
+      "bytes": 5583,
+      "sha256": "61d0c6d712d3abb5f2b8e16ce3302d20f53e9f42c5a9741b11fa12451f83234f"
+    },
+    {
+      "path": "runs/remaining-budget-simulated/L01-treatment/prompt.txt",
+      "bytes": 4412,
+      "sha256": "05c5a8e0c2c8b1648e417de56526d700e11c551508d91e9b2cf7c895c18e7f7a"
+    },
+    {
+      "path": "runs/remaining-budget-simulated/L01-treatment/report-contract.json",
+      "bytes": 195,
+      "sha256": "67ce3afafd766f1647fb8fe5f7b78ef61faaefe6b752eaab5a1fe01b95e19796"
+    },
+    {
+      "path": "runs/remaining-budget-simulated/L01-treatment/result.txt",
+      "bytes": 74,
+      "sha256": "536077aa5c5ab80094b49b6014d34030c76c8a4e0ff97ae82983e10d650c7f1b"
+    },
+    {
+      "path": "runs/remaining-budget-simulated/L01-treatment/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/remaining-budget-simulated/L01-treatment/stdout.jsonl",
+      "bytes": 14152,
+      "sha256": "94f652f6c40014a96f7b16123e299309d40bb8511453620cb4c7e20addeaaa76"
+    },
+    {
+      "path": "runs/remaining-budget-simulated/L01-treatment/workspace/.runtime/check_inputs.py",
+      "bytes": 971,
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4"
+    },
+    {
+      "path": "runs/remaining-budget-simulated/L01-treatment/workspace/.runtime/plugin/.claude-plugin/plugin.json",
+      "bytes": 41,
+      "sha256": "5972aa4f54c7e8c2710fffadfee255003714f33148d63c788d7d6cebe42fbb08"
+    },
+    {
+      "path": "runs/remaining-budget-simulated/L01-treatment/workspace/.runtime/plugin/skills/detect-leakage/SKILL.md",
+      "bytes": 5703,
+      "sha256": "c2a2440477d9985489b71f4d8c50380ccd7985635d02eab330cfee0f7e5856c4"
+    },
+    {
+      "path": "runs/remaining-budget-simulated/L01-treatment/workspace/.runtime/report-context.json",
+      "bytes": 168,
+      "sha256": "3e6760875e5763433490875735edaacbb63da2e970c62530ac78da2c68850f52"
+    },
+    {
+      "path": "runs/remaining-budget-simulated/L01-treatment/workspace/case.md",
+      "bytes": 1728,
+      "sha256": "89f1c1a622a64a73dafb5b641d871d372e72a1076533a23378ec2446f11e1e14"
+    },
+    {
+      "path": "runs/remaining-budget-simulated/L01-treatment/workspace/inputs/context.md",
+      "bytes": 776,
+      "sha256": "3e3db7db6249d33479a7e01fdcaee3f8f8fec3f898f7c863e2d252398e613552"
+    },
+    {
+      "path": "runs/remaining-budget-simulated/L01-treatment/workspace/inputs/observations.csv",
+      "bytes": 417,
+      "sha256": "29e4badcbbcbf9e242bde9f2d31b80d1f55091a52d094b658e6992a457ad0f19"
+    },
+    {
+      "path": "runs/remaining-budget-simulated/L01-treatment/workspace/inputs/pipeline.py",
+      "bytes": 204,
+      "sha256": "fb122bed11f58973887818405e1b992b1589a72f8faf0ea13daf98ddb2f3da63"
+    },
+    {
+      "path": "runs/remaining-budget-simulated/L01-treatment/workspace/workflow.md",
+      "bytes": 2973,
+      "sha256": "0cc2f01287ed857dc98c005ec8f5143d3c155d671f4404c8d27f43dd0c60a35f"
+    },
+    {
+      "path": "runs/remaining-budget-simulated/ledger.json",
+      "bytes": 932,
+      "sha256": "59d9b22d7ea302262b8520782f7a4e4db6f3aba990045ae30c35c50f63f70467"
+    },
+    {
+      "path": "runs/remaining-budget-simulated/summary.json",
+      "bytes": 223,
+      "sha256": "3fc478ddf7f7458beb6c50b883454fa3539f49884bb4964336ce128ca5b124f1"
+    },
+    {
+      "path": "simulate.py",
+      "bytes": 5190,
+      "sha256": "50824290c23b620fa805e8ee81b25eb3f9af856c8bd020372c6c2ca183c3479b"
+    },
+    {
+      "path": "simulation-summary.json",
+      "bytes": 1731,
+      "sha256": "fde2e93552bc20abf49eb66a5801d91aceb36bcaa541bdb4ff8240cc9b13efd1"
+    }
+  ]
+}

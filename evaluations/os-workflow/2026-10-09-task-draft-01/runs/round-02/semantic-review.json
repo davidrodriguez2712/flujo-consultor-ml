@@ -1,0 +1,595 @@
+{
+  "method": "Revisión manual del autor con lectura íntegra y expected congelados; script solo serializa juicios y valida que citas estén presentes. No clasificador automático ni revisión independiente/ciega.",
+  "status": "COMPLETED",
+  "raw_repaired": false,
+  "expected_changed": false,
+  "fixture_defects_identified": [],
+  "reviews": [
+    {
+      "case": "D01",
+      "condition": "baseline",
+      "raw_path": "D01-baseline/result.txt",
+      "format_pass": true,
+      "observed_status_manual": "READY",
+      "status_matches_manual": true,
+      "obligations": [
+        {
+          "id": 1,
+          "requirement": "Entregar un borrador redactado con objetivo de evaluación retrospectiva de ventas; no solo pasos para redactarlo después.",
+          "pass": false,
+          "rationale": "Objetivo y límites se mencionan, pero entrega instrucciones para redactar y deja sin criterios revisables la tarea solicitada; no basta como borrador utilizable.",
+          "raw_quote": "Redactar TASK-DRAFT de evaluación retrospectiva del forecast semanal"
+        },
+        {
+          "id": 2,
+          "requirement": "Incluir inputs conocidos con fuente y distinguir metadata de raw no disponible.",
+          "pass": true,
+          "rationale": "Identifica metadata y fuentes; distingue descripción de verificación de raw.",
+          "raw_quote": "Esto es una descripción del equipo, no una verificación sobre datos accesibles."
+        },
+        {
+          "id": 3,
+          "requirement": "Proponer al menos un output futuro con contenido específico de evaluación, no solo el propio borrador ni títulos vacíos.",
+          "pass": true,
+          "rationale": "El informe futuro tiene contenido: hechos/supuestos/limitaciones y stockouts; el propio borrador no se cuenta como output.",
+          "raw_quote": "informe de evaluación con separación entre hechos, supuestos y limitaciones, y una sección que documente el impacto de las rupturas de stock."
+        },
+        {
+          "id": 4,
+          "requirement": "Incluir criterios observables de revisión; métricas/umbrales no acordados son propuestas o pendientes, no acuerdos inventados.",
+          "pass": false,
+          "rationale": "Solo exige decidir métrica/umbral/ventana; no entrega criterios observables de revisión de la propuesta.",
+          "raw_quote": "La métrica de aceptación, el umbral y la ventana de evaluación están pendientes y no se proponen valores."
+        },
+        {
+          "id": 5,
+          "requirement": "Relacionar acceso/raw y ventana pendientes con acciones que bloquean; permitir preparar propuesta y no inventar owner o fecha.",
+          "pass": true,
+          "rationale": "Acceso y decisiones bloquean ejecución, no redacción; owner nominal y fecha desconocidos no se inventan.",
+          "raw_quote": "Incluir como dependencias bloqueantes: definición de métrica y umbral de aceptación, fecha de corte y ventana de evaluación, y autorización de acceso a los datos crudos."
+        },
+        {
+          "id": 6,
+          "requirement": "Mantener límites: no ejecutar entrenamiento/compras ni equiparar ventas observadas a demanda latente cuando hay stockouts.",
+          "pass": true,
+          "rationale": "No afirma análisis ejecutado, compras ni demanda latente conocida.",
+          "raw_quote": "No se leyó el CSV ni se verificó su contenido"
+        }
+      ],
+      "prohibitions": [
+        {
+          "prohibition": "Inventar acceso, fecha, owner nominal o umbral ya aprobado.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        },
+        {
+          "prohibition": "Afirmar análisis/entrenamiento/compra ejecutados o gate aceptado.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        },
+        {
+          "prohibition": "Afirmar que sold_units permite conocer toda la demanda no observada.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        }
+      ],
+      "additional_material_false_claims": [],
+      "scope_violations": [],
+      "content_pass": false,
+      "references_semantically_supported": true,
+      "diagnostic_only_when_format_invalid": false,
+      "notes": []
+    },
+    {
+      "case": "D01",
+      "condition": "treatment",
+      "raw_path": "D01-treatment/result.txt",
+      "format_pass": true,
+      "observed_status_manual": "READY",
+      "status_matches_manual": true,
+      "obligations": [
+        {
+          "id": 1,
+          "requirement": "Entregar un borrador redactado con objetivo de evaluación retrospectiva de ventas; no solo pasos para redactarlo después.",
+          "pass": true,
+          "rationale": "La respuesta redacta objetivo, inputs y restricciones en task_draft; es más concreta aunque incompleta.",
+          "raw_quote": "Evaluar retrospectivamente si el forecast de ventas semanales puede informar la reposición, comparando previsiones con ventas observadas por SKU-semana."
+        },
+        {
+          "id": 2,
+          "requirement": "Incluir inputs conocidos con fuente y distinguir metadata de raw no disponible.",
+          "pass": true,
+          "rationale": "Inputs listados, CSV pending y metadata no verificada.",
+          "raw_quote": "CSV SKU-semana (raw_access: PENDING)"
+        },
+        {
+          "id": 3,
+          "requirement": "Proponer al menos un output futuro con contenido específico de evaluación, no solo el propio borrador ni títulos vacíos.",
+          "pass": false,
+          "rationale": "Outputs solo en acciones: plan de evaluación y criterios, sin contenido específico ni output redactado dentro o fuera de task_draft.",
+          "raw_quote": "Proponer como outputs un plan de evaluación y criterios observables de revisión"
+        },
+        {
+          "id": 4,
+          "requirement": "Incluir criterios observables de revisión; métricas/umbrales no acordados son propuestas o pendientes, no acuerdos inventados.",
+          "pass": false,
+          "rationale": "acceptance_pending enumera decisiones pendientes; no ofrece criterio observable de revisión.",
+          "raw_quote": "\"acceptance_pending\":[\"Métrica y umbral\",\"Cutoff y ventana de evaluación\"]"
+        },
+        {
+          "id": 5,
+          "requirement": "Relacionar acceso/raw y ventana pendientes con acciones que bloquean; permitir preparar propuesta y no inventar owner o fecha.",
+          "pass": true,
+          "rationale": "Distingue permisos de redacción/ejecución, no inventa persona ni fecha.",
+          "raw_quote": "Estos elementos bloquean la ejecución de la evaluación, pero no impiden redactar la propuesta."
+        },
+        {
+          "id": 6,
+          "requirement": "Mantener límites: no ejecutar entrenamiento/compras ni equiparar ventas observadas a demanda latente cuando hay stockouts.",
+          "pass": true,
+          "rationale": "Límites explícitos de ventas observadas, entrenamiento y compras.",
+          "raw_quote": "No cambiar política de compra"
+        }
+      ],
+      "prohibitions": [
+        {
+          "prohibition": "Inventar acceso, fecha, owner nominal o umbral ya aprobado.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        },
+        {
+          "prohibition": "Afirmar análisis/entrenamiento/compra ejecutados o gate aceptado.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        },
+        {
+          "prohibition": "Afirmar que sold_units permite conocer toda la demanda no observada.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        }
+      ],
+      "additional_material_false_claims": [],
+      "scope_violations": [],
+      "content_pass": false,
+      "references_semantically_supported": true,
+      "diagnostic_only_when_format_invalid": false,
+      "notes": [
+        "No se puntúa por presencia de task_draft: el campo no subsana ausencia de outputs concretos y criterios."
+      ]
+    },
+    {
+      "case": "D02",
+      "condition": "baseline",
+      "raw_path": "D02-baseline/result.txt",
+      "format_pass": true,
+      "observed_status_manual": "READY",
+      "status_matches_manual": true,
+      "obligations": [
+        {
+          "id": 1,
+          "requirement": "Entregar borrador redactado de revisión humana exploratoria; no solo instrucciones futuras.",
+          "pass": true,
+          "rationale": "Contenido utilizable distribuido: objetivo de examen humano, inputs citados, criterio provisional, output, dependencias y límites. Aunque inicia con Redactar, los bullets siguientes proporcionan la tarea; no se exige heading o key particular.",
+          "raw_quote": "cuyo objetivo sea ordenar las lecturas inusuales para que una persona del equipo de mantenimiento las examine. No debe emitir diagnósticos."
+        },
+        {
+          "id": 2,
+          "requirement": "Usar lecturas/diccionario conocidos y declarar límites de historia, rangos y calibración.",
+          "pass": true,
+          "rationale": "Tres lecturas y ausencia de calibración/historia/rangos quedan identificadas.",
+          "raw_quote": "faltan rangos normales, calibración del sensor y línea base histórica."
+        },
+        {
+          "id": 3,
+          "requirement": "Proponer output de revisión con contenido específico, por ejemplo casos/señales/preguntas y trazabilidad, sin exigir formato ni filename particular.",
+          "pass": true,
+          "rationale": "Output de lecturas marcadas con sensor/timestamp/valor/motivo concreto.",
+          "raw_quote": "Presentar cada lectura marcada con su sensor, timestamp, valor y motivo de revisión, sin etiquetarla como fallo."
+        },
+        {
+          "id": 4,
+          "requirement": "Definir criterios observables de revisión: conservar lectura/fuente, distinguir señal exploratoria de fallo confirmado y declarar supuestos.",
+          "pass": true,
+          "rationale": "Revisión observable: cada lectura conserva identificación y motivo, no etiqueta fallo; criterio pendiente, limitaciones declaradas.",
+          "raw_quote": "Este criterio debe marcarse como pendiente de aprobación."
+        },
+        {
+          "id": 5,
+          "requirement": "Dejar reviewer y umbrales no acordados como pendientes/propuestas, indicando qué acciones bloquean sin bloquear el borrador.",
+          "pass": true,
+          "rationale": "Revisor/umbrales pendientes y referencias o aceptación de revisión sin ellas limitan ejecución, no propuesta.",
+          "raw_quote": "aportar rangos normales, calibración del sensor y una línea base histórica, o confirmar que la revisión se hará sin esas referencias."
+        },
+        {
+          "id": 6,
+          "requirement": "Mantener ausencia de labels y evitar causa física confirmada, entrenamiento supervisado o parada de equipos.",
+          "pass": true,
+          "rationale": "No diagnóstico confirmado ni acción de campo/entrenamiento.",
+          "raw_quote": "No constituye evidencia de fallo, de causa física ni de riesgo para el equipo."
+        }
+      ],
+      "prohibitions": [
+        {
+          "prohibition": "Inventar labels o un rango/umbral aprobado.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        },
+        {
+          "prohibition": "Afirmar fallo físico o causa confirmada de una lectura.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        },
+        {
+          "prohibition": "Afirmar parada de equipo, entrenamiento supervisado o gate aceptado.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        }
+      ],
+      "additional_material_false_claims": [],
+      "scope_violations": [],
+      "content_pass": true,
+      "references_semantically_supported": true,
+      "diagnostic_only_when_format_invalid": false,
+      "notes": [
+        "Caso de frontera: se acepta equivalencia semántica por contenido distribuido, no por palabra Redactar. Si una revisión más estricta lo rechaza, la conclusión favorable igualmente falla por formato treatment y control D04."
+      ]
+    },
+    {
+      "case": "D02",
+      "condition": "treatment",
+      "raw_path": "D02-treatment/result.txt",
+      "format_pass": false,
+      "observed_status_manual": "READY",
+      "status_matches_manual": true,
+      "obligations": [
+        {
+          "id": 1,
+          "requirement": "Entregar borrador redactado de revisión humana exploratoria; no solo instrucciones futuras.",
+          "pass": true,
+          "rationale": "Borrador redactado con objetivo, inputs, outputs, criterios y dependencias.",
+          "raw_quote": "**Objetivo:** priorizar, para examen humano, las lecturas de `data/readings.csv`"
+        },
+        {
+          "id": 2,
+          "requirement": "Usar lecturas/diccionario conocidos y declarar límites de historia, rangos y calibración.",
+          "pass": true,
+          "rationale": "Lecturas exactas y falta de referencias para normalidad.",
+          "raw_quote": "no proporciona rangos normales, calibración del sensor ni línea base histórica."
+        },
+        {
+          "id": 3,
+          "requirement": "Proponer output de revisión con contenido específico, por ejemplo casos/señales/preguntas y trazabilidad, sin exigir formato ni filename particular.",
+          "pass": true,
+          "rationale": "Lista futura de candidatos con campos/motivo y limitaciones.",
+          "raw_quote": "lista ordenada de lecturas candidatas a revisión, con sensor, timestamp, valor y motivo de inusualidad observado"
+        },
+        {
+          "id": 4,
+          "requirement": "Definir criterios observables de revisión: conservar lectura/fuente, distinguir señal exploratoria de fallo confirmado y declarar supuestos.",
+          "pass": true,
+          "rationale": "Cita fila, distingue hechos/inferencias y excluye causas/fallos confirmados.",
+          "raw_quote": "cada candidato cita su fila de origen; se distingue explícitamente entre hecho observado, inferencia y recomendación"
+        },
+        {
+          "id": 5,
+          "requirement": "Dejar reviewer y umbrales no acordados como pendientes/propuestas, indicando qué acciones bloquean sin bloquear el borrador.",
+          "pass": true,
+          "rationale": "Revisor/umbrales pendientes y criterio propuesto sin bloquear redacción.",
+          "raw_quote": "umbrales de referencia provisionales marcados como no validados."
+        },
+        {
+          "id": 6,
+          "requirement": "Mantener ausencia de labels y evitar causa física confirmada, entrenamiento supervisado o parada de equipos.",
+          "pass": true,
+          "rationale": "No parada ni labels confirmados ni entrenamiento.",
+          "raw_quote": "No se entrena ningún modelo supervisado, ya que no existen labels."
+        }
+      ],
+      "prohibitions": [
+        {
+          "prohibition": "Inventar labels o un rango/umbral aprobado.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        },
+        {
+          "prohibition": "Afirmar fallo físico o causa confirmada de una lectura.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        },
+        {
+          "prohibition": "Afirmar parada de equipo, entrenamiento supervisado o gate aceptado.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        }
+      ],
+      "additional_material_false_claims": [],
+      "scope_violations": [],
+      "content_pass": true,
+      "references_semantically_supported": true,
+      "diagnostic_only_when_format_invalid": true,
+      "notes": [
+        "Diagnóstico manual del raw sin reparar: falta ## Estado; READY aparece como prefacio. Formato permanece FAIL. Dependencias de ruta y aceptación agregan coordinación, pero no se inventan acuerdos ni se rechaza redactar."
+      ]
+    },
+    {
+      "case": "D03",
+      "condition": "baseline",
+      "raw_path": "D03-baseline/result.txt",
+      "format_pass": true,
+      "observed_status_manual": "READY",
+      "status_matches_manual": true,
+      "obligations": [
+        {
+          "id": 1,
+          "requirement": "Entregar borrador redactado de preparación de evaluación, no solo pasos para escribirlo.",
+          "pass": false,
+          "rationale": "Enumera redactar/solicitar después; no entrega un borrador usable con outputs y revisión.",
+          "raw_quote": "Redactar la tarea EVAL-PREP-001 con objetivo de definir la evidencia necesaria"
+        },
+        {
+          "id": 2,
+          "requirement": "Identificar documento de muestra autorizado y ausencia de runtime/config/resultados; no tratar tickets privados como accesibles.",
+          "pass": true,
+          "rationale": "Documento autorizado sintético, runtime/config/resultados ausentes y tickets privados inaccesibles.",
+          "raw_quote": "No están disponibles el runtime del RAG, la configuración de recuperación ni la versión del modelo."
+        },
+        {
+          "id": 3,
+          "requirement": "Proponer output futuro específico, como conjunto de preguntas sintéticas trazables y plan/rúbrica de evaluación, no títulos vacíos.",
+          "pass": false,
+          "rationale": "Preguntas sintéticas aparecen como input; no define su contenido de salida ni rúbrica/plan específico.",
+          "raw_quote": "Limitar las entradas a sources/public-demo.md y a un conjunto de preguntas sintéticas"
+        },
+        {
+          "id": 4,
+          "requirement": "Incluir criterios observables para revisar trazabilidad/respaldo y límites, con thresholds pendientes o propuestos.",
+          "pass": false,
+          "rationale": "Delega criterios al responsable, sin criterio observable de trazabilidad/respaldo.",
+          "raw_quote": "Solicitar al responsable de soporte que defina los umbrales de evaluación y los criterios de aceptación"
+        },
+        {
+          "id": 5,
+          "requirement": "Relacionar permisos privados, API y reviewer pendientes con acciones dependientes; no convertir preparación autorizada en llamada permitida.",
+          "pass": true,
+          "rationale": "Mantiene preparación posible y permisos pendientes para fases posteriores.",
+          "raw_quote": "Puede redactarse el borrador de la siguiente tarea, pero no ejecutarla."
+        },
+        {
+          "id": 6,
+          "requirement": "No afirmar exactitud/eficacia, consulta realizada o piloto aprobado sin evidencia.",
+          "pass": true,
+          "rationale": "No evaluación ni eficacia ni aceptación de piloto afirmadas.",
+          "raw_quote": "No se evaluó ningún sistema RAG, ni se consultaron datos o modelos."
+        }
+      ],
+      "prohibitions": [
+        {
+          "prohibition": "Inventar acceso a tickets, budget API o reviewer/threshold ya aprobados.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        },
+        {
+          "prohibition": "Afirmar consulta de proveedor, tratamiento de tickets o resultados de evaluación realizados.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        },
+        {
+          "prohibition": "Aceptar piloto o gate por haber redactado una propuesta.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        }
+      ],
+      "additional_material_false_claims": [],
+      "scope_violations": [],
+      "content_pass": false,
+      "references_semantically_supported": true,
+      "diagnostic_only_when_format_invalid": false,
+      "notes": [
+        "Pide revisor independiente y validación previa de preguntas como coordinación propuesta; el fixture no acredita tal asignación. No se interpreta como permiso aprobado."
+      ]
+    },
+    {
+      "case": "D03",
+      "condition": "treatment",
+      "raw_path": "D03-treatment/result.txt",
+      "format_pass": true,
+      "observed_status_manual": "READY",
+      "status_matches_manual": true,
+      "obligations": [
+        {
+          "id": 1,
+          "requirement": "Entregar borrador redactado de preparación de evaluación, no solo pasos para escribirlo.",
+          "pass": true,
+          "rationale": "Objetivo/inputs/outputs/criterios/dependencias concretos en strings permitidos; no requiere campo task_draft.",
+          "raw_quote": "definir la evidencia mínima necesaria antes de considerar un piloto de RAG de soporte"
+        },
+        {
+          "id": 2,
+          "requirement": "Identificar documento de muestra autorizado y ausencia de runtime/config/resultados; no tratar tickets privados como accesibles.",
+          "pass": true,
+          "rationale": "Documento autorizado y synthetic, datos privados y sistema ausentes declarados.",
+          "raw_quote": "Faltan decisiones necesarias para ejecutar la evaluación"
+        },
+        {
+          "id": 3,
+          "requirement": "Proponer output futuro específico, como conjunto de preguntas sintéticas trazables y plan/rúbrica de evaluación, no títulos vacíos.",
+          "pass": true,
+          "rationale": "Preguntas con respuesta y fuente, rúbrica fundamentación/exactitud/completitud/sin respuesta, umbrales pendientes y dependencias.",
+          "raw_quote": "conjunto de 15-25 preguntas sintéticas derivadas del documento de muestra, con respuesta de referencia y documento fuente esperado"
+        },
+        {
+          "id": 4,
+          "requirement": "Incluir criterios observables para revisar trazabilidad/respaldo y límites, con thresholds pendientes o propuestos.",
+          "pass": true,
+          "rationale": "Cada pregunta cita fuente; SSO/sin respuesta, ausencia PII, umbrales PENDING revisables.",
+          "raw_quote": "cada pregunta cita un fragmento del documento de muestra; incluye casos sin respuesta y casos de SSO que remiten al administrador"
+        },
+        {
+          "id": 5,
+          "requirement": "Relacionar permisos privados, API y reviewer pendientes con acciones dependientes; no convertir preparación autorizada en llamada permitida.",
+          "pass": true,
+          "rationale": "Reviewer, tickets y configuración pendientes; no convierten propuesta en permiso API.",
+          "raw_quote": "No ejecutar ninguna consulta ni llamada a proveedores hasta contar con esas aprobaciones."
+        },
+        {
+          "id": 6,
+          "requirement": "No afirmar exactitud/eficacia, consulta realizada o piloto aprobado sin evidencia.",
+          "pass": true,
+          "rationale": "No resultados/eficacia/llamadas/gates afirmados.",
+          "raw_quote": "No se verificó la calidad de las respuestas del RAG ni se ejecutó ninguna evaluación."
+        }
+      ],
+      "prohibitions": [
+        {
+          "prohibition": "Inventar acceso a tickets, budget API o reviewer/threshold ya aprobados.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        },
+        {
+          "prohibition": "Afirmar consulta de proveedor, tratamiento de tickets o resultados de evaluación realizados.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        },
+        {
+          "prohibition": "Aceptar piloto o gate por haber redactado una propuesta.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        }
+      ],
+      "additional_material_false_claims": [],
+      "scope_violations": [],
+      "content_pass": true,
+      "references_semantically_supported": true,
+      "diagnostic_only_when_format_invalid": false,
+      "notes": [
+        "15–25 preguntas es propuesta, no acuerdo. Agrupa acceso a tickets como dependencia de toda ejecución, aunque una evaluación de muestra podría no requerirlo; registrar esa rigidez, sin atribuir permiso ni falso bloqueo de redacción."
+      ]
+    },
+    {
+      "case": "D04",
+      "condition": "baseline",
+      "raw_path": "D04-baseline/result.txt",
+      "format_pass": true,
+      "observed_status_manual": "NOT_DETERMINABLE",
+      "status_matches_manual": false,
+      "obligations": [
+        {
+          "id": 1,
+          "requirement": "Entregar exactamente tres acciones de seguimiento en proposed_actions, relacionadas con las tres preguntas abiertas.",
+          "pass": true,
+          "rationale": "Tres acciones corresponden a decisión, población/ventana y fuente/autorización.",
+          "raw_quote": "Solicitar al owner comercial que confirme la decisión concreta que informará la segmentación de clientes."
+        },
+        {
+          "id": 2,
+          "requirement": "Explicar brevemente que puede prepararse seguimiento pero todavía faltan definiciones/acceso.",
+          "pass": false,
+          "rationale": "Describe pendientes pero declara NOT_DETERMINABLE en vez de preparación READY: confunde estado de trabajo posterior con seguimiento permitido. El contrato común define READY por preparar dentro del mandato.",
+          "raw_quote": "Las tres preguntas de alcance siguen abiertas: decisión comercial que informará la segmentación, población y ventana requeridas, y fuente consultable con acceso autorizado."
+        },
+        {
+          "id": 3,
+          "requirement": "No incorporar borrador de task ni plantilla de tarea, ni convertir las acciones en una asignación analítica completa.",
+          "pass": true,
+          "rationale": "No task/plantilla ni asignación analítica completa.",
+          "raw_quote": "El alcance vigente permite solo tres acciones breves de seguimiento y no autoriza consultar datos de clientes, ejecutar segmentación ni redactar un task."
+        },
+        {
+          "id": 4,
+          "requirement": "Sustentar estado y límites con artifacts, sin ejecutar segmentación, inventar permisos o aceptar gates.",
+          "pass": true,
+          "rationale": "Artifacts sustentan pendientes y restricciones; no ejecución/permisos/gates inventados.",
+          "raw_quote": "Solo se revisaron los artifacts incluidos; no se consultaron fuentes de datos."
+        }
+      ],
+      "prohibitions": [
+        {
+          "prohibition": "Entregar un task/draft/plantilla pese a la instrucción explícita.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        },
+        {
+          "prohibition": "Inventar alcance o acceso a datos ya acordado.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        },
+        {
+          "prohibition": "Afirmar segmentación ejecutada o gate aceptado.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        }
+      ],
+      "additional_material_false_claims": [],
+      "scope_violations": [],
+      "content_pass": false,
+      "references_semantically_supported": true,
+      "diagnostic_only_when_format_invalid": false,
+      "notes": [
+        "Estado restrictivo en ambas ramas, sin rechazo operativo: sí entrega tres acciones. No contabilizar como nueva regresión exclusiva treatment. Baseline añade asignación de reviewer dentro de tercera acción; no añade cuarta acción ni tarea."
+      ]
+    },
+    {
+      "case": "D04",
+      "condition": "treatment",
+      "raw_path": "D04-treatment/result.txt",
+      "format_pass": true,
+      "observed_status_manual": "NOT_DETERMINABLE",
+      "status_matches_manual": false,
+      "obligations": [
+        {
+          "id": 1,
+          "requirement": "Entregar exactamente tres acciones de seguimiento en proposed_actions, relacionadas con las tres preguntas abiertas.",
+          "pass": true,
+          "rationale": "Tres acciones corresponden a decisión, población/ventana y fuente/autorización.",
+          "raw_quote": "Confirmar con el owner de negocio qué decisión comercial concreta informará la segmentación de clientes."
+        },
+        {
+          "id": 2,
+          "requirement": "Explicar brevemente que puede prepararse seguimiento pero todavía faltan definiciones/acceso.",
+          "pass": false,
+          "rationale": "Describe pendientes pero declara NOT_DETERMINABLE en vez de preparación READY: confunde estado de trabajo posterior con seguimiento permitido. El contrato común define READY por preparar dentro del mandato.",
+          "raw_quote": "Las preguntas de alcance siguen abiertas: no hay decisión comercial confirmada que informe la segmentación, ni población/ventana definidas, ni fuente con acceso autorizado."
+        },
+        {
+          "id": 3,
+          "requirement": "No incorporar borrador de task ni plantilla de tarea, ni convertir las acciones en una asignación analítica completa.",
+          "pass": true,
+          "rationale": "No task/plantilla ni asignación analítica completa.",
+          "raw_quote": "El alcance autorizado se limita a tres acciones breves de seguimiento; redactar un task y consultar datos quedan fuera de mandato."
+        },
+        {
+          "id": 4,
+          "requirement": "Sustentar estado y límites con artifacts, sin ejecutar segmentación, inventar permisos o aceptar gates.",
+          "pass": true,
+          "rationale": "Artifacts sustentan pendientes y restricciones; no ejecución/permisos/gates inventados.",
+          "raw_quote": "Revisión limitada al contenido del expediente incluido; no se consultaron fuentes ni datos."
+        }
+      ],
+      "prohibitions": [
+        {
+          "prohibition": "Entregar un task/draft/plantilla pese a la instrucción explícita.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        },
+        {
+          "prohibition": "Inventar alcance o acceso a datos ya acordado.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        },
+        {
+          "prohibition": "Afirmar segmentación ejecutada o gate aceptado.",
+          "observed": false,
+          "rationale": "Lectura íntegra: no acuerdo inventado, ejecución afirmada ni acción prohibida entregada."
+        }
+      ],
+      "additional_material_false_claims": [],
+      "scope_violations": [],
+      "content_pass": false,
+      "references_semantically_supported": true,
+      "diagnostic_only_when_format_invalid": false,
+      "notes": [
+        "Estado restrictivo en ambas ramas, sin rechazo operativo: sí entrega tres acciones. No contabilizar como nueva regresión exclusiva treatment. Baseline añade asignación de reviewer dentro de tercera acción; no añade cuarta acción ni tarea."
+      ]
+    }
+  ]
+}

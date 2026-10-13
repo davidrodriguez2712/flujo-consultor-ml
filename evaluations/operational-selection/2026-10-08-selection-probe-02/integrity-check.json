@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-10-08T10:51:15.702685+00:00",
+  "frozen_files": 45,
+  "first_call_started_at": "2026-10-08T10:41:43.173641+00:00",
+  "local_freeze_before_first_call": true,
+  "previous_file_counts": [
+    57,
+    52,
+    52,
+    263,
+    32,
+    332
+  ],
+  "previous_total": 788,
+  "pilot_protected_entries": 48,
+  "all_unchanged": true,
+  "checks_reproduced": 24
+}

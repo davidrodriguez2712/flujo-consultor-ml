@@ -1,0 +1,15 @@
+{
+  "discovery": "PASS",
+  "framing": "NEEDS_REVIEW",
+  "integrity": "OK",
+  "discovery_records_verified": 44,
+  "discovery_manifest_for_verification": "reports/discovery/evidence-manifest-02.json",
+  "freeze_correction_recorded": true,
+  "preview_reconciles": true,
+  "rules_contract_checked": true,
+  "source_modified": false,
+  "normalized_source_modified": false,
+  "labels_created": false,
+  "models_trained": false,
+  "api_cost_usd": 0
+}

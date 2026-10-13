@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "version": "0.1.0",
+  "scope": "Paquete Handoff preparado para revisión humana. Excluye state y vistas mutables; no es aprobación de cierre.",
+  "files": {
+    "handoff/business_handoff.md": {
+      "sha256": "20e49d850659521582e84d9c04060b07ed1f6f643e5b254c6fb5e462a36f769d",
+      "bytes": 1227
+    },
+    "handoff/capability_feedback.md": {
+      "sha256": "98904b5cec48e28674f3840c36d0bc5abfaf2c5d619a2cbef0f00aa80624bc35",
+      "bytes": 2567
+    },
+    "handoff/next_steps.md": {
+      "sha256": "c496508da882182621e50041450005e4bdb206c894b923e6b8e110a9fae4ed18",
+      "bytes": 1200
+    },
+    "handoff/review.md": {
+      "sha256": "11b3358d7d65e92e7264e6c86a722c10d6fe2ff1002ce3a60f5b4522f767cc71",
+      "bytes": 1593
+    },
+    "handoff/runbook.md": {
+      "sha256": "c02f423e0c43a72cd9d8a46a8163698a11b09ee4753cb2b5d4f9e2866957408d",
+      "bytes": 3511
+    },
+    "handoff/technical_handoff.md": {
+      "sha256": "9fe6ac3ec149bbc9849e3f20152729dce95f5e6e65cc2f3c601d4d21cde491c4",
+      "bytes": 2201
+    },
+    "reports/handoff/acos-next.json": {
+      "sha256": "7d82cef66ea0ee3f5927e093cf8e6283e0b1488b9eddce0d20183cf5ae55cd9e",
+      "bytes": 9521
+    },
+    "reports/handoff/acos-status.json": {
+      "sha256": "8a2f37d0445d46a3716a39b0ad01e5a55f227f582d2fcef944e57058cab12690",
+      "bytes": 445
+    },
+    "reports/handoff/acos-validate.json": {
+      "sha256": "302968b9e790486d17b05e0308f0c5188a6b58b33d61dbc851ebfec7de225525",
+      "bytes": 193
+    },
+    "reports/handoff/agent-review.md": {
+      "sha256": "3b316250d87cbd5978eb10ceb7c317bdaaa68e8a33bca80fe82179835f2e2ef4",
+      "bytes": 960
+    },
+    "reports/handoff/reproduction-checks.json": {
+      "sha256": "66349f9f7c81293e2c9c11f6a2d180f3d82a79e3dc57764b05c5e0850a2de656",
+      "bytes": 18270
+    },
+    "reports/handoff/reproduction-command.py.txt": {
+      "sha256": "6f4e2b1a7d8fcf4a69f9a713ca9e66e20e0c3322521957cda09e4baa340e742f",
+      "bytes": 2999
+    },
+    "reports/handoff/verification.json": {
+      "sha256": "171fa990286e6eba0fde39353329dc0d50c4cd65911cf6131d1698d7c1bc6b9e",
+      "bytes": 650
+    }
+  },
+  "prior_evidence": [
+    "reports/diagnosis/verification.json",
+    "reports/execution/evidence-manifest.json",
+    "reports/final-validation/evidence-manifest.json",
+    "reports/delivery/delivery-manifest.json"
+  ]
+}

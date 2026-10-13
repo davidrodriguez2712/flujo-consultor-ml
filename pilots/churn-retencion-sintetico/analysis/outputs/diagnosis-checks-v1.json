@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-07",
+  "scope": "diagnóstico estructural/temporal del fixture, sin entrenamiento",
+  "violations": {
+    "customers_duplicate_keys": 0,
+    "customers_exact_duplicates": 0,
+    "snapshots_duplicate_keys": 0,
+    "snapshots_exact_duplicates": 0,
+    "labels_duplicate_keys": 0,
+    "labels_exact_duplicates": 0,
+    "tickets_duplicate_keys": 0,
+    "tickets_exact_duplicates": 0,
+    "snapshot_without_customer": 0,
+    "snapshot_label_key_difference": 0,
+    "ticket_without_snapshot": 0,
+    "ticket_count_mismatch": 0,
+    "ticket_after_feature_availability": 0,
+    "ticket_outside_observation_window": 0,
+    "feature_not_before_prediction": 0,
+    "invalid_activity_range": 0,
+    "invalid_prior_activity_range": 0,
+    "label_delay_mismatch": 0,
+    "label_maturity_status_mismatch": 0,
+    "pending_filled": 0,
+    "observed_without_binary_label": 0,
+    "observed_positive_event_mismatch": 0,
+    "negative_with_cancellation": 0,
+    "exposed_future_cancellation": 1,
+    "snapshot_after_cancellation": 0,
+    "tenure_mismatch": 0
+  },
+  "all_zero": false,
+  "development_overlap": [
+    {
+      "month": "2024-09",
+      "row_key_overlap": 0,
+      "shared_customers": 1878
+    },
+    {
+      "month": "2024-10",
+      "row_key_overlap": 0,
+      "shared_customers": 1803
+    },
+    {
+      "month": "2024-11",
+      "row_key_overlap": 0,
+      "shared_customers": 1735
+    },
+    {
+      "month": "2024-12",
+      "row_key_overlap": 0,
+      "shared_customers": 1662
+    },
+    {
+      "month": "2025-01",
+      "row_key_overlap": 0,
+      "shared_customers": 1592
+    },
+    {
+      "month": "2025-02",
+      "row_key_overlap": 0,
+      "shared_customers": 1542
+    },
+    {
+      "month": "2025-03",
+      "row_key_overlap": 0,
+      "shared_customers": 1488
+    },
+    {
+      "month": "2025-04",
+      "row_key_overlap": 0,
+      "shared_customers": 1434
+    },
+    {
+      "month": "2025-05",
+      "row_key_overlap": 0,
+      "shared_customers": 1376
+    }
+  ],
+  "source_sha256": {
+    "data/raw/churn_labels.csv": "1c7b5faf9109eaa890c181eb88efb1a55a858783a9fd87838d7ab7f374b53d58",
+    "data/raw/customers.csv": "53fbf9495621829ddb1accb36cd6335d8a35f0a28f869f0ad5e373ed8d53afc3",
+    "data/raw/monthly_snapshots.csv": "64cf0c93c4c02fdc5a42d4ed578c32135fa22efef2349cc6d362da7c46f0a8e9",
+    "data/raw/support_tickets.csv": "c425d1997f9a5b0a72e122da4fb84c879afcf4472c27ff25f3d6eda5e6eaee50",
+    "analysis/generate_synthetic_data.py": "ea2c6e6a1f13512446fa734132b09fb88a11f3a78981edee5dc61a7162be7bd2",
+    "validation/validation_design.md": "5addda286a3a07f392a5fc54c0353194abb74b3d0546b83d494758feacf9f0b2"
+  },
+  "pipeline_fit_audited": false,
+  "holdout_predictive_metrics_computed": false
+}

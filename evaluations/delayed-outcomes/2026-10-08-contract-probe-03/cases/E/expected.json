@@ -1,0 +1,21 @@
+{
+  "rows": {
+    "E1": {
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "exclude"
+    },
+    "E2": {
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible"
+    },
+    "E3": {
+      "outcome_state_at_extraction": "observed_negative",
+      "label_availability_at_training": "available",
+      "train_eligibility": "indeterminate"
+    }
+  },
+  "review_notes": "E1 feature posterior a scoring, aunque la fecha de referencia es anterior; E2 histórico comprobado; E3 disponibilidad desconocida.",
+  "gate_decision": "NEEDS_REVIEW"
+}

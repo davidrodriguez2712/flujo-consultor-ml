@@ -1,0 +1,20 @@
+{
+  "project": "Priorización comercial retail con datos públicos",
+  "stage": "diagnosis",
+  "status": "IN_PROGRESS",
+  "completed": [
+    "discovery",
+    "framing"
+  ],
+  "total_stages": 7,
+  "blockers": [],
+  "open_decisions": [
+    "Revisión humana de Diagnosis y data-quality pendiente."
+  ],
+  "next_gates": [
+    "diagnosis",
+    "data-quality"
+  ],
+  "integrity": "OK",
+  "findings": []
+}

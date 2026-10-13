@@ -1,0 +1,60 @@
+{
+  "case": "C",
+  "branch": "treatment",
+  "repetition": 1,
+  "started_at": "2026-10-08T03:23:03.199778+00:00",
+  "finished_at": "2026-10-08T03:23:20.817502+00:00",
+  "wall_seconds": 17.618,
+  "provider_duration_ms": 16779,
+  "exit_code": 0,
+  "runtime_ok": true,
+  "session_id": "081a9b67-465c-481f-932a-d677c50d8730",
+  "is_error": false,
+  "model_usage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1191,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 14322,
+      "webSearchRequests": 0,
+      "costUSD": 0.069202,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 338,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "model_usage_reported": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1191,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 14322,
+      "webSearchRequests": 0,
+      "costUSD": 0.069202,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 338,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "cost_usd": 0.069202,
+  "cli_version": "2.1.293 (Claude Code)",
+  "cwd": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-temporal02-call-4g5n_387",
+  "payload_sha256": "29bfe02712e1d5b5f2ba8dccc550262a26ec04179088f046d3737304b1a3f9ae",
+  "request_sha256": "9e30d4a91c6d67c9f889525d84a4a52cc4a4e70b0ed9da08a577528cbab7c713",
+  "effective_configuration": {
+    "resolved_models": [
+      "claude-sonnet-5-5"
+    ],
+    "effort": "unknown",
+    "tools": "not independently exposed",
+    "safe_mode": "not independently exposed",
+    "mcp": "not independently exposed",
+    "session_persistence": "not independently exposed"
+  }
+}

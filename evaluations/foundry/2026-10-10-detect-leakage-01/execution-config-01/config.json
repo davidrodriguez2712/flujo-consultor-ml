@@ -1,0 +1,44 @@
+{
+  "model": "claude-haiku-5-5",
+  "cli_version": "2.1.296 (Claude Code)",
+  "budget_ceiling_usd": 0.1,
+  "max_requests": 56,
+  "per_invocation": 8,
+  "output_cap": 8192,
+  "schedule": [
+    [
+      "smoke",
+      "baseline"
+    ],
+    [
+      "L01",
+      "baseline"
+    ],
+    [
+      "L01",
+      "treatment"
+    ],
+    [
+      "L02",
+      "treatment"
+    ],
+    [
+      "L02",
+      "baseline"
+    ],
+    [
+      "L03",
+      "baseline"
+    ],
+    [
+      "L03",
+      "treatment"
+    ]
+  ],
+  "automatic_retries": 0,
+  "timeout_seconds": 240,
+  "paid_execution_authorized": false,
+  "reviewer": "David, pendiente aceptación; autor no independiente",
+  "content_scoring": "manual según PROTOCOL.md y expected privado; formato y contenido separados",
+  "completion_guaranteed": false
+}

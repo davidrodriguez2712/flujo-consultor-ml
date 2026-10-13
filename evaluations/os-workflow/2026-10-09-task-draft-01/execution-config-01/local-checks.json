@@ -1,0 +1,64 @@
+{
+  "status": "PASS_LOCAL_CONFIGURATION",
+  "CLI_version": "2.1.296 (Claude Code)",
+  "required_flags_present": true,
+  "checker_version": "0.2.0",
+  "synthetic_status_explanation_check": "PASS",
+  "order_unique_cells": 8,
+  "planned_total_invocations": 9,
+  "public_body_quotes": [
+    {
+      "case": "D01",
+      "condition": "baseline",
+      "payload": "payloads/D01/baseline.txt",
+      "public_request_quote_usd": 0.044551875
+    },
+    {
+      "case": "D01",
+      "condition": "treatment",
+      "payload": "payloads/D01/treatment.txt",
+      "public_request_quote_usd": 0.0450225
+    },
+    {
+      "case": "D02",
+      "condition": "treatment",
+      "payload": "payloads/D02/treatment.txt",
+      "public_request_quote_usd": 0.045053125
+    },
+    {
+      "case": "D02",
+      "condition": "baseline",
+      "payload": "payloads/D02/baseline.txt",
+      "public_request_quote_usd": 0.0445825
+    },
+    {
+      "case": "D03",
+      "condition": "baseline",
+      "payload": "payloads/D03/baseline.txt",
+      "public_request_quote_usd": 0.044635625
+    },
+    {
+      "case": "D03",
+      "condition": "treatment",
+      "payload": "payloads/D03/treatment.txt",
+      "public_request_quote_usd": 0.04510625
+    },
+    {
+      "case": "D04",
+      "condition": "treatment",
+      "payload": "payloads/D04/treatment.txt",
+      "public_request_quote_usd": 0.04481
+    },
+    {
+      "case": "D04",
+      "condition": "baseline",
+      "payload": "payloads/D04/baseline.txt",
+      "public_request_quote_usd": 0.044339375
+    }
+  ],
+  "quote_limit": "Request público simulado; CLI añade wrappers y proxy recalcula antes de envío. No coste real ni garantía de completar bajo budget.",
+  "last_product_suite": "189PASS de ajuste anterior; no nueva ejecución ni claims de eficacia.",
+  "model_calls": 0,
+  "api_cost_usd": 0,
+  "real_provider_compatibility": "PENDING_SMOKE"
+}

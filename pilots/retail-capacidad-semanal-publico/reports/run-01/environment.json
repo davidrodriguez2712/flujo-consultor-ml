@@ -1,0 +1,19 @@
+{
+  "python": "3.13.2",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "dependencies": "Python standard library only",
+  "source_sha256": "4d3618376972b427716f80c4ff6730ef1078ee9eed6670ea31361016cc6799ff",
+  "protocol_sha256": "27e7d813a4aa7346e71dca77770893866a2bddb353c3d30af14bace05371baf1",
+  "code": {
+    "forecast.py": "3829ce6ec9cfe87aecdcd5b339863fbfc856b989a9c04dfbcf4a4c4a617ea776",
+    "run_forecast.py": "720b2c4864513a853942391bb36d37378df7daf5a51b781dba8e2eaf37810cd8"
+  },
+  "serialization": {
+    "source": "gzip CSV UTF-8, Decimal quantities/prices, naive ISO timestamp",
+    "weekly": "CSV writer/reader; actual int; cutoffs str",
+    "predictions": "CSV float .17g then float reader; actual int",
+    "strategy": "JSON saved and reread before final"
+  },
+  "seeds": "No randomness",
+  "ingestion_delay": "Zero assumed retrospectively, unverified"
+}

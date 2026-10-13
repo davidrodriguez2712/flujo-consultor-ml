@@ -1,0 +1,140 @@
+{
+  "scope": "Descriptivo de toda la historia; sin outcomes por horizonte de holdout ni modelos.",
+  "valid_lines": 788187,
+  "customers": 5852,
+  "countries": 41,
+  "sales_gbp": 17124926.229999997,
+  "top1_share": 0.03392639665695074,
+  "top10_share": 0.16092066225502216,
+  "top100_share": 0.37555955941773417,
+  "customers_multiple_invoices": 4234,
+  "observed_cohorts_caution": "Primera compra observada, no adquisición real; primeras cohortes censuradas a izquierda. Último mes incompleto.",
+  "cancellation_lines": 19165,
+  "cancellation_signed_amount_gbp": -1465303.66,
+  "cancellation_interpretation": "Importe firmado separado; no vinculación causal a compra original ni ventas netas.",
+  "within_sheet_repetition_sensitivity": {
+    "alternative": "Una representación por patrón completo; escenario descriptivo, no regla autorizada.",
+    "removed_valid_lines": 11610,
+    "sales_gbp": 17068567.970000003,
+    "sales_change_pct": -0.32910074614665996,
+    "customers": 5852,
+    "top100_share": 0.3764224626982576
+  },
+  "api_cost_usd": 0
+}
+[
+  {
+    "cutoff": "2010-09-01T00:00:00",
+    "purpose": "development",
+    "label_end": "2010-11-30T00:00:00",
+    "eligible_customers": 2822,
+    "mature_training_cutoffs": [
+      "2010-06-01T00:00:00"
+    ],
+    "hypothetical_delay_7d_mature_cutoffs": []
+  },
+  {
+    "cutoff": "2010-12-01T00:00:00",
+    "purpose": "development",
+    "label_end": "2011-03-01T00:00:00",
+    "eligible_customers": 3465,
+    "mature_training_cutoffs": [
+      "2010-06-01T00:00:00",
+      "2010-07-01T00:00:00",
+      "2010-08-01T00:00:00",
+      "2010-09-01T00:00:00"
+    ],
+    "hypothetical_delay_7d_mature_cutoffs": [
+      "2010-06-01T00:00:00",
+      "2010-07-01T00:00:00",
+      "2010-08-01T00:00:00"
+    ]
+  },
+  {
+    "cutoff": "2011-03-01T00:00:00",
+    "purpose": "development",
+    "label_end": "2011-05-30T00:00:00",
+    "eligible_customers": 3338,
+    "mature_training_cutoffs": [
+      "2010-06-01T00:00:00",
+      "2010-07-01T00:00:00",
+      "2010-08-01T00:00:00",
+      "2010-09-01T00:00:00",
+      "2010-10-01T00:00:00",
+      "2010-11-01T00:00:00",
+      "2010-12-01T00:00:00"
+    ],
+    "hypothetical_delay_7d_mature_cutoffs": [
+      "2010-06-01T00:00:00",
+      "2010-07-01T00:00:00",
+      "2010-08-01T00:00:00",
+      "2010-09-01T00:00:00",
+      "2010-10-01T00:00:00",
+      "2010-11-01T00:00:00"
+    ]
+  },
+  {
+    "cutoff": "2011-06-01T00:00:00",
+    "purpose": "development",
+    "label_end": "2011-08-30T00:00:00",
+    "eligible_customers": 2658,
+    "mature_training_cutoffs": [
+      "2010-06-01T00:00:00",
+      "2010-07-01T00:00:00",
+      "2010-08-01T00:00:00",
+      "2010-09-01T00:00:00",
+      "2010-10-01T00:00:00",
+      "2010-11-01T00:00:00",
+      "2010-12-01T00:00:00",
+      "2011-01-01T00:00:00",
+      "2011-02-01T00:00:00",
+      "2011-03-01T00:00:00"
+    ],
+    "hypothetical_delay_7d_mature_cutoffs": [
+      "2010-06-01T00:00:00",
+      "2010-07-01T00:00:00",
+      "2010-08-01T00:00:00",
+      "2010-09-01T00:00:00",
+      "2010-10-01T00:00:00",
+      "2010-11-01T00:00:00",
+      "2010-12-01T00:00:00",
+      "2011-01-01T00:00:00",
+      "2011-02-01T00:00:00"
+    ]
+  },
+  {
+    "cutoff": "2011-09-01T00:00:00",
+    "purpose": "holdout",
+    "label_end": "2011-11-30T00:00:00",
+    "eligible_customers": 2768,
+    "mature_training_cutoffs": [
+      "2010-06-01T00:00:00",
+      "2010-07-01T00:00:00",
+      "2010-08-01T00:00:00",
+      "2010-09-01T00:00:00",
+      "2010-10-01T00:00:00",
+      "2010-11-01T00:00:00",
+      "2010-12-01T00:00:00",
+      "2011-01-01T00:00:00",
+      "2011-02-01T00:00:00",
+      "2011-03-01T00:00:00",
+      "2011-04-01T00:00:00",
+      "2011-05-01T00:00:00",
+      "2011-06-01T00:00:00"
+    ],
+    "hypothetical_delay_7d_mature_cutoffs": [
+      "2010-06-01T00:00:00",
+      "2010-07-01T00:00:00",
+      "2010-08-01T00:00:00",
+      "2010-09-01T00:00:00",
+      "2010-10-01T00:00:00",
+      "2010-11-01T00:00:00",
+      "2010-12-01T00:00:00",
+      "2011-01-01T00:00:00",
+      "2011-02-01T00:00:00",
+      "2011-03-01T00:00:00",
+      "2011-04-01T00:00:00",
+      "2011-05-01T00:00:00"
+    ]
+  }
+]

@@ -1,0 +1,199 @@
+schema_version: 1
+catalog_version: 0.1.0
+profile_sha256: de55bdd2a1a02de2b50d601af3e881ef227c8464a49cddcd3d2be2de8329deb7
+modules:
+- consulting_core
+- data_analysis
+- forecast
+- executive_delivery
+capabilities:
+- id: problem-framing
+  coverage: partial
+  artifact: playbook
+  reason: Sin skill operativa compatible
+  limits: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+    evidencia específica.
+- id: evidence-synthesis
+  coverage: partial
+  artifact: playbook
+  reason: Sin skill operativa compatible
+  limits: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+    evidencia específica.
+- id: dataset-understanding
+  coverage: partial
+  artifact: playbook
+  reason: Sin skill operativa compatible
+  limits: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+    evidencia específica.
+- id: forecast-evaluation
+  coverage: partial
+  artifact: playbook
+  reason: Sin skill operativa compatible
+  limits: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+    evidencia específica.
+- id: executive-synthesis
+  coverage: partial
+  artifact: playbook
+  reason: Sin skill operativa compatible
+  limits: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+    evidencia específica.
+gates:
+- id: discovery
+  stage: discovery
+  artifacts:
+  - context/business_context.md
+  required_fields: {}
+  human_review: true
+- id: framing
+  stage: framing
+  artifacts:
+  - framing/framing.yaml
+  required_fields:
+    framing/framing.yaml:
+    - decision
+    - owner
+    - metric
+    - unit
+    - horizon
+  human_review: true
+- id: diagnosis
+  stage: diagnosis
+  artifacts:
+  - evidence/findings.md
+  required_fields: {}
+  human_review: true
+- id: execution
+  stage: execution
+  artifacts: []
+  required_fields: {}
+  human_review: true
+- id: validation
+  stage: validation
+  artifacts: []
+  required_fields: {}
+  human_review: true
+- id: delivery
+  stage: delivery
+  artifacts:
+  - decision/recommendation.md
+  - delivery/delivery_contract.md
+  required_fields: {}
+  human_review: true
+- id: handoff
+  stage: handoff
+  artifacts:
+  - handoff/runbook.md
+  required_fields: {}
+  human_review: true
+- id: data-quality
+  stage: diagnosis
+  artifacts:
+  - data/data_contract.yaml
+  required_fields:
+    data/data_contract.yaml:
+    - grain
+    - keys
+    - coverage
+    - quality
+  human_review: true
+- id: data_analysis-review
+  stage: validation
+  artifacts:
+  - analysis/analysis_plan.md
+  required_fields: {}
+  human_review: true
+- id: forecast-review
+  stage: validation
+  artifacts:
+  - analysis/forecast_plan.md
+  required_fields: {}
+  human_review: true
+- id: executive_delivery-review
+  stage: validation
+  artifacts:
+  - delivery/storyline.md
+  required_fields: {}
+  human_review: true
+excluded: []
+gaps:
+- capability: problem-framing
+  reason: Sin skill operativa compatible
+  fallback: playbook
+  limits: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+    evidencia específica.
+- capability: evidence-synthesis
+  reason: Sin skill operativa compatible
+  fallback: playbook
+  limits: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+    evidencia específica.
+- capability: dataset-understanding
+  reason: Sin skill operativa compatible
+  fallback: playbook
+  limits: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+    evidencia específica.
+- capability: forecast-evaluation
+  reason: Sin skill operativa compatible
+  fallback: playbook
+  limits: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+    evidencia específica.
+- capability: executive-synthesis
+  reason: Sin skill operativa compatible
+  fallback: playbook
+  limits: Pauta del OS con revisión humana; no demuestra correctitud ni sustituye
+    evidencia específica.
+reasons:
+- module: consulting_core
+  signal:
+    operator: equals
+    field: schema_version
+    value: 1
+  dependencies: []
+- module: data_analysis
+  signal:
+    operator: any
+    rules:
+    - operator: contains
+      field: data.sources
+      value: csv
+    - operator: contains
+      field: data.sources
+      value: excel
+    - operator: contains
+      field: data.sources
+      value: parquet
+    - operator: contains
+      field: data.sources
+      value: sql
+    - operator: contains
+      field: data.sources
+      value: api
+    - operator: contains
+      field: data.sources
+      value: postgresql
+    - operator: contains
+      field: data.sources
+      value: bigquery
+    - operator: contains
+      field: data.sources
+      value: snowflake
+    - operator: equals
+      field: data.characteristics.tabular
+      value: true
+  dependencies: []
+- module: forecast
+  signal:
+    operator: contains
+    field: engagement.archetypes
+    value: FORECAST
+  dependencies: []
+- module: executive_delivery
+  signal:
+    operator: any
+    rules:
+    - operator: contains
+      field: deliverables
+      value: executive_deck
+    - operator: contains
+      field: deliverables
+      value: decision_memo
+  dependencies: []

@@ -1,0 +1,61 @@
+{
+  "model": "claude-haiku-5-5",
+  "cli_version": "2.1.296 (Claude Code)",
+  "budget_ceiling_usd": 0.1,
+  "max_requests": 56,
+  "per_invocation": 8,
+  "output_cap": 8192,
+  "schedule": [
+    [
+      "smoke",
+      "baseline"
+    ],
+    [
+      "L01",
+      "baseline"
+    ],
+    [
+      "L01",
+      "treatment"
+    ],
+    [
+      "L02",
+      "treatment"
+    ],
+    [
+      "L02",
+      "baseline"
+    ],
+    [
+      "L03",
+      "baseline"
+    ],
+    [
+      "L03",
+      "treatment"
+    ]
+  ],
+  "automatic_retries": 0,
+  "timeout_seconds": 240,
+  "paid_execution_authorized": true,
+  "reviewer": "David, pendiente aceptación; autor no independiente",
+  "content_scoring": "manual según PROTOCOL.md y expected privado; formato y contenido separados",
+  "completion_guaranteed": false,
+  "round": "04",
+  "study_total_ceiling_usd": 0.1,
+  "prior_estimated_cost_usd": 0.028822925,
+  "proposed_round_budget_usd": 0.071177075,
+  "changes": "Solo regla de invocación nativa explícita en prompt común; nuevo cohort controlado",
+  "semantic_conditions_changed": false,
+  "report_max_words": 700,
+  "final_max_words": 80,
+  "workflow_mode": "Mismo extracto literal que round03, sin cambios",
+  "workflow_original_sha256": "af47b5625869819d53446a6b4b2f541d1c054a70d2767e2be3817d4efd27f422",
+  "workflow_selected_sections": [
+    "Capacidad y autoridad",
+    "Definition of Done",
+    "Paradas y escalamiento"
+  ],
+  "authorization_basis": "Usuario autoriza rondas necesarias dentro de US$0.10 acumulados",
+  "native_skill_policy": "Instrucción común obligatoria si está instalada; baseline ausente sigue sin skill"
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "case_id": "T01",
+    "family": "format",
+    "title": "Churn: propuesta para consumidor API",
+    "expected_path": "reviewer/expected/T01.json",
+    "format": "json",
+    "action": "proposal"
+  },
+  {
+    "case_id": "T02",
+    "family": "format",
+    "title": "Pricing: memo humano en Markdown",
+    "expected_path": "reviewer/expected/T02.json",
+    "format": "markdown",
+    "action": "proposal"
+  },
+  {
+    "case_id": "T03",
+    "family": "reproduction",
+    "title": "Inventario: IDs tras writer/reader",
+    "expected_path": "reviewer/expected/T03.json",
+    "format": "json",
+    "action": "review"
+  },
+  {
+    "case_id": "T04",
+    "family": "reproduction",
+    "title": "Forecast: metodología nueva autorizada",
+    "expected_path": "reviewer/expected/T04.json",
+    "format": "json",
+    "action": "proposal"
+  },
+  {
+    "case_id": "T05",
+    "family": "continuity",
+    "title": "Crédito: nueva tarea con freeze íntegro",
+    "expected_path": "reviewer/expected/T05.json",
+    "format": "json",
+    "action": "proposal"
+  },
+  {
+    "case_id": "T06",
+    "family": "continuity",
+    "title": "Retención: ejecución con dependencia real",
+    "expected_path": "reviewer/expected/T06.json",
+    "format": "json",
+    "action": "execution_review"
+  }
+]

@@ -1,0 +1,39 @@
+Traceback (most recent call last):
+  File "/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-retail-reproduction-eccdha94/retail-copy/analysis/reproduce_retail.py", line 128, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-retail-reproduction-eccdha94/retail-copy/analysis/reproduce_retail.py", line 126, in main
+    return reproduce(root,a.out.resolve() if a.out else root/'reproduced')
+  File "/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-retail-reproduction-eccdha94/retail-copy/analysis/reproduce_retail.py", line 90, in reproduce
+    comparisons['development_predictions']=compare_frames(devpred,expected,['model_id','customer_id','cutoff'],['score'])
+                                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-retail-reproduction-eccdha94/retail-copy/analysis/reproduce_retail.py", line 35, in compare_frames
+    if numeric:np.testing.assert_allclose(a[numeric].to_numpy(dtype=float),b[numeric].to_numpy(dtype=float),rtol=RTOL,atol=ATOL,equal_nan=True)
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-retail-reproduction-eccdha94/retail-copy/.venv-retail/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1780, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header=header, equal_nan=equal_nan,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-retail-reproduction-eccdha94/retail-copy/.venv-retail/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 988, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=1e-08, atol=1e-06
+
+Mismatched elements: 6167 / 49132 (12.6%)
+First 5 mismatches are at indices:
+ [1, 0]: 19.39157409820628 (ACTUAL), 17.772297411968875 (DESIRED)
+ [3, 0]: 1.2364392142564824 (ACTUAL), 1.1738886500909915 (DESIRED)
+ [4, 0]: 32.95999878648703 (ACTUAL), 36.24299662161896 (DESIRED)
+ [6, 0]: 102.59539964159973 (ACTUAL), 102.87665056256088 (DESIRED)
+ [7, 0]: 1.4800622100716598 (ACTUAL), 1.779976881562813 (DESIRED)
+Max absolute difference among violations: 7655.15728875
+Max relative difference among violations: 1.32018355
+ ACTUAL: array([[ 26.245383],
+       [ 19.391574],
+       [ 21.113658],...
+ DESIRED: array([[ 26.245383],
+       [ 17.772297],
+       [ 21.113658],...

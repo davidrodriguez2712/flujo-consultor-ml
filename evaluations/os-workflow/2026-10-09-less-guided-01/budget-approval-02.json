@@ -1,0 +1,10 @@
+{
+  "status": "APPROVED",
+  "total_budget_usd": 0.2,
+  "execution_manifest_sha256": "c844052205a518f94c5c4bbd02520749385f752be73abee59ef97a66791c2a41",
+  "reviewer": "David",
+  "user_message": "SI",
+  "scope": "Ajuste8192 y nueva ronda manual, conservando gasto previo y totalacumulado<=0.20. Sin retries automáticos.",
+  "prior_approval": "budget-approval.json",
+  "recorded_at_utc": "2026-10-09T21:23:11.353098+00:00"
+}

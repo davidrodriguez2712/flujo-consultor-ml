@@ -1,0 +1,42 @@
+{
+  "output_type": "risk_ranking",
+  "selection_status": "determined",
+  "eligible_count": 2,
+  "capacity_k": 3,
+  "effective_k": 2,
+  "selected_ids": [
+    "Y",
+    "Z"
+  ],
+  "risk_ranking_ids": [
+    "Y",
+    "Z"
+  ],
+  "total_cost": 4,
+  "expected_net_value": null,
+  "feasibility": "feasible",
+  "optimality": "not_assessed",
+  "causal_identification": {
+    "status": "not_requested",
+    "estimand": null,
+    "reason": "Solo se pidi\u00f3 priorizar revisiones por riesgo; no se solicita estimar el efecto de intervenir."
+  },
+  "metrics": {
+    "population_id": "eligible-A",
+    "precision": 0.5,
+    "recall": 1,
+    "lift": 1,
+    "precision_status": "identified",
+    "recall_status": "identified",
+    "lift_status": "identified",
+    "reason": "Eligible-A = {Y, Z}. Seleccionados = ambos (K efectivo 2), con 1 positivo (Z) de 2. Precision@2 = 1/2 = 0.5. Recall = 1/1 = 1 (\u00fanico positivo elegible: Z). Tasa base = 1/2, as\u00ed que lift = 0.5/0.5 = 1.0. Como se selecciona toda la poblaci\u00f3n elegible, el lift es 1 por construcci\u00f3n y no muestra capacidad de discriminaci\u00f3n. X y V (con label 1) no son elegibles y quedan fuera de la poblaci\u00f3n de m\u00e9tricas."
+  },
+  "reason": "Solo Z e Y son elegibles (X y V no lo son por el cooldown ya confirmado), as\u00ed que eligible_count=2 es menor que capacity_k=3. El K efectivo es 2 y no se rellenan cupos con inelegibles. Z e Y empatan en score (0.8); el desempate por ID ascendente pone Y antes que Z. Coste total = 2 revisiones \u00d7 2 = 4. Es un ranking descriptivo, sin objetivo econ\u00f3mico ni presupuesto, por lo que expected_net_value es null y la optimalidad no se eval\u00faa. La capacidad cubre a todos los elegibles, de modo que la factibilidad se cumple. No se aprueba ning\u00fan gate: queda en NEEDS_REVIEW.",
+  "open_questions": [
+    "\u00bfSe confirma que la capacidad de 3 puede quedar sin usar (1 cupo libre) y no se debe completar con casos no elegibles?",
+    "\u00bfLos labels completos se observaron despu\u00e9s de fijar los scores, como indica el expediente? Conviene dejar evidencia de ello.",
+    "Con solo 2 elegibles, las m\u00e9tricas tienen muy poca potencia y no sirven para validar el modelo. \u00bfSe evaluar\u00e1n tambi\u00e9n en m\u00e1s lotes?",
+    "\u00bfSe confirma el desempate por ID ascendente (Y antes que Z), dado que el orden de revisi\u00f3n cambia?"
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

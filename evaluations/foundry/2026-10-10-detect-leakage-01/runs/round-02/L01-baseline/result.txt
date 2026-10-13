@@ -1,0 +1,10 @@
+**Resumen**
+
+Hay un leakage temporal material en el conjunto de features auditado. `recovered_kwh` se usa como feature en `pipeline.py`, pero según `context.md` solo existe a partir de `recovered_available_at`, que en las cuatro filas del CSV es posterior al scoring (`2025-06-01T00:00:00Z`): 2025-06-09 a 2025-06-12. Por eso el conjunto de features no es válido para la predicción declarada.
+
+`history_kwh_90d` está disponible antes del scoring según lo declarado (`history_available_at = 2025-05-31T23:00:00Z`). No encontré leakage en esa feature, pero queda pendiente confirmar la ventana con su proceso fuente, porque el fragmento no la calcula.
+
+No se calcularon métricas, no se entrenó y no se ejecutó `pipeline.py`. No invoqué ninguna skill, porque `acos-eval:detect-leakage` no estaba entre las disponibles. Los hallazgos son una revisión manual; la utilidad autorizada solo produjo hashes, tamaños y conteos.
+
+**Ruta del reporte:**
+`/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-02/L01-baseline/workspace/reports/leakage/audit.md`

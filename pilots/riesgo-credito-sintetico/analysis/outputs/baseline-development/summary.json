@@ -1,0 +1,13 @@
+{
+  "scope": "development; solo concedidas con labels disponibles",
+  "training_rows": 1248,
+  "validation_rows": 298,
+  "reference_probability": 0.10737179487179487,
+  "brier_model": 0.10409171041242656,
+  "brier_reference": 0.11693224733485125,
+  "brier_improvement": 0.012840536922424692,
+  "roc_auc_model": 0.7084302325581395,
+  "final_metrics_computed": false,
+  "last_train_scoring": "2024-09-25",
+  "latest_train_label_available": "2025-01-01"
+}

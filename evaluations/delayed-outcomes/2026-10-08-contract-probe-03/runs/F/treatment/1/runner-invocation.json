@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python",
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/scripts/evaluations/temporal_runner.py",
+    "--payload-file",
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/delayed-outcomes/2026-10-08-contract-probe-03/payloads/F/treatment.txt",
+    "--output-dir",
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/delayed-outcomes/2026-10-08-contract-probe-03/runs/F/treatment/1"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"runner_version\": \"0.2.0\",\n  \"runtime_success\": true,\n  \"schema_conformant\": true,\n  \"model_matches\": true,\n  \"content_validation\": \"NOT_RUN\",\n  \"cost_usd_reported\": 0.07232820000000001,\n  \"findings\": []\n}\n",
+  "stderr": ""
+}

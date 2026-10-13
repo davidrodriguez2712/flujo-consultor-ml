@@ -1,0 +1,11 @@
+{
+  "final_model_training_rows": 26839,
+  "folds": 9,
+  "holdout_metrics_computed": false,
+  "mean_lift": 3.4907540478163734,
+  "mean_precision": 0.13555555555555557,
+  "mean_random_expected_precision": 0.038492379514676635,
+  "mean_random_expected_recall": 0.03132195848541292,
+  "mean_recall": 0.10744086718446655,
+  "scope": "desarrollo únicamente; test final no puntuado/evaluado"
+}

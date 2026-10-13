@@ -1,0 +1,59 @@
+schema_version: 1
+project:
+  slug: retail-valor-90d-publico
+  name: Priorización comercial retail con datos públicos
+  client: Comercio online simulado sobre Online Retail II
+  industry: Retail / e-commerce
+  market: Reino Unido histórico; clientes de varios países
+  role: Consultor Data & AI
+engagement:
+  decision: Proponer al inicio de cada mes hasta 100 clientes identificables para
+    revisión comercial, ordenados por ventas positivas esperadas a 90 días.
+  problem: Encargo simulado de priorización comercial con capacidad limitada; no existe
+    un cliente contratante ni campaña observada.
+  success_metric: Ventas positivas futuras registradas en el Top-K, comparadas con
+    baseline sobre la misma población y cutoff.
+  decision_owner: Responsable comercial simulado; David revisa los gates del piloto
+  users: Equipo comercial simulado y consultor
+  archetypes:
+  - DIAGNOSE
+  - PREDICT
+  - PRIORITIZE_SELECT
+  delivery_modes:
+  - analysis
+  current_stage: discovery
+  open_questions:
+  - Auditar el Excel real antes de fijar reglas de compra válida, identificación y
+    exclusión.
+  - Aprobar población, target, cutoffs y aceptación antes de entrenar u observar desempeño
+    del holdout.
+  - UCI no declara latencias de ingestión o revisiones históricas; explicitar su efecto
+    en la validación retrospectiva.
+data:
+  sources:
+  - excel
+  characteristics:
+    supervised: true
+    labeled: partial
+    ml_task: regression
+    temporal: true
+    panel: true
+    tabular: true
+    feature_design: true
+constraints:
+- Transacciones públicas reales e históricas; cliente, owner, capacidad y encargo
+  simulados.
+- Capacidad propuesta de hasta 100 clientes por mes; horizonte de 90 días e historia
+  de 180 días, pendientes de contrato aprobado.
+- Target de ventas positivas registradas en GBP; no afirmar ingresos netos, margen,
+  CLV completo, uplift o ROI de contacto.
+- Mantener original y snapshots inmutables; no promover capacidades ni escribir en
+  el Foundry.
+- Ejecución local sin llamadas API de pago, contactos comerciales, entrenamiento anticipado
+  o publicación externa.
+deliverables:
+- analytical_report
+- decision_memo
+runtimes:
+- codex
+- claude_code

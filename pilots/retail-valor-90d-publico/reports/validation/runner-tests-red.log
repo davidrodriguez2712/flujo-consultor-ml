@@ -1,0 +1,29 @@
+....FF                                                                   [100%]
+=================================== FAILURES ===================================
+_________ test_holdout_rejects_second_attempt_without_reading_outcomes _________
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1806/test_holdout_rejects_second_at0')
+
+    def test_holdout_rejects_second_attempt_without_reading_outcomes(tmp_path):
+     (tmp_path/'reports/validation').mkdir(parents=True)
+     (tmp_path/'reports/validation/holdout-attempt.json').write_text('{}')
+>    with pytest.raises(ValueError,match='ejecutado'):main(['holdout','--root',str(tmp_path)])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E    AssertionError: Regex pattern did not match.
+E      Expected regex: 'ejecutado'
+E      Actual message: 'holdout reservado hasta aprobación Execution y selección congelada'
+
+pilots/retail-valor-90d-publico/analysis/test_retail_runner.py:39: AssertionError
+_________________ test_selection_changed_after_freeze_rejected _________________
+
+tmp_path = PosixPath('/private/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/pytest-of-davidrodriguez/pytest-1806/test_selection_changed_after_f0')
+
+    def test_selection_changed_after_freeze_rejected(tmp_path):
+>    from run_retail import checked_holdout_selection
+E    ImportError: cannot import name 'checked_holdout_selection' from 'run_retail' (/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/pilots/retail-valor-90d-publico/analysis/run_retail.py)
+
+pilots/retail-valor-90d-publico/analysis/test_retail_runner.py:42: ImportError
+=========================== short test summary info ============================
+FAILED pilots/retail-valor-90d-publico/analysis/test_retail_runner.py::test_holdout_rejects_second_attempt_without_reading_outcomes
+FAILED pilots/retail-valor-90d-publico/analysis/test_retail_runner.py::test_selection_changed_after_freeze_rejected
+2 failed, 4 passed in 1.18s

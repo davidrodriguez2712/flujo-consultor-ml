@@ -1,0 +1,1 @@
+Responde en español. Solo puedes leer los inputs del directorio actual. No leas otros proyectos ni Foundry. No cambies archivos, no entrenes, no apruebes gates, no delegues ni ejecutes scripts. Usa skills pertinentes disponibles únicamente dentro del directorio actual.

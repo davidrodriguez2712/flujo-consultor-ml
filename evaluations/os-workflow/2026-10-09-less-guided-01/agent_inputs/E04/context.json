@@ -1,0 +1,14 @@
+{
+  "engagement": "Informe de tickets diarios",
+  "scope": "Revisión retrospectiva de reproducibilidad; no aceptar gates.",
+  "comparison_contract": {
+    "keys": [
+      "date",
+      "queue"
+    ],
+    "actual": "integer exact",
+    "selection": "exact",
+    "JSON_whitespace": "nonsemantic; byte identity between runs not required"
+  },
+  "decision_rule": "Escalar colas con tickets diarios >= 10."
+}

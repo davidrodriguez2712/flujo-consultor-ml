@@ -1,0 +1,13 @@
+{
+  "stage": "framing",
+  "decision": "PASS",
+  "reviewer": "David",
+  "authorization": "Mensaje explícito «aprobado» al paquete Framing.",
+  "recorded_at_utc": "2026-10-09T12:25:44.840881+00:00",
+  "scope": "Aprobar reglas de Framing y avanzar a Diagnosis; no aprobar evaluación ni entrenamiento.",
+  "contract_sha256": "0e537ce003ac0c125d89f5a0aa301f3c29a09316f3e90d985a4b82cc642c6ab4",
+  "evidence": [
+    "reports/framing/review.md",
+    "reports/framing/evidence-manifest.json"
+  ]
+}

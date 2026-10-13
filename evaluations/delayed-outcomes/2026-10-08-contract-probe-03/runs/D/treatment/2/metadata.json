@@ -1,0 +1,77 @@
+{
+  "runner_version": "0.2.0",
+  "schema_version": "0.1.0",
+  "started_at": "2026-10-08T10:23:32.221942+00:00",
+  "finished_at": "2026-10-08T10:23:49.897980+00:00",
+  "wall_seconds": 17.676,
+  "provider_duration_ms": 16778,
+  "exit_code": 0,
+  "runtime_success": true,
+  "structured_present": true,
+  "schema_conformant": true,
+  "model_matches": true,
+  "content_validation": "NOT_RUN",
+  "findings": [],
+  "session_id": "6beda8a8-5d12-4aa4-8a4c-6a6ca1923bbf",
+  "num_turns": 2,
+  "model_usage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1692,
+      "cacheReadInputTokens": 1101,
+      "cacheCreationInputTokens": 14036,
+      "webSearchRequests": 0,
+      "costUSD": 0.0732882,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 299,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "model_usage_reported": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1692,
+      "cacheReadInputTokens": 1101,
+      "cacheCreationInputTokens": 14036,
+      "webSearchRequests": 0,
+      "costUSD": 0.0732882,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 299,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "cost_usd_reported": 0.0732882,
+  "cli_version": "2.1.294 (Claude Code)",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "python_version": "3.13.2",
+  "payload_sha256": "cbc8d6b54e062d42d06bf936a1d0fb1fb1e7827a9284a93c60d7a1dd52b8ec68",
+  "schema_sha256": "62bf68c39f6359279edd89263fcf7381c6ef53c5e832234ae5b55e008503ac3d",
+  "request_sha256": "d26755d805097975b74aebedfa1f128e5d6a2faa13ac6af8fcbd1e2bc15ccd29",
+  "runner_sha256": "bd5f981b13052e3fad3eb54118b917c073d4e87905db7959d705d956c34672fd",
+  "effective_configuration": {
+    "resolved_models": [
+      "claude-sonnet-5-5"
+    ],
+    "effort": "unknown",
+    "tools": "unknown",
+    "safe_mode": "unknown",
+    "mcp": "unknown",
+    "session_persistence": "unknown"
+  },
+  "artifact_sha256": {
+    "payload.txt": "cbc8d6b54e062d42d06bf936a1d0fb1fb1e7827a9284a93c60d7a1dd52b8ec68",
+    "raw.json": "664163520a4f823f694c7afe2eb2d65351eb973ebd0a7e675b8b139abf5ca6c8",
+    "request.json": "d26755d805097975b74aebedfa1f128e5d6a2faa13ac6af8fcbd1e2bc15ccd29",
+    "result.txt": "cc142d799ea4d7f8255fb1b61f978347feadd8469c27539d67e5d40fb38a669c",
+    "schema.json": "62bf68c39f6359279edd89263fcf7381c6ef53c5e832234ae5b55e008503ac3d",
+    "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout.txt": "664163520a4f823f694c7afe2eb2d65351eb973ebd0a7e675b8b139abf5ca6c8",
+    "structured-output.json": "0ec132b279ea82090f8f0b06966dad254ea60e2cf1f215c990b34c7508f52537"
+  }
+}

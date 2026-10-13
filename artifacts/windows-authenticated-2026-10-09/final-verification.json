@@ -1,0 +1,40 @@
+{
+  "matrix": [
+    {
+      "attempt": 7,
+      "runtime": "codex",
+      "architecture": "x64",
+      "passed": true,
+      "workspace_unchanged": true,
+      "skill_sha256": "70883c3b75b07334fc95bad1b5c6749fd7b5e623b648f6b48fb6c14b2d32b8f9"
+    },
+    {
+      "attempt": 9,
+      "runtime": "codex",
+      "architecture": "arm64",
+      "passed": true,
+      "workspace_unchanged": true,
+      "skill_sha256": "70883c3b75b07334fc95bad1b5c6749fd7b5e623b648f6b48fb6c14b2d32b8f9"
+    },
+    {
+      "attempt": 13,
+      "runtime": "claude",
+      "architecture": "x64",
+      "passed": true,
+      "workspace_unchanged": true,
+      "skill_sha256": "70883c3b75b07334fc95bad1b5c6749fd7b5e623b648f6b48fb6c14b2d32b8f9"
+    },
+    {
+      "attempt": 14,
+      "runtime": "claude",
+      "architecture": "arm64",
+      "passed": true,
+      "workspace_unchanged": true,
+      "skill_sha256": "70883c3b75b07334fc95bad1b5c6749fd7b5e623b648f6b48fb6c14b2d32b8f9"
+    }
+  ],
+  "local_tests": 144,
+  "api_estimated_usd": 0.346215125,
+  "conservative_committed_usd": 0.565150375,
+  "within_authorization": true
+}

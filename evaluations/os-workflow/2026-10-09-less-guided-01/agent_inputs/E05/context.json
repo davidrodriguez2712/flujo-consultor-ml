@@ -1,0 +1,8 @@
+{
+  "engagement": "Diagnóstico de entregas",
+  "population": "Norte",
+  "metric": "on_time_share",
+  "unit": "Fracción 0–1 presentada como porcentaje",
+  "definition": "Última semana completa: máximo week_start entre filas de Norte para on_time_share con complete=true.",
+  "scope": "Revisión de borrador, sin publicar ni aceptar gates."
+}

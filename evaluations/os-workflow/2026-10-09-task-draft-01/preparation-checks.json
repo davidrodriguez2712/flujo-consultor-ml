@@ -1,0 +1,119 @@
+{
+  "status": "PASS_LOCAL_PREPARATION",
+  "cases": 4,
+  "draft_cases": 3,
+  "control_cases": 1,
+  "public_only_payloads": 8,
+  "only_one_paragraph_differs": true,
+  "fixture_checks": [
+    "520 descriptive rows from metadata, no actual raw present",
+    "Three readings parsed, no labels/approved thresholds",
+    "RAG access/API restrictions and no eval results",
+    "Three follow-up questions and no task request"
+  ],
+  "historical_integrity": [
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/evidence-manifest-01.json",
+      "files": 48,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/execution-config-01/execution-manifest-01.json",
+      "files": 12,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/execution-config-02/execution-manifest-02.json",
+      "files": 10,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/runs/round-01/run-manifest-01.json",
+      "files": 15,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-less-guided-01/runs/round-02/run-manifest-02.json",
+      "files": 86,
+      "status": "PASS"
+    },
+    {
+      "manifest": "pilots/retail-capacidad-semanal-publico/reports/package/evidence-manifest-01.json",
+      "files": 70,
+      "status": "PASS"
+    },
+    {
+      "manifest": "artifacts/os-workflow-refinement-2026-10-09/change-manifest-01.json",
+      "files": 12,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-transfer-01/evidence-manifest-01.json",
+      "files": 50,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-transfer-01/execution-config-01/execution-manifest-01.json",
+      "files": 13,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-transfer-01/runs/round-01/run-manifest-01.json",
+      "files": 86,
+      "status": "PASS"
+    },
+    {
+      "manifest": "evaluations/os-workflow/2026-10-09-local-refinement-02/change-manifest-02.json",
+      "files": 19,
+      "status": "PASS"
+    }
+  ],
+  "historical_files_intact": 421,
+  "payload_sizes": [
+    {
+      "case": "D01",
+      "condition": "baseline",
+      "utf8_bytes": 21410
+    },
+    {
+      "case": "D01",
+      "condition": "treatment",
+      "utf8_bytes": 22161
+    },
+    {
+      "case": "D02",
+      "condition": "baseline",
+      "utf8_bytes": 21477
+    },
+    {
+      "case": "D02",
+      "condition": "treatment",
+      "utf8_bytes": 22228
+    },
+    {
+      "case": "D03",
+      "condition": "baseline",
+      "utf8_bytes": 21564
+    },
+    {
+      "case": "D03",
+      "condition": "treatment",
+      "utf8_bytes": 22315
+    },
+    {
+      "case": "D04",
+      "condition": "baseline",
+      "utf8_bytes": 21115
+    },
+    {
+      "case": "D04",
+      "condition": "treatment",
+      "utf8_bytes": 21866
+    }
+  ],
+  "agent_calls": 0,
+  "api_cost_usd": 0,
+  "independent_review": false,
+  "runtime_isolation_verified": false,
+  "semantic_effectiveness": "NOT_EVALUATED"
+}

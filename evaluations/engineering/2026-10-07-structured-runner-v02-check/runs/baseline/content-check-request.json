@@ -1,0 +1,9 @@
+{
+  "argv": [
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python",
+    "evaluations/engineering/2026-10-07-structured-runner-v02-check/frozen/check.py",
+    "evaluations/engineering/2026-10-07-structured-runner-v02-check/runs/baseline/structured-output.json",
+    "evaluations/engineering/2026-10-07-structured-runner-v02-check/frozen/expected.json"
+  ],
+  "exit_code": 0
+}

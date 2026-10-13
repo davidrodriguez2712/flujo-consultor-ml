@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "finished_at_utc": "2026-10-09T13:22:08.211822+00:00",
+  "elapsed_seconds": 33.520516665652394,
+  "environment": {
+    "python": "3.13.2",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "packages": {
+      "pandas": "3.0.6",
+      "numpy": "2.5.3",
+      "openpyxl": "3.1.5",
+      "scikit-learn": "1.9.1",
+      "pytest": "9.1.1"
+    }
+  },
+  "rtol": 1e-08,
+  "atol": 1e-06,
+  "comparisons": {
+    "normalization": {
+      "rows": 1067371,
+      "keys": "EXACT",
+      "non_numeric": "EXACT",
+      "numeric_rtol": 1e-08,
+      "numeric_atol": 1e-06
+    },
+    "snapshots": {
+      "rows": 39677,
+      "keys": "EXACT",
+      "non_numeric": "EXACT",
+      "numeric_rtol": 1e-08,
+      "numeric_atol": 1e-06
+    },
+    "reserved_final_snapshot": {
+      "rows": 2768,
+      "keys": "EXACT",
+      "non_numeric": "EXACT",
+      "numeric_rtol": 1e-08,
+      "numeric_atol": 1e-06
+    },
+    "development_predictions": {
+      "rows": 49132,
+      "keys": "EXACT",
+      "non_numeric": "EXACT",
+      "numeric_rtol": 1e-08,
+      "numeric_atol": 1e-06
+    },
+    "holdout_predictions": {
+      "rows": 2768,
+      "keys": "EXACT",
+      "non_numeric": "EXACT",
+      "numeric_rtol": 1e-08,
+      "numeric_atol": 1e-06
+    },
+    "selected_ranking": {
+      "rows": 100,
+      "keys": "EXACT",
+      "non_numeric": "EXACT",
+      "numeric_rtol": 1e-08,
+      "numeric_atol": 1e-06
+    }
+  },
+  "development_metrics": "MATCH",
+  "final_metrics": "MATCH",
+  "decision": "EXACT",
+  "selected_method": "historical_sales",
+  "historical_manifests_verified": {
+    "reports/discovery/evidence-manifest-02.json": 44,
+    "reports/framing/evidence-manifest.json": 18,
+    "reports/diagnosis/evidence-manifest.json": 20,
+    "reports/execution/evidence-manifest.json": 43,
+    "reports/execution/dataset-manifest.json": 8,
+    "reports/validation/evidence-manifest.json": 42,
+    "reports/delivery/evidence-manifest.json": 28
+  },
+  "source_sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980",
+  "original_holdout_marker_unchanged": true,
+  "api_cost_usd": 0,
+  "interpretation": "Reproducción misma fuente/configuración/resultados en copia; no evaluación nueva ni selección adicional.",
+  "foundry_runtime_dependency": false,
+  "reference_and_original_holdout_markers_unchanged": true,
+  "reproduction_raw_sha256": "e881127e0218e5075d7b1cf7adf77b055fe329182a5b1413c400d88eeea99a83",
+  "rebuilt_virtualenv": true,
+  "installed_from_lock": true,
+  "original_virtualenv_not_copied": true,
+  "local_coverage_only": "macOS arm64 Python3.13.2; no nueva ejecución Windows/Linux.",
+  "initial_failed_attempt_preserved": "reports/handoff/reproduction-run-first-failed.log",
+  "flow_correction": "Reproducir también persistencia y lectura CSV de normalizado/snapshots antes de entrenar; no cambiar modelos, datos originales ni tolerancias."
+}

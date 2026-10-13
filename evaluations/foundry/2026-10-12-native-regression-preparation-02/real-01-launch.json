@@ -1,0 +1,7 @@
+{
+  "returncode": 0,
+  "stdout": "{\"status\": \"STOPPED_CONTRACT_FAILURE\", \"runs\": [{\"case\": \"L01\", \"condition\": \"treatment\", \"runtime_success\": true, \"contract_success\": true}, {\"case\": \"L02\", \"condition\": \"treatment\", \"runtime_success\": true, \"contract_success\": false}], \"effectiveness\": \"NOT_REVIEWED\"}\n",
+  "stderr": "",
+  "execution_manifest_sha256": "b8ef2799245a463cc3e33be88c25e94b1b26af13072862d9f6c613ac2e0da044",
+  "budget_usd": 0.05887352
+}

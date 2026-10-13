@@ -1,0 +1,43 @@
+{
+  "output_type": "value_selection",
+  "selection_status": "determined",
+  "eligible_count": 3,
+  "capacity_k": 2,
+  "effective_k": 2,
+  "selected_ids": [
+    "M2",
+    "M1"
+  ],
+  "risk_ranking_ids": [
+    "M1",
+    "M2",
+    "M3"
+  ],
+  "total_cost": 7,
+  "expected_net_value": 11,
+  "feasibility": "feasible",
+  "optimality": "optimal",
+  "causal_identification": {
+    "status": "identifiable",
+    "estimand": "Efecto promedio del contacto vs. no contacto sobre la retenci\u00f3n a 90 d\u00edas, por estrato (ATE_g), transportado a los clientes actuales del mismo estrato (intercambiables seg\u00fan el supuesto expl\u00edcito). No es un efecto individual.",
+    "reason": "Aleatorizaci\u00f3n preespecificada dentro de cada estrato, 10000 por brazo, cumplimiento total, seguimiento completo, sin interferencia y outcomes iguales, m\u00e1s el supuesto de transporte declarado. La diferencia de proporciones estima el ATE por estrato: G1 = 0,7000-0,6000 = +0,10; G2 = 0,7400-0,7000 = +0,04; G3 = 0,7900-0,8000 = -0,01. IC95% Wald aprox.: G1 [0,087; 0,113], G2 [0,028; 0,052], G3 [-0,021; +0,001]. La identificaci\u00f3n depende de los supuestos; no se verifican con los datos."
+  },
+  "metrics": {
+    "population_id": "eligible-E",
+    "precision": null,
+    "recall": null,
+    "lift": null,
+    "precision_status": "not_requested",
+    "recall_status": "not_requested",
+    "lift_status": "not_requested",
+    "reason": "No se solicitaron m\u00e9tricas predictivas (precision/recall/lift). El producto es una selecci\u00f3n por valor econ\u00f3mico, no una evaluaci\u00f3n del risk_score."
+  },
+  "reason": "Se filtr\u00f3 la elegibilidad: los 3 clientes son elegibles. Valor neto = ATE \u00d7 CLV \u2212 coste, restando el coste una sola vez. M1 (G1): 0,10\u00d7100 \u2212 5 = +5. M2 (G2): 0,04\u00d7200 \u2212 2 = +6. M3 (G3): \u22120,01\u00d7300 \u2212 1 = \u22124 (valor negativo, nunca conviene). Se enumeran los subconjuntos factibles (m\u00e1x. 2 elementos, coste \u2264 7): \u2205 = 0; {M1} = 5 (coste 5); {M2} = 6 (coste 2); {M3} = \u22124; {M1,M2} = 11 (coste 7, factible con el presupuesto justo); {M1,M3} = 1 (coste 6); {M2,M3} = 2 (coste 3). El \u00f3ptimo es {M1,M2}, con valor 11 y coste 7; no hay empate. El orden por valor neto descendente es M2 (6) y luego M1 (5). La optimalidad se refiere solo a estas estimaciones puntuales, no a una pol\u00edtica real. Incertidumbre (Wald, estratos independientes, IC95% aprox.): valor neto de M1 = 5 [3,7; 6,3]; M2 = 6 [3,5; 8,5]; M3 = \u22124 [\u22127,4; \u22120,6]. Total de la selecci\u00f3n = 11 [8,2; 13,8]. Los intervalos no cambian la decisi\u00f3n: M3 es negativo incluso en su extremo superior. Frente a M1 solo, M2 solo domina por punto, pero la diferencia entre ambos est\u00e1 dentro de la incertidumbre. El valor esperado es un escenario con CLV constante y conocido, aditividad y transporte; no es incremento realizado. risk_score solo se us\u00f3 para el ranking descriptivo, M1>M2>M3, que no coincide con la selecci\u00f3n por valor.",
+  "open_questions": [
+    "\u00bfSe puede confirmar que el supuesto de transporte (clientes actuales intercambiables con la poblaci\u00f3n del experimento dentro del estrato) se sostiene, y que el horizonte de 90 d\u00edas es el relevante?",
+    "\u00bfEs adecuado que el CLV de cada estrato se trate como constante y conocido, sin incertidumbre propia? Si tuviera incertidumbre, los intervalos del valor neto ser\u00edan m\u00e1s amplios.",
+    "\u00bfEl cliente acepta optimizar sobre estimaciones puntuales, o quiere un criterio robusto al riesgo? Por ejemplo, un l\u00edmite inferior del IC de M1 + M2 sigue siendo positivo (\u22488,2).",
+    "\u00bfDebe revisarse en G3 un posible efecto negativo del contacto (\u22120,01, IC aprox. [\u22120,021; +0,001])? Aqu\u00ed la evidencia no excluye un efecto nulo, pero el valor neto sigue siendo negativo por el coste."
+  ],
+  "gate_decision": "NEEDS_REVIEW"
+}

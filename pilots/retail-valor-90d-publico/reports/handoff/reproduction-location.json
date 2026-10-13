@@ -1,0 +1,7 @@
+{
+  "copy_path": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-retail-reproduction-eccdha94/retail-copy",
+  "root": "/var/folders/ld/0d7_g8ld1ss3trd6n_jnpclw0000gn/T/acos-retail-reproduction-eccdha94",
+  "original_holdout_marker_sha256": "6b05ecef1110669764027f84563322560b5e61085d8f37743d68d8538b51a41a",
+  "environment_excluded": true,
+  "source_original_unchanged": true
+}

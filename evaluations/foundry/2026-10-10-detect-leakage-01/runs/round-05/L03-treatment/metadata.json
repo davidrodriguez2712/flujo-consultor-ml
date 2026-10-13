@@ -1,0 +1,114 @@
+{
+  "started_at": "2026-10-11T13:54:23.470534+00:00",
+  "argv": [
+    "claude",
+    "-p",
+    "--restricted",
+    "--no-chrome",
+    "--no-session-persistence",
+    "--setting-sources",
+    "",
+    "--settings",
+    "{\"disableBundledSkills\": true, \"permissions\": {\"allow\": [\"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L03-treatment/workspace/.runtime/check_inputs.py)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L03-treatment/workspace/.runtime/plugin/.claude-plugin/plugin.json)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L03-treatment/workspace/.runtime/plugin/skills/detect-leakage/SKILL.md)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L03-treatment/workspace/case.md)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L03-treatment/workspace/inputs/context.md)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L03-treatment/workspace/inputs/dictionary.json)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L03-treatment/workspace/inputs/observations.csv)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L03-treatment/workspace/workflow.md)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L03-treatment/workspace/reports/leakage/audit.md)\", \"Bash(/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python /Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L03-treatment/workspace/.runtime/check_inputs.py)\", \"Skill(acos-eval:detect-leakage)\"], \"deny\": [\"Agent\", \"WebFetch\", \"WebSearch\", \"NotebookEdit\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L03-treatment/workspace/inputs/**)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L03-treatment/workspace/case.md)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L03-treatment/workspace/.runtime/**)\"]}}",
+    "--strict-mcp-config",
+    "--mcp-config",
+    "{\"mcpServers\":{}}",
+    "--permission-mode",
+    "dontAsk",
+    "--permission-prompts",
+    "none",
+    "--tools",
+    "Read,Write,Bash,Skill",
+    "--max-turns",
+    "8",
+    "--effort",
+    "low",
+    "--model",
+    "claude-haiku-5-5",
+    "--system-prompt",
+    "Responde en español. Audita solo el expediente público, respeta sus límites y no aceptes gates. Usa únicamente herramientas y capacidades disponibles. Entrega el reporte y su ruta según case.md.",
+    "--output-format",
+    "stream-json",
+    "--verbose",
+    "--plugin-dir",
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L03-treatment/workspace/.runtime/plugin"
+  ],
+  "runtime_success": true,
+  "condition": "treatment",
+  "skill_invoked": true,
+  "request_count": 4,
+  "returncode": 0,
+  "tool_calls": [
+    {
+      "name": "Skill",
+      "input": {
+        "skill": "acos-eval:detect-leakage"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L03-treatment/workspace/workflow.md"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L03-treatment/workspace/case.md"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L03-treatment/workspace/inputs/context.md"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L03-treatment/workspace/inputs/dictionary.json"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L03-treatment/workspace/inputs/observations.csv"
+      }
+    },
+    {
+      "name": "Bash",
+      "input": {
+        "command": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python /Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L03-treatment/workspace/.runtime/check_inputs.py",
+        "description": "Run authorized input check utility for hashes and counts"
+      }
+    },
+    {
+      "name": "Write",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-10-detect-leakage-01/runs/round-05/L03-treatment/workspace/reports/leakage/audit.md",
+        "content": "---\nskill: acos-eval:detect-leakage\nversion: 0.1.0 (según plantilla de la skill; no verificada en runtime)\nfecha: 2026-10-11\nproyecto: (sin especificar)\ninputs:\n  - case.md — sha256:db7f2572bc7e591a8d537735dade9cdbcc1da74a100ecb2dd245673b3540e951\n  - inputs/context.md — sha256:ae79d0d67bdd4f71349d51644732c99ae1ce547ad618a6d663a30195042b1c7e\n  - inputs/dictionary.json — sha256:72636cf89cf406c70e90c0c1325ddcb7c89229a915199153c35c9f167c414fe3\n  - inputs/observations.csv — sha256:32ae7c42472e440093583da2798aba677eb2ceae58289e5d5dc77f3e46354532 (3 filas, 5 columnas)\nestado: No determinable; sin evidencia confirmada de leakage, con riesgo temporal alto pendiente de datos de proceso\n---\n\n# Auditoría de leakage — feature `complaint_count` (L03, churn 30 días)\n\n## Resumen\n\n- **Evidencia de leakage:** no confirmada. Tampoco puede descartarse. La feature `complaint_count` no tiene fecha de disponibilidad, ventana de conteo ni código de construcción en el expediente.\n- **Familias implicadas:** temporal (riesgo principal) y post-event (si el conteo refleja el estado a la exportación, 2025-08-01, y no al scoring, 2025-06-01). Target, split, preprocessing, joins y resampling: no evaluables (no hay código ni split).\n- **Estrategia de validación:** con la información actual no es posible confirmar una validación fiable. Falta el momento de disponibilidad de la feature y la forma de particionar.\n\n## Hallazgos\n\n### Alto\n\n**H1 — Temporal / post-event potencial sobre `complaint_count`**\n- **Componente:** feature `complaint_count` (dictionary.json; observations.csv).\n- **Mecanismo:** `prediction_at` = 2025-06-01T00:00:00Z, pero `exported_at` = 2025-08-01T00:00:00Z y el expediente indica que la exportación contiene outcomes posteriores al scoring. Si el conteo se construyó con reclamos hasta la fecha de exportación, incorporaría información posterior a la predicción (y posiblemente reclamos ligados a la propia cancelación). Si se construyó hasta 2025-06-01, no hay leakage temporal.\n- **Evidencia:** context.md declara \"No se conoce si el conteo refleja el estado al scoring o al exportar\". dictionary.json: `feature_available_at: null`, `construction_code: null`, ventana \"no documentada\".\n- **Confianza:** No determinable (mecanismo plausible, sin dato que lo confirme ni lo descarte).\n- **Impacto potencial:** métricas de churn sobrestimadas y modelo que no generaliza a scoring real.\n- **Prueba necesaria:** fecha de generación/disponibilidad de `complaint_count`; ventana exacta de conteo (p. ej. reclamos con timestamp < prediction_at); versión histórica del campo al 2025-06-01 o extracción con corte temporal.\n- **Acción recomendada:** no eliminar la variable. Reconstruirla con reclamos estrictamente anteriores a `prediction_at` (ventana documentada) y verificar que coincide con el valor de producción en esa fecha.\n\n### Riesgo\n\n**R1 — Ausencia de código y de split**\n- **Componente:** pipeline y validación (no presentes).\n- **Familia:** cross-validation / train-test contamination / preprocessing (no evaluables).\n- **Confianza:** Riesgo (no hay artefacto para verificar `fit` antes del split, joins ni solape de clientes).\n- **Acción:** aportar el código de construcción y el esquema de validación (split temporal o por cliente) antes de confiar en métricas.\n\n### Informativo\n\n**I1 — Target con outcomes posteriores al scoring.** El target (`cancelled_next_30d`) se define en la ventana posterior a 2025-06-01 y es correcto por diseño. No constituye leakage por sí mismo; solo lo sería si alguna feature usase ese mismo periodo.\n\n## Evidencia\n\nChecks deterministas realizados:\n- **Hashes y conteos** (utilidad `check_inputs.py`, ejecutada una vez): 3 filas en observations.csv, columnas `customer_id, prediction_at, exported_at, complaint_count, cancelled_next_30d`; hashes registrados en el frontmatter.\n- **Relación feature-target:** en 3 filas, `complaint_count` = 3→target 1 (U01), 0→0 (U02), 2→0 (U03). No hay igualdad ni mapeo 1:1: **no se detecta target leakage directo**. Con 3 observaciones, cualquier AUC univariante no es estadísticamente significativo; no se calcula como evidencia.\n- **Ventana temporal:** `prediction_at` idéntico en todas las filas (2025-06-01); `exported_at` idéntico (2025-08-01). Todas las filas comparten fechas; no hay información por fila para verificar la ventana de cada conteo.\n- **Solape de entidades y de fechas entre particiones:** no evaluable (no hay split).\n- **Orden de operaciones en código:** no evaluable (`construction_code: null`).\n- **Cardinalidad de joins:** no evaluable (una sola tabla, sin joins documentados).\n\nLímites de inspección: solo se leyeron los inputs autorizados; no se ejecutó pipeline ni se entrenó nada. El expediente contiene 3 filas sintéticas, insuficientes para cualquier conclusión estadística.\n\n## Preguntas abiertas\n\n1. ¿Cuándo se genera `complaint_count` (fecha real de disponibilidad en producción)?\n2. ¿Qué ventana cuenta los reclamos (p. ej. últimos N días antes de `prediction_at`, o histórico completo)?\n3. ¿El valor exportado corresponde al estado al 2025-06-01 o al 2025-08-01?\n4. ¿Los reclamos pueden estar causados por el propio proceso de cancelación (p. ej. reclamo de cierre)? Requiere validación de un experto de negocio.\n5. ¿Existe código de construcción y un esquema de split? ¿Quién es el owner para aceptar la definición?\n\n## Recomendaciones\n\n1. Obtener la fecha de disponibilidad y la ventana de `complaint_count` antes de usar la feature.\n2. Si el conteo usa datos posteriores a 2025-06-01, reconstruirlo con reclamos anteriores a `prediction_at` (no eliminar la variable sin antes intentar la reconstrucción).\n3. Aportar código de construcción y esquema de validación; verificar split temporal y ausencia de solape de clientes.\n4. Repetir esta auditoría con el dataset completo; 3 filas no permiten medir efectos.\n5. No tomar métricas del modelo como válidas hasta cerrar H1.\n"
+      }
+    }
+  ],
+  "skill_invocation_requested": true,
+  "usage_known": true,
+  "report_persisted": true,
+  "report_sha256": "10bdc0706c987e6fa1bd0dacc59c68c1eb7687d83595babe6ef5c8c1c6c4c141",
+  "model_usage": {
+    "claude-haiku-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 4709,
+      "cacheReadInputTokens": 46054,
+      "cacheCreationInputTokens": 19719,
+      "webSearchRequests": 0,
+      "costUSD": 0.005280715,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 883,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "finished_at": "2026-10-11T13:54:47.012681+00:00"
+}

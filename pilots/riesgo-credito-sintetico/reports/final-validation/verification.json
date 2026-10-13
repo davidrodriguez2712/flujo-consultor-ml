@@ -1,0 +1,50 @@
+{
+  "verified_at_utc": "2026-10-08T12:20:00.008119+00:00",
+  "stage": "validation",
+  "gates": {
+    "validation": "NEEDS_REVIEW",
+    "data_analysis-review": "NEEDS_REVIEW",
+    "supervised_model-review": "NEEDS_REVIEW",
+    "selection-review": "NEEDS_REVIEW",
+    "executive_delivery-review": "NEEDS_REVIEW"
+  },
+  "integrity": "OK",
+  "tests": {
+    "product": 125,
+    "credit_baseline": 25,
+    "credit_generator": 6,
+    "credit_final": 9,
+    "combined": 191
+  },
+  "frozen_code_policy_inputs_contracts_unchanged": true,
+  "development_protected_files_unchanged": 29,
+  "approved_diagnosis_hashes_unchanged": true,
+  "historical_protected_files_unchanged": 1180,
+  "output_arithmetic_matches": true,
+  "summary": {
+    "scope": "Evaluación final sintética; calidad evaluable solo en concedidas maduras",
+    "training_rows": 2140,
+    "scored_rows": 900,
+    "evaluated_rows": 447,
+    "unobserved_rejected_rows": 453,
+    "pending_rows": 0,
+    "reference_probability": 0.11635514018691588,
+    "brier_model": 0.10248743162638262,
+    "brier_reference": 0.11653042732257032,
+    "brier_improvement": 0.014042995696187707,
+    "roc_auc_model": 0.7522825150732128,
+    "final_metrics_computed": true,
+    "last_train_scoring": "2025-03-25",
+    "latest_train_label_available": "2025-07-01"
+  },
+  "additional_runtime_api_calls": 0,
+  "review": "agent-output-review.md",
+  "limits": [
+    "Evaluación sintética condicionada a concedidas con labels maduros.",
+    "Top-100 globalcoverage22–26%,sinmétricasglobalesidentificadas.",
+    "Calibración con desajustes y bins pequeños; no certificada.",
+    "Sin inferencia de significancia ni eficacia causal/skills.",
+    "Cinco gates de Validation pendientes de revisión humana.",
+    "Mejoras Minor de cobertura de tests documentadas, sin bug observado."
+  ]
+}

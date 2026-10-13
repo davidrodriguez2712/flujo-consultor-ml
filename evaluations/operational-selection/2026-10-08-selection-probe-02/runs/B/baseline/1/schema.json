@@ -1,0 +1,283 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "output_type": {
+      "enum": [
+        "risk_ranking",
+        "value_selection",
+        "not_determinable"
+      ],
+      "title": "Output Type",
+      "type": "string"
+    },
+    "selection_status": {
+      "enum": [
+        "determined",
+        "indeterminate"
+      ],
+      "title": "Selection Status",
+      "type": "string"
+    },
+    "eligible_count": {
+      "minimum": 0,
+      "title": "Eligible Count",
+      "type": "integer"
+    },
+    "capacity_k": {
+      "minimum": 0,
+      "title": "Capacity K",
+      "type": "integer"
+    },
+    "effective_k": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Effective K"
+    },
+    "selected_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Selected Ids",
+      "type": "array"
+    },
+    "risk_ranking_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Risk Ranking Ids",
+      "type": "array"
+    },
+    "total_cost": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Total Cost"
+    },
+    "expected_net_value": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Expected Net Value"
+    },
+    "feasibility": {
+      "enum": [
+        "feasible",
+        "infeasible",
+        "indeterminate"
+      ],
+      "title": "Feasibility",
+      "type": "string"
+    },
+    "optimality": {
+      "enum": [
+        "optimal",
+        "not_assessed",
+        "indeterminate"
+      ],
+      "title": "Optimality",
+      "type": "string"
+    },
+    "causal_identification": {
+      "$ref": "#/definitions/CausalIdentification"
+    },
+    "metrics": {
+      "$ref": "#/definitions/Metrics"
+    },
+    "reason": {
+      "minLength": 1,
+      "title": "Reason",
+      "type": "string"
+    },
+    "open_questions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Open Questions",
+      "type": "array"
+    },
+    "gate_decision": {
+      "enum": [
+        "NEEDS_REVIEW",
+        "PASS",
+        "BLOCKED"
+      ],
+      "title": "Gate Decision",
+      "type": "string"
+    }
+  },
+  "required": [
+    "output_type",
+    "selection_status",
+    "eligible_count",
+    "capacity_k",
+    "effective_k",
+    "selected_ids",
+    "risk_ranking_ids",
+    "total_cost",
+    "expected_net_value",
+    "feasibility",
+    "optimality",
+    "causal_identification",
+    "metrics",
+    "reason",
+    "open_questions",
+    "gate_decision"
+  ],
+  "title": "SelectionAudit",
+  "type": "object",
+  "definitions": {
+    "CausalIdentification": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "not_requested",
+            "identifiable",
+            "not_identifiable",
+            "indeterminate"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "estimand": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Estimand"
+        },
+        "reason": {
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "estimand",
+        "reason"
+      ],
+      "title": "CausalIdentification",
+      "type": "object"
+    },
+    "Metrics": {
+      "additionalProperties": false,
+      "properties": {
+        "population_id": {
+          "minLength": 1,
+          "title": "Population Id",
+          "type": "string"
+        },
+        "precision": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Precision"
+        },
+        "recall": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Recall"
+        },
+        "lift": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Lift"
+        },
+        "precision_status": {
+          "enum": [
+            "identified",
+            "undefined",
+            "not_identifiable",
+            "not_requested"
+          ],
+          "title": "Precision Status",
+          "type": "string"
+        },
+        "recall_status": {
+          "enum": [
+            "identified",
+            "undefined",
+            "not_identifiable",
+            "not_requested"
+          ],
+          "title": "Recall Status",
+          "type": "string"
+        },
+        "lift_status": {
+          "enum": [
+            "identified",
+            "undefined",
+            "not_identifiable",
+            "not_requested"
+          ],
+          "title": "Lift Status",
+          "type": "string"
+        },
+        "reason": {
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "population_id",
+        "precision",
+        "recall",
+        "lift",
+        "precision_status",
+        "recall_status",
+        "lift_status",
+        "reason"
+      ],
+      "title": "Metrics",
+      "type": "object"
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$comment": "ACOS selection-audit 0.1.0; estructura, no expected ni aprobación humana."
+}

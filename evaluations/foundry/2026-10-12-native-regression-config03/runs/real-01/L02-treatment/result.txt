@@ -1,0 +1,3 @@
+Auditoría L02 completada. No se confirma leakage: la feature está disponible antes de prediction_at, las etiquetas de train llegan antes del corte y el escalado se ajusta solo con train. La recurrencia de clientes es el escenario declarado. Quedan brechas: origen de particiones, código de entrenamiento y muestra de 6 filas. Riesgo medio por falta de código real.
+
+Reporte: `workspace/reports/leakage/audit.md`

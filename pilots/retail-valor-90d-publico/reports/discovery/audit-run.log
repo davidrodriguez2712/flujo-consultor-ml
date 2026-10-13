@@ -1,0 +1,15 @@
+Cargando todas las hojas del Excel sin eliminar registros.
+Carga completa: 1067371 filas; 2 hojas.
+Auditando hoja: Year 2009-2010
+Auditando hoja: Year 2010-2011
+Guardando transacciones normalizadas con provenance, sin filtrar.
+Auditoría completa. Fuente intacta: True
+{
+  "rows": 1067371,
+  "date_min": "2009-12-01T07:45:00",
+  "date_max": "2011-12-09T12:50:00",
+  "distinct_customers": 5942,
+  "cancellation_rows": 19494,
+  "exact_duplicate_extra_rows": 34335,
+  "positive_purchase_rows_without_id": 236121
+}

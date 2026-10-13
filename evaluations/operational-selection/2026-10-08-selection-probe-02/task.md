@@ -1,0 +1,8 @@
+# Encargo común
+Audita la decisión operacional de este engagement ficticio. Usa solo la evidencia de negocio provista. Devuelve el objeto del schema nativo, sin actuar ni aprobar gates: gate_decision=NEEDS_REVIEW.
+
+Semántica común de output: selected_ids contiene la selección final ordenada; risk_ranking_ids el ranking completo de elegibles por risk_score descendente/ID ascendente si esos scores se proporcionan, o [] si no. effective_k es el tamaño seleccionado cuando la selección está determinada, y null si no se puede determinar. selected_ids=[] con selection_status=indeterminate significa decisión pendiente, no política vacía óptima. eligible_count y capacity_k son conteos diferentes.
+
+output_type: risk_ranking para un Top-K descriptivo, value_selection para selección por objetivo económico definido, not_determinable si no puede resolverse la selección solicitada. feasibility evalúa cumplimiento de restricciones con evidencia; optimality=optimal solo respecto del objetivo, coeficientes y reglas provistos; not_assessed para ranking descriptivo. total_cost suma costes cuando están conocidos; expected_net_value es valor neto aditivo solo cuando está definido.
+
+causal_identification.status se refiere al efecto solicitado (not_requested/identifiable/not_identifiable/indeterminate), separado del producto seleccionado. Identificar el estimand si se pide efecto; no exigir una redacción literal. precision/recall/lift se refieren a la población indicada: estados identified, undefined (denominador cero), not_identifiable (datos insuficientes) o not_requested. Para métricas no solicitadas usar null. Las razones y preguntas deben permitir revisar supuestos, cálculos y límites.

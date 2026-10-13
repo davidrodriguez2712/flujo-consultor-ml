@@ -1,0 +1,7 @@
+{
+  "returncode": 0,
+  "stdout": "{\"status\": \"COMPLETED_PENDING_CONTENT_REVIEW\", \"runs\": [{\"case\": \"L01\", \"condition\": \"treatment\", \"runtime_success\": true, \"contract_success\": true}, {\"case\": \"L02\", \"condition\": \"treatment\", \"runtime_success\": true, \"contract_success\": true}, {\"case\": \"L03\", \"condition\": \"treatment\", \"runtime_success\": true, \"contract_success\": true}], \"effectiveness\": \"NOT_REVIEWED\"}\n",
+  "stderr": "",
+  "manifest_sha256": "6ea839f67965ae100c51daedabb66376b4dfd7e082789ba72d2160bc4e0bedae",
+  "budget_usd": 0.04864678
+}

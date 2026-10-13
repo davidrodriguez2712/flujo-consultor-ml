@@ -1,0 +1,31 @@
+{
+  "status": "NEEDS_REVIEW",
+  "findings": [
+    {
+      "code": "human-review",
+      "message": "Revisión/evidencia pendiente para validation",
+      "paths": []
+    },
+    {
+      "code": "human-review",
+      "message": "Revisión/evidencia pendiente para data_analysis-review",
+      "paths": []
+    },
+    {
+      "code": "human-review",
+      "message": "Revisión/evidencia pendiente para supervised_model-review",
+      "paths": []
+    },
+    {
+      "code": "human-review",
+      "message": "Revisión/evidencia pendiente para selection-review",
+      "paths": []
+    },
+    {
+      "code": "human-review",
+      "message": "Revisión/evidencia pendiente para executive_delivery-review",
+      "paths": []
+    }
+  ],
+  "evidence": []
+}

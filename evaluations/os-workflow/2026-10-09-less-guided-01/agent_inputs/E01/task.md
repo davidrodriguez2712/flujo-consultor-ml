@@ -1,0 +1,1 @@
+Continuamos el diagnóstico de consumo de una flota. El owner pidió ampliar el plan y el cambio ya está en la copia de trabajo. Prepara la siguiente tarea y revisa si el expediente permite continuar con su trazabilidad actual.

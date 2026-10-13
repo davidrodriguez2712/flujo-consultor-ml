@@ -1,0 +1,12 @@
+{
+  "status": "PASS_BEFORE_PROVIDER",
+  "at_utc": "2026-10-10T04:14:25.787906+00:00",
+  "manifest_integrity": "PASS",
+  "snapshots_match": "PASS",
+  "approval_bound": "PASS",
+  "runtime_version": "2.1.296 (Claude Code)",
+  "flags_present": true,
+  "max_new_budget_usd": 0.1,
+  "actual_provider_compatibility": "PENDING_SMOKE",
+  "api_calls": 0
+}

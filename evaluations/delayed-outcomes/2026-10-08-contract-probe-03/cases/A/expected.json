@@ -1,0 +1,21 @@
+{
+  "rows": {
+    "A1": {
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "available",
+      "train_eligibility": "eligible"
+    },
+    "A2": {
+      "outcome_state_at_extraction": "observed_positive",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude"
+    },
+    "A3": {
+      "outcome_state_at_extraction": "pending",
+      "label_availability_at_training": "unavailable",
+      "train_eligibility": "exclude"
+    }
+  },
+  "review_notes": "A1 vence el 10 de julio; A2 el 19 de julio; A3 el 19 de agosto. No confundir solicitud y certificación.",
+  "gate_decision": "NEEDS_REVIEW"
+}

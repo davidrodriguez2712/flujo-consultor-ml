@@ -1,0 +1,8 @@
+decision: Proponer forecast semanal de facturas positivas como proxy de carga de preparación.
+owner: Owner operativo simulado; aceptación David pendiente
+metric: WAPE y MAE de una semana adelante; bias diagnóstico
+unit: Factura positiva única por semana de Reino Unido
+horizon: Una semana calendario [lunes, lunes siguiente)
+limits:
+- Sin tiempos/capacidad no convertir a staffing óptimo.
+- Historia 2009–2011 no demuestra desempeño actual.

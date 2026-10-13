@@ -1,0 +1,167 @@
+schema_version: 1
+current_stage: handoff
+status: COMPLETED
+objective: Piloto sintético cerrado con gates aprobados; consultar handoff y siguientes
+  iniciativas separadas.
+completed_stages:
+- discovery
+- framing
+- diagnosis
+- execution
+- validation
+- delivery
+- handoff
+blockers: []
+open_decisions: []
+gate_reviews:
+  discovery:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - reports/discovery/discovery-review.md
+    - context/business_context.md
+    - data/dictionaries/README.md
+    - reports/discovery/verification.json
+    profile_sha256: 809de96df179e4b81997cc7aef0f5a1589a74431cd9762c1df56346ec57cbfea
+  framing:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - framing/review.md
+    - framing/framing.yaml
+    - framing/metrics.yaml
+    - framing/scope.md
+    - framing/acceptance.md
+    profile_sha256: 809de96df179e4b81997cc7aef0f5a1589a74431cd9762c1df56346ec57cbfea
+  diagnosis:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - reports/diagnosis/review.md
+    - data/data_contract.yaml
+    - evidence/findings.md
+    - reports/dataset/dataset-understanding-2026-10-08.md
+    - reports/validation/validation-design-2026-10-08.md
+    - reports/leakage/leakage-audit-2026-10-08.md
+    - validation/validation_design.yaml
+    - reports/diagnosis/verification.json
+    profile_sha256: 809de96df179e4b81997cc7aef0f5a1589a74431cd9762c1df56346ec57cbfea
+  data-quality:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - reports/diagnosis/review.md
+    - data/data_contract.yaml
+    - evidence/findings.md
+    - reports/dataset/dataset-understanding-2026-10-08.md
+    - reports/validation/validation-design-2026-10-08.md
+    - reports/leakage/leakage-audit-2026-10-08.md
+    - validation/validation_design.yaml
+    - reports/diagnosis/verification.json
+    profile_sha256: 809de96df179e4b81997cc7aef0f5a1589a74431cd9762c1df56346ec57cbfea
+  execution:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - reports/execution/review.md
+    - reports/execution/development-report.md
+    - reports/execution/verification.json
+    - reports/execution/agent-output-review.md
+    - reports/execution/evidence-manifest.json
+    profile_sha256: 809de96df179e4b81997cc7aef0f5a1589a74431cd9762c1df56346ec57cbfea
+  validation:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - reports/final-validation/review.md
+    - validation/model_validation.md
+    - reports/final-validation/verification.json
+    - reports/final-validation/agent-output-review.md
+    - reports/final-validation/evidence-manifest.json
+    - analysis/final_analysis_plan.md
+    - modeling/final_model_brief.md
+    - reports/leakage/leakage-audit-2026-10-08-02.md
+    - delivery/storyline.md
+    profile_sha256: 809de96df179e4b81997cc7aef0f5a1589a74431cd9762c1df56346ec57cbfea
+  data_analysis-review:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - reports/final-validation/review.md
+    - validation/model_validation.md
+    - reports/final-validation/verification.json
+    - reports/final-validation/agent-output-review.md
+    - reports/final-validation/evidence-manifest.json
+    - analysis/final_analysis_plan.md
+    - modeling/final_model_brief.md
+    - reports/leakage/leakage-audit-2026-10-08-02.md
+    - delivery/storyline.md
+    profile_sha256: 809de96df179e4b81997cc7aef0f5a1589a74431cd9762c1df56346ec57cbfea
+  supervised_model-review:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - reports/final-validation/review.md
+    - validation/model_validation.md
+    - reports/final-validation/verification.json
+    - reports/final-validation/agent-output-review.md
+    - reports/final-validation/evidence-manifest.json
+    - analysis/final_analysis_plan.md
+    - modeling/final_model_brief.md
+    - reports/leakage/leakage-audit-2026-10-08-02.md
+    - delivery/storyline.md
+    profile_sha256: 809de96df179e4b81997cc7aef0f5a1589a74431cd9762c1df56346ec57cbfea
+  selection-review:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - reports/final-validation/review.md
+    - validation/model_validation.md
+    - reports/final-validation/verification.json
+    - reports/final-validation/agent-output-review.md
+    - reports/final-validation/evidence-manifest.json
+    - analysis/final_analysis_plan.md
+    - modeling/final_model_brief.md
+    - reports/leakage/leakage-audit-2026-10-08-02.md
+    - delivery/storyline.md
+    profile_sha256: 809de96df179e4b81997cc7aef0f5a1589a74431cd9762c1df56346ec57cbfea
+  executive_delivery-review:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - reports/final-validation/review.md
+    - validation/model_validation.md
+    - reports/final-validation/verification.json
+    - reports/final-validation/agent-output-review.md
+    - reports/final-validation/evidence-manifest.json
+    - analysis/final_analysis_plan.md
+    - modeling/final_model_brief.md
+    - reports/leakage/leakage-audit-2026-10-08-02.md
+    - delivery/storyline.md
+    profile_sha256: 809de96df179e4b81997cc7aef0f5a1589a74431cd9762c1df56346ec57cbfea
+  delivery:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - reports/delivery/review.md
+    - delivery/decision_memo.md
+    - delivery/analytical_report.md
+    - decision/recommendation.md
+    - delivery/delivery_contract.md
+    - delivery/claims.yaml
+    - reports/delivery/verification.json
+    - reports/delivery/agent-review.md
+    - reports/delivery/delivery-manifest.json
+    profile_sha256: 809de96df179e4b81997cc7aef0f5a1589a74431cd9762c1df56346ec57cbfea
+  handoff:
+    decision: PASS
+    reviewer: David
+    evidence:
+    - evidence/approvals/2026-10-08-handoff.md
+    - handoff/review.md
+    - handoff/runbook.md
+    - handoff/handoff-manifest.json
+    - reports/handoff/reproduction-checks.json
+    - reports/handoff/verification.json
+    - reports/handoff/agent-review.md
+    profile_sha256: 809de96df179e4b81997cc7aef0f5a1589a74431cd9762c1df56346ec57cbfea

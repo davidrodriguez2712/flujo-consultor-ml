@@ -1,0 +1,257 @@
+[
+  {
+    "sample": "01-0.1.0",
+    "words": 210,
+    "fenced": true,
+    "condition": "rehearsal",
+    "decision_id": "RET-01",
+    "keys": [
+      "skill",
+      "version",
+      "fecha",
+      "estado",
+      "condicion",
+      "decision_id",
+      "inputs"
+    ],
+    "text": "```markdown\n---\nskill: detect-leakage\nversion: 0.1.0\nfecha: 2026-10-11\nestado: auditoría parcial; sin hallazgos confirmados; leakage no determinable\ncondicion: rehearsal\ndecision_id: RET-01\ninputs: expediente incrustado\n---\n\n## Resumen\nExpediente insuficiente para concluir leakage. Scoring 2025-11-01T08:00Z; la feature usage_previous_30d tiene disponibilidad 2025-10-31T23:00Z, anterior al scoring, y su ventana es previa. Riesgo no determinable: falta split, fit y código.\n\n## Hallazgos\n- **Bajo (Probable ausencia de leakage temporal para usage_previous_30d):** ventana previa y disponibilidad anterior al scoring. Confianza: Probable.\n- **Medio (Riesgo no determinable):** no se puede verificar que la ventana no incluya datos posteriores al corte de disponibilidad ni que el target no haya contaminado la feature. Confianza: No determinable.\n\n## Evidencia\nTimestamps declarados en el expediente: disponibilidad 2025-10-31T23:00Z; scoring 2025-11-01T08:00Z. No hay checks deterministas ejecutables (sin split, fit ni código).\n\n## Preguntas abiertas\n¿Cómo se construyó usage_previous_30d (código o consulta) y se verificó que su ventana termina antes de 2025-10-31T23:00Z?\n\n## Recomendaciones\nObtener el código de construcción y el esquema de split; verificar la ventana y el orden de fit antes de confiar en métricas. No atribuir seguridad universal a la feature.\n\n## Límites\nAuditoría limitada al expediente incrustado; sin entrenamiento, sin acceso a datos ni validación de negocio. Un experto del dominio debe confirmar la semántica de la variable.\n```"
+  },
+  {
+    "sample": "01-0.2.0",
+    "words": 137,
+    "fenced": true,
+    "condition": "rehearsal",
+    "decision_id": "RET-01",
+    "keys": [
+      "skill",
+      "version",
+      "fecha",
+      "estado_auditoria",
+      "condicion",
+      "decision_id",
+      "inputs"
+    ],
+    "text": "```markdown\n---\nskill: detect-leakage\nversion: 0.2.0\nfecha: 2026-10-11\nestado_auditoria: parcial; sin split/fit/código real\ncondicion: rehearsal\ndecision_id: RET-01\ninputs: expediente incrustado\n---\n\n# Auditoría de leakage — RET-01\n\n## Resumen\nFeature `usage_previous_30d` con ventana previa y disponibilidad 2025-10-31T23:00Z, anterior al scoring 2025-11-01T08:00Z. Temporalidad plausible, no verificada en proceso. Sin split, fit ni código.\n\n## Hallazgos\n- Riesgo (medio): disponibilidad real del feature no verificada en el pipeline. Acción: confirmar fuente y corte.\n\n## Evidencia\n- Expediente: ventana previa, disponible 2025-10-31T23:00Z, scoring 2025-11-01T08:00Z.\n\n## Preguntas abiertas\n- ¿El pipeline de producción calcula `usage_previous_30d` solo con datos disponibles antes de 2025-11-01T08:00Z?\n\n## Recomendaciones\n- Verificar corte temporal en código de construcción.\n- Auditar split y fit de preprocesamiento cuando existan.\n\n## Límites\nNo demuestra ausencia de leakage ni generalización. Sin código, split ni fit, no se verificó ningún control.\n```"
+  },
+  {
+    "sample": "01-none",
+    "words": 141,
+    "fenced": false,
+    "condition": "rehearsal",
+    "decision_id": "RET-01",
+    "keys": [
+      "skill",
+      "version",
+      "fecha",
+      "estado_de_auditoria",
+      "condicion",
+      "decision_id",
+      "inputs"
+    ],
+    "text": "---\nskill: none\nversion: null\nfecha: 2026-10-11\nestado_de_auditoria: no concluyente\ncondicion: rehearsal\ndecision_id: RET-01\ninputs: expediente incrustado\n---\n\n# Auditoría RET-01\n\n## Resumen\nNo procede priorizar ofertas para cancelación en 7 días: el expediente no contiene datos evaluables.\n\n## Hallazgos\n- No hay valores de usage_previous_30d ni registros de ofertas.\n- No hay split, fit ni código real.\n- Scoring al 2025-11-01T08:00Z y ventana previa disponible desde 2025-10-31T23:00Z constan solo como parámetros, sin datos asociados.\n\n## Evidencia\nÚnicamente los metadatos del encargo. No hay datos incrustados verificables.\n\n## Preguntas abiertas\n¿Cuál es la distribución de usage_previous_30d por oferta, y existe un split temporal validado anterior al scoring?\n\n## Recomendaciones\n- Suspender la priorización hasta recibir el expediente completo.\n- No atribuir validez ni seguridad universal al scoring.\n\n## Límites\nAuditoría sin herramientas ni fuentes externas. No evalúa calidad predictiva ni sesgos."
+  },
+  {
+    "sample": "02-0.1.0",
+    "words": 205,
+    "fenced": true,
+    "condition": "rehearsal",
+    "decision_id": "RET-01",
+    "keys": [
+      "skill",
+      "version",
+      "fecha",
+      "estado",
+      "condicion",
+      "decision_id",
+      "inputs"
+    ],
+    "text": "```markdown\n---\nskill: detect-leakage\nversion: 0.1.0\nfecha: 2026-10-11\nestado: auditoría parcial; sin hallazgos confirmados; sin split, fit ni código disponibles\ncondicion: rehearsal\ndecision_id: RET-01\ninputs: expediente incrustado\n---\n\n## Resumen\nNo hay evidencia de leakage confirmada. Falta el pipeline real, por lo que no se puede auditar el split ni las transformaciones. La variable usage_previous_30d es, en principio, compatible con el scoring, con una ventana previa y disponibilidad 2025-10-31T23:00Z, anterior al scoring 2025-11-01T08:00Z.\n\n## Hallazgos\n- **Informativo:** usage_previous_30d tiene ventana previa y disponibilidad anterior al prediction timestamp. Confianza: Probable (no es leakage temporal por lo declarado).\n- **Riesgo (medio):** sin código de agregación no se verifica que la ventana use solo datos anteriores a 2025-10-31T23:00Z. Confianza: Riesgo.\n\n## Evidencia\nTimestamps declarados: disponibilidad 2025-10-31T23:00Z < scoring 2025-11-01T08:00Z. No se ejecutaron checks de solape de entidades, orden de fit/split ni cardinalidad de joins: no hay artefactos.\n\n## Preguntas abiertas\n¿Qué tablas y consulta generan usage_previous_30d, y se fija su fecha de corte antes de 2025-11-01T08:00Z?\n\n## Recomendaciones\nObtener el código de agregación y el esquema de split antes de validar. No confiar en métricas hasta cerrar la auditoría del pipeline.\n\n**Límites:** auditoría parcial sobre expediente incrustado; no garantiza ausencia de leakage, ni sustituye validación de negocio.\n```"
+  },
+  {
+    "sample": "02-0.2.0",
+    "words": 148,
+    "fenced": true,
+    "condition": "rehearsal",
+    "decision_id": "RET-01",
+    "keys": [
+      "skill",
+      "version",
+      "fecha",
+      "estado",
+      "condicion",
+      "decision_id",
+      "inputs"
+    ],
+    "text": "```markdown\n---\nskill: detect-leakage\nversion: 0.2.0\nfecha: 2026-10-11\nestado: auditoría parcial; sin split/fit/código verificado\ncondicion: rehearsal\ndecision_id: RET-01\ninputs: expediente incrustado\n---\n\n# Resumen\nFeature usage_previous_30d disponible 2025-10-31T23:00Z; scoring 2025-11-01T08:00Z. Disponibilidad aparente válida; construcción no verificada.\n\n# Hallazgos\n- Riesgo: ventana de cálculo de usage_previous_30d no confirmada. Mecanismo posible: incluir actividad posterior a 23:00Z. Fuente: expediente. Confianza: baja. Severidad: media. Acción: verificar cutoff de agregación.\n\n# Evidencia\n- Timestamp de disponibilidad y de scoring declarados en el encargo.\n- Sin código de construcción, split ni fit en el expediente.\n\n# Preguntas abiertas\n¿Cuál es el cutoff exacto de la agregación que produce usage_previous_30d y se ejecuta con datos solo hasta 2025-10-31T23:00Z?\n\n# Recomendaciones\n- Confirmar con el proceso de construcción el cutoff y la ventana.\n- Revisar split y fit cuando estén disponibles.\n- Límites: no demuestra ausencia universal de leakage ni generalización; revisión humana sigue necesaria.\n```"
+  },
+  {
+    "sample": "02-none",
+    "words": 134,
+    "fenced": true,
+    "condition": "rehearsal",
+    "decision_id": "RET-01",
+    "keys": [
+      "skill",
+      "version",
+      "fecha",
+      "estado_de_auditoria",
+      "condicion",
+      "decision_id",
+      "inputs"
+    ],
+    "text": "```markdown\n---\nskill: none\nversion: null\nfecha: 2026-10-11\nestado_de_auditoria: no concluyente (expediente sin contenido verificable)\ncondicion: rehearsal\ndecision_id: RET-01\ninputs: expediente incrustado\n---\n\n## Resumen\nNo se recibió contenido de expediente incrustado; la auditoría no puede verificar ofertas ni scoring.\n\n## Hallazgos\n- No hay datos de ofertas, scoring ni usage_previous_30d.\n- No hay split, fit ni código real para validar.\n\n## Evidencia\n- El mensaje no contiene tablas, registros ni fragmentos del expediente.\n- La ventana declarada (disponible 2025-10-31T23:00Z; scoring 2025-11-01T08:00Z) no puede contrastarse.\n\n## Preguntas abiertas\n- ¿Puede incrustarse el expediente completo con ofertas, timestamps y métricas de uso?\n\n## Recomendaciones\n- No priorizar ofertas para cancelación en 7 días hasta recibir y auditar el expediente.\n\n## Límites\nSin evidencia, esta auditoría no respalda ninguna conclusión de seguridad ni de priorización.\n```"
+  },
+  {
+    "sample": "03-0.1.0",
+    "words": 190,
+    "fenced": true,
+    "condition": "rehearsal",
+    "decision_id": "RET-01",
+    "keys": [
+      "skill",
+      "version",
+      "fecha",
+      "estado",
+      "condicion",
+      "decision_id",
+      "inputs"
+    ],
+    "text": "```markdown\n---\nskill: detect-leakage\nversion: 0.1.0\nfecha: 2026-10-11\nestado: auditoría parcial; sin hallazgos confirmados de leakage\ncondicion: rehearsal\ndecision_id: RET-01\ninputs: expediente incrustado\n---\n\n## Resumen\nExpediente insuficiente para concluir leakage. Solo consta `usage_previous_30d`, ventana previa, disponible 2025-10-31T23:00Z, frente a scoring 2025-11-01T08:00Z. Sin split, fit ni código.\n\n## Hallazgos\n- **Temporal (Riesgo, medio):** la disponibilidad (23:00Z del 31) es anterior al scoring (08:00Z del 1). Según lo declarado, no hay leakage temporal, pero la ventana exacta no consta.\n- **Pipeline/validación (No determinable, alto):** sin split, fit ni código no puede verificarse contaminación train-test ni preprocessing leakage.\n\n## Evidencia\nÚnica evidencia: metadatos temporales de una feature. No se ejecutaron checks deterministas (sin datos ni código).\n\n## Preguntas abiertas\n¿La ventana de `usage_previous_30d` termina antes de 2025-10-31T23:00Z, y el split y los fit de preprocessing se hicieron solo con datos previos al corte de scoring?\n\n## Recomendaciones\nAportar código del pipeline, split y ventana de agregación; verificar que ningún dato posterior al corte entre en la feature.\n\n## Límites\nNo garantiza ausencia de leakage. No evalúa otras features, joins ni la semántica de negocio. Requiere validación de un experto del dominio.\n```"
+  },
+  {
+    "sample": "03-0.2.0",
+    "words": 137,
+    "fenced": true,
+    "condition": "rehearsal",
+    "decision_id": "RET-01",
+    "keys": [
+      "skill",
+      "version",
+      "fecha",
+      "estado",
+      "condicion",
+      "decision_id",
+      "inputs"
+    ],
+    "text": "```markdown\n---\nskill: detect-leakage\nversion: 0.2.0\nfecha: 2026-10-11\nestado: parcial, sin split/fit/código verificado\ncondicion: rehearsal\ndecision_id: RET-01\ninputs: expediente incrustado\n---\n\n# Auditoría de leakage RET-01\n\n## Resumen\nFeature `usage_previous_30d` (ventana previa, disponible 2025-10-31T23:00Z) es admisible para scoring del 2025-11-01T08:00Z según el expediente. No hay split, fit ni código real; la seguridad no queda certificada.\n\n## Hallazgos\n- **Riesgo (no determinable):** ausencia de split/fit/código impide verificar que transformaciones se ajusten solo con train. Severidad media. Acción: obtener código de construcción y particiones.\n\n## Evidencia\n- Disponibilidad 2025-10-31T23:00Z anterior al cutoff 2025-11-01T08:00Z: consistente.\n\n## Preguntas abiertas\n¿El pipeline de construcción de `usage_previous_30d` y sus transformaciones ajustadas se ejecutan solo con datos de train?\n\n## Recomendaciones\nRevisar código de features y split antes de confiar en la métrica.\n\n## Límites\nNo demuestra generalización ni ausencia universal de leakage.\n```"
+  },
+  {
+    "sample": "03-none",
+    "words": 154,
+    "fenced": false,
+    "condition": "rehearsal",
+    "decision_id": "RET-01",
+    "keys": [
+      "skill",
+      "version",
+      "fecha",
+      "estado de auditoría",
+      "condicion",
+      "decision_id",
+      "inputs"
+    ],
+    "text": "---\nskill: none\nversion: null\nfecha: 2026-10-11\nestado de auditoría: no concluida (expediente sin contenido)\ncondicion: rehearsal\ndecision_id: RET-01\ninputs: expediente incrustado\n---\n\n# Auditoría RET-01\n\n## Resumen\nNo puede auditarse: el encargo no incluye datos del expediente incrustado. No se emite priorización de ofertas.\n\n## Hallazgos\n- No hay registros de ofertas, clientes ni métricas de uso.\n- No hay split, fit ni código verificables.\n- La ventana declarada (usage_previous_30d, disponible 2025-10-31T23:00Z antes del scoring 2025-11-01T08:00Z) no puede verificarse.\n\n## Evidencia\nNinguna disponible en el encargo.\n\n## Preguntas abiertas\n- ¿Qué contenido tiene el expediente incrustado?\n\n## Recomendaciones\n- No priorizar ofertas para cancelación en 7 días hasta recibir el expediente.\n- Reenviar el expediente completo para una nueva auditoría.\n\n## Límites\nAuditoría limitada al texto recibido, sin herramientas ni validación externa. No implica seguridad universal.\n\n**Pregunta clave:** ¿Puede adjuntarse el expediente con los registros de usage_previous_30d y el split/fit usados en RET-01?"
+  },
+  {
+    "sample": "04-0.1.0",
+    "words": 214,
+    "fenced": true,
+    "condition": "rehearsal",
+    "decision_id": "RET-01",
+    "keys": [
+      "skill",
+      "version",
+      "fecha",
+      "estado",
+      "condicion",
+      "decision_id",
+      "inputs"
+    ],
+    "text": "```markdown\n---\nskill: detect-leakage\nversion: 0.1.0\nfecha: 2026-10-11\nestado: auditoría parcial; sin hallazgos confirmados de leakage\ncondicion: rehearsal\ndecision_id: RET-01\ninputs: expediente incrustado\n---\n\n## Resumen\nExpediente insuficiente para concluir leakage. Se conoce `usage_previous_30d` con ventana previa y disponibilidad 2025-10-31T23:00Z, anterior al scoring 2025-11-01T08:00Z. Ese patrón es compatible con información legítima, pero no está verificado.\n\n## Hallazgos\n- **Medio, Riesgo:** no hay código, split ni fit que confirmen que la ventana de `usage_previous_30d` excluye observaciones posteriores al scoring.\n- **Informativo:** no se detecta target leakage ni post-event leakage con la información disponible.\n\n## Evidencia\n- Timestamp de disponibilidad (2025-10-31T23:00Z) anterior al scoring (2025-11-01T08:00Z).\n- Ventana declarada como previa; sin definición de límites ni consulta.\n- Sin split, fit, código, joins ni agregaciones inspeccionables.\n\n## Preguntas abiertas\n- ¿Cómo se calcula exactamente `usage_previous_30d` y en qué instante se congela su valor para cada suministro?\n\n## Recomendaciones\n- Obtener la consulta o código que genera `usage_previous_30d` y verificar que sólo usa datos previos a 2025-10-31T23:00Z.\n- Auditar split y preprocesado (imputación, escalado, encoding) con el código real antes de confiar en métricas.\n- Mantener la decisión RET-01 como rehearsal hasta cerrar la verificación.\n\n## Límites\nAuditoría basada solo en el expediente incrustado; no implica seguridad universal, no verifica datos reales ni valida semántica de negocio.\n```"
+  },
+  {
+    "sample": "04-0.2.0",
+    "words": 150,
+    "fenced": true,
+    "condition": "rehearsal",
+    "decision_id": "RET-01",
+    "keys": [
+      "skill",
+      "version",
+      "fecha",
+      "estado_auditoria",
+      "condicion",
+      "decision_id",
+      "inputs"
+    ],
+    "text": "```markdown\n---\nskill: detect-leakage\nversion: 0.2.0\nfecha: 2026-10-11\nestado_auditoria: parcial; sin split/fit/código verificado\ncondicion: rehearsal\ndecision_id: RET-01\ninputs: expediente incrustado\n---\n\n# Auditoría de leakage: RET-01\n\n## Resumen\nFeature `usage_previous_30d` disponible 2025-10-31T23:00Z; scoring 2025-11-01T08:00Z. Disponibilidad previa al scoring: válida en principio. Sin split, fit ni código: no certificable.\n\n## Hallazgos\n- Sin hallazgos confirmados.\n- Riesgo: no verificado que la ventana no incluya datos posteriores a 2025-10-31T23:00Z (confianza baja, severidad media).\n\n## Evidencia\n- Timestamps declarados del expediente; no hay pipeline ni código.\n\n## Preguntas abiertas\n- ¿Cuál es la ventana exacta de `usage_previous_30d` y su proceso de cálculo, con corte verificado?\n\n## Recomendaciones\n- Verificar el corte de cálculo y que el train/fit use solo datos previos a cada fecha de predicción.\n- No atribuir seguridad universal; la auditoría cubre solo el expediente.\n\n## Límites\nSin ejecución ni acceso a código; no demuestra generalización ni ausencia de leakage.\n```"
+  },
+  {
+    "sample": "04-none",
+    "words": 152,
+    "fenced": false,
+    "condition": "rehearsal",
+    "decision_id": "RET-01",
+    "keys": [
+      "skill",
+      "version",
+      "fecha",
+      "estado_auditoria",
+      "condicion",
+      "decision_id",
+      "inputs"
+    ],
+    "text": "---\nskill: none\nversion: null\nfecha: 2026-10-11\nestado_auditoria: no concluyente\ncondicion: rehearsal\ndecision_id: RET-01\ninputs: expediente incrustado (ausente en el mensaje)\n---\n\n# Auditoría RET-01\n\n## Resumen\nNo puedo auditar el expediente porque no está incluido en el encargo. No hay datos de ofertas, uso ni scoring que priorizar.\n\n## Hallazgos\n- Falta el expediente incrustado.\n- No hay datos de `usage_previous_30d`, ventana previa ni scoring.\n- No hay split, fit ni código que revisar.\n\n## Evidencia\n- Solo se recibieron las instrucciones y el contrato de entrega.\n\n## Preguntas abiertas\n- ¿Puede incluirse el expediente incrustado con las ofertas, los valores de `usage_previous_30d` y la ventana previa?\n\n## Recomendaciones\n- No priorizar ofertas para cancelación en 7 días hasta contar con el expediente.\n- Reenviar el encargo con el expediente completo.\n\n## Límites\nSin datos, esta auditoría no valida el scoring, la disponibilidad del 2025-10-31T23:00Z ni la seguridad de ninguna decisión."
+  },
+  {
+    "sample": "05-0.1.0",
+    "words": 187,
+    "fenced": true,
+    "condition": "rehearsal",
+    "decision_id": "RET-01",
+    "keys": [
+      "skill",
+      "version",
+      "fecha",
+      "estado",
+      "condicion",
+      "decision_id",
+      "inputs"
+    ],
+    "text": "```markdown\n---\nskill: detect-leakage\nversion: 0.1.0\nfecha: 2026-10-11\nestado: auditoría parcial; sin evidencia de leakage confirmada; no concluyente\ncondicion: rehearsal\ndecision_id: RET-01\ninputs: expediente incrustado\n---\n\n## Resumen\nExpediente insuficiente para concluir. Feature `usage_previous_30d` con ventana previa y disponibilidad 2025-10-31T23:00Z, antes del scoring 2025-11-01T08:00Z. No hay evidencia de leakage temporal en la descripción; no hay split, fit ni código.\n\n## Hallazgos\n- **Informativo**: `usage_previous_30d` parece válida temporalmente. Confianza: Probable.\n- **Riesgo (medio)**: sin código, no se verifica que la ventana se calcule solo con datos previos a la disponibilidad ni que no incluya el evento de cancelación.\n\n## Evidencia\nVentana previa declarada; disponibilidad 2025-10-31T23:00Z < scoring 2025-11-01T08:00Z. Checks de split, solape de entidades, fit previo y cardinalidad de joins: no ejecutables.\n\n## Preguntas abiertas\n¿Cómo se calcula `usage_previous_30d` (fecha de corte exacta, tablas origen) y se verifica que excluye usos posteriores a 2025-10-31T23:00Z?\n\n## Recomendaciones\nAportar código de generación de la feature y el esquema de validación antes de usar métricas para decidir. No eliminar la variable sin evidencia.\n\n## Límites\nAuditoría sin datos ni código; no garantiza ausencia de leakage ni sustituye validación de negocio.\n```"
+  },
+  {
+    "sample": "05-0.2.0",
+    "words": 170,
+    "fenced": true,
+    "condition": "rehearsal",
+    "decision_id": "RET-01",
+    "keys": [
+      "skill",
+      "version",
+      "fecha",
+      "estado",
+      "condicion",
+      "decision_id",
+      "inputs"
+    ],
+    "text": "```markdown\n---\nskill: detect-leakage\nversion: 0.2.0\nfecha: 2026-10-11\nestado: parcial, sin verificación de split/fit/código\ncondicion: rehearsal\ndecision_id: RET-01\ninputs: expediente incrustado\n---\n\n# Resumen\nAuditoría limitada del expediente. `usage_previous_30d` (ventana previa, disponible 2025-10-31T23:00Z) parece anterior al scoring de 2025-11-01T08:00Z. No hay split, fit ni código para confirmar. No hay seguridad universal.\n\n# Hallazgos\n- Riesgo (no determinable): ventana y disponibilidad declaradas son coherentes, pero no verificadas por proceso.\n- Riesgo: sin código, no se puede comprobar si el target o eventos posteriores entran en la construcción.\n\n# Evidencia\n- Scoring: 2025-11-01T08:00Z. Disponibilidad: 2025-10-31T23:00Z. Ventana: 30 días previos.\n- Sin split, fit ni código en el expediente.\n\n# Preguntas abiertas\n¿Qué código de construcción y fecha de corte exacta de `usage_previous_30d` confirma que no usa datos posteriores a 2025-10-31T23:00Z?\n\n# Recomendaciones\n- Verificar el pipeline de construcción y el corte temporal antes de usar la feature.\n- Revisar split y orden fit/transform cuando estén disponibles.\n\n# Límites\nNo demuestra generalización ni ausencia universal de leakage. Revisión humana de proceso requerida.\n```"
+  },
+  {
+    "sample": "05-none",
+    "words": 138,
+    "fenced": true,
+    "condition": "rehearsal",
+    "decision_id": "RET-01",
+    "keys": [
+      "skill",
+      "version",
+      "fecha",
+      "estado_de_auditoria",
+      "condicion",
+      "decision_id",
+      "inputs"
+    ],
+    "text": "```markdown\n---\nskill: none\nversion: null\nfecha: 2026-10-11\nestado_de_auditoria: incompleta; sin evidencia verificable\ncondicion: rehearsal\ndecision_id: RET-01\ninputs: expediente incrustado (no presente en el mensaje)\n---\n\n# Auditoría RET-01\n\n## Resumen\nNo se recibió expediente incrustado. No es posible validar la priorización de ofertas para cancelación en 7 días.\n\n## Hallazgos\n- Falta el expediente y el dato usage_previous_30d.\n- No hay split, fit ni código real.\n- La ventana previa (disponible 2025-10-31T23:00Z) no puede verificarse para el scoring de 2025-11-01T08:00Z.\n\n## Evidencia\nNinguna disponible en el mensaje recibido.\n\n## Preguntas abiertas\n¿Puede proporcionarse el expediente incrustado con usage_previous_30d, el split y el código del scoring?\n\n## Recomendaciones\nNo priorizar ofertas para cancelación con la información actual. Reauditar al recibir el expediente.\n\n## Límites\nAuditoría limitada al texto recibido, sin herramientas ni entrenamiento. No implica seguridad universal.\n```"
+  }
+]

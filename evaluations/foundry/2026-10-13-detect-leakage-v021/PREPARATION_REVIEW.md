@@ -1,0 +1,35 @@
+# Revisión previa de detect-leakage 0.2.1
+
+Fecha: 2026-10-13. Reviewer: agente Codex `/root/native_real02_review`, distinto del autor/runner; conoce los resultados y reviews de preparación 02/configuración 03. No es revisión humana ni ciega. Esta revisión solo usa preparación, guías, cases/inputs y expected/rúbrica privados: no lee micro ni outputs nuevos. No realiza llamadas API/red, entrenamiento, delegación ni modificación de artefactos evaluables. Solo escribe este documento.
+
+## Dictamen y alcance del parche
+
+**Preparación semántica del micro compatible con el gold; sin bloqueo para ejecutar ese micro bajo los límites declarados.** El borrador debe permanecer experimental; el review no sustituye evidencia de ejecución ni autoriza promoción/cambio canónico. Hay una reserva de protocolo para las regresiones textuales y una condición de gate que debe respetarse antes del native posterior.
+
+Comparado con `snapshots/SKILL-0.2.0.md`, el diff se limita a versión 0.2.1 y aclaraciones de clasificación/incertidumbre, severidad, condiciones de decisión, predictor/outcome, comprobaciones observables y slots de output. No cambia triggers, acceso, mandato de herramientas, permiso para entrenar ni autoridad sobre gates. La sección nueva no incluye nombres de clientes, filas, valores o respuestas específicas de L03: formula reglas transferibles sobre ventana, disponibilidad, linaje y exportación. El énfasis responde a un fallo conocido, por lo que éxito sobre ese mismo caso no acreditará generalización.
+
+La metadata Foundry sigue plana: name/description/status/version/domain con status experimental. Es coherente con el artefacto y no necesita convertirse en esquema de runtime ni metadatos anidados. El nombre de skill permanece detect-leakage; 0.2.1 identifica el borrador, no invocación nativa demostrada. Las copias del micro coinciden byte por byte con snapshot 0.2.0 y draft 0.2.1.
+
+## Coherencia y generalizabilidad
+
+Las aclaraciones corrigen las reservas reales: no determinar validez sin acreditar hechos/disponibilidad; exportación tardía no prueba generación tardía; posible validez exige conjuntamente ventana previa y disponibilidad efectiva; severidad no equivale a probabilidad; incertidumbre debe conservarse en el final; igualdad observable no necesita performance. La guía distingue provisionalidad de invalidez y evita transformar un predictor en outcome. Conserva retirada de información intrínsecamente posterior y reconstrucción histórica condicionada a fuente/corte.
+
+No se encuentra contradicción material con 0.2.0 ni con expected. «Además del linaje aplicable» evita convertir temporalidad en certificación completa. El nuevo slot conclusión añade claridad sin retirar los seis campos requeridos por caller; caller sigue prevaleciendo. En casos sin problema deben distinguirse observaciones válidas y limitaciones de riesgos demostrados. La cadena hecho→brecha→condiciones→acción solo se exige para No determinable; no debe forzar incertidumbre cuando un mecanismo está demostrado.
+
+Las regresiones prueban familias pertinentes: N01 hechos anteriores disponibles tarde; N02 identidad como feature y clientes recurrentes legítimos con fit train-only; N03 fit global contaminado pese a feature temporalmente disponible. Son mecanismos distintos del L03 ajustado y adecuados para detectar regresiones. Tres expedientes sintéticos, una ejecución por contexto y guía textual no prueban generalización productiva, consistencia repetida ni invocación nativa.
+
+## Encargo, gold y protocolo
+
+`reviewer/L03/expected.md` coincide byte por byte con el original de configuración 03. No se reformula para favorecer 0.2.1. `MICRO-RUBRIC.md` aplica sus obligaciones esenciales y añade separación de contrato, veracidad del modo, impacto/confianza y criterio de éxito predeclarado. No exige redacción literal. Task suministra exactamente contexto/diccionario/CSV de L03 y un mandato común para ambas guías: mismo problema, máximo 250 palabras del archivo completo, frontmatter físico, cinco secciones, fecha/version suministradas y modo guia_textual. No se piden hashes, filesystem, tools ni claims de instalación. La guía es procedimiento, no evidencia observada.
+
+La rúbrica y gold permanecen bajo reviewer y no deben entrar en mensajes del modelo. Los dos archivos de guía y task constituyen los inputs del micro; version/fecha se añaden como metadata conocida, sin respuesta esperada. Cinco repeticiones por guía dan diez requests: control es 0.2.0 textual, treatment 0.2.1 textual; no es baseline sin skill ni prueba de comparación native. El orden/contextos/modelo/cap deben registrarse para evitar atribuir a la guía diferencias del runner. Cada request debe comenzar sin respuestas anteriores ni gold. La lectura de esta revisión no debe contaminar esos mensajes.
+
+La declaración «fijada antes de outputs» de la rúbrica se toma como diseño proporcionado en este encargo; esta revisión ocurre antes de leer outputs y no ofrece atestación externa de fecha o inmutabilidad. Preservar originales y registrar hashes del paquete/protocolo al ejecutar facilita trazabilidad.
+
+## Reservas y gates previos
+
+- **Media, protocolo N01–N03:** los case.md originales exigen runtime con whitelist, utility/hashes, metadata de skill instalada, reporte persistido y resumen final. Ejecutarlos con guía textual en contexts independientes requiere override explícito del runner que declare el modo y adapte únicamente esas obligaciones instrumentales. Sin ese override no puede afirmarse cumplimiento del contrato native; no debe fingirse instalación, hashes o persistencia. La semántica del expected se conserva intacta. Esta reserva no bloquea el micro, cuyo task ya declara modo textual.
+- **Media, gate native:** «micro completo sin fallos críticos» es necesario pero no sustituye el criterio predeclarado de 5/5 treatments sin confirmación incorrecta, invalidez falsa o presunción de disponibilidad. Un defecto alto pero no etiquetado crítico no debe atravesar ese gate. Revisar contenido y contrato antes de decidir si procede native L03; reservas menores se documentan, sin modificar gold después de observar resultados.
+- **Baja, extensión:** 250 palabras incluyendo metadata puede comprimir cobertura/slots. Es un límite común a ambas guías, no permiso para omitir obligaciones. Cap 3072 no garantiza salida completa ni eficacia. Un output truncado o incompleto se conserva y registra, no se repara ni se reintenta automáticamente.
+
+El encargo declara subpresupuesto micro 0.0165 USD dentro del saldo 0.034896955, diez requests Haiku, y native posterior condicionado a evidencia/saldo. Son límites planificados comunicados por el coordinador: no se verificó aquí un approval/launcher ni se leyó clave. Ningún juicio de calidad aumenta fondos, autoriza retries o convierte el saldo en garantía de terminar. Mantener coordinación secuencial y aprobación ligada al snapshot; no presumir tracker global automático. La versión canónica 0.2.0 debe conservarse hasta evidencia y decisión aplicables; esta revisión no la modifica ni promueve ninguna versión.

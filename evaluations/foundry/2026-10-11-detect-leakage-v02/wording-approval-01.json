@@ -1,0 +1,8 @@
+{
+  "status": "APPROVED",
+  "manifest_sha256": "fdd944fa76247dfa71d2ebc5a436275677febfbe0ded1af2ae9070c020d6ab4e",
+  "budget_usd": 0.02943475,
+  "basis": "Usuario autoriza rondas necesarias y continuar recomendaciones, techo total previo US$0.10; no autorización adicional por encima de ese límite",
+  "prior_total_usd": 0.07056525,
+  "recorded_at": "2026-10-12T04:38:38.604243+00:00"
+}

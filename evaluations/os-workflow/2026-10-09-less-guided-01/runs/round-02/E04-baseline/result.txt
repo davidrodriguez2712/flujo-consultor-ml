@@ -1,0 +1,51 @@
+{
+  "status": "READY",
+  "findings": [
+    {
+      "statement": "Ambas exportaciones contienen los mismos cuatro valores lógicos (fecha, cola y tickets) para 2025-07-03: cola A con 12 tickets y cola B con 7. La diferencia de tamaño de archivo se debe solo a espacios en blanco y saltos de línea en el JSON.",
+      "evidence_paths": [
+        "runs/original/data.json",
+        "runs/reproduction/data.json",
+        "environment.json"
+      ]
+    },
+    {
+      "statement": "Bajo el contrato de comparación, con claves (date, queue), actual como entero exacto, selección exacta y JSON no semántico, las dos ejecuciones son equivalentes. No se requiere identidad de bytes entre ejecuciones.",
+      "evidence_paths": [
+        "runs/original/data.json",
+        "runs/reproduction/data.json",
+        "environment.json"
+      ]
+    },
+    {
+      "statement": "La regla de decisión (tickets diarios >= 10) aplicada a los datos produce la selección {A} en ambas ejecuciones. A tiene 12 tickets y B tiene 7. Los execution.json registran selected_queues [\"A\"] en ambos casos, de modo que la selección es coherente con los datos.",
+      "evidence_paths": [
+        "runs/original/data.json",
+        "runs/reproduction/data.json",
+        "runs/original/execution.json",
+        "runs/reproduction/execution.json"
+      ]
+    },
+    {
+      "statement": "Los pasos de ejecución son idénticos en ambas corridas (fuente, escritor JSON UTF-8, lector con tipos int/str y umbral). Ambas corren en el mismo entorno Python/runtime/plataforma y sin aleatoriedad, por lo que no hay una causa evidente de divergencia.",
+      "evidence_paths": [
+        "runs/original/execution.json",
+        "runs/reproduction/execution.json",
+        "environment.json"
+      ]
+    }
+  ],
+  "proposed_actions": [
+    "Registrar en el expediente que la reproducción es equivalente a la original bajo el contrato de comparación vigente, indicando que la diferencia es solo de formato JSON.",
+    "Dejar constancia de que la selección de colas (solo A con umbral >= 10) coincide en ambas ejecuciones.",
+    "Someter esta conclusión a revisión humana del consultor antes de darla por aceptada. El agente no acepta gates ni cierra la revisión."
+  ],
+  "next_step": "El consultor revisa los hallazgos y la evidencia citada, confirma la equivalencia bajo el contrato de comparación y decide sobre la continuidad. Ninguna aceptación de gate ni publicación se deriva automáticamente de este informe.",
+  "limitations": [
+    "La revisión se limita al contenido del expediente incluido. No se consultaron fuentes externas, código fuente, datos brutos de tickets ni los logs completos de ejecución.",
+    "No se verificó el cálculo del umbral a partir de datos de origen; la comprobación se basa en los artefactos exportados.",
+    "El expediente no incluye registros de owner ni de aprobación. La decisión de aceptación queda pendiente del consultor.",
+    "El alcance es una revisión retrospectiva de reproducibilidad. No cubre la validación del negocio ni la corrección de la regla de decisión.",
+    "Con dos filas por ejecución, la evidencia de reproducibilidad es limitada a esta fecha y a estas colas."
+  ]
+}

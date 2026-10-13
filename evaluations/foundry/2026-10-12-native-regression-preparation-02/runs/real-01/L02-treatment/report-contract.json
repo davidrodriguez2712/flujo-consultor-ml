@@ -1,0 +1,11 @@
+{
+  "success": false,
+  "errors": [
+    "frontmatter:missing"
+  ],
+  "report_words": 425,
+  "final_words": 73,
+  "report_word_limit": 500,
+  "final_word_limit": 80,
+  "semantic_review": "REQUIRED"
+}

@@ -1,0 +1,3 @@
+Auditoría completada con la skill `acos-eval:detect-leakage` (v0.2.0, condición `treatment`). El hallazgo principal es que `recovered_kwh` es una feature posterior al scoring: no estaba disponible hasta el 2025-06-09 al 2025-06-12, y el scoring es el 2025-06-01. Recomiendo retirarla del scoring. `history_kwh_90d` no muestra mecanismo de leakage con el expediente disponible. No ejecuté el pipeline ni calculé métricas.
+
+Reporte: `reports/leakage/audit.md`

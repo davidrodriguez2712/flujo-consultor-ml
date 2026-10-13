@@ -1,0 +1,20 @@
+engagement:
+  archetypes:
+  - EXPERIMENT_CAUSAL
+  - PRIORITIZE_SELECT
+  - OPTIMIZE
+  decision: Asignar intervención por efecto incremental
+data:
+  sources:
+  - csv
+  characteristics:
+    assignment: randomized
+deliverables:
+- decision_memo
+schema_version: 1
+project:
+  slug: uplift
+  name: uplift
+runtimes:
+- codex
+- claude_code

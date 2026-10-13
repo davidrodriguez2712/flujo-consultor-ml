@@ -1,0 +1,66 @@
+{
+  "id": "os-workflow-less-guided-execution-01",
+  "scope": "Configuración propuesta, smoke, runbook, controles, tests y checks locales. Sin autorización de gasto ni respuestas reales.",
+  "files": [
+    {
+      "path": "RUNBOOK.md",
+      "sha256": "479ffaaad603e1c1aac6714d9f7a59d88131c8e274c371ad9cfa7d2051511f86",
+      "bytes": 5763
+    },
+    {
+      "path": "budget-approval-pending.json",
+      "sha256": "36c662ffe2ee079517c2bea36cd2217f3f162c221443faaff86d7014de29e12f",
+      "bytes": 253
+    },
+    {
+      "path": "config.json",
+      "sha256": "3f5959b12958b392c8f61b2e264d0daf41d9eb9cc4e897bd38b1fa23ced31efd",
+      "bytes": 4283
+    },
+    {
+      "path": "local-checks.json",
+      "sha256": "bf1f7b52f0caaf80c62fd01c3dbe2ca3b964b972a5552f4a5b6d60cb91133158",
+      "bytes": 1008
+    },
+    {
+      "path": "smoke-payload.txt",
+      "sha256": "d69dbafa988d9c4d8bdf3f2d91c57c84ad33f0fb9b242ccbeb665e6381d5aca6",
+      "bytes": 280
+    },
+    {
+      "path": "snapshots/scripts/ci/runtime_budget.py",
+      "sha256": "643acccb0d6881832e2a6d84c36dc8d3bc69443c57909424756f460e62edddbb",
+      "bytes": 13310
+    },
+    {
+      "path": "snapshots/scripts/evaluations/workflow_native_transport.py",
+      "sha256": "2776cf2b1fef0634207be437163d7f7646a9f62d9e1d805936b218d6103b0fe4",
+      "bytes": 4381
+    },
+    {
+      "path": "snapshots/scripts/evaluations/workflow_output_checker.py",
+      "sha256": "24f31e13f65ded5d4e393b0fddee80b71213a7ec69ae0966fc0367dbe11887a0",
+      "bytes": 2938
+    },
+    {
+      "path": "snapshots/tests/test_runtime_budget.py",
+      "sha256": "72a3d20ee193d468bbb514672efe06e6f5c59cd4c450401ba44fd974a155dcb3",
+      "bytes": 9155
+    },
+    {
+      "path": "snapshots/tests/test_workflow_native_transport.py",
+      "sha256": "598c24cbfd288018d9897798a59336f8ff82339dc35656877d8540d45ae13db5",
+      "bytes": 3363
+    },
+    {
+      "path": "snapshots/tests/test_workflow_output_checker.py",
+      "sha256": "5cda07dfca53bb519583e143c728e19b2c80e6a1428fc941e1e1880deb3a7c69",
+      "bytes": 2241
+    },
+    {
+      "path": "test-suite.txt",
+      "sha256": "2d071343a0cfebcd1c1218883ccfbb92e596b6b08a3728674250785fab8300ff",
+      "bytes": 260
+    }
+  ]
+}

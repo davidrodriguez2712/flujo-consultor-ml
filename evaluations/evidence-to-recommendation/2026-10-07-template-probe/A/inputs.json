@@ -1,0 +1,26 @@
+{
+  "context": "Retención ficticia, septiembre 2025. Decisión: autorizar despliegue de campaña basado en ranking predictivo; no hay contactos realizados ni tratamiento/control. Owner provisto: responsable de retención.",
+  "evidence": {
+    "E1": "Precision@50 descriptiva 20% (10 positivos/50 seleccionados), población evaluada observada; comparador aleatorio esperado 10%.",
+    "E2": "MRR expuesto de seleccionados USD 120000; no representa beneficio recuperado. No hay coste, margen, efecto incremental ni intervención observada."
+  },
+  "draft_claims": [
+    {
+      "id": "A1",
+      "text": "Recuperaremos USD 120000 gracias a la campaña."
+    },
+    {
+      "id": "A2",
+      "text": "ROI de la campaña será 300%."
+    },
+    {
+      "id": "A3",
+      "text": "Precision@50 descriptiva es 20%."
+    }
+  ],
+  "numeric_fields": [
+    "precision",
+    "incremental_impact_usd",
+    "roi_pct"
+  ]
+}

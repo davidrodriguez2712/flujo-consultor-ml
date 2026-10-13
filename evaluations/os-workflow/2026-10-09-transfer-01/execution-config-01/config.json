@@ -1,0 +1,143 @@
+{
+  "id": "os-workflow-transfer-execution-01",
+  "status": "PREPARED_NOT_EXECUTED",
+  "preparation_manifest_sha256": "ee7a0d2a15b46a82cf6a986f694d9023e9f2c3fb48825ef1560365f7d6453650",
+  "package_approval_path": "review-approval.json",
+  "runtime": {
+    "name": "Claude Code",
+    "version": "2.1.296 (Claude Code)",
+    "executable": "/Users/davidrodriguez/.local/bin/claude",
+    "model": "claude-haiku-5-5",
+    "effort": "low"
+  },
+  "budget": {
+    "proposed_total_usd": 0.1,
+    "authorized": false,
+    "scope": "Adicional solo para esta evaluación; smoke y doce invocaciones. No se transfiere saldo previo.",
+    "max_provider_requests": 13,
+    "max_requests_per_invocation": 1,
+    "max_output_tokens_including_thinking": 8192,
+    "retries": 0,
+    "previous_study_estimated_cost_usd": 0.02065453,
+    "expected_cost_note": "Orden de magnitud histórico ~US$0.02; no predicción garantizada para nuevos payloads.",
+    "reservation": "Proxy reserva antes del proveedor usando bytes de request +16384, tarifa conservadora del tier largo y output máximo. Si falta saldo para reserva, detiene antes de proveedor; puede dejar pares incompletos."
+  },
+  "isolation": {
+    "fresh_process": true,
+    "fresh_empty_temporary_cwd": true,
+    "bare": true,
+    "safe_mode": true,
+    "tools": [],
+    "mcp_servers": {},
+    "skills": false,
+    "chrome": false,
+    "session_persistence": false,
+    "settings_sources": [],
+    "payload_only": true,
+    "expected_exposed": false,
+    "system_prompt": "Responde en español y cumple el contrato de salida específico incluido en el expediente. Revisa únicamente el contenido proporcionado. No uses herramientas ni apruebes gates.",
+    "verified_with_native_provider": false,
+    "limits": "Tests con proceso simulado prueban configuración, no aislamiento real del CLI. No sandbox OS nuevo; políticas administradas pueden aplicar."
+  },
+  "output": {
+    "cli_envelope": "json",
+    "model_result": "Texto JSON o Markdown conforme al contrato de cada tarea",
+    "repair": false,
+    "checker": "scripts/evaluations/workflow_transfer_checker.py",
+    "semantic_review": "Separada, manual del autor, no independiente ni ciega."
+  },
+  "order": [
+    {
+      "case": "T01",
+      "condition": "baseline",
+      "payload": "payloads/T01/baseline.txt"
+    },
+    {
+      "case": "T01",
+      "condition": "treatment",
+      "payload": "payloads/T01/treatment.txt"
+    },
+    {
+      "case": "T02",
+      "condition": "treatment",
+      "payload": "payloads/T02/treatment.txt"
+    },
+    {
+      "case": "T02",
+      "condition": "baseline",
+      "payload": "payloads/T02/baseline.txt"
+    },
+    {
+      "case": "T03",
+      "condition": "baseline",
+      "payload": "payloads/T03/baseline.txt"
+    },
+    {
+      "case": "T03",
+      "condition": "treatment",
+      "payload": "payloads/T03/treatment.txt"
+    },
+    {
+      "case": "T04",
+      "condition": "treatment",
+      "payload": "payloads/T04/treatment.txt"
+    },
+    {
+      "case": "T04",
+      "condition": "baseline",
+      "payload": "payloads/T04/baseline.txt"
+    },
+    {
+      "case": "T05",
+      "condition": "baseline",
+      "payload": "payloads/T05/baseline.txt"
+    },
+    {
+      "case": "T05",
+      "condition": "treatment",
+      "payload": "payloads/T05/treatment.txt"
+    },
+    {
+      "case": "T06",
+      "condition": "treatment",
+      "payload": "payloads/T06/treatment.txt"
+    },
+    {
+      "case": "T06",
+      "condition": "baseline",
+      "payload": "payloads/T06/baseline.txt"
+    }
+  ],
+  "stop_conditions": [
+    "Fallo de smoke",
+    "Runtime error, timeout, rechazo o truncación",
+    "Stop reason upstream distinto de end_turn",
+    "Usage desconocido o modelo no permitido",
+    "Más de un request por invocación",
+    "Reserva no cabe o usage supera reserva",
+    "Integridad, flags o versión de CLI distintos de configuración revisada"
+  ],
+  "benchmark_format_failure": "Conservar y puntuar FAIL, no retry; error de formato/contenido no equivale a infraestructura.",
+  "model_calls": 0,
+  "api_cost_usd": 0,
+  "pricing_verified_on": "2026-10-09",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "migration_source": "https://platform.claude.com/docs/en/models/haiku-5-5/migration-guide",
+  "rates_usd_per_million": {
+    "up_to_100000_input": {
+      "input": 0.1,
+      "output": 0.5,
+      "cache_write_5m": 0.125,
+      "cache_write_1h": 0.2,
+      "cache_read": 0.01
+    },
+    "over_100000_input": {
+      "input": 0.5,
+      "output": 2.5,
+      "cache_write_5m": 0.625,
+      "cache_write_1h": 1.0,
+      "cache_read": 0.05
+    }
+  },
+  "taxes_and_final_invoice": "No incluidos por proxy; estimación de usage, no factura."
+}

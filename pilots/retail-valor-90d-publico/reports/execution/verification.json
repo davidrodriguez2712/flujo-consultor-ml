@@ -1,0 +1,25 @@
+{
+  "source_tests": 9,
+  "temporal_tests": 11,
+  "model_tests": 11,
+  "runner_tests": 4,
+  "suite_passed": 35,
+  "failed": 0,
+  "integrity": "PASS",
+  "historical_manifests_verified": {
+    "reports/discovery/evidence-manifest-02.json": 44,
+    "reports/framing/evidence-manifest.json": 18,
+    "reports/diagnosis/evidence-manifest.json": 20,
+    "reports/execution/dataset-manifest.json": 8
+  },
+  "gates": {
+    "diagnosis": "PASS",
+    "data-quality": "PASS",
+    "execution": "NEEDS_REVIEW"
+  },
+  "dataset_train_development_rows": 39677,
+  "holdout_reserved_rows": 2768,
+  "development_runs": 16,
+  "holdout_evaluated": false,
+  "api_cost_usd": 0
+}

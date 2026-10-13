@@ -1,0 +1,20 @@
+engagement:
+  archetypes:
+  - PREDICT
+  - OPTIMIZE
+  decision: Asignar presupuesto según valor esperado
+data:
+  sources:
+  - csv
+  characteristics:
+    labeled: partial
+    supervised: true
+deliverables:
+- budget
+schema_version: 1
+project:
+  slug: clv
+  name: clv
+runtimes:
+- codex
+- claude_code

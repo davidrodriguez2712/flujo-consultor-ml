@@ -1,0 +1,16 @@
+{
+  "last_baseline_stability": {
+    "method": "historical_sales",
+    "from_cutoff": "2010-09-01T00:00:00",
+    "to_cutoff": "2010-12-01T00:00:00",
+    "shared_selected_customers": 53,
+    "retention_share_previous": 0.53,
+    "jaccard": 0.36054421768707484
+  },
+  "selected_final_cancellations": {
+    "lines": 522,
+    "customers": 51,
+    "signed_amount_gbp": -47363.08,
+    "interpretation": "L\u00edneas de cancelaci\u00f3n del cliente en horizonte; sin enlace a compra original ni descuento retroactivo del target."
+  }
+}

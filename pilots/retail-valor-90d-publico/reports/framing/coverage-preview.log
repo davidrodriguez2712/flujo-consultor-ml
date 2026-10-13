@@ -1,0 +1,43 @@
+{
+  "status": "PROPOSED_NOT_APPLIED",
+  "raw_rows": 1067371,
+  "cross_sheet_matching_rows": 22523,
+  "rows_after_proposed_reconciliation": 1044848,
+  "within_sheet_multiplicity_preserved": true,
+  "exclusion_buckets_in_order": [
+    {
+      "reason": "missing_or_nonfinite_required_fields",
+      "rows": 0
+    },
+    {
+      "reason": "cancellation_invoice",
+      "rows": 19165
+    },
+    {
+      "reason": "nonpositive_quantity_or_price",
+      "rows": 6029
+    },
+    {
+      "reason": "nonstandard_stock_code",
+      "rows": 4709
+    },
+    {
+      "reason": "missing_customer_id",
+      "rows": 226758
+    }
+  ],
+  "proposed_purchase_rows": 788187,
+  "proposed_distinct_customers": 5852,
+  "proposed_countries": 41,
+  "positive_screening_rows_after_reconciliation": 1019654,
+  "positive_screening_amount_gbp_after_reconciliation": 20533741.918,
+  "positive_nonstandard_rows": 4709,
+  "positive_nonstandard_amount_gbp": 833956.948,
+  "positive_rows_with_standard_code_missing_id": 226758,
+  "proposed_purchase_amount_gbp": 17124926.23,
+  "notes": [
+    "Preview de contrato, no dataset limpio aprobado.",
+    "Importes positivos históricos no son margen, revenue neto ni efecto de campaña.",
+    "Patrón de código estándar delimita población operacional; no prueba semántica de mercancía."
+  ]
+}

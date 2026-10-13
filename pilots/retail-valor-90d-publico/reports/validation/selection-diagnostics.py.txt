@@ -1,0 +1,20 @@
+from pathlib import Path
+import sys,json
+import pandas as pd
+p=Path(sys.argv[1]).resolve();sys.path.insert(0,str(p/'analysis'))
+from retail_evaluation import top_k
+pred=pd.read_csv(p/'data/processed/development_predictions.csv',dtype={'customer_id':'string'},parse_dates=['cutoff'])
+final=pd.read_csv(p/'data/processed/holdout_predictions.csv',dtype={'customer_id':'string'},parse_dates=['cutoff'])
+rows=[];sets={}
+for (method,t),part in pred.groupby(['model_id','cutoff']):sets.setdefault(method,[]).append((t,set(top_k(part,100).customer_id)))
+sets['historical_sales'].append((pd.Timestamp('2011-09-01'),set(top_k(final,100).customer_id)))
+for method,seq in sets.items():
+ seq.sort(key=lambda x:x[0])
+ for (a,old),(b,new) in zip(seq,seq[1:]):
+  rows.append({'method':method,'from_cutoff':a.isoformat(),'to_cutoff':b.isoformat(),'shared_selected_customers':len(old&new),'retention_share_previous':len(old&new)/len(old),'jaccard':len(old&new)/len(old|new)})
+chosen=top_k(final,100);ids=set(chosen.customer_id);t=pd.Timestamp('2011-09-01');end=t+pd.Timedelta(days=90)
+x=pd.read_csv(p/'data/processed/excluded_transactions.csv.gz',dtype={'customer_id':'string','invoice_id':'string'},parse_dates=['invoice_at'])
+c=x.loc[x.exclusion_reason.eq('cancellation')&x.customer_id.isin(ids)&x.invoice_at.ge(t)&x.invoice_at.lt(end)]
+d={'ranking_stability':rows,'selected_final_cancellations':{'lines':len(c),'customers':int(c.customer_id.nunique()),'signed_amount_gbp':float((c.quantity*c.unit_price).sum()),'interpretation':'Líneas de cancelación del cliente en horizonte; sin enlace a compra original ni descuento retroactivo del target.'},'concentration_interpretation':'Top1/Top10 de ventas futuras dentro del conjunto seleccionado, ordenados por outcome solo para diagnóstico; no redefinen ranking.','api_cost_usd':0}
+(p/'reports/validation/selection-diagnostics.json').write_text(json.dumps(d,indent=2)+'\n')
+print(json.dumps({'last_baseline_stability':rows[3],'selected_final_cancellations':d['selected_final_cancellations']},indent=2))
