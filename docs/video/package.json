@@ -1,0 +1,7 @@
+{
+  "name": "acos-video",
+  "private": true,
+  "type": "module",
+  "description": "Render del video del flujo ACOS (HTML -> MP4)",
+  "dependencies": { "puppeteer-core": "^23.0.0" }
+}

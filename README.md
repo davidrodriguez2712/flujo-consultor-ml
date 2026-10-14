@@ -6,7 +6,13 @@ ACOS crea una carpeta de proyecto ordenada (un *workspace*) con el manual, las e
 
 > **Regla de oro:** el agente hace el trabajo; **tú decides y apruebas**. ACOS nunca avanza una etapa por su cuenta: para pasar necesita que el entregable esté completo **y** que tú registres tu aprobación.
 
-**Contenido:** [Qué necesitas](#1-qué-necesitas-para-empezar) · [Qué obtienes al final](#2-qué-obtienes-al-final) · [Las 7 etapas](#3-las-7-etapas-en-lenguaje-simple) · [Tu primer proyecto paso a paso](#4-tu-primer-proyecto-paso-a-paso) · [Ver un proyecto ya terminado](#5-ver-un-proyecto-ya-terminado) · [Trabajar con el agente](#6-trabajar-con-el-agente) · [Referencia](#referencia)
+### Míralo en 82 segundos
+
+[![Video: el flujo de ACOS paso a paso](docs/video/preview.gif)](docs/video/acos-flujo.mp4)
+
+*Pulsa la imagen para ver el video completo ([`docs/video/acos-flujo.mp4`](docs/video/acos-flujo.mp4), con subtítulos, sin audio).* Sigue un mismo proyecto desde que lo describes hasta que lo entregas: perfil → `acos init` → estado central → trabajo con el agente → gate con tu aprobación → 7 etapas → entregables.
+
+**Contenido:** [Video](#míralo-en-82-segundos) · [Qué necesitas](#1-qué-necesitas-para-empezar) · [Qué obtienes al final](#2-qué-obtienes-al-final) · [Las 7 etapas](#3-las-7-etapas-en-lenguaje-simple) · [Tu primer proyecto paso a paso](#4-tu-primer-proyecto-paso-a-paso) · [Ver un proyecto ya terminado](#5-ver-un-proyecto-ya-terminado) · [Trabajar con el agente](#6-trabajar-con-el-agente) · [Referencia](#referencia)
 
 ---
 

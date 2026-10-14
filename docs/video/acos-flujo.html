@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ACOS — el flujo, paso a paso</title>
+<meta name="viewport" content="width=1280">
+<style>
+:root{
+  --bg:#0a1020; --panel:#111a30; --panel2:#16213d; --line:#243052; --text:#e8eef9; --dim:#93a1c0;
+  --accent:#2dd4bf; --blue:#60a5fa; --green:#22c55e; --red:#f43f5e; --amber:#fbbf24; --violet:#a78bfa;
+  --mono: ui-monospace,"SF Mono",Menlo,Consolas,monospace; --sans:-apple-system,"SF Pro Display","Segoe UI",Inter,Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1280px;height:720px;background:#05080f;overflow:hidden;font-family:var(--sans);color:var(--text)}
+#stage{position:relative;width:1280px;height:720px;overflow:hidden;
+  background:radial-gradient(900px 500px at var(--gx,20%) 0%,#13224a 0%,transparent 70%),radial-gradient(800px 500px at 100% 100%,#0e2f35 0%,transparent 70%),var(--bg)}
+#grid{position:absolute;inset:0;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(circle at 50% 40%,#000 0%,transparent 80%)}
+.scene{position:absolute;inset:0;opacity:0}
+.a{opacity:0;will-change:opacity,transform}
+.abs{position:absolute}
+h1{font-size:66px;letter-spacing:-1.5px;font-weight:800}
+h2{font-size:38px;letter-spacing:-.5px;font-weight:750}
+.sub{color:var(--dim);font-size:26px}
+.mono{font-family:var(--mono)}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:#0d1630;font-size:18px;color:var(--dim)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px 26px}
+.term{background:#070c19;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 20px 60px #0008}
+.term .bar{height:34px;background:#0e1730;display:flex;align-items:center;gap:8px;padding:0 14px;border-bottom:1px solid var(--line)}
+.term .bar i{width:12px;height:12px;border-radius:50%;display:block}
+.term .bar span{margin-left:10px;color:var(--dim);font-size:14px;font-family:var(--mono)}
+.term .body{padding:16px 20px;font-family:var(--mono);font-size:19px;line-height:1.55;white-space:pre-wrap}
+.prompt{color:var(--accent)}
+.ok{color:var(--green)} .bad{color:var(--red)} .warn{color:var(--amber)} .dim{color:var(--dim)} .blue{color:var(--blue)} .vio{color:var(--violet)}
+.row{display:flex;gap:12px;align-items:flex-start}
+.badge{display:inline-block;padding:3px 12px;border-radius:8px;font-weight:700;font-size:18px;font-family:var(--mono)}
+.b-red{background:#f43f5e22;color:#fb7185;border:1px solid #f43f5e66}
+.b-green{background:#22c55e22;color:#4ade80;border:1px solid #22c55e66}
+.b-blue{background:#60a5fa22;color:#93c5fd;border:1px solid #60a5fa66}
+#caption{position:absolute;left:0;right:0;bottom:92px;text-align:center;font-size:27px;font-weight:600;padding:0 90px;text-shadow:0 2px 14px #000}
+#caption b{color:var(--accent)}
+#hud-brand{position:absolute;left:36px;top:26px;display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.5px;font-size:20px}
+#hud-brand .logo{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--blue));display:grid;place-items:center;color:#04111a;font-weight:900;font-size:17px}
+#hud-chip{position:absolute;right:36px;top:22px}
+#hud-chip .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+#pills{position:absolute;left:60px;right:60px;bottom:30px;display:flex;gap:10px}
+.pill{flex:1;text-align:center;padding:10px 4px;border-radius:12px;border:1px solid var(--line);background:#0c1429;color:var(--dim);font-size:16px;font-family:var(--mono);transition:none}
+.pill.active{border-color:var(--blue);color:#cfe3ff;background:#12234a;box-shadow:0 0 18px #60a5fa44}
+.pill.done{border-color:#22c55e88;color:#86efac;background:#0f2a1d}
+.tree{font-family:var(--mono);font-size:19px;line-height:1.6}
+.tree .hl{color:var(--accent);font-weight:700}
+.kv{font-family:var(--mono);font-size:21px;line-height:1.75}
+.kv .k{color:var(--dim)}
+.stg{flex:1;text-align:center}
+.stg .n{width:70px;height:70px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;font-size:30px;font-weight:800;border:2px solid var(--line);background:#0c1429;color:var(--dim)}
+.stg .t{font-family:var(--mono);font-size:20px;font-weight:700}
+.stg .q{font-size:15.5px;color:var(--dim);margin-top:8px;line-height:1.35;padding:0 4px}
+.dlv{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 22px}
+.dlv .t{font-size:23px;font-weight:700;margin-bottom:6px}
+.dlv .p{font-family:var(--mono);font-size:16px;color:var(--accent)}
+.dlv .d{font-size:16px;color:var(--dim);margin-top:6px}
+.bubble{border-radius:16px;padding:16px 20px;font-size:20px;line-height:1.45;max-width:560px}
+.u{background:#1b2a52;align-self:flex-end;border-top-right-radius:4px}
+.g{background:#12302e;border:1px solid #1d5b55;align-self:flex-start;border-top-left-radius:4px}
+.cursor{display:inline-block;width:10px;height:22px;background:var(--accent);vertical-align:-4px;margin-left:2px}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="grid"></div>
+
+  <div id="hud-brand" class="a" data-at="0.2"><div class="logo">A</div>ACOS</div>
+  <div id="hud-chip" class="a" data-at="15.2" data-until="82"><span class="chip"><span class="dot"></span><span class="mono" style="color:#cfe3ff">proyecto · demo-fraude</span></span></div>
+
+  <!-- ESCENA 1: entrada -->
+  <section class="scene" data-s="0" data-e="6.6">
+    <div class="abs" style="left:0;right:0;top:150px;text-align:center">
+      <div class="a" data-at="0.3"><h1>Agentic Consulting OS</h1></div>
+      <div class="a sub" data-at="1.0" style="margin-top:16px">De la pregunta de negocio a una recomendación defendible</div>
+    </div>
+    <div class="abs row" style="left:190px;right:190px;top:410px;gap:30px">
+      <div class="card a" data-at="2.4" style="flex:1;text-align:center"><div style="font-size:44px">❓</div><div style="font-size:26px;font-weight:700;margin-top:8px">Responde 6 preguntas</div><div class="dim" style="font-size:18px;margin-top:6px">el asistente te guía</div></div>
+      <div class="a" data-at="3.0" style="align-self:center;font-size:30px;color:var(--dim)">o</div>
+      <div class="card a" data-at="3.4" style="flex:1;text-align:center"><div style="font-size:44px">📄</div><div style="font-size:26px;font-weight:700;margin-top:8px">Pasa un perfil YAML</div><div class="dim" style="font-size:18px;margin-top:6px">si ya tienes las respuestas</div></div>
+    </div>
+  </section>
+
+  <!-- ESCENA 2: describir el proyecto -->
+  <section class="scene" data-s="6.6" data-e="14.8">
+    <div class="abs a" data-at="6.9" style="left:60px;top:90px"><h2>1 · Cuéntale tu proyecto</h2></div>
+    <div class="abs" style="left:60px;top:170px;width:520px">
+      <div class="card a" data-at="7.4" style="padding:12px 22px;font-size:19px;margin-bottom:10px"><span class="blue mono">1</span>&nbsp; ¿Qué decisión hay que tomar?</div>
+      <div class="card a" data-at="7.9" style="padding:12px 22px;font-size:19px;margin-bottom:10px"><span class="blue mono">2</span>&nbsp; ¿Qué problema u oportunidad?</div>
+      <div class="card a" data-at="8.4" style="padding:12px 22px;font-size:19px;margin-bottom:10px"><span class="blue mono">3</span>&nbsp; ¿Cómo se mide el éxito?</div>
+      <div class="card a" data-at="8.9" style="padding:12px 22px;font-size:19px;margin-bottom:10px"><span class="blue mono">4</span>&nbsp; ¿Quién decide y quién usa?</div>
+      <div class="card a" data-at="9.4" style="padding:12px 22px;font-size:19px;margin-bottom:10px"><span class="blue mono">5</span>&nbsp; ¿Qué datos y restricciones hay?</div>
+      <div class="card a" data-at="9.9" style="padding:12px 22px;font-size:19px"><span class="blue mono">6</span>&nbsp; ¿Qué entregables se esperan?</div>
+    </div>
+    <div class="term abs a" data-at="10.3" style="left:620px;top:170px;width:600px">
+      <div class="bar"><i style="background:#f43f5e"></i><i style="background:#fbbf24"></i><i style="background:#22c55e"></i><span>fraude.yaml</span></div>
+      <div class="body" style="font-size:16px;white-space:pre"><span class="a" data-at="10.6"><span class="dim">engagement:</span></span>
+<span class="a" data-at="11.0">  decision: <span class="ok">Priorizar inspecciones de fraude eléctrico</span></span>
+<span class="a" data-at="11.5">  archetypes: [PREDICT, PRIORITIZE_SELECT, OPTIMIZE]</span>
+<span class="a" data-at="12.0">  current_stage: <span class="blue">framing</span></span>
+<span class="a" data-at="12.5"><span class="dim">data:</span> { sources: [csv], supervised: true }</span>
+<span class="a" data-at="13.0"><span class="dim">deliverables:</span> <span class="ok">[decision_memo, business_case]</span></span>
+<span class="a" data-at="13.4"><span class="dim">runtimes:</span> [codex, claude_code]</span></div>
+    </div>
+  </section>
+
+  <!-- ESCENA 3: acos init -->
+  <section class="scene" data-s="14.8" data-e="24.2">
+    <div class="abs a" data-at="15.0" style="left:60px;top:80px"><h2>2 · Crea el proyecto</h2></div>
+    <div class="term abs" style="left:60px;top:150px;width:1160px;height:420px">
+      <div class="bar"><i style="background:#f43f5e"></i><i style="background:#fbbf24"></i><i style="background:#22c55e"></i><span>terminal</span></div>
+      <div class="body" style="font-size:18px;line-height:1.6"><span class="a" data-at="15.4"><span class="prompt">$</span> <span class="type" data-text="acos init demo-fraude --profile-file fraude.yaml" data-at="15.4" data-cps="40"></span></span>
+<span class="a" data-at="17.0"><span class="ok">✓</span> Perfil propuesto        <span class="dim">decisión · datos · entregables</span></span>
+<span class="a" data-at="17.6"><span class="ok">✓</span> Clasificación          <span class="blue">PREDICT · PRIORITIZE_SELECT · OPTIMIZE</span> <span class="dim">(y la regla que lo activó)</span></span>
+<span class="a" data-at="18.3"><span class="ok">✓</span> Módulos                <span class="dim">consulting_core · data_analysis · supervised_model · selection · optimization · business_case · executive_delivery</span></span>
+<span class="a" data-at="19.4"><span class="warn">!</span> Brechas                <span class="dim">10 capacidades sin skill → pauta del OS (no se inventan skills)</span></span>
+<span class="a" data-at="20.2"><span class="ok">✓</span> Archivos a crear        <span class="dim">.acos/ · MANUAL.md · PROJECT.md · AGENTS.md · …</span></span>
+
+<span class="a" data-at="21.0"><span class="vio">Confirma clasificación/perfil [s]:</span> <span class="type" data-text="s" data-at="21.6" data-cps="8"></span></span>
+<span class="a" data-at="22.4"><span class="ok">✓ Proyecto creado: demo-fraude/</span></span></div>
+    </div>
+    <div class="abs a" data-at="21.2" style="right:60px;top:88px"><span class="chip" style="color:#cfe3ff;border-color:#60a5fa88">👤 Tú confirmas · no hay modo automático</span></div>
+  </section>
+
+  <!-- ESCENA 4: workspace + estado -->
+  <section class="scene" data-s="24.2" data-e="32.4">
+    <div class="abs a" data-at="24.4" style="left:60px;top:80px"><h2>3 · Un workspace con una fuente única de verdad</h2></div>
+    <div class="card abs tree" style="left:60px;top:160px;width:560px;height:400px">
+<span class="a" data-at="24.9">demo-fraude/</span>
+<span class="a" data-at="25.3">├─ <span class="hl">.acos/</span></span>
+<span class="a" data-at="25.7">│   ├─ project-profile.yaml</span>
+<span class="a" data-at="26.0">│   ├─ modules.yaml</span>
+<span class="a" data-at="26.3">│   ├─ <span class="hl">state.yaml</span>  <span class="dim">← estado y aprobaciones</span></span>
+<span class="a" data-at="26.6">│   └─ manifest.yaml  <span class="dim">← hashes</span></span>
+<span class="a" data-at="27.0">├─ MANUAL.md · PROJECT.md</span>
+<span class="a" data-at="27.3">├─ AGENTS.md · CLAUDE.md</span>
+<span class="a" data-at="27.6">├─ TASKS.md · DECISIONS.md</span>
+<span class="a" data-at="27.9">└─ context/ framing/ analysis/ …</span></div>
+    <div class="card abs a" data-at="28.3" style="left:680px;top:160px;width:540px;height:400px">
+      <div class="dim" style="font-size:17px;letter-spacing:2px;margin-bottom:14px">.ACOS/STATE.YAML</div>
+      <div class="kv">
+        <div><span class="k">project:</span>        fraud</div>
+        <div><span class="k">current_stage:</span>  <span class="blue">framing</span></div>
+        <div><span class="k">status:</span>         <span class="warn">NOT_STARTED</span></div>
+        <div><span class="k">completed_stages:</span> []</div>
+        <div><span class="k">gate_reviews:</span>   {}</div>
+      </div>
+      <div class="a" data-at="30.0" style="margin-top:22px;font-size:19px;color:var(--accent)">Una sola fuente de verdad: de aquí leen el agente y los comandos.</div>
+    </div>
+  </section>
+
+  <!-- ESCENA 5: status / next -->
+  <section class="scene" data-s="32.4" data-e="40.4">
+    <div class="abs a" data-at="32.6" style="left:60px;top:80px"><h2>4 · Siempre sabes dónde estás y qué toca</h2></div>
+    <div class="term abs" style="left:60px;top:150px;width:760px;height:440px">
+      <div class="bar"><i style="background:#f43f5e"></i><i style="background:#fbbf24"></i><i style="background:#22c55e"></i><span>demo-fraude</span></div>
+      <div class="body" style="font-size:18px"><span class="a" data-at="33.0"><span class="prompt">$</span> <span class="type" data-text="acos status" data-at="33.0" data-cps="22"></span></span>
+<span class="a" data-at="33.9">stage: <span class="blue">framing</span>   status: <span class="warn">NOT_STARTED</span>
+next_gates: [<span class="vio">framing</span>]   integrity: <span class="ok">OK</span></span>
+
+<span class="a" data-at="35.3"><span class="prompt">$</span> <span class="type" data-text="acos next" data-at="35.3" data-cps="22"></span></span>
+<span class="a" data-at="36.2">objetivo: <span class="ok">Definir decisión, owner, KPI, unidad y horizonte.</span></span>
+<span class="a" data-at="36.9">preguntas:
+  · ¿Qué se optimiza o mide?
+  · ¿Cuál es la unidad y el horizonte?
+  · ¿Quién aprueba alcance y KPI?</span>
+<span class="a" data-at="38.2">entregable: <span class="blue">framing/framing.yaml</span></span></div>
+    </div>
+    <div class="abs" style="left:870px;top:170px;width:350px">
+      <div class="card a" data-at="34.0" style="margin-bottom:16px"><span class="mono blue">status</span><div style="font-size:22px;margin-top:6px">dónde estás</div></div>
+      <div class="card a" data-at="36.0"><span class="mono blue">next</span><div style="font-size:22px;margin-top:6px">qué trabajo toca y qué archivo producir</div></div>
+      <div class="a dim" data-at="38.6" style="margin-top:18px;font-size:17px">Ninguno escribe archivos.</div>
+    </div>
+  </section>
+
+  <!-- ESCENA 6: agente -->
+  <section class="scene" data-s="40.4" data-e="48.6">
+    <div class="abs a" data-at="40.6" style="left:60px;top:80px"><h2>5 · Tu agente hace el trabajo de la etapa</h2></div>
+    <div class="abs" style="left:60px;top:150px;width:640px;display:flex;flex-direction:column;gap:16px">
+      <div class="bubble u a" data-at="41.2">Lee MANUAL.md y PROJECT.md. Ejecuta <span class="mono">acos next</span> y propón un plan para esta etapa.</div>
+      <div class="bubble g a" data-at="43.0"><b class="ok">Claude Code / Codex</b><br>Plan: 1) confirmar decisión y dueño · 2) definir KPI, unidad y horizonte · 3) redactar <span class="mono">framing/framing.yaml</span> para tu revisión.</div>
+      <div class="bubble g a" data-at="45.4">Borrador listo. <b>Pendiente de tu revisión.</b></div>
+    </div>
+    <div class="term abs a" data-at="44.0" style="left:740px;top:150px;width:480px">
+      <div class="bar"><i style="background:#f43f5e"></i><i style="background:#fbbf24"></i><i style="background:#22c55e"></i><span>framing/framing.yaml</span></div>
+      <div class="body" style="font-size:17px"><span class="dim">decision:</span> Priorizar inspecciones…
+<span class="a" data-at="44.6"><span class="dim">owner:</span>   <span class="ok">Gerencia de Pérdidas No Técnicas</span></span>
+<span class="a" data-at="45.0"><span class="dim">metric:</span>  <span class="ok">Recuperación de energía</span></span>
+<span class="a" data-at="45.4"><span class="dim">unit:</span>    <span class="ok">kWh recuperados por inspección</span></span>
+<span class="a" data-at="45.8"><span class="dim">horizon:</span> <span class="ok">90 días</span></span></div>
+    </div>
+    <div class="abs a dim" data-at="46.4" style="left:740px;top:400px;font-size:15px">Conversación ilustrativa del trabajo con el agente.</div>
+  </section>
+
+  <!-- ESCENA 7: gate -->
+  <section class="scene" data-s="48.6" data-e="58.4">
+    <div class="abs a" data-at="48.8" style="left:60px;top:80px"><h2>6 · El gate: tú abres la puerta</h2></div>
+    <div class="term abs" style="left:60px;top:150px;width:700px;height:430px">
+      <div class="bar"><i style="background:#f43f5e"></i><i style="background:#fbbf24"></i><i style="background:#22c55e"></i><span>demo-fraude</span></div>
+      <div class="body" style="font-size:17.5px"><span class="a" data-at="49.2"><span class="prompt">$</span> <span class="type" data-text="acos validate --gate framing" data-at="49.2" data-cps="30"></span></span>
+<span class="a" data-at="50.4"><span class="badge b-red">BLOCKED</span>  <span class="dim">código 4</span></span>
+<span class="a" data-at="50.9"><span class="bad">fields-missing</span> framing.yaml: completar
+owner, metric, unit, horizon</span>
+
+<span class="a" data-at="54.6"><span class="prompt">$</span> <span class="type" data-text="acos validate --gate framing" data-at="54.6" data-cps="40"></span></span>
+<span class="a" data-at="55.6"><span class="badge b-green">PASS</span>  <span class="dim">código 0</span></span>
+<span class="a" data-at="56.0">evidence: <span class="blue">framing/framing.yaml</span></span></div>
+    </div>
+    <div class="card abs a" data-at="51.6" style="left:800px;top:150px;width:420px;height:430px">
+      <div class="dim" style="font-size:16px;letter-spacing:2px;margin-bottom:12px">REVISIÓN HUMANA</div>
+      <div style="font-size:22px;line-height:1.7">
+        <div class="a" data-at="52.0">☑ Leíste el contenido</div>
+        <div class="a" data-at="52.6">☑ Reviewer: <b>David</b></div>
+        <div class="a" data-at="53.2">☑ Evidencia: framing.yaml</div>
+      </div>
+      <div class="mono a" data-at="53.6" style="margin-top:16px;font-size:16px;color:var(--accent);line-height:1.5">gate_reviews:<br>&nbsp; framing:<br>&nbsp;&nbsp;&nbsp; decision: PASS<br>&nbsp;&nbsp;&nbsp; reviewer: David</div>
+      <div class="a" data-at="56.8" style="margin-top:14px;font-size:16px;color:var(--dim)">PASS = completo y revisado.<br>No prueba que el análisis sea correcto.</div>
+    </div>
+  </section>
+
+  <!-- ESCENA 8: 7 etapas -->
+  <section class="scene" data-s="58.4" data-e="67.4">
+    <div class="abs a" data-at="58.6" style="left:0;right:0;top:80px;text-align:center"><h2>7 · Repite el ciclo en cada etapa</h2></div>
+    <div class="abs" style="left:50px;right:50px;top:190px;display:flex;gap:6px" id="stg8"></div>
+    <div class="abs a" data-at="60.6" style="left:90px;right:90px;top:400px">
+      <div class="dim" style="font-size:16px;letter-spacing:2px;text-align:center;margin-bottom:14px">EL CICLO DE CADA ETAPA</div>
+      <div class="row" style="justify-content:center;align-items:center;gap:14px;font-size:20px">
+        <span class="card" style="padding:14px 20px"><span class="mono blue">acos next</span> · qué toca</span><span class="dim">→</span>
+        <span class="card" style="padding:14px 20px">trabajo con el agente</span><span class="dim">→</span>
+        <span class="card" style="padding:14px 20px"><span class="mono blue">acos validate</span></span><span class="dim">→</span>
+        <span class="card" style="padding:14px 20px;border-color:#22c55e88;color:#86efac">✍️ tu aprobación</span>
+      </div>
+    </div>
+    <div class="abs a" data-at="65.4" style="left:0;right:0;top:540px;text-align:center;font-size:20px;color:var(--dim)">Puedes empezar en cualquier etapa y volver atrás si cambia la pregunta.</div>
+  </section>
+
+  <!-- ESCENA 9: entregables -->
+  <section class="scene" data-s="67.4" data-e="76.2">
+    <div class="abs a" data-at="67.6" style="left:60px;top:80px"><h2>8 · Lo que obtienes al final</h2></div>
+    <div class="abs" style="left:60px;top:150px;width:1160px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+      <div class="dlv a" data-at="68.2"><div class="t">📝 Memo de decisión</div><div class="p">decision/recommendation.md</div><div class="d">Qué recomiendas, con qué evidencia y límites</div></div>
+      <div class="dlv a" data-at="68.7"><div class="t">📊 Informe analítico</div><div class="p">validation/model_validation.md</div><div class="d">Método, resultados y limitaciones</div></div>
+      <div class="dlv a" data-at="69.2"><div class="t">📦 Contrato de entrega</div><div class="p">delivery/delivery_contract.md</div><div class="d">Qué se entregó, a quién y con qué alcance</div></div>
+      <div class="dlv a" data-at="69.7"><div class="t">🔁 Evidencia reproducible</div><div class="p">analysis/</div><div class="d">Código, datos con hash y resultados</div></div>
+      <div class="dlv a" data-at="70.2"><div class="t">📘 Runbook y cierre</div><div class="p">handoff/runbook.md · closure.md</div><div class="d">Cómo usar y mantener lo entregado</div></div>
+      <div class="dlv a" data-at="70.7"><div class="t">✍️ Aprobaciones</div><div class="p">.acos/state.yaml</div><div class="d">Quién aprobó cada etapa y con qué evidencia</div></div>
+    </div>
+    <div class="term abs a" data-at="71.6" style="left:60px;top:470px;width:1160px">
+      <div class="bar"><i style="background:#f43f5e"></i><i style="background:#fbbf24"></i><i style="background:#22c55e"></i><span>piloto sintético de churn</span></div>
+      <div class="body" style="font-size:19px"><span class="prompt">$</span> <span class="type" data-text="acos status" data-at="71.8" data-cps="22"></span>   <span class="a" data-at="72.8"><span class="badge b-green">COMPLETED</span>  7/7 etapas · integrity <span class="ok">OK</span></span></div>
+    </div>
+  </section>
+
+  <!-- ESCENA 10: cierre -->
+  <section class="scene" data-s="76.2" data-e="82.0">
+    <div class="abs" style="left:0;right:0;top:170px;text-align:center">
+      <div class="a" data-at="76.5" style="font-size:54px;font-weight:800;letter-spacing:-1px">Guiado. Trazable. Reproducible.</div>
+      <div class="a" data-at="77.6" style="font-size:54px;font-weight:800;letter-spacing:-1px;color:var(--accent);margin-top:6px">Aprobado por ti.</div>
+    </div>
+    <div class="term abs a" data-at="78.6" style="left:300px;width:680px;top:400px">
+      <div class="bar"><i style="background:#f43f5e"></i><i style="background:#fbbf24"></i><i style="background:#22c55e"></i><span>instalar</span></div>
+      <div class="body" style="font-size:22px;text-align:center"><span class="prompt">$</span> uv tool install agentic-consulting-os</div>
+    </div>
+    <div class="abs a dim" data-at="79.4" style="left:0;right:0;top:530px;text-align:center;font-size:21px;font-family:var(--mono)">github.com/davidrodriguez2712/flujo-consultor-ml</div>
+  </section>
+
+  <div id="caption"></div>
+  <div id="pills" class="a" data-at="15.2" data-until="82"></div>
+</div>
+
+<script>
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const ease=x=>1-Math.pow(1-x,3);
+const T_END=82.0;
+
+// textos de subtítulo por rango
+const CAPS=[
+ [0.4,6.4,'Un flujo guiado para trabajar con un agente de IA — <b>y tú sigues decidiendo</b>.'],
+ [7.0,14.4,'Cuéntale a ACOS tu <b>decisión</b>, tus <b>datos</b> y tus <b>entregables</b>.'],
+ [15.4,24.0,'ACOS te muestra todo <b>antes de escribir nada</b>. Tú confirmas.'],
+ [24.8,32.2,'Un workspace con manual, etapas y un <b>estado central</b>.'],
+ [33.0,40.2,'<b>status</b> te dice dónde estás. <b>next</b>, qué toca hacer.'],
+ [41.0,48.4,'Tu agente — Claude Code o Codex — hace el trabajo de la etapa.'],
+ [49.0,58.2,'El gate revisa el entregable. <b>Solo tú lo abres</b> con tu aprobación.'],
+ [59.0,67.2,'Siete etapas: de <b>discovery</b> a <b>handoff</b>.'],
+ [68.0,76.0,'El resultado: una carpeta <b>trazable y lista para entregar</b>.']
+];
+
+const STAGES=['discovery','framing','diagnosis','execution','validation','delivery','handoff'];
+const QS=['¿Quién decide y qué cambia?','¿Qué se mide y quién aprueba?','¿Alcanzan los datos?','¿Se puede reproducir?','¿Es sólido y útil?','¿Qué recomiendas?','¿Quién lo mantiene?'];
+// escena 8: cada etapa se completa en este instante
+const S8_DONE=[59.6,60.5,61.5,62.5,63.5,64.4,65.0];
+
+// construir pills y etapas
+const pills=document.getElementById('pills');
+STAGES.forEach((s,i)=>{const d=document.createElement('div');d.className='pill';d.textContent=(i+1)+' '+s;pills.appendChild(d)});
+const stg8=document.getElementById('stg8');
+STAGES.forEach((s,i)=>{const d=document.createElement('div');d.className='stg a';d.dataset.at=(59.0+i*0.25).toFixed(2);
+ d.innerHTML=`<div class="n">${i+1}</div><div class="t">${s}</div><div class="q">${QS[i]}</div>`;stg8.appendChild(d)});
+
+// elementos animados
+const anim=[...document.querySelectorAll('.a')];
+const scenes=[...document.querySelectorAll('.scene')];
+const types=[...document.querySelectorAll('.type')];
+const caption=document.getElementById('caption');
+const pillEls=[...pills.children];
+const stg8els=[...stg8.children];
+
+function render(t){
+  document.getElementById('stage').style.setProperty('--gx',(20+Math.sin(t/9)*15)+'%');
+  // escenas
+  scenes.forEach(sc=>{
+    const s=+sc.dataset.s,e=+sc.dataset.e;
+    const fin=clamp((t-s)/0.35),fout=clamp((e-t)/0.35);
+    sc.style.opacity=(t>=s&&t<e)?Math.min(ease(fin),ease(fout)):0;
+    sc.style.visibility=(t>=s-0.01&&t<e)?'visible':'hidden';
+  });
+  // elementos con data-at
+  anim.forEach(el=>{
+    const at=+el.dataset.at, d=+(el.dataset.d||0.5);
+    let p=ease(clamp((t-at)/d));
+    if(el.dataset.until!==undefined){const u=+el.dataset.until;if(t>=u)p=0;}
+    el.style.opacity=p;
+    const dy=(1-p)*14;
+    const inline=['SPAN','B'].includes(el.tagName)&&getComputedStyle(el).display==='inline';
+    el.style.transform=inline?'':`translateY(${dy}px)`;
+    // los spans de línea de terminal: mantener layout, solo opacidad
+  });
+  // tipeo
+  types.forEach(el=>{
+    const at=+el.dataset.at,cps=+el.dataset.cps,txt=el.dataset.text;
+    const n=Math.floor(clamp((t-at)*cps,0,txt.length));
+    el.textContent=txt.slice(0,n);
+  });
+  // subtítulos
+  let cap='';
+  for(const [a,b,txt] of CAPS){ if(t>=a&&t<b){cap=txt;caption.style.opacity=Math.min(ease(clamp((t-a)/0.4)),ease(clamp((b-t)/0.4)));} }
+  caption.innerHTML=cap; if(!cap)caption.style.opacity=0;
+  // pills (HUD): framing activo hasta PASS(55.6) -> done; luego diagnosis activo
+  pillEls.forEach((p,i)=>{
+    let st='';
+    if(t<55.6){ if(i===1)st='active'; }
+    else if(t<67.4){ if(i===1)st='done'; else if(i===2)st='active'; }
+    else { st='done'; }
+    p.className='pill '+st;
+  });
+  // ocultar pills durante la escena 8 y el cierre
+  const hidePills=(t>=58.4&&t<67.4)||t>=76.2||t<15.2;
+  pills.style.visibility=hidePills?'hidden':'visible';
+  // escena 8
+  stg8els.forEach((el,i)=>{
+    const done=t>=S8_DONE[i];
+    const active=!done&&(i===0?t>=59.0:t>=S8_DONE[i-1]);
+    const n=el.querySelector('.n');
+    if(done){n.style.background='#0f2a1d';n.style.borderColor='#22c55e';n.style.color='#86efac';n.textContent='✓';el.querySelector('.t').style.color='#86efac';}
+    else if(active){n.style.background='#12234a';n.style.borderColor='#60a5fa';n.style.color='#cfe3ff';n.textContent=i+1;n.style.boxShadow='0 0 24px #60a5fa66';el.querySelector('.t').style.color='#cfe3ff';}
+    else {n.style.background='#0c1429';n.style.borderColor='#243052';n.style.color='#93a1c0';n.textContent=i+1;n.style.boxShadow='none';el.querySelector('.t').style.color='';}
+  });
+}
+window.render=render; window.T_END=T_END;
+
+// vista previa en navegador (sin ?render)
+if(!/render/.test(location.search)){
+  const q=new URLSearchParams(location.search);const t0=performance.now();
+  const loop=()=>{const t=q.has('t')?+q.get('t'):((performance.now()-t0)/1000)%T_END;render(t);requestAnimationFrame(loop)};loop();
+}else{render(0)}
+</script>
+</body>
+</html>

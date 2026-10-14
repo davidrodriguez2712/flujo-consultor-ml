@@ -9,3 +9,5 @@ dist/
 .env
 .env.*
 !.env.example
+docs/video/node_modules/
+docs/video/stills/
