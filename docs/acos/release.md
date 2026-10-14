@@ -26,7 +26,7 @@ Verificar wheel en entorno limpio y carpeta diferente del checkout; inicializar 
 | Windows 11 ARM64 | Runner nativo / Python 3.13.16; 125 tests, 24 simulaciones y 12 comandos de smoke aislado. [Evidencia](validation/2026-10-08-windows-arm-runtimes-report.md) |
 | Python 3.11 mínimo | Verificado en Linux dentro de Docker |
 | Claude Code / Codex | macOS: 4/4 pruebas reales; skill nativa design-validation y continuidad con `continuemos` verificadas. Windows x64/ARM64: instalación, arranque y descubrimiento antes/después de traslado PASS; skill nativa y continuidad autenticadas en sesión nueva PASS, 4/4 combinaciones y 8 ejecuciones. [Informe y límites](validation/2026-10-09-windows-authenticated-report.md) |
-| Publicación PyPI | No realizada |
+| Publicación PyPI | 0.1.0 publicada el 2026-10-13 (wheel sha256 `8d596375…`, sdist `9c64899d…`, idénticos a los artifacts locales); instalación desde el índice en venv limpio verificada (`acos --version` 0.1.0). Verificación de plataformas sigue limitada a lo indicado arriba |
 
 No declarar cobertura de las plataformas pendientes ni eficacia de las skills por pasar estas pruebas. Leer el ledger de ejecución para comandos/resultados concretos.
 

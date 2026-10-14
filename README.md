@@ -7,4 +7,4 @@ Método modular de consultoría Data & AI y compiler local de workspaces.
 - [Uso de un proyecto](docs/acos/project-usage.md)
 - [Distribución y límites de verificación](docs/acos/release.md)
 
-Desde este checkout, instala una vez con `uv tool install .` o `pipx install .`; después ejecuta `acos init` desde cualquier carpeta. El paquete aún no se publicó en PyPI.
+Instala una vez con `uv tool install agentic-consulting-os` (publicado en PyPI, 0.1.0) o, desde este checkout, `uv tool install .`; después ejecuta `acos init` desde cualquier carpeta.

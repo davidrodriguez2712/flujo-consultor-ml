@@ -387,3 +387,7 @@ Adjudicación humana del L03 0.2.2: aceptable con reservas; David autoriza +US$0
 David sube el límite de reporte a 650 (no retroactivo). Corrida única cap8192: runtimePASS, contratoPASS 485/650 (final52/80), US$0.00432061; acumulado US$0.15278257, saldo US$0.02721743. Revisión independiente: aceptable con reservas (mecanismo por hallazgo no etiquetado, churn solo implícito, redundancia leve); sin defectos prohibidos. 485 cabría en 500: varianza entre corridas, causa no demostrada; 515/532 con límite 500 siguen FAIL. Experimental sin promoción; sin baseline ni generalización. Pendientes: adjudicación humana de 0.2.3, subir a PyPI (artifacts 0.1.0 preparados en dist/, sin publicar), remoto git.
 
 [Informe](validation/2026-10-13-detect-leakage-v023-report.md).
+
+## 2026-10-13 — publicación en PyPI
+
+David publicó `agentic-consulting-os` 0.1.0 con `uv publish` (artifacts construidos de HEAD `dist/`). Índice verificado: wheel `8d59637596ff7da15026c1d37c62db3f8a08ab897ac5cf8b5850cecba5ee8522` y sdist `9c64899d45371386b18e3c12cfa8a73320d05f51557355b9151be61a1b5b2e2a`, idénticos a los locales; instalación desde PyPI en venv limpio, `acos --version` 0.1.0. El token usado quedó expuesto en la conversación: debe revocarse. Versión inmutable; correcciones futuras exigen 0.1.1. README/installation/release actualizados. Las skills Foundry no forman parte del paquete.

@@ -1,6 +1,6 @@
 # Instalar ACOS
 
-ACOS 0.1.0 es una CLI Python >=3.11. El paquete se construye localmente; todavía no está publicado en PyPI.
+ACOS 0.1.0 es una CLI Python >=3.11. Publicado en PyPI el 2026-10-13 como `agentic-consulting-os` 0.1.0 (`uv tool install agentic-consulting-os`); también puede construirse localmente.
 
 ## Instalación una vez por laptop
 
