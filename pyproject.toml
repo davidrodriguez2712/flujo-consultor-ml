@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "agentic-consulting-os"
-version = "0.1.0"
+version = "0.1.1"
 description = "Compiler portable de workspaces de consultoría Data & AI"
 readme = "README.md"
 license = {text = "MIT"}
