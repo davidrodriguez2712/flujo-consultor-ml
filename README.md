@@ -41,7 +41,7 @@ Si ya tienes esas respuestas por escrito, puedes pasarlas en un archivo YAML en 
 
 ```bash
 uv tool install agentic-consulting-os
-acos --version        # 0.1.0
+acos --version        # 0.1.1
 ```
 
 Alternativa desde este repo: `git clone https://github.com/davidrodriguez2712/flujo-consultor-ml.git && cd flujo-consultor-ml && uv tool install .`
@@ -286,7 +286,7 @@ El **Foundry** es tu carpeta de skills reutilizables, **en la ubicación que pre
 
 ### Estado y límites
 
-- **ACOS 0.1.0** publicado en PyPI. Verificado en macOS, Linux (Docker) y Windows x64/ARM64; probado con Claude Code y Codex ([matriz](docs/acos/release.md)).
+- **ACOS 0.1.1** publicado en PyPI (licencia MIT). Verificado en macOS, Linux (Docker) y Windows x64/ARM64; probado con Claude Code y Codex ([matriz](docs/acos/release.md)).
 - Que pasen los tests no prueba la eficacia de las skills ni la calidad de un análisis.
 - `acos init --llm` es opcional, pide consentimiento y nunca recibe datos del cliente.
 - Una carpeta o repo organiza el trabajo, pero no es una barrera de seguridad: aísla a cada cliente con controles de acceso reales.
