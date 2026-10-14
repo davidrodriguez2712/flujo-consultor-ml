@@ -3,7 +3,7 @@
 Cierre administrativo con el estado actual. Cero llamadas API nuevas. No es una promoción ni una validación de eficacia.
 
 ## Estado final
-- **Skill:** `detect-leakage` canónica 0.2.0 sigue **experimental**, para uso supervisado. Los borradores 0.2.1/0.2.2 no se promovieron. El hash canónico `c2a2440477d9985489b71f4d8c50380ccd7985635d02eab330cfee0f7e5856c4` está registrado en informes previos; no se re-verificó en este cierre porque el Foundry canónico queda fuera de este repositorio.
+- **Skill:** `detect-leakage` canónica 0.2.0 sigue **experimental**, para uso supervisado. Los borradores 0.2.1/0.2.2 no se promovieron. El hash canónico `c2a2440477d9985489b71f4d8c50380ccd7985635d02eab330cfee0f7e5856c4` (hasta la migración a `metadata:`, ver implementation-record) está registrado en informes previos; no se re-verificó en este cierre porque el Foundry canónico queda fuera de este repositorio.
 - **Presupuesto:** US$0.14019795 de US$0.15 (estimados por ledger, no factura; solo Anthropic, sin Codex del coordinador/reviewer). Saldo US$0.00980205, sin uso previsto. Pago detenido.
 - **Tests:** 264 PASS.
 
