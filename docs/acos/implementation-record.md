@@ -411,3 +411,7 @@ Versión 0.1.1 (`pyproject.toml` y `acos.__version__`; 264 PASS) publicada con `
 ## 2026-10-14 — precisión sobre `acos init` y el perfil
 
 Aclarado en README, guía e2e y video: `--profile-file` es opcional; sin él, `acos init` lanza un asistente que pregunta **en secuencia** (unas 11–13 preguntas base más condicionales: temporalidad/entidades si hay datos; labels, target y features si es predictivo; asignación si es causal; GenAI/UI si es producto o software), casi todas admiten respuesta vacía y lo omitido queda como pregunta abierta. «6 preguntas» pasa a ser un resumen en 6 temas. Wizard probado con respuestas escritas en un HOME aislado: crea el proyecto. Video re-renderizado (82 s) con el texto corregido.
+
+## 2026-10-14 — guía e2e: la sección 0 muestra primero el asistente
+
+`docs/acos/ejemplo-e2e.md`, sección «0. Crear el proyecto»: ahora presenta primero la ruta normal (`acos init` sin `--profile-file`) con el transcript de las 21 preguntas del asistente (11 base, 7 condicionales en este caso y las 2 confirmaciones), y deja `--profile-file` como atajo opcional al final. Transcript producido ejecutando el asistente con las respuestas del piloto en un HOME aislado; el perfil resultante coincide con el del piloto en decisión, arquetipos, etapa, datos, entregables y runtimes. Las respuestas del ejemplo están simplificadas y las listas largas de opciones, abreviadas.

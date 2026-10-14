@@ -33,7 +33,85 @@ Además de los gates de etapa, el piloto registra **revisiones por módulo** (`d
 
 ## 0. Crear el proyecto
 
-El perfil (`.acos/project-profile.yaml`) recoge las respuestas que ACOS pregunta al crear el proyecto ([qué te pregunta](../../README.md#1-qué-necesitas-para-empezar)):
+### La ruta normal: `acos init` y contestar al asistente
+
+Lo habitual es no llevar nada preparado: ejecutas `acos init` y el asistente te hace las preguntas **una por una, en secuencia**. Así se crearía este proyecto (la línea con `›` es lo que escribes; las opciones largas se abrevian con `…`; las respuestas son equivalentes a las del perfil del piloto, simplificadas):
+
+```text
+$ acos init churn-retencion-sintetico
+
+Ruta Foundry local (vacío para continuar sin Foundry):
+› (Enter)
+
+Contexto opcional: cliente | industria | mercado | rol (vacío permite cliente confidencial):
+› Empresa ficticia de suscripciones | SaaS / suscripciones | Mercado ficticio | Consultor Data & AI
+
+¿Qué decisión necesita tomar el cliente?:
+› Proponer qué clientes activos priorizar para revisión de retención cada mes.
+
+¿Qué problema u oportunidad motiva el trabajo?:
+› Caso ficticio: capacidad de contacto limitada y necesidad de anticipar cancelaciones.
+
+¿Cómo se mediría éxito?:
+› Precision@50 mensual y valor en riesgo; impacto causal de retención no identificado.
+
+¿Quién decide y quién usa el resultado? owner | usuarios:
+› | Equipo ficticio de retención          (el dueño de la decisión queda pendiente)
+
+Arquetipos DIAGNOSE, PREDICT, FORECAST, PRIORITIZE_SELECT, … (arquetipos;formas):
+› DIAGNOSE, PREDICT, PRIORITIZE_SELECT ; analysis
+
+Datos existentes (csv, excel, parquet, sql, api, documentos; vacío si no hay):
+› csv
+
+Restricciones operacionales/presupuesto (separadas por coma):
+› Datos 100% sintéticos
+
+Entregables (report, decision_memo, executive_deck, business_case, notebook, api...):
+› analytical_report, decision_memo
+
+Etapa actual discovery, framing, diagnosis, execution, validation, delivery, handoff [discovery]:
+› (Enter)                                  ← empieza en discovery
+
+Runtime codex, claude_code [ambos]:
+› (Enter)
+```
+
+Hasta aquí son las **11 preguntas base**. Como el caso tiene datos y un problema predictivo, el asistente añade **preguntas condicionales** (otro caso, otras preguntas: por ejemplo, si es un experimento causal pregunta por la asignación; si es un producto o software, por GenAI y UI):
+
+```text
+¿Hay temporalidad? [s/n/desconocido]:                     › s
+¿Se repiten entidades en el tiempo? [s/n/desconocido]:    › s
+¿Hay información geográfica? [s/n/desconocido]:           › n
+Tarea predictiva (classification/regression/ranking/…):   › classification
+Labels (yes/partial/no/unknown):                          › partial
+Target/label y momento de disponibilidad:                 › churn_next_month, se conoce al inicio del mes siguiente + 7 días
+¿Se requiere diseñar features? [s/N]:                     › n
+```
+
+Casi todo admite dejarse en blanco: lo que no contestes (por ejemplo el dueño de la decisión) queda anotado como pregunta abierta en el perfil. Si no pasas el nombre del proyecto (`acos init` a secas), el asistente también pregunta «Nombre visible del proyecto» y confirma la carpeta.
+
+**Antes de escribir nada,** ACOS te enseña lo que entendió y pide dos confirmaciones:
+
+```text
+Perfil propuesto:        { … el perfil con tus respuestas … }
+Clasificación propuesta: DIAGNOSE · PREDICT · PRIORITIZE_SELECT   (con la regla que activó cada una)
+Confirma clasificación/perfil [s], corrige arquetipos separados por coma, o cancela [n]:
+› s
+
+Módulos, capacidades y brechas · Archivos propuestos · Destino
+¿Confirmar composición y generar workspace? [s/N]:
+› s
+
+Proyecto listo: …/churn-retencion-sintetico
+Siguiente: cd "…/churn-retencion-sintetico"
+```
+
+Probado con estas mismas respuestas en un entorno aislado: crea el proyecto, y el perfil resultante tiene la misma decisión, arquetipos, etapa inicial, datos, entregables y runtimes que el del piloto.
+
+### El resultado: `.acos/project-profile.yaml`
+
+Todo lo que contestaste queda guardado en el perfil del proyecto. Así es el del piloto:
 
 ```yaml
 project: { slug: churn-retencion-sintetico, client: Empresa ficticia de suscripciones, … }
@@ -48,7 +126,17 @@ constraints:
   - 'Capacidad operativa propuesta: 50 contactos por mes; pendiente de revisión.'
 ```
 
-Observa dos cosas: el éxito está declarado como *propuesta* (nada se da por acordado) y `open_questions` deja anotado lo que falta confirmar. Se crea con el asistente (`acos init`, que pregunta en secuencia) o, como aquí, pasando el perfil con `--profile-file`, que es opcional.
+Observa dos cosas: el éxito está declarado como *propuesta* (nada se da por acordado) y `open_questions` deja anotado lo que falta confirmar.
+
+### Atajo opcional: pasar el perfil en un archivo
+
+Si ya tienes ese perfil escrito (por ejemplo, de un proyecto parecido), puedes saltarte todas las preguntas anteriores:
+
+```bash
+acos init churn-retencion-sintetico --profile-file perfil.yaml
+```
+
+`--profile-file` es **opcional**. ACOS igual te muestra el perfil y la clasificación y te pide las dos confirmaciones. Es útil para repetir un proyecto o automatizar una demo (el [recorrido del README](../../README.md#4-tu-primer-proyecto-paso-a-paso) lo usa por eso), pero no es la ruta habitual.
 
 ---
 
