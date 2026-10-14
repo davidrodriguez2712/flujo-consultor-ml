@@ -1,0 +1,47 @@
+Lee workflow.md y sigue sus pautas. Lee case.md y audita únicamente sus inputs autorizados. Cumple el contrato común; utiliza solo capacidades disponibles y pertinentes. Entrega resumen y ruta de reporte.
+Lee .runtime/report-context.json: suministra metadatos conocidos de condición y versión; no contiene conclusiones de auditoría. Úsalo para los campos que solicite el contrato.
+
+La auditoría se limita al expediente: escribe un reporte de máximo 650 palabras, sin omitir el contrato ni evidencia esencial. No reproduzcas las instrucciones ni el reporte completo en la respuesta final; entrega un resumen de máximo 80 palabras y la ruta. Revisa solo familias aplicables y declara límites, sin desarrollar análisis ajenos al encargo.
+
+Contrato mecánico del reporte: frontmatter YAML al inicio físico del archivo, sin fences exteriores, con claves exactas skill, version, fecha, inputs, estado, condicion; sin claves duplicadas. Copia skill/version/condicion de report-context. fecha en ISO corresponde a la ejecución real; estado describe la auditoría, no aprobación de gates. inputs enumera case.md y todos los archivos de inputs con path y sha256 de la utility. Después incluye una vez cada sección: Resumen, Hallazgos, Evidencia, Preguntas abiertas, Recomendaciones. El conteo usa whitespace en todo el archivo, incluido frontmatter; las 80 palabras finales incluyen la ruta. El cumplimiento mecánico se comprueba por separado y no sustituye revisión semántica.
+
+El archivo comienza con la línea literal --- y cierra la metadata con otra línea literal ---. Sustituye los valores entre <> con los datos autorizados; conserva ambos delimitadores. Esquema del archivo:
+---
+skill: <skill de report-context>
+version: <version de report-context>
+fecha: <fecha ISO real de ejecución>
+inputs:
+  - path: <ruta de cada input autorizado>
+    sha256: <hash real de la utility>
+estado: <estado de auditoría sin aprobar gates>
+condicion: <condicion de report-context>
+---
+
+## Resumen
+<resumen>
+## Hallazgos
+<hallazgos fundamentados>
+## Evidencia
+<fuentes y checks realmente ejecutados>
+## Preguntas abiertas
+<brechas concretas>
+## Recomendaciones
+<acciones proporcionales>
+
+
+Contrato operativo de herramientas:
+Read: únicamente estos archivos:
+/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023c/L03-treatment/workspace/.runtime/check_inputs.py
+/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023c/L03-treatment/workspace/.runtime/plugin/.claude-plugin/plugin.json
+/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023c/L03-treatment/workspace/.runtime/plugin/skills/detect-leakage/SKILL.md
+/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023c/L03-treatment/workspace/.runtime/report-context.json
+/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023c/L03-treatment/workspace/case.md
+/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023c/L03-treatment/workspace/inputs/context.md
+/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023c/L03-treatment/workspace/inputs/dictionary.json
+/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023c/L03-treatment/workspace/inputs/observations.csv
+/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023c/L03-treatment/workspace/workflow.md
+Write: únicamente un reporte nuevo en /Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023c/L03-treatment/workspace/reports/leakage/audit.md. No modificar inputs ni crear otros archivos.
+Bash: solo este comando exacto, sin prefijos, sufijos, argumentos adicionales ni comandos encadenados:
+/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python /Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023c/L03-treatment/workspace/.runtime/check_inputs.py
+La utility produce hashes, tamaños y conteos de CSV; no ejecuta pipeline.py ni evalúa leakage. No usar ls, pwd, cat, shell arbitrario, red ni instalar paquetes.
+Skill: solo acos-eval:detect-leakage. Si está instalada, invócala al inicio mediante Skill antes de auditar. Si está ausente, realiza la tarea sin skill y declara none/null. No invocar skills ausentes ni subagents.

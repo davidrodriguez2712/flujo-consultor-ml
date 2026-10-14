@@ -1,0 +1,5 @@
+Reporte escrito en `reports/leakage/audit.md` (skill detect-leakage 0.2.3, condición treatment).
+
+Resultado: complaint_count queda **No determinable**. No hay mecanismo demostrado de leakage, pero falta ventana de conteo, fecha de disponibilidad y código de construcción. La exportación no prueba disponibilidad. Uso provisional reservado al owner. No se aprueban gates ni se ejecutó pipeline.
+
+Ruta: `/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023c/L03-treatment/workspace/reports/leakage/audit.md`

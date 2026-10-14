@@ -1,0 +1,10 @@
+{
+  "status": "APPROVED",
+  "execution_manifest_sha256": "232ddb69fbd019f10ccd86bc81e90d0caa7dfc345280f2efb2726d0b9ea1e5b3",
+  "total_budget_usd": 0.03,
+  "prior_total_usd": 0.148461955,
+  "cumulative_ceiling_usd": 0.18,
+  "package_accepted": true,
+  "basis": "David decide opción A (subir límite a 650) el 2026-10-13 dentro del techo 0.18 ya autorizado; corrida única L03 nativo 0.2.3",
+  "automatic_retries": 0
+}

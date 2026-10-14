@@ -1,0 +1,9 @@
+# Diagnóstico nativo 0.2.3
+
+L03 único, expected/case/workflow/transporte congelados idénticos a 0.2.2. Cambia solo la skill (0.2.3: un dato por sección). Cap 4096, reporte 500/final 80, sin retries. Techo acumulado US$0.18 autorizado por el usuario (+US$0.03); gasto previo US$0.14019795; proxy máximo de esta corrida US$0.02. Contrato mecánico fallido se conserva sin reparar. No promueve ni modifica canónico. config.budget_ceiling_usd 0.1 es cota del verificador, no fondos.
+
+Desviación: el CLI local pasó de 2.1.296 a 2.1.299 tras la preparación; el guard de versión detuvo el primer lanzamiento sin gasto (native-launch-023.stderr). Se actualizó solo config.cli_version y se regeneró el manifest. La compatibilidad del transporte con 2.1.299 no estaba verificada previamente; la corrida no es comparable estrictamente con 0.2.2 (2.1.296).
+
+Segunda configuración: la corrida cap4096 de 0.2.3 terminó en max_tokens (4096 salida, 2709 thinking) sin reporte, runtime FAIL, coste US$0.00438563; se conserva en native-results-023. Esta corrida única usa cap 8192, sin retries; proxy máximo US$0.03; acumulado previo US$0.14458358, techo US$0.18.
+
+Tercera configuración (opción A decidida por David el 2026-10-13): límite de reporte 650 palabras (final 80 sin cambio) porque la estructura fija (~100 palabras) hacía inalcanzable 500 en 0.2.2/0.2.3. No se reinterpretan como PASS las corridas previas con límite 500. Corrida única, sin retries; proxy máximo US$0.03; acumulado previo US$0.148461955, techo US$0.18.

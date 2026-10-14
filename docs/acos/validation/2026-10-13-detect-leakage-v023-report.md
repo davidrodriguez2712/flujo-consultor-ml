@@ -25,3 +25,11 @@ Acumulado US$0.14846196 de US$0.18; saldo US$0.03153804 (estimado por ledger, so
 
 ## Evidencia
 `native-package-023/`, `native-package-023b/` (manifests `c6852a55…`, `61286f80…`), `native-approval-023*.json`, `native-results-023/`, `native-results-023b/`, `HUMAN_ADJUDICATION_L03.md`.
+
+## Actualización: opción A (límite 650) y revisión independiente
+
+David decide subir el límite de reporte a 650 palabras (final 80, sin cambio), no retroactivo. Corrida única `native-results-023c` (0.2.3, cap 8192, CLI 2.1.299, manifest `232ddb69…`): runtime PASS, **contrato PASS, 485/650 palabras, final 52/80**. Con 485 también cabría en 500: la diferencia con 515/532 refleja varianza entre corridas y no demuestra que el límite o la skill sean la causa. Las corridas con límite 500 siguen en FAIL y no se reinterpretan.
+
+Revisión independiente (`NATIVE_L03_REVIEW_023.md`; agente de IA distinto del autor, no humano ni ciego): **ACEPTABLE CON RESERVAS**. Skill real cargada, `check_inputs.py` ejecutado, 4 sha256 correctos, cero defectos prohibidos. Reservas: «asociación con churn no es mecanismo» solo implícito; falta etiqueta explícita de mecanismo por hallazgo que exige `case.md`; redundancia leve (Resumen/Brecha/Preguntas; última pregunta repite las condiciones); tensión de redacción entre «uso provisional» y «no usar».
+
+Coste de 023c: US$0.00432061. Acumulado **US$0.15278257** de US$0.18; saldo US$0.02721743. Pago detenido. Una sola ejecución, solo treatment, sin baseline: no demuestra superioridad ni generalización. Experimental, sin promoción. La revisión humana de 0.2.3 no se ha hecho.

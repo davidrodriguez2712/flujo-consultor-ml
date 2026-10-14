@@ -381,3 +381,9 @@ Cambio solo de formato en `~/david-skill-foundry/experiments/skills/detect-leaka
 Adjudicación humana del L03 0.2.2: aceptable con reservas; David autoriza +US$0.03 (techo 0.18). 0.2.3 (un dato por sección). Cap4096: runtimeFAIL por max_tokens (thinking 2709), sin reporte, US$0.004386. Cap8192: runtimePASS, contratoFAIL 532/500 (peor que 0.2.2, 515), US$0.003878. Redundancia no confirmada como causa; hipótesis sin probar: estructura fija (~100 palabras) vs límite 500. CLI 2.1.296→2.1.299 (desviación documentada). Acumulado US$0.14846196, saldo US$0.03153804, pago detenido. Experimental, sin promoción; micro y comparación no ejecutados.
 
 [Informe](validation/2026-10-13-detect-leakage-v023-report.md).
+
+## 2026-10-13 — opción A: límite 650 y L03 nativo 0.2.3 aceptable con reservas
+
+David sube el límite de reporte a 650 (no retroactivo). Corrida única cap8192: runtimePASS, contratoPASS 485/650 (final52/80), US$0.00432061; acumulado US$0.15278257, saldo US$0.02721743. Revisión independiente: aceptable con reservas (mecanismo por hallazgo no etiquetado, churn solo implícito, redundancia leve); sin defectos prohibidos. 485 cabría en 500: varianza entre corridas, causa no demostrada; 515/532 con límite 500 siguen FAIL. Experimental sin promoción; sin baseline ni generalización. Pendientes: adjudicación humana de 0.2.3, subir a PyPI (artifacts 0.1.0 preparados en dist/, sin publicar), remoto git.
+
+[Informe](validation/2026-10-13-detect-leakage-v023-report.md).

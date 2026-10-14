@@ -1,0 +1,70 @@
+{
+  "id": "v023-native-l03-limit650",
+  "files": [
+    {
+      "path": "RUNBOOK.md",
+      "sha256": "29c65c61ace6e1b0ea5af13eee378c974c5aa6d403988e354a265ad92a5b7f8d",
+      "bytes": 1536
+    },
+    {
+      "path": "config.json",
+      "sha256": "1d565eec0bee65eb1d37b6f043813ebe1cacd829093ba968ab16727086681dd1",
+      "bytes": 618
+    },
+    {
+      "path": "public/L03/case.md",
+      "sha256": "db7f2572bc7e591a8d537735dade9cdbcc1da74a100ecb2dd245673b3540e951",
+      "bytes": 1711
+    },
+    {
+      "path": "public/L03/inputs/context.md",
+      "sha256": "ae79d0d67bdd4f71349d51644732c99ae1ce547ad618a6d663a30195042b1c7e",
+      "bytes": 644
+    },
+    {
+      "path": "public/L03/inputs/dictionary.json",
+      "sha256": "72636cf89cf406c70e90c0c1325ddcb7c89229a915199153c35c9f167c414fe3",
+      "bytes": 150
+    },
+    {
+      "path": "public/L03/inputs/observations.csv",
+      "sha256": "32ae7c42472e440093583da2798aba677eb2ceae58289e5d5dc77f3e46354532",
+      "bytes": 223
+    },
+    {
+      "path": "reviewer/L03/expected.md",
+      "sha256": "331122d7573ab6f6178bc9bcb256bae99a7dd62754ee01e10b6a2eb14b7cfa72",
+      "bytes": 2738
+    },
+    {
+      "path": "skill/SKILL.md",
+      "sha256": "55debdc8de3d28fbd01ee24f8055adea2df7137f0767060b8d5d41de2316b85b",
+      "bytes": 5152
+    },
+    {
+      "path": "snapshots/scripts/ci/runtime_budget.py",
+      "sha256": "be80e0784f3751b5225b2aa51ee8c335c90c084d3e95061365f23cf714c2b0c7",
+      "bytes": 21090
+    },
+    {
+      "path": "snapshots/scripts/evaluations/foundry_input_facts.py",
+      "sha256": "f0f58042b74eac09d225761267a0f0ff34ea68401c7afaff2b8d2e9f98f75bc4",
+      "bytes": 971
+    },
+    {
+      "path": "snapshots/scripts/evaluations/foundry_native_transport.py",
+      "sha256": "690dcafc3e604381a5d76655498f135df84ada3ba3a9c1ad5c6c6ed313e28b46",
+      "bytes": 22516
+    },
+    {
+      "path": "snapshots/scripts/evaluations/foundry_study.py",
+      "sha256": "238db50bec472bbeea7ec0d6c0d276b14551564b4807c9fe774e0ccc57cf9aea",
+      "bytes": 5721
+    },
+    {
+      "path": "workflow.md",
+      "sha256": "0cc2f01287ed857dc98c005ec8f5143d3c155d671f4404c8d27f43dd0c60a35f",
+      "bytes": 2973
+    }
+  ]
+}
