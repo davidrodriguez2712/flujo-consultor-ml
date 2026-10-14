@@ -399,3 +399,7 @@ El Foundry pasó de `~/david-skill-foundry` a `~/Foundries/david-skill-foundry` 
 ## 2026-10-14 — video del flujo para el README
 
 Video `docs/video/acos-flujo.mp4` (82 s, 1280×720, 24 fps, sin audio, subtítulos en pantalla), adaptado del brief «Follow the Record»: un mismo proyecto (`demo-fraude`) recorre perfil → `acos init` → estado central → `status`/`next` → agente → gate BLOCKED→revisión humana→PASS → 7 etapas → entregables. Fuente HTML con reloj determinista y render con Chrome+ffmpeg reproducible (`docs/video/README.md`). Salidas condensadas de las reales; conversación con el agente ilustrativa y señalada. Vista previa GIF en el README. Sin narración.
+
+## 2026-10-14 — guía e2e completa
+
+Nueva guía `docs/acos/ejemplo-e2e.md`: lectura guiada de las 7 etapas del piloto de churn (pregunta, rol de usuario y agente, archivo producido, extracto real y evidencia del gate), con el hallazgo crítico de leakage de diagnosis y los límites. Verificado en una copia del piloto: los 7 gates dan PASS y el estado es COMPLETED/integrity OK; enlaces, anclas y archivos citados comprobados. Enlazada desde README (sección 4, sección 5, contenido y documentación). No es un script reproducible: el trabajo de las etapas lo hizo un agente en sesiones anteriores.

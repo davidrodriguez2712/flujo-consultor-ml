@@ -12,7 +12,7 @@ ACOS crea una carpeta de proyecto ordenada (un *workspace*) con el manual, las e
 
 *Pulsa la imagen para ver el video completo ([`docs/video/acos-flujo.mp4`](docs/video/acos-flujo.mp4), con subtítulos, sin audio).* Sigue un mismo proyecto desde que lo describes hasta que lo entregas: perfil → `acos init` → estado central → trabajo con el agente → gate con tu aprobación → 7 etapas → entregables.
 
-**Contenido:** [Video](#míralo-en-82-segundos) · [Qué necesitas](#1-qué-necesitas-para-empezar) · [Qué obtienes al final](#2-qué-obtienes-al-final) · [Las 7 etapas](#3-las-7-etapas-en-lenguaje-simple) · [Tu primer proyecto paso a paso](#4-tu-primer-proyecto-paso-a-paso) · [Ver un proyecto ya terminado](#5-ver-un-proyecto-ya-terminado) · [Trabajar con el agente](#6-trabajar-con-el-agente) · [Referencia](#referencia)
+**Contenido:** [Video](#míralo-en-82-segundos) · [Ejemplo e2e completo](docs/acos/ejemplo-e2e.md) · [Qué necesitas](#1-qué-necesitas-para-empezar) · [Qué obtienes al final](#2-qué-obtienes-al-final) · [Las 7 etapas](#3-las-7-etapas-en-lenguaje-simple) · [Tu primer proyecto paso a paso](#4-tu-primer-proyecto-paso-a-paso) · [Ver un proyecto ya terminado](#5-ver-un-proyecto-ya-terminado) · [Trabajar con el agente](#6-trabajar-con-el-agente) · [Referencia](#referencia)
 
 ---
 
@@ -196,6 +196,8 @@ Código `0`: etapa aprobada con evidencia y revisor registrados.
 
 Para pasar a `diagnosis`, **tú** añades `framing` a `completed_stages`, cambias `current_stage` y actualizas `objective` en `.acos/state.yaml` (a propósito, no hay comando automático de avance). Luego vuelves al paso 3 con la etapa nueva: `acos next` → trabajo → `acos validate` → aprobación. Repites hasta `handoff`; entonces `acos status` muestra `COMPLETED`.
 
+> **¿Quieres ver las 7 etapas completas?** Esta guía llega hasta el primer gate. El recorrido de **todas las etapas, con los archivos y extractos reales de un proyecto terminado**, está en [`docs/acos/ejemplo-e2e.md`](docs/acos/ejemplo-e2e.md).
+
 > **Importante:** `PASS` significa «el entregable está completo y alguien lo revisó». **No** prueba que el análisis sea correcto: eso sigue siendo tu criterio profesional.
 
 ### Si algo falla
@@ -219,7 +221,7 @@ acos status                    # COMPLETED · 7 etapas · integrity OK
 acos validate --gate handoff   # PASS
 ```
 
-Lee en este orden: `decision/recommendation.md` (la recomendación) → `validation/model_validation.md` (la evidencia) → `handoff/runbook.md` (cómo se usa) → `handoff/closure.md` (el cierre) → `.acos/state.yaml` (las aprobaciones). Otros pilotos: `retail-valor-90d-publico`, `retail-capacidad-semanal-publico`, `riesgo-credito-sintetico`. Un caso narrado y ficticio: [`examples/synthetic/card-activation.md`](examples/synthetic/card-activation.md).
+Para recorrerlo etapa por etapa, con extractos de cada archivo y la aprobación de cada gate, sigue la guía [**Ejemplo e2e**](docs/acos/ejemplo-e2e.md). Si prefieres ir directo, lee en este orden: `decision/recommendation.md` (la recomendación) → `validation/model_validation.md` (la evidencia) → `handoff/runbook.md` (cómo se usa) → `handoff/closure.md` (el cierre) → `.acos/state.yaml` (las aprobaciones). Otros pilotos: `retail-valor-90d-publico`, `retail-capacidad-semanal-publico`, `riesgo-credito-sintetico`. Un caso narrado y ficticio: [`examples/synthetic/card-activation.md`](examples/synthetic/card-activation.md).
 
 ---
 
@@ -309,7 +311,7 @@ uv run python -m build --no-isolation  # wheel + sdist
 | `evaluations/`, `docs/acos/validation/` | Evidencia de evaluación de skills y plataformas |
 | `schemas/`, `operations/`, `tests/` | Schemas de auditoría, guía de herramientas y suite del compilador |
 
-Documentación: [instalación](docs/acos/installation.md) · [uso de un proyecto](docs/acos/project-usage.md) · [distribución y límites](docs/acos/release.md).
+Documentación: [ejemplo e2e completo](docs/acos/ejemplo-e2e.md) · [instalación](docs/acos/installation.md) · [uso de un proyecto](docs/acos/project-usage.md) · [distribución y límites](docs/acos/release.md).
 
 ## Licencia
 
