@@ -407,3 +407,7 @@ Nueva guía `docs/acos/ejemplo-e2e.md`: lectura guiada de las 7 etapas del pilot
 ## 2026-10-14 — publicación de 0.1.1 en PyPI
 
 Versión 0.1.1 (`pyproject.toml` y `acos.__version__`; 264 PASS) publicada con `uv publish` a petición de David, usando el token que él proporcionó en la sesión (pasado por variable de entorno, no guardado en archivos). Índice verificado: wheel `3653ffcbb1809f49e05f52bcd82529b2eb49afbd4fdc2f14670a10250b7eecf3`, sdist `64b15c78bf93a97a88686b2558b8606dfe4f1308b30c326dd2cce95a87f985f1`, `license: MIT`; instalación desde PyPI en venv limpio, `acos --version` 0.1.1 y `acos init`/`status` correctos. Cambios frente a 0.1.0: licencia MIT, README reescrito y fallback `metadata:`. 0.1.0 permanece en el índice (inmutable). El token sigue activo por decisión de David; recomendación vigente: revocarlo o reemplazarlo por uno limitado a este proyecto.
+
+## 2026-10-14 — precisión sobre `acos init` y el perfil
+
+Aclarado en README, guía e2e y video: `--profile-file` es opcional; sin él, `acos init` lanza un asistente que pregunta **en secuencia** (unas 11–13 preguntas base más condicionales: temporalidad/entidades si hay datos; labels, target y features si es predictivo; asignación si es causal; GenAI/UI si es producto o software), casi todas admiten respuesta vacía y lo omitido queda como pregunta abierta. «6 preguntas» pasa a ser un resumen en 6 temas. Wizard probado con respuestas escritas en un HOME aislado: crea el proyecto. Video re-renderizado (82 s) con el texto corregido.

@@ -33,7 +33,7 @@ Además de los gates de etapa, el piloto registra **revisiones por módulo** (`d
 
 ## 0. Crear el proyecto
 
-El perfil (`.acos/project-profile.yaml`) recoge las respuestas a las [6 preguntas](../../README.md#1-qué-necesitas-para-empezar):
+El perfil (`.acos/project-profile.yaml`) recoge las respuestas que ACOS pregunta al crear el proyecto ([qué te pregunta](../../README.md#1-qué-necesitas-para-empezar)):
 
 ```yaml
 project: { slug: churn-retencion-sintetico, client: Empresa ficticia de suscripciones, … }
@@ -48,7 +48,7 @@ constraints:
   - 'Capacidad operativa propuesta: 50 contactos por mes; pendiente de revisión.'
 ```
 
-Observa dos cosas: el éxito está declarado como *propuesta* (nada se da por acordado) y `open_questions` deja anotado lo que falta confirmar. Se crea con `acos init … --profile-file`.
+Observa dos cosas: el éxito está declarado como *propuesta* (nada se da por acordado) y `open_questions` deja anotado lo que falta confirmar. Se crea con el asistente (`acos init`, que pregunta en secuencia) o, como aquí, pasando el perfil con `--profile-file`, que es opcional.
 
 ---
 

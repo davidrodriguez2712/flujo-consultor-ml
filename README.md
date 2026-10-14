@@ -10,7 +10,7 @@ ACOS crea una carpeta de proyecto ordenada (un *workspace*) con el manual, las e
 
 [![Video: el flujo de ACOS paso a paso](docs/video/preview.gif)](docs/video/acos-flujo.mp4)
 
-*Pulsa la imagen para ver el video completo ([`docs/video/acos-flujo.mp4`](docs/video/acos-flujo.mp4), con subtítulos, sin audio).* Sigue un mismo proyecto desde que lo describes hasta que lo entregas: perfil → `acos init` → estado central → trabajo con el agente → gate con tu aprobación → 7 etapas → entregables.
+*Pulsa la imagen para ver el video completo ([`docs/video/acos-flujo.mp4`](docs/video/acos-flujo.mp4), con subtítulos, sin audio).* Sigue un mismo proyecto desde que lo describes hasta que lo entregas: perfil o asistente → `acos init` → estado central → trabajo con el agente → gate con tu aprobación → 7 etapas → entregables.
 
 **Contenido:** [Video](#míralo-en-82-segundos) · [Ejemplo e2e completo](docs/acos/ejemplo-e2e.md) · [Qué necesitas](#1-qué-necesitas-para-empezar) · [Qué obtienes al final](#2-qué-obtienes-al-final) · [Las 7 etapas](#3-las-7-etapas-en-lenguaje-simple) · [Tu primer proyecto paso a paso](#4-tu-primer-proyecto-paso-a-paso) · [Ver un proyecto ya terminado](#5-ver-un-proyecto-ya-terminado) · [Trabajar con el agente](#6-trabajar-con-el-agente) · [Referencia](#referencia)
 
@@ -22,11 +22,11 @@ ACOS crea una carpeta de proyecto ordenada (un *workspace*) con el manual, las e
 |---|---|---|
 | **Python 3.11+** y [`uv`](https://docs.astral.sh/uv/) | Instalar la herramienta `acos` | Sí |
 | **Claude Code** o **Codex** | El agente que trabaja dentro del proyecto. ACOS no lo instala | Sí, para trabajar; no para el demo |
-| **Respuestas a 6 preguntas** sobre tu proyecto | Crear el proyecto (ver abajo) | Sí |
+| **Respuestas sobre tu proyecto** (decisión, éxito, datos, entregables…) | Crear el proyecto, contestando al asistente o con un archivo YAML | Sí |
 | Tus datos (CSV, Excel, SQL…) | Se usan en las etapas de análisis, no al crear el proyecto | Al llegar a esa etapa |
 | Una carpeta de skills ("Foundry") | Skills reutilizables para el agente. Sin ella funciona igual con pautas del OS | No |
 
-**Las 6 preguntas que ACOS te hace al crear un proyecto** (puedes omitir el nombre real del cliente):
+**Lo que ACOS te pregunta al crear un proyecto.** Si ejecutas `acos init` sin más, un asistente te hace las preguntas **una por una, en secuencia** (unas 11 a 13, más algunas condicionales según tu caso: por ejemplo, si el problema es predictivo pregunta por labels y target; si hay datos, por temporalidad y entidades repetidas). Lo esencial se resume en estos 6 temas, y casi todo admite dejarse en blanco (lo que no respondas queda anotado como pregunta abierta; puedes omitir el nombre real del cliente):
 
 1. ¿Qué decisión necesita tomar el cliente?
 2. ¿Qué problema u oportunidad motiva el trabajo?
@@ -35,7 +35,7 @@ ACOS crea una carpeta de proyecto ordenada (un *workspace*) con el manual, las e
 5. ¿Qué datos existen y qué restricciones hay (tiempo, presupuesto, privacidad)?
 6. ¿Qué entregables se esperan (informe, memo de decisión, deck, business case…)?
 
-Si ya tienes esas respuestas por escrito, puedes pasarlas en un archivo YAML en vez de contestarlas a mano (ejemplo en el paso 1 de abajo).
+**`--profile-file` es opcional.** Si ya tienes las respuestas por escrito, pásalas en un archivo YAML (`acos init demo --profile-file perfil.yaml`) y te saltas las preguntas; ACOS igual te muestra el resultado y pide tu confirmación. Si no, ejecuta solo `acos init demo` y contesta al asistente (ejemplo en el paso 1 de abajo).
 
 ### Instalación (una vez)
 
@@ -91,6 +91,11 @@ Este recorrido usa un caso de ejemplo (*priorizar inspecciones de fraude eléctr
 
 ### Paso 1 — Describir el proyecto
 
+**Dos formas, a elegir:**
+
+- **Con el asistente (por defecto):** `acos init demo-fraude` y respondes en pantalla, una pregunta tras otra («¿Qué decisión necesita tomar el cliente?», «¿Cómo se mediría éxito?», «¿Quién decide y quién usa el resultado?», «Datos existentes…», «Entregables…», «Etapa actual…»). Es lo habitual cuando empiezas de cero.
+- **Con un archivo:** si ya tienes las respuestas, escríbelas una vez en YAML. Es lo que usa este recorrido porque se puede repetir sin teclear.
+
 Guarda esto como `fraude.yaml` (es el ejemplo [`examples/quickstart/fraud-profile.yaml`](examples/quickstart/fraud-profile.yaml)). Son las respuestas a las preguntas de arriba:
 
 ```yaml
@@ -108,7 +113,7 @@ runtimes: [codex, claude_code]                                # tu agente
 ### Paso 2 — Crear el proyecto
 
 ```bash
-acos init demo-fraude --profile-file fraude.yaml
+acos init demo-fraude --profile-file fraude.yaml    # o, sin archivo:  acos init demo-fraude
 ```
 
 **Qué ves:** ACOS te enseña, *antes de escribir nada*, el perfil que entendió, cómo clasificó el problema (y por qué), qué módulos va a usar, qué capacidades tiene cubiertas y cuáles no, y la lista de archivos que va a crear. Te pide la ruta de tu Foundry (déjala vacía para continuar sin él) y que confirmes con `s`. **No hay modo automático: siempre confirmas tú.**
@@ -257,7 +262,7 @@ Ciclo de trabajo en cada etapa:
 
 | Comando | Qué hace | ¿Escribe? |
 |---|---|---|
-| `acos init [nombre]` | Crea el proyecto (asistente o `--profile-file`); muestra todo y pide confirmación | Solo tras confirmar |
+| `acos init [nombre]` | Crea el proyecto con el asistente de preguntas secuenciales, o con `--profile-file` (opcional); muestra todo y pide confirmación | Solo tras confirmar |
 | `acos status` | Etapa, estado, bloqueos, gates pendientes, integridad | No |
 | `acos next` | Objetivo, preguntas, outputs y brechas de la etapa | No |
 | `acos validate --gate <g>` | Revisa un gate sin avanzar el estado | No |
