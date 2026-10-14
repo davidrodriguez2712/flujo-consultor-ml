@@ -236,4 +236,8 @@ uv run python -m build --no-isolation # wheel + sdist
 | `evaluations/`, `docs/acos/validation/` | Evidencia de evaluación de skills y de plataformas |
 | `tests/` | Suite del compilador |
 
+## Licencia
+
+[MIT](LICENSE) © 2026 David Rodríguez.
+
 Documentación: [instalación](docs/acos/installation.md) · [uso de un proyecto](docs/acos/project-usage.md) · [distribución y límites](docs/acos/release.md).

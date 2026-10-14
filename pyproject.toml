@@ -7,6 +7,7 @@ name = "agentic-consulting-os"
 version = "0.1.0"
 description = "Compiler portable de workspaces de consultoría Data & AI"
 readme = "README.md"
+license = {text = "MIT"}
 requires-python = ">=3.11"
 dependencies = ["pydantic>=2,<3", "PyYAML>=6,<7", "platformdirs>=4,<5"]
 
