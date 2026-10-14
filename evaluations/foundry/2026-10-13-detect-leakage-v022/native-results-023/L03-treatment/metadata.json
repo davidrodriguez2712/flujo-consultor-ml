@@ -1,0 +1,116 @@
+{
+  "started_at": "2026-10-14T03:13:29.951664+00:00",
+  "argv": [
+    "claude",
+    "-p",
+    "--restricted",
+    "--no-chrome",
+    "--no-session-persistence",
+    "--setting-sources",
+    "",
+    "--settings",
+    "{\"disableBundledSkills\": true, \"permissions\": {\"allow\": [\"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023/L03-treatment/workspace/.runtime/check_inputs.py)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023/L03-treatment/workspace/.runtime/plugin/.claude-plugin/plugin.json)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023/L03-treatment/workspace/.runtime/plugin/skills/detect-leakage/SKILL.md)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023/L03-treatment/workspace/.runtime/report-context.json)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023/L03-treatment/workspace/case.md)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023/L03-treatment/workspace/inputs/context.md)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023/L03-treatment/workspace/inputs/dictionary.json)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023/L03-treatment/workspace/inputs/observations.csv)\", \"Read(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023/L03-treatment/workspace/workflow.md)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023/L03-treatment/workspace/reports/leakage/audit.md)\", \"Bash(/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python /Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023/L03-treatment/workspace/.runtime/check_inputs.py)\", \"Skill(acos-eval:detect-leakage)\"], \"deny\": [\"Agent\", \"WebFetch\", \"WebSearch\", \"NotebookEdit\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023/L03-treatment/workspace/inputs/**)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023/L03-treatment/workspace/case.md)\", \"Edit(//Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023/L03-treatment/workspace/.runtime/**)\"]}}",
+    "--strict-mcp-config",
+    "--mcp-config",
+    "{\"mcpServers\":{}}",
+    "--permission-mode",
+    "dontAsk",
+    "--permission-prompts",
+    "none",
+    "--tools",
+    "Read,Write,Bash,Skill",
+    "--max-turns",
+    "8",
+    "--effort",
+    "low",
+    "--model",
+    "claude-haiku-5-5",
+    "--system-prompt",
+    "Responde en español. Audita solo el expediente público, respeta sus límites y no aceptes gates. Usa únicamente herramientas y capacidades disponibles. Entrega el reporte y su ruta según case.md.",
+    "--output-format",
+    "stream-json",
+    "--verbose",
+    "--plugin-dir",
+    "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023/L03-treatment/workspace/.runtime/plugin"
+  ],
+  "runtime_success": false,
+  "condition": "treatment",
+  "skill_invoked": true,
+  "request_count": 3,
+  "prompt_sha256": "45ff6d61b47a01aee7f70e4fd54aaba88404c136d2caa0b506ad5677bc2036d3",
+  "returncode": 1,
+  "tool_calls": [
+    {
+      "name": "Skill",
+      "input": {
+        "skill": "acos-eval:detect-leakage"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023/L03-treatment/workspace/workflow.md"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023/L03-treatment/workspace/case.md"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023/L03-treatment/workspace/.runtime/report-context.json"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023/L03-treatment/workspace/inputs/context.md"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023/L03-treatment/workspace/inputs/dictionary.json"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023/L03-treatment/workspace/inputs/observations.csv"
+      }
+    },
+    {
+      "name": "Bash",
+      "input": {
+        "command": "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/.venv/bin/python /Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-results-023/L03-treatment/workspace/.runtime/check_inputs.py",
+        "description": "Run authorized input check utility for hashes and counts"
+      }
+    }
+  ],
+  "skill_invocation_requested": true,
+  "usage_known": true,
+  "report_persisted": false,
+  "report_sha256": null,
+  "model_usage": {
+    "claude-haiku-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1225,
+      "cacheReadInputTokens": 6025,
+      "cacheCreationInputTokens": 10828,
+      "webSearchRequests": 0,
+      "costUSD": 0.00202665,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 148,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "contract_success": false,
+  "execution_success": false,
+  "finished_at": "2026-10-14T03:13:53.261881+00:00"
+}

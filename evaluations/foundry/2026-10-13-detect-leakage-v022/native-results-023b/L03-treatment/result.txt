@@ -1,0 +1,4 @@
+Auditoría de complaint_count terminada: resultado **No determinable**. No hay mecanismo demostrado de leakage ni evidencia de disponibilidad al scoring (2025-06-01). La exportación del 2025-08-01 no basta. Uso provisional reservado al owner.
+
+Ruta del reporte:
+`reports/leakage/audit.md` (en el workspace de L03-treatment)

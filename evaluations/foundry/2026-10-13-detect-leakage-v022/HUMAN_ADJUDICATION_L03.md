@@ -16,9 +16,10 @@ Hechos ya verificados (no requieren juicio): 515/500 palabras (contrato FAIL), s
 
 ## Veredicto humano (marcar uno)
 - [ ] ACEPTABLE (contenido)
-- [ ] ACEPTABLE CON RESERVAS
+- [x] ACEPTABLE CON RESERVAS
 - [ ] NO ACEPTADO
 
 Contrato mecánico: permanece FAIL; esta hoja no lo dispensa.
 
-Firma/fecha: ______________________
+Veredicto dado por David en sesión (2026-10-13) mediante selección explícita; las preguntas 1–7 de la tabla no se rellenaron.
+Firma/fecha: David, 2026-10-13 (respuesta en sesión)

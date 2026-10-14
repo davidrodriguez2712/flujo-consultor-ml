@@ -1,0 +1,10 @@
+{
+  "status": "APPROVED",
+  "execution_manifest_sha256": "c6852a5569070b6988e43a8d6c36145639e23dd990dd6878e3c8b1bd4e86952b",
+  "total_budget_usd": 0.02,
+  "prior_total_usd": 0.14019795,
+  "cumulative_ceiling_usd": 0.18,
+  "package_accepted": true,
+  "basis": "David autoriza en sesión (2026-10-13) US$0.03 adicionales, techo acumulado 0.18; adjudicación humana L03 0.2.2: aceptable con reservas; esta corrida L03 nativo 0.2.3 limitada a US$0.02, resto reservado al micro",
+  "automatic_retries": 0
+}

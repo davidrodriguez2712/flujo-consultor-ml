@@ -375,3 +375,9 @@ Estudio cerrado con el estado actual, sin API nueva. Canonical 0.2.0 experimenta
 ## 2026-10-13 — canónico detect-leakage migrado a `metadata:`
 
 Cambio solo de formato en `~/david-skill-foundry/experiments/skills/detect-leakage/SKILL.md`: `status/version/domain` pasan bajo `metadata:`. Versión 0.2.0 y estado experimental sin cambio; contenido idéntico. Hash previo `c2a2440477d9985489b71f4d8c50380ccd7985635d02eab330cfee0f7e5856c4`, hash nuevo `8bf268c477a56ec687c3b2a8b505c1cb75b625ef32d28a622892faa94e1dd9c9`. `quick_validate` PASS; `scan_foundry` inventaría las 9 skills sin hallazgos. Respaldo previo en `~/david-skill-foundry/SKILL.detect-leakage.0.2.0.pre-metadata.bak.md`. Snapshots, manifests y evidencia históricos conservan el hash anterior y no se tocaron. Foundry sin git: sin diff versionado.
+
+## 2026-10-13 — detect-leakage 0.2.3: dos corridas nativas L03
+
+Adjudicación humana del L03 0.2.2: aceptable con reservas; David autoriza +US$0.03 (techo 0.18). 0.2.3 (un dato por sección). Cap4096: runtimeFAIL por max_tokens (thinking 2709), sin reporte, US$0.004386. Cap8192: runtimePASS, contratoFAIL 532/500 (peor que 0.2.2, 515), US$0.003878. Redundancia no confirmada como causa; hipótesis sin probar: estructura fija (~100 palabras) vs límite 500. CLI 2.1.296→2.1.299 (desviación documentada). Acumulado US$0.14846196, saldo US$0.03153804, pago detenido. Experimental, sin promoción; micro y comparación no ejecutados.
+
+[Informe](validation/2026-10-13-detect-leakage-v023-report.md).

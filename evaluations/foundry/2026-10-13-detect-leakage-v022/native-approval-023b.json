@@ -1,0 +1,10 @@
+{
+  "status": "APPROVED",
+  "execution_manifest_sha256": "61286f806d58e973495911df8c328eb2aeaa858c4b655189985ddbe348c590c8",
+  "total_budget_usd": 0.03,
+  "prior_total_usd": 0.14458358,
+  "cumulative_ceiling_usd": 0.18,
+  "package_accepted": true,
+  "basis": "David autoriza en sesión (2026-10-13) US$0.03 adicionales, techo 0.18; segunda y última corrida L03 nativo 0.2.3 con cap 8192 tras truncación diagnosticada",
+  "automatic_retries": 0
+}

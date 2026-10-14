@@ -1,0 +1,1 @@
+{"status": "STOPPED_RUNTIME_FAILURE", "runs": [{"case": "L03", "condition": "treatment", "runtime_success": false, "contract_success": false}], "effectiveness": "NOT_REVIEWED"}

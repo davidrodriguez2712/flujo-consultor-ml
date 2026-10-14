@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-package-023/snapshots/scripts/evaluations/foundry_study.py", line 120, in <module>
+    main()
+    ~~~~^^
+  File "/Users/davidrodriguez/Programming/ai-flujo-consultor-ml/evaluations/foundry/2026-10-13-detect-leakage-v022/native-package-023/snapshots/scripts/evaluations/foundry_study.py", line 105, in main
+    raise ValueError('Versión CLI distinta; revisar/configurar de nuevo')
+ValueError: Versión CLI distinta; revisar/configurar de nuevo
