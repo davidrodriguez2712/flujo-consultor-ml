@@ -39,12 +39,29 @@ ACOS crea una carpeta de proyecto ordenada (un *workspace*) con el manual, las e
 
 ### Instalación (una vez)
 
+Necesitas Python 3.11 o superior. Elige **una** de estas formas (todas instalan el comando `acos`):
+
+| Herramienta | Comando |
+|---|---|
+| **uv** | `uv tool install agentic-consulting-os` |
+| **pipx** | `pipx install agentic-consulting-os` |
+| **pip** (en un entorno virtual) | `python -m venv .venv && source .venv/bin/activate && pip install agentic-consulting-os` |
+
 ```bash
-uv tool install agentic-consulting-os
 acos --version        # 0.1.1
 ```
 
-Alternativa desde este repo: `git clone https://github.com/davidrodriguez2712/flujo-consultor-ml.git && cd flujo-consultor-ml && uv tool install .`
+Alternativa desde este repo (última versión de `main`, puede ir por delante de PyPI):
+`pip install git+https://github.com/davidrodriguez2712/flujo-consultor-ml.git` (o `uv tool install .` / `pipx install .` tras clonarlo).
+
+**Probarlo sin instalar nada:** `uvx --from agentic-consulting-os acos init demo` o `pipx run --spec agentic-consulting-os acos init demo`.
+
+#### En un servidor remoto (SSH, VM, contenedor)
+
+- Instala igual que arriba; solo necesitas Python 3.11 o superior (`python3 --version`).
+- `acos init` hace preguntas por terminal: por SSH funciona. Sin terminal interactiva (pipeline, contenedor) usa `--profile-file perfil.yaml`.
+- La ruta de tu Foundry se pide la primera vez y se guarda por dispositivo: en remoto copia o clona allí tu Foundry y escribe su ruta. Las skills son opcionales.
+- El agente (Claude Code o Codex) debe estar instalado en esa misma máquina para trabajar el workspace.
 
 ---
 
